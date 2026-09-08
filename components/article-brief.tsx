@@ -119,7 +119,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
         <div className="sidebar-box">
           <h2>العنقود</h2>
           <p style={{ margin: 0, color: "var(--muted)", fontSize: 13.5 }}>
-            <Link href={`/clusters/${cluster.slug}`}>{cluster.name}</Link> — {cluster.approach}
+            <Link href={`/categories/${cluster.slug}`}>{cluster.name}</Link> — {cluster.approach}
           </p>
         </div>
       </aside>

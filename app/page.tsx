@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ClusterCard } from "@/components/cluster-card";
 import { clusters, overallProgress, trafficProjection } from "@/lib/content";
-import { siteConfig } from "@/lib/site-config";
+import { absoluteUrl, siteConfig } from "@/lib/site-config";
 
 export default function Home() {
   const progress = overallProgress();
@@ -11,8 +11,24 @@ export default function Home() {
     "@id": `${siteConfig.url}/#website`,
     name: siteConfig.name,
     url: siteConfig.url,
-    inLanguage: "ar",
+    inLanguage: siteConfig.language,
     publisher: { "@id": `${siteConfig.url}/#organization` },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteConfig.url}/articles?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
+    ],
   };
 
   return (
@@ -40,7 +56,7 @@ export default function Home() {
           <div className="section-heading">
             <div>
               <span className="eyebrow">خطة الأشهر الستة</span>
-              <h2>عناقيد الكلمات المفتاحية</h2>
+              <h2>تصنيفات الكلمات المفتاحية</h2>
             </div>
             <p>كل عنقود مبني حول نية بحث محددة: صفحة ركيزة، ثم صفحات فرعية دقيقة لكل جمهور بحث.</p>
           </div>
@@ -76,6 +92,7 @@ export default function Home() {
         </div>
       </section>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </main>
   );
 }

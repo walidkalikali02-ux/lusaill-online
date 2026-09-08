@@ -8,26 +8,46 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   title: {
-    default: "لوسيل | أدلة الخدمات المصرية اليومية",
+    default: "لوسيل | موسوعة عربية للخدمات والإجراءات الحكومية",
     template: "%s | لوسيل",
   },
   description: siteConfig.description,
   creator: siteConfig.publisher,
   publisher: siteConfig.name,
+  authors: [{ name: siteConfig.publisher }],
   category: "government",
   referrer: "origin-when-cross-origin",
   formatDetection: { email: false, address: false, telephone: false },
-  keywords: ["فاتورة الكهرباء", "بوابة مصر الرقمية", "تجديد رخصة القيادة", "حماية المستهلك", "المحافظ الإلكترونية", "عقد ايجار"],
+  keywords: ["فاتورة الكهرباء", "بوابة مصر الرقمية", "تجديد رخصة القيادة", "حماية المستهلك", "المحافظ الإلكترونية", "عقد ايجار", "خدمات حكومية", "إجراءات إلكترونية", "السوق العربي", "موسوعة خدمات"],
   alternates: { canonical: "/" },
+  other: {
+    "geo.region": siteConfig.geo.region,
+    "geo.placename": siteConfig.geo.placename,
+    ICBM: siteConfig.geo.icbm,
+    "theme-color": "#145da0",
+  },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
     siteName: siteConfig.name,
-    title: "لوسيل | أدلة الخدمات المصرية اليومية",
+    title: "لوسيل | موسوعة عربية للخدمات والإجراءات الحكومية",
     description: siteConfig.description,
     url: "/",
+    images: [
+      {
+        url: absoluteUrl("/og-default.png"),
+        width: 1200,
+        height: 630,
+        alt: "لوسيل — موسوعة عربية للخدمات والإجراءات الحكومية",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image", title: "لوسيل", description: siteConfig.description },
+  twitter: {
+    card: "summary_large_image",
+    title: "لوسيل",
+    description: siteConfig.description,
+    images: [absoluteUrl("/og-default.png")],
+  },
   robots: {
     index: true,
     follow: true,
@@ -44,6 +64,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     url: siteConfig.url,
     logo: { "@type": "ImageObject", url: absoluteUrl("/favicon.svg") },
     description: siteConfig.description,
+    areaServed: {
+      "@type": "Country",
+      name: siteConfig.market,
+    },
+    sameAs: [],
   };
 
   return (

@@ -8,12 +8,12 @@ export function SiteHeader() {
           <span className="brand-mark" aria-hidden="true">ل</span>
           <span>
             <strong>لوسيل</strong>
-            <small>أدلة الخدمات المصرية اليومية</small>
+            <small>موسوعة عربية للخدمات والإجراءات الحكومية</small>
           </span>
         </Link>
         <nav aria-label="التنقل الرئيسي">
           <Link href="/articles">كل المقالات</Link>
-          <Link href="/clusters">العناقيد</Link>
+          <Link href="/categories">التصنيفات</Link>
           <Link href="/editorial-policy">منهج التحرير</Link>
           <Link className="nav-cta" href="/about">عن لوسيل</Link>
         </nav>

@@ -7,7 +7,7 @@ const priorityLabel = { 1: "أولوية ١", 2: "أولوية ٢", 3: "أولو
 export function ClusterCard({ cluster }: { cluster: Cluster }) {
   const progress = clusterProgress(cluster.slug);
   return (
-    <Link className="cluster-card" href={`/clusters/${cluster.slug}`} style={{ "--c": cluster.color } as React.CSSProperties}>
+    <Link className="cluster-card" href={`/categories/${cluster.slug}`} style={{ "--c": cluster.color } as React.CSSProperties}>
       <div className="cluster-top">
         <span className="cluster-code">العنقود {cluster.code} · الشهر {cluster.months}</span>
         <span className="priority-badge">{priorityLabel[cluster.priority]}</span>

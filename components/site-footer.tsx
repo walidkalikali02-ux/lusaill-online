@@ -6,12 +6,12 @@ export function SiteFooter() {
       <div className="shell footer-grid">
         <div>
           <span className="footer-brand">لوسيل</span>
-          <p>أدلة عملية ومحدثة للخدمات الحكومية والمرافق في مصر — رسوم ومواعيد وخطوات حقيقية مع مصدر رسمي وتاريخ مراجعة.</p>
+          <p>موسوعة عربية شاملة للخدمات والإجراءات الحكومية — رسوم ومواعيد وخطوات حقيقية مع مصدر رسمي وتاريخ مراجعة.</p>
         </div>
         <div>
           <h2>استكشف</h2>
           <Link href="/articles">دليل المقالات</Link>
-          <Link href="/clusters">العناقيد</Link>
+          <Link href="/categories">التصنيفات</Link>
           <Link href="/about">عن المشروع</Link>
         </div>
         <div>

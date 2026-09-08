@@ -1,12 +1,40 @@
 import type { Metadata } from "next";
 import { methodologyNotes, winningArticleTemplate } from "@/lib/content";
+import { absoluteUrl, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "منهج التحرير والمراجعة",
-  description: "كيف يبني لوسيل الدقة في محتوى الخدمات الحكومية والمرافق: مصدر رسمي، تاريخ مراجعة، ومراجعة ربع سنوية لكل مقال.",
+  description: "كيف يبني لوسيل الدقة في محتوى الخدمات والإجراءات الحكومية: مصدر رسمي، تاريخ مراجعة، ومراجعة ربع سنوية لكل مقال.",
+  alternates: { canonical: "/editorial-policy" },
+  openGraph: {
+    title: "منهج التحرير والمراجعة — لوسيل",
+    description: "كيف يبني لوسيل الدقة في محتوى الخدمات والإجراءات الحكومية.",
+    url: "/editorial-policy",
+    type: "website",
+  },
 };
 
 export default function EditorialPolicyPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
+      { "@type": "ListItem", position: 2, name: "منهج التحرير", item: absoluteUrl("/editorial-policy") },
+    ],
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${siteConfig.url}/editorial-policy/#webpage`,
+    url: absoluteUrl("/editorial-policy"),
+    name: "منهج التحرير والمراجعة",
+    description: "كيف يبني لوسيل الدقة في محتوى الخدمات والإجراءات الحكومية: مصدر رسمي، تاريخ مراجعة، ومراجعة ربع سنوية لكل مقال.",
+    inLanguage: siteConfig.language,
+    isPartOf: { "@id": `${siteConfig.url}/#website` },
+  };
+
   return (
     <main id="main-content" className="text-page">
       <div className="shell text-shell">
@@ -49,6 +77,8 @@ export default function EditorialPolicyPage() {
           </div>
         </div>
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
     </main>
   );
 }
