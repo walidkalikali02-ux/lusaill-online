@@ -14,6 +14,10 @@ export const siteConfig = {
     placename: "Egypt",
     icbm: "30.0444, 31.2357",
   },
+  verification: {
+    google: "",
+    bing: "",
+  },
 } as const;
 
 export function absoluteUrl(path = "/") {

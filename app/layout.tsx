@@ -25,6 +25,12 @@ export const metadata: Metadata = {
     "geo.placename": siteConfig.geo.placename,
     ICBM: siteConfig.geo.icbm,
     "theme-color": "#145da0",
+    ...Object.fromEntries(
+      [
+        siteConfig.verification.google ? ["google-site-verification", siteConfig.verification.google] : null,
+        siteConfig.verification.bing ? ["msvalidate.01", siteConfig.verification.bing] : null,
+      ].filter(Boolean) as [string, string][]
+    ),
   },
   openGraph: {
     type: "website",

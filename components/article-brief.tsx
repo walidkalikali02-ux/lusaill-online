@@ -8,16 +8,16 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
   return (
     <div className="article-layout">
       <div className="article-body">
-        <div className="brief-box">
+        <section className="brief-box" aria-label="الإجابة الفورية">
           <strong>١. الإجابة الفورية (أول ٤٠ كلمة)</strong>
           {article.quickAnswer ? (
             <p>{article.quickAnswer}</p>
           ) : (
             <p>لم تُكتب بعد. يجب أن تحتوي الرقم أو الرابط أو الرسم الذي يبحث عنه القارئ عن «{article.keyword}» — لا تُنشر الصفحة قبل التحقق من المصدر الرسمي.</p>
           )}
-        </div>
+        </section>
 
-        <div className="brief-box">
+        <section className="brief-box" aria-label="جدول الملخص">
           <strong>٢. جدول الملخص</strong>
           {article.summaryTable?.length ? (
             <table className="todo-table">
@@ -37,9 +37,9 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
               </tbody>
             </table>
           )}
-        </div>
+        </section>
 
-        <div className="brief-box">
+        <section className="brief-box" aria-label="خطوات التنفيذ">
           <strong>٣. خطوات مرقّمة مع لقطات شاشة حقيقية</strong>
           {article.steps?.length ? (
             <ol>
@@ -50,18 +50,18 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
           ) : (
             <p>يحتاج كاتب فتح البوابة/التطبيق الرسمي فعليًا والتقاط لقطات شاشة حديثة لكل خطوة.</p>
           )}
-        </div>
+        </section>
 
-        <div className="brief-box">
+        <section className="brief-box" aria-label="الأخطاء الشائعة">
           <strong>٤. الأخطاء الشائعة</strong>
           {article.commonMistakes?.length ? (
             <ul>{article.commonMistakes.map((item) => <li key={item}>{item}</li>)}</ul>
           ) : (
             <p>مثال: «الموقع لا يفتح»، «الرقم القومي مرفوض» — هذه استعلامات بحث مستقلة بحد ذاتها وتستحق فقرة كل واحدة.</p>
           )}
-        </div>
+        </section>
 
-        <div className="brief-box">
+        <section className="brief-box" aria-label="المصادر الرسمية">
           <strong>٥. صندوق المصدر والتاريخ</strong>
           {article.sources?.length ? (
             <ul>
@@ -74,16 +74,28 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
           ) : (
             <p>يجب إضافة رابط الجهة الرسمية وتاريخ آخر تحقق قبل النشر. بدون هذا الصندوق لا يُنشر المقال.</p>
           )}
-        </div>
+        </section>
 
-        <div className="brief-box">
+        <section className="brief-box" aria-label="الأسئلة الشائعة">
           <strong>٦. أسئلة شائعة (FAQPage schema)</strong>
           {article.faqs?.length ? (
             <ul>{article.faqs.map((faq) => <li key={faq.question}><strong>{faq.question}</strong> — {faq.answer}</li>)}</ul>
           ) : (
             <p>أضف فقط الأسئلة الظاهرة فعليًا في نص الصفحة قبل توليد FAQPage schema.</p>
           )}
-        </div>
+        </section>
+
+        <section className="brief-box" aria-label="روابط داخلية" style={{ marginTop: 24, padding: "16px 20px", background: "var(--paper-deep)", borderRadius: 8, border: "1px solid var(--line)" }}>
+          <strong>٧. روابط داخلية سياقية</strong>
+          <p style={{ margin: "8px 0 0", fontSize: 14, color: "var(--muted)" }}>
+            ربط المقال بـ{related.length} مقالات من العنقود نفسه يُحسّن تجربة المستخدم ويُعزز الأرشفة.
+          </p>
+          <ul style={{ margin: "8px 0 0", fontSize: 14 }}>
+            {related.map((item) => (
+              <li key={item.slug}><Link href={`/articles/${item.slug}`}>{item.title}</Link></li>
+            ))}
+          </ul>
+        </section>
       </div>
 
       <aside>
@@ -117,7 +129,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
         </div>
 
         <div className="sidebar-box">
-          <h2>العنقود</h2>
+          <h2>التصنيف</h2>
           <p style={{ margin: 0, color: "var(--muted)", fontSize: 13.5 }}>
             <Link href={`/categories/${cluster.slug}`}>{cluster.name}</Link> — {cluster.approach}
           </p>
