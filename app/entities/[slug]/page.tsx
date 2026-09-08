@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { entities, getEntity } from "@/lib/entities";
+import { articles } from "@/lib/content";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 
 export function generateStaticParams() {
@@ -29,6 +30,10 @@ export default async function EntityPage({ params }: { params: Promise<{ slug: s
   const { slug } = await params;
   const entity = getEntity(slug);
   if (!entity) notFound();
+
+  const relatedArticles = articles.filter(
+    (article) => entity.clusterCodes.includes(article.clusterCode) && article.status === "published",
+  );
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -103,6 +108,15 @@ export default async function EntityPage({ params }: { params: Promise<{ slug: s
           <div>
             <strong>مقالات ذات صلة</strong>
             <p>تصفح مقالاتنا التفصيلية حول خدمات {entity.name} مع خطوات مصوّرة وأرقام دعم رسمية.</p>
+            {relatedArticles.length > 0 && (
+              <ul style={{ margin: "12px 0 0", fontSize: 14 }}>
+                {relatedArticles.map((article) => (
+                  <li key={article.slug} style={{ marginBottom: 6 }}>
+                    <Link href={`/articles/${article.slug}`}>{article.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>

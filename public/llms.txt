@@ -11,6 +11,7 @@
 - [الرئيسية](https://lusaill.online/) — الصفحة الرئيسية
 - [كل المقالات](https://lusaill.online/articles) — دليل خطة المقالات
 - [التصنيفات](https://lusaill.online/categories) — تصنيفات المقالات حسب الموضوع
+- [الجهات والخدمات](https://lusaill.online/entities) — دليل الجهات الحكومية和服务
 - [منهج التحرير](https://lusaill.online/editorial-policy) — سياسة التحرير والمراجعة
 - [عن لوسيل](https://lusaill.online/about) — عن المشروع ومنهجيته
 
@@ -23,6 +24,15 @@
 - [المحافظ الإلكترونية](https://lusaill.online/categories/almahafez-alelectroneya) — الإدارة والإلغاء والمقارنة
 - [عقود الإيجار](https://lusaill.online/categories/oqoud-alijar) — النماذج والتوثيق والقانون
 - [شهادة الميلاد والسجل المدني](https://lusaill.online/categories/shehadat-almilad-walsijil-almadani) — الاستخراج والاستعلام
+
+## الجهات والخدمات الحكومية
+
+- [بوابة مصر الرقمية](https://lusaill.online/entities/bawabat-misr-alraqmeya) — البوابة الرسمية للخدمات الحكومية — هاتف: 16000
+- [تطبيق مترش](https://lusaill.online/entities/metrash) — تطبيق وزارة الداخلية للخدمات الإلكترونية — هاتف: 16000
+- [بوابة الحكومة الإلكترونية](https://lusaill.online/entities/hukoomi-misr) — البوابة الحكومية المركزية
+- [جهاز حماية المستهلك](https://lusaill.online/entities/jihaz-hemayat-almustahlik) — الجهاز المصري لحماية المستهلك — هاتف: 19588
+- [شركات توزيع الكهرباء](https://lusaill.online/entities/sherkat-kahraba) — شركات توزيع الكهرباء — هاتف: 126
+- [البريد المصري](https://lusaill.online/entities/albih-almisri) — الخدمات المالية والبريدية — هاتف: 16789
 
 ## منهجية المحتوى
 
@@ -42,3 +52,8 @@
 - **اللغة:** العربية
 - **السوق:** العالم العربي
 - **الدومين:** lusaill.online
+- **جهة النشر:** فريق لوسيل
+
+## كيفية الاستخدام
+
+يُستخدم هذا الملف من قبل محركات البحث الذكية (مثل ChatGPT وPerplexity وClaude) لفهم محتوى الموقع وتقديمه للمستخدمين عند البحث عن خدمات حكومية عربية.

@@ -7,6 +7,7 @@ export type Entity = {
   url: string;
   phone?: string;
   services: string[];
+  clusterCodes: string[];
 };
 
 export const entities: Entity[] = [
@@ -19,6 +20,7 @@ export const entities: Entity[] = [
     url: "https://digital.gov.eg",
     phone: "16000",
     services: ["التسجيل في بوابة مصر الرقمية", "خدمات التموين", "استعلام بطاقة التموين", "إضافة المواليد", "خدمات الأحوال المدنية", "تحديث البيانات"],
+    clusterCodes: ["B"],
   },
   {
     slug: "metrash",
@@ -29,6 +31,7 @@ export const entities: Entity[] = [
     url: "https://metrash2.gov.eg",
     phone: "16000",
     services: ["تجديد رخصة القيادة", "تجديد رخصة السيارة", "الاستعلام عن المخالفات", "حجز مواعيد المرور", "الإبلاغ عن حوادث"],
+    clusterCodes: ["C"],
   },
   {
     slug: "hukoomi-misr",
@@ -38,6 +41,7 @@ export const entities: Entity[] = [
     category: "خدمات حكومية",
     url: "https://www.eg.gov.eg",
     services: ["الخدمات الحكومية المركزية", "طلب المستندات الرسمية", "تقديم الشكاوى", "الاستعلام عن المعاملات"],
+    clusterCodes: ["B"],
   },
   {
     slug: "jihaz-hemayat-almustahlik",
@@ -48,6 +52,7 @@ export const entities: Entity[] = [
     url: "https://www.cpa.gov.eg",
     phone: "19588",
     services: ["تقديم شكوى مستهلك", "متابعة الشكاوى", "قناة واتساب للشكاوى", "دليل حقوق المستهلك"],
+    clusterCodes: ["D"],
   },
   {
     slug: "sherkat-kahraba",
@@ -58,6 +63,7 @@ export const entities: Entity[] = [
     url: "https://www.efa.org.eg",
     phone: "126",
     services: ["الاستعلام عن فاتورة الكهرباء", "سداد الفواتير", "تسجيل قراءة العداد", "الشكاوى الفنية"],
+    clusterCodes: ["A"],
   },
   {
     slug: "albih-almisri",
@@ -68,6 +74,7 @@ export const entities: Entity[] = [
     url: "https://www.egyptpost.org",
     phone: "16789",
     services: ["إصدار شهادة الميلاد", "تحويل الأموال", "مدفوعات التأمينات", "خدمات الطوابع"],
+    clusterCodes: ["G"],
   },
 ];
 
