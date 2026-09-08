@@ -4,6 +4,8 @@ import type { ArticleContentOverride } from "./types";
 export const content: ArticleContentOverride = {
   id: 12,
   status: "published",
+  publishedAt: "2026-08-29",
+  updatedAt: "2026-08-29",
   quickAnswer:
     "الموقع الرسمي لشركة جنوب الدلتا لتوزيع الكهرباء هو sdedc.gov.eg. للاستعلام عن فاتورتك ادخل صفحة «الاستعلام عن الفواتير» وأدخل رقم المشترك المكوّن من 13 رقمًا (وليس رقم العداد) مع كود التحقق من الصورة. للدفع أونلاين استخدم صفحة «سداد أونلاين» برقم الموبايل عبر بوابة فوري. الخط الساخن الموحد لشركات توزيع الكهرباء في مصر: 121.",
   summaryTable: [

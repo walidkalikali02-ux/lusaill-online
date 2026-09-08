@@ -12,6 +12,8 @@ export type SourceRef = { label: string; url: string; checkedAt: string };
 export type Article = ArticleSeed & {
   slug: string;
   status: ArticleStatus;
+  publishedAt?: string;
+  updatedAt?: string;
   quickAnswer?: string;
   summaryTable?: FactRow[];
   steps?: Step[];

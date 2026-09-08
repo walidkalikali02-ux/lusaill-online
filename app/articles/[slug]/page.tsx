@@ -25,7 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: article.quickAnswer ?? `${article.keyword} — دليل عملي محدث.`,
       url: `/articles/${article.slug}`,
       type: "article",
-      publishedTime: article.status === "published" ? undefined : undefined,
+      publishedTime: article.publishedAt ?? undefined,
+      modifiedTime: article.updatedAt ?? undefined,
     },
     twitter: {
       card: "summary_large_image",
@@ -85,8 +86,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       "@type": "WebPage",
       "@id": `${siteConfig.url}/articles/${article.slug}/#webpage`,
     },
-    datePublished: article.status === "published" ? latestCheck ?? undefined : undefined,
-    dateModified: article.status === "published" ? latestCheck ?? undefined : undefined,
+    datePublished: article.publishedAt ?? article.status === "published" ? latestCheck ?? undefined : undefined,
+    dateModified: article.updatedAt ?? article.status === "published" ? latestCheck ?? undefined : undefined,
   };
 
   const faqSchema = article.faqs?.length

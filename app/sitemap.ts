@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((article) => article.status === "published")
     .map((article) => ({
       url: absoluteUrl(`/articles/${article.slug}`),
-      lastModified: now,
+      lastModified: article.updatedAt ? new Date(article.updatedAt) : now,
       changeFrequency: "monthly" as const,
       priority: 0.9,
     }));
