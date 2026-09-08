@@ -79,6 +79,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
   return (
     <html lang={siteConfig.language} dir="rtl">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta name="theme-color" content="#145da0" />
+        <meta name="color-scheme" content="light" />
+      </head>
       <body>
         <a className="skip-link" href="#main-content">انتقل إلى المحتوى</a>
         <SiteHeader />

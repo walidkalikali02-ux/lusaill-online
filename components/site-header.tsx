@@ -14,6 +14,7 @@ export function SiteHeader() {
         <nav aria-label="التنقل الرئيسي">
           <Link href="/articles">كل المقالات</Link>
           <Link href="/categories">التصنيفات</Link>
+          <Link href="/entities">الجهات</Link>
           <Link href="/editorial-policy">منهج التحرير</Link>
           <Link className="nav-cta" href="/about">عن لوسيل</Link>
         </nav>
