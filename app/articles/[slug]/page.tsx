@@ -61,6 +61,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     ],
   };
 
+  const datePublished = article.publishedAt || undefined;
+  const dateModified = article.updatedAt || latestCheck || undefined;
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -88,8 +91,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       "@type": "WebPage",
       "@id": `${siteConfig.url}/articles/${article.slug}/#webpage`,
     },
-    datePublished: article.publishedAt ?? article.status === "published" ? latestCheck ?? undefined : undefined,
-    dateModified: article.updatedAt ?? article.status === "published" ? latestCheck ?? undefined : undefined,
+    datePublished,
+    dateModified,
   };
 
   const faqSchema = article.faqs?.length
@@ -114,11 +117,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </div>
         <div className="article-header">
           <h1>{article.title}</h1>
-          <p>
-            {article.status === "published"
-              ? `آخر تحقق من المصدر الرسمي: ${latestCheck} — راجع «الإجابة الفورية» أدناه لخلاصة سريعة.`
-              : `مسودة تحريرية لمقال يستهدف «${article.keyword}» — بحاجة لتحقق ميداني من المصدر الرسمي قبل النشر.`}
-          </p>
+          {article.status === "published" && latestCheck && (
+            <p>آخر تحقق من المصدر الرسمي: {latestCheck} — راجع «الإجابة الفورية» أدناه لخلاصة سريعة.</p>
+          )}
           <div className="article-meta-row">
             <span className="pill">{article.volume.toLocaleString("ar-EG")} بحث/شهر</span>
             <span className="pill">KD {article.kd ?? "—"}</span>

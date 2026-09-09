@@ -12,18 +12,21 @@ export function generateStaticParams() {
   return clusters.map((cluster) => ({ slug: cluster.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<{ page?: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  const { page: pageParam } = await searchParams;
   const cluster = getCluster(slug);
   if (!cluster) return {};
+  const currentPage = Number(pageParam) || 1;
+  const canonicalPath = currentPage > 1 ? `/categories/${cluster.slug}?page=${currentPage}` : `/categories/${cluster.slug}`;
   return {
     title: cluster.name,
     description: cluster.description,
-    alternates: { canonical: `/categories/${cluster.slug}` },
+    alternates: { canonical: canonicalPath },
     openGraph: {
       title: cluster.name,
       description: cluster.description,
-      url: `/categories/${cluster.slug}`,
+      url: canonicalPath,
       type: "website",
     },
   };
