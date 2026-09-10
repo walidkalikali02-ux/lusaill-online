@@ -6,16 +6,18 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
   return (
     <div className="article-layout">
       <div className="article-body">
-        <div className="brief-box">
+        {/* Quick Answer */}
+        <section id="quick-answer" className="brief-box">
           <strong>الإجابة الفورية</strong>
           {article.quickAnswer ? (
             <p>{article.quickAnswer}</p>
           ) : (
             <p>لم تُكتب بعد.</p>
           )}
-        </div>
+        </section>
 
-        <div className="brief-box">
+        {/* Summary Table */}
+        <section id="summary" className="brief-box">
           <strong>الملخص</strong>
           {article.summaryTable?.length ? (
             <table className="todo-table">
@@ -28,9 +30,10 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
           ) : (
             <p>—</p>
           )}
-        </div>
+        </section>
 
-        <div className="brief-box">
+        {/* Steps */}
+        <section id="steps" className="brief-box">
           <strong>خطوات التنفيذ</strong>
           {article.steps?.length ? (
             <div className="steps-list">
@@ -47,18 +50,18 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
           ) : (
             <p>يحتاج كاتب فتح البوابة/التطبيق الرسمي فعليًا والتقاط لقطات شاشة حديثة لكل خطوة.</p>
           )}
-        </div>
+        </section>
 
-        <div className="brief-box">
-          <strong>الأخطاء الشائعة</strong>
-          {article.commonMistakes?.length ? (
+        {/* Common Mistakes */}
+        {article.commonMistakes?.length ? (
+          <section id="mistakes" className="brief-box callout callout-warning">
+            <div className="callout-title">الأخطاء الشائعة</div>
             <ul>{article.commonMistakes.map((item) => <li key={item}>{item}</li>)}</ul>
-          ) : (
-            <p>—</p>
-          )}
-        </div>
+          </section>
+        ) : null}
 
-        <div className="brief-box">
+        {/* Sources */}
+        <section id="sources" className="brief-box">
           <strong>المصادر الرسمية</strong>
           {article.sources?.length ? (
             <ul>
@@ -71,15 +74,17 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
           ) : (
             <p>يجب إضافة رابط الجهة الرسمية وتاريخ آخر تحقق قبل النشر.</p>
           )}
-        </div>
+        </section>
 
+        {/* FAQs */}
         {article.faqs?.length ? (
-          <div className="brief-box">
+          <section id="faq" className="brief-box">
             <strong>الأسئلة الشائعة</strong>
             <ul>{article.faqs.map((faq) => <li key={faq.question}><strong>{faq.question}</strong> — {faq.answer}</li>)}</ul>
-          </div>
+          </section>
         ) : null}
 
+        {/* Related Guides */}
         {related.length > 0 && (
           <div className="related-section">
             <h2>قد يفيدك أيضًا</h2>
@@ -95,6 +100,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
         )}
       </div>
 
+      {/* Desktop TOC */}
       <aside className="sidebar">
         <div className="toc">
           <h2>في هذا الدليل</h2>
@@ -102,7 +108,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
             <li><a href="#quick-answer">الإجابة الفورية</a></li>
             <li><a href="#summary">الملخص</a></li>
             <li><a href="#steps">خطوات التنفيذ</a></li>
-            <li><a href="#mistakes">الأخطاء الشائعة</a></li>
+            {article.commonMistakes?.length ? <li><a href="#mistakes">الأخطاء الشائعة</a></li> : null}
             <li><a href="#sources">المصادر الرسمية</a></li>
             {article.faqs?.length ? <li><a href="#faq">الأسئلة الشائعة</a></li> : null}
           </ul>

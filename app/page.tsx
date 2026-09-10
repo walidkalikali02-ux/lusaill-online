@@ -39,6 +39,7 @@ export default function Home() {
 
   return (
     <main id="main-content">
+      {/* Hero */}
       <section className="hero">
         <div className="shell">
           <span className="hero-eyebrow">موسوعة عربية للحياة اليومية</span>
@@ -53,6 +54,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Search */}
       <section className="search-section">
         <div className="shell">
           <div className="search-box">
@@ -75,13 +77,13 @@ export default function Home() {
                     suggestions.map((a) => (
                       <Link key={a.slug} className="search-suggestion" href={`/articles/${a.slug}`} onClick={() => setQuery("")}>
                         <div className="search-suggestion-title">{a.title}</div>
-                        <div className="search-suggestion-meta">{a.keyword}</div>
+                        <div className="search-suggestion-meta">{a.quickAnswer ? a.quickAnswer.slice(0, 80) + "…" : a.keyword}</div>
                       </Link>
                     ))
                   ) : (
                     <div className="search-suggestion">
                       <div className="search-suggestion-title">لم نجد نتيجة</div>
-                      <div className="search-suggestion-meta">جرّب كلمات أبسط أو تصفح التصنيفات</div>
+                      <div className="search-suggestion-meta">جرّب استخدام كلمات أبسط أو تصفح التصنيفات</div>
                     </div>
                   )}
                 </div>
@@ -89,7 +91,7 @@ export default function Home() {
             </div>
             <div className="quick-topics">
               {quickTopics.map((t) => (
-                <Link key={t.q} className="quick-chip" href={`/articles?q=${encodeURIComponent(t.q)}`}>
+                <Link key={t.q} className="quick-chip" href={`/categories?q=${encodeURIComponent(t.q)}`}>
                   {t.label}
                 </Link>
               ))}
@@ -98,6 +100,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Categories */}
       <section className="section">
         <div className="shell">
           <div className="section-header">
@@ -113,6 +116,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Guides */}
       <section className="section section-alt">
         <div className="shell">
           <div className="section-header">
@@ -135,7 +139,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      {/* Latest Guides */}
+      {published.length > 6 && (
+        <section className="section">
+          <div className="shell">
+            <div className="section-header">
+              <span className="section-eyebrow">أحدث ما نشرناه</span>
+              <h2>أحدث الأدلة</h2>
+              <p>المقالات والأدلة الأخيرة التي أضفناها إلى الموسوعة.</p>
+            </div>
+            <div className="articles-grid">
+              {published.slice(0, 12).map((article) => (
+                <ArticleCard article={article} key={article.slug} />
+              ))}
+            </div>
+            <div style={{ textAlign: "center", marginTop: 32 }}>
+              <Link className="button button-secondary" href="/articles">عرض كل الأدلة</Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Stats */}
+      <section className="section section-alt">
         <div className="shell">
           <div className="stats-row">
             <div className="stat-item">
@@ -154,7 +180,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section-alt">
+      {/* Editorial Trust */}
+      <section className="section">
         <div className="shell">
           <div className="section-header">
             <span className="section-eyebrow">لماذا لوسيل</span>

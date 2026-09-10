@@ -16,7 +16,7 @@ export function ArticleCard({ article }: { article: Article }) {
       <h3>{article.title}</h3>
       <p className="article-card-desc">
         {article.quickAnswer
-          ? article.quickAnswer.slice(0, 140) + (article.quickAnswer.length > 140 ? "…" : "")
+          ? article.quickAnswer.slice(0, 120) + (article.quickAnswer.length > 120 ? "…" : "")
           : `دليل شامل عن ${article.keyword} مع خطوات عملية وأرقام دعم رسمية.`}
       </p>
       <div className="article-card-footer">

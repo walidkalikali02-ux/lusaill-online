@@ -3,8 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { clusters, getCluster, getClusterArticles, clusterProgress } from "@/lib/content";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
-import { StatusBadge } from "@/components/status-badge";
-import type { ArticleGroup } from "@/lib/articles-data";
 
 const ARTICLES_PER_PAGE = 30;
 
@@ -32,14 +30,6 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   };
 }
 
-const groupLabels: Record<ArticleGroup, string> = {
-  pillar: "الركيزة",
-  distributors: "صفحات شركات التوزيع",
-  payments: "صفحات الدفع والسداد",
-  core: "المقالات",
-  bonus: "محتوى إضافي (الشهر ٦)",
-};
-
 export default async function ClusterPage({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<{ page?: string }> }) {
   const { slug } = await params;
   const { page: pageParam } = await searchParams;
@@ -48,12 +38,12 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
 
   const items = getClusterArticles(cluster.slug);
   const progress = clusterProgress(cluster.slug);
-  const groups = Array.from(new Set(items.map((item) => item.group))) as ArticleGroup[];
   const totalPages = Math.ceil(items.length / ARTICLES_PER_PAGE);
   const currentPage = Math.max(1, Math.min(Number(pageParam) || 1, totalPages));
   const startIdx = (currentPage - 1) * ARTICLES_PER_PAGE;
   const paginatedItems = items.slice(startIdx, startIdx + ARTICLES_PER_PAGE);
-  const paginatedGroups = Array.from(new Set(paginatedItems.map((item) => item.group))) as ArticleGroup[];
+  const publishedItems = paginatedItems.filter((item) => item.status === "published");
+  const otherItems = paginatedItems.filter((item) => item.status !== "published");
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -85,79 +75,85 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
           <Link href="/categories">التصنيفات</Link><span>/</span>
           <span>{cluster.name}</span>
         </div>
-        <div className="category-hero" style={{ borderTopColor: cluster.color }}>
-          <div>
-            <strong style={{ color: cluster.color }}>العنقود {cluster.code} · الشهر {cluster.months}</strong>
-            <h1>{cluster.name}</h1>
-            <p>{cluster.description}</p>
-          </div>
-          <div>
-            <div className="category-method"><span>المنهج</span><p>{cluster.approach}</p></div>
-            <div className="category-method"><span>الحجم التقريبي</span><p>~{cluster.approxMonthlyVolume.toLocaleString("ar-EG")} بحث شهريًا</p></div>
-            <div className="category-method"><span>نطاق الصعوبة</span><p>KD {cluster.kdRange[0]}–{cluster.kdRange[1]}</p></div>
-            <div className="category-method"><span>التقدم</span><p>{progress.published} من {progress.total} منشور</p></div>
+
+        <div className="category-hero">
+          <span className="article-card-tag">{cluster.name}</span>
+          <h1>{cluster.name}</h1>
+          <p>{cluster.description}</p>
+          <div className="article-meta" style={{ marginTop: 16 }}>
+            <span className="article-meta-item">{progress.total} دليلًا</span>
+            <span className="article-meta-item">{progress.published} منشور</span>
           </div>
         </div>
 
-        {totalPages > 1 && (
-          <div style={{ marginTop: 24, padding: "12px 16px", background: "var(--paper-deep)", borderRadius: 8, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
-            <span style={{ color: "var(--muted)", fontSize: 14 }}>
-              عرض {startIdx + 1}–{Math.min(startIdx + ARTICLES_PER_PAGE, items.length)} من {items.length} مقال
-            </span>
-            <div style={{ display: "flex", gap: 6 }}>
-              {currentPage > 1 && (
-                <Link href={`/categories/${cluster.slug}?page=${currentPage - 1}`} style={{ padding: "6px 12px", borderRadius: 6, background: "var(--line)", fontSize: 13, textDecoration: "none", color: "var(--text)" }}>
-                  السابق
-                </Link>
-              )}
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
-                <Link
-                  key={p}
-                  href={`/categories/${cluster.slug}?page=${p}`}
-                  style={{
-                    padding: "6px 10px",
-                    borderRadius: 6,
-                    background: p === currentPage ? "var(--brand)" : "var(--line)",
-                    color: p === currentPage ? "white" : "var(--text)",
-                    fontSize: 13,
-                    textDecoration: "none",
-                    fontWeight: p === currentPage ? 600 : 400,
-                  }}
-                >
-                  {p}
-                </Link>
+        {/* Published guides as clean cards */}
+        {publishedItems.length > 0 && (
+          <div className="articles-grid" style={{ marginBottom: 40 }}>
+            {publishedItems.map((item) => (
+              <Link key={item.slug} className="article-card" href={`/articles/${item.slug}`}>
+                <span className="article-card-tag">{cluster.name}</span>
+                <h3>{item.title}</h3>
+                <p className="article-card-desc">
+                  {item.quickAnswer
+                    ? item.quickAnswer.slice(0, 120) + (item.quickAnswer.length > 120 ? "…" : "")
+                    : `دليل شامل عن ${item.keyword} مع خطوات عملية.`}
+                </p>
+                <div className="article-card-footer">
+                  <span className="article-card-time">دليل عملي</span>
+                  <span className="article-card-link">اقرأ الدليل ←</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+
+        {/* Other articles (not yet published) */}
+        {otherItems.length > 0 && (
+          <div style={{ marginTop: 20 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: "var(--ink-muted)" }}>قريباً</h2>
+            <div className="articles-grid">
+              {otherItems.map((item) => (
+                <div key={item.slug} className="article-card" style={{ opacity: 0.6 }}>
+                  <span className="article-card-tag" style={{ background: "var(--bg-alt)", color: "var(--ink-muted)" }}>قريباً</span>
+                  <h3>{item.title}</h3>
+                  <p className="article-card-desc">{item.keyword}</p>
+                  <div className="article-card-footer">
+                    <span className="article-card-time">قيد الإعداد</span>
+                  </div>
+                </div>
               ))}
-              {currentPage < totalPages && (
-                <Link href={`/categories/${cluster.slug}?page=${currentPage + 1}`} style={{ padding: "6px 12px", borderRadius: 6, background: "var(--line)", fontSize: 13, textDecoration: "none", color: "var(--text)" }}>
-                  التالي
-                </Link>
-              )}
             </div>
           </div>
         )}
 
-        {paginatedGroups.map((group) => (
-          <div key={group} style={{ marginTop: 44 }}>
-            <h2 style={{ fontSize: 20, marginBottom: 14 }}>{groupLabels[group]}</h2>
-            <table className="article-table">
-              <thead>
-                <tr><th>#</th><th>المقال</th><th>الكلمة الأساسية</th><th>الحجم</th><th>KD</th><th>الحالة</th></tr>
-              </thead>
-              <tbody>
-                {paginatedItems.filter((item) => item.group === group).map((item) => (
-                  <tr key={item.slug}>
-                    <td className="num">{item.id}</td>
-                    <td><Link href={`/articles/${item.slug}`}>{item.title}</Link></td>
-                    <td className="kw">{item.keyword}</td>
-                    <td className="num">{item.volume.toLocaleString("ar-EG")}</td>
-                    <td className="num">{item.kd ?? "—"}</td>
-                    <td><StatusBadge status={item.status} /></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        {publishedItems.length === 0 && otherItems.length === 0 && (
+          <div className="empty-state">
+            <h3>لا توجد أدلة بعد</h3>
+            <p>نعمل على تجهيز الأدلة في هذا التصنيف.</p>
+            <Link className="button button-secondary" href="/categories" style={{ marginTop: 16 }}>تصفح التصنيفات الأخرى</Link>
           </div>
-        ))}
+        )}
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="pagination">
+            {currentPage > 1 && (
+              <Link href={`/categories/${cluster.slug}?page=${currentPage - 1}`} className="pagination-btn">السابق</Link>
+            )}
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+              <Link
+                key={p}
+                href={`/categories/${cluster.slug}?page=${p}`}
+                className={`pagination-btn ${p === currentPage ? "active" : ""}`}
+              >
+                {p}
+              </Link>
+            ))}
+            {currentPage < totalPages && (
+              <Link href={`/categories/${cluster.slug}?page=${currentPage + 1}`} className="pagination-btn">التالي</Link>
+            )}
+          </div>
+        )}
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }} />

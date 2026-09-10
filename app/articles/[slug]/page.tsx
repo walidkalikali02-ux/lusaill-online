@@ -5,7 +5,6 @@ import { articles, getArticleBySlug, getRelatedArticles } from "@/lib/content";
 import { clusters } from "@/lib/clusters";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { ArticleBrief } from "@/components/article-brief";
-import { StatusBadge } from "@/components/status-badge";
 
 export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
@@ -34,6 +33,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: article.quickAnswer ?? `${article.keyword} — دليل عملي محدث.`,
     },
   };
+}
+
+function readingTime(article: { quickAnswer?: string; steps?: { title: string; detail: string }[] }): number {
+  const words = (article.quickAnswer?.length ?? 0) + (article.steps?.length ?? 0) * 40 + 200;
+  return Math.max(3, Math.round(words / 200));
 }
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -105,6 +109,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       }
     : null;
 
+  const mins = readingTime(article);
+
   return (
     <main id="main-content" className="article-page">
       <div className="shell">
@@ -113,18 +119,37 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <Link href={`/categories/${cluster.slug}`}>{cluster.name}</Link><span>/</span>
           <span>{article.title}</span>
         </div>
+
         <div className="article-header">
           <span className="article-card-tag">{cluster.name}</span>
           <h1>{article.title}</h1>
           <div className="article-meta">
-            {article.status === "published" && latestCheck && (
+            <span className="article-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              {mins} دقائق قراءة
+            </span>
+            {latestCheck && (
               <span className="article-meta-item">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
                 آخر تحقق: {latestCheck}
               </span>
             )}
           </div>
         </div>
+
+        {/* Mobile TOC */}
+        <details className="toc-mobile">
+          <summary>محتويات الدليل</summary>
+          <nav>
+            <a href="#quick-answer">الإجابة الفورية</a>
+            <a href="#summary">الملخص</a>
+            <a href="#steps">خطوات التنفيذ</a>
+            {article.commonMistakes?.length ? <a href="#mistakes">الأخطاء الشائعة</a> : null}
+            <a href="#sources">المصادر الرسمية</a>
+            {article.faqs?.length ? <a href="#faq">الأسئلة الشائعة</a> : null}
+          </nav>
+        </details>
+
         <ArticleBrief article={article} cluster={cluster} related={related} />
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />

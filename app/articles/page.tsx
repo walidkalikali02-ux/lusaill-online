@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { ArticleDirectory } from "@/components/article-directory";
-import { articles, clusters } from "@/lib/content";
-import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import Link from "next/link";
+import { articles } from "@/lib/content";
+import { absoluteUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "كل المقالات",
-  description: "خطة المئة مقال الأولى لموقع لوسيل، مرتبة حسب العنقود والشهر وحجم البحث والصعوبة.",
+  title: "كل الأدلة",
+  description: "جميع الأدلة والمقالات العملية في موسوعة لوسيل.",
   alternates: { canonical: "/articles" },
   openGraph: {
-    title: "كل المقالات — لوسيل",
-    description: "خطة المئة مقال الأولى لموقع لوسيل، مرتبة حسب العنقود والشهر وحجم البحث والصعوبة.",
+    title: "كل الأدلة — لوسيل",
+    description: "جميع الأدلة والمقالات العملية في موسوعة لوسيل.",
     url: "/articles",
     type: "website",
   },
@@ -21,7 +21,7 @@ export default function ArticlesPage() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
-      { "@type": "ListItem", position: 2, name: "المقالات", item: absoluteUrl("/articles") },
+      { "@type": "ListItem", position: 2, name: "الأدلة", item: absoluteUrl("/articles") },
     ],
   };
 
@@ -30,10 +30,10 @@ export default function ArticlesPage() {
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "مقالات لوسيل",
-    description: "دليل خطة المقالات — كل مقال هو ملف تحرير: الكلمة المستهدفة، الحجم، الصعوبة، والحالة.",
+    name: "أدلة لوسيل",
+    description: "جميع الأدلة العملية في موسوعة لوسيل.",
     numberOfItems: publishedArticles.length,
-    itemListElement: publishedArticles.slice(0, 50).map((article, index) => ({
+    itemListElement: publishedArticles.map((article, index) => ({
       "@type": "ListItem",
       position: index + 1,
       url: absoluteUrl(`/articles/${article.slug}`),
@@ -42,16 +42,47 @@ export default function ArticlesPage() {
   };
 
   return (
-    <main id="main-content" className="directory">
-      <div className="page-hero" style={{ padding: "50px 0 30px" }}>
-        <div className="shell">
-          <span className="eyebrow">{articles.length} مقالاً في الخطة</span>
-          <h1 style={{ margin: "10px 0 14px", fontSize: "clamp(30px, 4.6vw, 46px)" }}>دليل خطة المقالات</h1>
-          <p style={{ color: "var(--muted)", maxWidth: 640 }}>كل صف هنا هو ملف تحرير: الكلمة المستهدفة، الحجم، الصعوبة، والحالة. اضغط على أي مقال لرؤية القالب التحريري الكامل قبل الكتابة.</p>
+    <main id="main-content" className="category-page">
+      <div className="shell">
+        <div className="breadcrumbs">
+          <Link href="/">الرئيسية</Link><span>/</span>
+          <span>الأدلة</span>
         </div>
-      </div>
-      <div className="shell" style={{ paddingTop: 30 }}>
-        <ArticleDirectory articles={articles} clusters={clusters} />
+
+        <div className="category-hero">
+          <span className="article-card-tag">الأدلة</span>
+          <h1>كل الأدلة</h1>
+          <p>جميع الأدلة والمقالات العملية في موسوعة لوسيل.</p>
+          <div className="article-meta" style={{ marginTop: 16 }}>
+            <span className="article-meta-item">{articles.length} دليلًا</span>
+            <span className="article-meta-item">{publishedArticles.length} منشور</span>
+          </div>
+        </div>
+
+        {publishedArticles.length > 0 ? (
+          <div className="articles-grid">
+            {publishedArticles.map((article) => (
+              <Link key={article.slug} className="article-card" href={`/articles/${article.slug}`}>
+                <h3>{article.title}</h3>
+                <p className="article-card-desc">
+                  {article.quickAnswer
+                    ? article.quickAnswer.slice(0, 120) + (article.quickAnswer.length > 120 ? "…" : "")
+                    : `دليل شامل عن ${article.keyword} مع خطوات عملية.`}
+                </p>
+                <div className="article-card-footer">
+                  <span className="article-card-time">دليل عملي</span>
+                  <span className="article-card-link">اقرأ الدليل ←</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="empty-state">
+            <h3>جاري تجهيز الأدلة</h3>
+            <p>نعمل على نشر أول الأدلة العملية قريباً.</p>
+            <Link className="button button-secondary" href="/categories" style={{ marginTop: 16 }}>تصفح التصنيفات</Link>
+          </div>
+        )}
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
