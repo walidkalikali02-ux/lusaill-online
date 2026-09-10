@@ -6,24 +6,19 @@ export function SiteFooter() {
       <div className="shell footer-grid">
         <div>
           <span className="footer-brand">لوسيل</span>
-          <p>موسوعة عربية شاملة للخدمات والإجراءات الحكومية — رسوم ومواعيد وخطوات حقيقية مع مصدر رسمي وتاريخ مراجعة.</p>
+          <p>دليل عربي موثوق للحياة اليومية — رسوم ومواعيد وخطوات حقيقية مع مصدر رسمي وتاريخ مراجعة.</p>
         </div>
         <div>
           <h2>استكشف</h2>
           <Link href="/articles">دليل المقالات</Link>
-          <Link href="/categories">التصنيفات</Link>
-          <Link href="/entities">الجهات والخدمات</Link>
+          <Link href="/categories">الأبواب الرئيسية</Link>
           <Link href="/about">عن المشروع</Link>
-        </div>
-        <div>
-          <h2>الثقة</h2>
           <Link href="/editorial-policy">سياسة التحرير والمراجعة</Link>
-          <span>مراجعة ربع سنوية لكل مقال منشور</span>
         </div>
       </div>
       <div className="shell footer-bottom">
         <span>© 2026 لوسيل</span>
-        <span>محتوى إرشادي عام لا يغني عن مراجعة الجهة الرسمية المختصة.</span>
+        <span>آخر تحديث: سبتمبر ٢٠٢٦</span>
       </div>
     </footer>
   );

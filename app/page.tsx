@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ClusterCard } from "@/components/cluster-card";
-import { clusters, overallProgress, trafficProjection } from "@/lib/content";
+import { clusters, overallProgress } from "@/lib/content";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 
 export default function Home() {
@@ -35,18 +35,25 @@ export default function Home() {
     <main id="main-content">
       <section className="hero">
         <div className="shell">
-          <span className="hero-eyebrow">خدمات {siteConfig.market} · {siteConfig.searchEngine}</span>
-          <h1>الرسم، الرابط، والخطوة —<br /><em>مباشرة من المصدر الرسمي.</em></h1>
+          <span className="hero-eyebrow">موسوعة عربية · {progress.coreTotal} دليل مختار للفهرسة</span>
+          <h1>الفكرة بوضوح. والخطوة<br /><em>بعملية.</em></h1>
           <p>{siteConfig.description}</p>
           <div className="hero-actions">
-            <Link className="button button-primary" href="/articles">استكشف خطة المقالات</Link>
-            <Link className="button button-secondary" href="/editorial-policy">منهج الدقة والمراجعة</Link>
+            <Link className="button button-primary" href="/categories">استكشف الأبواب المختارة</Link>
+            <Link className="button button-secondary" href="/editorial-policy">كيف نراجع المحتوى؟</Link>
           </div>
-          <div className="stat-row">
-            <div><b>{progress.coreTotal}</b><span>مقالاً في الموجة الأولى</span></div>
-            <div><b>{clusters.length}</b><span>عناقيد كلمات مفتاحية</span></div>
-            <div><b>{progress.corePublished}/{progress.coreTotal}</b><span>منشور حتى الآن</span></div>
-            <div><b>١٠٠ ألف</b><span>هدف الزيارات خلال ٦ أشهر</span></div>
+        </div>
+      </section>
+
+      <section className="section search-section">
+        <div className="shell">
+          <div className="search-box">
+            <h2>ما الذي تريد أن تفهمه اليوم؟</h2>
+            <p>ابحث في الأدلة وال閃وات العملية — رسوم، مواعيد، خطوات، أرقام دعم رسمية.</p>
+            <form action="/articles" method="get" className="search-bar">
+              <input type="search" name="q" placeholder="مثال: كيف أسدد فاتورة الكهرباء؟" aria-label="بحث في المقالات" />
+              <button type="submit" className="button button-primary">ابحث</button>
+            </form>
           </div>
         </div>
       </section>
@@ -55,10 +62,9 @@ export default function Home() {
         <div className="shell">
           <div className="section-heading">
             <div>
-              <span className="eyebrow">خطة الأشهر الستة</span>
-              <h2>تصنيفات الكلمات المفتاحية</h2>
+              <span className="eyebrow">المعرفة تبدأ من مكان واضح</span>
+              <h2>الأبواب الرئيسية</h2>
             </div>
-            <p>كل عنقود مبني حول نية بحث محددة: صفحة ركيزة، ثم صفحات فرعية دقيقة لكل جمهور بحث.</p>
           </div>
           <div className="cluster-grid">
             {clusters.map((cluster) => <ClusterCard cluster={cluster} key={cluster.slug} />)}
@@ -70,27 +76,50 @@ export default function Home() {
         <div className="shell">
           <div className="section-heading">
             <div>
-              <span className="eyebrow">توقّع الزيارات</span>
-              <h2>الطريق إلى ١٠٠ ألف زائر شهريًا</h2>
+              <span className="eyebrow">ابدأ من هنا</span>
+              <h2>أدلة تختصر عليك الطريق</h2>
             </div>
-            <p>بافتراض إصلاح مشكلات الأرشفة، ٢٠ مقالاً شهريًا بجودة حقيقية، وبناء روابط تدريجي.</p>
           </div>
-          <table className="plan-table">
-            <thead>
-              <tr><th>الشهر</th><th>المقالات المنشورة</th><th>الزيارات المتوقعة</th></tr>
-            </thead>
-            <tbody>
-              {trafficProjection.map((row) => (
-                <tr key={row.month}>
-                  <td>{row.month}</td>
-                  <td>{row.publishedTarget}+</td>
-                  <td>{row.expectedVisits.toLocaleString("ar-EG")}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <p style={{ color: "var(--muted)", marginBottom: 32, maxWidth: 600 }}>أحدث الأدلة المنشورة مع خطوات عملية وأرقام دعم رسمية.</p>
+          <div className="featured-grid">
+            <Link href="/articles/فاتورة-الكهرباء" className="featured-card">
+              <span className="featured-tag">فواتير الكهرباء</span>
+              <h3>شركة جنوب الدلتا — دليل كامل</h3>
+              <p>الاستعلام عن الفواتير، السداد أونلاين، الخط الساخن، وأرقام الدعم لكل شركة توزيع.</p>
+              <span className="featured-link">اقرأ الدليل ←</span>
+            </Link>
+          </div>
         </div>
       </section>
+
+      <section className="section">
+        <div className="shell">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">لماذا لوسيل؟</span>
+              <h2>الثقة تبدأ من الشفافية</h2>
+            </div>
+          </div>
+          <div className="trust-grid">
+            <div className="trust-card">
+              <span className="trust-num">١</span>
+              <h3>سؤال محدد</h3>
+              <p>كل مقال يبدأ من سؤال واحد واضح يبحث عنه المستخدم — لا مقالات عامة مبعثرة.</p>
+            </div>
+            <div className="trust-card">
+              <span className="trust-num">٢</span>
+              <h3>سياق ودليل</h3>
+              <p>خطوات عملية، رسوم فعلية، وأرقام دعم رسمية — مع تاريخ آخر تحقق من المصدر.</p>
+            </div>
+            <div className="trust-card">
+              <span className="trust-num">٣</span>
+              <h3>تطبيق وحدود</h3>
+              <p>نقول ماذا تفعل وماذا لا تفعل — ونوضح متى تحتاج للجهة الرسمية مباشرة.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </main>

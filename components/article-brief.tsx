@@ -88,18 +88,14 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
 
       <aside>
         <div className="sidebar-box">
-          <h2>بيانات الكلمة المفتاحية</h2>
-          <ul>
-            <li>الكلمة الأساسية: {article.keyword}</li>
-            <li>الحجم الشهري التقريبي: {article.volume.toLocaleString("ar-EG")}</li>
-            <li>الصعوبة (KD): {article.kd ?? "غير متوفر"}</li>
-            <li>الشهر المستهدف: {article.month}</li>
-            <li>الحالة: <StatusBadge status={article.status} /></li>
-          </ul>
+          <h2>التصنيف</h2>
+          <p style={{ margin: 0, color: "var(--muted)", fontSize: 13.5 }}>
+            <Link href={`/categories/${cluster.slug}`}>{cluster.name}</Link>
+          </p>
         </div>
 
         <div className="sidebar-box">
-          <h2>مقالات العنقود نفسه</h2>
+          <h2>مقالات ذات صلة</h2>
           <ul className="related-list">
             {related.map((item) => (
               <li key={item.slug}><Link href={`/articles/${item.slug}`}>{item.title}</Link></li>
@@ -108,19 +104,8 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
         </div>
 
         <div className="sidebar-box">
-          <h2>قالب المقال الفائز</h2>
-          <ul>
-            {winningArticleTemplate.map((item) => (
-              <li key={item.step}>{item.step}</li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="sidebar-box">
-          <h2>العنقود</h2>
-          <p style={{ margin: 0, color: "var(--muted)", fontSize: 13.5 }}>
-            <Link href={`/categories/${cluster.slug}`}>{cluster.name}</Link> — {cluster.approach}
-          </p>
+          <h2>الحالة</h2>
+          <StatusBadge status={article.status} />
         </div>
       </aside>
     </div>

@@ -115,17 +115,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </div>
         <div className="article-header">
           <h1>{article.title}</h1>
-          <p>
-            {article.status === "published"
-              ? `آخر تحقق من المصدر الرسمي: ${latestCheck} — راجع «الإجابة الفورية» أدناه لخلاصة سريعة.`
-              : `مسودة تحريرية لمقال يستهدف «${article.keyword}» — بحاجة لتحقق ميداني من المصدر الرسمي قبل النشر.`}
-          </p>
-          <div className="article-meta-row">
-            <span className="pill">{article.volume.toLocaleString("ar-EG")} بحث/شهر</span>
-            <span className="pill">KD {article.kd ?? "—"}</span>
-            <span className="pill">الشهر {article.month}</span>
-            <StatusBadge status={article.status} />
-          </div>
+          {article.status === "published" && latestCheck && (
+            <p>آخر تحقق من المصدر الرسمي: {latestCheck}</p>
+          )}
         </div>
         <ArticleBrief article={article} cluster={cluster} related={related} />
       </div>
