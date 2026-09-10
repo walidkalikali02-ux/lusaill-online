@@ -1,24 +1,22 @@
 import Link from "next/link";
 import type { Article } from "@/lib/content";
-import { winningArticleTemplate } from "@/lib/content";
 import type { Cluster } from "@/lib/clusters";
-import { StatusBadge } from "@/components/status-badge";
 
 export function ArticleBrief({ article, cluster, related }: { article: Article; cluster: Cluster; related: Article[] }) {
   return (
     <div className="article-layout">
       <div className="article-body">
         <div className="brief-box">
-          <strong>١. الإجابة الفورية (أول ٤٠ كلمة)</strong>
+          <strong>الإجابة الفورية</strong>
           {article.quickAnswer ? (
             <p>{article.quickAnswer}</p>
           ) : (
-            <p>لم تُكتب بعد. يجب أن تحتوي الرقم أو الرابط أو الرسم الذي يبحث عنه القارئ عن «{article.keyword}» — لا تُنشر الصفحة قبل التحقق من المصدر الرسمي.</p>
+            <p>لم تُكتب بعد.</p>
           )}
         </div>
 
         <div className="brief-box">
-          <strong>٢. جدول الملخص</strong>
+          <strong>الملخص</strong>
           {article.summaryTable?.length ? (
             <table className="todo-table">
               <tbody>
@@ -28,41 +26,40 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
               </tbody>
             </table>
           ) : (
-            <table className="todo-table" aria-hidden="true">
-              <tbody>
-                <tr><th>الرسوم</th><td>—</td></tr>
-                <tr><th>المدة</th><td>—</td></tr>
-                <tr><th>الأوراق المطلوبة</th><td>—</td></tr>
-                <tr><th>جهة التنفيذ</th><td>—</td></tr>
-              </tbody>
-            </table>
+            <p>—</p>
           )}
         </div>
 
         <div className="brief-box">
-          <strong>٣. خطوات مرقّمة مع لقطات شاشة حقيقية</strong>
+          <strong>خطوات التنفيذ</strong>
           {article.steps?.length ? (
-            <ol>
-              {article.steps.map((step) => (
-                <li key={step.title}><strong>{step.title}</strong> — {step.detail}</li>
+            <div className="steps-list">
+              {article.steps.map((step, i) => (
+                <div className="step-item" key={step.title}>
+                  <span className="step-num">{String(i + 1).padStart(2, "0")}</span>
+                  <div className="step-content">
+                    <h4>{step.title}</h4>
+                    <p>{step.detail}</p>
+                  </div>
+                </div>
               ))}
-            </ol>
+            </div>
           ) : (
             <p>يحتاج كاتب فتح البوابة/التطبيق الرسمي فعليًا والتقاط لقطات شاشة حديثة لكل خطوة.</p>
           )}
         </div>
 
         <div className="brief-box">
-          <strong>٤. الأخطاء الشائعة</strong>
+          <strong>الأخطاء الشائعة</strong>
           {article.commonMistakes?.length ? (
             <ul>{article.commonMistakes.map((item) => <li key={item}>{item}</li>)}</ul>
           ) : (
-            <p>مثال: «الموقع لا يفتح»، «الرقم القومي مرفوض» — هذه استعلامات بحث مستقلة بحد ذاتها وتستحق فقرة كل واحدة.</p>
+            <p>—</p>
           )}
         </div>
 
         <div className="brief-box">
-          <strong>٥. صندوق المصدر والتاريخ</strong>
+          <strong>المصادر الرسمية</strong>
           {article.sources?.length ? (
             <ul>
               {article.sources.map((source) => (
@@ -72,40 +69,50 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
               ))}
             </ul>
           ) : (
-            <p>يجب إضافة رابط الجهة الرسمية وتاريخ آخر تحقق قبل النشر. بدون هذا الصندوق لا يُنشر المقال.</p>
+            <p>يجب إضافة رابط الجهة الرسمية وتاريخ آخر تحقق قبل النشر.</p>
           )}
         </div>
 
-        <div className="brief-box">
-          <strong>٦. أسئلة شائعة (FAQPage schema)</strong>
-          {article.faqs?.length ? (
+        {article.faqs?.length ? (
+          <div className="brief-box">
+            <strong>الأسئلة الشائعة</strong>
             <ul>{article.faqs.map((faq) => <li key={faq.question}><strong>{faq.question}</strong> — {faq.answer}</li>)}</ul>
-          ) : (
-            <p>أضف فقط الأسئلة الظاهرة فعليًا في نص الصفحة قبل توليد FAQPage schema.</p>
-          )}
-        </div>
+          </div>
+        ) : null}
+
+        {related.length > 0 && (
+          <div className="related-section">
+            <h2>قد يفيدك أيضًا</h2>
+            <div className="related-grid">
+              {related.slice(0, 3).map((item) => (
+                <Link key={item.slug} className="article-card" href={`/articles/${item.slug}`}>
+                  <h3>{item.title}</h3>
+                  <p className="article-card-desc">{item.keyword}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
-      <aside>
-        <div className="sidebar-box">
-          <h2>التصنيف</h2>
-          <p style={{ margin: 0, color: "var(--muted)", fontSize: 13.5 }}>
-            <Link href={`/categories/${cluster.slug}`}>{cluster.name}</Link>
-          </p>
-        </div>
-
-        <div className="sidebar-box">
-          <h2>مقالات ذات صلة</h2>
-          <ul className="related-list">
-            {related.map((item) => (
-              <li key={item.slug}><Link href={`/articles/${item.slug}`}>{item.title}</Link></li>
-            ))}
+      <aside className="sidebar">
+        <div className="toc">
+          <h2>في هذا الدليل</h2>
+          <ul className="toc-list">
+            <li><a href="#quick-answer">الإجابة الفورية</a></li>
+            <li><a href="#summary">الملخص</a></li>
+            <li><a href="#steps">خطوات التنفيذ</a></li>
+            <li><a href="#mistakes">الأخطاء الشائعة</a></li>
+            <li><a href="#sources">المصادر الرسمية</a></li>
+            {article.faqs?.length ? <li><a href="#faq">الأسئلة الشائعة</a></li> : null}
           </ul>
         </div>
 
-        <div className="sidebar-box">
-          <h2>الحالة</h2>
-          <StatusBadge status={article.status} />
+        <div className="sidebar-box" style={{ marginTop: 16 }}>
+          <h2>التصنيف</h2>
+          <p style={{ margin: 0, fontSize: 13.5 }}>
+            <Link href={`/categories/${cluster.slug}`}>{cluster.name}</Link>
+          </p>
         </div>
       </aside>
     </div>

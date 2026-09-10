@@ -114,10 +114,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <span>{article.title}</span>
         </div>
         <div className="article-header">
+          <span className="article-card-tag">{cluster.name}</span>
           <h1>{article.title}</h1>
-          {article.status === "published" && latestCheck && (
-            <p>آخر تحقق من المصدر الرسمي: {latestCheck}</p>
-          )}
+          <div className="article-meta">
+            {article.status === "published" && latestCheck && (
+              <span className="article-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                آخر تحقق: {latestCheck}
+              </span>
+            )}
+          </div>
         </div>
         <ArticleBrief article={article} cluster={cluster} related={related} />
       </div>

@@ -1,127 +1,184 @@
+"use client";
+
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import { ClusterCard } from "@/components/cluster-card";
-import { clusters, overallProgress } from "@/lib/content";
-import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { ArticleCard } from "@/components/article-card";
+import { clusters, articles, overallProgress } from "@/lib/content";
+
+const quickTopics = [
+  { label: "خدمات حكومية", q: "خدمات حكومية" },
+  { label: "فواتير الكهرباء", q: "فاتورة كهرباء" },
+  { label: "رخص القيادة", q: "رخصة قيادة" },
+  { label: "حماية المستهلك", q: "حماية المستهلك" },
+  { label: "عقود الإيجار", q: "عقد إيجار" },
+  { label: "شهادة الميلاد", q: "شهادة ميلاد" },
+];
 
 export default function Home() {
   const progress = overallProgress();
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${siteConfig.url}/#website`,
-    name: siteConfig.name,
-    url: siteConfig.url,
-    inLanguage: siteConfig.language,
-    publisher: { "@id": `${siteConfig.url}/#organization` },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${siteConfig.url}/articles?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
-  };
+  const [query, setQuery] = useState("");
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
-    ],
-  };
+  const published = useMemo(
+    () => articles.filter((a) => a.status === "published"),
+    [],
+  );
+
+  const suggestions = useMemo(() => {
+    if (!query.trim()) return [];
+    const q = query.trim();
+    return articles
+      .filter(
+        (a) =>
+          a.title.includes(q) ||
+          a.keyword.includes(q) ||
+          a.quickAnswer?.includes(q),
+      )
+      .slice(0, 6);
+  }, [query]);
 
   return (
     <main id="main-content">
       <section className="hero">
         <div className="shell">
-          <span className="hero-eyebrow">موسوعة عربية · {progress.coreTotal} دليل مختار للفهرسة</span>
+          <span className="hero-eyebrow">موسوعة عربية للحياة اليومية</span>
           <h1>الفكرة بوضوح. والخطوة<br /><em>بعملية.</em></h1>
-          <p>{siteConfig.description}</p>
+          <p className="hero-sub">
+            نشرح لك الخدمات والإجراءات والمشكلات اليومية بلغة عربية واضحة، مع خطوات عملية تساعدك على معرفة ما يجب فعله بعد ذلك.
+          </p>
           <div className="hero-actions">
-            <Link className="button button-primary" href="/categories">استكشف الأبواب المختارة</Link>
-            <Link className="button button-secondary" href="/editorial-policy">كيف نراجع المحتوى؟</Link>
+            <Link className="button button-primary" href="/categories">استكشف الأدلة</Link>
+            <Link className="button button-secondary" href="/categories">تصفح التصنيفات</Link>
           </div>
         </div>
       </section>
 
-      <section className="section search-section">
+      <section className="search-section">
         <div className="shell">
           <div className="search-box">
             <h2>ما الذي تريد أن تفهمه اليوم؟</h2>
-            <p>ابحث في الأدلة وال閃وات العملية — رسوم، مواعيد، خطوات، أرقام دعم رسمية.</p>
-            <form action="/articles" method="get" className="search-bar">
-              <input type="search" name="q" placeholder="مثال: كيف أسدد فاتورة الكهرباء؟" aria-label="بحث في المقالات" />
-              <button type="submit" className="button button-primary">ابحث</button>
-            </form>
+            <p>ابحث عن خدمة، إجراء، مشكلة أو موضوع...</p>
+            <div className="search-bar">
+              <input
+                type="search"
+                placeholder="ابحث عن خدمة، إجراء، مشكلة أو موضوع..."
+                aria-label="بحث في الأدلة"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              <span className="search-bar-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              </span>
+              {query.trim() && (
+                <div className={`search-suggestions ${suggestions.length ? "active" : ""}`}>
+                  {suggestions.length ? (
+                    suggestions.map((a) => (
+                      <Link key={a.slug} className="search-suggestion" href={`/articles/${a.slug}`} onClick={() => setQuery("")}>
+                        <div className="search-suggestion-title">{a.title}</div>
+                        <div className="search-suggestion-meta">{a.keyword}</div>
+                      </Link>
+                    ))
+                  ) : (
+                    <div className="search-suggestion">
+                      <div className="search-suggestion-title">لم نجد نتيجة</div>
+                      <div className="search-suggestion-meta">جرّب كلمات أبسط أو تصفح التصنيفات</div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+            <div className="quick-topics">
+              {quickTopics.map((t) => (
+                <Link key={t.q} className="quick-chip" href={`/articles?q=${encodeURIComponent(t.q)}`}>
+                  {t.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="section">
         <div className="shell">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">المعرفة تبدأ من مكان واضح</span>
-              <h2>الأبواب الرئيسية</h2>
-            </div>
+          <div className="section-header">
+            <span className="section-eyebrow">المعرفة تبدأ من مكان واضح</span>
+            <h2>الأبواب الرئيسية</h2>
+            <p>اختر المجال الذي تبحث فيه وسنأخذك إلى الأدلة الأكثر فائدة.</p>
           </div>
           <div className="cluster-grid">
-            {clusters.map((cluster) => <ClusterCard cluster={cluster} key={cluster.slug} />)}
+            {clusters.map((cluster) => (
+              <ClusterCard cluster={cluster} key={cluster.slug} />
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ background: "var(--paper-deep)", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
+      <section className="section section-alt">
         <div className="shell">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">ابدأ من هنا</span>
-              <h2>أدلة تختصر عليك الطريق</h2>
+          <div className="section-header">
+            <span className="section-eyebrow">ابدأ من هنا</span>
+            <h2>أدلة تختصر عليك الطريق</h2>
+            <p>أدلة مختارة تساعدك في أكثر الأسئلة والمواقف شيوعًا.</p>
+          </div>
+          {published.length > 0 ? (
+            <div className="articles-grid">
+              {published.slice(0, 6).map((article) => (
+                <ArticleCard article={article} key={article.slug} />
+              ))}
             </div>
-          </div>
-          <p style={{ color: "var(--muted)", marginBottom: 32, maxWidth: 600 }}>أحدث الأدلة المنشورة مع خطوات عملية وأرقام دعم رسمية.</p>
-          <div className="featured-grid">
-            <Link href="/articles/فاتورة-الكهرباء" className="featured-card">
-              <span className="featured-tag">فواتير الكهرباء</span>
-              <h3>شركة جنوب الدلتا — دليل كامل</h3>
-              <p>الاستعلام عن الفواتير، السداد أونلاين، الخط الساخن، وأرقام الدعم لكل شركة توزيع.</p>
-              <span className="featured-link">اقرأ الدليل ←</span>
-            </Link>
-          </div>
+          ) : (
+            <div className="empty-state">
+              <h3>جاري تجهيز الأدلة</h3>
+              <p>نعمل على نشر أول الأدلة العملية قريباً.</p>
+            </div>
+          )}
         </div>
       </section>
 
       <section className="section">
         <div className="shell">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">لماذا لوسيل؟</span>
-              <h2>الثقة تبدأ من الشفافية</h2>
+          <div className="stats-row">
+            <div className="stat-item">
+              <span className="stat-value">{progress.total}+</span>
+              <span className="stat-label">دليل عربي</span>
             </div>
+            <div className="stat-item">
+              <span className="stat-value">{clusters.length}</span>
+              <span className="stat-label">مجالات رئيسية</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-value">2026</span>
+              <span className="stat-label">آخر تحديث للموسوعة</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="shell">
+          <div className="section-header">
+            <span className="section-eyebrow">لماذا لوسيل</span>
+            <h2>كيف نكتب أدلة لوسيل؟</h2>
           </div>
           <div className="trust-grid">
             <div className="trust-card">
               <span className="trust-num">١</span>
               <h3>سؤال محدد</h3>
-              <p>كل مقال يبدأ من سؤال واحد واضح يبحث عنه المستخدم — لا مقالات عامة مبعثرة.</p>
+              <p>نحدد المشكلة التي يريد المستخدم حلها — لا مقالات عامة مبثرة.</p>
             </div>
             <div className="trust-card">
               <span className="trust-num">٢</span>
-              <h3>سياق ودليل</h3>
-              <p>خطوات عملية، رسوم فعلية، وأرقام دعم رسمية — مع تاريخ آخر تحقق من المصدر.</p>
+              <h3>سياق ومعلومة</h3>
+              <p>نشرح الفكرة ونفصل الحقيقة عن التفسير — مع مصدر رسمي وتاريخ مراجعة.</p>
             </div>
             <div className="trust-card">
               <span className="trust-num">٣</span>
               <h3>تطبيق وحدود</h3>
-              <p>نقول ماذا تفعل وماذا لا تفعل — ونوضح متى تحتاج للجهة الرسمية مباشرة.</p>
+              <p>نعطي خطوة عملية ونوضح متى يحتاج الأمر إلى جهة رسمية أو مختص.</p>
             </div>
           </div>
         </div>
       </section>
-
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </main>
   );
 }
