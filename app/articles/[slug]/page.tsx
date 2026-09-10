@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles, getArticleBySlug, getRelatedArticles } from "@/lib/content";
 import { clusters } from "@/lib/clusters";
-import { entities } from "@/lib/entities";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { ArticleBrief } from "@/components/article-brief";
 import { StatusBadge } from "@/components/status-badge";
@@ -46,7 +45,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!cluster) notFound();
 
   const related = getRelatedArticles(article);
-  const relatedEntities = entities.filter((entity) => entity.clusterCodes.includes(article.clusterCode));
   const latestCheck = article.sources?.length
     ? article.sources.reduce((latest, source) => (source.checkedAt > latest ? source.checkedAt : latest), article.sources[0].checkedAt)
     : null;
@@ -117,9 +115,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </div>
         <div className="article-header">
           <h1>{article.title}</h1>
-          {article.status === "published" && latestCheck && (
-            <p>آخر تحقق من المصدر الرسمي: {latestCheck} — راجع «الإجابة الفورية» أدناه لخلاصة سريعة.</p>
-          )}
+          <p>
+            {article.status === "published"
+              ? `آخر تحقق من المصدر الرسمي: ${latestCheck} — راجع «الإجابة الفورية» أدناه لخلاصة سريعة.`
+              : `مسودة تحريرية لمقال يستهدف «${article.keyword}» — بحاجة لتحقق ميداني من المصدر الرسمي قبل النشر.`}
+          </p>
           <div className="article-meta-row">
             <span className="pill">{article.volume.toLocaleString("ar-EG")} بحث/شهر</span>
             <span className="pill">KD {article.kd ?? "—"}</span>
@@ -128,19 +128,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
         <ArticleBrief article={article} cluster={cluster} related={related} />
-        {relatedEntities.length > 0 && (
-          <section style={{ marginTop: 32, padding: 20, background: "var(--paper-deep)", borderRadius: 8, border: "1px solid var(--line)" }}>
-            <h2 style={{ fontSize: 18, marginBottom: 12 }}>الجهات الرسمية ذات الصلة</h2>
-            <ul style={{ margin: 0, fontSize: 14 }}>
-              {relatedEntities.map((entity) => (
-                <li key={entity.slug} style={{ marginBottom: 6 }}>
-                  <Link href={`/entities/${entity.slug}`}>{entity.name}</Link>
-                  {entity.phone && <span style={{ color: "var(--muted)" }}> — هاتف: {entity.phone}</span>}
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
