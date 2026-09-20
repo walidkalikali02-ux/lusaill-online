@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
  * Submit URLs to search engines (Bing, Yandex, etc.) when content changes.
  *
  * Usage: POST /api/indexnow
- * Body: { "url": "https://lusaill.online/articles/some-article" }
+ * Body: { "url": "https://www.lusaill.online/articles/some-article" }
  * Or:   { "urls": ["url1", "url2"] }
  *
  * Requires an IndexNow key (generate at https://www.indexnow.org/)
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     }
 
     // Validate URLs are from our domain
-    const validUrls = urls.filter((url) => url.startsWith("https://lusaill.online"));
+    const validUrls = urls.filter((url) => url.startsWith("https://www.lusaill.online"));
     if (validUrls.length === 0) {
       return NextResponse.json({ error: "All URLs must be from lusaill.online" }, { status: 400 });
     }
@@ -46,9 +46,9 @@ export async function POST(request: Request) {
           method: "POST",
           headers: { "Content-Type": "application/json; charset=utf-8" },
           body: JSON.stringify({
-            host: "lusaill.online",
+            host: "www.lusaill.online",
             key,
-            keyLocation: `https://lusaill.online/${key}.txt`,
+            keyLocation: `https://www.lusaill.online/${key}.txt`,
             urlList: validUrls,
           }),
         });

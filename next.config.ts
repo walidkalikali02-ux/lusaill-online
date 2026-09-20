@@ -35,6 +35,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "lusaill.online" }],
+        destination: "https://www.lusaill.online/:path*",
+        permanent: true,
+      },
+      {
         source: "/clusters/:path*",
         destination: "/categories/:path*",
         permanent: true,
