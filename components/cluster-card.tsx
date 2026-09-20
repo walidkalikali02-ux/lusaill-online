@@ -24,7 +24,7 @@ export function ClusterCard({ cluster }: { cluster: Cluster }) {
       <h3>{cluster.name}</h3>
       <p>{cluster.description}</p>
       <div className="cluster-footer">
-        <span className="cluster-count">{progress.total} دليلًا</span>
+        <span className="cluster-count">{progress.published} دليل منشور</span>
         <span className="cluster-arrow">←</span>
       </div>
     </Link>

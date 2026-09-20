@@ -8,7 +8,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
       <div className="article-body">
         {/* Quick Answer */}
         <section id="quick-answer" className="brief-box">
-          <strong>الإجابة الفورية</strong>
+          <h2>الإجابة الفورية</h2>
           {article.quickAnswer ? (
             <p>{article.quickAnswer}</p>
           ) : (
@@ -18,7 +18,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
 
         {/* Summary Table */}
         <section id="summary" className="brief-box">
-          <strong>الملخص</strong>
+          <h2>الملخص</h2>
           {article.summaryTable?.length ? (
             <table className="todo-table">
               <tbody>
@@ -34,14 +34,14 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
 
         {/* Steps */}
         <section id="steps" className="brief-box">
-          <strong>خطوات التنفيذ</strong>
+          <h2>خطوات التنفيذ</h2>
           {article.steps?.length ? (
             <div className="steps-list">
               {article.steps.map((step, i) => (
                 <div className="step-item" key={step.title}>
                   <span className="step-num">{String(i + 1).padStart(2, "0")}</span>
                   <div className="step-content">
-                    <h4>{step.title}</h4>
+                    <h3>{step.title}</h3>
                     <p>{step.detail}</p>
                   </div>
                 </div>
@@ -62,7 +62,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
 
         {/* Sources */}
         <section id="sources" className="brief-box">
-          <strong>المصادر الرسمية</strong>
+          <h2>المصادر الرسمية</h2>
           {article.sources?.length ? (
             <ul>
               {article.sources.map((source) => (
@@ -79,7 +79,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
         {/* FAQs */}
         {article.faqs?.length ? (
           <section id="faq" className="brief-box">
-            <strong>الأسئلة الشائعة</strong>
+            <h2>الأسئلة الشائعة</h2>
             <ul>{article.faqs.map((faq) => <li key={faq.question}><strong>{faq.question}</strong> — {faq.answer}</li>)}</ul>
           </section>
         ) : null}

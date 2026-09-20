@@ -4,7 +4,8 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { ClusterCard } from "@/components/cluster-card";
 import { ArticleCard } from "@/components/article-card";
-import { clusters, articles, overallProgress } from "@/lib/content";
+import { clusters, articles, overallProgress, clusterProgress } from "@/lib/content";
+import { absoluteUrl, siteConfig } from "@/lib/site-config";
 
 const quickTopics = [
   { label: "خدمات حكومية", q: "خدمات حكومية" },
@@ -23,11 +24,15 @@ export default function Home() {
     () => articles.filter((a) => a.status === "published"),
     [],
   );
+  const activeClusters = useMemo(
+    () => clusters.filter((cluster) => clusterProgress(cluster.slug).published > 0),
+    [],
+  );
 
   const suggestions = useMemo(() => {
     if (!query.trim()) return [];
     const q = query.trim();
-    return articles
+    return published
       .filter(
         (a) =>
           a.title.includes(q) ||
@@ -35,10 +40,27 @@ export default function Home() {
           a.quickAnswer?.includes(q),
       )
       .slice(0, 6);
-  }, [query]);
+  }, [query, published]);
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
+    url: siteConfig.url,
+    name: siteConfig.name,
+    description: siteConfig.description,
+    inLanguage: siteConfig.language,
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [{ "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") }],
+  };
 
   return (
     <main id="main-content">
+      <link rel="canonical" href={siteConfig.url} />
       {/* Hero */}
       <section className="hero">
         <div className="shell">
@@ -100,6 +122,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Learning paths */}
+      <section className="section course-home-section">
+        <div className="shell course-home-card">
+          <div>
+            <span className="section-eyebrow">مسار تعليمي جديد</span>
+            <h2>تعلّم قيادة السيارة من الصفر</h2>
+            <p>ثمانية دروس مترابطة تبدأ من المقعد والمرايا، ثم الانطلاق والتحكم والتقاطعات والوقوف، وتنتهي بالطرق السريعة والطقس السيئ.</p>
+          </div>
+          <div className="course-home-actions">
+            <span><strong>٨</strong> دروس عملية</span>
+            <Link className="button button-primary" href="/courses/learn-driving">ابدأ الكورس</Link>
+          </div>
+        </div>
+      </section>
+
       {/* Categories */}
       <section className="section">
         <div className="shell">
@@ -109,7 +146,7 @@ export default function Home() {
             <p>اختر المجال الذي تبحث فيه وسنأخذك إلى الأدلة الأكثر فائدة.</p>
           </div>
           <div className="cluster-grid">
-            {clusters.map((cluster) => (
+            {activeClusters.map((cluster) => (
               <ClusterCard cluster={cluster} key={cluster.slug} />
             ))}
           </div>
@@ -165,11 +202,11 @@ export default function Home() {
         <div className="shell">
           <div className="stats-row">
             <div className="stat-item">
-              <span className="stat-value">{progress.total}+</span>
+              <span className="stat-value">{progress.published}</span>
               <span className="stat-label">دليل عربي</span>
             </div>
             <div className="stat-item">
-              <span className="stat-value">{clusters.length}</span>
+              <span className="stat-value">{activeClusters.length}</span>
               <span className="stat-label">مجالات رئيسية</span>
             </div>
             <div className="stat-item">
@@ -206,6 +243,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </main>
   );
 }

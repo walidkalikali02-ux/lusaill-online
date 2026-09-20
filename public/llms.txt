@@ -1,59 +1,46 @@
-# لوسيل — موسوعة عربية للخدمات والإجراءات الحكومية
+# لوسيل — أدلة عربية عملية موثقة
 
-> موسوعة عربية شاملة للخدمات والإجراءات الحكومية: فواتير الكهرباء، بوابة مصر الرقمية، رخص القيادة، حماية المستهلك، المحافظ الإلكترونية، وعقود الإيجار — رسوم ومواعيد وخطوات حقيقية مع مصدر رسمي وتاريخ مراجعة لكل معلومة.
+> يشرح لوسيل إجراءات الخدمات اليومية بلغة عربية واضحة، ويربط كل معلومة متغيرة بمصدر رسمي وتاريخ تحقق ظاهر.
 
-## ما هو لوسيل؟
+## الصفحات الأساسية
 
-لوسيل هو موقع عربي يقدم محتوى إرشاديًا شاملًا للخدمات والإجراءات الحكومية في العالم العربي. نبني كل صفحة حول قيمة يفشل الموقع الرسمي في تقديمها للزائر: رابط مباشر، خطوات مصوّرة، أرقام دعم، وحل للأعطال الشائعة.
+- [الرئيسية](https://www.lusaill.online/)
+- [كل الأدلة المنشورة](https://www.lusaill.online/articles)
+- [التصنيفات النشطة](https://www.lusaill.online/categories)
+- [منهج التحرير والمراجعة](https://www.lusaill.online/editorial-policy)
+- [فريق التحرير](https://www.lusaill.online/authors/editorial-team)
 
-## المحتوى الرئيسي
+## كورس تعلم قيادة السيارة
 
-- [الرئيسية](https://lusaill.online/) — الصفحة الرئيسية
-- [كل المقالات](https://lusaill.online/articles) — دليل خطة المقالات
-- [التصنيفات](https://lusaill.online/categories) — تصنيفات المقالات حسب الموضوع
-- [الجهات والخدمات](https://lusaill.online/entities) — دليل الجهات الحكومية和服务
-- [منهج التحرير](https://lusaill.online/editorial-policy) — سياسة التحرير والمراجعة
-- [عن لوسيل](https://lusaill.online/about) — عن المشروع ومنهجيته
+- [صفحة الكورس](https://www.lusaill.online/courses/learn-driving)
+- [تجهيز المقعد والمرايا والأدوات](https://www.lusaill.online/courses/learn-driving/prepare-seat-mirrors-controls)
+- [الانطلاق والتوقف بسلاسة](https://www.lusaill.online/courses/learn-driving/start-stop-car-smoothly)
+- [التحكم في المقود والمسار والسرعة](https://www.lusaill.online/courses/learn-driving/steering-lane-position-speed)
+- [المرايا والإشارات والبقعة العمياء](https://www.lusaill.online/courses/learn-driving/mirrors-signals-blind-spots)
+- [التقاطعات والدوارات](https://www.lusaill.online/courses/learn-driving/junctions-roundabouts-beginners)
+- [الرجوع والوقوف](https://www.lusaill.online/courses/learn-driving/reverse-parallel-bay-parking)
+- [القيادة داخل المدينة](https://www.lusaill.online/courses/learn-driving/city-driving-pedestrians-distractions)
+- [الطرق السريعة والليل والمطر](https://www.lusaill.online/courses/learn-driving/highway-night-rain-emergencies)
 
-## التصنيفات الرئيسية
+## أدلة الكهرباء المنشورة
 
-- [فواتير الكهرباء](https://lusaill.online/categories/fawatir-alkahraba) — الاستعلام والسداد وتسجيل القراءة
-- [بوابة مصر الرقمية](https://lusaill.online/categories/bawabat-misr-alraqmeya) — التسجيل والخدمات والدعم الفني
-- [رخص القيادة والمرور](https://lusaill.online/categories/rokhas-alqiyada-walmoror) — التجديد والحجز والاستعلام
-- [حماية المستهلك](https://lusaill.online/categories/hemayat-almustahlik) — الأرقام والشكاوى والحقوق
-- [المحافظ الإلكترونية](https://lusaill.online/categories/almahafez-alelectroneya) — الإدارة والإلغاء والمقارنة
-- [عقود الإيجار](https://lusaill.online/categories/oqoud-alijar) — النماذج والتوثيق والقانون
-- [شهادة الميلاد والسجل المدني](https://lusaill.online/categories/shehadat-almilad-walsijil-almadani) — الاستخراج والاستعلام
+- [خدمات كهرباء جنوب القاهرة](https://www.lusaill.online/articles/south-cairo-electricity)
+- [خدمات كهرباء شمال الدلتا](https://www.lusaill.online/articles/north-delta-electricity)
+- [خدمات كهرباء الإسكندرية](https://www.lusaill.online/articles/alexandria-electricity)
+- [فاتورة كهرباء جنوب الدلتا](https://www.lusaill.online/articles/south-delta-electricity)
+- [خدمات كهرباء شمال القاهرة](https://www.lusaill.online/articles/north-cairo-electricity)
 
-## الجهات والخدمات الحكومية
+## سياسة المحتوى
 
-- [بوابة مصر الرقمية](https://lusaill.online/entities/bawabat-misr-alraqmeya) — البوابة الرسمية للخدمات الحكومية — هاتف: 16000
-- [تطبيق مترش](https://lusaill.online/entities/metrash) — تطبيق وزارة الداخلية للخدمات الإلكترونية — هاتف: 16000
-- [بوابة الحكومة الإلكترونية](https://lusaill.online/entities/hukoomi-misr) — البوابة الحكومية المركزية
-- [جهاز حماية المستهلك](https://lusaill.online/entities/jihaz-hemayat-almustahlik) — الجهاز المصري لحماية المستهلك — هاتف: 19588
-- [شركات توزيع الكهرباء](https://lusaill.online/entities/sherkat-kahraba) — شركات توزيع الكهرباء — هاتف: 126
-- [البريد المصري](https://lusaill.online/entities/albih-almisri) — الخدمات المالية والبريدية — هاتف: 16789
-
-## منهجية المحتوى
-
-كل مقال يتبع قالبًا موحدًا:
-1. إجابة فورية في أول ٤٠ كلمة
-2. جدول ملخص (الرسوم، المدة، الأوراق المطلوبة، جهة التنفيذ)
-3. خطوات مرقّمة مع لقطات شاشة حقيقية
-4. قسم الأخطاء الشائعة
-5. صندوق المصدر والتاريخ (الجهة الرسمية + تاريخ آخر تحقق)
-6. روابط داخلية سياقية
-7. FAQPage schema للأسئلة الشائعة
+- لا تظهر المسودات في قوائم الأدلة أو Sitemap أو RSS أو هذا الملف.
+- لكل دليل منشور إجابة مباشرة، خطوات، أخطاء شائعة، أسئلة مطابقة للنص، وروابط مصادر رسمية.
+- يعرض كل مصدر تاريخ آخر تحقق، وتوضح الأدلة متى يجب التواصل مع الجهة المختصة.
+- المحتوى إرشادي عام ولا يحل محل تعليمات الجهة الرسمية.
 
 ## معلومات الناشر
 
-- **الاسم:** لوسيل
-- **الموقع:** https://lusaill.online
-- **اللغة:** العربية
-- **السوق:** العالم العربي
-- **الدومين:** lusaill.online
-- **جهة النشر:** فريق لوسيل
-
-## كيفية الاستخدام
-
-يُستخدم هذا الملف من قبل محركات البحث الذكية (مثل ChatGPT وPerplexity وClaude) لفهم محتوى الموقع وتقديمه للمستخدمين عند البحث عن خدمات حكومية عربية.
+- الاسم: لوسيل
+- الناشر: فريق لوسيل
+- اللغة: العربية
+- النطاق الرسمي: https://www.lusaill.online
+- آخر تحديث لهذا الفهرس: 2026-09-15

@@ -11,6 +11,7 @@ export function SiteFooter() {
         <div>
           <h2>استكشف</h2>
           <Link href="/articles">كل الأدلة</Link>
+          <Link href="/courses/learn-driving">كورس تعلم القيادة</Link>
           <Link href="/categories">التصنيفات</Link>
           <Link href="/articles">أحدث الأدلة</Link>
         </div>
@@ -19,6 +20,7 @@ export function SiteFooter() {
           <Link href="/about">عن المشروع</Link>
           <Link href="/editorial-policy">منهج التحرير</Link>
           <Link href="/editorial-policy">سياسة المراجعة</Link>
+          <Link href="/authors/editorial-team">فريق التحرير</Link>
         </div>
         <div>
           <h2>قانوني</h2>

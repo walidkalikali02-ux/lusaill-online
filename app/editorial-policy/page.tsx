@@ -4,7 +4,7 @@ import { absoluteUrl, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "منهج التحرير والمراجعة",
-  description: "كيف يبني لوسيل الدقة في محتوى الخدمات والإجراءات الحكومية: مصدر رسمي، تاريخ مراجعة، ومراجعة ربع سنوية لكل مقال.",
+  description: "كيف يبني لوسيل الدقة في محتوى الخدمات والإجراءات: مصادر أولية، تاريخ تحقق، بوابة جودة، وتصحيح واضح عند تغير المعلومات.",
   alternates: { canonical: "/editorial-policy" },
   openGraph: {
     title: "منهج التحرير والمراجعة — لوسيل",
@@ -30,7 +30,7 @@ export default function EditorialPolicyPage() {
     "@id": `${siteConfig.url}/editorial-policy/#webpage`,
     url: absoluteUrl("/editorial-policy"),
     name: "منهج التحرير والمراجعة",
-    description: "كيف يبني لوسيل الدقة في محتوى الخدمات والإجراءات الحكومية: مصدر رسمي، تاريخ مراجعة، ومراجعة ربع سنوية لكل مقال.",
+    description: "كيف يبني لوسيل الدقة في محتوى الخدمات والإجراءات عبر المصادر الأولية وبوابة الجودة والتحديث.",
     inLanguage: siteConfig.language,
     isPartOf: { "@id": `${siteConfig.url}/#website` },
   };
@@ -72,8 +72,8 @@ export default function EditorialPolicyPage() {
 
         <div className="text-cta">
           <div>
-            <strong>جدول مراجعة ربع سنوي</strong>
-            <p>كل مقال منشور يُراجَع كل ثلاثة أشهر على الأقل — الرسوم والبوابات والقوانين تتغير، ونحن نتابع.</p>
+            <strong>مراجعة مرتبطة بتغير المصدر</strong>
+            <p>نراجع الدليل عند تغير الخدمة أو الرابط أو ظهور مصدر رسمي أحدث، ونثبت تاريخ آخر تحقق داخل المقال.</p>
           </div>
         </div>
       </div>

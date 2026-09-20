@@ -3,9 +3,14 @@ import type { ArticleContentOverride } from "./types";
 // Verified against https://sdedc.gov.eg/ar/Fatora and https://sdedc.gov.eg/ar/Bill_Payment on 2026-08-29.
 export const content: ArticleContentOverride = {
   id: 12,
+  slug: "south-delta-electricity",
+  title: "فاتورة كهرباء جنوب الدلتا: الاستعلام والسداد من الموقع الرسمي",
+  metaDescription: "طريقة الاستعلام عن فاتورة كهرباء جنوب الدلتا برقم المشترك وسدادها من الموقع الرسمي، مع الفرق بين رقم المشترك ورقم العداد وروابط موثقة.",
   status: "published",
   publishedAt: "2026-08-29",
   updatedAt: "2026-08-29",
+  coverImage: "/images/articles/south-delta-electricity-guide.webp",
+  coverImageAlt: "رسم توضيحي لفاتورة وعداد كهرباء جنوب الدلتا",
   quickAnswer:
     "الموقع الرسمي لشركة جنوب الدلتا لتوزيع الكهرباء هو sdedc.gov.eg. للاستعلام عن فاتورتك ادخل صفحة «الاستعلام عن الفواتير» وأدخل رقم المشترك المكوّن من 13 رقمًا (وليس رقم العداد) مع كود التحقق من الصورة. للدفع أونلاين استخدم صفحة «سداد أونلاين» برقم الموبايل عبر بوابة فوري. الخط الساخن الموحد لشركات توزيع الكهرباء في مصر: 121.",
   summaryTable: [

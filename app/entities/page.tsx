@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { entities } from "@/lib/entities";
+import { articles } from "@/lib/content";
 import { absoluteUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default function EntitiesPage() {
+  const activeEntities = entities.filter((entity) => articles.some((article) => article.status === "published" && entity.clusterCodes.includes(article.clusterCode)));
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -30,8 +32,8 @@ export default function EntitiesPage() {
     "@type": "ItemList",
     name: "الجهات والخدمات الحكومية — لوسيل",
     description: "دليل شامل للجهات والخدمات الحكومية في مصر.",
-    numberOfItems: entities.length,
-    itemListElement: entities.map((entity, index) => ({
+    numberOfItems: activeEntities.length,
+    itemListElement: activeEntities.map((entity, index) => ({
       "@type": "ListItem",
       position: index + 1,
       url: absoluteUrl(`/entities/${entity.slug}`),
@@ -45,10 +47,10 @@ export default function EntitiesPage() {
         <span className="eyebrow">دليل الجهات</span>
         <h1>الجهات والخدمات الحكومية</h1>
         <p className="text-lead">
-          دليل شامل لأبرز الجهات والخدمات الحكومية في مصر. كل جهة لها صفحة مخصصة تتضمن الوصف، الخدمات المتاحة، وأرقام التواصل الرسمية.
+          نعرض فقط الجهات المرتبطة بأدلة منشورة ومراجعة، مع رابط البوابة الرسمية والخدمات ذات الصلة.
         </p>
         <div className="cluster-grid">
-          {entities.map((entity) => (
+          {activeEntities.map((entity) => (
             <Link key={entity.slug} className="cluster-card" href={`/entities/${entity.slug}`} style={{ "--c": "#145da0" } as React.CSSProperties}>
               <div className="cluster-top">
                 <span className="cluster-code">{entity.category}</span>

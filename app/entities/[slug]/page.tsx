@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { entities, getEntity } from "@/lib/entities";
 import { articles } from "@/lib/content";
-import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { absoluteUrl } from "@/lib/site-config";
 
 export function generateStaticParams() {
   return entities.map((entity) => ({ slug: entity.slug }));
@@ -13,10 +13,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const entity = getEntity(slug);
   if (!entity) return {};
+  const hasPublished = articles.some((article) => article.status === "published" && entity.clusterCodes.includes(article.clusterCode));
   return {
     title: entity.name,
     description: entity.description,
     alternates: { canonical: `/entities/${entity.slug}` },
+    robots: { index: hasPublished, follow: true },
     openGraph: {
       title: entity.name,
       description: entity.description,

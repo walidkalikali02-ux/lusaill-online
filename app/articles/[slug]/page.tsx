@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { articles, getArticleBySlug, getRelatedArticles } from "@/lib/content";
 import { clusters } from "@/lib/clusters";
@@ -7,30 +8,32 @@ import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { ArticleBrief } from "@/components/article-brief";
 
 export function generateStaticParams() {
-  return articles.map((article) => ({ slug: article.slug }));
+  return articles.filter((article) => article.status === "published").map((article) => ({ slug: article.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
-  if (!article) return {};
+  if (!article || article.status !== "published") return { robots: { index: false, follow: false } };
   return {
     title: article.title,
-    description: article.quickAnswer ?? `${article.keyword} — دليل عملي محدث مع رسوم ومواعيد وخطوات وروابط رسمية.`,
+    description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث مع خطوات وروابط رسمية.`,
     alternates: { canonical: `/articles/${article.slug}` },
     robots: { index: article.status === "published", follow: true },
     openGraph: {
       title: article.title,
-      description: article.quickAnswer ?? `${article.keyword} — دليل عملي محدث.`,
+      description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث.`,
       url: `/articles/${article.slug}`,
       type: "article",
       publishedTime: article.publishedAt ?? undefined,
       modifiedTime: article.updatedAt ?? undefined,
+      images: article.coverImage ? [{ url: article.coverImage, alt: article.coverImageAlt ?? article.title }] : undefined,
     },
     twitter: {
       card: "summary_large_image",
       title: article.title,
-      description: article.quickAnswer ?? `${article.keyword} — دليل عملي محدث.`,
+      description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث.`,
+      images: article.coverImage ? [article.coverImage] : undefined,
     },
   };
 }
@@ -43,7 +46,7 @@ function readingTime(article: { quickAnswer?: string; steps?: { title: string; d
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
-  if (!article) notFound();
+  if (!article || article.status !== "published") notFound();
 
   const cluster = clusters.find((item) => item.code === article.clusterCode);
   if (!cluster) notFound();
@@ -71,13 +74,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     "@type": "Article",
     "@id": `${siteConfig.url}/articles/${article.slug}/#article`,
     headline: article.title,
-    description: article.quickAnswer ?? `${article.keyword} — دليل عملي محدث مع رسوم ومواعيد وخطوات وروابط رسمية.`,
+    description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث مع خطوات وروابط رسمية.`,
     url: absoluteUrl(`/articles/${article.slug}`),
     inLanguage: siteConfig.language,
     author: {
       "@type": "Organization",
-      "@id": `${siteConfig.url}/#organization`,
+      "@id": `${siteConfig.url}/authors/editorial-team/#author`,
       name: siteConfig.publisher,
+      url: absoluteUrl("/authors/editorial-team"),
     },
     publisher: {
       "@type": "Organization",
@@ -95,6 +99,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     },
     datePublished,
     dateModified,
+    image: article.coverImage ? absoluteUrl(article.coverImage) : undefined,
   };
 
   const faqSchema = article.faqs?.length
@@ -124,6 +129,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <span className="article-card-tag">{cluster.name}</span>
           <h1>{article.title}</h1>
           <div className="article-meta">
+            {article.publishedAt && <span className="article-meta-item">نُشر: {article.publishedAt}</span>}
+            {article.updatedAt && <span className="article-meta-item">رُوجع: {article.updatedAt}</span>}
+            <span className="article-meta-item"><Link href="/authors/editorial-team">فريق لوسيل</Link></span>
             <span className="article-meta-item">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               {mins} دقائق قراءة
@@ -136,6 +144,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             )}
           </div>
         </div>
+
+        {article.coverImage ? (
+          <Image
+            className="article-cover"
+            src={article.coverImage}
+            alt={article.coverImageAlt ?? article.title}
+            width={1200}
+            height={630}
+            priority
+          />
+        ) : null}
 
         {/* Mobile TOC */}
         <details className="toc-mobile">

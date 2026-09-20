@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-09-13",
+  "threshold": 85,
+  "criteria": {
+    "practicalValue": 20,
+    "accuracy": 20,
+    "originality": 15,
+    "searchIntentCoverage": 15,
+    "languageClarity": 10,
+    "sourceReliability": 10,
+    "siteDissimilarity": 10
+  },
+  "accepted": [
+    { "id": 9, "slug": "south-cairo-electricity", "score": 92 },
+    { "id": 10, "slug": "north-delta-electricity", "score": 94 },
+    { "id": 11, "slug": "alexandria-electricity", "score": 89 },
+    { "id": 13, "slug": "north-cairo-electricity", "score": 93 }
+  ],
+  "withheld": {
+    "count": 26,
+    "reasons": [
+      "لم يكتمل التحقق الحديث من مصدر أولي لكل ادعاء",
+      "تداخلت بعض النيات مع أدلة منشورة أو مرشحة",
+      "استُبعدت موضوعات حساسة لا تتوافر لها حدود رسمية واضحة"
+    ]
+  }
+}

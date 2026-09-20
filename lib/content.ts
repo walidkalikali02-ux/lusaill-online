@@ -11,9 +11,12 @@ export type SourceRef = { label: string; url: string; checkedAt: string };
 
 export type Article = ArticleSeed & {
   slug: string;
+  metaDescription?: string;
   status: ArticleStatus;
   publishedAt?: string;
   updatedAt?: string;
+  coverImage?: string;
+  coverImageAlt?: string;
   quickAnswer?: string;
   summaryTable?: FactRow[];
   steps?: Step[];
@@ -66,7 +69,7 @@ export function getClusterArticles(clusterSlug: string) {
 
 export function getRelatedArticles(article: Article, count = 4) {
   return articles
-    .filter((candidate) => candidate.clusterCode === article.clusterCode && candidate.id !== article.id)
+    .filter((candidate) => candidate.status === "published" && candidate.clusterCode === article.clusterCode && candidate.id !== article.id)
     .sort((a, b) => Math.abs(a.id - article.id) - Math.abs(b.id - article.id))
     .slice(0, count);
 }
@@ -93,30 +96,30 @@ export const trafficProjection = [
 
 export const methodologyNotes = [
   {
-    title: "الكلمات الملاحية تحتاج تعاملاً خاصاً",
-    body: "كثير من الكلمات عالية الحجم يبحث عنها الناس ليصلوا للموقع الرسمي. لن نحتل المركز الأول، لكن المركز ٢–٤ في كلمة بحجم كبير يعطي آلاف الزيارات — عبر قيمة يفشل الموقع الرسمي في تقديمها: رابط مباشر، خطوات مصوّرة، أرقام دعم، وحل للأعطال الشائعة.",
+    title: "نبدأ من سؤال حقيقي",
+    body: "لا ننشر صفحة لمجرد استهداف عبارة بحث. يجب أن تحل مشكلة محددة، وأن تضيف ترتيبًا أو تفسيرًا عمليًا يمكن للقارئ تنفيذه.",
   },
   {
     title: "الدقة هنا ليست اختيارية",
     body: "رسوم، مواعيد، أرقام هواتف، روابط بوابات. معلومة خاطئة واحدة تقتل ثقة القارئ. كل مقال يحتاج مصدرًا رسميًا وتاريخ مراجعة ظاهرًا.",
   },
   {
-    title: "هذه المواضيع تتغير",
-    body: "الرسوم ترتفع، البوابات تتغير، القوانين تُعدَّل. جدول مراجعة ربع سنوي من اليوم الأول هو ميزة تنافسية على المواقع التي تنشر وتنسى.",
+    title: "المعلومة المتغيرة مؤرخة",
+    body: "الخدمات والبوابات والأرقام قد تتغير. لذلك نضع تاريخ التحقق بجوار المصدر، ونراجع الدليل عند تغير الخدمة أو ظهور مرجع رسمي أحدث.",
   },
   {
-    title: "لا يمكن توليد هذا المحتوى آليًا",
-    body: "نموذج لغوي لا يعرف رسوم العام الحالي ولا شكل واجهة البوابة اليوم. الميزة الحقيقية تأتي من شخص فتح البوابة فعلاً والتقط الشاشات.",
+    title: "الوضوح لا يلغي الحدود",
+    body: "نفرق بين ما تؤكده الجهة الرسمية وما نستنتجه لتنظيم الخطوات، ونوضح متى يحتاج القارئ إلى التواصل مع الجهة أو مختص.",
   },
 ];
 
 export const winningArticleTemplate = [
   { step: "إجابة فورية في أول ٤٠ كلمة", detail: "الرسم، الرابط، الرقم. القارئ جاء لشيء محدد." },
   { step: "جدول ملخص", detail: "الرسوم، المدة، الأوراق المطلوبة، جهة التنفيذ." },
-  { step: "خطوات مرقّمة مع لقطات شاشة حقيقية", detail: "هذا ما يميزنا عن كل منافس." },
+  { step: "خطوات مرتبة بقدر الحاجة", detail: "لا نثبت عددًا مصطنعًا؛ نستخدم ما يتطلبه الإجراء مع صورة توضيحية مناسبة." },
   { step: "قسم الأخطاء الشائعة", detail: "«الموقع لا يفتح»، «الرقم القومي مرفوض» — استعلامات مستقلة بحد ذاتها." },
   { step: "صندوق المصدر والتاريخ", detail: "الجهة الرسمية + تاريخ آخر تحقق." },
-  { step: "روابط داخلية سياقية", detail: "٣ إلى ٥ لمقالات العنقود نفسه." },
+  { step: "روابط داخلية سياقية", detail: "تظهر فقط عندما يوجد دليل منشور ذو صلة حقيقية." },
   { step: "FAQPage schema", detail: "للأسئلة الظاهرة فعلاً في الصفحة فقط." },
 ];
 

@@ -69,7 +69,7 @@ export function trackAIReferral() {
 
     // Send to analytics endpoint if available
     try {
-      const gtag = (window as unknown as Record<string, Function>).gtag;
+      const gtag = (window as unknown as Record<string, (...args: unknown[]) => void>).gtag;
       if (typeof gtag === "function") {
         gtag("event", "ai_referral", {
           ai_source: detectedAI,

@@ -20,6 +20,7 @@ export function SiteHeader() {
         <nav className="header-nav" aria-label="التنقل الرئيسي">
           <Link href="/">الرئيسية</Link>
           <Link href="/articles">الأدلة</Link>
+          <Link href="/courses/learn-driving">كورس القيادة</Link>
           <Link href="/categories">التصنيفات</Link>
           <Link href="/editorial-policy">منهج التحرير</Link>
           <Link href="/about">عن لوسيل</Link>
@@ -44,6 +45,7 @@ export function SiteHeader() {
           <div className="shell">
             <Link href="/" onClick={() => setMenuOpen(false)}>الرئيسية</Link>
             <Link href="/articles" onClick={() => setMenuOpen(false)}>الأدلة</Link>
+            <Link href="/courses/learn-driving" onClick={() => setMenuOpen(false)}>كورس القيادة</Link>
             <Link href="/categories" onClick={() => setMenuOpen(false)}>التصنيفات</Link>
             <Link href="/editorial-policy" onClick={() => setMenuOpen(false)}>منهج التحرير</Link>
             <Link href="/about" onClick={() => setMenuOpen(false)}>عن لوسيل</Link>

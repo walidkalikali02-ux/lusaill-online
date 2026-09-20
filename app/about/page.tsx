@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { siteConfig, absoluteUrl } from "@/lib/site-config";
-import { overallProgress, clusters } from "@/lib/content";
+import { overallProgress } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "عن لوسيل",
@@ -44,19 +44,19 @@ export default function AboutPage() {
         <span className="eyebrow">عن المشروع</span>
         <h1>لوسيل — موسوعة عربية للخدمات والإجراءات الحكومية</h1>
         <p className="text-lead">
-          {siteConfig.description} نستهدف القارئ العربي عبر {siteConfig.searchEngine}، ونبني كل صفحة حول قيمة يفشل
-          الموقع الرسمي في تقديمها للزائر: رابط مباشر، خطوات مصوّرة، أرقام دعم، وحل للأعطال الشائعة.
+          {siteConfig.description} نكتب للقارئ العربي الذي يريد الوصول إلى الإجراء الصحيح بسرعة، ونربط كل معلومة متغيرة
+          بمصدرها الرسمي مع تاريخ واضح لآخر تحقق.
         </p>
         <div className="text-grid">
           <section>
             <span>الهدف</span>
-            <h2>١٠٠ ألف زائر شهريًا خلال ٦ أشهر</h2>
-            <p>عبر {clusters.length} تصنيف كلمات مفتاحية تغطي أكثر من مليون بحث شهري بصعوبة منخفضة في السوق العربي.</p>
+            <h2>إجابة موثقة قابلة للتنفيذ</h2>
+            <p>نبدأ من سؤال محدد، ثم نشرح الطريق الآمن ونبين حدود المعلومة ومتى يجب الرجوع إلى الجهة المختصة.</p>
           </section>
           <section>
             <span>الحالة الآن</span>
             <h2>{progress.corePublished} من {progress.coreTotal} مقالاً منشورًا</h2>
-            <p>كل مقال يمر بمرحلة تحقق ميداني من المصدر الرسمي قبل النشر — راجع سياسة التحرير لتفاصيل المعيار.</p>
+            <p>لا يدخل أي دليل إلى هذه الحصيلة إلا بعد توثيق ادعاءاته بمصادر رسمية — راجع سياسة التحرير لتفاصيل المعيار.</p>
           </section>
         </div>
         <div className="text-cta">

@@ -15,12 +15,14 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   const { page: pageParam } = await searchParams;
   const cluster = getCluster(slug);
   if (!cluster) return {};
+  const hasPublished = getClusterArticles(cluster.slug).some((article) => article.status === "published");
   const currentPage = Number(pageParam) || 1;
   const canonicalPath = currentPage > 1 ? `/categories/${cluster.slug}?page=${currentPage}` : `/categories/${cluster.slug}`;
   return {
     title: cluster.name,
     description: cluster.description,
     alternates: { canonical: canonicalPath },
+    robots: { index: hasPublished, follow: true },
     openGraph: {
       title: cluster.name,
       description: cluster.description,
@@ -36,14 +38,13 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
   const cluster = getCluster(slug);
   if (!cluster) notFound();
 
-  const items = getClusterArticles(cluster.slug);
+  const items = getClusterArticles(cluster.slug).filter((item) => item.status === "published");
   const progress = clusterProgress(cluster.slug);
   const totalPages = Math.ceil(items.length / ARTICLES_PER_PAGE);
   const currentPage = Math.max(1, Math.min(Number(pageParam) || 1, totalPages));
   const startIdx = (currentPage - 1) * ARTICLES_PER_PAGE;
   const paginatedItems = items.slice(startIdx, startIdx + ARTICLES_PER_PAGE);
-  const publishedItems = paginatedItems.filter((item) => item.status === "published");
-  const otherItems = paginatedItems.filter((item) => item.status !== "published");
+  const publishedItems = paginatedItems;
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -107,26 +108,7 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
           </div>
         )}
 
-        {/* Other articles (not yet published) */}
-        {otherItems.length > 0 && (
-          <div style={{ marginTop: 20 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: "var(--ink-muted)" }}>قريباً</h2>
-            <div className="articles-grid">
-              {otherItems.map((item) => (
-                <div key={item.slug} className="article-card" style={{ opacity: 0.6 }}>
-                  <span className="article-card-tag" style={{ background: "var(--bg-alt)", color: "var(--ink-muted)" }}>قريباً</span>
-                  <h3>{item.title}</h3>
-                  <p className="article-card-desc">{item.keyword}</p>
-                  <div className="article-card-footer">
-                    <span className="article-card-time">قيد الإعداد</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {publishedItems.length === 0 && otherItems.length === 0 && (
+        {publishedItems.length === 0 && (
           <div className="empty-state">
             <h3>لا توجد أدلة بعد</h3>
             <p>نعمل على تجهيز الأدلة في هذا التصنيف.</p>
