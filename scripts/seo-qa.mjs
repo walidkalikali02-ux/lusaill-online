@@ -89,6 +89,15 @@ if (!layoutContent.includes("openGraph")) {
 if (!layoutContent.includes("twitter")) {
   check(layoutFile, "Missing Twitter metadata");
 }
+if (!existsSync("app/opengraph-image.tsx")) {
+  check("app/opengraph-image.tsx", "Missing default Open Graph image route");
+}
+if (layoutContent.includes("/og-default.png") && !existsSync("public/og-default.png")) {
+  check(layoutFile, "References missing public/og-default.png");
+}
+if (layoutContent.includes("/favicon.svg") && !existsSync("public/favicon.svg")) {
+  check(layoutFile, "Organization schema references missing favicon.svg");
+}
 
 // 6. Check for structured data
 console.log("🔍 Checking structured data...");
@@ -111,6 +120,9 @@ for (const file of articleFiles) {
   }
   if (!content.includes("BreadcrumbList")) {
     check(file, "Missing BreadcrumbList schema");
+  }
+  if (!content.includes("HowTo")) {
+    check(file, "Missing HowTo schema for procedural article steps");
   }
 }
 

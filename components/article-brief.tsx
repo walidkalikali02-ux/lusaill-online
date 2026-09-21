@@ -38,7 +38,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
           {article.steps?.length ? (
             <div className="steps-list">
               {article.steps.map((step, i) => (
-                <div className="step-item" key={step.title}>
+                <div className="step-item" id={`step-${i + 1}`} key={step.title}>
                   <span className="step-num">{String(i + 1).padStart(2, "0")}</span>
                   <div className="step-content">
                     <h3>{step.title}</h3>

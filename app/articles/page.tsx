@@ -54,8 +54,7 @@ export default function ArticlesPage() {
           <h1>كل الأدلة</h1>
           <p>جميع الأدلة والمقالات العملية في موسوعة لوسيل.</p>
           <div className="article-meta" style={{ marginTop: 16 }}>
-            <span className="article-meta-item">{articles.length} دليلًا</span>
-            <span className="article-meta-item">{publishedArticles.length} منشور</span>
+            <span className="article-meta-item">{publishedArticles.length} دليلًا منشورًا</span>
           </div>
         </div>
 

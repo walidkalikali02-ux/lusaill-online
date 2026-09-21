@@ -15,14 +15,18 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   const { page: pageParam } = await searchParams;
   const cluster = getCluster(slug);
   if (!cluster) return {};
-  const hasPublished = getClusterArticles(cluster.slug).some((article) => article.status === "published");
-  const currentPage = Number(pageParam) || 1;
+  const publishedCount = getClusterArticles(cluster.slug).filter((article) => article.status === "published").length;
+  const hasPublished = publishedCount > 0;
+  const totalPages = Math.max(1, Math.ceil(publishedCount / ARTICLES_PER_PAGE));
+  const requestedPage = Number(pageParam) || 1;
+  const currentPage = Math.max(1, Math.min(requestedPage, totalPages));
+  const validPage = requestedPage >= 1 && requestedPage <= totalPages;
   const canonicalPath = currentPage > 1 ? `/categories/${cluster.slug}?page=${currentPage}` : `/categories/${cluster.slug}`;
   return {
     title: cluster.name,
     description: cluster.description,
     alternates: { canonical: canonicalPath },
-    robots: { index: hasPublished, follow: true },
+    robots: { index: hasPublished && validPage, follow: true },
     openGraph: {
       title: cluster.name,
       description: cluster.description,

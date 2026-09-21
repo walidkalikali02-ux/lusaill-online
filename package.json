@@ -10,7 +10,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "seo:qa": "node scripts/seo-qa.mjs"
+    "seo:qa": "node scripts/seo-qa.mjs",
+    "seo:audit": "node scripts/seo-audit.mjs",
+    "seo:audit:test": "node scripts/test-seo-audit.mjs"
   },
   "dependencies": {
     "next": "16.3.3",

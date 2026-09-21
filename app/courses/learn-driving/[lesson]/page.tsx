@@ -12,6 +12,8 @@ export function generateStaticParams() {
   return drivingLessons.map((lesson) => ({ lesson: lesson.slug }));
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: LessonPageProps): Promise<Metadata> {
   const { lesson: slug } = await params;
   const lesson = getDrivingLesson(slug);
@@ -67,6 +69,21 @@ export default async function DrivingLessonPage({ params }: LessonPageProps) {
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `${absoluteUrl(path)}#practice`,
+    name: lesson.practice.title,
+    description: lesson.practice.intro,
+    inLanguage: siteConfig.language,
+    step: lesson.practice.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: `الخطوة ${index + 1}`,
+      text: step,
+      url: `${absoluteUrl(path)}#practice-step-${index + 1}`,
     })),
   };
   const breadcrumbSchema = {
@@ -132,7 +149,7 @@ export default async function DrivingLessonPage({ params }: LessonPageProps) {
             <section className="practice-card" id="practice">
               <div className="practice-heading"><span>تطبيق عملي</span><h2>{lesson.practice.title}</h2></div>
               <p>{lesson.practice.intro}</p>
-              <ol>{lesson.practice.steps.map((step, index) => <li key={step}><span>{index + 1}</span><p>{step}</p></li>)}</ol>
+              <ol>{lesson.practice.steps.map((step, index) => <li id={`practice-step-${index + 1}`} key={step}><span>{index + 1}</span><p>{step}</p></li>)}</ol>
               <div className="pass-rule"><strong>معيار النجاح</strong><p>{lesson.practice.passWhen}</p></div>
             </section>
 
@@ -186,6 +203,7 @@ export default async function DrivingLessonPage({ params }: LessonPageProps) {
         </div>
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </main>

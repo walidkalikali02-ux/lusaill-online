@@ -41,20 +41,11 @@ export const metadata: Metadata = {
     title: "لوسيل | موسوعة عربية للخدمات والإجراءات الحكومية",
     description: siteConfig.description,
     url: "/",
-    images: [
-      {
-        url: absoluteUrl("/og-default.png"),
-        width: 1200,
-        height: 630,
-        alt: "لوسيل — موسوعة عربية للخدمات والإجراءات الحكومية",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "لوسيل",
     description: siteConfig.description,
-    images: [absoluteUrl("/og-default.png")],
   },
   robots: {
     index: true,
@@ -70,7 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: { "@type": "ImageObject", url: absoluteUrl("/favicon.svg") },
+    logo: { "@type": "ImageObject", url: absoluteUrl("/icon.svg"), width: 64, height: 64 },
     description: siteConfig.description,
     areaServed: {
       "@type": "Country",

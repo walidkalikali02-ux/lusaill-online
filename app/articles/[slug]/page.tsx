@@ -11,6 +11,8 @@ export function generateStaticParams() {
   return articles.filter((article) => article.status === "published").map((article) => ({ slug: article.slug }));
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
@@ -43,6 +45,16 @@ function readingTime(article: { quickAnswer?: string; steps?: { title: string; d
   return Math.max(3, Math.round(words / 200));
 }
 
+function wordCount(article: { quickAnswer?: string; steps?: { title: string; detail: string }[]; commonMistakes?: string[]; faqs?: { question: string; answer: string }[] }) {
+  const text = [
+    article.quickAnswer,
+    ...(article.steps ?? []).flatMap((step) => [step.title, step.detail]),
+    ...(article.commonMistakes ?? []),
+    ...(article.faqs ?? []).flatMap((faq) => [faq.question, faq.answer]),
+  ].filter(Boolean).join(" ");
+  return text.trim().split(/\s+/u).filter(Boolean).length;
+}
+
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
@@ -68,18 +80,23 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   const datePublished = article.publishedAt || undefined;
   const dateModified = article.updatedAt || latestCheck || undefined;
+  const mins = readingTime(article);
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "@id": `${siteConfig.url}/articles/${article.slug}/#article`,
+    "@id": `${absoluteUrl(`/articles/${article.slug}`)}#article`,
     headline: article.title,
     description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث مع خطوات وروابط رسمية.`,
     url: absoluteUrl(`/articles/${article.slug}`),
     inLanguage: siteConfig.language,
+    articleSection: cluster.name,
+    keywords: [article.keyword, cluster.name],
+    wordCount: wordCount(article),
+    timeRequired: `PT${mins}M`,
     author: {
       "@type": "Organization",
-      "@id": `${siteConfig.url}/authors/editorial-team/#author`,
+      "@id": `${absoluteUrl("/authors/editorial-team")}#author`,
       name: siteConfig.publisher,
       url: absoluteUrl("/authors/editorial-team"),
     },
@@ -95,12 +112,37 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${siteConfig.url}/articles/${article.slug}/#webpage`,
+      "@id": `${absoluteUrl(`/articles/${article.slug}`)}#webpage`,
     },
     datePublished,
     dateModified,
-    image: article.coverImage ? absoluteUrl(article.coverImage) : undefined,
+    image: article.coverImage ? {
+      "@type": "ImageObject",
+      url: absoluteUrl(article.coverImage),
+      width: 1200,
+      height: 630,
+      caption: article.coverImageAlt ?? article.title,
+    } : undefined,
   };
+
+  const howToSchema = article.steps?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "@id": `${absoluteUrl(`/articles/${article.slug}`)}#howto`,
+        name: article.title,
+        description: article.quickAnswer,
+        inLanguage: siteConfig.language,
+        totalTime: `PT${mins}M`,
+        step: article.steps.map((step, index) => ({
+          "@type": "HowToStep",
+          position: index + 1,
+          name: step.title,
+          text: step.detail,
+          url: `${absoluteUrl(`/articles/${article.slug}`)}#step-${index + 1}`,
+        })),
+      }
+    : null;
 
   const faqSchema = article.faqs?.length
     ? {
@@ -113,8 +155,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         })),
       }
     : null;
-
-  const mins = readingTime(article);
 
   return (
     <main id="main-content" className="article-page">
@@ -173,6 +213,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      {howToSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />}
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
     </main>
   );
