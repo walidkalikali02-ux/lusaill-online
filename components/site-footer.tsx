@@ -13,6 +13,7 @@ export function SiteFooter() {
           <Link href="/articles">كل الأدلة</Link>
           <Link href="/courses/learn-driving">كورس تعلم القيادة</Link>
           <Link href="/categories">التصنيفات</Link>
+          <Link href="/entities">الجهات والخدمات</Link>
           <Link href="/articles">أحدث الأدلة</Link>
         </div>
         <div>

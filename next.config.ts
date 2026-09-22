@@ -41,6 +41,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/categories/housing-utilities",
+        destination: "/categories/fawatir-alkahraba",
+        permanent: true,
+      },
+      {
         source: "/clusters/:path*",
         destination: "/categories/:path*",
         permanent: true,
