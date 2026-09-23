@@ -7,7 +7,7 @@ export const siteConfig = {
   market: "العالم العربي",
   searchEngine: "Google",
   description:
-    "موسوعة عربية شاملة للخدمات والإجراءات الحكومية: فواتير الكهرباء، بوابة مصر الرقمية، رخص القيادة، حماية المستهلك، المحافظ الإلكترونية، وعقود الإيجار — رسوم ومواعيد وخطوات حقيقية مع مصدر رسمي وتاريخ مراجعة لكل معلومة.",
+    "أدلة عربية عملية للاستعلام عن فواتير الكهرباء وخدمات شركات التوزيع، مع كورس لتعلم القيادة. خطوات واضحة وروابط للمصادر الرسمية وتاريخ مراجعة ظاهر.",
   publisher: "فريق لوسيل",
   geo: {
     region: "",
@@ -23,3 +23,10 @@ export const siteConfig = {
 export function absoluteUrl(path = "/") {
   return new URL(path, siteConfig.url).toString();
 }
+
+export const siteSocialImage = {
+  url: absoluteUrl("/opengraph-image"),
+  width: 1200,
+  height: 630,
+  alt: "لوسيل — أدلة عربية عملية موثقة",
+};

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { methodologyNotes, winningArticleTemplate } from "@/lib/content";
-import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "منهج التحرير والمراجعة",
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     description: "كيف يبني لوسيل الدقة في محتوى الخدمات والإجراءات الحكومية.",
     url: "/editorial-policy",
     type: "website",
+    images: [siteSocialImage],
   },
 };
 

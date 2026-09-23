@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { articles } from "@/lib/content";
-import { absoluteUrl } from "@/lib/site-config";
+import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "كل الأدلة",
-  description: "جميع الأدلة والمقالات العملية في موسوعة لوسيل.",
+  description: "تصفح أدلة لوسيل المنشورة حول خدمات شركات توزيع الكهرباء والاستعلام عن الفواتير، بخطوات عربية واضحة ومصادر رسمية وتاريخ مراجعة.",
   alternates: { canonical: "/articles" },
   openGraph: {
     title: "كل الأدلة — لوسيل",
-    description: "جميع الأدلة والمقالات العملية في موسوعة لوسيل.",
+    description: "تصفح أدلة لوسيل المنشورة حول خدمات شركات توزيع الكهرباء والاستعلام عن الفواتير، بخطوات عربية واضحة ومصادر رسمية وتاريخ مراجعة.",
     url: "/articles",
     type: "website",
+    images: [siteSocialImage],
   },
 };
 

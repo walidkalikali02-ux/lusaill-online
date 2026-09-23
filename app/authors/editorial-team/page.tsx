@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { articles } from "@/lib/content";
-import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "فريق تحرير لوسيل",
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description: "منهج فريق تحرير لوسيل في التحقق من المصادر وتحديث الأدلة العملية.",
     url: "/authors/editorial-team",
     type: "profile",
+    images: [siteSocialImage],
   },
 };
 

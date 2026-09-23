@@ -2,17 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { entities } from "@/lib/entities";
 import { articles } from "@/lib/content";
-import { absoluteUrl } from "@/lib/site-config";
+import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "الجهات والخدمات",
-  description: "دليل شامل للجهات والخدمات الحكومية في مصر: بوابة مصر الرقمية، مترش، حماية المستهلك، شركات الكهرباء، البريد المصري.",
+  description: "تعرّف إلى شركات توزيع الكهرباء المرتبطة بالأدلة المنشورة في لوسيل، مع روابط الجهات الرسمية وطرق الوصول إلى خدماتها.",
   alternates: { canonical: "/entities" },
   openGraph: {
     title: "الجهات والخدمات — لوسيل",
-    description: "دليل شامل للجهات والخدمات الحكومية في مصر.",
+    description: "الجهات الرسمية المرتبطة بالأدلة المنشورة في لوسيل.",
     url: "/entities",
     type: "website",
+    images: [siteSocialImage],
   },
 };
 

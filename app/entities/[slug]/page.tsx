@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { entities, getEntity } from "@/lib/entities";
 import { articles } from "@/lib/content";
-import { absoluteUrl } from "@/lib/site-config";
+import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export function generateStaticParams() {
   return entities.map((entity) => ({ slug: entity.slug }));
@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: entity.description,
       url: `/entities/${entity.slug}`,
       type: "website",
+      images: [siteSocialImage],
     },
   };
 }

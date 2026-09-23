@@ -16,12 +16,12 @@ export const metadata: Metadata = {
   publisher: siteConfig.name,
   authors: [{ name: siteConfig.publisher }],
   alternates: {
-    types: { "application/rss+xml": absoluteUrl("/feed.xml") },
+    canonical: "/",
   },
   category: "government",
   referrer: "origin-when-cross-origin",
   formatDetection: { email: false, address: false, telephone: false },
-  keywords: ["فاتورة الكهرباء", "بوابة مصر الرقمية", "تجديد رخصة القيادة", "حماية المستهلك", "المحافظ الإلكترونية", "عقد ايجار", "خدمات حكومية", "إجراءات إلكترونية", "السوق العربي", "موسوعة خدمات"],
+  keywords: ["فواتير الكهرباء", "شركات توزيع الكهرباء", "تعلم القيادة", "خدمات إلكترونية", "أدلة عربية"],
   other: {
     "geo.region": siteConfig.geo.region,
     "geo.placename": siteConfig.geo.placename,
@@ -73,6 +73,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang={siteConfig.language} dir="rtl">
       <head>
+        <link rel="alternate" type="application/rss+xml" href={absoluteUrl("/feed.xml")} />
         <meta name="theme-color" content="#145da0" />
         <meta name="color-scheme" content="light" />
       </head>

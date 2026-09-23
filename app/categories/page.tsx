@@ -2,17 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ClusterCard } from "@/components/cluster-card";
 import { clusters, overallProgress, clusterProgress } from "@/lib/content";
-import { absoluteUrl } from "@/lib/site-config";
+import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "التصنيفات",
-  description: "تصنيفات المقالات في لوسيل: فواتير الكهرباء، بوابة مصر الرقمية، رخص القيادة، حماية المستهلك، المحافظ الإلكترونية، عقود الإيجار، والسجل المدني — دليل شامل لكل إجراء حكومي.",
+  description: "تصفح التصنيفات التي تضم أدلة منشورة في لوسيل. ابدأ بخدمات شركات توزيع الكهرباء والاستعلام عن الفواتير، مع روابط رسمية وخطوات عملية.",
   alternates: { canonical: "/categories" },
   openGraph: {
     title: "التصنيفات — لوسيل",
-    description: "تصنيفات المقالات في لوسيل: دليل شامل لكل إجراء حكومي في العالم العربي.",
+    description: "التصنيفات التي تضم أدلة منشورة ومراجعة في لوسيل.",
     url: "/categories",
     type: "website",
+    images: [siteSocialImage],
   },
 };
 

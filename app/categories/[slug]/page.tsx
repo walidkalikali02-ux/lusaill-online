@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { clusters, getCluster, getClusterArticles, clusterProgress } from "@/lib/content";
-import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 
 const ARTICLES_PER_PAGE = 30;
+
+function pageNumber(value?: string) {
+  const parsed = Number(value ?? 1);
+  return Number.isSafeInteger(parsed) && parsed > 0 ? parsed : null;
+}
 
 export function generateStaticParams() {
   return clusters.map((cluster) => ({ slug: cluster.slug }));
@@ -18,9 +23,9 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   const publishedCount = getClusterArticles(cluster.slug).filter((article) => article.status === "published").length;
   const hasPublished = publishedCount > 0;
   const totalPages = Math.max(1, Math.ceil(publishedCount / ARTICLES_PER_PAGE));
-  const requestedPage = Number(pageParam) || 1;
-  const currentPage = Math.max(1, Math.min(requestedPage, totalPages));
-  const validPage = requestedPage >= 1 && requestedPage <= totalPages;
+  const requestedPage = pageNumber(pageParam);
+  const currentPage = Math.min(requestedPage ?? 1, totalPages);
+  const validPage = requestedPage !== null && requestedPage <= totalPages;
   const canonicalPath = currentPage > 1 ? `/categories/${cluster.slug}?page=${currentPage}` : `/categories/${cluster.slug}`;
   return {
     title: cluster.name,
@@ -32,6 +37,7 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
       description: cluster.description,
       url: canonicalPath,
       type: "website",
+      images: [siteSocialImage],
     },
   };
 }
@@ -45,7 +51,7 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
   const items = getClusterArticles(cluster.slug).filter((item) => item.status === "published");
   const progress = clusterProgress(cluster.slug);
   const totalPages = Math.ceil(items.length / ARTICLES_PER_PAGE);
-  const currentPage = Math.max(1, Math.min(Number(pageParam) || 1, totalPages));
+  const currentPage = Math.min(pageNumber(pageParam) ?? 1, Math.max(1, totalPages));
   const startIdx = (currentPage - 1) * ARTICLES_PER_PAGE;
   const paginatedItems = items.slice(startIdx, startIdx + ARTICLES_PER_PAGE);
   const publishedItems = paginatedItems;

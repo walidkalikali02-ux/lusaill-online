@@ -38,7 +38,8 @@ const pageFiles = walkDir("app", ".tsx").filter(
 );
 for (const file of pageFiles) {
   const content = readFileSync(file, "utf8");
-  if (!content.includes("alternates") && !content.includes("canonical")) {
+  const rootCanonical = file === "app/page.tsx" && /canonical:\s*["']\/["']/.test(readFileSync("app/layout.tsx", "utf8"));
+  if (!rootCanonical && !content.includes("alternates") && !content.includes("canonical")) {
     check(file, "Missing canonical URL (alternates.canonical)");
   }
 }

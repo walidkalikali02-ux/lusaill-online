@@ -60,7 +60,6 @@ export default function Home() {
 
   return (
     <main id="main-content">
-      <link rel="canonical" href={siteConfig.url} />
       {/* Hero */}
       <section className="hero">
         <div className="shell">

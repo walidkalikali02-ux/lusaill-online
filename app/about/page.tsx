@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteConfig, absoluteUrl } from "@/lib/site-config";
+import { siteConfig, absoluteUrl, siteSocialImage } from "@/lib/site-config";
 import { overallProgress } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     description: "لوسيل موسوعة عربية شاملة للخدمات والإجراءات الحكومية، مع مصدر رسمي وتاريخ مراجعة لكل معلومة.",
     url: "/about",
     type: "website",
+    images: [siteSocialImage],
   },
 };
 
