@@ -9,6 +9,9 @@
 - [التصنيفات النشطة](https://www.lusaill.online/categories)
 - [منهج التحرير والمراجعة](https://www.lusaill.online/editorial-policy)
 - [فريق التحرير](https://www.lusaill.online/authors/editorial-team)
+- [سياسة الخصوصية](https://www.lusaill.online/privacy)
+- [شروط الاستخدام](https://www.lusaill.online/terms)
+- [تواصل معنا](https://www.lusaill.online/contact)
 
 ## كورس تعلم قيادة السيارة
 
@@ -30,6 +33,15 @@
 - [فاتورة كهرباء جنوب الدلتا](https://www.lusaill.online/articles/south-delta-electricity)
 - [خدمات كهرباء شمال القاهرة](https://www.lusaill.online/articles/north-cairo-electricity)
 
+## أدلة الحياة الرقمية
+
+- [تنظيم Gmail بالفلاتر](https://www.lusaill.online/articles/gmail-filters)
+- [رموز Google الاحتياطية](https://www.lusaill.online/articles/google-backup-codes)
+- [تنزيل بيانات Google](https://www.lusaill.online/articles/google-data-download)
+- [إيقاف إزعاج Chrome](https://www.lusaill.online/articles/chrome-unwanted-notifications)
+- [مشاركة ملفات Drive بأمان](https://www.lusaill.online/articles/drive-safe-sharing)
+- [قسم الحياة الرقمية](https://www.lusaill.online/categories/digital-life)
+
 ## سياسة المحتوى
 
 - لا تظهر المسودات في قوائم الأدلة أو Sitemap أو RSS أو هذا الملف.
@@ -43,4 +55,4 @@
 - الناشر: فريق لوسيل
 - اللغة: العربية
 - النطاق الرسمي: https://www.lusaill.online
-- آخر تحديث لهذا الفهرس: 2026-09-20
+- آخر تحديث لهذا الفهرس: 2026-09-24

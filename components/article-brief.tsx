@@ -43,6 +43,8 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
                   <div className="step-content">
                     <h3>{step.title}</h3>
                     <p>{step.detail}</p>
+                    {step.sourceUrl && <p><a href={step.sourceUrl} target="_blank" rel="noopener noreferrer">مرجع هذه الخطوة</a></p>}
+                    {step.relatedLink && <p><Link href={step.relatedLink.href}>{step.relatedLink.label}</Link></p>}
                   </div>
                 </div>
               ))}

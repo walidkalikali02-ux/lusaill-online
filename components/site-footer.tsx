@@ -25,9 +25,9 @@ export function SiteFooter() {
         </div>
         <div>
           <h2>قانوني</h2>
-          <Link href="/about">الخصوصية</Link>
-          <Link href="/about">الشروط</Link>
-          <Link href="/about">تواصل معنا</Link>
+          <Link href="/privacy">الخصوصية</Link>
+          <Link href="/terms">الشروط</Link>
+          <Link href="/contact">تواصل معنا</Link>
         </div>
       </div>
       <div className="shell footer-bottom">

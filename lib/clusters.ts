@@ -1,6 +1,6 @@
 export type Cluster = {
   slug: string;
-  code: "A" | "B" | "C" | "D" | "E" | "F" | "G";
+  code: "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H";
   name: string;
   eyebrow: string;
   description: string;
@@ -13,6 +13,12 @@ export type Cluster = {
 };
 
 export const clusters: Cluster[] = [
+  {
+    slug: "digital-life", code: "H", name: "الحياة الرقمية", eyebrow: "أدلة عملية",
+    description: "أدلة لحماية الحسابات وتنظيم البريد وتنزيل الملفات ومشاركتها، مع تعليمات رسمية وحدود واضحة لكل خدمة.",
+    approach: "حل مشكلة محددة مع اختبار النتيجة وشرح الأخطاء الشائعة.",
+    color: "#1f6f5c", priority: 2, months: "مستمر", approxMonthlyVolume: 0, kdRange: [0, 0],
+  },
   {
     slug: "fawatir-alkahraba",
     code: "A",

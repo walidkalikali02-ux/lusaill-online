@@ -40,14 +40,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-function readingTime(article: { quickAnswer?: string; steps?: { title: string; detail: string }[] }): number {
-  const words = (article.quickAnswer?.length ?? 0) + (article.steps?.length ?? 0) * 40 + 200;
-  return Math.max(3, Math.round(words / 200));
+function readingTime(article: Parameters<typeof wordCount>[0]): number {
+  return Math.max(1, Math.ceil(wordCount(article) / 200));
 }
 
-function wordCount(article: { quickAnswer?: string; steps?: { title: string; detail: string }[]; commonMistakes?: string[]; faqs?: { question: string; answer: string }[] }) {
+function wordCount(article: { quickAnswer?: string; summaryTable?: { label: string; value: string }[]; steps?: { title: string; detail: string }[]; commonMistakes?: string[]; faqs?: { question: string; answer: string }[] }) {
   const text = [
     article.quickAnswer,
+    ...(article.summaryTable ?? []).flatMap((row) => [row.label, row.value]),
     ...(article.steps ?? []).flatMap((step) => [step.title, step.detail]),
     ...(article.commonMistakes ?? []),
     ...(article.faqs ?? []).flatMap((faq) => [faq.question, faq.answer]),
@@ -133,7 +133,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         name: article.title,
         description: article.quickAnswer,
         inLanguage: siteConfig.language,
-        totalTime: `PT${mins}M`,
         step: article.steps.map((step, index) => ({
           "@type": "HowToStep",
           position: index + 1,

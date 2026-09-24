@@ -2,7 +2,7 @@ export type ArticleGroup = "pillar" | "distributors" | "payments" | "core" | "bo
 
 export type ArticleSeed = {
   id: number;
-  clusterCode: "A" | "B" | "C" | "D" | "E" | "F" | "G";
+  clusterCode: "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H";
   group: ArticleGroup;
   title: string;
   keyword: string;
@@ -14,6 +14,12 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Editorial additions: zero volume means unmeasured, not a search-volume estimate.
+  { id: 108, clusterCode: "H", group: "bonus", title: "تنظيم رسائل Gmail بفلاتر تلقائية دون فقد الرسائل المهمة", keyword: "إنشاء فلاتر Gmail", volume: 0, kd: null, month: 1 },
+  { id: 109, clusterCode: "H", group: "bonus", title: "رموز Google الاحتياطية: إعدادها واستخدامها عند تعذر التحقق", keyword: "رموز Google الاحتياطية", volume: 0, kd: null, month: 1 },
+  { id: 110, clusterCode: "H", group: "bonus", title: "تنزيل نسخة من بيانات Google: متى تستخدم Takeout والتنزيل المباشر؟", keyword: "تنزيل بيانات Google Takeout", volume: 0, kd: null, month: 1 },
+  { id: 111, clusterCode: "H", group: "bonus", title: "إيقاف إشعارات Chrome والنوافذ المزعجة على الكمبيوتر", keyword: "إيقاف إشعارات Chrome المزعجة", volume: 0, kd: null, month: 1 },
+  { id: 112, clusterCode: "H", group: "bonus", title: "مشاركة ملف Google Drive بأمان وحل مشكلة طلب الوصول", keyword: "مشاركة ملف Google Drive بأمان", volume: 0, kd: null, month: 1 },
   // --- Cluster A: فواتير الكهرباء (الشهر ١–٢) ---
   { id: 1, clusterCode: "A", group: "pillar", title: "الدليل الشامل لفاتورة الكهرباء في مصر", keyword: "فاتورة الكهرباء", volume: 74000, kd: 18, month: 1 },
   { id: 2, clusterCode: "A", group: "pillar", title: "الاستعلام عن فاتورة الكهرباء — كل الطرق", keyword: "الاستعلام عن فاتورة الكهرباء", volume: 40500, kd: 29, month: 1 },

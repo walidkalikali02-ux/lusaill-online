@@ -5,7 +5,7 @@ import { publishedContent } from "./article-content";
 export type ArticleStatus = "not_started" | "drafting" | "needs_verification" | "published";
 
 export type FactRow = { label: string; value: string };
-export type Step = { title: string; detail: string; screenshotAlt?: string };
+export type Step = { title: string; detail: string; screenshotAlt?: string; sourceUrl?: string; relatedLink?: { href: string; label: string } };
 export type FaqItem = { question: string; answer: string };
 export type SourceRef = { label: string; url: string; checkedAt: string };
 
