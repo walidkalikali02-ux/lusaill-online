@@ -8,12 +8,11 @@ import { clusters, articles, overallProgress, clusterProgress } from "@/lib/cont
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 
 const quickTopics = [
-  { label: "خدمات حكومية", q: "خدمات حكومية" },
-  { label: "فواتير الكهرباء", q: "فاتورة كهرباء" },
-  { label: "رخص القيادة", q: "رخصة قيادة" },
-  { label: "حماية المستهلك", q: "حماية المستهلك" },
-  { label: "عقود الإيجار", q: "عقد إيجار" },
-  { label: "شهادة الميلاد", q: "شهادة ميلاد" },
+  { label: "الحياة الرقمية", href: "/categories/digital-life" },
+  { label: "فواتير الكهرباء", href: "/categories/fawatir-alkahraba" },
+  { label: "تعلم القيادة", href: "/courses/learn-driving" },
+  { label: "أمان حساب Google", href: "/articles/google-backup-codes" },
+  { label: "تنظيم Gmail", href: "/articles/gmail-filters" },
 ];
 
 export default function Home() {
@@ -112,7 +111,7 @@ export default function Home() {
             </div>
             <div className="quick-topics">
               {quickTopics.map((t) => (
-                <Link key={t.q} className="quick-chip" href={`/categories?q=${encodeURIComponent(t.q)}`}>
+                <Link key={t.href} className="quick-chip" href={t.href}>
                   {t.label}
                 </Link>
               ))}

@@ -56,7 +56,7 @@ export default function ClustersPage() {
         <div style={{ margin: "24px 0", padding: "16px 20px", background: "var(--paper-deep)", borderRadius: 8, border: "1px solid var(--line)" }}>
           <p style={{ margin: 0, fontSize: 15, color: "var(--muted)" }}>
             <strong>{progress.corePublished}</strong> من <strong>{progress.coreTotal}</strong> مقالاً منشوراً —
-            كل مقال يمر بتحقق ميداني من المصدر الرسمي قبل النشر.
+            كل مقال يمر بمراجعة المصادر الرسمية قبل النشر.
             <Link href="/editorial-policy" style={{ marginRight: 8, color: "var(--brand)" }}>راجع سياسة التحرير ←</Link>
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function ClustersPage() {
               <p style={{ margin: 0, fontSize: 14, color: "var(--muted)" }}>لكل نية بحث محددة صفحة مستقلة تجيب على السؤال بدقة مع روابط رسمية.</p>
             </div>
             <div style={{ padding: 16, background: "var(--paper)", borderRadius: 8, border: "1px solid var(--line)" }}>
-              <h3 style={{ fontSize: 16, marginBottom: 8 }}>تحقق ميداني مستمر</h3>
+              <h3 style={{ fontSize: 16, marginBottom: 8 }}>مراجعة المصادر باستمرار</h3>
               <p style={{ margin: 0, fontSize: 14, color: "var(--muted)" }}>نسجل تاريخ التحقق داخل كل دليل، ونراجعه عند تغير الخدمة أو ظهور مصدر رسمي أحدث.</p>
             </div>
           </div>
