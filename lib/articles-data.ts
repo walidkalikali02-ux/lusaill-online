@@ -20,6 +20,11 @@ export const articleSeeds: ArticleSeed[] = [
   { id: 110, clusterCode: "H", group: "bonus", title: "تنزيل نسخة من بيانات Google: متى تستخدم Takeout والتنزيل المباشر؟", keyword: "تنزيل بيانات Google Takeout", volume: 0, kd: null, month: 1 },
   { id: 111, clusterCode: "H", group: "bonus", title: "إيقاف إشعارات Chrome والنوافذ المزعجة على الكمبيوتر", keyword: "إيقاف إشعارات Chrome المزعجة", volume: 0, kd: null, month: 1 },
   { id: 112, clusterCode: "H", group: "bonus", title: "مشاركة ملف Google Drive بأمان وحل مشكلة طلب الوصول", keyword: "مشاركة ملف Google Drive بأمان", volume: 0, kd: null, month: 1 },
+  { id: 113, clusterCode: "H", group: "bonus", title: "استعادة ملف محذوف من Google Drive: المهملات وحدود الاسترداد", keyword: "استعادة ملفات Google Drive المحذوفة", volume: 0, kd: null, month: 1 },
+  { id: 114, clusterCode: "H", group: "bonus", title: "مراجعة الأجهزة المتصلة بحساب Google وتسجيل خروج جهاز غريب", keyword: "الأجهزة المتصلة بحساب Google", volume: 0, kd: null, month: 1 },
+  { id: 115, clusterCode: "H", group: "bonus", title: "رسالة مشبوهة في Gmail: كيف تتحقق وتبلغ عن التصيّد؟", keyword: "الإبلاغ عن التصيد في Gmail", volume: 0, kd: null, month: 1 },
+  { id: 116, clusterCode: "H", group: "bonus", title: "نسخ iPhone احتياطيًا: اختيار iCloud أو الكمبيوتر وفحص النتيجة", keyword: "النسخ الاحتياطي للايفون", volume: 0, kd: null, month: 1 },
+  { id: 117, clusterCode: "H", group: "bonus", title: "فقدان iPhone: العثور عليه وتفعيل نمط الفقدان دون الوقوع في الاحتيال", keyword: "العثور على ايفون مفقود", volume: 0, kd: null, month: 1 },
   // --- Cluster A: فواتير الكهرباء (الشهر ١–٢) ---
   { id: 1, clusterCode: "A", group: "pillar", title: "الدليل الشامل لفاتورة الكهرباء في مصر", keyword: "فاتورة الكهرباء", volume: 74000, kd: 18, month: 1 },
   { id: 2, clusterCode: "A", group: "pillar", title: "الاستعلام عن فاتورة الكهرباء — كل الطرق", keyword: "الاستعلام عن فاتورة الكهرباء", volume: 40500, kd: 29, month: 1 },
