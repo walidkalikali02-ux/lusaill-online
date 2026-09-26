@@ -47,6 +47,14 @@
 - [العثور على iPhone مفقود](https://www.lusaill.online/articles/lost-iphone-find-my)
 - [قسم الحياة الرقمية](https://www.lusaill.online/categories/digital-life)
 
+## أدلة السكن البديل في مصر
+
+- [التقديم على السكن البديل قبل 12 أكتوبر 2026](https://www.lusaill.online/articles/old-rent-housing-apply)
+- [شروط أهلية السكن البديل](https://www.lusaill.online/articles/old-rent-housing-eligibility)
+- [مستندات طلب السكن البديل](https://www.lusaill.online/articles/old-rent-housing-documents)
+- [التقديم من مكتب البريد](https://www.lusaill.online/articles/old-rent-housing-post-office)
+- [متابعة الطلب واستكمال المستندات والتظلم](https://www.lusaill.online/articles/old-rent-housing-track)
+
 ## سياسة المحتوى
 
 - لا تظهر المسودات في قوائم الأدلة أو Sitemap أو RSS أو هذا الملف.
@@ -60,4 +68,4 @@
 - الناشر: فريق لوسيل
 - اللغة: العربية
 - النطاق الرسمي: https://www.lusaill.online
-- آخر تحديث لهذا الفهرس: 2026-09-24
+- آخر تحديث لهذا الفهرس: 2026-09-26

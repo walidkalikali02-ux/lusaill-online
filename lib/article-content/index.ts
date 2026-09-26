@@ -3,9 +3,10 @@ import { alexandriaElectricity, northCairo, northDelta, southCairo } from "./ele
 import type { ArticleContentOverride } from "./types";
 import { digitalGuides } from "./digital-guides-2026-09-24";
 import { dailyGuides } from "./digital-guides-2026-09-25";
+import { housingGuides } from "./housing-guides-2026-09-26";
 
 // Add one entry per published/verified article. Each file documents its own sources and check date.
-const overrides: ArticleContentOverride[] = [shrktJnwbAldlta, southCairo, northDelta, alexandriaElectricity, northCairo, ...digitalGuides, ...dailyGuides];
+const overrides: ArticleContentOverride[] = [shrktJnwbAldlta, southCairo, northDelta, alexandriaElectricity, northCairo, ...digitalGuides, ...dailyGuides, ...housingGuides];
 
 export const publishedContent: Map<number, ArticleContentOverride> = new Map(
   overrides.map((override) => [override.id, override]),

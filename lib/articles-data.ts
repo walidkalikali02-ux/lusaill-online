@@ -15,6 +15,11 @@ export type ArticleSeed = {
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
   // Editorial additions: zero volume means unmeasured, not a search-volume estimate.
+  { id: 118, clusterCode: "B", group: "bonus", title: "التسجيل في السكن البديل للإيجار القديم قبل 12 أكتوبر 2026", keyword: "تقديم السكن البديل", volume: 0, kd: null, month: 1 },
+  { id: 119, clusterCode: "B", group: "bonus", title: "شروط السكن البديل: من يحق له التقديم وكيف تُفحص الأهلية؟", keyword: "شروط السكن البديل", volume: 0, kd: null, month: 1 },
+  { id: 120, clusterCode: "B", group: "bonus", title: "مستندات السكن البديل: إثبات الإيجار والحالة الاجتماعية والدخل", keyword: "مستندات السكن البديل", volume: 0, kd: null, month: 1 },
+  { id: 121, clusterCode: "B", group: "bonus", title: "التقديم على السكن البديل من مكتب البريد: ما الذي تحضره؟", keyword: "السكن البديل مكاتب البريد", volume: 0, kd: null, month: 1 },
+  { id: 122, clusterCode: "B", group: "bonus", title: "متابعة طلب السكن البديل واستكمال النواقص والتظلم من الرفض", keyword: "متابعة طلب السكن البديل", volume: 0, kd: null, month: 1 },
   { id: 108, clusterCode: "H", group: "bonus", title: "تنظيم رسائل Gmail بفلاتر تلقائية دون فقد الرسائل المهمة", keyword: "إنشاء فلاتر Gmail", volume: 0, kd: null, month: 1 },
   { id: 109, clusterCode: "H", group: "bonus", title: "رموز Google الاحتياطية: إعدادها واستخدامها عند تعذر التحقق", keyword: "رموز Google الاحتياطية", volume: 0, kd: null, month: 1 },
   { id: 110, clusterCode: "H", group: "bonus", title: "تنزيل نسخة من بيانات Google: متى تستخدم Takeout والتنزيل المباشر؟", keyword: "تنزيل بيانات Google Takeout", volume: 0, kd: null, month: 1 },
