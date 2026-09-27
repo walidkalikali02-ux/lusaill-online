@@ -55,6 +55,14 @@
 - [التقديم من مكتب البريد](https://www.lusaill.online/articles/old-rent-housing-post-office)
 - [متابعة الطلب واستكمال المستندات والتظلم](https://www.lusaill.online/articles/old-rent-housing-track)
 
+## أدلة بطاقة التموين في مصر
+
+- [تحديث بيانات المواطن للتموين](https://www.lusaill.online/articles/ration-data-update)
+- [ضم أفراد الأسرة](https://www.lusaill.online/articles/ration-family-join)
+- [بدل فاقد أو تالف](https://www.lusaill.online/articles/ration-card-replacement)
+- [نقل البطاقة إلى محافظة أخرى](https://www.lusaill.online/articles/ration-card-governorate-transfer)
+- [تفعيل البطاقة بعد استلامها](https://www.lusaill.online/articles/ration-card-activation)
+
 ## سياسة المحتوى
 
 - لا تظهر المسودات في قوائم الأدلة أو Sitemap أو RSS أو هذا الملف.
@@ -68,4 +76,4 @@
 - الناشر: فريق لوسيل
 - اللغة: العربية
 - النطاق الرسمي: https://www.lusaill.online
-- آخر تحديث لهذا الفهرس: 2026-09-26
+- آخر تحديث لهذا الفهرس: 2026-09-27

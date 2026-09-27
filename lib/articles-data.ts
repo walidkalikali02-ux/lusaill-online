@@ -15,6 +15,11 @@ export type ArticleSeed = {
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
   // Editorial additions: zero volume means unmeasured, not a search-volume estimate.
+  { id: 123, clusterCode: "B", group: "bonus", title: "تحديث بيانات بطاقة التموين عبر مصر الرقمية: متى تستخدم الاستمارة؟", keyword: "استمارة تحديث بيانات التموين", volume: 0, kd: null, month: 1 },
+  { id: 124, clusterCode: "B", group: "bonus", title: "ضم أفراد الأسرة على بطاقة التموين: شروط الخدمة وخطوات الطلب", keyword: "ضم أفراد أسرتي التموين", volume: 0, kd: null, month: 1 },
+  { id: 125, clusterCode: "B", group: "bonus", title: "بدل فاقد أو تالف بطاقة التموين: إيقاف المفقودة وطلب البديل", keyword: "بدل فاقد بطاقة التموين", volume: 0, kd: null, month: 1 },
+  { id: 126, clusterCode: "B", group: "bonus", title: "نقل بطاقة التموين من محافظة إلى أخرى عبر مصر الرقمية", keyword: "نقل بطاقة التموين محافظة", volume: 0, kd: null, month: 1 },
+  { id: 127, clusterCode: "B", group: "bonus", title: "تفعيل بطاقة التموين بعد استلامها: الشروط وطريقة المتابعة", keyword: "تفعيل بطاقة التموين", volume: 0, kd: null, month: 1 },
   { id: 118, clusterCode: "B", group: "bonus", title: "التسجيل في السكن البديل للإيجار القديم قبل 12 أكتوبر 2026", keyword: "تقديم السكن البديل", volume: 0, kd: null, month: 1 },
   { id: 119, clusterCode: "B", group: "bonus", title: "شروط السكن البديل: من يحق له التقديم وكيف تُفحص الأهلية؟", keyword: "شروط السكن البديل", volume: 0, kd: null, month: 1 },
   { id: 120, clusterCode: "B", group: "bonus", title: "مستندات السكن البديل: إثبات الإيجار والحالة الاجتماعية والدخل", keyword: "مستندات السكن البديل", volume: 0, kd: null, month: 1 },
