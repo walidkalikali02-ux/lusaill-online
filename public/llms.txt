@@ -63,6 +63,14 @@
 - [نقل البطاقة إلى محافظة أخرى](https://www.lusaill.online/articles/ration-card-governorate-transfer)
 - [تفعيل البطاقة بعد استلامها](https://www.lusaill.online/articles/ration-card-activation)
 
+## أدلة الأحوال المدنية في مصر
+
+- [بدل فاقد بطاقة الرقم القومي](https://www.lusaill.online/articles/national-id-lost-replacement)
+- [بدل تالف بطاقة الرقم القومي](https://www.lusaill.online/articles/national-id-damaged-replacement)
+- [شهادة ميلاد مميكنة](https://www.lusaill.online/articles/automated-birth-certificate)
+- [شهادة وفاة مميكنة مطبوعة مسبقًا](https://www.lusaill.online/articles/automated-death-certificate)
+- [قسيمة زواج مميكنة مطبوعة مسبقًا](https://www.lusaill.online/articles/automated-marriage-certificate)
+
 ## سياسة المحتوى
 
 - لا تظهر المسودات في قوائم الأدلة أو Sitemap أو RSS أو هذا الملف.
@@ -76,4 +84,4 @@
 - الناشر: فريق لوسيل
 - اللغة: العربية
 - النطاق الرسمي: https://www.lusaill.online
-- آخر تحديث لهذا الفهرس: 2026-09-27
+- آخر تحديث لهذا الفهرس: 2026-09-28

@@ -15,6 +15,10 @@ export type ArticleSeed = {
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
   // Editorial additions: zero volume means unmeasured, not a search-volume estimate.
+  { id: 128, clusterCode: "B", group: "bonus", title: "بدل فاقد بطاقة الرقم القومي عبر مصر الرقمية: الطلب والتوصيل", keyword: "بدل فاقد بطاقة الرقم القومي", volume: 0, kd: null, month: 1 },
+  { id: 129, clusterCode: "B", group: "bonus", title: "بدل تالف بطاقة الرقم القومي: متى تطلبه وكيف تراجع البيانات؟", keyword: "بدل تالف بطاقة الرقم القومي", volume: 0, kd: null, month: 1 },
+  { id: 130, clusterCode: "B", group: "bonus", title: "استخراج شهادة وفاة مميكنة مطبوعة مسبقًا أونلاين", keyword: "استخراج شهادة وفاة أونلاين", volume: 0, kd: null, month: 1 },
+  { id: 131, clusterCode: "B", group: "bonus", title: "استخراج قسيمة زواج مميكنة مطبوعة مسبقًا أونلاين", keyword: "استخراج قسيمة زواج أونلاين", volume: 0, kd: null, month: 1 },
   { id: 123, clusterCode: "B", group: "bonus", title: "تحديث بيانات بطاقة التموين عبر مصر الرقمية: متى تستخدم الاستمارة؟", keyword: "استمارة تحديث بيانات التموين", volume: 0, kd: null, month: 1 },
   { id: 124, clusterCode: "B", group: "bonus", title: "ضم أفراد الأسرة على بطاقة التموين: شروط الخدمة وخطوات الطلب", keyword: "ضم أفراد أسرتي التموين", volume: 0, kd: null, month: 1 },
   { id: 125, clusterCode: "B", group: "bonus", title: "بدل فاقد أو تالف بطاقة التموين: إيقاف المفقودة وطلب البديل", keyword: "بدل فاقد بطاقة التموين", volume: 0, kd: null, month: 1 },
