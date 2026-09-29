@@ -71,6 +71,14 @@
 - [شهادة وفاة مميكنة مطبوعة مسبقًا](https://www.lusaill.online/articles/automated-death-certificate)
 - [قسيمة زواج مميكنة مطبوعة مسبقًا](https://www.lusaill.online/articles/automated-marriage-certificate)
 
+## أدلة المرور في مصر
+
+- [تجديد رخصة المركبة أونلاين](https://www.lusaill.online/articles/vehicle-license-renewal-online)
+- [بدل فاقد رخصة المركبة](https://www.lusaill.online/articles/vehicle-license-lost-replacement)
+- [بدل تالف رخصة المركبة](https://www.lusaill.online/articles/vehicle-license-damaged-replacement)
+- [الاستعلام عن مخالفات رخصة المركبة](https://www.lusaill.online/articles/vehicle-violations-inquiry)
+- [بدل فاقد رخصة القيادة](https://www.lusaill.online/articles/driving-license-lost-replacement)
+
 ## سياسة المحتوى
 
 - لا تظهر المسودات في قوائم الأدلة أو Sitemap أو RSS أو هذا الملف.
@@ -84,4 +92,4 @@
 - الناشر: فريق لوسيل
 - اللغة: العربية
 - النطاق الرسمي: https://www.lusaill.online
-- آخر تحديث لهذا الفهرس: 2026-09-28
+- آخر تحديث لهذا الفهرس: 2026-09-29

@@ -120,6 +120,11 @@ export const articleSeeds: ArticleSeed[] = [
   { id: 72, clusterCode: "C", group: "core", title: "أماكن التجديد في القاهرة والجيزة", keyword: "أماكن تجديد رخصة القيادة", volume: 260, kd: 0, month: 3 },
   { id: 73, clusterCode: "C", group: "core", title: "رسوم رخصة الدراجة النارية ٢٠٢٦", keyword: "تكلفة تجديد رخصة قيادة دراجة نارية 2026", volume: 210, kd: 0, month: 3 },
   { id: 74, clusterCode: "C", group: "core", title: "تجديد الرخصة المنتهية", keyword: "تجديد رخصة القيادة المنتهية", volume: 260, kd: 0, month: 3 },
+  { id: 132, clusterCode: "C", group: "core", title: "تجديد رخصة المركبة أونلاين: دليل مصر الرقمية", keyword: "تجديد رخصة السيارة اونلاين", volume: 6600, kd: 0, month: 3 },
+  { id: 133, clusterCode: "C", group: "core", title: "بدل فاقد رخصة المركبة أونلاين: الخطوات والشروط", keyword: "بدل فاقد رخصة السيارة", volume: 1600, kd: 2, month: 3 },
+  { id: 134, clusterCode: "C", group: "core", title: "بدل تالف رخصة المركبة من مصر الرقمية", keyword: "بدل تالف رخصة السيارة", volume: 900, kd: 2, month: 3 },
+  { id: 135, clusterCode: "C", group: "core", title: "الاستعلام عن مخالفات رخصة المركبة خطوة بخطوة", keyword: "الاستعلام عن مخالفات السيارة", volume: 5400, kd: 4, month: 3 },
+  { id: 136, clusterCode: "C", group: "core", title: "بدل فاقد رخصة القيادة: الشروط وطريقة الطلب", keyword: "بدل فاقد رخصة القيادة", volume: 2400, kd: 3, month: 3 },
 
   // --- Cluster D: حماية المستهلك (الشهر ٤) ---
   { id: 75, clusterCode: "D", group: "core", title: "جهاز حماية المستهلك — الدليل الشامل", keyword: "جهاز حماية المستهلك", volume: 18100, kd: 29, month: 4 },
