@@ -6,7 +6,7 @@ import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "الجهات والخدمات",
-  description: "تعرّف إلى شركات توزيع الكهرباء المرتبطة بالأدلة المنشورة في لوسيل، مع روابط الجهات الرسمية وطرق الوصول إلى خدماتها.",
+  description: "روابط الجهات الرسمية المرتبطة بأدلة لوسيل للخدمات المصرية والمرور والكهرباء، مع توضيح الخدمات ذات الصلة.",
   alternates: { canonical: "/entities" },
   openGraph: {
     title: "الجهات والخدمات — لوسيل",

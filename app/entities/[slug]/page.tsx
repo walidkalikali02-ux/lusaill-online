@@ -60,7 +60,7 @@ export default async function EntityPage({ params }: { params: Promise<{ slug: s
     },
     areaServed: {
       "@type": "Country",
-      name: "مصر",
+      name: entity.country ?? "مصر",
     },
     serviceType: entity.category,
     ...(entity.phone ? { telephone: entity.phone } : {}),

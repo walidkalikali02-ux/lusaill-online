@@ -1,0 +1,47 @@
+// Verify built or deployed pages: node scripts/check-site.mjs http://127.0.0.1:3000
+import assert from "node:assert/strict";
+const skipExternal = process.argv.includes("--skip-external-images");
+const origin = process.argv[2] ?? "https://www.lusaill.online";
+const official = "https://www.lusaill.online";
+const local = (url) => new URL(new URL(url, official).pathname + new URL(url, official).search, origin);
+const get = async (url) => { const r = await fetch(url); assert.equal(r.status, 200, `${url}: HTTP ${r.status}`); return r.text(); };
+const sitemap = await get(`${origin}/sitemap.xml`);
+const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
+assert(urls.length > 0);
+assert.equal(new Set(urls).size, urls.length, "Duplicate sitemap URL");
+assert(!sitemap.includes("/entities/metrash"), "Uncovered Qatar page must stay outside sitemap");
+const titles = new Set(); const descriptions = new Set(); const links = new Set(); const images = new Set();
+let articles = 0; let diagrams = 0;
+for (const url of urls) {
+  assert(url.startsWith(`${official}/`), `Noncanonical sitemap: ${url}`);
+  const html = await get(local(url));
+  assert.equal([...html.matchAll(/<h1\b/g)].length, 1, `H1 count: ${url}`);
+  assert(!/<meta name="robots" content="[^"]*noindex/.test(html), `Noindex in sitemap: ${url}`);
+  assert.equal(new URL(html.match(/<link rel="canonical" href="([^"]+)"/)?.[1] ?? origin).href, new URL(url).href, `Canonical mismatch: ${url}`);
+  assert.equal(new URL(html.match(/<meta property="og:url" content="([^"]+)"/)?.[1] ?? origin).href, new URL(url).href, `OG URL mismatch: ${url}`);
+  const title = html.match(/<title>(.*?)<\/title>/)?.[1]; assert(title, `Missing title: ${url}`);
+  assert(!titles.has(title), `Duplicate title: ${title}`); titles.add(title);
+  const desc = html.match(/<meta name="description" content="([^"]+)"/)?.[1]; assert(desc, `Description missing: ${url}`);
+  assert(!descriptions.has(desc), `Duplicate description: ${url}`); descriptions.add(desc);
+  const schemas = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
+  assert(schemas.some((s) => s['@type'] === 'BreadcrumbList'), `Breadcrumb missing: ${url}`);
+  if (new URL(url).pathname.startsWith('/articles/')) {
+    articles++;
+    for (const type of ['Article', 'FAQPage']) assert(schemas.some((s) => s['@type'] === type), `${type} missing: ${url}`);
+    assert.equal([...html.matchAll(/id="quick-answer"/g)].length, 1, `Answer duplication: ${url}`);
+    assert(html.indexOf('id="quick-answer"') < html.indexOf('class="article-cover"'), `Answer follows cover: ${url}`);
+    diagrams += html.includes('class="guide-figure"') ? 1 : 0;
+  }
+  for (const m of html.matchAll(/<a\b[^>]*href="(\/[^"]*)"/g)) if (!m[1].includes('#')) links.add(m[1].replace(/&amp;/g,'&'));
+  for (const m of html.matchAll(/<img\b[^>]*>/g)) {
+    assert(/alt="[^"]+"/.test(m[0]), `Image without meaningful alt: ${url}`);
+    const src = m[0].match(/src="([^"]+)"/)?.[1]?.replace(/&amp;/g,'&'); if(src) images.add(src);
+  }
+}
+for (const path of links) await get(local(path));
+for (const src of images) { if (skipExternal && (src.includes("url=https%3A") || src.startsWith("https://upload.wikimedia.org/"))) continue; const r = await fetch(src.startsWith("https://upload.wikimedia.org/") ? src : local(src)); assert.equal(r.status, 200, `Image unavailable: ${src}`); assert(r.headers.get('content-type')?.startsWith('image/'), `Not an image: ${src}`); }
+const metrash = await get(`${origin}/entities/metrash`);
+assert(/<meta name="robots" content="[^"]*noindex/.test(metrash));
+assert(metrash.includes('"name":"قطر"'));
+assert(!metrash.includes('metrash2.gov.eg'));
+console.log(JSON.stringify({ pages: urls.length, articles, guidesWithInlineDiagrams: diagrams, internalLinks: links.size, images: images.size, result: "PASS" }));

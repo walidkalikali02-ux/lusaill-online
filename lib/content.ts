@@ -1,5 +1,7 @@
 import { articleSeeds, type ArticleSeed } from "./articles-data";
 import { clusters, getCluster } from "./clusters";
+import { guideIllustrations } from "./guide-illustrations";
+import { articleJourneys } from "./article-journeys";
 import { publishedContent } from "./article-content";
 
 export type ArticleStatus = "not_started" | "drafting" | "needs_verification" | "published";
@@ -42,7 +44,8 @@ export const articles: Article[] = articleSeeds.map((seed) => {
   if (usedSlugs.has(slug)) slug = `${slug}-${seed.id}`;
   usedSlugs.add(slug);
   const override = publishedContent.get(seed.id);
-  return { ...seed, slug, status: "not_started", ...override };
+  const article: Article = { ...seed, slug, status: "not_started", ...override };
+  return guideIllustrations[article.slug] ? { ...article, updatedAt: "2026-09-30T18:48:00+03:00" } : article;
 });
 
 export const coreHundred = articles.filter((article) => article.id <= 100);
@@ -68,9 +71,15 @@ export function getClusterArticles(clusterSlug: string) {
 }
 
 export function getRelatedArticles(article: Article, count = 4) {
-  return articles
-    .filter((candidate) => candidate.status === "published" && candidate.clusterCode === article.clusterCode && candidate.id !== article.id)
-    .sort((a, b) => Math.abs(a.id - article.id) - Math.abs(b.id - article.id))
+  const group = articleJourneys.find((slugs) => slugs.includes(article.slug)) ?? [];
+  const explicit = (article.steps ?? []).flatMap((step) => step.relatedLink?.href.startsWith("/articles/") ? [step.relatedLink.href.slice(10)] : []);
+  const preferred = [...new Set([...explicit, ...group])];
+  const published = articles.filter((candidate) => candidate.status === "published" && candidate.id !== article.id);
+  const relevant = preferred.flatMap((slug) => published.filter((candidate) => candidate.slug === slug));
+  // Avoid padding a task group with unrelated guides merely to fill four cards.
+  if (relevant.length) return relevant.slice(0, count);
+  return published.filter((candidate) => candidate.clusterCode === article.clusterCode)
+    .sort((a, b) => (b.updatedAt ?? "").localeCompare(a.updatedAt ?? ""))
     .slice(0, count);
 }
 

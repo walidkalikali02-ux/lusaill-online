@@ -1,6 +1,5 @@
-"use client";
-
-import { useState, useMemo } from "react";
+import type { Metadata } from "next";
+import { GuideSearch } from "@/components/guide-search";
 import Link from "next/link";
 import { ClusterCard } from "@/components/cluster-card";
 import { ArticleCard } from "@/components/article-card";
@@ -15,31 +14,21 @@ const quickTopics = [
   { label: "تنظيم Gmail", href: "/articles/gmail-filters" },
 ];
 
+export const metadata: Metadata = {
+  title: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية",
+  description: siteConfig.description,
+  alternates: { canonical: "/" },
+  openGraph: { title: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية", description: siteConfig.description, url: "/" },
+};
+
 export default function Home() {
   const progress = overallProgress();
-  const [query, setQuery] = useState("");
-
-  const published = useMemo(
-    () => articles.filter((a) => a.status === "published"),
-    [],
-  );
-  const activeClusters = useMemo(
-    () => clusters.filter((cluster) => clusterProgress(cluster.slug).published > 0),
-    [],
-  );
-
-  const suggestions = useMemo(() => {
-    if (!query.trim()) return [];
-    const q = query.trim();
-    return published
-      .filter(
-        (a) =>
-          a.title.includes(q) ||
-          a.keyword.includes(q) ||
-          a.quickAnswer?.includes(q),
-      )
-      .slice(0, 6);
-  }, [query, published]);
+  const published = articles.filter((a) => a.status === "published")
+    .sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "") || b.id - a.id);
+  const activeClusters = clusters.filter((cluster) => clusterProgress(cluster.slug).published > 0);
+  const featuredSlugs = ["old-rent-housing-apply", "ration-data-update", "vehicle-license-renewal-online", "south-delta-electricity", "google-backup-codes", "android-backup-check"];
+  const featured = featuredSlugs.flatMap((slug) => published.filter((a) => a.slug === slug));
+  const latest = published.filter((a) => !featuredSlugs.includes(a.slug)).slice(0, 12);
 
   const websiteSchema = {
     "@context": "https://schema.org",
@@ -63,12 +52,12 @@ export default function Home() {
       <section className="hero">
         <div className="shell">
           <span className="hero-eyebrow">موسوعة عربية للحياة اليومية</span>
-          <h1>الفكرة بوضوح. والخطوة<br /><em>بعملية.</em></h1>
+          <h1>حلّ مشكلتك اليومية<br /><em>بدليل موثّق.</em></h1>
           <p className="hero-sub">
             نشرح لك الخدمات والإجراءات والمشكلات اليومية بلغة عربية واضحة، مع خطوات عملية تساعدك على معرفة ما يجب فعله بعد ذلك.
           </p>
           <div className="hero-actions">
-            <Link className="button button-primary" href="/categories">استكشف الأدلة</Link>
+            <Link className="button button-primary" href="/articles">استكشف الأدلة</Link>
             <Link className="button button-secondary" href="/categories">تصفح التصنيفات</Link>
           </div>
         </div>
@@ -80,35 +69,7 @@ export default function Home() {
           <div className="search-box">
             <h2>ما الذي تريد أن تفهمه اليوم؟</h2>
             <p>ابحث عن خدمة، إجراء، مشكلة أو موضوع...</p>
-            <div className="search-bar">
-              <input
-                type="search"
-                placeholder="ابحث عن خدمة، إجراء، مشكلة أو موضوع..."
-                aria-label="بحث في الأدلة"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-              />
-              <span className="search-bar-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-              </span>
-              {query.trim() && (
-                <div className={`search-suggestions ${suggestions.length ? "active" : ""}`}>
-                  {suggestions.length ? (
-                    suggestions.map((a) => (
-                      <Link key={a.slug} className="search-suggestion" href={`/articles/${a.slug}`} onClick={() => setQuery("")}>
-                        <div className="search-suggestion-title">{a.title}</div>
-                        <div className="search-suggestion-meta">{a.quickAnswer ? a.quickAnswer.slice(0, 80) + "…" : a.keyword}</div>
-                      </Link>
-                    ))
-                  ) : (
-                    <div className="search-suggestion">
-                      <div className="search-suggestion-title">لم نجد نتيجة</div>
-                      <div className="search-suggestion-meta">جرّب استخدام كلمات أبسط أو تصفح التصنيفات</div>
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
+            <GuideSearch items={published.map(({ slug, title, keyword, quickAnswer }) => ({ slug, title, keyword, quickAnswer }))} />
             <div className="quick-topics">
               {quickTopics.map((t) => (
                 <Link key={t.href} className="quick-chip" href={t.href}>
@@ -116,6 +77,17 @@ export default function Home() {
                 </Link>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="shell">
+          <div className="section-header"><h2>ابدأ من الإجراء الذي تحتاجه</h2><p>أدلة الخدمات الحكومية التالية تخص مصر؛ أدلة الحسابات والهواتف توضح حدود الجهاز والخدمة داخل كل مقال.</p></div>
+          <div className="trust-grid">
+            <section className="trust-card"><h3>طلب السكن البديل</h3><p>افحص الاستحقاق والمستندات قبل التسجيل، ثم تابع الطلب من القناة الرسمية.</p><Link href="/articles/old-rent-housing-eligibility">شروط الاستحقاق</Link> · <Link href="/articles/old-rent-housing-documents">المستندات</Link> · <Link href="/articles/old-rent-housing-apply">التسجيل</Link> · <Link href="/articles/old-rent-housing-track">المتابعة</Link></section>
+            <section className="trust-card"><h3>بطاقة التموين</h3><p>حدد الخدمة المناسبة لحالتك بدل تقديم طلب مختلف عن حاجتك.</p><Link href="/articles/ration-data-update">تحديث البيانات</Link> · <Link href="/articles/ration-family-join">ضم الأسرة</Link> · <Link href="/articles/ration-card-replacement">بدل فاقد وتالف</Link> · <Link href="/articles/ration-card-activation">التفعيل</Link></section>
+            <section className="trust-card"><h3>خدمات السيارة والمرور</h3><p>تحقق من المخالفات وشروط الإجراء قبل بدء التجديد أو طلب بدل للرخصة.</p><Link href="/articles/vehicle-violations-inquiry">المخالفات</Link> · <Link href="/articles/vehicle-license-renewal-online">التجديد</Link> · <Link href="/articles/vehicle-license-lost-replacement">بدل فاقد</Link> · <Link href="/entities/egypt-traffic">البوابة الرسمية</Link></section>
           </div>
         </div>
       </section>
@@ -157,11 +129,11 @@ export default function Home() {
           <div className="section-header">
             <span className="section-eyebrow">ابدأ من هنا</span>
             <h2>أدلة تختصر عليك الطريق</h2>
-            <p>أدلة مختارة تساعدك في أكثر الأسئلة والمواقف شيوعًا.</p>
+            <p>ابدأ بالإجراء الذي تحتاجه، ثم انتقل إلى الدليل المرتبط بالخطوة التالية.</p>
           </div>
           {published.length > 0 ? (
             <div className="articles-grid">
-              {published.slice(0, 6).map((article) => (
+              {featured.map((article) => (
                 <ArticleCard article={article} key={article.slug} />
               ))}
             </div>
@@ -184,7 +156,7 @@ export default function Home() {
               <p>المقالات والأدلة الأخيرة التي أضفناها إلى الموسوعة.</p>
             </div>
             <div className="articles-grid">
-              {published.slice(0, 12).map((article) => (
+              {latest.map((article) => (
                 <ArticleCard article={article} key={article.slug} />
               ))}
             </div>

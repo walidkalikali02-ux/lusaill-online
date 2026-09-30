@@ -4,6 +4,8 @@ export type Entity = {
   nameEn: string;
   description: string;
   category: string;
+  country?: string;
+  updatedAt?: string;
   url: string;
   phone?: string;
   services: string[];
@@ -15,22 +17,35 @@ export const entities: Entity[] = [
     slug: "bawabat-misr-alraqmeya",
     name: "بوابة مصر الرقمية",
     nameEn: "Egypt Digital Portal",
-    description: "البوابة الرسمية للخدمات الحكومية في مصر. توفر أكثر من ١٠٠ خدمة إلكترونية تشمل التموين، الأحوال المدنية، الإسكان، والرقم القومي.",
+    description: "البوابة الرسمية للخدمات الحكومية في مصر. تتيح الوصول إلى خدمات حكومية إلكترونية؛ تختلف المتطلبات والإتاحة بحسب الخدمة والحساب.",
     category: "خدمات حكومية",
     url: "https://digital.gov.eg",
     phone: "16000",
-    services: ["التسجيل في بوابة مصر الرقمية", "خدمات التموين", "استعلام بطاقة التموين", "إضافة المواليد", "خدمات الأحوال المدنية", "تحديث البيانات"],
+    services: ["التسجيل في بوابة مصر الرقمية", "خدمات التموين", "استعلام بطاقة التموين", "خدمات الأحوال المدنية", "تحديث البيانات"],
     clusterCodes: ["B"],
   },
   {
     slug: "metrash",
-    name: "تطبيق مترش",
-    nameEn: "Metrash",
-    description: "تطبيق وزارة الداخلية المصري للخدمات الإلكترونية. يتيح تجديد رخص القيادة والسيارة، الاستعلام عن المخالفات، وحجز المواعيد إلكترونيًا.",
-    category: "خدمات المرور",
-    url: "https://metrash2.gov.eg",
-    phone: "16000",
-    services: ["تجديد رخصة القيادة", "تجديد رخصة السيارة", "الاستعلام عن المخالفات", "حجز مواعيد المرور", "الإبلاغ عن حوادث"],
+    country: "قطر",
+    updatedAt: "2026-09-30",
+    name: "مطراش — وزارة الداخلية القطرية",
+    nameEn: "Metrash Qatar",
+    description: "مطراش خدمة تابعة لوزارة الداخلية في قطر. ليست بوابة مرور مصر؛ راجع موقع الوزارة الرسمي لمعرفة الخدمات المتاحة وشروطها.",
+    category: "خدمات قطر",
+    url: "https://portal.moi.gov.qa/wps/portal/MOIInternet/services/inquiries/metrash",
+    services: ["الوصول إلى معلومات مطراش الرسمية"],
+    clusterCodes: [],
+  },
+  {
+    slug: "egypt-traffic",
+    country: "مصر",
+    updatedAt: "2026-09-30",
+    name: "بوابة مرور مصر",
+    nameEn: "Egypt Traffic Portal",
+    description: "بوابة المرور التابعة لوزارة الداخلية المصرية. تعرض خدمات تراخيص المركبات وبدل الفاقد والتالف وروابط الاستعلام عن المخالفات، وفق شروط كل خدمة.",
+    category: "خدمات المرور في مصر",
+    url: "https://traffic.moi.gov.eg/",
+    services: ["تجديد رخصة المركبة", "بدل فاقد وتالف رخصة المركبة", "بدل فاقد رخصة القيادة", "الاستعلام عن المخالفات"],
     clusterCodes: ["C"],
   },
   {
@@ -47,7 +62,7 @@ export const entities: Entity[] = [
     slug: "jihaz-hemayat-almustahlik",
     name: "جهاز حماية المستهلك",
     nameEn: "Consumer Protection Agency",
-    description: "الجهاز المصري لحماية المستهلك. يوفر أرقام التواصل، دليل تقديم الشكاوى، ومتابعة حالات الاضطهاد التجاري.",
+    description: "الجهاز المصري لحماية المستهلك. يوفر أرقام التواصل، دليل تقديم الشكاوى، ومتابعة الشكاوى التجارية.",
     category: "حماية المستهلك",
     url: "https://www.cpa.gov.eg",
     phone: "19588",

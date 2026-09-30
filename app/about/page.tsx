@@ -4,11 +4,11 @@ import { overallProgress } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "عن لوسيل",
-  description: "لوسيل موسوعة عربية شاملة للخدمات والإجراءات الحكومية، مع مصدر رسمي وتاريخ مراجعة لكل معلومة.",
+  description: "لوسيل أدلة عربية للخدمات المصرية والحياة الرقمية، مع مصدر رسمي وتاريخ مراجعة لكل معلومة.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "عن لوسيل",
-    description: "لوسيل موسوعة عربية شاملة للخدمات والإجراءات الحكومية، مع مصدر رسمي وتاريخ مراجعة لكل معلومة.",
+    description: "لوسيل أدلة عربية للخدمات المصرية والحياة الرقمية، مع مصدر رسمي وتاريخ مراجعة لكل معلومة.",
     url: "/about",
     type: "website",
     images: [siteSocialImage],
@@ -33,7 +33,7 @@ export default function AboutPage() {
     "@id": `${siteConfig.url}/about/#webpage`,
     url: absoluteUrl("/about"),
     name: "عن لوسيل",
-    description: "لوسيل موسوعة عربية شاملة للخدمات والإجراءات الحكومية، مع مصدر رسمي وتاريخ مراجعة لكل معلومة.",
+    description: "لوسيل أدلة عربية للخدمات المصرية والحياة الرقمية، مع مصدر رسمي وتاريخ مراجعة لكل معلومة.",
     inLanguage: siteConfig.language,
     isPartOf: { "@id": `${siteConfig.url}/#website` },
     about: { "@id": `${siteConfig.url}/#organization` },
@@ -43,7 +43,7 @@ export default function AboutPage() {
     <main id="main-content" className="text-page">
       <div className="shell text-shell">
         <span className="eyebrow">عن المشروع</span>
-        <h1>لوسيل — موسوعة عربية للخدمات والإجراءات الحكومية</h1>
+        <h1>لوسيل — أدلة عربية للخدمات والحياة الرقمية</h1>
         <p className="text-lead">
           {siteConfig.description} نكتب للقارئ العربي الذي يريد الوصول إلى الإجراء الصحيح بسرعة، ونربط كل معلومة متغيرة
           بمصدرها الرسمي مع تاريخ واضح لآخر تحقق.
@@ -56,7 +56,7 @@ export default function AboutPage() {
           </section>
           <section>
             <span>الحالة الآن</span>
-            <h2>{progress.corePublished} من {progress.coreTotal} مقالاً منشورًا</h2>
+            <h2>{progress.published} دليلًا منشورًا</h2>
             <p>لا يدخل أي دليل إلى هذه الحصيلة إلا بعد توثيق ادعاءاته بمصادر رسمية — راجع سياسة التحرير لتفاصيل المعيار.</p>
           </section>
         </div>

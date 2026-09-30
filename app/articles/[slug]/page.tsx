@@ -184,6 +184,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
 
+        <section id="quick-answer" className="brief-box">
+          <h2>الإجابة المباشرة</h2>
+          <p>{article.quickAnswer}</p>
+        </section>
+
         {article.coverImage ? (
           <Image
             className="article-cover"

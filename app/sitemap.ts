@@ -2,9 +2,10 @@ import type { MetadataRoute } from "next";
 import { articles, clusters, clusterProgress } from "@/lib/content";
 import { entities } from "@/lib/entities";
 import { absoluteUrl } from "@/lib/site-config";
+import { guideIllustrations } from "@/lib/guide-illustrations";
 import { courseMeta, drivingLessons } from "@/lib/driving-course";
 
-const siteUpdatedAt = new Date("2026-09-21");
+const siteUpdatedAt = new Date("2026-09-30");
 
 function latestPublishedUpdate(items: Array<{ updatedAt?: string }>): Date {
   const timestamps = items
@@ -23,9 +24,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/categories"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/entities"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/about"), lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.6 },
-    { url: absoluteUrl("/privacy"), lastModified: new Date("2026-09-24"), changeFrequency: "yearly", priority: 0.3 },
+    { url: absoluteUrl("/privacy"), lastModified: siteUpdatedAt, changeFrequency: "yearly", priority: 0.3 },
     { url: absoluteUrl("/terms"), lastModified: new Date("2026-09-24"), changeFrequency: "yearly", priority: 0.3 },
-    { url: absoluteUrl("/contact"), lastModified: new Date("2026-09-24"), changeFrequency: "yearly", priority: 0.5 },
+    { url: absoluteUrl("/contact"), lastModified: siteUpdatedAt, changeFrequency: "yearly", priority: 0.5 },
     { url: absoluteUrl("/editorial-policy"), lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/authors/editorial-team"), lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/courses/learn-driving"), lastModified: new Date(courseMeta.updatedAt), changeFrequency: "monthly", priority: 0.9, images: [drivingLessons[0].image.src] },
@@ -50,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((entity) => articles.some((article) => article.status === "published" && entity.clusterCodes.includes(article.clusterCode)))
     .map((entity) => ({
     url: absoluteUrl(`/entities/${entity.slug}`),
-    lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published" && entity.clusterCodes.includes(article.clusterCode))),
+    lastModified: entity.updatedAt ? new Date(entity.updatedAt) : latestPublishedUpdate(articles.filter((article) => article.status === "published" && entity.clusterCodes.includes(article.clusterCode))),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
@@ -62,7 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: article.updatedAt ? new Date(article.updatedAt) : undefined,
       changeFrequency: "monthly" as const,
       priority: 0.9,
-      images: article.coverImage ? [absoluteUrl(article.coverImage)] : undefined,
+      images: [article.coverImage, guideIllustrations[article.slug]?.src].filter((src): src is string => Boolean(src)).map(absoluteUrl),
     }));
 
   return [...staticRoutes, ...courseRoutes, ...clusterRoutes, ...entityRoutes, ...publishedArticleRoutes];

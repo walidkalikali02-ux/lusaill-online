@@ -472,3 +472,10 @@ img { max-width: 100%; height: auto; }
   .shell { width: min(100% - 24px, 480px); }
   .search-bar input { height: 50px; }
 }
+
+.feedback-form label { display: block; margin: 16px 0; font-weight: 600; }
+.feedback-form input, .feedback-form textarea, .feedback-form select { display: block; width: 100%; padding: 12px; margin-top: 6px; border: 1px solid #94a3b8; border-radius: 8px; background: #fff; color: #172b4d; font: inherit; }
+.feedback-form input[type=url] { direction: ltr; }
+.guide-figure { margin: 24px 0; }
+.guide-figure img { width: 100%; height: auto; border-radius: 12px; }
+.guide-figure figcaption { font-size: 14px; margin-top: 8px; color: #465469; }

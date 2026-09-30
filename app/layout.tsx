@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SiteAnalytics } from "@/components/site-analytics";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   title: {
-    default: "لوسيل | موسوعة عربية للخدمات والإجراءات الحكومية",
+    default: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية",
     template: "%s | لوسيل",
   },
   description: siteConfig.description,
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  category: "government",
+  category: "reference",
   referrer: "origin-when-cross-origin",
   formatDetection: { email: false, address: false, telephone: false },
   keywords: ["فواتير الكهرباء", "شركات توزيع الكهرباء", "تعلم القيادة", "خدمات إلكترونية", "أدلة عربية"],
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: siteConfig.locale,
     siteName: siteConfig.name,
-    title: "لوسيل | موسوعة عربية للخدمات والإجراءات الحكومية",
+    title: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية",
     description: siteConfig.description,
     url: "/",
   },
@@ -64,7 +65,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     logo: { "@type": "ImageObject", url: absoluteUrl("/icon.svg"), width: 64, height: 64 },
     description: siteConfig.description,
     areaServed: {
-      "@type": "Country",
+      "@type": "Place",
       name: siteConfig.market,
     },
     sameAs: [],
@@ -82,6 +83,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteHeader />
         {children}
         <SiteFooter />
+        <SiteAnalytics />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       </body>
     </html>

@@ -1,21 +1,14 @@
+import Image from "next/image";
+import { guideIllustrations } from "@/lib/guide-illustrations";
 import Link from "next/link";
 import type { Article } from "@/lib/content";
 import type { Cluster } from "@/lib/clusters";
 
 export function ArticleBrief({ article, cluster, related }: { article: Article; cluster: Cluster; related: Article[] }) {
+  const illustration = guideIllustrations[article.slug];
   return (
     <div className="article-layout">
       <div className="article-body">
-        {/* Quick Answer */}
-        <section id="quick-answer" className="brief-box">
-          <h2>الإجابة الفورية</h2>
-          {article.quickAnswer ? (
-            <p>{article.quickAnswer}</p>
-          ) : (
-            <p>لم تُكتب بعد.</p>
-          )}
-        </section>
-
         {/* Summary Table */}
         <section id="summary" className="brief-box">
           <h2>الملخص</h2>
@@ -43,6 +36,10 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
                   <div className="step-content">
                     <h3>{step.title}</h3>
                     <p>{step.detail}</p>
+                    {illustration?.step === i + 1 && <figure className="guide-figure">
+                      <Image src={illustration.src} alt={illustration.alt} width={1200} height={700} sizes="(max-width: 768px) 100vw, 760px" />
+                      <figcaption>{illustration.caption} <a href={illustration.sourceUrl} target="_blank" rel="noopener noreferrer">المصدر الرسمي</a></figcaption>
+                    </figure>}
                     {step.sourceUrl && <p><a href={step.sourceUrl} target="_blank" rel="noopener noreferrer">مرجع هذه الخطوة</a></p>}
                     {step.relatedLink && <p><Link href={step.relatedLink.href}>{step.relatedLink.label}</Link></p>}
                   </div>
@@ -91,7 +88,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
           <div className="related-section">
             <h2>قد يفيدك أيضًا</h2>
             <div className="related-grid">
-              {related.slice(0, 3).map((item) => (
+              {related.map((item) => (
                 <Link key={item.slug} className="article-card" href={`/articles/${item.slug}`}>
                   <h3>{item.title}</h3>
                   <p className="article-card-desc">{item.keyword}</p>
