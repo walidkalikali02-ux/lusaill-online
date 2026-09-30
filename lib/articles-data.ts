@@ -15,6 +15,16 @@ export type ArticleSeed = {
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
   // Editorial additions: zero volume means unmeasured, not a search-volume estimate.
+  { id: 137, clusterCode: "H", group: "bonus", title: "نسخ هاتف Android احتياطيًا والتحقق من اكتمال النسخة", keyword: "النسخ الاحتياطي لهاتف Android", volume: 0, kd: null, month: 1 },
+  { id: 138, clusterCode: "H", group: "bonus", title: "العثور على هاتف Android مفقود وتأمين بياناته", keyword: "العثور على هاتف Android مفقود", volume: 0, kd: null, month: 1 },
+  { id: 139, clusterCode: "H", group: "bonus", title: "مراجعة أذونات تطبيقات Android وإيقاف غير الضروري", keyword: "أذونات تطبيقات Android", volume: 0, kd: null, month: 1 },
+  { id: 140, clusterCode: "H", group: "bonus", title: "تفريغ مساحة الهاتف باستخدام Google Photos بأمان", keyword: "تفريغ مساحة الهاتف Google Photos", volume: 0, kd: null, month: 1 },
+  { id: 141, clusterCode: "H", group: "bonus", title: "نقل بياناتك إلى هاتف Android جديد والتحقق منها", keyword: "نقل البيانات إلى هاتف Android جديد", volume: 0, kd: null, month: 1 },
+  { id: 142, clusterCode: "H", group: "bonus", title: "استعادة جهات الاتصال على Android من الحساب أو النسخة", keyword: "استعادة جهات الاتصال Android", volume: 0, kd: null, month: 1 },
+  { id: 143, clusterCode: "H", group: "bonus", title: "استخدام لوحة الخصوصية في Android لمراجعة وصول التطبيقات", keyword: "لوحة الخصوصية Android", volume: 0, kd: null, month: 1 },
+  { id: 144, clusterCode: "H", group: "bonus", title: "نقل ملفات Android إلى الكمبيوتر بكابل USB وحل مشكلات الاتصال", keyword: "نقل ملفات Android إلى الكمبيوتر USB", volume: 0, kd: null, month: 1 },
+  { id: 145, clusterCode: "H", group: "bonus", title: "التحكم في إذن الموقع الدقيق والتقريبي لتطبيقات Android", keyword: "إذن الموقع Android", volume: 0, kd: null, month: 1 },
+  { id: 146, clusterCode: "H", group: "bonus", title: "إعادة ضبط هاتف Android بأمان بعد فحص النسخة والحساب", keyword: "إعادة ضبط المصنع Android", volume: 0, kd: null, month: 1 },
   { id: 128, clusterCode: "B", group: "bonus", title: "بدل فاقد بطاقة الرقم القومي عبر مصر الرقمية: الطلب والتوصيل", keyword: "بدل فاقد بطاقة الرقم القومي", volume: 0, kd: null, month: 1 },
   { id: 129, clusterCode: "B", group: "bonus", title: "بدل تالف بطاقة الرقم القومي: متى تطلبه وكيف تراجع البيانات؟", keyword: "بدل تالف بطاقة الرقم القومي", volume: 0, kd: null, month: 1 },
   { id: 130, clusterCode: "B", group: "bonus", title: "استخراج شهادة وفاة مميكنة مطبوعة مسبقًا أونلاين", keyword: "استخراج شهادة وفاة أونلاين", volume: 0, kd: null, month: 1 },

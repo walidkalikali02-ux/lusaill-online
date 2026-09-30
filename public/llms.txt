@@ -79,6 +79,19 @@
 - [الاستعلام عن مخالفات رخصة المركبة](https://www.lusaill.online/articles/vehicle-violations-inquiry)
 - [بدل فاقد رخصة القيادة](https://www.lusaill.online/articles/driving-license-lost-replacement)
 
+## أدلة Android اليومية
+
+- [النسخ الاحتياطي والتحقق](https://www.lusaill.online/articles/android-backup-check)
+- [العثور على هاتف مفقود](https://www.lusaill.online/articles/lost-android-find-hub)
+- [مراجعة أذونات التطبيقات](https://www.lusaill.online/articles/android-app-permissions)
+- [تفريغ مساحة Google Photos](https://www.lusaill.online/articles/google-photos-free-device-space)
+- [نقل البيانات لهاتف جديد](https://www.lusaill.online/articles/android-new-phone-transfer)
+- [استعادة جهات الاتصال](https://www.lusaill.online/articles/android-restore-contacts)
+- [لوحة الخصوصية](https://www.lusaill.online/articles/android-privacy-dashboard)
+- [نقل الملفات عبر USB](https://www.lusaill.online/articles/android-usb-file-transfer)
+- [أذونات الموقع](https://www.lusaill.online/articles/android-location-permissions)
+- [إعادة ضبط المصنع بأمان](https://www.lusaill.online/articles/android-factory-reset-safe)
+
 ## سياسة المحتوى
 
 - لا تظهر المسودات في قوائم الأدلة أو Sitemap أو RSS أو هذا الملف.
@@ -92,4 +105,4 @@
 - الناشر: فريق لوسيل
 - اللغة: العربية
 - النطاق الرسمي: https://www.lusaill.online
-- آخر تحديث لهذا الفهرس: 2026-09-29
+- آخر تحديث لهذا الفهرس: 2026-09-30
