@@ -14,6 +14,16 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  { id: 147, clusterCode: "H", group: "bonus", title: "تحديث Chrome على الكمبيوتر والتحقق من اكتماله وحل التعثر", keyword: "تحديث Chrome على الكمبيوتر والتحقق من اكتماله وحل التعثر", volume: 0, kd: null, month: 1 },
+  { id: 148, clusterCode: "H", group: "bonus", title: "مسح الكاش وبيانات موقع في Chrome دون حذف ما لا تحتاجه", keyword: "مسح الكاش وبيانات موقع في Chrome دون حذف ما لا تحتاجه", volume: 0, kd: null, month: 1 },
+  { id: 149, clusterCode: "H", group: "bonus", title: "إعادة ضبط إعدادات Chrome: ما يتغير وكيف تفحص النتيجة", keyword: "إعادة ضبط إعدادات Chrome", volume: 0, kd: null, month: 1 },
+  { id: 150, clusterCode: "H", group: "bonus", title: "تصدير واستيراد إشارات Chrome المرجعية والتحقق من نقلها", keyword: "تصدير واستيراد إشارات Chrome المرجعية والتحقق من نقلها", volume: 0, kd: null, month: 1 },
+  { id: 151, clusterCode: "H", group: "bonus", title: "تغيير محرك البحث في Chrome وفحص التغيير غير المرغوب", keyword: "تغيير محرك البحث في Chrome وفحص التغيير غير المرغوب", volume: 0, kd: null, month: 1 },
+  { id: 152, clusterCode: "H", group: "bonus", title: "حل أخطاء تنزيل الملفات في Chrome بحسب رسالة الخطأ", keyword: "حل أخطاء تنزيل الملفات في Chrome بحسب رسالة الخطأ", volume: 0, kd: null, month: 1 },
+  { id: 153, clusterCode: "H", group: "bonus", title: "Chrome لا يفتح أو يتعطل: تشخيص المتصفح والموقع والشبكة", keyword: "Chrome لا يفتح أو يتعطل", volume: 0, kd: null, month: 1 },
+  { id: 154, clusterCode: "H", group: "bonus", title: "ترجمة صفحات Chrome إلى العربية وحل غياب خيار الترجمة", keyword: "ترجمة صفحات Chrome إلى العربية وحل غياب خيار الترجمة", volume: 0, kd: null, month: 1 },
+  { id: 155, clusterCode: "H", group: "bonus", title: "إنشاء ملفات Chrome شخصية لفصل العمل والدراسة دون خلط الحسابات", keyword: "إنشاء ملفات Chrome شخصية لفصل العمل والدراسة دون خلط الحسابات", volume: 0, kd: null, month: 1 },
+  { id: 156, clusterCode: "H", group: "bonus", title: "وضع الضيف في Chrome: استخدام مؤقت وحدود الخصوصية", keyword: "وضع الضيف في Chrome", volume: 0, kd: null, month: 1 },
   // Editorial additions: zero volume means unmeasured, not a search-volume estimate.
   { id: 137, clusterCode: "H", group: "bonus", title: "نسخ هاتف Android احتياطيًا والتحقق من اكتمال النسخة", keyword: "النسخ الاحتياطي لهاتف Android", volume: 0, kd: null, month: 1 },
   { id: 138, clusterCode: "H", group: "bonus", title: "العثور على هاتف Android مفقود وتأمين بياناته", keyword: "العثور على هاتف Android مفقود", volume: 0, kd: null, month: 1 },

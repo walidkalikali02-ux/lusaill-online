@@ -45,7 +45,7 @@ export const articles: Article[] = articleSeeds.map((seed) => {
   usedSlugs.add(slug);
   const override = publishedContent.get(seed.id);
   const article: Article = { ...seed, slug, status: "not_started", ...override };
-  return guideIllustrations[article.slug] ? { ...article, updatedAt: "2026-09-30T18:48:00+03:00" } : article;
+  return guideIllustrations[article.slug] ? { ...article, updatedAt: guideIllustrations[article.slug].updatedAt ?? "2026-09-30T18:48:00+03:00" } : article;
 });
 
 export const coreHundred = articles.filter((article) => article.id <= 100);

@@ -1,5 +1,8 @@
 // Task-based groups, independent of seed order. Only published URLs are exposed.
 export const articleJourneys: string[][] = [
+  ["chrome-update-check", "chrome-crash-diagnosis", "chrome-cache-site-data", "chrome-reset-settings", "chrome-default-search"],
+  ["chrome-bookmarks-transfer", "chrome-separate-profiles", "chrome-guest-session"],
+  ["chrome-download-errors", "chrome-translate-arabic"],
   ["old-rent-housing-eligibility", "old-rent-housing-documents", "old-rent-housing-apply", "old-rent-housing-post-office", "old-rent-housing-track"],
   ["ration-data-update", "ration-family-join", "ration-card-replacement", "ration-card-governorate-transfer", "ration-card-activation"],
   ["national-id-lost-replacement", "national-id-damaged-replacement", "automated-birth-certificate", "automated-death-certificate", "automated-marriage-certificate"],

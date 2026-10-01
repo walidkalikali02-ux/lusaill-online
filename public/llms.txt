@@ -98,6 +98,19 @@
 - أدلة النسخ الاحتياطي وأذونات Android وإخلاء مساحة الصور ونقل الملفات وإعادة الضبط تضم رسومًا إرشادية أصلية؛ ليست لقطات واجهات رسمية.
 - خدمات مصر ومطراش القطري خدمتان منفصلتان؛ لا تُستخدم شروط إحداهما للأخرى.
 
+## أدلة Chrome على الكمبيوتر
+
+- [تحديث Chrome على الكمبيوتر والتحقق من اكتماله وحل التعثر](https://www.lusaill.online/articles/chrome-update-check)
+- [مسح الكاش وبيانات موقع في Chrome دون حذف ما لا تحتاجه](https://www.lusaill.online/articles/chrome-cache-site-data)
+- [إعادة ضبط إعدادات Chrome: ما يتغير وكيف تفحص النتيجة](https://www.lusaill.online/articles/chrome-reset-settings)
+- [تصدير واستيراد إشارات Chrome المرجعية والتحقق من نقلها](https://www.lusaill.online/articles/chrome-bookmarks-transfer)
+- [تغيير محرك البحث في Chrome وفحص التغيير غير المرغوب](https://www.lusaill.online/articles/chrome-default-search)
+- [حل أخطاء تنزيل الملفات في Chrome بحسب رسالة الخطأ](https://www.lusaill.online/articles/chrome-download-errors)
+- [Chrome لا يفتح أو يتعطل: تشخيص المتصفح والموقع والشبكة](https://www.lusaill.online/articles/chrome-crash-diagnosis)
+- [ترجمة صفحات Chrome إلى العربية وحل غياب خيار الترجمة](https://www.lusaill.online/articles/chrome-translate-arabic)
+- [إنشاء ملفات Chrome شخصية لفصل العمل والدراسة دون خلط الحسابات](https://www.lusaill.online/articles/chrome-separate-profiles)
+- [وضع الضيف في Chrome: استخدام مؤقت وحدود الخصوصية](https://www.lusaill.online/articles/chrome-guest-session)
+
 ## سياسة المحتوى
 
 - لا تظهر المسودات في قوائم الأدلة أو Sitemap أو RSS أو هذا الملف.
@@ -111,4 +124,4 @@
 - الناشر: فريق لوسيل
 - اللغة: العربية
 - النطاق الرسمي: https://www.lusaill.online
-- آخر تحديث لهذا الفهرس: 2026-09-30
+- آخر تحديث لهذا الفهرس: 2026-10-01
