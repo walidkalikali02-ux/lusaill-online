@@ -124,7 +124,7 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
 
         {publishedItems.length === 0 && (
           <div className="empty-state">
-            <h3>لا توجد أدلة بعد</h3>
+            <h2>لا توجد أدلة بعد</h2>
             <p>نعمل على تجهيز الأدلة في هذا التصنيف.</p>
             <Link className="button button-secondary" href="/categories" style={{ marginTop: 16 }}>تصفح التصنيفات الأخرى</Link>
           </div>

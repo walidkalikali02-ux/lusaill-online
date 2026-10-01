@@ -59,6 +59,7 @@ export default function ArticlesPage() {
           </div>
         </div>
 
+        <h2>اختر دليلًا يناسب مشكلتك</h2>
         {publishedArticles.length > 0 ? (
           <div className="articles-grid">
             {publishedArticles.map((article) => (

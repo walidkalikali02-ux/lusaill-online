@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { articles, getArticleBySlug, getRelatedArticles } from "@/lib/content";
 import { clusters } from "@/lib/clusters";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { searchTitles } from "@/lib/search-titles";
 import { ArticleBrief } from "@/components/article-brief";
 
 export function generateStaticParams() {
@@ -18,12 +19,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const article = getArticleBySlug(slug);
   if (!article || article.status !== "published") return { robots: { index: false, follow: false } };
   return {
-    title: article.title,
+    title: searchTitles[article.slug] ?? article.title,
     description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث مع خطوات وروابط رسمية.`,
     alternates: { canonical: `/articles/${article.slug}` },
     robots: { index: article.status === "published", follow: true },
     openGraph: {
-      title: article.title,
+      title: searchTitles[article.slug] ?? article.title,
       description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث.`,
       url: `/articles/${article.slug}`,
       type: "article",
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: "summary_large_image",
-      title: article.title,
+      title: searchTitles[article.slug] ?? article.title,
       description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث.`,
       images: article.coverImage ? [article.coverImage] : undefined,
     },

@@ -20,20 +20,20 @@ export async function generateMetadata({ params }: LessonPageProps): Promise<Met
   if (!lesson) return { robots: { index: false, follow: false } };
   const path = `${coursePath}/${lesson.slug}`;
   return {
-    title: lesson.title,
+    title: lesson.slug === "start-stop-car-smoothly" ? "الانطلاق والتوقف في السيارة الأوتوماتيك واليدوية" : lesson.title,
     description: lesson.metaDescription,
     alternates: { canonical: path },
     authors: [{ name: courseMeta.author, url: absoluteUrl("/authors/editorial-team") }],
     openGraph: {
       type: "article",
-      title: lesson.title,
+      title: lesson.slug === "start-stop-car-smoothly" ? "الانطلاق والتوقف في السيارة الأوتوماتيك واليدوية" : lesson.title,
       description: lesson.metaDescription,
       url: path,
       publishedTime: courseMeta.publishedAt,
       modifiedTime: courseMeta.updatedAt,
       images: [{ url: lesson.image.src, width: lesson.image.width, height: lesson.image.height, alt: lesson.image.alt }],
     },
-    twitter: { card: "summary_large_image", title: lesson.title, description: lesson.metaDescription, images: [lesson.image.src] },
+    twitter: { card: "summary_large_image", title: lesson.slug === "start-stop-car-smoothly" ? "الانطلاق والتوقف في السيارة الأوتوماتيك واليدوية" : lesson.title, description: lesson.metaDescription, images: [lesson.image.src] },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   };
 }

@@ -6,7 +6,7 @@ import { guidePaths } from "@/lib/guide-paths";
 import { guideIllustrations } from "@/lib/guide-illustrations";
 import { courseMeta, drivingLessons } from "@/lib/driving-course";
 
-const siteUpdatedAt = new Date("2026-09-30");
+const siteUpdatedAt = new Date("2026-10-01");
 
 function latestPublishedUpdate(items: Array<{ updatedAt?: string }>): Date {
   const timestamps = items

@@ -15,16 +15,24 @@ let articles = 0; let diagrams = 0;
 for (const url of urls) {
   assert(url.startsWith(`${official}/`), `Noncanonical sitemap: ${url}`);
   const html = await get(local(url));
+  assert(/<html[^>]*lang="ar"[^>]*dir="rtl"/.test(html), `Arabic direction missing: ${url}`);
+  const headingLevels = [...html.matchAll(/<h([1-6])(?:\s|>)/g)].map((match) => Number(match[1]));
+  for (let i = 1; i < headingLevels.length; i++) assert(headingLevels[i] <= headingLevels[i - 1] + 1, `Heading level skip: ${url}`);
   assert.equal([...html.matchAll(/<h1\b/g)].length, 1, `H1 count: ${url}`);
   assert(!/<meta name="robots" content="[^"]*noindex/.test(html), `Noindex in sitemap: ${url}`);
   assert.equal(new URL(html.match(/<link rel="canonical" href="([^"]+)"/)?.[1] ?? origin).href, new URL(url).href, `Canonical mismatch: ${url}`);
   assert.equal(new URL(html.match(/<meta property="og:url" content="([^"]+)"/)?.[1] ?? origin).href, new URL(url).href, `OG URL mismatch: ${url}`);
   const title = html.match(/<title>(.*?)<\/title>/)?.[1]; assert(title, `Missing title: ${url}`);
+  assert(title.replace(/&amp;/g, "&").length <= 60, `Long title: ${url}`);
   assert(!titles.has(title), `Duplicate title: ${title}`); titles.add(title);
   const desc = html.match(/<meta name="description" content="([^"]+)"/)?.[1]; assert(desc, `Description missing: ${url}`);
+  assert(desc.replace(/&amp;/g, "&").length <= 160, `Long description: ${url}`);
   assert(!descriptions.has(desc), `Duplicate description: ${url}`); descriptions.add(desc);
   const schemas = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   assert(schemas.some((s) => s['@type'] === 'BreadcrumbList'), `Breadcrumb missing: ${url}`);
+  if (new URL(url).pathname.startsWith('/courses/learn-driving/')) {
+    assert(schemas.some((schema) => Array.isArray(schema['@type']) && schema['@type'].includes('Article')), `Course Article missing: ${url}`);
+  }
   if (new URL(url).pathname.startsWith('/articles/')) {
     articles++;
     for (const type of ['Article', 'FAQPage']) assert(schemas.some((s) => s['@type'] === type), `${type} missing: ${url}`);
