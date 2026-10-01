@@ -3,9 +3,12 @@ import { guideIllustrations } from "@/lib/guide-illustrations";
 import Link from "next/link";
 import type { Article } from "@/lib/content";
 import type { Cluster } from "@/lib/clusters";
+import { GuideChecklist } from "./guide-checklist";
+import { getGuidePath } from "@/lib/guide-paths";
 
 export function ArticleBrief({ article, cluster, related }: { article: Article; cluster: Cluster; related: Article[] }) {
   const illustration = guideIllustrations[article.slug];
+  const path = getGuidePath(article.slug);
   return (
     <div className="article-layout">
       <div className="article-body">
@@ -50,6 +53,9 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
             <p>يحتاج كاتب فتح البوابة/التطبيق الرسمي فعليًا والتقاط لقطات شاشة حديثة لكل خطوة.</p>
           )}
         </section>
+
+        {article.steps?.length ? <GuideChecklist steps={article.steps.map((step) => step.title)} /> : null}
+        {path && <section className="brief-box"><h2>اختر الدليل المناسب لحالتك</h2><p>{path.description}</p><Link href={`/guides/${path.slug}`}>{path.title}</Link></section>}
 
         {/* Common Mistakes */}
         {article.commonMistakes?.length ? (
@@ -107,6 +113,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
             <li><a href="#quick-answer">الإجابة الفورية</a></li>
             <li><a href="#summary">الملخص</a></li>
             <li><a href="#steps">خطوات التنفيذ</a></li>
+            {article.steps?.length ? <li><a href="#checklist">قائمة متابعة التنفيذ</a></li> : null}
             {article.commonMistakes?.length ? <li><a href="#mistakes">الأخطاء الشائعة</a></li> : null}
             <li><a href="#sources">المصادر الرسمية</a></li>
             {article.faqs?.length ? <li><a href="#faq">الأسئلة الشائعة</a></li> : null}

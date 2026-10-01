@@ -12,4 +12,5 @@ export const articleJourneys: string[][] = [
   ["android-backup-check", "google-photos-free-device-space", "android-usb-file-transfer", "android-new-phone-transfer", "android-restore-contacts", "android-factory-reset-safe"],
   ["android-app-permissions", "android-privacy-dashboard", "android-location-permissions", "lost-android-find-hub"],
   ["iphone-backup-choice", "lost-iphone-find-my"],
+  ["south-delta-electricity", "north-delta-electricity", "north-cairo-electricity", "south-cairo-electricity", "alexandria-electricity"],
 ];

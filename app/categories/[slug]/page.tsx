@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { clusters, getCluster, getClusterArticles, clusterProgress } from "@/lib/content";
+import { guidePaths } from "@/lib/guide-paths";
 import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 
 const ARTICLES_PER_PAGE = 30;
@@ -50,6 +51,7 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
 
   const items = getClusterArticles(cluster.slug).filter((item) => item.status === "published");
   const progress = clusterProgress(cluster.slug);
+  const paths = guidePaths.filter((path) => path.articleSlugs.some((slug) => items.some((article) => article.slug === slug)));
   const totalPages = Math.ceil(items.length / ARTICLES_PER_PAGE);
   const currentPage = Math.min(pageNumber(pageParam) ?? 1, Math.max(1, totalPages));
   const startIdx = (currentPage - 1) * ARTICLES_PER_PAGE;
@@ -92,10 +94,12 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
           <h1>{cluster.name}</h1>
           <p>{cluster.description}</p>
           <div className="article-meta" style={{ marginTop: 16 }}>
-            <span className="article-meta-item">{progress.total} دليلًا</span>
+            <span className="article-meta-item">{progress.published} دليلًا متاحًا</span>
             <span className="article-meta-item">{progress.published} منشور</span>
           </div>
         </div>
+
+        {paths.length > 0 && currentPage === 1 && <section className="brief-box"><h2>اختر المهمة التي تحتاجها</h2><div className="trust-grid">{paths.map((path) => <section className="trust-card" key={path.slug}><h3><Link href={`/guides/${path.slug}`}>{path.title}</Link></h3><p>{path.description}</p></section>)}</div></section>}
 
         {/* Published guides as clean cards */}
         {publishedItems.length > 0 && (

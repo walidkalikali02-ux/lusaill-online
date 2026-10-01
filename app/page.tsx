@@ -4,10 +4,12 @@ import Link from "next/link";
 import { ClusterCard } from "@/components/cluster-card";
 import { ArticleCard } from "@/components/article-card";
 import { clusters, articles, overallProgress, clusterProgress } from "@/lib/content";
+import { guidePaths, getGuidePath } from "@/lib/guide-paths";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 
 const quickTopics = [
-  { label: "الحياة الرقمية", href: "/categories/digital-life" },
+  { label: "مسارات المهام", href: "/guides" },
+  { label: "خدمات مصر الرقمية", href: "/categories/bawabat-misr-alraqmeya" },
   { label: "فواتير الكهرباء", href: "/categories/fawatir-alkahraba" },
   { label: "تعلم القيادة", href: "/courses/learn-driving" },
   { label: "أمان حساب Google", href: "/articles/google-backup-codes" },
@@ -28,7 +30,16 @@ export default function Home() {
   const activeClusters = clusters.filter((cluster) => clusterProgress(cluster.slug).published > 0);
   const featuredSlugs = ["old-rent-housing-apply", "ration-data-update", "vehicle-license-renewal-online", "south-delta-electricity", "google-backup-codes", "android-backup-check"];
   const featured = featuredSlugs.flatMap((slug) => published.filter((a) => a.slug === slug));
-  const latest = published.filter((a) => !featuredSlugs.includes(a.slug)).slice(0, 12);
+  // Keep a single daily batch from displacing all other useful tasks.
+  const perPath = new Map<string, number>();
+  const latest = published.filter((article) => {
+    if (featuredSlugs.includes(article.slug)) return false;
+    const key = getGuidePath(article.slug)?.slug ?? article.clusterCode;
+    const count = perPath.get(key) ?? 0;
+    if (count >= 2) return false;
+    perPath.set(key, count + 1);
+    return true;
+  }).slice(0, 12);
 
   const websiteSchema = {
     "@context": "https://schema.org",
@@ -58,7 +69,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" href="/articles">استكشف الأدلة</Link>
-            <Link className="button button-secondary" href="/categories">تصفح التصنيفات</Link>
+            <Link className="button button-secondary" href="/guides">اختر مهمتك</Link>
           </div>
         </div>
       </section>
@@ -91,6 +102,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="section"><div className="shell">
+        <div className="section-header"><h2>حماية الحسابات والبيانات وحل مشكلات الجهاز</h2><p>مسارات تساعدك على اختيار الإجراء المناسب قبل تغيير إعداداتك أو حذف بياناتك.</p></div>
+        <div className="trust-grid">{guidePaths.filter((path) => ["account-security", "android-backup", "chrome-repair"].includes(path.slug)).map((path) => <section className="trust-card" key={path.slug}><h3><Link href={`/guides/${path.slug}`}>{path.title}</Link></h3><p>{path.description}</p></section>)}</div>
+        <Link className="button button-secondary" href="/guides">كل مسارات المهام</Link>
+      </div></section>
 
       {/* Learning paths */}
       <section className="section course-home-section">
@@ -153,7 +170,7 @@ export default function Home() {
             <div className="section-header">
               <span className="section-eyebrow">أحدث ما نشرناه</span>
               <h2>أحدث الأدلة</h2>
-              <p>المقالات والأدلة الأخيرة التي أضفناها إلى الموسوعة.</p>
+              <p>أدلة حديثة من مسارات مختلفة؛ اختر ما يطابق حاجتك.</p>
             </div>
             <div className="articles-grid">
               {latest.map((article) => (

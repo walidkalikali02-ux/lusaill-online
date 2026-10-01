@@ -6,6 +6,7 @@
 
 - [الرئيسية](https://www.lusaill.online/)
 - [كل الأدلة المنشورة](https://www.lusaill.online/articles)
+- [مسارات المهام](https://www.lusaill.online/guides)
 - [التصنيفات النشطة](https://www.lusaill.online/categories)
 - [منهج التحرير والمراجعة](https://www.lusaill.online/editorial-policy)
 - [فريق التحرير](https://www.lusaill.online/authors/editorial-team)

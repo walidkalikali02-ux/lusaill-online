@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { articles, clusters, clusterProgress } from "@/lib/content";
 import { entities } from "@/lib/entities";
 import { absoluteUrl } from "@/lib/site-config";
+import { guidePaths } from "@/lib/guide-paths";
 import { guideIllustrations } from "@/lib/guide-illustrations";
 import { courseMeta, drivingLessons } from "@/lib/driving-course";
 
@@ -27,8 +28,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/privacy"), lastModified: siteUpdatedAt, changeFrequency: "yearly", priority: 0.3 },
     { url: absoluteUrl("/terms"), lastModified: new Date("2026-09-24"), changeFrequency: "yearly", priority: 0.3 },
     { url: absoluteUrl("/contact"), lastModified: siteUpdatedAt, changeFrequency: "yearly", priority: 0.5 },
-    { url: absoluteUrl("/editorial-policy"), lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.5 },
-    { url: absoluteUrl("/authors/editorial-team"), lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.5 },
+    { url: absoluteUrl("/editorial-policy"), lastModified: new Date("2026-10-01"), changeFrequency: "monthly", priority: 0.5 },
+    { url: absoluteUrl("/authors/editorial-team"), lastModified: new Date("2026-10-01"), changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/courses/learn-driving"), lastModified: new Date(courseMeta.updatedAt), changeFrequency: "monthly", priority: 0.9, images: [drivingLessons[0].image.src] },
   ];
 
@@ -66,5 +67,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       images: [article.coverImage, guideIllustrations[article.slug]?.src].filter((src): src is string => Boolean(src)).map(absoluteUrl),
     }));
 
-  return [...staticRoutes, ...courseRoutes, ...clusterRoutes, ...entityRoutes, ...publishedArticleRoutes];
+  const guideRoutes: MetadataRoute.Sitemap = [
+    { url: absoluteUrl("/guides"), lastModified: new Date("2026-10-01"), changeFrequency: "monthly", priority: 0.8 },
+    ...guidePaths.map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: new Date("2026-10-01"), changeFrequency: "monthly" as const, priority: 0.8 })),
+  ];
+  return [...guideRoutes, ...staticRoutes, ...courseRoutes, ...clusterRoutes, ...entityRoutes, ...publishedArticleRoutes];
 }

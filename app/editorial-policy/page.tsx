@@ -46,6 +46,7 @@ export default function EditorialPolicyPage() {
           واحد لكل مقال قبل نشره.
         </p>
 
+        <section className="brief-box"><h2>حدود المراجعة وأدوات الإعداد</h2><p>نستخدم أدوات ذكاء اصطناعي في المساعدة على البحث والصياغة والتدقيق التقني. التوثيق بالمصدر الرسمي لا يعني تجربة الإجراء بحساب فعلي، ولا يعني اعتماد الجهة الرسمية للمقال. نوضح حدود البلد والخدمة، ولا نختلق لقطات واجهات أو خبرات شخصية.</p><p>درجة الجودة من 100 تقدير داخلي وليست درجة بحث أو ضمان ترتيب. تقييم نجاح المحتوى يعتمد على حل المشكلة وعلى بيانات ظهور ونقرات فعلية عندما تتاح.</p></section>
         <div className="method-grid">
           {methodologyNotes.map((note) => (
             <div className="method-card" key={note.title}>
@@ -56,7 +57,7 @@ export default function EditorialPolicyPage() {
         </div>
 
         <div style={{ marginTop: 50 }}>
-          <h2 style={{ fontSize: 26, marginBottom: 20 }}>قالب المقال الفائز</h2>
+          <h2 style={{ fontSize: 26, marginBottom: 20 }}>عناصر الدليل العملي</h2>
           <table className="article-table">
             <thead><tr><th>#</th><th>العنصر</th><th>التفاصيل</th></tr></thead>
             <tbody>

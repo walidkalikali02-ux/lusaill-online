@@ -21,6 +21,7 @@ export function SiteHeader() {
           <Link href="/">الرئيسية</Link>
           <Link href="/articles">الأدلة</Link>
           <Link href="/courses/learn-driving">كورس القيادة</Link>
+          <Link href="/guides">مسارات المهام</Link>
           <Link href="/categories">التصنيفات</Link>
           <Link href="/entities">الجهات والخدمات</Link>
           <Link href="/editorial-policy">منهج التحرير</Link>
@@ -47,6 +48,7 @@ export function SiteHeader() {
             <Link href="/" onClick={() => setMenuOpen(false)}>الرئيسية</Link>
             <Link href="/articles" onClick={() => setMenuOpen(false)}>الأدلة</Link>
             <Link href="/courses/learn-driving" onClick={() => setMenuOpen(false)}>كورس القيادة</Link>
+            <Link href="/guides" onClick={() => setMenuOpen(false)}>مسارات المهام</Link>
             <Link href="/categories" onClick={() => setMenuOpen(false)}>التصنيفات</Link>
             <Link href="/entities" onClick={() => setMenuOpen(false)}>الجهات والخدمات</Link>
             <Link href="/editorial-policy" onClick={() => setMenuOpen(false)}>منهج التحرير</Link>
