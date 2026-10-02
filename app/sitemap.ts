@@ -6,7 +6,7 @@ import { guidePaths } from "@/lib/guide-paths";
 import { guideIllustrations } from "@/lib/guide-illustrations";
 import { courseMeta, drivingLessons } from "@/lib/driving-course";
 
-const siteUpdatedAt = new Date("2026-10-01");
+const siteUpdatedAt = new Date("2026-10-02");
 
 function latestPublishedUpdate(items: Array<{ updatedAt?: string }>): Date {
   const timestamps = items
@@ -68,8 +68,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
   const guideRoutes: MetadataRoute.Sitemap = [
-    { url: absoluteUrl("/guides"), lastModified: new Date("2026-10-01"), changeFrequency: "monthly", priority: 0.8 },
-    ...guidePaths.map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: new Date("2026-10-01"), changeFrequency: "monthly" as const, priority: 0.8 })),
+    { url: absoluteUrl("/guides"), lastModified: new Date("2026-10-02"), changeFrequency: "monthly", priority: 0.8 },
+    ...guidePaths.map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: new Date("2026-10-02"), changeFrequency: "monthly" as const, priority: 0.8 })),
   ];
   return [...guideRoutes, ...staticRoutes, ...courseRoutes, ...clusterRoutes, ...entityRoutes, ...publishedArticleRoutes];
 }

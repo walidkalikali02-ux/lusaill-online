@@ -103,6 +103,8 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
 
         {/* Published guides as clean cards */}
         {publishedItems.length > 0 && (
+          <section aria-labelledby="category-articles-title">
+            <h2 id="category-articles-title">الأدلة المنشورة في هذا التصنيف</h2>
           <div className="articles-grid" style={{ marginBottom: 40 }}>
             {publishedItems.map((item) => (
               <Link key={item.slug} className="article-card" href={`/articles/${item.slug}`}>
@@ -120,6 +122,7 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
               </Link>
             ))}
           </div>
+          </section>
         )}
 
         {publishedItems.length === 0 && (

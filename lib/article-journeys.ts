@@ -1,5 +1,9 @@
 // Task-based groups, independent of seed order. Only published URLs are exposed.
 export const articleJourneys: string[][] = [
+  ["windows-cleanup", "windows-zip", "windows-nearby-share"],
+  ["windows-clipboard", "windows-screen-capture", "windows-default-apps"],
+  ["windows-snap", "windows-desktops", "windows-startup-apps", "windows-text-size"],
+
   ["chrome-update-check", "chrome-crash-diagnosis", "chrome-cache-site-data", "chrome-reset-settings", "chrome-default-search"],
   ["chrome-bookmarks-transfer", "chrome-separate-profiles", "chrome-guest-session"],
   ["chrome-download-errors", "chrome-translate-arabic"],

@@ -126,3 +126,16 @@
 - اللغة: العربية
 - النطاق الرسمي: https://www.lusaill.online
 - آخر تحديث لهذا الفهرس: 2026-10-01
+
+## أدلة Windows 11 — مراجعة 2 أكتوبر 2026
+
+- [سجل الحافظة في Windows 11: النسخ واللصق والمحو](https://www.lusaill.online/articles/windows-clipboard)
+- [لقطة شاشة في Windows 11: القص والحفظ والمراجعة](https://www.lusaill.online/articles/windows-screen-capture)
+- [تحرير مساحة Windows 11 دون حذف ملفات مهمة](https://www.lusaill.online/articles/windows-cleanup)
+- [نقل ملفات بين كمبيوترين بالمشاركة القريبة](https://www.lusaill.online/articles/windows-nearby-share)
+- [ضغط وفك ملفات ZIP في Windows 11 والتحقق منها](https://www.lusaill.online/articles/windows-zip)
+- [تقسيم شاشة Windows 11 وتنظيم النوافذ بـSnap](https://www.lusaill.online/articles/windows-snap)
+- [أسطح مكتب Windows 11: تنظيم مهام العمل والدراسة](https://www.lusaill.online/articles/windows-desktops)
+- [إدارة تطبيقات بدء التشغيل في Windows 11](https://www.lusaill.online/articles/windows-startup-apps)
+- [تكبير النص في Windows 11 واختيار الإعداد المناسب](https://www.lusaill.online/articles/windows-text-size)
+- [تغيير تطبيق فتح الملفات الافتراضي في Windows 11](https://www.lusaill.online/articles/windows-default-apps)

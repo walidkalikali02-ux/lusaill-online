@@ -14,6 +14,18 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Windows topics: demand unmeasured; zero is not a measured traffic estimate.
+  {"id": 157, "clusterCode": "H", "group": "bonus", "title": "سجل الحافظة في Windows 11: النسخ واللصق والمحو", "keyword": "سجل الحافظة في Windows 11", "volume": 0, "kd": null, "month": 1},
+  {"id": 158, "clusterCode": "H", "group": "bonus", "title": "لقطة شاشة في Windows 11: القص والحفظ والمراجعة", "keyword": "لقطة شاشة في Windows 11", "volume": 0, "kd": null, "month": 1},
+  {"id": 159, "clusterCode": "H", "group": "bonus", "title": "تحرير مساحة Windows 11 دون حذف ملفات مهمة", "keyword": "تحرير مساحة Windows 11 دون حذف ملفات مهمة", "volume": 0, "kd": null, "month": 1},
+  {"id": 160, "clusterCode": "H", "group": "bonus", "title": "نقل ملفات بين كمبيوترين بالمشاركة القريبة", "keyword": "نقل ملفات بين كمبيوترين بالمشاركة القريبة", "volume": 0, "kd": null, "month": 1},
+  {"id": 161, "clusterCode": "H", "group": "bonus", "title": "ضغط وفك ملفات ZIP في Windows 11 والتحقق منها", "keyword": "ضغط وفك ملفات ZIP في Windows 11 والتحقق منها", "volume": 0, "kd": null, "month": 1},
+  {"id": 162, "clusterCode": "H", "group": "bonus", "title": "تقسيم شاشة Windows 11 وتنظيم النوافذ بـSnap", "keyword": "تقسيم شاشة Windows 11 وتنظيم النوافذ بـSnap", "volume": 0, "kd": null, "month": 1},
+  {"id": 163, "clusterCode": "H", "group": "bonus", "title": "أسطح مكتب Windows 11: تنظيم مهام العمل والدراسة", "keyword": "أسطح مكتب Windows 11", "volume": 0, "kd": null, "month": 1},
+  {"id": 164, "clusterCode": "H", "group": "bonus", "title": "إدارة تطبيقات بدء التشغيل في Windows 11", "keyword": "إدارة تطبيقات بدء التشغيل في Windows 11", "volume": 0, "kd": null, "month": 1},
+  {"id": 165, "clusterCode": "H", "group": "bonus", "title": "تكبير النص في Windows 11 واختيار الإعداد المناسب", "keyword": "تكبير النص في Windows 11 واختيار الإعداد المناسب", "volume": 0, "kd": null, "month": 1},
+  {"id": 166, "clusterCode": "H", "group": "bonus", "title": "تغيير تطبيق فتح الملفات الافتراضي في Windows 11", "keyword": "تغيير تطبيق فتح الملفات الافتراضي في Windows 11", "volume": 0, "kd": null, "month": 1},
+
   { id: 147, clusterCode: "H", group: "bonus", title: "تحديث Chrome على الكمبيوتر والتحقق من اكتماله وحل التعثر", keyword: "تحديث Chrome على الكمبيوتر والتحقق من اكتماله وحل التعثر", volume: 0, kd: null, month: 1 },
   { id: 148, clusterCode: "H", group: "bonus", title: "مسح الكاش وبيانات موقع في Chrome دون حذف ما لا تحتاجه", keyword: "مسح الكاش وبيانات موقع في Chrome دون حذف ما لا تحتاجه", volume: 0, kd: null, month: 1 },
   { id: 149, clusterCode: "H", group: "bonus", title: "إعادة ضبط إعدادات Chrome: ما يتغير وكيف تفحص النتيجة", keyword: "إعادة ضبط إعدادات Chrome", volume: 0, kd: null, month: 1 },
