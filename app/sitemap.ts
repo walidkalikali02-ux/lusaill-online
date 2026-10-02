@@ -6,6 +6,8 @@ import { guidePaths } from "@/lib/guide-paths";
 import { guideIllustrations } from "@/lib/guide-illustrations";
 import { courseMeta, drivingLessons } from "@/lib/driving-course";
 
+import { categoryIntroductions } from "@/lib/category-introductions";
+
 const siteUpdatedAt = new Date("2026-10-02");
 
 function latestPublishedUpdate(items: Array<{ updatedAt?: string }>): Date {
@@ -43,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const clusterRoutes: MetadataRoute.Sitemap = clusters.filter((cluster) => clusterProgress(cluster.slug).published > 0).map((cluster) => ({
     url: absoluteUrl(`/categories/${cluster.slug}`),
-    lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published" && article.clusterCode === cluster.code)),
+    lastModified: new Date(Math.max(latestPublishedUpdate(articles.filter((article) => article.status === "published" && article.clusterCode === cluster.code)).getTime(), new Date(categoryIntroductions[cluster.slug]?.updatedAt ?? 0).getTime())),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
