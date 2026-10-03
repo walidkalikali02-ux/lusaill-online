@@ -14,6 +14,28 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Google editor tasks: search demand unmeasured, not a volume estimate.
+  {"id": 167, "clusterCode": "H", "group": "bonus", "title": "فرز وتصفية Google Sheets دون خلط بيانات الصفوف", "keyword": "فرز وتصفية Google Sheets دون خلط بيانات الصفوف", "volume": 0, "kd": null, "month": 1},
+  {"id": 168, "clusterCode": "H", "group": "bonus", "title": "تنظيف بيانات Google Sheets بعد الاستيراد", "keyword": "تنظيف بيانات Google Sheets بعد الاستيراد", "volume": 0, "kd": null, "month": 1},
+  {"id": 169, "clusterCode": "H", "group": "bonus", "title": "تثبيت صف العناوين والأعمدة في Google Sheets", "keyword": "تثبيت صف العناوين والأعمدة في Google Sheets", "volume": 0, "kd": null, "month": 1},
+  {"id": 170, "clusterCode": "H", "group": "bonus", "title": "إنشاء قائمة منسدلة في Google Sheets وضبط قيمها", "keyword": "إنشاء قائمة منسدلة في Google Sheets وضبط قيمها", "volume": 0, "kd": null, "month": 1},
+  {"id": 171, "clusterCode": "H", "group": "bonus", "title": "مربعات اختيار Google Sheets لقائمة مهام واضحة", "keyword": "مربعات اختيار Google Sheets لقائمة مهام واضحة", "volume": 0, "kd": null, "month": 1},
+  {"id": 172, "clusterCode": "H", "group": "bonus", "title": "تنسيق الأرقام والتواريخ في Google Sheets", "keyword": "تنسيق الأرقام والتواريخ في Google Sheets", "volume": 0, "kd": null, "month": 1},
+  {"id": 173, "clusterCode": "H", "group": "bonus", "title": "ضبط الموقع والمنطقة الزمنية في Google Sheets", "keyword": "ضبط الموقع والمنطقة الزمنية في Google Sheets", "volume": 0, "kd": null, "month": 1},
+  {"id": 174, "clusterCode": "H", "group": "bonus", "title": "حماية خلايا Google Sheets من التعديل الخطأ", "keyword": "حماية خلايا Google Sheets من التعديل الخطأ", "volume": 0, "kd": null, "month": 1},
+  {"id": 175, "clusterCode": "H", "group": "bonus", "title": "طباعة نطاق من Google Sheets دون أعمدة زائدة", "keyword": "طباعة نطاق من Google Sheets دون أعمدة زائدة", "volume": 0, "kd": null, "month": 1},
+  {"id": 176, "clusterCode": "H", "group": "bonus", "title": "إنشاء رسم بياني واضح من بيانات Google Sheets", "keyword": "إنشاء رسم بياني واضح من بيانات Google Sheets", "volume": 0, "kd": null, "month": 1},
+  {"id": 177, "clusterCode": "H", "group": "bonus", "title": "التنسيق الشرطي في Google Sheets لتنبيه واضح", "keyword": "التنسيق الشرطي في Google Sheets لتنبيه واضح", "volume": 0, "kd": null, "month": 1},
+  {"id": 178, "clusterCode": "H", "group": "bonus", "title": "اختيار الصفحات أو العرض المستمر في Google Docs", "keyword": "اختيار الصفحات أو العرض المستمر في Google Docs", "volume": 0, "kd": null, "month": 1},
+  {"id": 179, "clusterCode": "H", "group": "bonus", "title": "ضبط الهوامش واتجاه الصفحة في Google Docs", "keyword": "ضبط الهوامش واتجاه الصفحة في Google Docs", "volume": 0, "kd": null, "month": 1},
+  {"id": 180, "clusterCode": "H", "group": "bonus", "title": "حساب كلمات Google Docs وحدود العد في التسليم", "keyword": "حساب كلمات Google Docs وحدود العد في التسليم", "volume": 0, "kd": null, "month": 1},
+  {"id": 181, "clusterCode": "H", "group": "bonus", "title": "عناوين وفهرس Google Docs لمستند يسهل التنقل فيه", "keyword": "عناوين وفهرس Google Docs لمستند يسهل التنقل فيه", "volume": 0, "kd": null, "month": 1},
+  {"id": 182, "clusterCode": "H", "group": "bonus", "title": "ترقيم صفحات Google Docs وإضافة الرأس والحواشي", "keyword": "ترقيم صفحات Google Docs وإضافة الرأس والحواشي", "volume": 0, "kd": null, "month": 1},
+  {"id": 183, "clusterCode": "H", "group": "bonus", "title": "اقتراح تعديلات Google Docs ومراجعتها قبل الاعتماد", "keyword": "اقتراح تعديلات Google Docs ومراجعتها قبل الاعتماد", "volume": 0, "kd": null, "month": 1},
+  {"id": 184, "clusterCode": "H", "group": "bonus", "title": "تعليقات Google Docs لمراجعة واضحة دون خلط المهام", "keyword": "تعليقات Google Docs لمراجعة واضحة دون خلط المهام", "volume": 0, "kd": null, "month": 1},
+  {"id": 185, "clusterCode": "H", "group": "bonus", "title": "تدقيق مستند إنجليزي في Google Docs وحدود الاقتراحات", "keyword": "تدقيق مستند إنجليزي في Google Docs وحدود الاقتراحات", "volume": 0, "kd": null, "month": 1},
+  {"id": 186, "clusterCode": "H", "group": "bonus", "title": "ترجمة مستند Google Docs ومراجعة النسخة الجديدة", "keyword": "ترجمة مستند Google Docs ومراجعة النسخة الجديدة", "volume": 0, "kd": null, "month": 1},
+
   // Windows topics: demand unmeasured; zero is not a measured traffic estimate.
   {"id": 157, "clusterCode": "H", "group": "bonus", "title": "سجل الحافظة في Windows 11: النسخ واللصق والمحو", "keyword": "سجل الحافظة في Windows 11", "volume": 0, "kd": null, "month": 1},
   {"id": 158, "clusterCode": "H", "group": "bonus", "title": "لقطة شاشة في Windows 11: القص والحفظ والمراجعة", "keyword": "لقطة شاشة في Windows 11", "volume": 0, "kd": null, "month": 1},

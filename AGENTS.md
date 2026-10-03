@@ -12,7 +12,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 - Only deploy walidkalikali02-ux/lusaill-online to Vercel project prj_GvzTCMz7VvyslHpXgfxjBUApCZnS. Canonical origin is https://www.lusaill.online.
 - Before editing, compare current main and the live production deployment. Never overwrite a newer tree or force-push.
-- Daily article count is a ceiling (10 in Qatar time), not a reason to publish an unproven topic. Check same-day publication dates and existing search intent first.
+- Daily article count is a ceiling (20 in Qatar time), not a reason to publish an unproven topic. Check same-day publication dates and existing search intent first.
 - A new topic brief must record its audience, exact problem, official sources, a current search-result review, the additional value beyond official help, and how it differs from published guides. Record measured search demand or Search Console evidence when available; otherwise explicitly say unmeasured and explain the real user need. Do not invent volume, competition, or performance.
 - For existing content, use actual Search Console query/page performance to prioritize when available. A publishing count or internal quality score is never a ranking or traffic result.
 - Never claim a procedure was personally tested, or invent named reviewers, credentials, interface screenshots, user experiences, or mailbox delivery.

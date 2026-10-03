@@ -1,5 +1,10 @@
 // Task-based groups, independent of seed order. Only published URLs are exposed.
 export const articleJourneys: string[][] = [
+  ["sheets-sort-filter", "sheets-clean-import", "sheets-freeze", "sheets-number-format", "sheets-locale"],
+  ["sheets-dropdown", "sheets-checkbox", "sheets-protect", "sheets-print", "sheets-chart", "sheets-conditional-format"],
+  ["docs-pages-mode", "docs-page-setup", "docs-word-count", "docs-headings-toc", "docs-page-elements"],
+  ["docs-suggestions", "docs-comments", "docs-english-proofread", "docs-translate"],
+
   ["windows-cleanup", "windows-zip", "windows-nearby-share"],
   ["windows-clipboard", "windows-screen-capture", "windows-default-apps"],
   ["windows-snap", "windows-desktops", "windows-startup-apps", "windows-text-size"],

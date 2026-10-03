@@ -139,3 +139,25 @@
 - [إدارة تطبيقات بدء التشغيل في Windows 11](https://www.lusaill.online/articles/windows-startup-apps)
 - [تكبير النص في Windows 11 واختيار الإعداد المناسب](https://www.lusaill.online/articles/windows-text-size)
 - [تغيير تطبيق فتح الملفات الافتراضي في Windows 11](https://www.lusaill.online/articles/windows-default-apps)
+
+## أدلة Docs وSheets الجديدة — 3 أكتوبر 2026
+- [فرز وتصفية Google Sheets دون خلط بيانات الصفوف](https://www.lusaill.online/articles/sheets-sort-filter): رتب جدول Google Sheets وصفّه مع الحفاظ على ارتباط الاسم بالبيانات، واختر عرض فلتر شخصيًا عند التعاون، مع مثال يوضح فحص النتيجة.
+- [تنظيف بيانات Google Sheets بعد الاستيراد](https://www.lusaill.online/articles/sheets-clean-import): افصل النص إلى أعمدة ونظف المسافات والتكرار في Sheets، مع تحديد مفتاح السجل قبل الحذف وفحص عينة حتى لا تزيل أسماء متشابهة خطأ.
+- [تثبيت صف العناوين والأعمدة في Google Sheets](https://www.lusaill.online/articles/sheets-freeze): ثبت عناوين جدول Sheets أثناء التمرير، واختر عدد الصفوف والأعمدة المناسب ثم افحص قراءته على شاشة صغيرة وألغ التثبيت عند الحاجة.
+- [إنشاء قائمة منسدلة في Google Sheets وضبط قيمها](https://www.lusaill.online/articles/sheets-dropdown): وحد حالات الطلبات بقائمة منسدلة في Sheets، واختر القيم أو نطاق المصدر، واضبط الإدخال المخالف مع مثال لفحص الخلايا المشمولة.
+- [مربعات اختيار Google Sheets لقائمة مهام واضحة](https://www.lusaill.online/articles/sheets-checkbox): أنشئ قائمة مهام بمربعات اختيار في Sheets، وحدد معنى الإكمال والقيم المخصصة، وافحص صفًا قبل تعميم الإعداد على القائمة.
+- [تنسيق الأرقام والتواريخ في Google Sheets](https://www.lusaill.online/articles/sheets-number-format): اختر تنسيق أرقام وتواريخ Sheets وفق معنى العمود، واختبر النسبة والعملة والتاريخ بعينة معلومة قبل تنسيق الجدول كاملًا.
+- [ضبط الموقع والمنطقة الزمنية في Google Sheets](https://www.lusaill.online/articles/sheets-locale): راجع إعداد موقع ملف Sheets والمنطقة الزمنية عند اختلاف عرض التاريخ والعملة، واعرف أنه يطبق على الملف المشترك ولا يغير لغة الواجهة.
+- [حماية خلايا Google Sheets من التعديل الخطأ](https://www.lusaill.online/articles/sheets-protect): احم نطاقًا في Sheets وحدد من يستطيع تعديله، وميز بين التحذير والمنع، مع حدود واضحة: حماية الخلايا ليست وسيلة لإخفاء البيانات.
+- [طباعة نطاق من Google Sheets دون أعمدة زائدة](https://www.lusaill.online/articles/sheets-print): اطبع خلايا أو ورقة أو مصنف Sheets بحسب المطلوب، وراجع فواصل الصفحات والاتجاه والعناوين في المعاينة قبل إرسال تقرير ورقي.
+- [إنشاء رسم بياني واضح من بيانات Google Sheets](https://www.lusaill.online/articles/sheets-chart): جهز بيانات بسيطة وأنشئ رسمًا في Sheets، ثم راجع نطاقه والعناوين والقيم بمثال أصلي قبل مشاركة نتيجة قد يساء فهمها.
+- [التنسيق الشرطي في Google Sheets لتنبيه واضح](https://www.lusaill.online/articles/sheets-conditional-format): لون قيمًا تحقق شرطًا في Sheets مع اختبار الحد الفاصل، وراجع ترتيب القواعد حتى لا تستخدم لونًا مضللًا بدل قراءة البيانات.
+- [اختيار الصفحات أو العرض المستمر في Google Docs](https://www.lusaill.online/articles/docs-pages-mode): اختر Pages أو Pageless في Docs حسب الطباعة أو القراءة، وافهم اختفاء الرأس وأرقام الصفحات في العرض المستمر قبل تعديل المستند.
+- [ضبط الهوامش واتجاه الصفحة في Google Docs](https://www.lusaill.online/articles/docs-page-setup): جهز صفحات Docs للطباعة بتحديد الورق والهوامش والاتجاه، أو اجعل جدولًا واسعًا أفقيًا دون تغيير التقرير كله، مع فحص النطاق.
+- [حساب كلمات Google Docs وحدود العد في التسليم](https://www.lusaill.online/articles/docs-word-count): احسب كلمات مستند Docs أو تحديد داخله، واعرف ما يستثنيه العد، ثم قارن النتيجة بشروط المهمة بدل الاعتماد على حجم الخط أو الصفحات.
+- [عناوين وفهرس Google Docs لمستند يسهل التنقل فيه](https://www.lusaill.online/articles/docs-headings-toc): رتب مستند Docs بأنماط عناوين وفهرس قابل للتنقل، ثم حدّثه بعد التعديلات وافحص أن أقسامك تظهر بدل الاعتماد على خط عريض فقط.
+- [ترقيم صفحات Google Docs وإضافة الرأس والحواشي](https://www.lusaill.online/articles/docs-page-elements): أضف رأسًا ورقم صفحة وحاشية في Docs مع اختيار وضع الصفحات، وافحص الفرق بين رقم الصفحة وعدد الصفحات ومكان المرجع.
+- [اقتراح تعديلات Google Docs ومراجعتها قبل الاعتماد](https://www.lusaill.online/articles/docs-suggestions): راجع مستند Docs باقتراحات قابلة للقبول أو الرفض، واشرح سبب التغيير وميز بين اقتراح صياغة والتعديل المباشر على النص.
+- [تعليقات Google Docs لمراجعة واضحة دون خلط المهام](https://www.lusaill.online/articles/docs-comments): اربط تعليق Docs بالنص المقصود، واكتب سؤالًا قابلًا للإجابة ثم تابع الردود والتعليقات المغلقة بدل تكرار ملاحظات عامة.
+- [تدقيق مستند إنجليزي في Google Docs وحدود الاقتراحات](https://www.lusaill.online/articles/docs-english-proofread): راجع مستندًا إنجليزيًا في Docs باقتراحات الإملاء والنحو، وقرر القبول أو التجاهل بعناية، مع توضيح حدود دعم العربية والقاموس الشخصي.
+- [ترجمة مستند Google Docs ومراجعة النسخة الجديدة](https://www.lusaill.online/articles/docs-translate): أنشئ نسخة مترجمة في Docs، ثم راجع الأسماء والأرقام والنفي وفق النص الأصلي، واعرف سبب غياب خيار الترجمة في ملفات Office.
