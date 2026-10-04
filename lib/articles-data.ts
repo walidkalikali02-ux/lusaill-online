@@ -14,6 +14,28 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Google Forms and Slides tasks: search demand unmeasured, not a volume estimate.
+  {"id":187,"clusterCode":"H","group":"bonus","title":"إنشاء نموذج تسجيل واضح في Google Forms","keyword":"إنشاء نموذج تسجيل واضح في Google Forms","volume":0,"kd":null,"month":1},
+  {"id":188,"clusterCode":"H","group":"bonus","title":"اختيار نوع السؤال المناسب في Google Forms","keyword":"اختيار نوع السؤال المناسب في Google Forms","volume":0,"kd":null,"month":1},
+  {"id":189,"clusterCode":"H","group":"bonus","title":"إضافة رفع ملفات في Google Forms بأمان","keyword":"إضافة رفع ملفات في Google Forms بأمان","volume":0,"kd":null,"month":1},
+  {"id":190,"clusterCode":"H","group":"bonus","title":"توجيه أسئلة Google Forms حسب الإجابة","keyword":"توجيه أسئلة Google Forms حسب الإجابة","volume":0,"kd":null,"month":1},
+  {"id":191,"clusterCode":"H","group":"bonus","title":"إضافة شروط التحقق إلى إجابات Google Forms","keyword":"إضافة شروط التحقق إلى إجابات Google Forms","volume":0,"kd":null,"month":1},
+  {"id":192,"clusterCode":"H","group":"bonus","title":"تحويل Google Forms إلى اختبار وتصحيحه","keyword":"تحويل Google Forms إلى اختبار وتصحيحه","volume":0,"kd":null,"month":1},
+  {"id":193,"clusterCode":"H","group":"bonus","title":"نشر Google Forms ومشاركة رابط المجيبين","keyword":"نشر Google Forms ومشاركة رابط المجيبين","volume":0,"kd":null,"month":1},
+  {"id":194,"clusterCode":"H","group":"bonus","title":"إدارة ردود Google Forms وجمع البريد بأقل بيانات","keyword":"إدارة ردود Google Forms وجمع البريد بأقل بيانات","volume":0,"kd":null,"month":1},
+  {"id":195,"clusterCode":"H","group":"bonus","title":"حفظ ردود Google Forms في Google Sheets","keyword":"حفظ ردود Google Forms في Google Sheets","volume":0,"kd":null,"month":1},
+  {"id":196,"clusterCode":"H","group":"bonus","title":"حل تعذر إرسال Google Forms أو رفع ملف","keyword":"حل تعذر إرسال Google Forms أو رفع ملف","volume":0,"kd":null,"month":1},
+  {"id":197,"clusterCode":"H","group":"bonus","title":"إنشاء عرض منظم في Google Slides","keyword":"إنشاء عرض منظم في Google Slides","volume":0,"kd":null,"month":1},
+  {"id":198,"clusterCode":"H","group":"bonus","title":"توحيد تصميم Google Slides بالنسق والتخطيط","keyword":"توحيد تصميم Google Slides بالنسق والتخطيط","volume":0,"kd":null,"month":1},
+  {"id":199,"clusterCode":"H","group":"bonus","title":"محاذاة وترتيب العناصر في Google Slides","keyword":"محاذاة وترتيب العناصر في Google Slides","volume":0,"kd":null,"month":1},
+  {"id":200,"clusterCode":"H","group":"bonus","title":"إضافة الصور والفيديو إلى Google Slides","keyword":"إضافة الصور والفيديو إلى Google Slides","volume":0,"kd":null,"month":1},
+  {"id":201,"clusterCode":"H","group":"bonus","title":"ربط مخطط Google Sheets بعرض Slides","keyword":"ربط مخطط Google Sheets بعرض Slides","volume":0,"kd":null,"month":1},
+  {"id":202,"clusterCode":"H","group":"bonus","title":"إضافة حركة وانتقالات إلى Google Slides","keyword":"إضافة حركة وانتقالات إلى Google Slides","volume":0,"kd":null,"month":1},
+  {"id":203,"clusterCode":"H","group":"bonus","title":"عرض Google Slides مع ملاحظات المتحدث","keyword":"عرض Google Slides مع ملاحظات المتحدث","volume":0,"kd":null,"month":1},
+  {"id":204,"clusterCode":"H","group":"bonus","title":"تشغيل الترجمة المباشرة في Google Slides","keyword":"تشغيل الترجمة المباشرة في Google Slides","volume":0,"kd":null,"month":1},
+  {"id":205,"clusterCode":"H","group":"bonus","title":"تشغيل أسئلة الجمهور في Google Slides","keyword":"تشغيل أسئلة الجمهور في Google Slides","volume":0,"kd":null,"month":1},
+  {"id":206,"clusterCode":"H","group":"bonus","title":"طباعة Google Slides مع ملاحظات المتحدث","keyword":"طباعة Google Slides مع ملاحظات المتحدث","volume":0,"kd":null,"month":1},
+
   // Google editor tasks: search demand unmeasured, not a volume estimate.
   {"id": 167, "clusterCode": "H", "group": "bonus", "title": "فرز وتصفية Google Sheets دون خلط بيانات الصفوف", "keyword": "فرز وتصفية Google Sheets دون خلط بيانات الصفوف", "volume": 0, "kd": null, "month": 1},
   {"id": 168, "clusterCode": "H", "group": "bonus", "title": "تنظيف بيانات Google Sheets بعد الاستيراد", "keyword": "تنظيف بيانات Google Sheets بعد الاستيراد", "volume": 0, "kd": null, "month": 1},

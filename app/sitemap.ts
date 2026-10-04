@@ -8,7 +8,7 @@ import { courseMeta, drivingLessons } from "@/lib/driving-course";
 
 import { categoryIntroductions } from "@/lib/category-introductions";
 
-const siteUpdatedAt = new Date("2026-10-02");
+const siteUpdatedAt = new Date("2026-10-04");
 
 function latestPublishedUpdate(items: Array<{ updatedAt?: string }>): Date {
   const timestamps = items

@@ -1,5 +1,9 @@
 // Task-based groups, independent of seed order. Only published URLs are exposed.
 export const articleJourneys: string[][] = [
+  ["forms-create-registration", "forms-question-types", "forms-file-upload", "forms-sections-routing", "forms-response-validation"],
+  ["forms-create-quiz", "forms-publish-share", "forms-manage-responses", "forms-responses-sheets", "forms-submit-errors"],
+  ["slides-create-outline", "slides-theme-layout", "slides-arrange-objects", "slides-images-video", "slides-linked-chart", "slides-animation"],
+  ["slides-presenter-notes", "slides-captions", "slides-audience-qa", "slides-print-notes"],
   ["sheets-sort-filter", "sheets-clean-import", "sheets-freeze", "sheets-number-format", "sheets-locale"],
   ["sheets-dropdown", "sheets-checkbox", "sheets-protect", "sheets-print", "sheets-chart", "sheets-conditional-format"],
   ["docs-pages-mode", "docs-page-setup", "docs-word-count", "docs-headings-toc", "docs-page-elements"],

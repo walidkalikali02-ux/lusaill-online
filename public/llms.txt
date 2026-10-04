@@ -161,3 +161,23 @@
 - [تعليقات Google Docs لمراجعة واضحة دون خلط المهام](https://www.lusaill.online/articles/docs-comments): اربط تعليق Docs بالنص المقصود، واكتب سؤالًا قابلًا للإجابة ثم تابع الردود والتعليقات المغلقة بدل تكرار ملاحظات عامة.
 - [تدقيق مستند إنجليزي في Google Docs وحدود الاقتراحات](https://www.lusaill.online/articles/docs-english-proofread): راجع مستندًا إنجليزيًا في Docs باقتراحات الإملاء والنحو، وقرر القبول أو التجاهل بعناية، مع توضيح حدود دعم العربية والقاموس الشخصي.
 - [ترجمة مستند Google Docs ومراجعة النسخة الجديدة](https://www.lusaill.online/articles/docs-translate): أنشئ نسخة مترجمة في Docs، ثم راجع الأسماء والأرقام والنفي وفق النص الأصلي، واعرف سبب غياب خيار الترجمة في ملفات Office.
+- [إنشاء نموذج تسجيل واضح في Google Forms](https://www.lusaill.online/articles/forms-create-registration): حدد البيانات الضرورية، وأنشئ أسئلة وأقسامًا مفهومة، ثم اختبر استجابة كاملة قبل نشر رابط التسجيل.
+- [اختيار نوع السؤال المناسب في Google Forms](https://www.lusaill.online/articles/forms-question-types): اختر إجابة قصيرة أو اختيارًا واحدًا أو عدة خيارات أو مقياسًا بحسب القرار المطلوب من الرد.
+- [إضافة رفع ملفات في Google Forms بأمان](https://www.lusaill.online/articles/forms-file-upload): اضبط النوع والعدد والحجم، وافهم تسجيل الدخول والتخزين وحدود التحقق قبل طلب مستندات.
+- [توجيه أسئلة Google Forms حسب الإجابة](https://www.lusaill.online/articles/forms-sections-routing): أنشئ أقسامًا ومسارات من سؤال قرار، واختبر كل فرع حتى الإرسال لمنع الحلقات والتخطي.
+- [إضافة شروط التحقق إلى إجابات Google Forms](https://www.lusaill.online/articles/forms-response-validation): استخدم قاعدة تحقق تشرح المطلوب، واختبر الحد الفاصل دون تحويلها إلى تحقق من الهوية أو صحة الواقع.
+- [تحويل Google Forms إلى اختبار وتصحيحه](https://www.lusaill.online/articles/forms-create-quiz): فعّل الاختبار واضبط مفتاح الإجابة والنقاط ووقت إصدار الدرجات، ثم جرّب إجابات صحيحة وخاطئة.
+- [نشر Google Forms ومشاركة رابط المجيبين](https://www.lusaill.online/articles/forms-publish-share): اضبط الجمهور والاستجابة والخصوصية، وانشر رابط المجيب الصحيح واختبره خارج حساب المالك.
+- [إدارة ردود Google Forms وجمع البريد بأقل بيانات](https://www.lusaill.online/articles/forms-manage-responses): اختر بريدًا موثقًا أو يدويًا عند الحاجة، واضبط التنبيه والإغلاق مع توضيح حدود الإيصالات.
+- [حفظ ردود Google Forms في Google Sheets](https://www.lusaill.online/articles/forms-responses-sheets): اربط الردود بورقة وافحص الأعمدة والصلاحيات واستقلال الملفين قبل حذف أي استجابة.
+- [حل تعذر إرسال Google Forms أو رفع ملف](https://www.lusaill.online/articles/forms-submit-errors): شخّص المطلوب والتحقق ومسار الأقسام وتسجيل الدخول وحدود الملف قبل التواصل مع المالك.
+- [إنشاء عرض منظم في Google Slides](https://www.lusaill.online/articles/slides-create-outline): حوّل الرسالة إلى مخطط وعناوين نتيجة، ثم اختبر تسلسل العرض ووقته وصلاحية المشاركة.
+- [توحيد تصميم Google Slides بالنسق والتخطيط](https://www.lusaill.online/articles/slides-theme-layout): استخدم Theme وLayout للعناصر المتكررة، واختبر التباين والخطوط والتخطيطات بعد الاستيراد.
+- [محاذاة وترتيب العناصر في Google Slides](https://www.lusaill.online/articles/slides-arrange-objects): وحّد الحواف والمسافات والطبقات، وحافظ على نسبة الصور بدل المحاذاة اليدوية بمسافات نصية.
+- [إضافة الصور والفيديو إلى Google Slides](https://www.lusaill.online/articles/slides-images-video): استخدم وسيطًا تملك حقه، وأضف بديلًا وخلاصة، واختبر التشغيل والقص وخطة الفشل.
+- [ربط مخطط Google Sheets بعرض Slides](https://www.lusaill.online/articles/slides-linked-chart): اربط المخطط وراجع المصدر والفترة والصلاحيات قبل التحديث أو فصل النسخة للأرشفة.
+- [إضافة حركة وانتقالات إلى Google Slides](https://www.lusaill.online/articles/slides-animation): استخدم الحركة لشرح تسلسل حقيقي، واضبط ترتيب النقر واحفظ معنى صالحًا في النسخة الثابتة.
+- [عرض Google Slides مع ملاحظات المتحدث](https://www.lusaill.online/articles/slides-presenter-notes): استخدم Presenter view للملاحظات والوقت، واختبر نافذة الجمهور وخطة الشاشة الواحدة.
+- [تشغيل الترجمة المباشرة في Google Slides](https://www.lusaill.online/articles/slides-captions): اضبط المتصفح والميكروفون واللغة، ووضح أن التسميات فورية وغير محفوظة وليست تفريغًا رسميًا.
+- [تشغيل أسئلة الجمهور في Google Slides](https://www.lusaill.online/articles/slides-audience-qa): اضبط الوصول والهوية والتصويت، وراجع السؤال قبل عرضه مع قناة للمسائل الخاصة.
+- [طباعة Google Slides مع ملاحظات المتحدث](https://www.lusaill.online/articles/slides-print-notes): اختر شريحة مع الملاحظات أو ملخصًا، وراجع PDF وصفحة اختبار قبل التوزيع.
