@@ -38,7 +38,7 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         has: [{ type: "host", value: "lusaill.online" }],
         destination: "https://www.lusaill.online/:path*",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/categories/housing-utilities",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SiteAnalytics } from "@/components/site-analytics";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
@@ -56,6 +57,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const measurementId = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID;
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -84,6 +86,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <SiteFooter />
         <SiteAnalytics />
+        {measurementId && /^G-[A-Z0-9]+$/.test(measurementId) && <GoogleAnalytics measurementId={measurementId} />}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       </body>
     </html>

@@ -33,7 +33,7 @@ export function SiteFooter() {
       </div>
       <div className="shell footer-bottom">
         <span>© 2026 لوسيل</span>
-        <span>آخر تحديث: سبتمبر ٢٠٢٦</span>
+        <span>آخر تحديث: أكتوبر ٢٠٢٦</span>
       </div>
     </footer>
   );

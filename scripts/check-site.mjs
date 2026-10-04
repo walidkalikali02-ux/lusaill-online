@@ -1,5 +1,6 @@
 // Verify built or deployed pages: node scripts/check-site.mjs http://127.0.0.1:3000
 import assert from "node:assert/strict";
+import { request } from "node:http";
 const skipExternal = process.argv.includes("--skip-external-images");
 const origin = process.argv[2] ?? "https://www.lusaill.online";
 const official = "https://www.lusaill.online";
@@ -25,7 +26,20 @@ for (const page of ['0', '-1', 'invalid', '999999']) {
   assert.equal((await fetch(`${origin}${categoryPath}?page=${page}`)).status, 404, `Invalid pagination must return 404: ${page}`);
 }
 const titles = new Set(); const descriptions = new Set(); const links = new Set(); const images = new Set();
-let articles = 0; let diagrams = 0;
+let articles = 0; let diagrams = 0; let howToCount = 0;
+const homepage = await get(`${origin}/`);
+const homeDescription = homepage.match(/<meta name="description" content="([^"]+)"/)?.[1] ?? '';
+assert(homeDescription.length >= 140 && homeDescription.length <= 155, 'Homepage description must be 140–155 characters');
+assert(homepage.includes('id="deadlines-title"'), 'Deadline box missing');
+if (new URL(origin).hostname === '127.0.0.1') {
+  const apexRedirect = await new Promise((resolve, reject) => {
+    const req = request(`${origin}/articles/old-rent-housing-apply?test=1`, { headers: { host: 'lusaill.online' } }, (response) => { response.resume(); resolve(response); });
+    req.on('error', reject);
+    req.end();
+  });
+  assert.equal(apexRedirect.statusCode, 301, 'Apex redirect must be 301');
+  assert.equal(apexRedirect.headers.location, `${official}/articles/old-rent-housing-apply?test=1`, 'Redirect must preserve path and query');
+}
 for (const url of urls) {
   assert(url.startsWith(`${official}/`), `Noncanonical sitemap: ${url}`);
   const html = await get(local(url));
@@ -49,7 +63,13 @@ for (const url of urls) {
   }
   if (new URL(url).pathname.startsWith('/articles/')) {
     articles++;
-    for (const type of ['Article', 'FAQPage']) assert(schemas.some((s) => s['@type'] === type), `${type} missing: ${url}`);
+    assert(schemas.some((s) => s['@type'] === 'Article'), `Article missing: ${url}`);
+    assert.equal(schemas.some((s) => s['@type'] === 'FAQPage'), html.includes('id="faq"'), `FAQ schema must match visible FAQs: ${url}`);
+    howToCount += schemas.some((s) => s['@type'] === 'HowTo') ? 1 : 0;
+    assert(html.includes('id="sources"'), `Official source box missing: ${url}`);
+    assert(html.includes('id="next-step"'), `Related next step missing: ${url}`);
+    assert(html.includes('آخر مراجعة: <time'), `Last-reviewed date missing: ${url}`);
+    assert(title.includes('2026:'), `Service/year title missing: ${url}`);
     assert.equal([...html.matchAll(/id="quick-answer"/g)].length, 1, `Answer duplication: ${url}`);
     assert(html.indexOf('id="quick-answer"') < html.indexOf('class="article-cover"'), `Answer follows cover: ${url}`);
     diagrams += html.includes('class="guide-figure"') ? 1 : 0;
@@ -66,4 +86,5 @@ const metrash = await get(`${origin}/entities/metrash`);
 assert(/<meta name="robots" content="[^"]*noindex/.test(metrash));
 assert(metrash.includes('"name":"قطر"'));
 assert(!metrash.includes('metrash2.gov.eg'));
-console.log(JSON.stringify({ pages: urls.length, articles, guidesWithInlineDiagrams: diagrams, internalLinks: links.size, images: images.size, result: "PASS" }));
+assert(howToCount > 0 && howToCount < articles / 4, 'HowTo must be used selectively');
+console.log(JSON.stringify({ pages: urls.length, articles, howToCount, guidesWithInlineDiagrams: diagrams, internalLinks: links.size, images: images.size, result: "PASS" }));

@@ -6,6 +6,7 @@ import { articles, getArticleBySlug, getRelatedArticles } from "@/lib/content";
 import { clusters } from "@/lib/clusters";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { searchTitles } from "@/lib/search-titles";
+import { howToArticles } from "@/lib/structured-data";
 import { ArticleBrief } from "@/components/article-brief";
 
 export function generateStaticParams() {
@@ -126,7 +127,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     } : undefined,
   };
 
-  const howToSchema = article.steps?.length
+  const howToSchema = howToArticles.has(article.slug) && article.steps?.length
     ? {
         "@context": "https://schema.org",
         "@type": "HowTo",
@@ -169,8 +170,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <span className="article-card-tag">{cluster.name}</span>
           <h1>{article.title}</h1>
           <div className="article-meta">
-            {article.publishedAt && <span className="article-meta-item">نُشر: {article.publishedAt}</span>}
-            {article.updatedAt && <span className="article-meta-item">رُوجع: {article.updatedAt}</span>}
+            {article.publishedAt && <span className="article-meta-item">نُشر: <time dateTime={article.publishedAt}>{article.publishedAt.slice(0, 10)}</time></span>}
+            {article.updatedAt && <span className="article-meta-item">آخر مراجعة: <time dateTime={article.updatedAt}>{article.updatedAt.slice(0, 10)}</time></span>}
             <span className="article-meta-item"><Link href="/authors/editorial-team">فريق لوسيل</Link></span>
             <span className="article-meta-item">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -197,6 +198,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             alt={article.coverImageAlt ?? article.title}
             width={1200}
             height={630}
+            sizes="(max-width: 768px) calc(100vw - 32px), (max-width: 1248px) calc(100vw - 48px), 1200px"
             priority
           />
         ) : null}
