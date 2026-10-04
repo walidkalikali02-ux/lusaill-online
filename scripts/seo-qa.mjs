@@ -7,7 +7,7 @@
  */
 
 import { readFileSync, readdirSync, statSync } from "fs";
-import { join, extname } from "path";
+import { join, extname, basename } from "path";
 
 const issues = [];
 const warnings = [];
@@ -21,6 +21,7 @@ function check(file, message, severity = "error") {
 function walkDir(dir, ext = ".tsx") {
   const files = [];
   for (const entry of readdirSync(dir)) {
+    if (["node_modules", ".next", ".git"].includes(entry)) continue;
     const full = join(dir, entry);
     if (statSync(full).isDirectory()) {
       files.push(...walkDir(full, ext));
@@ -34,11 +35,11 @@ function walkDir(dir, ext = ".tsx") {
 // 1. Check all page files for canonical URLs
 console.log("🔍 Checking canonical URLs...");
 const pageFiles = walkDir("app", ".tsx").filter(
-  (f) => f.includes("/page.tsx") && !f.includes("not-found")
+  (f) => basename(f) === "page.tsx"
 );
 for (const file of pageFiles) {
   const content = readFileSync(file, "utf8");
-  const rootCanonical = file === "app/page.tsx" && /canonical:\s*["']\/["']/.test(readFileSync("app/layout.tsx", "utf8"));
+  const rootCanonical = file === join("app", "page.tsx") && /canonical:\s*["']\/["']/.test(readFileSync("app/layout.tsx", "utf8"));
   if (!rootCanonical && !content.includes("alternates") && !content.includes("canonical")) {
     check(file, "Missing canonical URL (alternates.canonical)");
   }

@@ -17,7 +17,7 @@ const quickTopics = [
 ];
 
 export const metadata: Metadata = {
-  title: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية",
+  title: { absolute: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية" },
   description: siteConfig.description,
   alternates: { canonical: "/" },
   openGraph: { title: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية", description: siteConfig.description, url: "/" },

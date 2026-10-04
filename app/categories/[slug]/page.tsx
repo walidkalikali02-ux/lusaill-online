@@ -30,14 +30,16 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   const currentPage = Math.min(requestedPage ?? 1, totalPages);
   const validPage = requestedPage !== null && requestedPage <= totalPages;
   const canonicalPath = currentPage > 1 ? `/categories/${cluster.slug}?page=${currentPage}` : `/categories/${cluster.slug}`;
+  const title = currentPage > 1 ? `${cluster.name} — صفحة ${currentPage}` : cluster.name;
+  const description = currentPage > 1 ? `صفحة ${currentPage} من أدلة ${cluster.name}. تصفح المزيد من الأدلة والخطوات العملية والمصادر الرسمية.` : cluster.description;
   return {
-    title: cluster.name,
-    description: cluster.description,
+    title,
+    description,
     alternates: { canonical: canonicalPath },
     robots: { index: hasPublished && validPage, follow: true },
     openGraph: {
-      title: cluster.name,
-      description: cluster.description,
+      title,
+      description,
       url: canonicalPath,
       type: "website",
       images: [siteSocialImage],
@@ -56,7 +58,10 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
   const introduction = categoryIntroductions[cluster.slug];
   const paths = guidePaths.filter((path) => path.articleSlugs.some((slug) => items.some((article) => article.slug === slug)));
   const totalPages = Math.ceil(items.length / ARTICLES_PER_PAGE);
-  const currentPage = Math.min(pageNumber(pageParam) ?? 1, Math.max(1, totalPages));
+  const requestedPage = pageNumber(pageParam);
+  if (requestedPage === null || requestedPage > Math.max(1, totalPages)) notFound();
+  const currentPage = requestedPage;
+  const canonicalPath = currentPage > 1 ? `/categories/${cluster.slug}?page=${currentPage}` : `/categories/${cluster.slug}`;
   const startIdx = (currentPage - 1) * ARTICLES_PER_PAGE;
   const paginatedItems = items.slice(startIdx, startIdx + ARTICLES_PER_PAGE);
   const publishedItems = paginatedItems;
@@ -74,8 +79,8 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
   const collectionPageSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "@id": `${siteConfig.url}/categories/${cluster.slug}/#webpage`,
-    url: absoluteUrl(`/categories/${cluster.slug}`),
+    "@id": `${absoluteUrl(canonicalPath)}#webpage`,
+    url: absoluteUrl(canonicalPath),
     name: cluster.name,
     description: cluster.description,
     inLanguage: siteConfig.language,
@@ -142,12 +147,13 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
         {totalPages > 1 && (
           <div className="pagination">
             {currentPage > 1 && (
-              <Link href={`/categories/${cluster.slug}?page=${currentPage - 1}`} className="pagination-btn">السابق</Link>
+              <Link href={currentPage === 2 ? `/categories/${cluster.slug}` : `/categories/${cluster.slug}?page=${currentPage - 1}`} className="pagination-btn">السابق</Link>
             )}
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
               <Link
                 key={p}
-                href={`/categories/${cluster.slug}?page=${p}`}
+                href={p === 1 ? `/categories/${cluster.slug}` : `/categories/${cluster.slug}?page=${p}`}
+                aria-current={p === currentPage ? "page" : undefined}
                 className={`pagination-btn ${p === currentPage ? "active" : ""}`}
               >
                 {p}

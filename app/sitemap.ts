@@ -32,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/contact"), lastModified: siteUpdatedAt, changeFrequency: "yearly", priority: 0.5 },
     { url: absoluteUrl("/editorial-policy"), lastModified: new Date("2026-10-01"), changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/authors/editorial-team"), lastModified: new Date("2026-10-01"), changeFrequency: "monthly", priority: 0.5 },
-    { url: absoluteUrl("/courses/learn-driving"), lastModified: new Date(courseMeta.updatedAt), changeFrequency: "monthly", priority: 0.9, images: [drivingLessons[0].image.src] },
+    { url: absoluteUrl("/courses/learn-driving"), lastModified: new Date(courseMeta.updatedAt), changeFrequency: "monthly", priority: 0.9, images: [absoluteUrl(drivingLessons[0].image.src)] },
   ];
 
   const courseRoutes: MetadataRoute.Sitemap = drivingLessons.map((lesson) => ({
@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(courseMeta.updatedAt),
     changeFrequency: "monthly" as const,
     priority: 0.9,
-    images: [lesson.image.src],
+    images: [absoluteUrl(lesson.image.src)],
   }));
 
   const clusterRoutes: MetadataRoute.Sitemap = clusters.filter((cluster) => clusterProgress(cluster.slug).published > 0).map((cluster) => ({

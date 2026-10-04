@@ -10,6 +10,20 @@ const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
 assert(urls.length > 0);
 assert.equal(new Set(urls).size, urls.length, "Duplicate sitemap URL");
 assert(!sitemap.includes("/entities/metrash"), "Uncovered Qatar page must stay outside sitemap");
+for (const image of sitemap.matchAll(/<image:loc>(.*?)<\/image:loc>/g)) {
+  assert(/^https:\/\//.test(image[1]), `Relative sitemap image URL: ${image[1]}`);
+}
+const robots = await get(`${origin}/robots.txt`);
+assert(robots.includes('Disallow: /api/') && robots.includes('Disallow: /admin/'), 'Crawler exclusions missing');
+const categoryPath = '/categories/digital-life';
+const firstCategory = await get(`${origin}${categoryPath}`);
+const secondCategory = await get(`${origin}${categoryPath}?page=2`);
+assert.notEqual(firstCategory.match(/<title>(.*?)<\/title>/)?.[1], secondCategory.match(/<title>(.*?)<\/title>/)?.[1], 'Pagination titles must differ');
+assert(secondCategory.includes(`"url":"${official}${categoryPath}?page=2"`), 'Pagination schema URL mismatch');
+assert(secondCategory.includes(`href="${categoryPath}"`), 'Pagination must link to canonical first page');
+for (const page of ['0', '-1', 'invalid', '999999']) {
+  assert.equal((await fetch(`${origin}${categoryPath}?page=${page}`)).status, 404, `Invalid pagination must return 404: ${page}`);
+}
 const titles = new Set(); const descriptions = new Set(); const links = new Set(); const images = new Set();
 let articles = 0; let diagrams = 0;
 for (const url of urls) {
