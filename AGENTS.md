@@ -10,6 +10,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Lusaill publishing and growth rules
 
+- User priority from 4 October 2026: focus new publishing on Egyptian electricity, civil registry, traffic, ration cards, pensions, taxes, and Takaful/Karama. New Google Workspace posts are paused unless actual Search Console topic/page impressions justify them. Do not treat a keyword-plan estimate as this evidence.
+- Monitor official service announcements every eight hours and aim to publish verified changes within 24 hours. Refresh the actual top 10 published articles monthly using complete 28-day Search Console data; update visible review dates only after checking sources. Exclude retired URLs from the ranking.
+- Preserve crawlable numeric category pagination when blocking filter/query URLs. All published articles must remain linked from /articles and reachable in at most three clicks from the homepage.
+
 - Only deploy walidkalikali02-ux/lusaill-online to Vercel project prj_GvzTCMz7VvyslHpXgfxjBUApCZnS. Canonical origin is https://www.lusaill.online.
 - Before editing, compare current main and the live production deployment. Never overwrite a newer tree or force-push.
 - Daily article count is a ceiling (20 in Qatar time), not a reason to publish an unproven topic. Check same-day publication dates and existing search intent first.

@@ -45,3 +45,16 @@ npm run lint
 
 خطة الكلمات المفتاحية الأصلية: OpenSEO / DataForSEO، أغسطس ٢٠٢٦. راجع [`app/editorial-policy`](app/editorial-policy/page.tsx)
 لمعايير الدقة والمراجعة الربع سنوية.
+## GA4 activation and baseline
+
+The optional GA4 integration in `components/google-analytics.tsx` activates only when `NEXT_PUBLIC_GA4_MEASUREMENT_ID` contains the real `G-...` measurement ID from a GA4 web data stream. Add it to the existing Vercel project's production and preview environments, then rebuild/redeploy. `.env.example` documents the variable without a live identifier.
+
+Disable automatic enhanced-measurement page views and history-change page views in the web stream so the App Router's manually sent events are not duplicated. Disable form/search measurement; those user inputs should not be collected. The integration sends one initial page view and subsequent pathname navigation views, excludes query strings and fragments from page/referrer URLs, respects Do Not Track, and disables Google signals and ad personalization.
+
+Activation is not proof of ingestion. Verify a permitted visit in GA4 Realtime/DebugView, then record seven days of page views, acquisition source/medium, device category and page paths as the first baseline. Keep baseline exports in ignored `performance-data/`; do not publish private analytics reports in GitHub. Campaign attribution and collection depend on the actual stream settings and must be checked in the live property.
+
+## Webmaster setup
+
+Create or open the **domain property** `lusaill.online` in Google Search Console. Use its exact DNS TXT verification token at the authoritative DNS provider; the homepage verification tag does not verify a domain property. Confirm verification, submit `https://www.lusaill.online/sitemap.xml`, and inspect the prioritized URLs individually. Google's request-indexing quota may prevent all 20 requests in one session; record successful requests rather than assuming indexing.
+
+In Bing Webmaster Tools, verify/import the same site with the authorized account, submit the canonical sitemap and the prioritized URLs. Existing IndexNow configuration is separate from account verification and is not proof of indexing.

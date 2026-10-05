@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
@@ -6,7 +7,7 @@ const title = "شروط الاستخدام";
 const description = "شروط استخدام أدلة لوسيل العربية، وحدود المعلومات المنشورة، واحترام حقوق المحتوى والروابط والمصادر الرسمية.";
 
 export const metadata: Metadata = {
-  title, description, alternates: { canonical: "/terms" },
+  title, description, alternates: pageAlternates("/terms"),
   openGraph: { title, description, url: "/terms", type: "website", images: [siteSocialImage] },
 };
 

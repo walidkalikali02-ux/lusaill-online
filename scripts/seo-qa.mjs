@@ -7,7 +7,7 @@
  */
 
 import { readFileSync, readdirSync, statSync } from "fs";
-import { join, extname } from "path";
+import { join, extname, basename } from "path";
 
 const issues = [];
 const warnings = [];
@@ -21,6 +21,7 @@ function check(file, message, severity = "error") {
 function walkDir(dir, ext = ".tsx") {
   const files = [];
   for (const entry of readdirSync(dir)) {
+    if (["node_modules", ".next", ".git"].includes(entry)) continue;
     const full = join(dir, entry);
     if (statSync(full).isDirectory()) {
       files.push(...walkDir(full, ext));
@@ -34,11 +35,11 @@ function walkDir(dir, ext = ".tsx") {
 // 1. Check all page files for canonical URLs
 console.log("🔍 Checking canonical URLs...");
 const pageFiles = walkDir("app", ".tsx").filter(
-  (f) => f.includes("/page.tsx") && !f.includes("not-found")
+  (f) => basename(f) === "page.tsx"
 );
 for (const file of pageFiles) {
   const content = readFileSync(file, "utf8");
-  const rootCanonical = file === "app/page.tsx" && /canonical:\s*["']\/["']/.test(readFileSync("app/layout.tsx", "utf8"));
+  const rootCanonical = file === join("app", "page.tsx") && /canonical:\s*["']\/["']/.test(readFileSync("app/layout.tsx", "utf8"));
   if (!rootCanonical && !content.includes("alternates") && !content.includes("canonical")) {
     check(file, "Missing canonical URL (alternates.canonical)");
   }
@@ -68,7 +69,7 @@ for (const bot of requiredBots) {
 
 // 4. Check sitemap
 console.log("🔍 Checking sitemap...");
-const sitemapFile = "app/sitemap.ts";
+const sitemapFile = "lib/sitemaps.ts";
 const sitemapContent = readFileSync(sitemapFile, "utf8");
 if (!sitemapContent.includes("lastModified")) {
   check(sitemapFile, "Sitemap missing lastModified");
@@ -170,7 +171,7 @@ if (!articleContent.includes("robots:") && !articleContent.includes("noindex")) 
 console.log("🔍 Checking redirect configuration...");
 const nextConfigFile = "next.config.ts";
 const nextConfigContent = readFileSync(nextConfigFile, "utf8");
-if (!nextConfigContent.includes("redirects")) {
+if (!nextConfigContent.includes("redirects") && !readFileSync("proxy.ts", "utf8").includes("NextResponse.redirect")) {
   check(nextConfigFile, "Missing redirect configuration");
 }
 

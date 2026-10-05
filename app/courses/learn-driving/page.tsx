@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +10,7 @@ const coursePath = "/courses/learn-driving";
 export const metadata: Metadata = {
   title: courseMeta.title,
   description: courseMeta.description,
-  alternates: { canonical: coursePath },
+  alternates: pageAlternates(coursePath),
   openGraph: {
     type: "website",
     title: courseMeta.title,

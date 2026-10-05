@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -11,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const path = guidePaths.find((item) => item.slug === slug);
   if (!path) return { robots: { index: false } };
-  return { title: path.title, description: path.description, alternates: { canonical: `/guides/${slug}` },
+  return { title: path.title, description: path.description, alternates: pageAlternates(`/guides/${slug}`),
     openGraph: { title: path.title, description: path.description, url: `/guides/${slug}`, images: [siteSocialImage] } };
 }
 export default async function GuidePathPage({ params }: { params: Promise<{ slug: string }> }) {

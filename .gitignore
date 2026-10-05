@@ -10,9 +10,11 @@ dist
 
 .vercel
 .env*
+!.env.example
 
 # Private Search Console/analytics exports; never publish performance data.
 performance-data/
 
 __pycache__/
 *.pyc
+*.tsbuildinfo

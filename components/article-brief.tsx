@@ -9,6 +9,7 @@ import { getGuidePath } from "@/lib/guide-paths";
 export function ArticleBrief({ article, cluster, related }: { article: Article; cluster: Cluster; related: Article[] }) {
   const illustration = guideIllustrations[article.slug];
   const path = getGuidePath(article.slug);
+  const nextStep = related[0];
   return (
     <div className="article-layout">
       <div className="article-body">
@@ -56,6 +57,11 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
 
         {article.steps?.length ? <GuideChecklist steps={article.steps.map((step) => step.title)} /> : null}
         {path && <section className="brief-box"><h2>اختر الدليل المناسب لحالتك</h2><p>{path.description}</p><Link href={`/guides/${path.slug}`}>{path.title}</Link></section>}
+        <section id="next-step" className="brief-box">
+          <h2>الخطوة التالية المرتبطة</h2>
+          {nextStep ? <p>إذا كانت هذه هي مهمتك التالية، راجع <Link href={`/articles/${nextStep.slug}`}>{nextStep.title}</Link> قبل بدء الإجراء.</p> : <p>راجع باقي الأدلة في <Link href={`/categories/${cluster.slug}`}>{cluster.name}</Link> واختر ما يناسب حالتك.</p>}
+          <p><Link href={`/categories/${cluster.slug}`}>مركز أدلة {cluster.name}</Link>{path && <> · <Link href={`/guides/${path.slug}`}>مسار المهمة كاملًا</Link></>}</p>
+        </section>
 
         {/* Common Mistakes */}
         {article.commonMistakes?.length ? (
@@ -72,7 +78,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
             <ul>
               {article.sources.map((source) => (
                 <li key={source.url}>
-                  <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a> — آخر تحقق: {source.checkedAt}
+                  <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a> — آخر تحقق: <time dateTime={source.checkedAt}>{source.checkedAt}</time>
                 </li>
               ))}
             </ul>

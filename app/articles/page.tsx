@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { articles } from "@/lib/content";
@@ -6,7 +7,7 @@ import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "كل الأدلة",
   description: "تصفح أدلة لوسيل لخدمات الكهرباء والحياة الرقمية: تنظيم البريد وحماية الحسابات وإدارة الملفات، مع خطوات واضحة وصور ومصادر رسمية وتاريخ مراجعة.",
-  alternates: { canonical: "/articles" },
+  alternates: pageAlternates("/articles"),
   openGraph: {
     title: "كل الأدلة — لوسيل",
     description: "تصفح أدلة لوسيل لخدمات الكهرباء والحياة الرقمية: تنظيم البريد وحماية الحسابات وإدارة الملفات، مع خطوات واضحة وصور ومصادر رسمية وتاريخ مراجعة.",

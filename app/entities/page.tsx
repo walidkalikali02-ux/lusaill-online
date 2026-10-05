@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { entities } from "@/lib/entities";
@@ -7,7 +8,7 @@ import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "الجهات والخدمات",
   description: "روابط الجهات الرسمية المرتبطة بأدلة لوسيل للخدمات المصرية والمرور والكهرباء، مع توضيح الخدمات ذات الصلة.",
-  alternates: { canonical: "/entities" },
+  alternates: pageAlternates("/entities"),
   openGraph: {
     title: "الجهات والخدمات — لوسيل",
     description: "الجهات الرسمية المرتبطة بالأدلة المنشورة في لوسيل.",

@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  skipTrailingSlashRedirect: true,
   images: {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
@@ -29,36 +30,6 @@ const nextConfig: NextConfig = {
         headers: [
           { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
         ],
-      },
-    ];
-  },
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "lusaill.online" }],
-        destination: "https://www.lusaill.online/:path*",
-        permanent: true,
-      },
-      {
-        source: "/categories/housing-utilities",
-        destination: "/categories/fawatir-alkahraba",
-        permanent: true,
-      },
-      {
-        source: "/clusters/:path*",
-        destination: "/categories/:path*",
-        permanent: true,
-      },
-      {
-        source: "/clusters",
-        destination: "/categories",
-        permanent: true,
-      },
-      {
-        source: "/articles/شركة-جنوب-الدلتا-لتوزيع-الكهرباء",
-        destination: "/articles/south-delta-electricity",
-        permanent: true,
       },
     ];
   },

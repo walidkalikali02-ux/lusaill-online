@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import { GuideSearch } from "@/components/guide-search";
 import Link from "next/link";
@@ -6,8 +7,10 @@ import { ArticleCard } from "@/components/article-card";
 import { clusters, articles, overallProgress, clusterProgress } from "@/lib/content";
 import { guidePaths, getGuidePath } from "@/lib/guide-paths";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { housingDeadlinePassed } from "@/lib/deadlines";
 
 const quickTopics = [
+  { label: "السكن البديل للإيجار القديم", href: "/guides/housing" },
   { label: "مسارات المهام", href: "/guides" },
   { label: "خدمات مصر الرقمية", href: "/categories/bawabat-misr-alraqmeya" },
   { label: "فواتير الكهرباء", href: "/categories/fawatir-alkahraba" },
@@ -17,13 +20,17 @@ const quickTopics = [
 ];
 
 export const metadata: Metadata = {
-  title: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية",
+  title: { absolute: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية" },
   description: siteConfig.description,
-  alternates: { canonical: "/" },
+  alternates: pageAlternates("/"),
   openGraph: { title: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية", description: siteConfig.description, url: "/" },
 };
 
+// Re-evaluate the time-sensitive notice hourly, including after the published deadline.
+export const revalidate = 3600;
+
 export default function Home() {
+  const deadlinePassed = housingDeadlinePassed();
   const progress = overallProgress();
   const published = articles.filter((a) => a.status === "published")
     .sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "") || b.id - a.id);
@@ -75,6 +82,15 @@ export default function Home() {
       </section>
 
       {/* Search */}
+      <section className="section deadline-section" aria-labelledby="deadlines-title">
+        <div className="shell brief-box">
+          <h2 id="deadlines-title">مواعيد مهمة وخدمات تحت المتابعة</h2>
+          <h3><Link href="/articles/old-rent-housing-apply">السكن البديل للإيجار القديم — الموعد المنشور <time dateTime="2026-10-12">12 أكتوبر 2026</time></Link></h3>
+          <p>{deadlinePassed ? "مضى الموعد المنشور؛ راجع الجهة الرسمية لمعرفة أي تمديد أو تعليمات أحدث قبل محاولة التقديم." : "أكد بيان وزارة الإسكان في 28 سبتمبر استمرار التسجيل حتى هذا الموعد. جهّز مستنداتك وقدّم عبر القنوات الرسمية، وتحقق من أي إعلان أحدث قبل التنفيذ."}</p>
+          <p><Link href="/articles/old-rent-housing-eligibility">الشروط</Link> · <Link href="/articles/old-rent-housing-documents">المستندات</Link> · <Link href="/articles/old-rent-housing-post-office">مساعدة البريد</Link> · <Link href="/articles/old-rent-housing-track">المتابعة</Link></p>
+          <p><a href="https://sis.gov.eg/ar/المركز-الإعلامي/الأخبار/وزيرة-الإسكان-تترأس-اجتماع-مجلس-إدارة-صندوق-الإسكان-الاجتماعي-ودعم-التمويل-العقاري-1/" target="_blank" rel="noopener noreferrer">تأكيد الموعد من المصدر الرسمي</a> · آخر تحقق: <time dateTime="2026-10-04">4 أكتوبر 2026</time></p>
+        </div>
+      </section>
       <section className="search-section">
         <div className="shell">
           <div className="search-box">
@@ -215,7 +231,7 @@ export default function Home() {
             <div className="trust-card">
               <span className="trust-num">١</span>
               <h3>سؤال محدد</h3>
-              <p>نحدد المشكلة التي يريد المستخدم حلها — لا مقالات عامة مبثرة.</p>
+              <p>نحدد المشكلة التي يريد المستخدم حلها — لا مقالات عامة متناثرة.</p>
             </div>
             <div className="trust-card">
               <span className="trust-num">٢</span>
