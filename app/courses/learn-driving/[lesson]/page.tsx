@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: LessonPageProps): Promise<Met
   return {
     title: lesson.slug === "start-stop-car-smoothly" ? "الانطلاق والتوقف في السيارة الأوتوماتيك واليدوية" : lesson.title,
     description: lesson.metaDescription,
-    alternates: { canonical: path },
+    alternates: pageAlternates(path),
     authors: [{ name: courseMeta.author, url: absoluteUrl("/authors/editorial-team") }],
     openGraph: {
       type: "article",

@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: entity.name,
     description: entity.description,
-    alternates: { canonical: `/entities/${entity.slug}` },
+    alternates: pageAlternates(`/entities/${entity.slug}`),
     robots: { index: hasPublished, follow: true },
     openGraph: {
       title: entity.name,

@@ -17,3 +17,4 @@ performance-data/
 
 __pycache__/
 *.pyc
+*.tsbuildinfo

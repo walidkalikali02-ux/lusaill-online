@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: searchTitles[article.slug] ?? article.title,
     description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث مع خطوات وروابط رسمية.`,
-    alternates: { canonical: `/articles/${article.slug}` },
+    alternates: pageAlternates(`/articles/${article.slug}`),
     robots: { index: article.status === "published", follow: true },
     openGraph: {
       title: searchTitles[article.slug] ?? article.title,

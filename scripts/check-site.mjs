@@ -6,7 +6,11 @@ const origin = process.argv[2] ?? "https://www.lusaill.online";
 const official = "https://www.lusaill.online";
 const local = (url) => new URL(new URL(url, official).pathname + new URL(url, official).search, origin);
 const get = async (url) => { const r = await fetch(url); assert.equal(r.status, 200, `${url}: HTTP ${r.status}`); return r.text(); };
-const sitemap = await get(`${origin}/sitemap.xml`);
+const sitemapIndex = await get(`${origin}/sitemap.xml`);
+assert(sitemapIndex.includes('<sitemapindex'), 'Sitemap index missing');
+const sitemapNames = [...sitemapIndex.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
+for (const type of ['articles', 'categories', 'guides', 'entities']) assert(sitemapNames.includes(`${official}/sitemap-${type}.xml`), `Missing sitemap: ${type}`);
+const sitemap = (await Promise.all(sitemapNames.map((url) => get(local(url))))).join('');
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
 assert(urls.length > 0);
 assert.equal(new Set(urls).size, urls.length, "Duplicate sitemap URL");
@@ -16,6 +20,16 @@ for (const image of sitemap.matchAll(/<image:loc>(.*?)<\/image:loc>/g)) {
 }
 const robots = await get(`${origin}/robots.txt`);
 assert(robots.includes('Disallow: /api/') && robots.includes('Disallow: /admin/'), 'Crawler exclusions missing');
+assert(robots.includes(`Sitemap: ${official}/sitemap.xml`), 'Sitemap index not referenced');
+const rules = [...robots.matchAll(/^(Allow|Disallow): (.+)$/gm)].map((m) => ({ allow: m[1] === 'Allow', pattern: m[2] }));
+function crawlAllowed(path) {
+  const matching = rules.filter(({ pattern }) => new RegExp('^' + pattern.replace(/[.+?^{}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*')).test(path));
+  matching.sort((a, b) => b.pattern.length - a.pattern.length || Number(b.allow) - Number(a.allow));
+  return matching[0]?.allow ?? true;
+}
+for (const path of ['/search?q=test', '/articles?q=test', '/categories/digital-life?filter=docs', '/categories/digital-life?page=2&filter=docs']) assert(!crawlAllowed(path), `Parameter URL crawlable: ${path}`);
+for (const path of ['/_next/static/test.js', '/_next/static/test.css?version=1', '/_next/image?url=test&w=640&q=75', '/categories/digital-life?page=2']) assert(crawlAllowed(path), `Required resource/pagination blocked: ${path}`);
+for (const match of sitemap.matchAll(/<lastmod>(.*?)<\/lastmod>/g)) assert(new Date(match[1]).getTime() <= Date.now(), `Future sitemap lastmod: ${match[1]}`);
 const categoryPath = '/categories/digital-life';
 const firstCategory = await get(`${origin}${categoryPath}`);
 const secondCategory = await get(`${origin}${categoryPath}?page=2`);
@@ -28,6 +42,10 @@ for (const page of ['0', '-1', 'invalid', '999999']) {
 const titles = new Set(); const descriptions = new Set(); const links = new Set(); const images = new Set();
 let articles = 0; let diagrams = 0; let howToCount = 0;
 const homepage = await get(`${origin}/`);
+const homepageLinks = [...homepage.matchAll(/<a\b[^>]*href="([^"]+)"/g)].map((m) => m[1]);
+assert(homepageLinks.includes('/articles'), 'Homepage lacks crawlable all-guides link');
+const catalog = await get(`${origin}/articles`);
+for (const url of urls.filter((url) => new URL(url).pathname.startsWith('/articles/'))) assert(catalog.includes(`href="${new URL(url).pathname}"`), `Article not reachable in two clicks: ${url}`);
 const homeDescription = homepage.match(/<meta name="description" content="([^"]+)"/)?.[1] ?? '';
 assert(homeDescription.length >= 140 && homeDescription.length <= 155, 'Homepage description must be 140–155 characters');
 assert(homepage.includes('id="deadlines-title"'), 'Deadline box missing');
@@ -44,6 +62,11 @@ for (const url of urls) {
   assert(url.startsWith(`${official}/`), `Noncanonical sitemap: ${url}`);
   const html = await get(local(url));
   assert(/<html[^>]*lang="ar"[^>]*dir="rtl"/.test(html), `Arabic direction missing: ${url}`);
+  for (const language of ['ar-EG', 'x-default']) {
+    const alternate = [...html.matchAll(/<link\b[^>]*>/g)].find((m) => new RegExp(`hreflang="${language}"`, 'i').test(m[0]))?.[0];
+    const href = alternate?.match(/href="([^"]+)"/)?.[1]?.replace(/&amp;/g, '&');
+    assert(href && new URL(href).href === new URL(url).href, `Page-specific hreflang missing: ${language} ${url}`);
+  }
   const headingLevels = [...html.matchAll(/<h([1-6])(?:\s|>)/g)].map((match) => Number(match[1]));
   for (let i = 1; i < headingLevels.length; i++) assert(headingLevels[i] <= headingLevels[i - 1] + 1, `Heading level skip: ${url}`);
   assert.equal([...html.matchAll(/<h1\b/g)].length, 1, `H1 count: ${url}`);
@@ -67,6 +90,8 @@ for (const url of urls) {
     assert.equal(schemas.some((s) => s['@type'] === 'FAQPage'), html.includes('id="faq"'), `FAQ schema must match visible FAQs: ${url}`);
     howToCount += schemas.some((s) => s['@type'] === 'HowTo') ? 1 : 0;
     assert(html.includes('id="sources"'), `Official source box missing: ${url}`);
+    const serverHtml = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+    assert(serverHtml.includes('id="quick-answer"') && serverHtml.includes('id="sources"') && serverHtml.includes('id="next-step"'), `Full article sections absent from server HTML: ${url}`);
     assert(html.includes('id="next-step"'), `Related next step missing: ${url}`);
     assert(html.includes('آخر مراجعة: <time'), `Last-reviewed date missing: ${url}`);
     assert(title.includes('2026:'), `Service/year title missing: ${url}`);

@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import "./globals.css";
 import { SiteAnalytics } from "@/components/site-analytics";
@@ -17,9 +18,7 @@ export const metadata: Metadata = {
   creator: siteConfig.publisher,
   publisher: siteConfig.name,
   authors: [{ name: siteConfig.publisher }],
-  alternates: {
-    canonical: "/",
-  },
+  alternates: pageAlternates("/"),
   category: "reference",
   referrer: "origin-when-cross-origin",
   formatDetection: { email: false, address: false, telephone: false },

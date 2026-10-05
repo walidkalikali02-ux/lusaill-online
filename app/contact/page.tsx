@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EditorialFeedback } from "@/components/editorial-feedback";
@@ -7,7 +8,7 @@ const title = "تواصل معنا";
 const description = "أرسل تصحيحًا لمقال أو بلاغًا عن رابط لا يعمل عبر مستودع لوسيل الرسمي، وتعرّف على المعلومات التي تساعد فريق التحرير على المراجعة.";
 
 export const metadata: Metadata = {
-  title, description, alternates: { canonical: "/contact" },
+  title, description, alternates: pageAlternates("/contact"),
   openGraph: { title, description, url: "/contact", type: "website", images: [siteSocialImage] },
 };
 

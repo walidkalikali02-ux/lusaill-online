@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { guidePaths } from "@/lib/guide-paths";
@@ -6,7 +7,7 @@ import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 const description = "اختر مسارًا لمهمتك: السكن البديل والتموين والوثائق والمرور والكهرباء في مصر، أو أمان الحسابات ونسخ الهواتف وحل مشكلات Chrome.";
 export const metadata: Metadata = {
   title: "مسارات الخدمات وحل المشكلات اليومية", description,
-  alternates: { canonical: "/guides" },
+  alternates: pageAlternates("/guides"),
   openGraph: { title: "مسارات الخدمات وحل المشكلات اليومية", description, url: "/guides", images: [siteSocialImage] },
 };
 export default function GuidesPage() {

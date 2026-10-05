@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -35,7 +36,7 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   return {
     title,
     description,
-    alternates: { canonical: canonicalPath },
+    alternates: pageAlternates(canonicalPath),
     robots: { index: hasPublished && validPage, follow: true },
     openGraph: {
       title,

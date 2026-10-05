@@ -69,7 +69,7 @@ for (const bot of requiredBots) {
 
 // 4. Check sitemap
 console.log("🔍 Checking sitemap...");
-const sitemapFile = "app/sitemap.ts";
+const sitemapFile = "lib/sitemaps.ts";
 const sitemapContent = readFileSync(sitemapFile, "utf8");
 if (!sitemapContent.includes("lastModified")) {
   check(sitemapFile, "Sitemap missing lastModified");
@@ -171,7 +171,7 @@ if (!articleContent.includes("robots:") && !articleContent.includes("noindex")) 
 console.log("🔍 Checking redirect configuration...");
 const nextConfigFile = "next.config.ts";
 const nextConfigContent = readFileSync(nextConfigFile, "utf8");
-if (!nextConfigContent.includes("redirects")) {
+if (!nextConfigContent.includes("redirects") && !readFileSync("proxy.ts", "utf8").includes("NextResponse.redirect")) {
   check(nextConfigFile, "Missing redirect configuration");
 }
 

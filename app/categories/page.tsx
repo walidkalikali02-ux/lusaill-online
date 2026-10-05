@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ClusterCard } from "@/components/cluster-card";
@@ -7,7 +8,7 @@ import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "التصنيفات",
   description: "تصفح التصنيفات التي تضم أدلة منشورة في لوسيل. ابدأ بخدمات شركات توزيع الكهرباء والاستعلام عن الفواتير، مع روابط رسمية وخطوات عملية.",
-  alternates: { canonical: "/categories" },
+  alternates: pageAlternates("/categories"),
   openGraph: {
     title: "التصنيفات — لوسيل",
     description: "التصنيفات التي تضم أدلة منشورة ومراجعة في لوسيل.",

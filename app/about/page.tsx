@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig, absoluteUrl, siteSocialImage } from "@/lib/site-config";
@@ -6,7 +7,7 @@ import { overallProgress } from "@/lib/content";
 export const metadata: Metadata = {
   title: "عن لوسيل",
   description: "لوسيل أدلة عربية للخدمات المصرية والحياة الرقمية، مع مصدر رسمي وتاريخ مراجعة لكل معلومة.",
-  alternates: { canonical: "/about" },
+  alternates: pageAlternates("/about"),
   openGraph: {
     title: "عن لوسيل",
     description: "لوسيل أدلة عربية للخدمات المصرية والحياة الرقمية، مع مصدر رسمي وتاريخ مراجعة لكل معلومة.",

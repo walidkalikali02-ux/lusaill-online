@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import { methodologyNotes, winningArticleTemplate } from "@/lib/content";
 import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
@@ -5,7 +6,7 @@ import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "منهج التحرير والمراجعة",
   description: "كيف يبني لوسيل الدقة في محتوى الخدمات والإجراءات: مصادر أولية، تاريخ تحقق، بوابة جودة، وتصحيح واضح عند تغير المعلومات.",
-  alternates: { canonical: "/editorial-policy" },
+  alternates: pageAlternates("/editorial-policy"),
   openGraph: {
     title: "منهج التحرير والمراجعة — لوسيل",
     description: "كيف يبني لوسيل الدقة في محتوى الخدمات والإجراءات الحكومية.",

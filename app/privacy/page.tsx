@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
@@ -6,7 +7,7 @@ const title = "سياسة الخصوصية";
 const description = "كيف يتعامل موقع لوسيل مع بيانات زيارة الصفحات وروابط المصادر والملاحظات التي ترسلها عبر GitHub، وحدود الخدمات الخارجية.";
 
 export const metadata: Metadata = {
-  title, description, alternates: { canonical: "/privacy" },
+  title, description, alternates: pageAlternates("/privacy"),
   openGraph: { title, description, url: "/privacy", type: "website", images: [siteSocialImage] },
 };
 

@@ -1,3 +1,4 @@
+import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import { GuideSearch } from "@/components/guide-search";
 import Link from "next/link";
@@ -21,7 +22,7 @@ const quickTopics = [
 export const metadata: Metadata = {
   title: { absolute: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية" },
   description: siteConfig.description,
-  alternates: { canonical: "/" },
+  alternates: pageAlternates("/"),
   openGraph: { title: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية", description: siteConfig.description, url: "/" },
 };
 
