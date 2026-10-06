@@ -8,6 +8,7 @@ export function proxy(request: NextRequest) {
   const originalPath = target.pathname;
   const cleanPath = originalPath.length > 1 ? originalPath.replace(/\/+$/, "") : originalPath;
   const aliases: Record<string, string> = {
+    "/services/electricity-bill-inquiry": "/articles/electricity-bill-inquiry",
     "/categories/housing-utilities": "/categories/fawatir-alkahraba",
     "/articles/شركة-جنوب-الدلتا-لتوزيع-الكهرباء": "/articles/south-delta-electricity",
   };

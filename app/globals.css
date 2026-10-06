@@ -496,3 +496,18 @@ img { max-width: 100%; height: auto; }
   .step-item, .guide-figure { break-inside: avoid; }
   a { color: inherit; text-decoration: underline; }
 }
+
+/* Electricity service table and calculator: keyboard usable, RTL and mobile. */
+.electricity-table-scroll { overflow-x: auto; max-width: 100%; border: 1px solid var(--border, #ddd); border-radius: 10px; }
+.electricity-table-scroll table { min-width: 650px; }
+.electricity-table-scroll caption { text-align: start; padding: 12px; }
+.electricity-table-scroll td p { font-size: .9em; margin: 8px 0 0; }
+.electricity-calculator label { display: block; font-weight: 700; margin: 16px 0 8px; }
+.electricity-calculator input { width: 100%; max-width: 320px; padding: 12px; border: 2px solid #687c87; border-radius: 8px; background: #fff; color: #102838; font-size: 1.2rem; }
+.electricity-calculator input:focus-visible, .electricity-table-scroll:focus-visible { outline: 3px solid #157d72; outline-offset: 3px; }
+.electricity-calculator input[aria-invalid="true"] { border-color: #ad2929; }
+.calculator-result { padding: 16px; border-radius: 12px; background: #eaf6f3; color: #102838; margin-block: 16px; }
+.calculator-result dl { margin: 0; }
+.calculator-result dl div { display: flex; gap: 16px; justify-content: space-between; flex-wrap: wrap; padding-block: 8px; border-bottom: 1px solid #c6dcd6; }
+.calculator-result dd { margin: 0; font-variant-numeric: tabular-nums; }
+@media print { .electricity-table-scroll { overflow: visible; } .electricity-table-scroll table { min-width: 0; font-size: 10pt; } }

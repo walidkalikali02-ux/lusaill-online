@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ElectricityCompanies, ElectricityInquiryDetail } from "./electricity-inquiry-detail";
 import { guideIllustrations } from "@/lib/guide-illustrations";
 import Link from "next/link";
 import type { Article } from "@/lib/content";
@@ -29,9 +30,11 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
           )}
         </section>
 
+        {article.slug === "electricity-bill-inquiry" && <ElectricityCompanies />}
+
         {/* Steps */}
         <section id="steps" className="brief-box">
-          <h2>خطوات التنفيذ</h2>
+          <h2>{article.slug === "electricity-bill-inquiry" ? "الاستعلام عن فاتورة الكهرباء برقم الحساب: خطوات التنفيذ" : "خطوات التنفيذ"}</h2>
           {article.steps?.length ? (
             <div className="steps-list">
               {article.steps.map((step, i) => (
@@ -54,6 +57,8 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
             <p>يحتاج كاتب فتح البوابة/التطبيق الرسمي فعليًا والتقاط لقطات شاشة حديثة لكل خطوة.</p>
           )}
         </section>
+
+        {article.slug === "electricity-bill-inquiry" && <ElectricityInquiryDetail />}
 
         {article.steps?.length ? <GuideChecklist steps={article.steps.map((step) => step.title)} /> : null}
         {path && <section className="brief-box"><h2>اختر الدليل المناسب لحالتك</h2><p>{path.description}</p><Link href={`/guides/${path.slug}`}>{path.title}</Link></section>}
@@ -119,6 +124,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
             <li><a href="#quick-answer">الإجابة الفورية</a></li>
             <li><a href="#summary">الملخص</a></li>
             <li><a href="#steps">خطوات التنفيذ</a></li>
+            {article.slug === "electricity-bill-inquiry" && <><li><a href="#electricity-companies">الشركات التسع</a></li><li><a href="#calculator">حاسبة الفاتورة</a></li><li><a href="#inquiry-problems">حل مشكلات الاستعلام</a></li></>}
             {article.steps?.length ? <li><a href="#checklist">قائمة متابعة التنفيذ</a></li> : null}
             {article.commonMistakes?.length ? <li><a href="#mistakes">الأخطاء الشائعة</a></li> : null}
             <li><a href="#sources">المصادر الرسمية</a></li>

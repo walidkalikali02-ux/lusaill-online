@@ -1,7 +1,7 @@
 // Explicit service-first search titles; 2026 describes this edition, not a new source review.
 // Keep full descriptive H1s and factual Article headlines.
 export const searchTitles: Record<string, string> = {
-  "electricity-bill-inquiry": "استعلام فاتورة الكهرباء 2026: الشركة والرقم الصحيح",
+  "electricity-bill-inquiry": "استعلام فاتورة الكهرباء 2026: الشركات والحاسبة",
   "insurance-number-inquiry": "الرقم التأميني 2026: الاستعلام بالرقم القومي في مصر",
   "insurance-last-period": "التأمينات 2026: الاستعلام عن آخر مدة مسجلة",
   "insurance-periods-wages": "التأمينات 2026: مراجعة مدد الاشتراك والأجور",

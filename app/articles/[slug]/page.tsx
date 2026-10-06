@@ -1,3 +1,4 @@
+import { electricityDetailText } from "@/lib/electricity-inquiry-detail";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -47,9 +48,10 @@ function readingTime(article: Parameters<typeof wordCount>[0]): number {
   return Math.max(1, Math.ceil(wordCount(article) / 200));
 }
 
-function wordCount(article: { quickAnswer?: string; summaryTable?: { label: string; value: string }[]; steps?: { title: string; detail: string }[]; commonMistakes?: string[]; faqs?: { question: string; answer: string }[] }) {
+function wordCount(article: { slug?: string; quickAnswer?: string; summaryTable?: { label: string; value: string }[]; steps?: { title: string; detail: string }[]; commonMistakes?: string[]; faqs?: { question: string; answer: string }[] }) {
   const text = [
     article.quickAnswer,
+    article.slug === "electricity-bill-inquiry" ? electricityDetailText : undefined,
     ...(article.summaryTable ?? []).flatMap((row) => [row.label, row.value]),
     ...(article.steps ?? []).flatMap((step) => [step.title, step.detail]),
     ...(article.commonMistakes ?? []),
@@ -211,6 +213,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <a href="#quick-answer">الإجابة الفورية</a>
             <a href="#summary">الملخص</a>
             <a href="#steps">خطوات التنفيذ</a>
+            {article.slug === "electricity-bill-inquiry" && <><a href="#electricity-companies">الشركات التسع</a><a href="#calculator">حاسبة الفاتورة</a><a href="#inquiry-problems">حل مشكلات الاستعلام</a></>}
             {article.commonMistakes?.length ? <a href="#mistakes">الأخطاء الشائعة</a> : null}
             <a href="#sources">المصادر الرسمية</a>
             {article.faqs?.length ? <a href="#faq">الأسئلة الشائعة</a> : null}
