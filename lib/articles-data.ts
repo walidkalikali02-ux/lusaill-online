@@ -14,6 +14,23 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Egyptian social protection and tax services: demand is not measured in Search Console yet.
+  { id: 207, clusterCode: "B", group: "bonus", title: "الاستعلام عن الرقم التأميني بالرقم القومي", keyword: "الاستعلام عن الرقم التأميني", volume: 0, kd: null, month: 1 },
+  { id: 208, clusterCode: "B", group: "bonus", title: "الاستعلام عن آخر مدة تأمينية", keyword: "الاستعلام عن آخر مدة تأمينية", volume: 0, kd: null, month: 1 },
+  { id: 209, clusterCode: "B", group: "bonus", title: "مراجعة مدد الاشتراك والأجور التأمينية", keyword: "الاستعلام عن مدد الاشتراك والأجور", volume: 0, kd: null, month: 1 },
+  { id: 210, clusterCode: "B", group: "bonus", title: "الاستعلام عن الاستقطاعات التأمينية", keyword: "الاستعلام عن الاستقطاعات التأمينية", volume: 0, kd: null, month: 1 },
+  { id: 211, clusterCode: "B", group: "bonus", title: "الاستعلام عن المعاش المنصرف", keyword: "الاستعلام عن المعاش المنصرف", volume: 0, kd: null, month: 1 },
+  { id: 212, clusterCode: "B", group: "bonus", title: "استعراض المعاشات المستحقة للمستفيد", keyword: "المعاشات المستحقة للمستفيد", volume: 0, kd: null, month: 1 },
+  { id: 213, clusterCode: "B", group: "bonus", title: "شراء مدة تأمينية سابقة", keyword: "شراء مدة تأمينية سابقة", volume: 0, kd: null, month: 1 },
+  { id: 214, clusterCode: "B", group: "bonus", title: "التسجيل الذاتي في الفاتورة الإلكترونية", keyword: "التسجيل في الفاتورة الإلكترونية", volume: 0, kd: null, month: 1 },
+  { id: 215, clusterCode: "B", group: "bonus", title: "تجهيز الختم والتوقيع الإلكتروني للفواتير", keyword: "التوقيع الإلكتروني للفاتورة الإلكترونية", volume: 0, kd: null, month: 1 },
+  { id: 216, clusterCode: "B", group: "bonus", title: "تكويد السلع والخدمات بنظام GS1 أو EGS", keyword: "أكواد GS1 و EGS للفاتورة الإلكترونية", volume: 0, kd: null, month: 1 },
+  { id: 217, clusterCode: "B", group: "bonus", title: "الاستعداد لمنظومة الإيصال الإلكتروني", keyword: "التسجيل في الإيصال الإلكتروني", volume: 0, kd: null, month: 1 },
+  { id: 218, clusterCode: "B", group: "bonus", title: "حل مشكلات التسجيل في الفاتورة الإلكترونية", keyword: "مشاكل التسجيل في الفاتورة الإلكترونية", volume: 0, kd: null, month: 1 },
+  { id: 219, clusterCode: "B", group: "bonus", title: "شروط تكافل وكرامة والفئات المستحقة", keyword: "شروط تكافل وكرامة", volume: 0, kd: null, month: 1 },
+  { id: 220, clusterCode: "B", group: "bonus", title: "مستندات وطريقة التقديم في تكافل وكرامة", keyword: "التقديم في تكافل وكرامة", volume: 0, kd: null, month: 1 },
+  { id: 221, clusterCode: "B", group: "bonus", title: "الاستعلام وتقديم شكوى تكافل وكرامة", keyword: "استعلام وشكوى تكافل وكرامة", volume: 0, kd: null, month: 1 },
+
   // Google Forms and Slides tasks: search demand unmeasured, not a volume estimate.
   {"id":187,"clusterCode":"H","group":"bonus","title":"إنشاء نموذج تسجيل واضح في Google Forms","keyword":"إنشاء نموذج تسجيل واضح في Google Forms","volume":0,"kd":null,"month":1},
   {"id":188,"clusterCode":"H","group":"bonus","title":"اختيار نوع السؤال المناسب في Google Forms","keyword":"اختيار نوع السؤال المناسب في Google Forms","volume":0,"kd":null,"month":1},

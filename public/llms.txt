@@ -34,6 +34,24 @@
 - [فاتورة كهرباء جنوب الدلتا](https://www.lusaill.online/articles/south-delta-electricity)
 - [خدمات كهرباء شمال القاهرة](https://www.lusaill.online/articles/north-cairo-electricity)
 
+## التأمينات والمعاشات والضرائب والدعم النقدي
+
+- [الاستعلام عن الرقم التأميني](https://www.lusaill.online/articles/insurance-number-inquiry)
+- [مراجعة آخر مدة تأمينية](https://www.lusaill.online/articles/insurance-last-period)
+- [مدد الاشتراك والأجور](https://www.lusaill.online/articles/insurance-periods-wages)
+- [الاستقطاعات التأمينية](https://www.lusaill.online/articles/insurance-deductions-inquiry)
+- [المعاش المنصرف](https://www.lusaill.online/articles/pension-payment-inquiry)
+- [استحقاقات المستفيد](https://www.lusaill.online/articles/beneficiary-pensions-inquiry)
+- [شراء مدة تأمينية](https://www.lusaill.online/articles/insurance-purchase-duration)
+- [التسجيل في الفاتورة الإلكترونية](https://www.lusaill.online/articles/e-invoice-self-registration)
+- [الختم والتوقيع الإلكتروني](https://www.lusaill.online/articles/e-invoice-digital-signature)
+- [تكويد GS1 وEGS](https://www.lusaill.online/articles/e-invoice-gs1-egs-codes)
+- [الاستعداد للإيصال الإلكتروني](https://www.lusaill.online/articles/e-receipt-readiness)
+- [حل أخطاء تسجيل الفاتورة](https://www.lusaill.online/articles/e-invoice-registration-errors)
+- [شروط تكافل وكرامة](https://www.lusaill.online/articles/takaful-karama-eligibility)
+- [مستندات تكافل وكرامة](https://www.lusaill.online/articles/takaful-karama-apply-documents)
+- [استعلام وشكاوى تكافل وكرامة](https://www.lusaill.online/articles/takaful-karama-inquiry-complaint)
+
 ## أدلة الحياة الرقمية
 
 - [تنظيم Gmail بالفلاتر](https://www.lusaill.online/articles/gmail-filters)

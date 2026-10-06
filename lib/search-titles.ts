@@ -1,6 +1,21 @@
 // Explicit service-first search titles; 2026 describes this edition, not a new source review.
 // Keep full descriptive H1s and factual Article headlines.
 export const searchTitles: Record<string, string> = {
+  "insurance-number-inquiry": "الرقم التأميني 2026: الاستعلام بالرقم القومي في مصر",
+  "insurance-last-period": "التأمينات 2026: الاستعلام عن آخر مدة مسجلة",
+  "insurance-periods-wages": "التأمينات 2026: مراجعة مدد الاشتراك والأجور",
+  "insurance-deductions-inquiry": "التأمينات 2026: الاستعلام عن الاستقطاعات",
+  "pension-payment-inquiry": "المعاش 2026: الاستعلام عن المبلغ المنصرف",
+  "beneficiary-pensions-inquiry": "المعاشات 2026: استحقاقات المستفيد المسجلة",
+  "insurance-purchase-duration": "شراء مدة تأمينية 2026: الشروط وطرق السداد",
+  "e-invoice-self-registration": "الفاتورة الإلكترونية 2026: التسجيل الذاتي",
+  "e-invoice-digital-signature": "الفاتورة الإلكترونية 2026: الختم والتوقيع",
+  "e-invoice-gs1-egs-codes": "الفاتورة الإلكترونية 2026: أكواد GS1 وEGS",
+  "e-receipt-readiness": "الإيصال الإلكتروني 2026: التسجيل وتجهيز نقاط البيع",
+  "e-invoice-registration-errors": "الفاتورة الإلكترونية 2026: حل أخطاء التسجيل",
+  "takaful-karama-eligibility": "تكافل وكرامة 2026: الشروط والفئات المستحقة",
+  "takaful-karama-apply-documents": "تكافل وكرامة 2026: المستندات وطريقة التقديم",
+  "takaful-karama-inquiry-complaint": "تكافل وكرامة 2026: الاستعلام وتقديم شكوى",
   "forms-create-registration": "نموذج تسجيل 2026: إنشاؤه في Google Forms بوضوح",
   "forms-question-types": "أنواع الأسئلة 2026: اختيار المناسب في Google Forms",
   "forms-file-upload": "رفع الملفات 2026: إعداده في Google Forms بأمان",

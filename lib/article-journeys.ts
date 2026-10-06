@@ -26,4 +26,8 @@ export const articleJourneys: string[][] = [
   ["android-app-permissions", "android-privacy-dashboard", "android-location-permissions", "lost-android-find-hub"],
   ["iphone-backup-choice", "lost-iphone-find-my"],
   ["south-delta-electricity", "north-delta-electricity", "north-cairo-electricity", "south-cairo-electricity", "alexandria-electricity"],
+  ["insurance-number-inquiry", "insurance-last-period", "insurance-periods-wages", "insurance-deductions-inquiry", "insurance-purchase-duration"],
+  ["pension-payment-inquiry", "beneficiary-pensions-inquiry"],
+  ["e-invoice-self-registration", "e-invoice-digital-signature", "e-invoice-gs1-egs-codes", "e-invoice-registration-errors", "e-receipt-readiness"],
+  ["takaful-karama-eligibility", "takaful-karama-apply-documents", "takaful-karama-inquiry-complaint"],
 ];
