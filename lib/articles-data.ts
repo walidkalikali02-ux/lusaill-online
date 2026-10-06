@@ -142,11 +142,12 @@ export const articleSeeds: ArticleSeed[] = [
   { id: 7, clusterCode: "A", group: "pillar", title: "الاستعلام بالاسم والعنوان", keyword: "الاستعلام عن فاتورة الكهرباء بالاسم والعنوان", volume: 1300, kd: 16, month: 1 },
   { id: 8, clusterCode: "A", group: "pillar", title: "الاستعلام برقم العداد القديم", keyword: "الاستعلام عن فاتورة الكهرباء برقم العداد القديم", volume: 590, kd: 13, month: 1 },
 
-  { id: 9, clusterCode: "A", group: "distributors", title: "شركة جنوب القاهرة — دليل كامل", keyword: "شركة جنوب القاهرة لتوزيع الكهرباء", volume: 12100, kd: 3, month: 1 },
-  { id: 10, clusterCode: "A", group: "distributors", title: "شركة شمال الدلتا — دليل كامل", keyword: "شركة شمال الدلتا لتوزيع الكهرباء", volume: 9900, kd: 6, month: 1 },
-  { id: 11, clusterCode: "A", group: "distributors", title: "شركة كهرباء الإسكندرية — دليل كامل", keyword: "شركة كهرباء الاسكندرية", volume: 9900, kd: 0, month: 1 },
-  { id: 12, clusterCode: "A", group: "distributors", title: "شركة جنوب الدلتا — دليل كامل", keyword: "شركة جنوب الدلتا لتوزيع الكهرباء", volume: 6600, kd: 3, month: 1 },
-  { id: 13, clusterCode: "A", group: "distributors", title: "شركة شمال القاهرة — دليل كامل", keyword: "شركة شمال القاهرة لتوزيع الكهرباء", volume: 6600, kd: 1, month: 1 },
+  // Bill-keyword estimates supplied by the user on 2026-10-06; not verified analytics.
+  { id: 9, clusterCode: "A", group: "distributors", title: "شركة جنوب القاهرة — دليل كامل", keyword: "الاستعلام عن فاتورة الكهرباء جنوب القاهرة", volume: 1300, kd: 5, month: 1 },
+  { id: 10, clusterCode: "A", group: "distributors", title: "شركة شمال الدلتا — دليل كامل", keyword: "فاتورة الكهرباء شمال الدلتا", volume: 6600, kd: 0, month: 1 },
+  { id: 11, clusterCode: "A", group: "distributors", title: "شركة كهرباء الإسكندرية — دليل كامل", keyword: "فاتورة الكهرباء الاسكندرية", volume: 5400, kd: 4, month: 1 },
+  { id: 12, clusterCode: "A", group: "distributors", title: "شركة جنوب الدلتا — دليل كامل", keyword: "فاتورة الكهرباء جنوب الدلتا", volume: 4400, kd: 5, month: 1 },
+  { id: 13, clusterCode: "A", group: "distributors", title: "شركة شمال القاهرة — دليل كامل", keyword: "فاتورة الكهرباء شمال القاهرة", volume: 1600, kd: 3, month: 1 },
   { id: 14, clusterCode: "A", group: "distributors", title: "فاتورة كهرباء شمال الدلتا", keyword: "فاتورة الكهرباء شمال الدلتا", volume: 5400, kd: 8, month: 1 },
   { id: 15, clusterCode: "A", group: "distributors", title: "استعلام شمال الدلتا", keyword: "الاستعلام عن فاتورة الكهرباء شمال الدلتا", volume: 5400, kd: 6, month: 1 },
   { id: 16, clusterCode: "A", group: "distributors", title: "فاتورة كهرباء الإسكندرية", keyword: "فاتورة كهرباء الاسكندرية", volume: 5400, kd: 5, month: 1 },

@@ -28,11 +28,12 @@
 
 ## أدلة الكهرباء المنشورة
 
-- [خدمات كهرباء جنوب القاهرة](https://www.lusaill.online/articles/south-cairo-electricity)
-- [خدمات كهرباء شمال الدلتا](https://www.lusaill.online/articles/north-delta-electricity)
-- [خدمات كهرباء الإسكندرية](https://www.lusaill.online/articles/alexandria-electricity)
+- [استعلام فاتورة الكهرباء في مصر](https://www.lusaill.online/articles/electricity-bill-inquiry)
+- [فاتورة الكهرباء جنوب القاهرة](https://www.lusaill.online/articles/south-cairo-electricity)
+- [فاتورة الكهرباء شمال الدلتا](https://www.lusaill.online/articles/north-delta-electricity)
+- [فاتورة الكهرباء الإسكندرية](https://www.lusaill.online/articles/alexandria-electricity)
 - [فاتورة كهرباء جنوب الدلتا](https://www.lusaill.online/articles/south-delta-electricity)
-- [خدمات كهرباء شمال القاهرة](https://www.lusaill.online/articles/north-cairo-electricity)
+- [فاتورة الكهرباء شمال القاهرة](https://www.lusaill.online/articles/north-cairo-electricity)
 
 ## التأمينات والمعاشات والضرائب والدعم النقدي
 

@@ -24,3 +24,5 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Removed URLs need an equivalent destination for a redirect. Permanently retired pages without equivalents return 410 and stay outside sitemap, RSS, and llms.txt.
 - Verify lint, SEO QA, build, built-site crawl, changed interactive tools, and the correct production deployment. Check READY, home, two articles, covers, canonical/robots/schema and changed routes.
 - Authentication and private analytics are separate dependencies: script delivery is not event ingestion; technical SEO passing is not search indexing. State unresolved dependencies exactly.
+
+- Keyword priorities from 6 October: use reports/keyword-map-2026-10-06.md. Consolidate company bill variants into existing company guides; keep permanent /articles URLs. Volumes/KD supplied by the user are planning estimates, not verified analytics. Resolve unsupported name-only, online-license, housing, or newborn-service assumptions before publishing; do not multiply pages by synonyms.

@@ -1,6 +1,7 @@
 // Explicit service-first search titles; 2026 describes this edition, not a new source review.
 // Keep full descriptive H1s and factual Article headlines.
 export const searchTitles: Record<string, string> = {
+  "electricity-bill-inquiry": "استعلام فاتورة الكهرباء 2026: الشركة والرقم الصحيح",
   "insurance-number-inquiry": "الرقم التأميني 2026: الاستعلام بالرقم القومي في مصر",
   "insurance-last-period": "التأمينات 2026: الاستعلام عن آخر مدة مسجلة",
   "insurance-periods-wages": "التأمينات 2026: مراجعة مدد الاشتراك والأجور",
@@ -110,11 +111,11 @@ export const searchTitles: Record<string, string> = {
   "gmail-phishing-report": "تصيّد Gmail 2026: فحص رسالة مشبوهة والإبلاغ عنها",
   "iphone-backup-choice": "نسخ iPhone 2026: اختيار iCloud أو الكمبيوتر",
   "lost-iphone-find-my": "فقدان iPhone 2026: العثور عليه وتجنب رسائل النصب",
-  "south-cairo-electricity": "كهرباء جنوب القاهرة 2026: السداد وطرق الشكوى",
-  "north-delta-electricity": "كهرباء شمال الدلتا 2026: الفاتورة وقراءة العداد",
-  "alexandria-electricity": "كهرباء الإسكندرية 2026: الفاتورة وبلاغات الأعطال",
-  "south-delta-electricity": "كهرباء جنوب الدلتا 2026: الاستعلام وسداد الفاتورة",
-  "north-cairo-electricity": "كهرباء شمال القاهرة 2026: الفاتورة وقراءة العداد",
+  "south-cairo-electricity": "فاتورة جنوب القاهرة 2026: الاستعلام والسداد",
+  "north-delta-electricity": "فاتورة الكهرباء شمال الدلتا 2026: الاستعلام والسداد",
+  "alexandria-electricity": "فاتورة الكهرباء الإسكندرية 2026: الاستعلام والسداد",
+  "south-delta-electricity": "فاتورة الكهرباء جنوب الدلتا 2026: الاستعلام والسداد",
+  "north-cairo-electricity": "فاتورة الكهرباء شمال القاهرة 2026: الاستعلام والسداد",
   "vehicle-license-renewal-online": "رخصة المركبة 2026: التجديد أونلاين وشروط الطلب",
   "vehicle-license-lost-replacement": "بدل فاقد رخصة المركبة 2026: الطلب والشروط بمصر",
   "vehicle-license-damaged-replacement": "بدل تالف رخصة المركبة 2026: الطلب من مصر الرقمية",
