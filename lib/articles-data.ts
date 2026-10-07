@@ -14,6 +14,16 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Consular service demand is unmeasured; no invented search volume.
+  {"id": 222, "title": "استخراج شهادة ميلاد مصرية لمولود بالخارج", "clusterCode": "B", "group": "bonus", "keyword": "استخراج شهادة ميلاد مصرية لمولود بالخارج", "volume": 0, "kd": null, "month": 1},
+  {"id": 223, "title": "تجديد بطاقة الرقم القومي للمصريين بالخارج", "clusterCode": "B", "group": "bonus", "keyword": "تجديد بطاقة الرقم القومي للمصريين بالخارج", "volume": 0, "kd": null, "month": 1},
+  {"id": 224, "title": "استخراج صحيفة الحالة الجنائية من خارج مصر", "clusterCode": "B", "group": "bonus", "keyword": "استخراج صحيفة الحالة الجنائية من خارج مصر", "volume": 0, "kd": null, "month": 1},
+  {"id": 225, "title": "التصديق على المستندات لدى البعثات المصرية", "clusterCode": "B", "group": "bonus", "keyword": "التصديق على المستندات لدى البعثات المصرية", "volume": 0, "kd": null, "month": 1},
+  {"id": 226, "title": "عمل توكيل في القنصلية المصرية: تجهيز الطلب", "clusterCode": "B", "group": "bonus", "keyword": "عمل توكيل في القنصلية المصرية: تجهيز الطلب", "volume": 0, "kd": null, "month": 1},
+  {"id": 227, "title": "استخراج جواز سفر مصري لمولود بالخارج", "clusterCode": "B", "group": "bonus", "keyword": "استخراج جواز سفر مصري لمولود بالخارج", "volume": 0, "kd": null, "month": 1},
+  {"id": 228, "title": "وثيقة سفر مؤقتة لمولود مصري بالخارج", "clusterCode": "B", "group": "bonus", "keyword": "وثيقة سفر مؤقتة لمولود مصري بالخارج", "volume": 0, "kd": null, "month": 1},
+  {"id": 229, "title": "تصريح العمل للمصريين بالخارج: إصدار وتجديد", "clusterCode": "B", "group": "bonus", "keyword": "تصريح العمل للمصريين بالخارج: إصدار وتجديد", "volume": 0, "kd": null, "month": 1},
+
   // Egyptian social protection and tax services: demand is not measured in Search Console yet.
   { id: 207, clusterCode: "B", group: "bonus", title: "الاستعلام عن الرقم التأميني بالرقم القومي", keyword: "الاستعلام عن الرقم التأميني", volume: 0, kd: null, month: 1 },
   { id: 208, clusterCode: "B", group: "bonus", title: "الاستعلام عن آخر مدة تأمينية", keyword: "الاستعلام عن آخر مدة تأمينية", volume: 0, kd: null, month: 1 },

@@ -1,6 +1,15 @@
 // Explicit service-first search titles; 2026 describes this edition, not a new source review.
 // Keep full descriptive H1s and factual Article headlines.
 export const searchTitles: Record<string, string> = {
+  "birth-certificate-abroad": "شهادة ميلاد مصرية 2026: تسجيل مولود بالخارج",
+  "national-id-renewal-abroad": "تجديد الرقم القومي 2026: الوثائق المطلوبة بالخارج",
+  "criminal-record-abroad": "صحيفة الحالة الجنائية 2026: استخراجها من الخارج",
+  "consular-document-attestation": "التصديق القنصلي 2026: ترتيب اعتماد المستندات",
+  "consular-power-of-attorney": "توكيل القنصلية المصرية 2026: المستندات والخطوات",
+  "newborn-passport-abroad": "جواز سفر المولود 2026: المستندات المطلوبة بالخارج",
+  "newborn-travel-document": "وثيقة سفر المولود 2026: الأوراق وحدود الاستخدام",
+  "work-permit-abroad": "تصريح العمل 2026: الإصدار والتجديد للمصريين بالخارج",
+
   "electricity-bill-inquiry": "استعلام فاتورة الكهرباء 2026: الشركات والحاسبة",
   "insurance-number-inquiry": "الرقم التأميني 2026: الاستعلام بالرقم القومي في مصر",
   "insurance-last-period": "التأمينات 2026: الاستعلام عن آخر مدة مسجلة",

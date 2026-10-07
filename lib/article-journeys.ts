@@ -30,4 +30,5 @@ export const articleJourneys: string[][] = [
   ["pension-payment-inquiry", "beneficiary-pensions-inquiry"],
   ["e-invoice-self-registration", "e-invoice-digital-signature", "e-invoice-gs1-egs-codes", "e-invoice-registration-errors", "e-receipt-readiness"],
   ["takaful-karama-eligibility", "takaful-karama-apply-documents", "takaful-karama-inquiry-complaint"],
+  ["birth-certificate-abroad", "national-id-renewal-abroad", "criminal-record-abroad", "consular-document-attestation", "consular-power-of-attorney", "newborn-passport-abroad", "newborn-travel-document", "work-permit-abroad"],
 ];
