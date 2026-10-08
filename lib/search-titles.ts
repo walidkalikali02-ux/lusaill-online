@@ -1,6 +1,13 @@
 // Explicit service-first search titles; 2026 describes this edition, not a new source review.
 // Keep full descriptive H1s and factual Article headlines.
 export const searchTitles: Record<string, string> = {
+  "foreign-nationality-permission": "إذن التجنس 2026: الوثائق والمتابعة بالخارج",
+  "marriage-no-objection-certificate": "عدم ممانعة الزواج 2026: القيد والطلب بالخارج",
+  "egyptian-nationality-foreign-wife": "جنسية زوجة المصري 2026: الملف والمتابعة",
+  "palestinian-egyptian-travel-document": "وثيقة سفر الفلسطينيين 2026: الإصدار والتجديد",
+  "foreign-marriage-ratification": "التصادق على الزواج 2026: الوثائق والشهود",
+  "marriage-at-egyptian-mission": "الزواج بالقنصلية المصرية 2026: الأوراق والخطوات",
+  "divorce-at-egyptian-mission": "إشهاد الطلاق بالقنصلية 2026: تجهيز الملف",
   "birth-certificate-abroad": "شهادة ميلاد مصرية 2026: تسجيل مولود بالخارج",
   "national-id-renewal-abroad": "تجديد الرقم القومي 2026: الوثائق المطلوبة بالخارج",
   "criminal-record-abroad": "صحيفة الحالة الجنائية 2026: استخراجها من الخارج",

@@ -14,6 +14,14 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Consular procedures reviewed from primary MFA pages; demand remains unmeasured.
+  { id: 230, clusterCode: "B", group: "bonus", title: "طلب الإذن بالتجنس بجنسية أجنبية مع الاحتفاظ بالمصرية", keyword: "الإذن بالتجنس مع الاحتفاظ بالجنسية المصرية", volume: 0, kd: null, month: 1 },
+  { id: 231, clusterCode: "B", group: "bonus", title: "شهادة عدم ممانعة من الزواج للمصريين بالخارج", keyword: "شهادة عدم ممانعة من الزواج", volume: 0, kd: null, month: 1 },
+  { id: 232, clusterCode: "B", group: "bonus", title: "طلب اكتساب الجنسية المصرية لزوجة المصري الأجنبية", keyword: "اكتساب الجنسية المصرية لزوجة المصري", volume: 0, kd: null, month: 1 },
+  { id: 233, clusterCode: "B", group: "bonus", title: "استخراج وتجديد وثيقة السفر المصرية للفلسطينيين", keyword: "وثيقة السفر المصرية للفلسطينيين", volume: 0, kd: null, month: 1 },
+  { id: 234, clusterCode: "B", group: "bonus", title: "التصادق على عقد زواج غير مصري لدى البعثة", keyword: "التصادق على عقد زواج غير مصري", volume: 0, kd: null, month: 1 },
+  { id: 235, clusterCode: "B", group: "bonus", title: "إتمام إجراءات الزواج في البعثة المصرية بالخارج", keyword: "إتمام الزواج في السفارة المصرية", volume: 0, kd: null, month: 1 },
+  { id: 236, clusterCode: "B", group: "bonus", title: "تجهيز إشهاد الطلاق في البعثة المصرية بالخارج", keyword: "إشهاد الطلاق في السفارة المصرية", volume: 0, kd: null, month: 1 },
   // Consular service demand is unmeasured; no invented search volume.
   {"id": 222, "title": "استخراج شهادة ميلاد مصرية لمولود بالخارج", "clusterCode": "B", "group": "bonus", "keyword": "استخراج شهادة ميلاد مصرية لمولود بالخارج", "volume": 0, "kd": null, "month": 1},
   {"id": 223, "title": "تجديد بطاقة الرقم القومي للمصريين بالخارج", "clusterCode": "B", "group": "bonus", "keyword": "تجديد بطاقة الرقم القومي للمصريين بالخارج", "volume": 0, "kd": null, "month": 1},
