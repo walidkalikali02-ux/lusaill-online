@@ -14,6 +14,9 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Electricity-company guides verified from primary company services; demand is unmeasured.
+  { id: 237, clusterCode: "A", group: "distributors", title: "فاتورة كهرباء مصر العليا 2026: الاستعلام والقراءة", keyword: "فاتورة كهرباء مصر العليا", volume: 0, kd: null, month: 1 },
+  { id: 238, clusterCode: "A", group: "distributors", title: "فاتورة كهرباء البحيرة 2026: الاستعلام والسداد", keyword: "فاتورة كهرباء البحيرة", volume: 0, kd: null, month: 1 },
   // Consular procedures reviewed from primary MFA pages; demand remains unmeasured.
   { id: 230, clusterCode: "B", group: "bonus", title: "طلب الإذن بالتجنس بجنسية أجنبية مع الاحتفاظ بالمصرية", keyword: "الإذن بالتجنس مع الاحتفاظ بالجنسية المصرية", volume: 0, kd: null, month: 1 },
   { id: 231, clusterCode: "B", group: "bonus", title: "شهادة عدم ممانعة من الزواج للمصريين بالخارج", keyword: "شهادة عدم ممانعة من الزواج", volume: 0, kd: null, month: 1 },
