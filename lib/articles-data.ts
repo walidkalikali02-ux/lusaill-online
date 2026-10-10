@@ -14,6 +14,12 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Electricity procedures verified from EEHC and the regulator; demand is unmeasured.
+  { id: 239, clusterCode: "A", group: "payments", title: "شكوى الكهرباء 2026: التقديم والتصعيد للجهاز", keyword: "شكاوى الكهرباء", volume: 0, kd: null, month: 1 },
+  { id: 240, clusterCode: "A", group: "payments", title: "بلاغ انقطاع الكهرباء 2026: رقم 121 والطوارئ", keyword: "انقطاع الكهرباء", volume: 0, kd: null, month: 1 },
+  { id: 241, clusterCode: "A", group: "distributors", title: "طلب عداد كهرباء 2026: المستندات وخطوات التوصيل", keyword: "التقديم على عداد كهرباء", volume: 0, kd: null, month: 1 },
+  { id: 242, clusterCode: "A", group: "payments", title: "العداد الكودي 2026: المحاسبة والتحويل لقانوني", keyword: "عداد الكهرباء الكودي", volume: 0, kd: null, month: 1 },
+  { id: 243, clusterCode: "A", group: "payments", title: "نقل ملكية عداد الكهرباء 2026: الأوراق والخطوات", keyword: "نقل ملكية عداد الكهرباء", volume: 0, kd: null, month: 1 },
   // Electricity-company guides verified from primary company services; demand is unmeasured.
   { id: 237, clusterCode: "A", group: "distributors", title: "فاتورة كهرباء مصر العليا 2026: الاستعلام والقراءة", keyword: "فاتورة كهرباء مصر العليا", volume: 0, kd: null, month: 1 },
   { id: 238, clusterCode: "A", group: "distributors", title: "فاتورة كهرباء البحيرة 2026: الاستعلام والسداد", keyword: "فاتورة كهرباء البحيرة", volume: 0, kd: null, month: 1 },
