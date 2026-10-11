@@ -14,6 +14,11 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Electricity consumer guides verified from the regulator and EEHC; demand is unmeasured.
+  { id: 244, clusterCode: "A", group: "payments", title: "فحص عداد الكهرباء المعطل 2026: اختبار آمن", keyword: "فحص عداد الكهرباء", volume: 0, kd: null, month: 1 },
+  { id: 245, clusterCode: "A", group: "payments", title: "شحن عداد الكهرباء بالموبايل 2026: التطبيقات الرسمية", keyword: "شحن عداد الكهرباء بالموبايل", volume: 0, kd: null, month: 1 },
+  { id: 246, clusterCode: "A", group: "payments", title: "حقوق مستهلك الكهرباء في مصر 2026: دليل عملي", keyword: "حقوق مستهلك الكهرباء", volume: 0, kd: null, month: 1 },
+  { id: 247, clusterCode: "A", group: "payments", title: "التزامات شركة الكهرباء 2026: متى وكيف تشتكي؟", keyword: "التزامات شركة الكهرباء", volume: 0, kd: null, month: 1 },
   // Electricity procedures verified from EEHC and the regulator; demand is unmeasured.
   { id: 239, clusterCode: "A", group: "payments", title: "شكوى الكهرباء 2026: التقديم والتصعيد للجهاز", keyword: "شكاوى الكهرباء", volume: 0, kd: null, month: 1 },
   { id: 240, clusterCode: "A", group: "payments", title: "بلاغ انقطاع الكهرباء 2026: رقم 121 والطوارئ", keyword: "انقطاع الكهرباء", volume: 0, kd: null, month: 1 },
