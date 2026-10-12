@@ -14,6 +14,13 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Egyptian telecom self-service guides verified from NTRA primary pages; demand is unmeasured.
+  { id: 248, clusterCode: "B", group: "bonus", title: "معرفة الخطوط المسجلة باسمك 2026: عبر My NTRA", keyword: "معرفة الخطوط المسجلة باسمي", volume: 0, kd: null, month: 1 },
+  { id: 249, clusterCode: "B", group: "bonus", title: "معرفة المحافظ الإلكترونية 2026: المسجلة باسمك", keyword: "معرفة المحافظ الإلكترونية المسجلة باسمي", volume: 0, kd: null, month: 1 },
+  { id: 250, clusterCode: "B", group: "bonus", title: "نقل رقم المحمول 2026: الشروط والمتابعة", keyword: "نقل رقم المحمول لشبكة أخرى", volume: 0, kd: null, month: 1 },
+  { id: 251, clusterCode: "B", group: "bonus", title: "شكوى الاتصالات 2026: التصعيد إلى 155 والجهاز", keyword: "شكوى الاتصالات 155", volume: 0, kd: null, month: 1 },
+  { id: 252, clusterCode: "B", group: "bonus", title: "إلغاء خدمات المحمول 2026: الكود المجاني *155#", keyword: "إلغاء خدمات المحمول الترفيهية", volume: 0, kd: null, month: 1 },
+  { id: 253, clusterCode: "B", group: "bonus", title: "المكالمات المزعجة 2026: الإبلاغ في مصر", keyword: "الإبلاغ عن المكالمات المزعجة", volume: 0, kd: null, month: 1 },
   // Electricity consumer guides verified from the regulator and EEHC; demand is unmeasured.
   { id: 244, clusterCode: "A", group: "payments", title: "فحص عداد الكهرباء المعطل 2026: اختبار آمن", keyword: "فحص عداد الكهرباء", volume: 0, kd: null, month: 1 },
   { id: 245, clusterCode: "A", group: "payments", title: "شحن عداد الكهرباء بالموبايل 2026: التطبيقات الرسمية", keyword: "شحن عداد الكهرباء بالموبايل", volume: 0, kd: null, month: 1 },

@@ -228,3 +228,9 @@
 - [شحن عداد الكهرباء بالموبايل 2026](https://www.lusaill.online/articles/prepaid-meter-mobile-charge): التطبيقات الرسمية والتوافق وإثبات الشحن وحل العملية المعلقة.
 - [حقوق مستهلك الكهرباء 2026](https://www.lusaill.online/articles/electricity-consumer-rights): الأمان والمعلومة والجودة والشكوى مع واجبات المستهلك.
 - [التزامات شركة الكهرباء 2026](https://www.lusaill.online/articles/electricity-company-obligations): مسؤوليات التشغيل والصيانة والتعريفة والتوصيل ومسار الاعتراض.
+- [معرفة الخطوط المسجلة باسمك 2026](https://www.lusaill.online/articles/registered-mobile-lines): استخدام خدمة أرقامي في My NTRA والتصرف عند ظهور خط مجهول.
+- [معرفة المحافظ الإلكترونية المسجلة باسمك 2026](https://www.lusaill.online/articles/registered-mobile-wallets): مراجعة محافظ المحمول والبنوك وإلغاء غير المطلوبة بأمان.
+- [نقل رقم المحمول لشبكة أخرى 2026](https://www.lusaill.online/articles/mobile-number-portability): الملكية وشرط المدة والفاتورة ومتابعة طلب النقل.
+- [شكوى الاتصالات 2026](https://www.lusaill.online/articles/telecom-complaint): الشكوى لمقدم الخدمة ثم التصعيد عبر 155 أو My NTRA مع الإثباتات.
+- [إلغاء خدمات المحمول الترفيهية 2026](https://www.lusaill.online/articles/cancel-entertainment-services): الاستعلام والإلغاء المجاني عبر الكود الموحد *155# ومتابعة الخصم.
+- [الإبلاغ عن المكالمات المزعجة 2026](https://www.lusaill.online/articles/report-spam-calls): توثيق المكالمة والإبلاغ عبر القنوات الرسمية وحماية بياناتك.

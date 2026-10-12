@@ -26,6 +26,7 @@ export const articleJourneys: string[][] = [
   ["android-app-permissions", "android-privacy-dashboard", "android-location-permissions", "lost-android-find-hub"],
   ["iphone-backup-choice", "lost-iphone-find-my"],
   ["electricity-bill-inquiry", "south-delta-electricity", "north-delta-electricity", "north-cairo-electricity", "south-cairo-electricity", "alexandria-electricity", "upper-egypt-electricity", "beheira-electricity", "electricity-complaint", "electricity-outage-report", "electricity-meter-apply", "code-electricity-meter", "electricity-meter-transfer", "electricity-meter-test", "prepaid-meter-mobile-charge", "electricity-consumer-rights", "electricity-company-obligations"],
+  ["registered-mobile-lines", "registered-mobile-wallets", "mobile-number-portability", "telecom-complaint", "cancel-entertainment-services", "report-spam-calls"],
   ["insurance-number-inquiry", "insurance-last-period", "insurance-periods-wages", "insurance-deductions-inquiry", "insurance-purchase-duration"],
   ["pension-payment-inquiry", "beneficiary-pensions-inquiry"],
   ["e-invoice-self-registration", "e-invoice-digital-signature", "e-invoice-gs1-egs-codes", "e-invoice-registration-errors", "e-receipt-readiness"],
