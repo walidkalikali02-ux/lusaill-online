@@ -14,6 +14,15 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Egyptian telecom and fixed-internet guides verified from NTRA primary pages; demand is unmeasured.
+  { id: 254, clusterCode: "B", group: "bonus", title: "نقل الإنترنت الأرضي 2026: شركة أخرى خلال 72 ساعة", keyword: "نقل الإنترنت الأرضي لشركة أخرى", volume: 0, kd: null, month: 1 },
+  { id: 255, clusterCode: "B", group: "bonus", title: "تعويض انقطاع الإنترنت 2026: حق المستخدم والخطوات", keyword: "تعويض انقطاع الإنترنت", volume: 0, kd: null, month: 1 },
+  { id: 256, clusterCode: "B", group: "bonus", title: "اختبار سرعة الإنترنت 2026: قياس صحيح عبر My NTRA", keyword: "اختبار سرعة الإنترنت My NTRA", volume: 0, kd: null, month: 1 },
+  { id: 257, clusterCode: "B", group: "bonus", title: "خريطة جودة شبكات المحمول 2026: اختيار ومقارنة", keyword: "خريطة جودة شبكات المحمول", volume: 0, kd: null, month: 1 },
+  { id: 258, clusterCode: "B", group: "bonus", title: "منافذ شركات المحمول المعتمدة 2026: العثور والتحقق", keyword: "منافذ شركات المحمول المعتمدة", volume: 0, kd: null, month: 1 },
+  { id: 259, clusterCode: "B", group: "bonus", title: "الشريحة المفقودة 2026: إيقاف SIM واستبدالها بأمان", keyword: "إيقاف شريحة مفقودة", volume: 0, kd: null, month: 1 },
+  { id: 260, clusterCode: "B", group: "bonus", title: "تفعيل Wi‑Fi Calling في مصر 2026: الشروط والحل", keyword: "تفعيل Wi-Fi Calling في مصر", volume: 0, kd: null, month: 1 },
+  { id: 261, clusterCode: "B", group: "bonus", title: "حقوق مستخدم الاتصالات 2026: الاشتراك والفاتورة", keyword: "حقوق مستخدم الاتصالات", volume: 0, kd: null, month: 1 },
   // Egyptian telecom self-service guides verified from NTRA primary pages; demand is unmeasured.
   { id: 248, clusterCode: "B", group: "bonus", title: "معرفة الخطوط المسجلة باسمك 2026: عبر My NTRA", keyword: "معرفة الخطوط المسجلة باسمي", volume: 0, kd: null, month: 1 },
   { id: 249, clusterCode: "B", group: "bonus", title: "معرفة المحافظ الإلكترونية 2026: المسجلة باسمك", keyword: "معرفة المحافظ الإلكترونية المسجلة باسمي", volume: 0, kd: null, month: 1 },

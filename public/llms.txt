@@ -234,3 +234,11 @@
 - [شكوى الاتصالات 2026](https://www.lusaill.online/articles/telecom-complaint): الشكوى لمقدم الخدمة ثم التصعيد عبر 155 أو My NTRA مع الإثباتات.
 - [إلغاء خدمات المحمول الترفيهية 2026](https://www.lusaill.online/articles/cancel-entertainment-services): الاستعلام والإلغاء المجاني عبر الكود الموحد *155# ومتابعة الخصم.
 - [الإبلاغ عن المكالمات المزعجة 2026](https://www.lusaill.online/articles/report-spam-calls): توثيق المكالمة والإبلاغ عبر القنوات الرسمية وحماية بياناتك.
+- [نقل الإنترنت الأرضي 2026](https://www.lusaill.online/articles/fixed-internet-provider-switch): الإلغاء برقم مرجعي ثم التعاقد الجديد ضمن المدد المنظمة.
+- [تعويض انقطاع الإنترنت 2026](https://www.lusaill.online/articles/fixed-internet-outage-compensation): توثيق العطل وطلب التعويض والتصعيد عند عدم التنفيذ.
+- [اختبار سرعة الإنترنت 2026](https://www.lusaill.online/articles/internet-speed-test-myntra): إعداد اختبار قابل للمقارنة عبر My NTRA وقراءة النتيجة.
+- [خريطة جودة شبكات المحمول 2026](https://www.lusaill.online/articles/mobile-network-quality-map): مقارنة القياسات المنشورة بحسب المكان ونوع الخدمة.
+- [منافذ شركات المحمول المعتمدة 2026](https://www.lusaill.online/articles/authorized-telecom-outlets): العثور على المنفذ المعتمد والتحقق منه قبل تسليم البيانات.
+- [الشريحة المفقودة 2026](https://www.lusaill.online/articles/lost-sim-card): إيقاف SIM وحماية الحسابات ثم استخراج بدل فاقد.
+- [تفعيل Wi‑Fi Calling في مصر 2026](https://www.lusaill.online/articles/wifi-calling-egypt): المتطلبات والتفعيل واختبار المكالمة وحل التعثر.
+- [حقوق مستخدم الاتصالات 2026](https://www.lusaill.online/articles/telecom-user-rights): حقوق الاشتراك والاستهلاك والفاتورة والشكوى داخل الفروع.
