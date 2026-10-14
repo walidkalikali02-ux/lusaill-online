@@ -242,3 +242,11 @@
 - [الشريحة المفقودة 2026](https://www.lusaill.online/articles/lost-sim-card): إيقاف SIM وحماية الحسابات ثم استخراج بدل فاقد.
 - [تفعيل Wi‑Fi Calling في مصر 2026](https://www.lusaill.online/articles/wifi-calling-egypt): المتطلبات والتفعيل واختبار المكالمة وحل التعثر.
 - [حقوق مستخدم الاتصالات 2026](https://www.lusaill.online/articles/telecom-user-rights): حقوق الاشتراك والاستهلاك والفاتورة والشكوى داخل الفروع.
+- [تفعيل eSIM في مصر 2026](https://www.lusaill.online/articles/esim-egypt): التوافق والهوية ورمز QR واختبار الخط بعد التنشيط.
+- [تشغيل 5G في مصر 2026](https://www.lusaill.online/articles/enable-5g-egypt): فحص الهاتف والخط والتغطية والإعدادات وحل بقاء 4G.
+- [حماية إنترنت الأطفال 2026](https://www.lusaill.online/articles/child-safe-mobile-internet): اختيار وتفعيل واختبار خدمتي اطمّن واطمّن على الآخر.
+- [خدمات الاتصالات لذوي الهمم 2026](https://www.lusaill.online/articles/telecom-accessibility-egypt): حقوق الفروع والنفاذ والشكوى المجانية بالفيديو.
+- [ضمان أجهزة الاتصالات 2026](https://www.lusaill.online/articles/telecom-device-warranty): شهادة الضمان والصيانة وقطع الغيار والتصعيد.
+- [تقليل استهلاك الإنترنت المنزلي 2026](https://www.lusaill.online/articles/reduce-home-internet-usage): قياس الاستهلاك وضبط الفيديو والتحديثات والأجهزة.
+- [تسجيل المكالمات الترويجية 2026](https://www.lusaill.online/articles/register-promotional-calls): تسجيل الأرقام ونوع النشاط واختبار تعريف المكالمة.
+- [فحص الهاتف قبل الشراء 2026](https://www.lusaill.online/articles/buy-compliant-mobile-egypt): مطابقة IMEI والفاتورة والضمان والإبلاغ الرسمي.

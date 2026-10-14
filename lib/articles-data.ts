@@ -14,6 +14,15 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Telecom guides verified against NTRA primary sources on 14 October 2026.
+  { id: 262, clusterCode: "B", group: "bonus", title: "تفعيل eSIM في مصر 2026: التوافق وQR Code", keyword: "تفعيل eSIM في مصر", volume: 0, kd: null, month: 1 },
+  { id: 263, clusterCode: "B", group: "bonus", title: "تشغيل 5G في مصر 2026: التوافق والإعدادات", keyword: "تشغيل 5G في مصر", volume: 0, kd: null, month: 1 },
+  { id: 264, clusterCode: "B", group: "bonus", title: "حماية إنترنت الأطفال 2026: خدمتا اطمّن", keyword: "حماية إنترنت الأطفال", volume: 0, kd: null, month: 1 },
+  { id: 265, clusterCode: "B", group: "bonus", title: "خدمات الاتصالات لذوي الهمم 2026: الحقوق والشكوى", keyword: "خدمات الاتصالات لذوي الهمم", volume: 0, kd: null, month: 1 },
+  { id: 266, clusterCode: "B", group: "bonus", title: "ضمان الهاتف وأجهزة الاتصالات 2026: حقوق الصيانة", keyword: "ضمان الهاتف في مصر", volume: 0, kd: null, month: 1 },
+  { id: 267, clusterCode: "B", group: "bonus", title: "تقليل استهلاك الإنترنت المنزلي 2026: خطة عملية", keyword: "تقليل استهلاك الإنترنت المنزلي", volume: 0, kd: null, month: 1 },
+  { id: 268, clusterCode: "B", group: "bonus", title: "تسجيل المكالمات الترويجية 2026: للشركات والأفراد", keyword: "تسجيل المكالمات الترويجية", volume: 0, kd: null, month: 1 },
+  { id: 269, clusterCode: "B", group: "bonus", title: "فحص الهاتف قبل الشراء 2026: المطابقة والضمان", keyword: "فحص الهاتف قبل الشراء", volume: 0, kd: null, month: 1 },
   // Egyptian telecom and fixed-internet guides verified from NTRA primary pages; demand is unmeasured.
   { id: 254, clusterCode: "B", group: "bonus", title: "نقل الإنترنت الأرضي 2026: شركة أخرى خلال 72 ساعة", keyword: "نقل الإنترنت الأرضي لشركة أخرى", volume: 0, kd: null, month: 1 },
   { id: 255, clusterCode: "B", group: "bonus", title: "تعويض انقطاع الإنترنت 2026: حق المستخدم والخطوات", keyword: "تعويض انقطاع الإنترنت", volume: 0, kd: null, month: 1 },

@@ -28,6 +28,7 @@ export const articleJourneys: string[][] = [
   ["electricity-bill-inquiry", "south-delta-electricity", "north-delta-electricity", "north-cairo-electricity", "south-cairo-electricity", "alexandria-electricity", "upper-egypt-electricity", "beheira-electricity", "electricity-complaint", "electricity-outage-report", "electricity-meter-apply", "code-electricity-meter", "electricity-meter-transfer", "electricity-meter-test", "prepaid-meter-mobile-charge", "electricity-consumer-rights", "electricity-company-obligations"],
   ["registered-mobile-lines", "registered-mobile-wallets", "mobile-number-portability", "telecom-complaint", "cancel-entertainment-services", "report-spam-calls"],
   ["fixed-internet-provider-switch", "fixed-internet-outage-compensation", "internet-speed-test-myntra", "mobile-network-quality-map", "authorized-telecom-outlets", "lost-sim-card", "wifi-calling-egypt", "telecom-user-rights"],
+  ["esim-egypt", "enable-5g-egypt", "child-safe-mobile-internet", "telecom-accessibility-egypt", "telecom-device-warranty", "reduce-home-internet-usage", "register-promotional-calls", "buy-compliant-mobile-egypt"],
   ["insurance-number-inquiry", "insurance-last-period", "insurance-periods-wages", "insurance-deductions-inquiry", "insurance-purchase-duration"],
   ["pension-payment-inquiry", "beneficiary-pensions-inquiry"],
   ["e-invoice-self-registration", "e-invoice-digital-signature", "e-invoice-gs1-egs-codes", "e-invoice-registration-errors", "e-receipt-readiness"],
