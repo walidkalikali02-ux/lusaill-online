@@ -14,6 +14,15 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Driving-license and used-vehicle guides verified against Egypt's official Traffic Portal on 15 October 2026.
+  { id: 270, clusterCode: "B", group: "core", title: "استخراج رخصة قيادة خاصة 2026: الأوراق والاختبار", keyword: "استخراج رخصة قيادة", volume: 2400, kd: 0, month: 1 },
+  { id: 271, clusterCode: "B", group: "core", title: "تجديد رخصة القيادة الخاصة 2026: المستندات والمهلة", keyword: "تجديد رخصة القيادة", volume: 12100, kd: 0, month: 1 },
+  { id: 272, clusterCode: "B", group: "core", title: "بدل تالف رخصة القيادة 2026: الطلب والاستلام", keyword: "بدل تالف رخصة القيادة", volume: 0, kd: null, month: 1 },
+  { id: 273, clusterCode: "B", group: "core", title: "رخصة قيادة دراجة نارية 2026: الشروط والاختبار", keyword: "رخصة القيادة دراجة نارية", volume: 1000, kd: 0, month: 1 },
+  { id: 274, clusterCode: "B", group: "core", title: "الكشف الطبي لرخصة القيادة 2026: الشهادات المطلوبة", keyword: "الكشف الطبي لرخصة القيادة", volume: 0, kd: null, month: 1 },
+  { id: 275, clusterCode: "B", group: "core", title: "رخصة القيادة المهنية 2026: المستندات والتجديد", keyword: "رخصة القيادة المهنية", volume: 0, kd: null, month: 1 },
+  { id: 276, clusterCode: "B", group: "core", title: "الرخصة الأجنبية في مصر 2026: الشروط والمعادلة", keyword: "الرخصة الأجنبية في مصر", volume: 0, kd: null, month: 1 },
+  { id: 277, clusterCode: "B", group: "core", title: "فحص رخصة سيارة مستعملة 2026: تحقق قبل الشراء", keyword: "التحقق من رخصة سيارة مستعملة", volume: 0, kd: null, month: 1 },
   // Telecom guides verified against NTRA primary sources on 14 October 2026.
   { id: 262, clusterCode: "B", group: "bonus", title: "تفعيل eSIM في مصر 2026: التوافق وQR Code", keyword: "تفعيل eSIM في مصر", volume: 0, kd: null, month: 1 },
   { id: 263, clusterCode: "B", group: "bonus", title: "تشغيل 5G في مصر 2026: التوافق والإعدادات", keyword: "تشغيل 5G في مصر", volume: 0, kd: null, month: 1 },

@@ -1,5 +1,7 @@
 // Task-based groups, independent of seed order. Only published URLs are exposed.
 export const articleJourneys: string[][] = [
+  ["private-driving-license-first-time", "private-driving-license-renewal", "driving-license-medical-exam", "motorcycle-driving-license-egypt", "professional-driving-license-egypt", "driving-license-lost-replacement", "driving-license-damaged-replacement", "foreign-driving-license-egypt"],
+  ["verify-used-vehicle-license", "vehicle-violations-inquiry", "vehicle-license-renewal-online", "vehicle-license-lost-replacement", "vehicle-license-damaged-replacement"],
   ["forms-create-registration", "forms-question-types", "forms-file-upload", "forms-sections-routing", "forms-response-validation"],
   ["forms-create-quiz", "forms-publish-share", "forms-manage-responses", "forms-responses-sheets", "forms-submit-errors"],
   ["slides-create-outline", "slides-theme-layout", "slides-arrange-objects", "slides-images-video", "slides-linked-chart", "slides-animation"],
