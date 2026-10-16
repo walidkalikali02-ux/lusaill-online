@@ -14,6 +14,12 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Civil-status guides verified against Interior, MFA, PSM and Cairo government sources on 16 October 2026.
+  { id: 278, clusterCode: "B", group: "core", title: "شهادة الميلاد من الماكينة 2026: الخطوات والتحقق", keyword: "ماكينة استخراج شهادة الميلاد", volume: 590, kd: 0, month: 1 },
+  { id: 279, clusterCode: "B", group: "core", title: "تصديق شهادة الميلاد من الخارجية 2026: المسار الصحيح", keyword: "توثيق شهادة الميلاد من الخارجية", volume: 320, kd: 0, month: 1 },
+  { id: 280, clusterCode: "B", group: "core", title: "ترجمة شهادة الميلاد وتصديقها 2026: ترتيب الأختام", keyword: "ترجمة شهادة الميلاد", volume: 0, kd: null, month: 1 },
+  { id: 281, clusterCode: "B", group: "core", title: "استخراج قيد عائلي 2026: الطلب والمتابعة بأمان", keyword: "استخراج قيد عائلي", volume: 0, kd: null, month: 1 },
+  { id: 282, clusterCode: "B", group: "core", title: "استخراج قيد شخصي 2026: الاختيار والطلب والمتابعة", keyword: "استخراج قيد شخصي", volume: 0, kd: null, month: 1 },
   // Driving-license and used-vehicle guides verified against Egypt's official Traffic Portal on 15 October 2026.
   { id: 270, clusterCode: "B", group: "core", title: "استخراج رخصة قيادة خاصة 2026: الأوراق والاختبار", keyword: "استخراج رخصة قيادة", volume: 2400, kd: 0, month: 1 },
   { id: 271, clusterCode: "B", group: "core", title: "تجديد رخصة القيادة الخاصة 2026: المستندات والمهلة", keyword: "تجديد رخصة القيادة", volume: 12100, kd: 0, month: 1 },
