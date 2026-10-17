@@ -1,5 +1,7 @@
 // Task-based groups, independent of seed order. Only published URLs are exposed.
 export const articleJourneys: string[][] = [
+  ["national-id-first-time-egypt", "national-id-renewal-egypt", "national-id-address-change", "national-id-profession-change", "national-id-marital-status-change", "civil-record-correction-egypt", "civil-status-home-service"],
+  ["criminal-record-online-egypt", "personal-record-egypt", "family-record-egypt"],
   ["automated-birth-certificate", "birth-certificate-smart-machine", "birth-certificate-attestation-egypt", "birth-certificate-certified-translation", "family-record-egypt", "personal-record-egypt"],
   ["private-driving-license-first-time", "private-driving-license-renewal", "driving-license-medical-exam", "motorcycle-driving-license-egypt", "professional-driving-license-egypt", "driving-license-lost-replacement", "driving-license-damaged-replacement", "foreign-driving-license-egypt"],
   ["verify-used-vehicle-license", "vehicle-violations-inquiry", "vehicle-license-renewal-online", "vehicle-license-lost-replacement", "vehicle-license-damaged-replacement"],
