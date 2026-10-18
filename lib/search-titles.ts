@@ -131,7 +131,7 @@ export const searchTitles: Record<string, string> = {
   "north-delta-electricity": "فاتورة الكهرباء شمال الدلتا 2026: الاستعلام والسداد",
   "alexandria-electricity": "فاتورة الكهرباء الإسكندرية 2026: الاستعلام والسداد",
   "south-delta-electricity": "فاتورة الكهرباء جنوب الدلتا 2026: الاستعلام والسداد",
-  "north-cairo-electricity": "فاتورة الكهرباء شمال القاهرة 2026: الاستعلام والسداد",
+  "north-cairo-electricity": "كهرباء شمال القاهرة 2026: تسجيل القراءة والاستعلام",
   "vehicle-license-renewal-online": "رخصة المركبة 2026: التجديد أونلاين وشروط الطلب",
   "vehicle-license-lost-replacement": "بدل فاقد رخصة المركبة 2026: الطلب والشروط بمصر",
   "vehicle-license-damaged-replacement": "بدل تالف رخصة المركبة 2026: الطلب من مصر الرقمية",
