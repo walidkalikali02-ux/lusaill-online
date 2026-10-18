@@ -1,8 +1,10 @@
 // Task-based groups, independent of seed order. Only published URLs are exposed.
 export const articleJourneys: string[][] = [
-  ["national-id-first-time-egypt", "national-id-renewal-egypt", "national-id-address-change", "national-id-profession-change", "national-id-marital-status-change", "civil-record-correction-egypt", "civil-status-home-service"],
+  ["national-id-first-time-egypt", "national-id-renewal-egypt", "national-id-address-change", "national-id-profession-change", "national-id-marital-status-change", "civil-record-correction-egypt", "marriage-divorce-record-correction", "civil-status-home-service"],
   ["criminal-record-online-egypt", "personal-record-egypt", "family-record-egypt"],
-  ["automated-birth-certificate", "birth-certificate-smart-machine", "birth-certificate-attestation-egypt", "birth-certificate-certified-translation", "family-record-egypt", "personal-record-egypt"],
+  ["newborn-birth-registration-egypt", "automated-birth-certificate", "birth-certificate-smart-machine", "birth-certificate-attestation-egypt", "birth-certificate-certified-translation", "late-birth-registration-pre-1962", "family-record-egypt", "personal-record-egypt"],
+  ["paper-marriage-record-egypt", "automated-marriage-certificate", "paper-divorce-record-egypt", "divorce-certificate-online-egypt", "marriage-divorce-record-correction"],
+  ["death-registration-burial-permit", "paper-death-record-egypt", "automated-death-certificate", "civil-record-correction-egypt"],
   ["private-driving-license-first-time", "private-driving-license-renewal", "driving-license-medical-exam", "motorcycle-driving-license-egypt", "professional-driving-license-egypt", "driving-license-lost-replacement", "driving-license-damaged-replacement", "foreign-driving-license-egypt"],
   ["verify-used-vehicle-license", "vehicle-violations-inquiry", "vehicle-license-renewal-online", "vehicle-license-lost-replacement", "vehicle-license-damaged-replacement"],
   ["forms-create-registration", "forms-question-types", "forms-file-upload", "forms-sections-routing", "forms-response-validation"],

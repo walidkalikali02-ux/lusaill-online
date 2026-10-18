@@ -14,6 +14,15 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Civil-record guides verified against official Interior, Health and PSM sources on 18 October 2026.
+  { id: 291, clusterCode: "G", group: "core", title: "قيد الزواج الورقي 2026: اختيار النسخة الصحيحة", keyword: "قيد زواج ورقي", volume: 0, kd: null, month: 1 },
+  { id: 292, clusterCode: "G", group: "core", title: "قيد الطلاق الورقي 2026: الطلب ومراجعة البيانات", keyword: "قيد طلاق ورقي", volume: 0, kd: null, month: 1 },
+  { id: 293, clusterCode: "G", group: "core", title: "وثيقة الطلاق أونلاين 2026: الطلب الآمن", keyword: "وثيقة طلاق أونلاين", volume: 0, kd: null, month: 1 },
+  { id: 294, clusterCode: "G", group: "core", title: "قيد الوفاة الورقي 2026: متى وكيف تطلبه؟", keyword: "قيد وفاة ورقي", volume: 0, kd: null, month: 1 },
+  { id: 295, clusterCode: "G", group: "core", title: "تسجيل مولود جديد 2026: أول شهادة ميلاد", keyword: "تسجيل مولود جديد", volume: 0, kd: null, month: 1 },
+  { id: 296, clusterCode: "G", group: "core", title: "تسجيل الوفاة وتصريح الدفن 2026: المسار الصحيح", keyword: "تسجيل وفاة وتصريح دفن", volume: 0, kd: null, month: 1 },
+  { id: 297, clusterCode: "G", group: "core", title: "تصحيح قيد الزواج أو الطلاق 2026: دليل عملي", keyword: "تصحيح قيد الزواج", volume: 0, kd: null, month: 1 },
+  { id: 298, clusterCode: "G", group: "core", title: "ساقط قيد الميلاد قبل 1962 في 2026: المسار الرسمي", keyword: "ساقط قيد الميلاد قبل 1962", volume: 0, kd: null, month: 1 },
   // Civil-status and national-ID guides verified against Interior and PSM sources on 17 October 2026.
   { id: 283, clusterCode: "G", group: "core", title: "بطاقة الرقم القومي أول مرة 2026: تجهيز الطلب", keyword: "استخراج بطاقة الرقم القومي أول مرة", volume: 0, kd: null, month: 1 },
   { id: 284, clusterCode: "G", group: "core", title: "تجديد بطاقة الرقم القومي 2026: المراجعة والاستلام", keyword: "تجديد بطاقة الرقم القومي", volume: 0, kd: null, month: 1 },
