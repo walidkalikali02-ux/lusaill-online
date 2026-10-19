@@ -14,6 +14,15 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Work-permit and conscript-service guides verified against Interior and Armed Forces sources on 19 October 2026.
+  { id: 299, clusterCode: "G", group: "core", title: "تصريح العمل أول مرة 2026: الطلب والمتابعة", keyword: "تصريح عمل أول مرة", volume: 0, kd: null, month: 1 },
+  { id: 300, clusterCode: "G", group: "core", title: "تجديد تصريح العمل 2026: الخطوات وحل التعثر", keyword: "تجديد تصريح العمل", volume: 0, kd: null, month: 1 },
+  { id: 301, clusterCode: "G", group: "core", title: "بدل فاقد تصريح العمل 2026: طلب آمن", keyword: "بدل فاقد تصريح العمل", volume: 0, kd: null, month: 1 },
+  { id: 302, clusterCode: "G", group: "core", title: "مخالصة تصريح العمل 2026: اختيار الطلب الصحيح", keyword: "مخالصة تصريح العمل", volume: 0, kd: null, month: 1 },
+  { id: 303, clusterCode: "G", group: "core", title: "تصريح العمل الموسمي 2026: قبل تقديم الطلب", keyword: "تصريح العمل الموسمي", volume: 0, kd: null, month: 1 },
+  { id: 304, clusterCode: "G", group: "core", title: "تصريح السفر التجنيدي 2026: الطلب والتحميل", keyword: "تصريح السفر التجنيدي", volume: 0, kd: null, month: 1 },
+  { id: 305, clusterCode: "G", group: "core", title: "بدل فاقد شهادة إنهاء الخدمة 2026: الطلب", keyword: "بدل فاقد شهادة إنهاء الخدمة العسكرية", volume: 0, kd: null, month: 1 },
+  { id: 306, clusterCode: "G", group: "core", title: "شهادة الخبرة العسكرية 2026: طلبها ومراجعتها", keyword: "شهادة الخبرة العسكرية", volume: 0, kd: null, month: 1 },
   // Civil-record guides verified against official Interior, Health and PSM sources on 18 October 2026.
   { id: 291, clusterCode: "G", group: "core", title: "قيد الزواج الورقي 2026: اختيار النسخة الصحيحة", keyword: "قيد زواج ورقي", volume: 0, kd: null, month: 1 },
   { id: 292, clusterCode: "G", group: "core", title: "قيد الطلاق الورقي 2026: الطلب ومراجعة البيانات", keyword: "قيد طلاق ورقي", volume: 0, kd: null, month: 1 },
