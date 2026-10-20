@@ -14,6 +14,15 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Passport and movement-certificate guides verified against Interior and PSM sources on 20 October 2026.
+  { id: 307, clusterCode: "G", group: "core", title: "استخراج جواز سفر أول مرة 2026: الخطوات", keyword: "استخراج جواز سفر أول مرة", volume: 0, kd: null, month: 1 },
+  { id: 308, clusterCode: "G", group: "core", title: "تجديد جواز السفر 2026: المنتهي أو الممتلئ", keyword: "تجديد جواز السفر", volume: 0, kd: null, month: 1 },
+  { id: 309, clusterCode: "G", group: "core", title: "بدل فاقد جواز السفر داخل مصر 2026: الخطوات", keyword: "بدل فاقد جواز السفر", volume: 0, kd: null, month: 1 },
+  { id: 310, clusterCode: "G", group: "core", title: "بدل تالف جواز السفر 2026: الطلب والمراجعة", keyword: "بدل تالف جواز السفر", volume: 0, kd: null, month: 1 },
+  { id: 311, clusterCode: "G", group: "core", title: "جواز سفر الطفل في مصر 2026: تجهيز الطلب", keyword: "استخراج جواز سفر للطفل", volume: 0, kd: null, month: 1 },
+  { id: 312, clusterCode: "G", group: "core", title: "شهادة بيانات جواز السفر 2026: متى تطلبها؟", keyword: "شهادة بيانات جواز السفر", volume: 0, kd: null, month: 1 },
+  { id: 313, clusterCode: "G", group: "core", title: "شهادة التحركات 2026: التقديم والتوكيل", keyword: "استخراج شهادة تحركات", volume: 0, kd: null, month: 1 },
+  { id: 314, clusterCode: "G", group: "core", title: "الجواز العاجل والمميز 2026: الفرق والرسوم", keyword: "جواز السفر العاجل", volume: 0, kd: null, month: 1 },
   // Work-permit and conscript-service guides verified against Interior and Armed Forces sources on 19 October 2026.
   { id: 299, clusterCode: "G", group: "core", title: "تصريح العمل أول مرة 2026: الطلب والمتابعة", keyword: "تصريح عمل أول مرة", volume: 0, kd: null, month: 1 },
   { id: 300, clusterCode: "G", group: "core", title: "تجديد تصريح العمل 2026: الخطوات وحل التعثر", keyword: "تجديد تصريح العمل", volume: 0, kd: null, month: 1 },
