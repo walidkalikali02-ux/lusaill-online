@@ -14,6 +14,15 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Consumer-protection guides verified against Egyptian Consumer Protection Agency sources on 21 October 2026.
+  { id: 315, clusterCode: "B", group: "bonus", title: "شكوى حماية المستهلك 2026: التقديم والمتابعة", keyword: "شكوى حماية المستهلك", volume: 0, kd: null, month: 1 },
+  { id: 316, clusterCode: "B", group: "bonus", title: "الاستبدال والاسترجاع 2026: قاعدة 14 و30 يومًا", keyword: "الاستبدال والاسترجاع", volume: 0, kd: null, month: 1 },
+  { id: 317, clusterCode: "B", group: "bonus", title: "فاتورة الشراء في مصر 2026: البيانات التي تحميك", keyword: "بيانات فاتورة الشراء", volume: 0, kd: null, month: 1 },
+  { id: 318, clusterCode: "B", group: "bonus", title: "ضمان المنتج والصيانة 2026: اعرف حقك قبل الإصلاح", keyword: "ضمان المنتج والصيانة", volume: 0, kd: null, month: 1 },
+  { id: 319, clusterCode: "B", group: "bonus", title: "الشراء أونلاين بأمان 2026: فاتورة واستلام وشكوى", keyword: "حقوق الشراء أونلاين", volume: 0, kd: null, month: 1 },
+  { id: 320, clusterCode: "B", group: "bonus", title: "الإعلان المضلل 2026: توثيقه والإبلاغ عنه", keyword: "الإبلاغ عن إعلان مضلل", volume: 0, kd: null, month: 1 },
+  { id: 321, clusterCode: "B", group: "bonus", title: "مركز الصيانة المعتمد 2026: تحقق قبل تسليم جهازك", keyword: "مراكز الصيانة المعتمدة", volume: 0, kd: null, month: 1 },
+  { id: 322, clusterCode: "B", group: "bonus", title: "العمر الافتراضي وقطع الغيار 2026: قبل الشراء", keyword: "العمر الافتراضي وقطع الغيار", volume: 0, kd: null, month: 1 },
   // Passport and movement-certificate guides verified against Interior and PSM sources on 20 October 2026.
   { id: 307, clusterCode: "G", group: "core", title: "استخراج جواز سفر أول مرة 2026: الخطوات", keyword: "استخراج جواز سفر أول مرة", volume: 0, kd: null, month: 1 },
   { id: 308, clusterCode: "G", group: "core", title: "تجديد جواز السفر 2026: المنتهي أو الممتلئ", keyword: "تجديد جواز السفر", volume: 0, kd: null, month: 1 },

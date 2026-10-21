@@ -1,5 +1,6 @@
 // Task-based groups, independent of seed order. Only published URLs are exposed.
 export const articleJourneys: string[][] = [
+  ["consumer-protection-complaint-egypt", "consumer-return-exchange-egypt", "consumer-invoice-rights-egypt", "product-warranty-repair-egypt", "online-shopping-consumer-rights-egypt", "misleading-ad-complaint-egypt", "authorized-service-center-egypt", "product-lifetime-spare-parts-egypt"],
   ["passport-first-time-egypt", "child-passport-egypt", "passport-renewal-expired-full", "passport-lost-inside-egypt", "passport-damaged-replacement-egypt", "passport-urgent-service-egypt", "passport-data-certificate-egypt", "movement-certificate-egypt"],
   ["work-permit-first-time-egypt", "work-permit-renewal-egypt", "work-permit-lost-replacement", "work-permit-clearance-egypt", "seasonal-work-permit-egypt", "work-permit-abroad"],
   ["conscript-travel-permit-egypt", "military-service-certificate-replacement", "military-service-experience-certificate"],

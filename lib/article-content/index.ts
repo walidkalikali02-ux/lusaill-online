@@ -1,3 +1,4 @@
+import { consumerProtectionGuidesOct21 } from "./consumer-protection-2026-10-21";
 import { consularGuides } from "./consular-guides-2026-10-07";
 import { consularGuidesOct8 } from "./consular-guides-2026-10-08";
 import { electricityCompanyGuidesOct9 } from "./electricity-companies-2026-10-09";
@@ -29,7 +30,7 @@ import { androidGuidesA } from "./android-guides-2026-09-30-a";
 import { androidGuidesB } from "./android-guides-2026-09-30-b";
 
 // Add one entry per published/verified article. Each file documents its own sources and check date.
-const overrides: ArticleContentOverride[] = [...passportGuidesOct20, ...workPermitMilitaryGuidesOct19, ...civilStatusGuidesOct18, ...civilStatusGuidesOct17, ...civilStatusGuidesOct16, ...drivingLicenseGuidesOct15, ...telecomGuidesOct14, ...telecomGuidesOct13, ...telecomGuidesOct12, ...electricityConsumerGuidesOct11, ...electricityProcedureGuidesOct10, ...electricityCompanyGuidesOct9, ...consularGuidesOct8, ...consularGuides, ...electricityKeywordGuides, ...digitalGuides, ...dailyGuides, ...housingGuides, ...rationGuides, ...civilGuides, ...trafficGuides, ...androidGuidesA, ...androidGuidesB, ...chromeGuides, ...windowsGuides, ...googleEditorGuides, ...googleFormsSlidesGuides, ...egyptServiceGuides];
+const overrides: ArticleContentOverride[] = [...consumerProtectionGuidesOct21, ...passportGuidesOct20, ...workPermitMilitaryGuidesOct19, ...civilStatusGuidesOct18, ...civilStatusGuidesOct17, ...civilStatusGuidesOct16, ...drivingLicenseGuidesOct15, ...telecomGuidesOct14, ...telecomGuidesOct13, ...telecomGuidesOct12, ...electricityConsumerGuidesOct11, ...electricityProcedureGuidesOct10, ...electricityCompanyGuidesOct9, ...consularGuidesOct8, ...consularGuides, ...electricityKeywordGuides, ...digitalGuides, ...dailyGuides, ...housingGuides, ...rationGuides, ...civilGuides, ...trafficGuides, ...androidGuidesA, ...androidGuidesB, ...chromeGuides, ...windowsGuides, ...googleEditorGuides, ...googleFormsSlidesGuides, ...egyptServiceGuides];
 
 export const publishedContent: Map<number, ArticleContentOverride> = new Map(
   overrides.map((override) => [override.id, override]),
