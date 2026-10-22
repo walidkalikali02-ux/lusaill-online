@@ -14,6 +14,15 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Egyptian Tax Authority registration services verified against its official service guide on 22 October 2026.
+  { id: 323, clusterCode: "B", group: "bonus", title: "استخراج البطاقة الضريبية 2026: التسجيل والمتابعة", keyword: "استخراج بطاقة ضريبية", volume: 0, kd: null, month: 1 },
+  { id: 324, clusterCode: "B", group: "bonus", title: "التسجيل الضريبي المبسط 2026: متى تستخدمه؟", keyword: "التسجيل الضريبي المبسط", volume: 0, kd: null, month: 1 },
+  { id: 325, clusterCode: "B", group: "bonus", title: "تعديل بيانات البطاقة الضريبية 2026: الخطوات", keyword: "تعديل بيانات البطاقة الضريبية", volume: 0, kd: null, month: 1 },
+  { id: 326, clusterCode: "B", group: "bonus", title: "بدل فاقد بطاقة ضريبية 2026: التقديم والاستلام", keyword: "بدل فاقد البطاقة الضريبية", volume: 0, kd: null, month: 1 },
+  { id: 327, clusterCode: "B", group: "bonus", title: "موقف التسجيل في القيمة المضافة 2026: نموذج 12", keyword: "تحديد موقف التسجيل في القيمة المضافة", volume: 0, kd: null, month: 1 },
+  { id: 328, clusterCode: "B", group: "bonus", title: "شهادة البيانات الضريبية 2026: الطلب والاستلام", keyword: "شهادة البيانات الأساسية ضرائب", volume: 0, kd: null, month: 1 },
+  { id: 329, clusterCode: "B", group: "bonus", title: "إعادة تفعيل التسجيل الضريبي 2026: دليل عملي", keyword: "إعادة تفعيل التسجيل الضريبي", volume: 0, kd: null, month: 1 },
+  { id: 330, clusterCode: "B", group: "bonus", title: "إلغاء التسجيل الضريبي 2026: أم توقف مؤقت؟", keyword: "إلغاء التسجيل الضريبي", volume: 0, kd: null, month: 1 },
   // Consumer-protection guides verified against Egyptian Consumer Protection Agency sources on 21 October 2026.
   { id: 315, clusterCode: "B", group: "bonus", title: "شكوى حماية المستهلك 2026: التقديم والمتابعة", keyword: "شكوى حماية المستهلك", volume: 0, kd: null, month: 1 },
   { id: 316, clusterCode: "B", group: "bonus", title: "الاستبدال والاسترجاع 2026: قاعدة 14 و30 يومًا", keyword: "الاستبدال والاسترجاع", volume: 0, kd: null, month: 1 },
