@@ -386,4 +386,18 @@ export const articleSeeds: ArticleSeed[] = [
   { id: 105, clusterCode: "G", group: "bonus", title: "أماكن ماكينات السجل المدني الذكي", keyword: "أماكن ماكينات السجل المدني الذكي", volume: 970, kd: null, month: 6 },
   { id: 106, clusterCode: "G", group: "bonus", title: "تكلفة استخراج شهادة الميلاد", keyword: "تكلفة استخراج شهادة ميلاد", volume: 210, kd: null, month: 6 },
   { id: 107, clusterCode: "G", group: "bonus", title: "شهادة الميلاد عبر بوابة مصر الرقمية", keyword: "بوابة مصر الرقمية شهادة الميلاد", volume: 170, kd: null, month: 6 },
+
+  // Official electricity platform services verified on 2026-10-23; search demand is unmeasured.
+  { id: 331, clusterCode: "A", group: "payments", title: "تسجيل قراءة عداد الكهرباء إلكترونيًا", keyword: "تسجيل قراءة عداد الكهرباء إلكترونيًا", volume: 0, kd: null, month: 1 },
+  { id: 332, clusterCode: "A", group: "payments", title: "شهادة استهلاك الكهرباء", keyword: "شهادة استهلاك الكهرباء", volume: 0, kd: null, month: 1 },
+  { id: 333, clusterCode: "A", group: "payments", title: "عداد كهرباء بدل فاقد", keyword: "تركيب عداد كهرباء بدل فاقد", volume: 0, kd: null, month: 1 },
+  { id: 334, clusterCode: "A", group: "payments", title: "تصحيح قراءة عداد الكهرباء", keyword: "تصحيح قراءة عداد الكهرباء", volume: 0, kd: null, month: 1 },
+  { id: 335, clusterCode: "A", group: "payments", title: "تصحيح بيانات صاحب عداد الكهرباء", keyword: "تصحيح بيانات صاحب عداد الكهرباء", volume: 0, kd: null, month: 1 },
+  { id: 336, clusterCode: "A", group: "payments", title: "جدولة مديونية الكهرباء على أقساط", keyword: "جدولة مديونية الكهرباء على أقساط", volume: 0, kd: null, month: 1 },
+  { id: 337, clusterCode: "A", group: "payments", title: "استبدال عداد الكهرباء بقدرة أكبر", keyword: "استبدال عداد الكهرباء بقدرة أكبر", volume: 0, kd: null, month: 1 },
+  { id: 338, clusterCode: "A", group: "payments", title: "طلب رفع عداد الكهرباء", keyword: "طلب رفع عداد الكهرباء", volume: 0, kd: null, month: 1 },
+  { id: 339, clusterCode: "A", group: "payments", title: "تغيير نشاط التعاقد الكهربائي", keyword: "تغيير نشاط التعاقد الكهربائي", volume: 0, kd: null, month: 1 },
+  { id: 340, clusterCode: "A", group: "payments", title: "شهادة بيانات التعاقد الكهربائي", keyword: "شهادة بيانات التعاقد الكهربائي", volume: 0, kd: null, month: 1 },
+  { id: 341, clusterCode: "A", group: "payments", title: "التظلم من مديونية الكهرباء", keyword: "التظلم من مديونية الكهرباء", volume: 0, kd: null, month: 1 },
+
 ];

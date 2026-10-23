@@ -5,6 +5,10 @@ import { consularGuidesOct8 } from "./consular-guides-2026-10-08";
 import { electricityCompanyGuidesOct9 } from "./electricity-companies-2026-10-09";
 import { electricityProcedureGuidesOct10 } from "./electricity-procedures-2026-10-10";
 import { electricityConsumerGuidesOct11 } from "./electricity-consumer-2026-10-11";
+import { electricityPlatformGuidesA } from "./electricity-platform-guides-a-2026-10-23";
+import { electricityPlatformGuidesB } from "./electricity-platform-guides-b-2026-10-23";
+import { electricityPlatformGuidesC } from "./electricity-platform-guides-c-2026-10-23";
+import { electricityPlatformGuidesD } from "./electricity-platform-guides-d-2026-10-23";
 import { telecomGuidesOct12 } from "./telecom-services-2026-10-12";
 import { telecomGuidesOct13 } from "./telecom-services-2026-10-13";
 import { telecomGuidesOct14 } from "./telecom-services-2026-10-14";
@@ -31,7 +35,7 @@ import { androidGuidesA } from "./android-guides-2026-09-30-a";
 import { androidGuidesB } from "./android-guides-2026-09-30-b";
 
 // Add one entry per published/verified article. Each file documents its own sources and check date.
-const overrides: ArticleContentOverride[] = [...taxRegistrationGuidesOct22, ...consumerProtectionGuidesOct21, ...passportGuidesOct20, ...workPermitMilitaryGuidesOct19, ...civilStatusGuidesOct18, ...civilStatusGuidesOct17, ...civilStatusGuidesOct16, ...drivingLicenseGuidesOct15, ...telecomGuidesOct14, ...telecomGuidesOct13, ...telecomGuidesOct12, ...electricityConsumerGuidesOct11, ...electricityProcedureGuidesOct10, ...electricityCompanyGuidesOct9, ...consularGuidesOct8, ...consularGuides, ...electricityKeywordGuides, ...digitalGuides, ...dailyGuides, ...housingGuides, ...rationGuides, ...civilGuides, ...trafficGuides, ...androidGuidesA, ...androidGuidesB, ...chromeGuides, ...windowsGuides, ...googleEditorGuides, ...googleFormsSlidesGuides, ...egyptServiceGuides];
+const overrides: ArticleContentOverride[] = [...taxRegistrationGuidesOct22, ...consumerProtectionGuidesOct21, ...passportGuidesOct20, ...workPermitMilitaryGuidesOct19, ...civilStatusGuidesOct18, ...civilStatusGuidesOct17, ...civilStatusGuidesOct16, ...drivingLicenseGuidesOct15, ...telecomGuidesOct14, ...telecomGuidesOct13, ...telecomGuidesOct12, ...electricityConsumerGuidesOct11, ...electricityPlatformGuidesA, ...electricityPlatformGuidesB, ...electricityPlatformGuidesC, ...electricityPlatformGuidesD, ...electricityProcedureGuidesOct10, ...electricityCompanyGuidesOct9, ...consularGuidesOct8, ...consularGuides, ...electricityKeywordGuides, ...digitalGuides, ...dailyGuides, ...housingGuides, ...rationGuides, ...civilGuides, ...trafficGuides, ...androidGuidesA, ...androidGuidesB, ...chromeGuides, ...windowsGuides, ...googleEditorGuides, ...googleFormsSlidesGuides, ...egyptServiceGuides];
 
 export const publishedContent: Map<number, ArticleContentOverride> = new Map(
   overrides.map((override) => [override.id, override]),
