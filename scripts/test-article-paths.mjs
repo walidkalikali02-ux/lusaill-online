@@ -20,6 +20,11 @@ assert.deepEqual(guidePaths.map(path => path.slug).sort(), Object.keys(articleJo
 
 // Editorial expectations: these must stay true even when groups are reordered.
 const cases = {
+  "tax-card-first-time-egypt": "tax-registration",
+  "consumer-protection-complaint-egypt": "consumer-protection",
+  "passport-first-time-egypt": "passports",
+  "work-permit-first-time-egypt": "work-permits",
+  "conscript-travel-permit-egypt": "military-documents",
   "google-backup-codes": "account-security",
   "newborn-birth-registration-egypt": "birth-documents",
   "national-id-first-time-egypt": "national-id",

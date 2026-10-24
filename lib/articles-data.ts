@@ -14,6 +14,42 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // Egyptian Tax Authority registration services verified against its official service guide on 22 October 2026.
+  { id: 323, clusterCode: "B", group: "bonus", title: "استخراج البطاقة الضريبية 2026: التسجيل والمتابعة", keyword: "استخراج بطاقة ضريبية", volume: 0, kd: null, month: 1 },
+  { id: 324, clusterCode: "B", group: "bonus", title: "التسجيل الضريبي المبسط 2026: متى تستخدمه؟", keyword: "التسجيل الضريبي المبسط", volume: 0, kd: null, month: 1 },
+  { id: 325, clusterCode: "B", group: "bonus", title: "تعديل بيانات البطاقة الضريبية 2026: الخطوات", keyword: "تعديل بيانات البطاقة الضريبية", volume: 0, kd: null, month: 1 },
+  { id: 326, clusterCode: "B", group: "bonus", title: "بدل فاقد بطاقة ضريبية 2026: التقديم والاستلام", keyword: "بدل فاقد البطاقة الضريبية", volume: 0, kd: null, month: 1 },
+  { id: 327, clusterCode: "B", group: "bonus", title: "موقف التسجيل في القيمة المضافة 2026: نموذج 12", keyword: "تحديد موقف التسجيل في القيمة المضافة", volume: 0, kd: null, month: 1 },
+  { id: 328, clusterCode: "B", group: "bonus", title: "شهادة البيانات الضريبية 2026: الطلب والاستلام", keyword: "شهادة البيانات الأساسية ضرائب", volume: 0, kd: null, month: 1 },
+  { id: 329, clusterCode: "B", group: "bonus", title: "إعادة تفعيل التسجيل الضريبي 2026: دليل عملي", keyword: "إعادة تفعيل التسجيل الضريبي", volume: 0, kd: null, month: 1 },
+  { id: 330, clusterCode: "B", group: "bonus", title: "إلغاء التسجيل الضريبي 2026: أم توقف مؤقت؟", keyword: "إلغاء التسجيل الضريبي", volume: 0, kd: null, month: 1 },
+  // Consumer-protection guides verified against Egyptian Consumer Protection Agency sources on 21 October 2026.
+  { id: 315, clusterCode: "B", group: "bonus", title: "شكوى حماية المستهلك 2026: التقديم والمتابعة", keyword: "شكوى حماية المستهلك", volume: 0, kd: null, month: 1 },
+  { id: 316, clusterCode: "B", group: "bonus", title: "الاستبدال والاسترجاع 2026: قاعدة 14 و30 يومًا", keyword: "الاستبدال والاسترجاع", volume: 0, kd: null, month: 1 },
+  { id: 317, clusterCode: "B", group: "bonus", title: "فاتورة الشراء في مصر 2026: البيانات التي تحميك", keyword: "بيانات فاتورة الشراء", volume: 0, kd: null, month: 1 },
+  { id: 318, clusterCode: "B", group: "bonus", title: "ضمان المنتج والصيانة 2026: اعرف حقك قبل الإصلاح", keyword: "ضمان المنتج والصيانة", volume: 0, kd: null, month: 1 },
+  { id: 319, clusterCode: "B", group: "bonus", title: "الشراء أونلاين بأمان 2026: فاتورة واستلام وشكوى", keyword: "حقوق الشراء أونلاين", volume: 0, kd: null, month: 1 },
+  { id: 320, clusterCode: "B", group: "bonus", title: "الإعلان المضلل 2026: توثيقه والإبلاغ عنه", keyword: "الإبلاغ عن إعلان مضلل", volume: 0, kd: null, month: 1 },
+  { id: 321, clusterCode: "B", group: "bonus", title: "مركز الصيانة المعتمد 2026: تحقق قبل تسليم جهازك", keyword: "مراكز الصيانة المعتمدة", volume: 0, kd: null, month: 1 },
+  { id: 322, clusterCode: "B", group: "bonus", title: "العمر الافتراضي وقطع الغيار 2026: قبل الشراء", keyword: "العمر الافتراضي وقطع الغيار", volume: 0, kd: null, month: 1 },
+  // Passport and movement-certificate guides verified against Interior and PSM sources on 20 October 2026.
+  { id: 307, clusterCode: "G", group: "core", title: "استخراج جواز سفر أول مرة 2026: الخطوات", keyword: "استخراج جواز سفر أول مرة", volume: 0, kd: null, month: 1 },
+  { id: 308, clusterCode: "G", group: "core", title: "تجديد جواز السفر 2026: المنتهي أو الممتلئ", keyword: "تجديد جواز السفر", volume: 0, kd: null, month: 1 },
+  { id: 309, clusterCode: "G", group: "core", title: "بدل فاقد جواز السفر داخل مصر 2026: الخطوات", keyword: "بدل فاقد جواز السفر", volume: 0, kd: null, month: 1 },
+  { id: 310, clusterCode: "G", group: "core", title: "بدل تالف جواز السفر 2026: الطلب والمراجعة", keyword: "بدل تالف جواز السفر", volume: 0, kd: null, month: 1 },
+  { id: 311, clusterCode: "G", group: "core", title: "جواز سفر الطفل في مصر 2026: تجهيز الطلب", keyword: "استخراج جواز سفر للطفل", volume: 0, kd: null, month: 1 },
+  { id: 312, clusterCode: "G", group: "core", title: "شهادة بيانات جواز السفر 2026: متى تطلبها؟", keyword: "شهادة بيانات جواز السفر", volume: 0, kd: null, month: 1 },
+  { id: 313, clusterCode: "G", group: "core", title: "شهادة التحركات 2026: التقديم والتوكيل", keyword: "استخراج شهادة تحركات", volume: 0, kd: null, month: 1 },
+  { id: 314, clusterCode: "G", group: "core", title: "الجواز العاجل والمميز 2026: الفرق والرسوم", keyword: "جواز السفر العاجل", volume: 0, kd: null, month: 1 },
+  // Work-permit and conscript-service guides verified against Interior and Armed Forces sources on 19 October 2026.
+  { id: 299, clusterCode: "G", group: "core", title: "تصريح العمل أول مرة 2026: الطلب والمتابعة", keyword: "تصريح عمل أول مرة", volume: 0, kd: null, month: 1 },
+  { id: 300, clusterCode: "G", group: "core", title: "تجديد تصريح العمل 2026: الخطوات وحل التعثر", keyword: "تجديد تصريح العمل", volume: 0, kd: null, month: 1 },
+  { id: 301, clusterCode: "G", group: "core", title: "بدل فاقد تصريح العمل 2026: طلب آمن", keyword: "بدل فاقد تصريح العمل", volume: 0, kd: null, month: 1 },
+  { id: 302, clusterCode: "G", group: "core", title: "مخالصة تصريح العمل 2026: اختيار الطلب الصحيح", keyword: "مخالصة تصريح العمل", volume: 0, kd: null, month: 1 },
+  { id: 303, clusterCode: "G", group: "core", title: "تصريح العمل الموسمي 2026: قبل تقديم الطلب", keyword: "تصريح العمل الموسمي", volume: 0, kd: null, month: 1 },
+  { id: 304, clusterCode: "G", group: "core", title: "تصريح السفر التجنيدي 2026: الطلب والتحميل", keyword: "تصريح السفر التجنيدي", volume: 0, kd: null, month: 1 },
+  { id: 305, clusterCode: "G", group: "core", title: "بدل فاقد شهادة إنهاء الخدمة 2026: الطلب", keyword: "بدل فاقد شهادة إنهاء الخدمة العسكرية", volume: 0, kd: null, month: 1 },
+  { id: 306, clusterCode: "G", group: "core", title: "شهادة الخبرة العسكرية 2026: طلبها ومراجعتها", keyword: "شهادة الخبرة العسكرية", volume: 0, kd: null, month: 1 },
   // Civil-record guides verified against official Interior, Health and PSM sources on 18 October 2026.
   { id: 291, clusterCode: "G", group: "core", title: "قيد الزواج الورقي 2026: اختيار النسخة الصحيحة", keyword: "قيد زواج ورقي", volume: 0, kd: null, month: 1 },
   { id: 292, clusterCode: "G", group: "core", title: "قيد الطلاق الورقي 2026: الطلب ومراجعة البيانات", keyword: "قيد طلاق ورقي", volume: 0, kd: null, month: 1 },

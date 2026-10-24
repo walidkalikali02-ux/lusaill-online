@@ -48,6 +48,14 @@
 
 ## التأمينات والمعاشات والضرائب والدعم النقدي
 
+- [استخراج البطاقة الضريبية](https://www.lusaill.online/articles/tax-card-first-time-egypt)
+- [التسجيل الضريبي المبسط](https://www.lusaill.online/articles/simplified-tax-registration-egypt)
+- [تعديل بيانات التسجيل الضريبي](https://www.lusaill.online/articles/tax-registration-data-update)
+- [بدل فاقد أو تالف بطاقة ضريبية](https://www.lusaill.online/articles/tax-card-lost-damaged-replacement)
+- [تحديد موقف التسجيل في القيمة المضافة](https://www.lusaill.online/articles/vat-registration-status-certificate)
+- [شهادة البيانات الأساسية من الضرائب](https://www.lusaill.online/articles/tax-basic-data-certificate)
+- [إعادة تفعيل التسجيل الضريبي](https://www.lusaill.online/articles/tax-registration-reactivation)
+- [إلغاء التسجيل أو التوقف المؤقت](https://www.lusaill.online/articles/tax-registration-cancel-suspend)
 - [الاستعلام عن الرقم التأميني](https://www.lusaill.online/articles/insurance-number-inquiry)
 - [مراجعة آخر مدة تأمينية](https://www.lusaill.online/articles/insurance-last-period)
 - [مدد الاشتراك والأجور](https://www.lusaill.online/articles/insurance-periods-wages)
@@ -221,6 +229,30 @@
 - [طباعة Google Slides مع ملاحظات المتحدث](https://www.lusaill.online/articles/slides-print-notes): اختر شريحة مع الملاحظات أو ملخصًا، وراجع PDF وصفحة اختبار قبل التوزيع.
 
 ## الوثائق المصرية بالخارج
+- [شكوى حماية المستهلك 2026](https://www.lusaill.online/articles/consumer-protection-complaint-egypt): تجهيز المرفقات واختيار القناة الرسمية وحفظ رقم المتابعة.
+- [الاستبدال والاسترجاع 2026](https://www.lusaill.online/articles/consumer-return-exchange-egypt): الفرق بين 14 يومًا للرجوع و30 يومًا للعيب مع الاستثناءات.
+- [فاتورة الشراء في مصر 2026](https://www.lusaill.online/articles/consumer-invoice-rights-egypt): بيانات المورد والسعر والمنتج والتسليم والضمان التي ينبغي مراجعتها.
+- [ضمان المنتج والصيانة 2026](https://www.lusaill.online/articles/product-warranty-repair-egypt): شهادة الضمان وإيصال الصيانة والقطع والتصعيد الموثق.
+- [الشراء أونلاين بأمان 2026](https://www.lusaill.online/articles/online-shopping-consumer-rights-egypt): التحقق من البائع وتوثيق الطلب وفحص الشحنة وحماية الدفع.
+- [الإعلان المضلل 2026](https://www.lusaill.online/articles/misleading-ad-complaint-egypt): حفظ الإعلان وسياقه ومقارنة الوعد ثم الإبلاغ دون كشف البيانات.
+- [مركز الصيانة المعتمد 2026](https://www.lusaill.online/articles/authorized-service-center-egypt): تحقق مزدوج وإيصال مفصل وحماية بيانات الجهاز.
+- [العمر الافتراضي وقطع الغيار 2026](https://www.lusaill.online/articles/product-lifetime-spare-parts-egypt): الفرق عن الضمان وتوثيق المدة والصيانة وتوفر القطع.
+- [استخراج جواز سفر أول مرة 2026](https://www.lusaill.online/articles/passport-first-time-egypt): الاختصاص والهوية والنموذج والمراجعة عند الاستلام.
+- [تجديد جواز السفر المنتهي أو الممتلئ](https://www.lusaill.online/articles/passport-renewal-expired-full): استبدال الجواز الموجود وتحديث المعاملات المرتبطة برقمه.
+- [بدل فاقد جواز السفر داخل مصر](https://www.lusaill.online/articles/passport-lost-inside-egypt): الإبلاغ لدى الجوازات ومنع الاستخدام وطلب البدل.
+- [بدل تالف جواز السفر](https://www.lusaill.online/articles/passport-damaged-replacement-egypt): حفظ الوثيقة كما هي واختيار الخدمة وفحص البديل.
+- [جواز سفر الطفل داخل مصر](https://www.lusaill.online/articles/child-passport-egypt): الجواز المستقل وشهادة الميلاد وصفة مقدم الطلب.
+- [شهادة بيانات جواز السفر](https://www.lusaill.online/articles/passport-data-certificate-egypt): تحديد الغرض والبيانات المطلوبة ومراجعة الإفادة.
+- [شهادة التحركات](https://www.lusaill.online/articles/movement-certificate-egypt): الفترة والتوكيل الصريح وشرط إقامة الأجنبي.
+- [الجواز العاجل والمميز](https://www.lusaill.online/articles/passport-urgent-service-egypt): الفرق في المدة والمكان والرسوم الإضافية المؤرخة.
+- [تصريح العمل أول مرة 2026](https://www.lusaill.online/articles/work-permit-first-time-egypt): اختيار الإصدار الأول وتدقيق البيانات والمتطلبات والمتابعة الرسمية.
+- [تجديد تصريح العمل 2026](https://www.lusaill.online/articles/work-permit-renewal-egypt): مطابقة التصريح السابق والدفع والمتابعة وحل تعثر التعرف عليه.
+- [بدل فاقد تصريح العمل 2026](https://www.lusaill.online/articles/work-permit-lost-replacement): حماية البيانات واختيار المعاملة ومراجعة البديل.
+- [مخالصة تصريح العمل 2026](https://www.lusaill.online/articles/work-permit-clearance-egypt): تحديد الغرض ونطاق المستند قبل الطلب والتسليم.
+- [تصريح العمل الموسمي 2026](https://www.lusaill.online/articles/seasonal-work-permit-egypt): التحقق من انطباق المسار والفترة والبيانات.
+- [تصريح السفر التجنيدي 2026](https://www.lusaill.online/articles/conscript-travel-permit-egypt): تسجيل الطلب والاستعلام والدفع وتحميل التصريح الرسمي.
+- [بدل فاقد شهادة إنهاء الخدمة 2026](https://www.lusaill.online/articles/military-service-certificate-replacement): اختيار الوثيقة الصحيحة وحماية البيانات ومراجعة البدل.
+- [شهادة الخبرة العسكرية 2026](https://www.lusaill.online/articles/military-service-experience-certificate): تحديد الغرض وطلب الشهادة ومراجعتها قبل تقديمها.
 - [إذن التجنس مع الاحتفاظ بالجنسية المصرية](https://www.lusaill.online/articles/foreign-nationality-permission): تجهيز الملف والمتابعة وحدود القرار.
 - [شهادة عدم ممانعة من الزواج](https://www.lusaill.online/articles/marriage-no-objection-certificate): القيد الفردي والتصديق والطلب.
 - [جنسية زوجة المصري الأجنبية](https://www.lusaill.online/articles/egyptian-nationality-foreign-wife): وثائق الزوجين والأسرة والمتابعة الرسمية.
