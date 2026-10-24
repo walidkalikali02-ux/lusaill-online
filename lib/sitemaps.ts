@@ -9,7 +9,7 @@ import { courseMeta, drivingLessons } from "@/lib/driving-course";
 import { categoryIntroductions } from "@/lib/category-introductions";
 
 // Pin known content changes; never substitute build or deployment time.
-const articleTemplateUpdatedAt = new Date("2026-10-04");
+const articleTemplateUpdatedAt = new Date("2026-10-18T19:16:36Z");
 
 function latestPublishedUpdate(items: Array<{ updatedAt?: string }>): Date | undefined {
   const timestamps = items
@@ -71,8 +71,8 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     }));
 
   const guideRoutes: MetadataRoute.Sitemap = [
-    { url: absoluteUrl("/guides"), lastModified: new Date("2026-10-02"), changeFrequency: "monthly", priority: 0.8 },
-    ...guidePaths.map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published" && path.articleSlugs.includes(article.slug))), changeFrequency: "monthly" as const, priority: 0.8 })),
+    { url: absoluteUrl("/guides"), lastModified: new Date("2026-10-18T19:16:36Z"), changeFrequency: "monthly", priority: 0.8 },
+    ...guidePaths.map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: new Date(Math.max(latestPublishedUpdate(articles.filter((article) => article.status === "published" && path.articleSlugs.includes(article.slug)))?.getTime() ?? 0, articleTemplateUpdatedAt.getTime())), changeFrequency: "monthly" as const, priority: 0.8 })),
   ];
   return {
     "sitemap-articles.xml": publishedArticleRoutes,

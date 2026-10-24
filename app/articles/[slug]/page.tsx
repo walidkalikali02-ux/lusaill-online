@@ -10,6 +10,10 @@ import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { searchTitles } from "@/lib/search-titles";
 import { howToArticles } from "@/lib/structured-data";
 import { ArticleBrief } from "@/components/article-brief";
+import { housingDeadlinePassed } from "@/lib/deadlines";
+
+// Re-evaluate deadline notices without requiring another publication.
+export const revalidate = 3600;
 
 export function generateStaticParams() {
   return articles.filter((article) => article.status === "published").map((article) => ({ slug: article.slug }));
@@ -193,6 +197,15 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <h2>الإجابة المباشرة</h2>
           <p>{article.quickAnswer}</p>
         </section>
+
+        {article.slug.startsWith("old-rent-housing-") && housingDeadlinePassed() && (
+          <section id="deadline-status" className="brief-box callout callout-warning" aria-labelledby="deadline-status-title">
+            <h2 id="deadline-status-title">مضى الموعد المنشور: تحقق قبل تقديم طلب جديد</h2>
+            <p>الموعد المذكور في المصادر المرتبطة بهذا الدليل هو <time dateTime="2026-10-12">12 أكتوبر 2026</time>. مضيّه لا يثبت وجود تمديد أو قبول طلبات جديدة؛ تحقق من إعلان الجهة الرسمي قبل اتباع خطوات التقديم.</p>
+            <p>إذا قدمت طلبًا بالفعل، احتفظ برقمه وتابع الإخطارات والنواقص من حسابك. <Link href="/articles/old-rent-housing-track">راجع دليل متابعة الطلب والتظلم</Link>.</p>
+            <p><a href="https://digital.gov.eg/" target="_blank" rel="noopener noreferrer">بوابة مصر الرقمية الرسمية</a> · <a href="https://shmff.gov.eg/" target="_blank" rel="noopener noreferrer">صندوق الإسكان الاجتماعي</a></p>
+          </section>
+        )}
 
         {article.coverImage ? (
           <Image

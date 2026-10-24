@@ -108,7 +108,6 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
           </div>
         </div>
 
-        {introduction && currentPage === 1 && <section className="brief-box"><h2>{introduction.title}</h2>{introduction.paragraphs.map((paragraph) => <section key={paragraph.heading}><h3>{paragraph.heading}</h3><p>{paragraph.text}</p></section>)}<p>آخر تحديث: <time dateTime={introduction.updatedAt}>{introduction.updatedAt}</time></p></section>}
 
         {paths.length > 0 && currentPage === 1 && <section className="brief-box"><h2>اختر المهمة التي تحتاجها</h2><div className="trust-grid">{paths.map((path) => <section className="trust-card" key={path.slug}><h3><Link href={`/guides/${path.slug}`}>{path.title}</Link></h3><p>{path.description}</p></section>)}</div></section>}
 
@@ -143,6 +142,8 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
             <Link className="button button-secondary" href="/categories" style={{ marginTop: 16 }}>تصفح التصنيفات الأخرى</Link>
           </div>
         )}
+
+        {introduction && currentPage === 1 && <section className="brief-box"><h2>{introduction.title}</h2>{introduction.paragraphs.map((paragraph) => <section key={paragraph.heading}><h3>{paragraph.heading}</h3><p>{paragraph.text}</p></section>)}<p>آخر تحديث: <time dateTime={introduction.updatedAt}>{introduction.updatedAt}</time></p></section>}
 
         {/* Pagination */}
         {totalPages > 1 && (

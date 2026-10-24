@@ -13,7 +13,8 @@
     "seo:qa": "node scripts/seo-qa.mjs",
     "seo:audit": "node scripts/seo-audit.mjs",
     "seo:audit:test": "node scripts/test-seo-audit.mjs",
-    "seo:site-check": "node scripts/check-site.mjs"
+    "seo:site-check": "node scripts/check-site.mjs",
+    "seo:content-check": "node scripts/test-article-paths.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

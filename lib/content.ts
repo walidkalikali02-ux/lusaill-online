@@ -45,7 +45,11 @@ export const articles: Article[] = articleSeeds.map((seed) => {
   usedSlugs.add(slug);
   const override = publishedContent.get(seed.id);
   const article: Article = { ...seed, slug, status: "not_started", ...override };
-  return guideIllustrations[article.slug] ? { ...article, updatedAt: guideIllustrations[article.slug].updatedAt ?? "2026-09-30T18:48:00+03:00" } : article;
+  const illustrationUpdatedAt = guideIllustrations[article.slug]?.updatedAt;
+  if (illustrationUpdatedAt && new Date(illustrationUpdatedAt).getTime() > new Date(article.updatedAt ?? article.publishedAt ?? 0).getTime()) {
+    return { ...article, updatedAt: illustrationUpdatedAt };
+  }
+  return article;
 });
 
 export const coreHundred = articles.filter((article) => article.id <= 100);
@@ -76,11 +80,8 @@ export function getRelatedArticles(article: Article, count = 4) {
   const preferred = [...new Set([...explicit, ...group])];
   const published = articles.filter((candidate) => candidate.status === "published" && candidate.id !== article.id);
   const relevant = preferred.flatMap((slug) => published.filter((candidate) => candidate.slug === slug));
-  // Avoid padding a task group with unrelated guides merely to fill four cards.
-  if (relevant.length) return relevant.slice(0, count);
-  return published.filter((candidate) => candidate.clusterCode === article.clusterCode)
-    .sort((a, b) => (b.updatedAt ?? "").localeCompare(a.updatedAt ?? ""))
-    .slice(0, count);
+  // A shared category is not enough: recommend only an explicit link or task.
+  return relevant.slice(0, count);
 }
 
 export function clusterProgress(clusterSlug: string) {

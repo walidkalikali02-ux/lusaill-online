@@ -35,7 +35,7 @@ export default function Home() {
   const published = articles.filter((a) => a.status === "published")
     .sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "") || b.id - a.id);
   const activeClusters = clusters.filter((cluster) => clusterProgress(cluster.slug).published > 0);
-  const featuredSlugs = ["old-rent-housing-apply", "ration-data-update", "vehicle-license-renewal-online", "south-delta-electricity", "google-backup-codes", "android-backup-check"];
+  const featuredSlugs = ["north-cairo-electricity", "south-delta-electricity", "electricity-bill-inquiry", "ration-data-update", "vehicle-license-renewal-online", "newborn-birth-registration-egypt"];
   const featured = featuredSlugs.flatMap((slug) => published.filter((a) => a.slug === slug));
   // Keep a single daily batch from displacing all other useful tasks.
   const perPath = new Map<string, number>();
