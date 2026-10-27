@@ -1,3 +1,4 @@
+import { ArticleCard } from "./article-card";
 import Image from "next/image";
 import inlineMedia from "@/lib/article-inline-media.json";
 import { ElectricityCompanies, ElectricityInquiryDetail } from "./electricity-inquiry-detail";
@@ -18,7 +19,6 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
   const path = getGuidePath(article.slug);
   const nextStep = related[0];
   return (
-    <div className="article-layout">
       <div className="article-body">
         {/* Summary Table */}
         <section id="summary" className="brief-box">
@@ -137,7 +137,11 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
         )}
       </div>
 
-      {/* Desktop TOC */}
+  );
+}
+
+export function ArticleSidebar({ article, cluster, related }: { article: Article; cluster: Cluster; related: Article[] }) {
+  return (
       <aside className="sidebar">
         <div className="toc">
           <h2>في هذا الدليل</h2>
@@ -159,7 +163,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
             <Link href={`/categories/${cluster.slug}`}>{cluster.name}</Link>
           </p>
         </div>
+        {related.length > 0 && <section className="sidebar-related"><h2>أدلة ذات صلة</h2>{related.slice(0, 2).map(item => <ArticleCard key={item.slug} article={item} variant="compact" />)}</section>}
       </aside>
-    </div>
   );
 }

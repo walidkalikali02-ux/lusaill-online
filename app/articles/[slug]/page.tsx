@@ -10,7 +10,7 @@ import { clusters } from "@/lib/clusters";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { searchTitles } from "@/lib/search-titles";
 import { howToArticles } from "@/lib/structured-data";
-import { ArticleBrief } from "@/components/article-brief";
+import { ArticleBrief, ArticleSidebar } from "@/components/article-brief";
 
 export function generateStaticParams() {
   return articles.filter((article) => article.status === "published").map((article) => ({ slug: article.slug }));
@@ -171,6 +171,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <span>{article.title}</span>
         </div>
 
+        <div className="article-layout">
+        <div className="article-reading-main">
         <div className="article-header">
           <span className="article-card-tag">{cluster.name}</span>
           <h1>{article.title}</h1>
@@ -228,6 +230,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </details>
 
         <ArticleBrief article={article} cluster={cluster} related={related} />
+        </div>
+        <ArticleSidebar article={article} cluster={cluster} related={related} />
+        </div>
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />

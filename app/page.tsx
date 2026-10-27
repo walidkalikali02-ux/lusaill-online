@@ -2,254 +2,38 @@ import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import { GuideSearch } from "@/components/guide-search";
 import Link from "next/link";
-import { ClusterCard } from "@/components/cluster-card";
 import { ArticleCard } from "@/components/article-card";
-import { clusters, articles, overallProgress, clusterProgress } from "@/lib/content";
+import { SiteIcon, type IconName } from "@/components/site-icon";
+import { clusters, articles, clusterProgress } from "@/lib/content";
 import { guidePaths, getGuidePath } from "@/lib/guide-paths";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { housingDeadlinePassed } from "@/lib/deadlines";
-
-const quickTopics = [
-  { label: "السكن البديل للإيجار القديم", href: "/guides/housing" },
-  { label: "مسارات المهام", href: "/guides" },
-  { label: "خدمات مصر الرقمية", href: "/categories/bawabat-misr-alraqmeya" },
-  { label: "فواتير الكهرباء", href: "/categories/fawatir-alkahraba" },
-  { label: "تعلم القيادة", href: "/courses/learn-driving" },
-  { label: "أمان حساب Google", href: "/articles/google-backup-codes" },
-  { label: "تنظيم Gmail", href: "/articles/gmail-filters" },
-];
-
-export const metadata: Metadata = {
-  title: { absolute: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية" },
-  description: siteConfig.description,
-  alternates: pageAlternates("/"),
-  openGraph: { title: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية", description: siteConfig.description, url: "/" },
-};
-
-// Re-evaluate the time-sensitive notice hourly, including after the published deadline.
-export const revalidate = 3600;
-
-export default function Home() {
-  const deadlinePassed = housingDeadlinePassed();
-  const progress = overallProgress();
-  const published = articles.filter((a) => a.status === "published")
-    .sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "") || b.id - a.id);
-  const activeClusters = clusters.filter((cluster) => clusterProgress(cluster.slug).published > 0);
-  const featuredSlugs = ["north-cairo-electricity", "south-delta-electricity", "electricity-bill-inquiry", "private-driving-license-first-time", "automated-birth-certificate", "ration-data-update"];
-  const featured = featuredSlugs.flatMap((slug) => published.filter((a) => a.slug === slug));
-  // Keep a single daily batch from displacing all other useful tasks.
-  const perPath = new Map<string, number>();
-  const latest = published.filter((article) => {
-    if (featuredSlugs.includes(article.slug)) return false;
-    const key = getGuidePath(article.slug)?.slug ?? article.clusterCode;
-    const count = perPath.get(key) ?? 0;
-    if (count >= 2) return false;
-    perPath.set(key, count + 1);
-    return true;
-  }).slice(0, 12);
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${siteConfig.url}/#website`,
-    url: siteConfig.url,
-    name: siteConfig.name,
-    description: siteConfig.description,
-    inLanguage: siteConfig.language,
-    publisher: { "@id": `${siteConfig.url}/#organization` },
-  };
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [{ "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") }],
-  };
-
-  return (
-    <main id="main-content">
-      {/* Hero */}
-      <section className="hero">
-        <div className="shell">
-          <span className="hero-eyebrow">موسوعة عربية للحياة اليومية</span>
-          <h1>أدلة الخدمات المصرية<br /><em>والحياة الرقمية.</em></h1>
-          <p className="hero-sub">
-            نشرح لك الخدمات والإجراءات والمشكلات اليومية بلغة عربية واضحة، مع خطوات عملية تساعدك على معرفة ما يجب فعله بعد ذلك.
-          </p>
-          <div className="hero-actions">
-            <Link className="button button-primary" href="/articles">استكشف الأدلة</Link>
-            <Link className="button button-secondary" href="/guides">اختر مهمتك</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="search-section">
-        <div className="shell">
-          <div className="search-box">
-            <h2>ما الذي تريد أن تفهمه اليوم؟</h2>
-            <p>ابحث عن خدمة، إجراء، مشكلة أو موضوع...</p>
-            <GuideSearch items={published.map(({ slug, title, keyword }) => ({ slug, title, keyword }))} />
-            <div className="quick-topics">
-              {quickTopics.map((t) => (
-                <Link key={t.href} className="quick-chip" href={t.href}>
-                  {t.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Search */}
-      <section className="section deadline-section" aria-labelledby="deadlines-title">
-        <div className="shell brief-box">
-          <h2 id="deadlines-title">مواعيد مهمة وخدمات تحت المتابعة</h2>
-          <h3><Link href="/articles/old-rent-housing-apply">السكن البديل للإيجار القديم — الموعد المنشور <time dateTime="2026-10-12">12 أكتوبر 2026</time></Link></h3>
-          <p>{deadlinePassed ? "مضى الموعد المنشور؛ راجع الجهة الرسمية لمعرفة أي تمديد أو تعليمات أحدث قبل محاولة التقديم." : "أكد بيان وزارة الإسكان في 28 سبتمبر استمرار التسجيل حتى هذا الموعد. جهّز مستنداتك وقدّم عبر القنوات الرسمية، وتحقق من أي إعلان أحدث قبل التنفيذ."}</p>
-          <p><Link href="/articles/old-rent-housing-eligibility">الشروط</Link> · <Link href="/articles/old-rent-housing-documents">المستندات</Link> · <Link href="/articles/old-rent-housing-post-office">مساعدة البريد</Link> · <Link href="/articles/old-rent-housing-track">المتابعة</Link></p>
-          <p><a href="https://sis.gov.eg/ar/المركز-الإعلامي/الأخبار/وزيرة-الإسكان-تترأس-اجتماع-مجلس-إدارة-صندوق-الإسكان-الاجتماعي-ودعم-التمويل-العقاري-1/" target="_blank" rel="noopener noreferrer">تأكيد الموعد من المصدر الرسمي</a> · آخر تحقق: <time dateTime="2026-10-04">4 أكتوبر 2026</time></p>
-        </div>
-      </section>
-
-
-      <section className="section section-alt">
-        <div className="shell">
-          <div className="section-header"><h2>ابدأ من الإجراء الذي تحتاجه</h2><p>أدلة الخدمات الحكومية التالية تخص مصر؛ أدلة الحسابات والهواتف توضح حدود الجهاز والخدمة داخل كل مقال.</p></div>
-          <div className="trust-grid">
-            <section className="trust-card"><h3>طلب السكن البديل</h3><p>افحص الاستحقاق والمستندات قبل التسجيل، ثم تابع الطلب من القناة الرسمية.</p><Link href="/articles/old-rent-housing-eligibility">شروط الاستحقاق</Link> · <Link href="/articles/old-rent-housing-documents">المستندات</Link> · <Link href="/articles/old-rent-housing-apply">التسجيل</Link> · <Link href="/articles/old-rent-housing-track">المتابعة</Link></section>
-            <section className="trust-card"><h3>بطاقة التموين</h3><p>حدد الخدمة المناسبة لحالتك بدل تقديم طلب مختلف عن حاجتك.</p><Link href="/articles/ration-data-update">تحديث البيانات</Link> · <Link href="/articles/ration-family-join">ضم الأسرة</Link> · <Link href="/articles/ration-card-replacement">بدل فاقد وتالف</Link> · <Link href="/articles/ration-card-activation">التفعيل</Link></section>
-            <section className="trust-card"><h3>خدمات السيارة والمرور</h3><p>تحقق من المخالفات وشروط الإجراء قبل بدء التجديد أو طلب بدل للرخصة.</p><Link href="/articles/vehicle-violations-inquiry">المخالفات</Link> · <Link href="/articles/vehicle-license-renewal-online">التجديد</Link> · <Link href="/articles/vehicle-license-lost-replacement">بدل فاقد</Link> · <Link href="/entities/egypt-traffic">البوابة الرسمية</Link></section>
-          </div>
-        </div>
-      </section>
-
-      <section className="section"><div className="shell">
-        <div className="section-header"><h2>حماية الحسابات والبيانات وحل مشكلات الجهاز</h2><p>مسارات تساعدك على اختيار الإجراء المناسب قبل تغيير إعداداتك أو حذف بياناتك.</p></div>
-        <div className="trust-grid">{guidePaths.filter((path) => ["account-security", "android-backup", "chrome-repair"].includes(path.slug)).map((path) => <section className="trust-card" key={path.slug}><h3><Link href={`/guides/${path.slug}`}>{path.title}</Link></h3><p>{path.description}</p></section>)}</div>
-        <Link className="button button-secondary" href="/guides">كل مسارات المهام</Link>
-      </div></section>
-
-      {/* Learning paths */}
-      <section className="section course-home-section">
-        <div className="shell course-home-card">
-          <div>
-            <span className="section-eyebrow">مسار تعليمي جديد</span>
-            <h2>تعلّم قيادة السيارة من الصفر</h2>
-            <p>ثمانية دروس مترابطة تبدأ من المقعد والمرايا، ثم الانطلاق والتحكم والتقاطعات والوقوف، وتنتهي بالطرق السريعة والطقس السيئ.</p>
-          </div>
-          <div className="course-home-actions">
-            <span><strong>٨</strong> دروس عملية</span>
-            <Link className="button button-primary" href="/courses/learn-driving">ابدأ الكورس</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Categories */}
-      <section className="section">
-        <div className="shell">
-          <div className="section-header">
-            <span className="section-eyebrow">المعرفة تبدأ من مكان واضح</span>
-            <h2>الأبواب الرئيسية</h2>
-            <p>اختر المجال الذي تبحث فيه وسنأخذك إلى الأدلة الأكثر فائدة.</p>
-          </div>
-          <div className="cluster-grid">
-            {activeClusters.map((cluster) => (
-              <ClusterCard cluster={cluster} key={cluster.slug} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Guides */}
-      <section className="section section-alt">
-        <div className="shell">
-          <div className="section-header">
-            <span className="section-eyebrow">ابدأ من هنا</span>
-            <h2>أدلة تختصر عليك الطريق</h2>
-            <p>ابدأ بالإجراء الذي تحتاجه، ثم انتقل إلى الدليل المرتبط بالخطوة التالية.</p>
-          </div>
-          {published.length > 0 ? (
-            <div className="articles-grid">
-              {featured.map((article) => (
-                <ArticleCard article={article} key={article.slug} />
-              ))}
-            </div>
-          ) : (
-            <div className="empty-state">
-              <h3>جاري تجهيز الأدلة</h3>
-              <p>نعمل على نشر أول الأدلة العملية قريباً.</p>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Latest Guides */}
-      {published.length > 6 && (
-        <section className="section">
-          <div className="shell">
-            <div className="section-header">
-              <span className="section-eyebrow">أحدث ما نشرناه</span>
-              <h2>أحدث الأدلة</h2>
-              <p>أدلة حديثة من مسارات مختلفة؛ اختر ما يطابق حاجتك.</p>
-            </div>
-            <div className="articles-grid">
-              {latest.map((article) => (
-                <ArticleCard article={article} key={article.slug} />
-              ))}
-            </div>
-            <div style={{ textAlign: "center", marginTop: 32 }}>
-              <Link className="button button-secondary" href="/articles">عرض كل الأدلة</Link>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Stats */}
-      <section className="section section-alt">
-        <div className="shell">
-          <div className="stats-row">
-            <div className="stat-item">
-              <span className="stat-value">{progress.published}</span>
-              <span className="stat-label">دليل عربي</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-value">{activeClusters.length}</span>
-              <span className="stat-label">مجالات رئيسية</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-value">2026</span>
-              <span className="stat-label">آخر تحديث للموسوعة</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Editorial Trust */}
-      <section className="section">
-        <div className="shell">
-          <div className="section-header">
-            <span className="section-eyebrow">لماذا لوسيل</span>
-            <h2>كيف نكتب أدلة لوسيل؟</h2>
-          </div>
-          <div className="trust-grid">
-            <div className="trust-card">
-              <span className="trust-num">١</span>
-              <h3>سؤال محدد</h3>
-              <p>نحدد المشكلة التي يريد المستخدم حلها — لا مقالات عامة متناثرة.</p>
-            </div>
-            <div className="trust-card">
-              <span className="trust-num">٢</span>
-              <h3>سياق ومعلومة</h3>
-              <p>نشرح الفكرة ونفصل الحقيقة عن التفسير — مع مصدر رسمي وتاريخ مراجعة.</p>
-            </div>
-            <div className="trust-card">
-              <span className="trust-num">٣</span>
-              <h3>تطبيق وحدود</h3>
-              <p>نعطي خطوة عملية ونوضح متى يحتاج الأمر إلى جهة رسمية أو مختص.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-    </main>
-  );
+export const metadata:Metadata={title:{absolute:"لوسيل | أدلة الخدمات المصرية والحياة الرقمية"},description:siteConfig.description,alternates:pageAlternates("/"),openGraph:{title:"لوسيل | أدلة الخدمات المصرية والحياة الرقمية",description:siteConfig.description,url:"/"}};
+export const revalidate=3600;
+const topics:Record<string,{short:string;icon:IconName}>={A:{short:"فواتير الكهرباء",icon:"bolt"},B:{short:"الخدمات الحكومية",icon:"document"},C:{short:"القيادة والمرور",icon:"car"},G:{short:"السجل المدني",icon:"book"},H:{short:"الحياة الرقمية",icon:"screen"}};
+export default function Home(){
+  const published=articles.filter(a=>a.status==="published").sort((a,b)=>(b.publishedAt??"").localeCompare(a.publishedAt??"")||b.id-a.id);
+  const active=clusters.filter(c=>clusterProgress(c.slug).published>0).sort((a,b)=>["A","C","G","B","H"].indexOf(a.code)-["A","C","G","B","H"].indexOf(b.code));
+  const find=(slug:string)=>published.find(a=>a.slug===slug)!;
+  const lead=find("electricity-bill-inquiry");
+  const featured=["private-driving-license-first-time","automated-birth-certificate","ration-data-update"].map(find);
+  const selected=["north-cairo-electricity","south-delta-electricity","private-driving-license-first-time","automated-birth-certificate","ration-card-replacement"].map(find);
+  const seenPaths=new Map<string,number>();
+  const latest=published.filter(a=>{const key=getGuidePath(a.slug)?.slug??a.clusterCode;const count=seenPaths.get(key)??0;if(count>=2)return false;seenPaths.set(key,count+1);return true;}).slice(0,6);
+  const sourceCount=new Set(published.flatMap(a=>(a.sources??[]).map(s=>s.url))).size;
+  const websiteSchema={"@context":"https://schema.org","@type":"WebSite","@id":`${siteConfig.url}/#website`,url:siteConfig.url,name:siteConfig.name,description:siteConfig.description,inLanguage:siteConfig.language,publisher:{"@id":`${siteConfig.url}/#organization`}};
+  const breadcrumbSchema={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"الرئيسية",item:absoluteUrl("/")}]};
+  return <main id="main-content" className="magazine-home">
+    <section className="hero"><div className="shell magazine-hero-grid"><div className="magazine-hero-copy"><span className="hero-eyebrow"><SiteIcon name="book" width="17" height="17" />دليل عربي للحياة اليومية</span><h1>أدلة الخدمات المصرية<br/><em>والحياة الرقمية، بخطوات واضحة.</em></h1><p className="hero-sub">من فهم فاتورة الكهرباء إلى تجهيز مستنداتك وحماية حساباتك. ابدأ بالجواب المباشر، واتبع الخطوات، وارجع إلى المصدر.</p><div className="search-section"><GuideSearch items={published.map(({slug,title,keyword})=>({slug,title,keyword}))}/></div><div className="quick-topics"><Link className="quick-chip" href="/guides"><SiteIcon name="grid" width="15" height="15" />اختر مهمتك</Link><Link className="quick-chip" href="/courses/learn-driving"><SiteIcon name="car" width="15" height="15" />تعلّم القيادة</Link><Link className="quick-chip" href="/articles"><SiteIcon name="book" width="15" height="15" />كل الأدلة</Link></div></div><aside className="hero-reference"><div className="hero-promise"><span className="hero-promise-icon"><SiteIcon name="shield" width="30" height="30" /></span><h2>المعلومة ومعها مصدرها</h2><p>روابط المراجع وتواريخ التحقق ترافق الأدلة، لتعرف ما الذي يمكنك الاعتماد عليه.</p><Link href="/editorial-policy">كيف نكتب أدلتنا؟ <SiteIcon name="arrow" width="15" height="15" /></Link></div><div className="hero-counts"><div><strong>{published.length}</strong><span>دليل</span></div><div><strong>{guidePaths.length}</strong><span>مسار مهمة</span></div><div><strong>{sourceCount}</strong><span>رابط مصدر</span></div></div></aside></div></section>
+    <div className="shell home-editorial-wrap">
+      <section className="magazine-feature" aria-labelledby="featured-title"><h2 id="featured-title" className="visually-hidden">أدلة مختارة لتبدأ منها</h2><ArticleCard article={lead} variant="lead" priority/><div className="feature-stack">{featured.map(article=><ArticleCard article={article} variant="compact" key={article.slug}/>)}</div></section>
+      <section className="home-utilities" aria-label="طرق سريعة للوصول"><Link href="/articles/electricity-bill-inquiry#calculator"><span className="utility-icon"><SiteIcon name="bolt"/></span><span><small>احسب وافهم</small><strong>حاسبة فاتورة الكهرباء</strong></span><SiteIcon name="arrow" width="17"/></Link><Link href="/guides/birth-certificates"><span className="utility-icon"><SiteIcon name="document"/></span><span><small>قبل تجهيز الملف</small><strong>اختر شهادة الميلاد المناسبة</strong></span><SiteIcon name="arrow" width="17"/></Link><Link href="/guides/account-security"><span className="utility-icon"><SiteIcon name="shield"/></span><span><small>خطوة لحماية بياناتك</small><strong>تأمين حساب Google</strong></span><SiteIcon name="arrow" width="17"/></Link></section>
+      <section className="deadline-section magazine-deadline" aria-labelledby="deadlines-title"><span className="deadline-dot" aria-hidden="true"/><div><h2 id="deadlines-title">تحت المتابعة: السكن البديل للإيجار القديم</h2><p>{housingDeadlinePassed()?"مضى الموعد المنشور في هذا الدليل، 12 أكتوبر 2026؛ راجع الإعلان الرسمي الحالي قبل محاولة تقديم طلب جديد.":"الموعد المنشور هو 12 أكتوبر 2026؛ راجع أي إعلان رسمي أحدث قبل التقديم."} <time dateTime="2026-10-12" className="visually-hidden">12 أكتوبر 2026</time></p><details><summary>المستندات والمتابعة ومصدر الموعد</summary><p><Link href="/articles/old-rent-housing-eligibility">الشروط</Link> · <Link href="/articles/old-rent-housing-documents">المستندات</Link> · <Link href="/articles/old-rent-housing-post-office">مساعدة البريد</Link> · <Link href="/articles/old-rent-housing-track">المتابعة</Link></p><p><a href="https://sis.gov.eg/ar/المركز-الإعلامي/الأخبار/وزيرة-الإسكان-تترأس-اجتماع-مجلس-إدارة-صندوق-الإسكان-الاجتماعي-ودعم-التمويل-العقاري-1/" target="_blank" rel="noopener noreferrer">مصدر الموعد المنشور</a> · آخر تحقق: <time dateTime="2026-10-04">4 أكتوبر 2026</time></p></details></div><Link className="deadline-link" href="/articles/old-rent-housing-apply">اقرأ التفاصيل <SiteIcon name="arrow" width="16"/></Link></section>
+      <section className="browse-section"><div className="editorial-section-heading"><h2>تصفّح حسب القسم</h2><Link href="/categories">كل التصنيفات <SiteIcon name="arrow" width="16"/></Link></div><div className="category-ribbon">{active.map(c=><Link href={`/categories/${c.slug}`} key={c.code}><SiteIcon name={topics[c.code].icon} width="25" height="25"/><strong>{topics[c.code].short}</strong><span>{clusterProgress(c.slug).published} دليلًا</span></Link>)}</div></section>
+      <div className="magazine-content"><div className="magazine-main">{active.map(cluster=>{const preferred=published.filter(a=>a.clusterCode===cluster.code).sort((a,b)=>Number(selected.some(s=>s.slug===b.slug))-Number(selected.some(s=>s.slug===a.slug)));return <section className="topic-section" key={cluster.code}><div className="editorial-section-heading"><h2><SiteIcon name={topics[cluster.code].icon}/>{topics[cluster.code].short}</h2><Link href={`/categories/${cluster.slug}`}>عرض الكل <SiteIcon name="arrow" width="16"/></Link></div><div className="topic-grid">{preferred.slice(0,3).map(article=><ArticleCard article={article} key={article.slug}/>)}</div></section>;})}</div><aside className="magazine-sidebar"><section className="editorial-panel"><h2>أدلة تختصر عليك الطريق</h2><p className="panel-intro">اختر ما يطابق مهمتك اليوم.</p><ol className="editorial-reading-list">{selected.map((article,index)=><li key={article.slug}><span>{String(index+1).padStart(2,"0")}</span><Link href={`/articles/${article.slug}`}>{article.title}</Link></li>)}</ol></section><section className="editorial-panel teal-panel"><SiteIcon name="car" width="36" height="36"/><small>مسار تعليمي</small><h2>تعلّم القيادة<br/>من أول خطوة.</h2><p>ثمانية دروس تبدأ بالمقعد والمرايا، وتنتقل إلى التحكم والتقاطعات والطرق السريعة.</p><Link className="button" href="/courses/learn-driving">استكشف الكورس <SiteIcon name="arrow" width="16"/></Link></section><section className="editorial-panel"><h2>ابدأ من مسار واضح</h2><div className="sidebar-paths">{guidePaths.filter(p=>["android-backup","chrome-repair","account-security"].includes(p.slug)).map(path=><Link key={path.slug} href={`/guides/${path.slug}`}><strong>{path.title}</strong><SiteIcon name="arrow" width="17"/></Link>)}</div><Link className="panel-more" href="/guides">كل مسارات المهام ←</Link></section><section className="editorial-panel correction-panel"><SiteIcon name="document" width="28" height="28"/><h2>وجدت معلومة تحتاج تصحيحًا؟</h2><p>أرسل رابط المقال والملاحظة لنراجعها مع المصدر.</p><Link href="/contact">تواصل مع فريق لوسيل ←</Link></section></aside></div>
+      <section className="latest-section"><div className="editorial-section-heading"><h2>أحدث الأدلة</h2><Link href="/articles">تصفح الأدلة الـ{published.length} <SiteIcon name="arrow" width="16"/></Link></div><div className="articles-grid">{latest.map(article=><ArticleCard article={article} key={article.slug}/>)}</div></section>
+      <section className="editorial-method"><div><span className="section-eyebrow">معرفة تساعدك على اتخاذ الخطوة التالية</span><h2>كيف نكتب أدلة لوسيل؟</h2><Link href="/editorial-policy">المصادر ومنهج التحرير ←</Link></div><ol><li><span>01</span><strong>سؤال محدد</strong><p>نبدأ بمشكلة واضحة يحتاج القارئ إلى فهمها أو حلها.</p></li><li><span>02</span><strong>خطوات ومراجع</strong><p>نرتب الإجراء ونذكر المصادر وتواريخ التحقق وحدود الشرح.</p></li><li><span>03</span><strong>باب للتصحيح</strong><p>يمكنك الإبلاغ عن معلومة تغيرت أو تحتاج إلى مراجعة.</p></li></ol></section>
+      <section className="home-faq"><div className="editorial-section-heading"><h2>أسئلة عن لوسيل</h2><Link href="/about">تعرّف على الموقع ←</Link></div><details><summary>ما الذي أجدُه في لوسيل؟</summary><p>أدلة للخدمات المصرية والحياة الرقمية، مع أجوبة مباشرة وخطوات وروابط للمراجع. اختر القسم أو ابحث باسم المهمة.</p></details><details><summary>هل لوسيل جهة حكومية أو قناة لتقديم الطلبات؟</summary><p>لوسيل موقع إرشادي مستقل. تقديم الطلبات والدفع وفحص الأهلية يتم لدى الجهة الرسمية، وفق شروطها الحالية.</p></details><details><summary>كيف أبلغ عن خطأ أو معلومة قديمة؟</summary><p>استخدم <Link href="/contact">صفحة التواصل</Link> وأرفق رابط المقال والملاحظة والمصدر إن توفر.</p></details></section>
+    </div><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(websiteSchema)}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumbSchema)}}/>
+  </main>;
 }

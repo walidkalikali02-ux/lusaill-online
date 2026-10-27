@@ -1,69 +1,28 @@
 "use client";
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
-
+import { SiteIcon, type IconName } from "./site-icon";
+const navigation: {href:string;label:string;icon:IconName}[] = [
+  {href:"/",label:"الرئيسية",icon:"grid"},
+  {href:"/categories/fawatir-alkahraba",label:"فواتير الكهرباء",icon:"bolt"},
+  {href:"/categories/bawabat-misr-alraqmeya",label:"الخدمات الحكومية",icon:"document"},
+  {href:"/categories/rokhas-alqiyada-walmoror",label:"القيادة والمرور",icon:"car"},
+  {href:"/categories/shehadat-almilad-walsijil-almadani",label:"السجل المدني",icon:"book"},
+  {href:"/categories/digital-life",label:"الحياة الرقمية",icon:"screen"},
+];
 export function SiteHeader() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  return (
-    <header className="site-header">
-      <div className="shell header-inner">
-        <Link className="brand" href="/" aria-label="لوسيل - الرئيسية">
-          <span className="brand-mark" aria-hidden="true">ل</span>
-          <span>
-            <strong>لوسيل</strong>
-            <small>دليل عربي موثوق للحياة اليومية</small>
-          </span>
-        </Link>
-
-        <nav className="header-nav" aria-label="التنقل الرئيسي">
-          <Link href="/">الرئيسية</Link>
-          <Link href="/articles">الأدلة</Link>
-          <Link href="/courses/learn-driving">كورس القيادة</Link>
-          <Link href="/guides">مسارات المهام</Link>
-          <Link href="/categories">التصنيفات</Link>
-          <Link href="/entities">الجهات والخدمات</Link>
-          <Link href="/editorial-policy">منهج التحرير</Link>
-          <Link href="/about">عن لوسيل</Link>
-        </nav>
-
-        <div className="header-actions">
-          <Link href="/search" className="header-search-btn" aria-label="بحث">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          </Link>
-          <button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="القائمة">
-            {menuOpen ? (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-            ) : (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
-            )}
-          </button>
-        </div>
-      </div>
-
-      {menuOpen && (
-        <nav className="mobile-nav" aria-label="القائمة الرئيسية">
-          <div className="shell">
-            <Link href="/" onClick={() => setMenuOpen(false)}>الرئيسية</Link>
-            <Link href="/articles" onClick={() => setMenuOpen(false)}>الأدلة</Link>
-            <Link href="/courses/learn-driving" onClick={() => setMenuOpen(false)}>كورس القيادة</Link>
-            <Link href="/guides" onClick={() => setMenuOpen(false)}>مسارات المهام</Link>
-            <Link href="/categories" onClick={() => setMenuOpen(false)}>التصنيفات</Link>
-            <Link href="/entities" onClick={() => setMenuOpen(false)}>الجهات والخدمات</Link>
-            <Link href="/editorial-policy" onClick={() => setMenuOpen(false)}>منهج التحرير</Link>
-            <Link href="/about" onClick={() => setMenuOpen(false)}>عن لوسيل</Link>
-          </div>
-        </nav>
-      )}
-
-      <style>{`
-        .mobile-nav { border-top: 1px solid var(--border-light); background: var(--surface); }
-        .mobile-nav .shell { display: flex; flex-direction: column; padding: 16px 0; }
-        .mobile-nav a { display: flex; align-items: center; min-height: 48px; padding: 0 4px; font-size: 16px; font-weight: 500; color: var(--ink-secondary); border-bottom: 1px solid var(--border-light); }
-        .mobile-nav a:last-child { border-bottom: none; }
-        .mobile-nav a:hover { color: var(--ink); }
-      `}</style>
-    </header>
-  );
+  const [menuOpen,setMenuOpen]=useState(false);
+  const pathname=usePathname();
+  useEffect(()=>{if(!menuOpen)return;const close=(event:KeyboardEvent)=>{if(event.key==="Escape")setMenuOpen(false);};window.addEventListener("keydown",close);return()=>window.removeEventListener("keydown",close);},[menuOpen]);
+  return <header className="site-header">
+    <div className="utility-bar"><div className="shell utility-inner"><span>معلومة واضحة، وخطوة تعرف كيف تبدأها</span><div><Link href="/editorial-policy">منهج التحرير والمصادر</Link><Link href="/contact">اقترح موضوعًا أو تصحيحًا</Link><Link href="/about">عن لوسيل</Link></div></div></div>
+    <div className="shell header-inner">
+      <Link className="brand" href="/" aria-label="لوسيل - الرئيسية"><span className="brand-mark" aria-hidden="true"><SiteIcon name="book" width="25" height="25" /></span><span><strong>لوسيل</strong><small>LUSAILL</small></span></Link>
+      <form className="masthead-search" role="search" action="/search" method="get"><SiteIcon name="search" /><input type="search" name="q" maxLength={200} aria-label="بحث الموقع" placeholder="ابحث عن خدمة، إجراء، أو حل لمشكلتك…" /><button type="submit">ابحث</button></form>
+      <div className="header-actions"><Link href="/guides" className="header-guide-link"><SiteIcon name="book" />اختر مهمتك</Link><Link href="/search" className="header-search-btn" aria-label="بحث"><SiteIcon name="search" /></Link><button className="mobile-menu-btn" aria-label={menuOpen?"إغلاق القائمة":"القائمة"} aria-expanded={menuOpen} aria-controls="site-menu" onClick={()=>setMenuOpen(!menuOpen)}><SiteIcon name={menuOpen?"close":"menu"} /></button></div>
+    </div>
+    <div className="category-nav-wrap"><nav className="shell category-nav" aria-label="التنقل الرئيسي">{navigation.map(item=><Link key={item.href} href={item.href} aria-current={pathname===item.href?"page":undefined}><SiteIcon name={item.icon} width="17" height="17" />{item.label}</Link>)}<Link href="/articles" aria-current={pathname==="/articles"?"page":undefined}>كل الأدلة <span aria-hidden="true">↙</span></Link></nav></div>
+    {menuOpen&&<nav id="site-menu" className="mobile-nav" aria-label="روابط إضافية"><div className="shell">{[{href:"/guides",label:"مسارات المهام"},{href:"/courses/learn-driving",label:"كورس تعلم القيادة"},{href:"/categories",label:"كل التصنيفات"},{href:"/entities",label:"الجهات والخدمات"},{href:"/editorial-policy",label:"منهج التحرير"},{href:"/about",label:"عن لوسيل"},{href:"/contact",label:"تواصل معنا"}].map(item=><Link key={item.href} href={item.href} onClick={()=>setMenuOpen(false)}>{item.label}<SiteIcon name="arrow" width="16" height="16" /></Link>)}</div></nav>}
+  </header>;
 }

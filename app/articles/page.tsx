@@ -1,3 +1,4 @@
+import { ArticleCard } from "@/components/article-card";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -51,20 +52,7 @@ export default function ArticlesPage() {
         <h2>اختر دليلًا يناسب مشكلتك</h2>
         {publishedArticles.length > 0 ? (
           <div className="articles-grid">
-            {publishedArticles.map((article) => (
-              <Link key={article.slug} className="article-card" href={`/articles/${article.slug}`}>
-                <h3>{article.title}</h3>
-                <p className="article-card-desc">
-                  {article.quickAnswer
-                    ? article.quickAnswer.slice(0, 120) + (article.quickAnswer.length > 120 ? "…" : "")
-                    : `دليل شامل عن ${article.keyword} مع خطوات عملية.`}
-                </p>
-                <div className="article-card-footer">
-                  <span className="article-card-time">دليل عملي</span>
-                  <span className="article-card-link">اقرأ الدليل ←</span>
-                </div>
-              </Link>
-            ))}
+            {publishedArticles.map(article => <ArticleCard key={article.slug} article={article} />)}
           </div>
         ) : (
           <div className="empty-state">
