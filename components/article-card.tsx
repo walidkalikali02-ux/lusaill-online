@@ -1,10 +1,11 @@
+import { electricityDetailText } from "@/lib/electricity-inquiry-detail";
 import Image from "next/image";
 import Link from "next/link";
 import type { Article } from "@/lib/content";
 import { clusters } from "@/lib/clusters";
 import { SiteIcon } from "./site-icon";
 function readingTime(article:Article) {
-  const text=[article.quickAnswer,...(article.steps??[]).flatMap(s=>[s.title,s.detail]),...(article.practicalSections??[]).flatMap(s=>[s.title,s.intro,...s.rows.flat()]),...(article.faqs??[]).flatMap(f=>[f.question,f.answer])].filter(Boolean).join(" ");
+  const text=[article.quickAnswer,article.slug==="electricity-bill-inquiry"?electricityDetailText:undefined,...(article.summaryTable??[]).flatMap(row=>[row.label,row.value]),...(article.commonMistakes??[]),...(article.steps??[]).flatMap(s=>[s.title,s.detail]),...(article.practicalSections??[]).flatMap(s=>[s.title,s.intro,...s.columns,...s.rows.flat()]),...(article.faqs??[]).flatMap(f=>[f.question,f.answer])].filter(Boolean).join(" ");
   return Math.max(1,Math.ceil(text.split(/\s+/u).length/200));
 }
 export function ArticleCard({article,variant="tile",priority=false}:{article:Article;variant?:"tile"|"lead"|"compact";priority?:boolean}) {
