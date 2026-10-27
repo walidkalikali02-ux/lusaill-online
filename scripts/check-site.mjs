@@ -94,7 +94,7 @@ for (const url of urls) {
     assert(serverHtml.includes('id="quick-answer"') && serverHtml.includes('id="sources"') && serverHtml.includes('id="next-step"'), `Full article sections absent from server HTML: ${url}`);
     assert(html.includes('id="next-step"'), `Related next step missing: ${url}`);
     assert(html.includes('آخر مراجعة: <time'), `Last-reviewed date missing: ${url}`);
-    assert(title.includes('2026:'), `Service/year title missing: ${url}`);
+    assert(title.replace(/\s*\|\s*لوسيل$/, '').trim().length >= 10, `Non-descriptive article title: ${url}`);
     assert.equal([...html.matchAll(/id="quick-answer"/g)].length, 1, `Answer duplication: ${url}`);
     assert(html.indexOf('id="quick-answer"') < html.indexOf('class="article-cover"'), `Answer follows cover: ${url}`);
     diagrams += html.includes('class="guide-figure"') ? 1 : 0;

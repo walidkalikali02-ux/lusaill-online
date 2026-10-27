@@ -20,3 +20,24 @@ const search = load("lib/guide-search.ts");
 assert.equal(search.searchGuides([{slug:"a",title:"فاتورة الكهرباء",keyword:""}],"فَاتورة الكهرباء").length,1);
 assert.equal(search.searchGuides([{slug:"a",title:"أمان الحساب",keyword:""}],"امان").length,1);
 console.log(`Guide/search regression checks passed for ${guidePaths.length} keyed task paths.`);
+
+// Validate that every visible task member exists and every published article has a relevant path.
+const moduleCache = new Map();
+const importSource = (path) => {
+  path = path.replace(/\\/g, "/");
+  if (!path.endsWith(".ts")) path += path.endsWith("article-content") ? "/index.ts" : ".ts";
+  if (moduleCache.has(path)) return moduleCache.get(path);
+  const exports = {}; moduleCache.set(path, exports);
+  const code = ts.transpileModule(readFileSync(path, "utf8"), {compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
+  new Function("require", "exports", code)((id) => {
+    assert(id.startsWith("."), `Unexpected content dependency: ${id}`);
+    const base = path.slice(0, path.lastIndexOf("/") + 1);
+    return importSource(base + id.replace(/^\.\//, ""));
+  }, exports);
+  return exports;
+};
+const {articles} = importSource("lib/content.ts");
+const published = new Set(articles.filter(a => a.status === "published").map(a => a.slug));
+for (const path of guidePaths) for(const slug of path.articleSlugs) assert(published.has(slug), `Unpublished member ${slug} in ${path.slug}`);
+for(const slug of published) assert(getGuidePath(slug), `No task path for published article ${slug}`);
+console.log(`All ${published.size} published articles have task paths; all members are published.`);
