@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { courseMeta, drivingLessons, getAdjacentLessons, getDrivingLesson } from "@/lib/driving-course";
-import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 
 const coursePath = "/courses/learn-driving";
 type LessonPageProps = { params: Promise<{ lesson: string }> };
@@ -32,9 +32,9 @@ export async function generateMetadata({ params }: LessonPageProps): Promise<Met
       url: path,
       publishedTime: courseMeta.publishedAt,
       modifiedTime: courseMeta.updatedAt,
-      images: [{ url: lesson.image.src, width: lesson.image.width, height: lesson.image.height, alt: lesson.image.alt }],
+      images: [siteSocialImage],
     },
-    twitter: { card: "summary_large_image", title: lesson.slug === "start-stop-car-smoothly" ? "الانطلاق والتوقف في السيارة الأوتوماتيك واليدوية" : lesson.title, description: lesson.metaDescription, images: [lesson.image.src] },
+    twitter: { card: "summary_large_image", title: lesson.slug === "start-stop-car-smoothly" ? "الانطلاق والتوقف في السيارة الأوتوماتيك واليدوية" : lesson.title, description: lesson.metaDescription, images: [siteSocialImage.url] },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   };
 }

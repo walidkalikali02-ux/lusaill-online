@@ -1,6 +1,6 @@
 // Explicit service-first search titles; 2026 describes this edition, not a new source review.
 // Keep full descriptive H1s and factual Article headlines.
-export const searchTitles: Record<string, string> = {
+const editionTitles: Record<string, string> = {
   "foreign-nationality-permission": "إذن التجنس 2026: الوثائق والمتابعة بالخارج",
   "marriage-no-objection-certificate": "عدم ممانعة الزواج 2026: القيد والطلب بالخارج",
   "egyptian-nationality-foreign-wife": "جنسية زوجة المصري 2026: الملف والمتابعة",
@@ -139,3 +139,7 @@ export const searchTitles: Record<string, string> = {
   "driving-license-lost-replacement": "بدل فاقد رخصة القيادة 2026: الشروط وخطوات الطلب",
   "automated-birth-certificate": "شهادة الميلاد 2026: طلبها عبر بوابة مصر الرقمية"
 };
+
+const evergreenPrefixes = ["forms-", "slides-", "sheets-", "docs-", "windows-", "chrome-", "android-", "google-", "gmail-", "drive-", "iphone-", "lost-iphone-", "lost-android-"];
+export const searchTitles: Record<string, string> = Object.fromEntries(Object.entries(editionTitles).map(([slug, title]) => [slug, evergreenPrefixes.some((prefix) => slug.startsWith(prefix)) ? title.replace(/ 2026(?=:)/u, "") : title]));
+searchTitles["old-rent-housing-apply"] = "السكن البديل: الموعد المنشور وخطوات المتابعة";

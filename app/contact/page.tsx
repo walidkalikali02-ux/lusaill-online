@@ -5,9 +5,10 @@ import { EditorialFeedback } from "@/components/editorial-feedback";
 import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 
 const title = "تواصل معنا";
-const description = "أرسل تصحيحًا لمقال أو بلاغًا عن رابط لا يعمل عبر مستودع لوسيل الرسمي، وتعرّف على المعلومات التي تساعد فريق التحرير على المراجعة.";
+const description = "أرسل تصحيحًا لمقال أو رابط عبر بريد فريق لوسيل الخاص، أو افتح بلاغًا تقنيًا علنيًا على GitHub، دون بيانات شخصية حساسة.";
 
 export const metadata: Metadata = {
+  twitter: { card: "summary_large_image", title, description, images: [siteSocialImage.url] },
   title, description, alternates: pageAlternates("/contact"),
   openGraph: { title, description, url: "/contact", type: "website", images: [siteSocialImage] },
 };
@@ -27,7 +28,8 @@ export default function ContactPage() {
       <div className="shell text-shell">
         <span className="eyebrow">تواصل مع فريق التحرير</span>
         <h1>{title}</h1>
-        <p className="text-lead">للإبلاغ عن معلومة تحتاج تصحيحًا أو رابط معطل أو مشكلة في عرض صفحة، افتح بلاغًا في المستودع الرسمي. نقرأ الملاحظات التي تساعد على تحسين الأدلة المنشورة.</p>
+        <p className="text-lead">للإبلاغ عن معلومة تحتاج تصحيحًا أو رابط معطل أو مشكلة في عرض صفحة، راسل فريق التحرير بالبريد أو استخدم مسار GitHub العلني للملاحظات التقنية. لا ننجز معاملات حكومية أو نقدم دعمًا لحسابك لدى جهة الخدمة.</p>
+        <section><h2>مراسلة فريق التحرير بشكل خاص</h2><p><a href={`mailto:${siteConfig.editorialEmail}`}>{siteConfig.editorialEmail}</a></p><p>أرسل رابط الدليل والفقرة المقصودة والمصدر الذي يصححها. لا نطلب أرقام هوية أو كلمات مرور أو رموز تحقق أو مستندات طلبك. إعداد مسودة في برنامج بريدك لا يعني إرسالها أو تأكيد استلامنا لها.</p></section>
         <EditorialFeedback />
         <section><h2>أرسل بلاغًا عن الموقع</h2><p><a href="https://github.com/walidkalikali02-ux/lusaill-online/issues/new" target="_blank" rel="noopener noreferrer">افتح بلاغًا جديدًا على GitHub</a>؛ قد تحتاج إلى تسجيل الدخول إلى GitHub. أضف رابط المقال أو الصفحة، ووصف المشكلة، ورابطًا إلى المصدر الرسمي إذا كنت تقترح تصحيحًا. مثال: «في صفحة الدليل، الخطوة الثالثة تشير إلى زر تغيّر اسمه؛ المرجع الرسمي الحالي: …».</p></section>
         <section><h2>احمِ بياناتك أثناء الإرسال</h2><p>بلاغات GitHub في هذا المستودع علنية. لا تنشر بريدك الخاص أو رقم هاتفك أو كلمة مرور أو رمز تحقق أو صورة بطاقة أو بيانات معاملة. لا ترسل شكوى حسابك الشخصي إلى المستودع؛ استخدم قناة الدعم الرسمية للخدمة المعنية. للمعلومات المتعلقة بما قد يظهر خلال التصفح راجع <Link href="/privacy">سياسة الخصوصية</Link>.</p></section>

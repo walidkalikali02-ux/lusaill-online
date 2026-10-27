@@ -9,6 +9,7 @@ export const siteConfig = {
   description:
 "أدلة لوسيل للخدمات المصرية والسكن البديل والتموين والكهرباء والحياة الرقمية: خطوات واضحة، مستندات ومواعيد مهمة، ومصادر رسمية وتواريخ مراجعة لكل دليل.",
   publisher: "فريق لوسيل",
+  editorialEmail: "waisbouya@gmail.com",
   geo: {
     region: "",
     placename: "",

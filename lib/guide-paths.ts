@@ -1,4 +1,4 @@
-import { articleJourneys } from "./article-journeys";
+import { articleJourneysBySlug } from "./article-journeys";
 
 // Stable task pages; article membership is shared with contextual recommendations.
 const pathDetails = [
@@ -33,12 +33,35 @@ const pathDetails = [
   ["e-invoice", "تجهيز الفاتورة والإيصال الإلكتروني", "رتب التسجيل والختم والتكويد والتكامل، وشخّص الأخطاء قبل إصدار مستندات فعلية.", "مصر وللممولين؛ قرارات الإلزام وتعليمات مصلحة الضرائب هي المرجع."],
   ["takaful-karama", "التقديم والمتابعة في تكافل وكرامة", "راجع الفئة والشروط، جهز مستندات الأسرة، ثم استعلم أو قدم شكوى موثقة من القناة الرسمية.", "مصر؛ التقديم مجاني والاستحقاق تقرره وزارة التضامن بعد البحث والتحقق."],
   ["consular-documents", "تجهيز الوثائق المصرية من الخارج", "حدد تسجيل ميلاد الطفل أو جوازه، أو تجديد البطاقة، أو الصحيفة الجنائية، ثم راجع التصديقات والتوكيل وتصريح العمل بحسب معاملتك.", "للمصريين بالخارج؛ إتاحة الخدمة والمواعيد والرسوم يحددها إعلان البعثة المصرية المختصة، ولا يحدد المسار حق إقامة أو وضعًا قانونيًا شخصيًا."],
+  ["tax-registration", "التسجيل والبطاقة الضريبية في مصر", "اختر التسجيل أو تعديل البيانات أو بدل البطاقة أو استئناف النشاط حسب حالة ملفك.", "مصر؛ الإجراءات والالتزامات الضريبية تحددها مصلحة الضرائب."],
+  ["consumer-protection", "حقوق المستهلك والشكوى والصيانة", "حدد المشكلة، ثم راجع المستندات والضمان وقنوات الشكوى المناسبة.", "مصر؛ تختلف الحقوق والاستثناءات بحسب السلعة والحالة."],
+  ["passports", "استخراج وتجديد جواز السفر المصري", "اختر أول إصدار أو التجديد أو بدل الفاقد أو التالف بحسب حالتك.", "مصر؛ راجع المستندات والرسوم الحالية لدى الجهة الرسمية."],
+  ["work-permits", "تصاريح العمل للمصريين", "اختر أول إصدار أو التجديد أو بدل الفاقد أو المخالصة.", "مصر؛ يحدد قطاع تصاريح العمل شروط كل طلب."],
+  ["military-service", "شهادات الخدمة العسكرية وتصاريح السفر", "اختر الشهادة أو التصريح المطلوب وتحقق من الجهة المستلمة.", "مصر؛ حالة التجنيد والجهة المختصة تحددان الإجراء."],
+  ["national-id", "بطاقة الرقم القومي وتعديل البيانات", "اختر أول إصدار أو التجديد أو تعديل بيانات القيد مع المستند المناسب.", "مصر؛ بعض الحالات تستلزم حضور صاحب الشأن."],
+  ["personal-records", "القيد العائلي والفردي والصحيفة الجنائية", "حدد نوع المستخرج والغرض والجهة التي ستستلمه قبل الطلب.", "مصر؛ لا تعتبر المستخرجات المختلفة بدائل متطابقة."],
+  ["birth-certificates", "تسجيل الميلاد واستخراج الشهادة وتصديقها", "اختر تسجيل مولود أو نسخة من الشهادة أو التصديق والترجمة.", "مصر؛ قد تتطلب الطلبات قيدًا سابقًا أو حضور صاحب الصفة."],
+  ["marriage-records", "وثائق الزواج والطلاق وتصحيح القيد", "اختر نوع الوثيقة وراجع أصل القيد قبل طلب نسخة أو تصحيح.", "مصر؛ التصحيح واستخراج نسخة إجراءان مختلفان."],
+  ["death-records", "تسجيل الوفاة وشهاداتها", "حدد تسجيل الواقعة أو تصريح الدفن أو نسخة الشهادة المطلوبة.", "مصر؛ راجع الجهة الرسمية وشروط صاحب الصفة."],
+  ["driving-licences", "استخراج وتجديد رخصة القيادة في مصر", "اختر نوع رخصة السائق والفحص والتجديد أو بدل الفاقد المناسب.", "مصر؛ رخصة القيادة تختلف عن رخصة المركبة."],
+  ["telecom-lines", "الخطوط والمحافظ وشكاوى الاتصالات", "راجع الخطوط المسجلة ونقل الرقم والشكاوى والخدمات غير المرغوبة.", "مصر؛ استخدم القنوات الرسمية ولا تشارك رموز التحقق."],
+  ["telecom-internet", "مشكلات الإنترنت وجودة الخدمة", "حدد العطل أو نقل الاشتراك أو قياس الجودة قبل تقديم شكوى.", "مصر؛ تختلف الشروط بحسب مقدم الخدمة ونوع الاشتراك."],
+  ["telecom-devices", "خدمات الهاتف وحقوق المستخدم", "راجع متطلبات الجهاز والشبكة والسلامة والضمان بحسب حاجتك.", "مصر؛ دعم الجهاز والخدمة تحدده الجهات الرسمية والمشغل."],
 ] as const;
 
-export const guidePaths = pathDetails.map(([slug, title, description, scope], index) => ({
-  slug, title, description, scope, articleSlugs: articleJourneys[index],
+export const guidePaths = pathDetails.map(([slug, title, description, scope]) => ({
+  slug, title, description, scope, articleSlugs: articleJourneysBySlug[slug] ?? [],
 }));
 
 export function getGuidePath(articleSlug: string) {
-  return guidePaths.find((path) => path.articleSlugs.includes(articleSlug));
+  const primary: Record<string, string> = {
+    "automated-birth-certificate": "birth-certificates", "family-record-egypt": "personal-records",
+    "personal-record-egypt": "personal-records", "automated-death-certificate": "death-records",
+    "automated-marriage-certificate": "marriage-records", "civil-record-correction-egypt": "national-id",
+    "marriage-divorce-record-correction": "marriage-records", "driving-license-lost-replacement": "driving-licences",
+    "work-permit-abroad": "work-permits",
+  };
+  const preferred = primary[articleSlug];
+  return guidePaths.find((path) => path.slug === preferred && path.articleSlugs.includes(articleSlug))
+    ?? guidePaths.find((path) => path.articleSlugs.includes(articleSlug));
 }

@@ -7,6 +7,7 @@ const title = "شروط الاستخدام";
 const description = "شروط استخدام أدلة لوسيل العربية، وحدود المعلومات المنشورة، واحترام حقوق المحتوى والروابط والمصادر الرسمية.";
 
 export const metadata: Metadata = {
+  twitter: { card: "summary_large_image", title, description, images: [siteSocialImage.url] },
   title, description, alternates: pageAlternates("/terms"),
   openGraph: { title, description, url: "/terms", type: "website", images: [siteSocialImage] },
 };

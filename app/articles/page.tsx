@@ -29,19 +29,7 @@ export default function ArticlesPage() {
 
   const publishedArticles = articles.filter((a) => a.status === "published");
 
-  const itemListSchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "أدلة لوسيل",
-    description: "جميع الأدلة العملية في موسوعة لوسيل.",
-    numberOfItems: publishedArticles.length,
-    itemListElement: publishedArticles.map((article, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      url: absoluteUrl(`/articles/${article.slug}`),
-      name: article.title,
-    })),
-  };
+
 
   return (
     <main id="main-content" className="category-page">
@@ -87,7 +75,6 @@ export default function ArticlesPage() {
         )}
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
     </main>
   );
 }

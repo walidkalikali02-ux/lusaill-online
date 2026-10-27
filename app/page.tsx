@@ -35,7 +35,7 @@ export default function Home() {
   const published = articles.filter((a) => a.status === "published")
     .sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "") || b.id - a.id);
   const activeClusters = clusters.filter((cluster) => clusterProgress(cluster.slug).published > 0);
-  const featuredSlugs = ["old-rent-housing-apply", "ration-data-update", "vehicle-license-renewal-online", "south-delta-electricity", "google-backup-codes", "android-backup-check"];
+  const featuredSlugs = ["north-cairo-electricity", "south-delta-electricity", "electricity-bill-inquiry", "private-driving-license-first-time", "automated-birth-certificate", "ration-data-update"];
   const featured = featuredSlugs.flatMap((slug) => published.filter((a) => a.slug === slug));
   // Keep a single daily batch from displacing all other useful tasks.
   const perPath = new Map<string, number>();
@@ -70,13 +70,30 @@ export default function Home() {
       <section className="hero">
         <div className="shell">
           <span className="hero-eyebrow">موسوعة عربية للحياة اليومية</span>
-          <h1>حلّ مشكلتك اليومية<br /><em>بدليل موثّق.</em></h1>
+          <h1>أدلة الخدمات المصرية<br /><em>والحياة الرقمية.</em></h1>
           <p className="hero-sub">
             نشرح لك الخدمات والإجراءات والمشكلات اليومية بلغة عربية واضحة، مع خطوات عملية تساعدك على معرفة ما يجب فعله بعد ذلك.
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" href="/articles">استكشف الأدلة</Link>
             <Link className="button button-secondary" href="/guides">اختر مهمتك</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="search-section">
+        <div className="shell">
+          <div className="search-box">
+            <h2>ما الذي تريد أن تفهمه اليوم؟</h2>
+            <p>ابحث عن خدمة، إجراء، مشكلة أو موضوع...</p>
+            <GuideSearch items={published.map(({ slug, title, keyword }) => ({ slug, title, keyword }))} />
+            <div className="quick-topics">
+              {quickTopics.map((t) => (
+                <Link key={t.href} className="quick-chip" href={t.href}>
+                  {t.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -91,22 +108,7 @@ export default function Home() {
           <p><a href="https://sis.gov.eg/ar/المركز-الإعلامي/الأخبار/وزيرة-الإسكان-تترأس-اجتماع-مجلس-إدارة-صندوق-الإسكان-الاجتماعي-ودعم-التمويل-العقاري-1/" target="_blank" rel="noopener noreferrer">تأكيد الموعد من المصدر الرسمي</a> · آخر تحقق: <time dateTime="2026-10-04">4 أكتوبر 2026</time></p>
         </div>
       </section>
-      <section className="search-section">
-        <div className="shell">
-          <div className="search-box">
-            <h2>ما الذي تريد أن تفهمه اليوم؟</h2>
-            <p>ابحث عن خدمة، إجراء، مشكلة أو موضوع...</p>
-            <GuideSearch items={published.map(({ slug, title, keyword, quickAnswer }) => ({ slug, title, keyword, quickAnswer }))} />
-            <div className="quick-topics">
-              {quickTopics.map((t) => (
-                <Link key={t.href} className="quick-chip" href={t.href}>
-                  {t.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <section className="section section-alt">
         <div className="shell">

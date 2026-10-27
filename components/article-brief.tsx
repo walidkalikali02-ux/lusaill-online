@@ -1,4 +1,5 @@
 import Image from "next/image";
+import inlineMedia from "@/lib/article-inline-media.json";
 import { ElectricityCompanies, ElectricityInquiryDetail } from "./electricity-inquiry-detail";
 import { guideIllustrations } from "@/lib/guide-illustrations";
 import Link from "next/link";
@@ -8,6 +9,11 @@ import { GuideChecklist } from "./guide-checklist";
 import { getGuidePath } from "@/lib/guide-paths";
 
 export function ArticleBrief({ article, cluster, related }: { article: Article; cluster: Cluster; related: Article[] }) {
+  const media = (inlineMedia as Record<string, {src:string;alt:string;width:number;height:number;step:number;caption:string;sourceUrls:string[]}[]>)[article.slug] ?? [];
+  const renderMedia = (step: number) => media.filter((item) => item.step === step).map((item) => <figure className="guide-figure" key={item.src}>
+    <Image src={item.src} alt={item.alt} width={item.width} height={item.height} sizes="(max-width: 768px) calc(100vw - 32px), 760px" />
+    <figcaption>{item.caption}{item.sourceUrls.map((url, index) => <span key={url}> · <a href={url} target="_blank" rel="noopener noreferrer">المصدر {index + 1}</a></span>)}</figcaption>
+  </figure>);
   const illustration = guideIllustrations[article.slug];
   const path = getGuidePath(article.slug);
   const nextStep = related[0];
@@ -32,6 +38,8 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
 
         {article.slug === "electricity-bill-inquiry" && <ElectricityCompanies />}
 
+        {renderMedia(0)}
+
         {/* Steps */}
         <section id="steps" className="brief-box">
           <h2>{article.slug === "electricity-bill-inquiry" ? "الاستعلام عن فاتورة الكهرباء برقم الحساب: خطوات التنفيذ" : "خطوات التنفيذ"}</h2>
@@ -47,6 +55,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
                       <Image src={illustration.src} alt={illustration.alt} width={1200} height={700} sizes="(max-width: 768px) 100vw, 760px" />
                       <figcaption>{illustration.caption} <a href={illustration.sourceUrl} target="_blank" rel="noopener noreferrer">المصدر الرسمي</a></figcaption>
                     </figure>}
+                    {renderMedia(i + 1)}
                     {step.sourceUrl && <p><a href={step.sourceUrl} target="_blank" rel="noopener noreferrer">مرجع هذه الخطوة</a></p>}
                     {step.relatedLink && <p><Link href={step.relatedLink.href}>{step.relatedLink.label}</Link></p>}
                   </div>
