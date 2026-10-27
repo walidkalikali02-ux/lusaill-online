@@ -5,7 +5,14 @@ const skipExternal = process.argv.includes("--skip-external-images");
 const origin = process.argv[2] ?? "https://www.lusaill.online";
 const official = "https://www.lusaill.online";
 const local = (url) => new URL(new URL(url, official).pathname + new URL(url, official).search, origin);
-const get = async (url) => { const r = await fetch(url); assert.equal(r.status, 200, `${url}: HTTP ${r.status}`); return r.text(); };
+let checked = 0;
+async function mapLimit(values, fn) {
+  let next = 0;
+  await Promise.all(Array.from({length: Math.min(6, values.length)}, async () => {
+    while(next < values.length) { const value = values[next++]; await fn(value); }
+  }));
+}
+const get = async (url) => { const r = await fetch(url, {signal: AbortSignal.timeout(45000)}); if(++checked % 40 === 0) console.log(`Checked ${checked} HTML/link requests`); assert.equal(r.status, 200, `${url}: HTTP ${r.status}`); return r.text(); };
 const sitemapIndex = await get(`${origin}/sitemap.xml`);
 assert(sitemapIndex.includes('<sitemapindex'), 'Sitemap index missing');
 const sitemapNames = [...sitemapIndex.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
@@ -58,7 +65,7 @@ if (new URL(origin).hostname === '127.0.0.1') {
   assert.equal(apexRedirect.statusCode, 301, 'Apex redirect must be 301');
   assert.equal(apexRedirect.headers.location, `${official}/articles/old-rent-housing-apply?test=1`, 'Redirect must preserve path and query');
 }
-for (const url of urls) {
+await mapLimit(urls, async (url) => {
   assert(url.startsWith(`${official}/`), `Noncanonical sitemap: ${url}`);
   const html = await get(local(url));
   assert(/<html[^>]*lang="ar"[^>]*dir="rtl"/.test(html), `Arabic direction missing: ${url}`);
@@ -104,9 +111,10 @@ for (const url of urls) {
     assert(/alt="[^"]+"/.test(m[0]), `Image without meaningful alt: ${url}`);
     const src = m[0].match(/src="([^"]+)"/)?.[1]?.replace(/&amp;/g,'&'); if(src) images.add(src);
   }
-}
-for (const path of links) await get(local(path));
-for (const src of images) { if (skipExternal && (src.includes("url=https%3A") || src.startsWith("https://upload.wikimedia.org/"))) continue; const r = await fetch(src.startsWith("https://upload.wikimedia.org/") ? src : local(src)); assert.equal(r.status, 200, `Image unavailable: ${src}`); assert(r.headers.get('content-type')?.startsWith('image/'), `Not an image: ${src}`); }
+});
+await mapLimit([...links], async (path) => { await get(local(path)); });
+let checkedImages = 0;
+await mapLimit([...images], async (src) => { if (skipExternal && (src.includes("url=https%3A") || src.startsWith("https://upload.wikimedia.org/"))) return; const r = await fetch(src.startsWith("https://upload.wikimedia.org/") ? src : local(src), {signal: AbortSignal.timeout(45000)}); assert.equal(r.status, 200, `Image unavailable: ${src}`); assert(r.headers.get('content-type')?.startsWith('image/'), `Not an image: ${src}`); await r.arrayBuffer(); if(++checkedImages % 40 === 0) console.log(`Checked ${checkedImages} images`); });
 const metrash = await get(`${origin}/entities/metrash`);
 assert(/<meta name="robots" content="[^"]*noindex/.test(metrash));
 assert(metrash.includes('"name":"قطر"'));
