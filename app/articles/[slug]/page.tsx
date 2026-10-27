@@ -1,3 +1,4 @@
+import { getArticleAdvisories } from "@/lib/article-audit-updates";
 import { electricityDetailText } from "@/lib/electricity-inquiry-detail";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
@@ -48,12 +49,13 @@ function readingTime(article: Parameters<typeof wordCount>[0]): number {
   return Math.max(1, Math.ceil(wordCount(article) / 200));
 }
 
-function wordCount(article: { slug?: string; quickAnswer?: string; summaryTable?: { label: string; value: string }[]; steps?: { title: string; detail: string }[]; commonMistakes?: string[]; faqs?: { question: string; answer: string }[] }) {
+function wordCount(article: { slug?: string; quickAnswer?: string; summaryTable?: { label: string; value: string }[]; steps?: { title: string; detail: string }[]; practicalSections?: { title: string; intro?: string; columns: string[]; rows: string[][] }[]; commonMistakes?: string[]; faqs?: { question: string; answer: string }[] }) {
   const text = [
     article.quickAnswer,
     article.slug === "electricity-bill-inquiry" ? electricityDetailText : undefined,
     ...(article.summaryTable ?? []).flatMap((row) => [row.label, row.value]),
     ...(article.steps ?? []).flatMap((step) => [step.title, step.detail]),
+    ...(article.practicalSections ?? []).flatMap((section) => [section.title, section.intro, ...section.columns, ...section.rows.flat()]),
     ...(article.commonMistakes ?? []),
     ...(article.faqs ?? []).flatMap((faq) => [faq.question, faq.answer]),
   ].filter(Boolean).join(" ");
@@ -188,6 +190,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             )}
           </div>
         </div>
+
+        {getArticleAdvisories(article).map((notice) => <section className="brief-box callout callout-warning" key={notice.title}>
+          <h2>{notice.title}</h2><p>{notice.detail}</p>
+          {notice.url.startsWith("/") ? <Link href={notice.url}>{notice.label}</Link> : <a href={notice.url} target="_blank" rel="noopener noreferrer">{notice.label}</a>}
+        </section>)}
 
         <section id="quick-answer" className="brief-box">
           <h2>الإجابة المباشرة</h2>

@@ -41,3 +41,24 @@ const published = new Set(articles.filter(a => a.status === "published").map(a =
 for (const path of guidePaths) for(const slug of path.articleSlugs) assert(published.has(slug), `Unpublished member ${slug} in ${path.slug}`);
 for(const slug of published) assert(getGuidePath(slug), `No task path for published article ${slug}`);
 console.log(`All ${published.size} published articles have task paths; all members are published.`);
+
+// Article audit: a category move must reach every consumer of the article model.
+const {getArticleAdvisories, trafficArticleSlugs} = importSource("lib/article-audit-updates.ts");
+for (const slug of trafficArticleSlugs) assert.equal(articles.find(a => a.slug === slug)?.clusterCode, "C", `Traffic topic is outside its category: ${slug}`);
+assert.equal(articles.filter(a => a.status === "published" && a.clusterCode === "C").length, 13);
+for (const a of articles.filter(a => a.status === "published")) {
+  assert(new Date(a.updatedAt).getTime() <= Date.now(), `Future update date: ${a.slug}`);
+  for (const section of a.practicalSections ?? []) {
+    assert(section.rows.length && section.columns.length >= 2);
+    for (const row of section.rows) assert.equal(row.length, section.columns.length, `Malformed table: ${a.slug}`);
+  }
+  const housing = a.slug.startsWith("old-rent-housing-");
+  const before = getArticleAdvisories(a, new Date("2026-10-12T12:00:00+03:00")).filter(n => n.title.includes("التقديم"));
+  const after = getArticleAdvisories(a, new Date("2026-10-27T12:00:00+03:00")).filter(n => n.title.includes("التقديم"));
+  assert.equal(before.length, 0);
+  assert.equal(after.length, housing ? 1 : 0, `Missing or misplaced deadline notice: ${a.slug}`);
+}
+const housingArticle = articles.find(a => a.slug === "old-rent-housing-apply");
+assert(!housingArticle.faqs.some(f => f.question.includes("اقترب الموعد")));
+assert(articles.find(a => a.slug === "seasonal-work-permit-egypt").quickAnswer.includes("ليس قائمة مستندات مكتملة"));
+console.log("Article audit regression passed: 8 category moves, 5 deadline notices, honest scope and valid practical tables.");

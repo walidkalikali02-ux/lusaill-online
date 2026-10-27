@@ -69,6 +69,18 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
 
         {article.slug === "electricity-bill-inquiry" && <ElectricityInquiryDetail />}
 
+        {article.practicalSections?.map((section) => <section className="brief-box" key={section.title}>
+          <h2>{section.title}</h2>
+          {section.intro && <p>{section.intro}</p>}
+          <div style={{ overflowX: "auto" }}>
+            <table className="todo-table">
+              <thead><tr>{section.columns.map((column) => <th scope="col" key={column}>{column}</th>)}</tr></thead>
+              <tbody>{section.rows.map((row, index) => <tr key={index}>{row.map((cell, column) => column === 0 ? <th scope="row" key={column}>{cell}</th> : <td key={column}>{cell}</td>)}</tr>)}</tbody>
+            </table>
+          </div>
+          {section.sourceUrl && <p><a href={section.sourceUrl} target="_blank" rel="noopener noreferrer">مرجع التفاصيل</a></p>}
+        </section>)}
+
         {article.steps?.length ? <GuideChecklist steps={article.steps.map((step) => step.title)} /> : null}
         {path && <section className="brief-box"><h2>اختر الدليل المناسب لحالتك</h2><p>{path.description}</p><Link href={`/guides/${path.slug}`}>{path.title}</Link></section>}
         <section id="next-step" className="brief-box">

@@ -143,3 +143,5 @@ const editionTitles: Record<string, string> = {
 const evergreenPrefixes = ["forms-", "slides-", "sheets-", "docs-", "windows-", "chrome-", "android-", "google-", "gmail-", "drive-", "iphone-", "lost-iphone-", "lost-android-"];
 export const searchTitles: Record<string, string> = Object.fromEntries(Object.entries(editionTitles).map(([slug, title]) => [slug, evergreenPrefixes.some((prefix) => slug.startsWith(prefix)) ? title.replace(/ 2026(?=:)/u, "") : title]));
 searchTitles["old-rent-housing-apply"] = "السكن البديل: الموعد المنشور وخطوات المتابعة";
+
+searchTitles["old-rent-housing-post-office"] = "السكن البديل عبر البريد: تحقق من إتاحة التقديم";

@@ -1,3 +1,4 @@
+import { applyArticleAuditUpdates, type PracticalSection } from "./article-audit-updates";
 import { housingDeadlinePassed } from "./deadlines";
 import { articleSeeds, type ArticleSeed } from "./articles-data";
 import { clusters, getCluster } from "./clusters";
@@ -26,6 +27,7 @@ export type Article = ArticleSeed & {
   commonMistakes?: string[];
   sources?: SourceRef[];
   faqs?: FaqItem[];
+  practicalSections?: PracticalSection[];
 };
 
 function slugify(text: string): string {
@@ -51,7 +53,8 @@ export const articles: Article[] = articleSeeds.map((seed) => {
     article.metaDescription = "الموعد المنشور في هذا الدليل هو 12 أكتوبر 2026 وقد مضى. راجع الإعلان الرسمي الحالي قبل محاولة تقديم طلب جديد، وتابع طلبك من القناة الرسمية.";
     article.quickAnswer = "الموعد المنشور في المصادر التي يشرحها هذا الدليل هو 12 أكتوبر 2026 وقد مضى. لا تعتبر الخطوات التالية تأكيدًا لاستمرار استقبال طلبات جديدة؛ راجع إعلان الجهة الرسمية الحالي أولًا. إذا سبق إرسال طلب، استخدم حسابك في مصر الرقمية لمتابعة الإخطارات والمستندات المطلوبة. يبقى الشرح أدناه مرجعًا للإجراء المنشور، ولا يثبت وجود تمديد أو عدمه.";
   }
-  return guideIllustrations[article.slug] ? { ...article, updatedAt: guideIllustrations[article.slug].updatedAt ?? "2026-09-30T18:48:00+03:00" } : article;
+  const illustrated = guideIllustrations[article.slug] ? { ...article, updatedAt: guideIllustrations[article.slug].updatedAt ?? "2026-09-30T18:48:00+03:00" } : article;
+  return applyArticleAuditUpdates(illustrated);
 });
 
 export const coreHundred = articles.filter((article) => article.id <= 100);
