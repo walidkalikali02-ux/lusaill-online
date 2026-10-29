@@ -1,7 +1,8 @@
+import { ArticleCard } from "@/components/article-card";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { articles } from "@/lib/content";
+import { articles, clusters } from "@/lib/content";
 import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -27,21 +28,9 @@ export default function ArticlesPage() {
     ],
   };
 
-  const publishedArticles = articles.filter((a) => a.status === "published");
+  const publishedArticles = articles.filter((a) => a.status === "published").sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "") || b.id - a.id);
 
-  const itemListSchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "أدلة لوسيل",
-    description: "جميع الأدلة العملية في موسوعة لوسيل.",
-    numberOfItems: publishedArticles.length,
-    itemListElement: publishedArticles.map((article, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      url: absoluteUrl(`/articles/${article.slug}`),
-      name: article.title,
-    })),
-  };
+
 
   return (
     <main id="main-content" className="category-page">
@@ -60,23 +49,10 @@ export default function ArticlesPage() {
           </div>
         </div>
 
-        <h2>اختر دليلًا يناسب مشكلتك</h2>
+        <h2>أحدث الأدلة</h2>
         {publishedArticles.length > 0 ? (
           <div className="articles-grid">
-            {publishedArticles.map((article) => (
-              <Link key={article.slug} className="article-card" href={`/articles/${article.slug}`}>
-                <h3>{article.title}</h3>
-                <p className="article-card-desc">
-                  {article.quickAnswer
-                    ? article.quickAnswer.slice(0, 120) + (article.quickAnswer.length > 120 ? "…" : "")
-                    : `دليل شامل عن ${article.keyword} مع خطوات عملية.`}
-                </p>
-                <div className="article-card-footer">
-                  <span className="article-card-time">دليل عملي</span>
-                  <span className="article-card-link">اقرأ الدليل ←</span>
-                </div>
-              </Link>
-            ))}
+            {publishedArticles.slice(0, 12).map(article => <ArticleCard key={article.slug} article={article} />)}
           </div>
         ) : (
           <div className="empty-state">
@@ -85,9 +61,16 @@ export default function ArticlesPage() {
             <Link className="button button-secondary" href="/categories" style={{ marginTop: 16 }}>تصفح التصنيفات</Link>
           </div>
         )}
+        <section className="article-directory-index" aria-labelledby="article-index-title">
+          <h2 id="article-index-title">الفهرس الكامل حسب الموضوع</h2>
+          <p>كل الأدلة المنشورة في مكان واحد. اختر الموضوع ثم المقال الذي يطابق مهمتك.</p>
+          {clusters.filter(cluster => publishedArticles.some(article => article.clusterCode === cluster.code)).map(cluster => <section key={cluster.code}>
+            <h3><Link href={`/categories/${cluster.slug}`}>{cluster.name}</Link><span>{publishedArticles.filter(article => article.clusterCode === cluster.code).length} دليلًا</span></h3>
+            <ul>{publishedArticles.filter(article => article.clusterCode === cluster.code).map(article => <li key={article.slug}><Link href={`/articles/${article.slug}`}>{article.title}</Link></li>)}</ul>
+          </section>)}
+        </section>
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
     </main>
   );
 }

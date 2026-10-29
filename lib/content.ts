@@ -1,3 +1,5 @@
+import { applyArticleAuditUpdates, type PracticalSection } from "./article-audit-updates";
+import { housingDeadlinePassed } from "./deadlines";
 import { articleSeeds, type ArticleSeed } from "./articles-data";
 import { clusters, getCluster } from "./clusters";
 import { guideIllustrations } from "./guide-illustrations";
@@ -25,6 +27,7 @@ export type Article = ArticleSeed & {
   commonMistakes?: string[];
   sources?: SourceRef[];
   faqs?: FaqItem[];
+  practicalSections?: PracticalSection[];
 };
 
 function slugify(text: string): string {
@@ -45,7 +48,13 @@ export const articles: Article[] = articleSeeds.map((seed) => {
   usedSlugs.add(slug);
   const override = publishedContent.get(seed.id);
   const article: Article = { ...seed, slug, status: "not_started", ...override };
-  return guideIllustrations[article.slug] ? { ...article, updatedAt: guideIllustrations[article.slug].updatedAt ?? "2026-09-30T18:48:00+03:00" } : article;
+  if (article.slug === "old-rent-housing-apply" && housingDeadlinePassed()) {
+    article.title = "السكن البديل للإيجار القديم: الموعد المنشور وخطوات المتابعة";
+    article.metaDescription = "الموعد المنشور في هذا الدليل هو 12 أكتوبر 2026 وقد مضى. راجع الإعلان الرسمي الحالي قبل محاولة تقديم طلب جديد، وتابع طلبك من القناة الرسمية.";
+    article.quickAnswer = "الموعد المنشور في المصادر التي يشرحها هذا الدليل هو 12 أكتوبر 2026 وقد مضى. لا تعتبر الخطوات التالية تأكيدًا لاستمرار استقبال طلبات جديدة؛ راجع إعلان الجهة الرسمية الحالي أولًا. إذا سبق إرسال طلب، استخدم حسابك في مصر الرقمية لمتابعة الإخطارات والمستندات المطلوبة. يبقى الشرح أدناه مرجعًا للإجراء المنشور، ولا يثبت وجود تمديد أو عدمه.";
+  }
+  const illustrated = guideIllustrations[article.slug] ? { ...article, updatedAt: guideIllustrations[article.slug].updatedAt ?? "2026-09-30T18:48:00+03:00" } : article;
+  return applyArticleAuditUpdates(illustrated);
 });
 
 export const coreHundred = articles.filter((article) => article.id <= 100);
@@ -129,7 +138,7 @@ export const winningArticleTemplate = [
   { step: "قسم الأخطاء الشائعة", detail: "«الموقع لا يفتح»، «الرقم القومي مرفوض» — استعلامات مستقلة بحد ذاتها." },
   { step: "صندوق المصدر والتاريخ", detail: "الجهة الرسمية + تاريخ آخر تحقق." },
   { step: "روابط داخلية سياقية", detail: "تظهر فقط عندما يوجد دليل منشور ذو صلة حقيقية." },
-  { step: "FAQPage schema", detail: "للأسئلة الظاهرة فعلاً في الصفحة فقط." },
+  { step: "بيانات المقال ومسار التنقل", detail: "تعكس Article وBreadcrumbList المحتوى الظاهر؛ لا نعد بنتائج FAQ أو HowTo المنسقة." },
 ];
 
 export { clusters, getCluster };

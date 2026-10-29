@@ -1,3 +1,4 @@
+import { ArticleCard } from "@/components/article-card";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -117,21 +118,7 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
           <section aria-labelledby="category-articles-title">
             <h2 id="category-articles-title">الأدلة المنشورة في هذا التصنيف</h2>
           <div className="articles-grid" style={{ marginBottom: 40 }}>
-            {publishedItems.map((item) => (
-              <Link key={item.slug} className="article-card" href={`/articles/${item.slug}`}>
-                <span className="article-card-tag">{cluster.name}</span>
-                <h3>{item.title}</h3>
-                <p className="article-card-desc">
-                  {item.quickAnswer
-                    ? item.quickAnswer.slice(0, 120) + (item.quickAnswer.length > 120 ? "…" : "")
-                    : `دليل شامل عن ${item.keyword} مع خطوات عملية.`}
-                </p>
-                <div className="article-card-footer">
-                  <span className="article-card-time">دليل عملي</span>
-                  <span className="article-card-link">اقرأ الدليل ←</span>
-                </div>
-              </Link>
-            ))}
+            {publishedItems.map(article => <ArticleCard key={article.slug} article={article} />)}
           </div>
           </section>
         )}

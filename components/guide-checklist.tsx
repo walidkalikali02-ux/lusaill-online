@@ -1,5 +1,6 @@
 "use client";
 
+import { recordTaskEvent } from "@/lib/task-events";
 import { useState } from "react";
 
 export function GuideChecklist({ steps }: { steps: string[] }) {
@@ -10,6 +11,7 @@ export function GuideChecklist({ steps }: { steps: string[] }) {
     <p role="status" aria-live="polite">راجعت {checked.length} من {steps.length} خطوات</p>
     <ul>{steps.map((title, index) => <li key={`${index}-${title}`}>
       <label><input type="checkbox" checked={checked.includes(index)} onChange={(event) => {
+        if (event.target.checked) recordTaskEvent("checklist_step_checked", { step: index + 1 });
         setChecked((previous) => event.target.checked ? [...previous, index] : previous.filter((value) => value !== index));
       }} /> <span>{title}</span></label>
       <a href={`#step-${index + 1}`}>شرح الخطوة {index + 1}</a>
