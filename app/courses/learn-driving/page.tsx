@@ -1,6 +1,6 @@
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
-import Image from "next/image";
+import { CourseArt } from "@/components/course-art";
 import Link from "next/link";
 import { courseMeta, drivingLessons } from "@/lib/driving-course";
 import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
@@ -38,11 +38,10 @@ export default function DrivingCoursePage() {
     provider: { "@id": `${siteConfig.url}/#organization` },
     datePublished: courseMeta.publishedAt,
     dateModified: courseMeta.updatedAt,
-    numberOfCredits: drivingLessons.length,
     hasCourseInstance: {
       "@type": "CourseInstance",
       courseMode: "online",
-      courseWorkload: "PT2H",
+      courseWorkload: `PT${drivingLessons.reduce((sum, lesson) => sum + Number.parseInt(lesson.duration, 10), 0)}M`,
     },
     syllabusSections: drivingLessons.map((lesson) => ({
       "@type": "Syllabus",
@@ -66,7 +65,8 @@ export default function DrivingCoursePage() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
-      { "@type": "ListItem", position: 2, name: courseMeta.shortTitle, item: absoluteUrl(coursePath) },
+      { "@type": "ListItem", position: 2, name: "الكورسات", item: absoluteUrl("/courses") },
+      { "@type": "ListItem", position: 3, name: courseMeta.shortTitle, item: absoluteUrl(coursePath) },
     ],
   };
 
@@ -76,7 +76,7 @@ export default function DrivingCoursePage() {
         <div className="shell course-hero-grid">
           <div className="course-hero-copy">
             <div className="breadcrumbs course-breadcrumbs">
-              <Link href="/">الرئيسية</Link><span>/</span><span>الكورسات</span><span>/</span><span>تعلم القيادة</span>
+              <Link href="/">الرئيسية</Link><span>/</span><Link href="/courses">الكورسات</Link><span>/</span><span>تعلم القيادة</span>
             </div>
             <span className="course-kicker">مسار عملي من الصفر · {drivingLessons.length} دروس مترابطة</span>
             <h1>{courseMeta.title}</h1>
@@ -88,22 +88,12 @@ export default function DrivingCoursePage() {
             <div className="course-facts" aria-label="معلومات الكورس">
               <span><strong>{drivingLessons.length}</strong> دروس</span>
               <span><strong>مبتدئ</strong> المستوى</span>
-              <span><strong>عملي</strong> مع مدرب</span>
+              <span><strong>مكتوب</strong> مع تمارين</span>
             </div>
           </div>
           <figure className="course-hero-visual">
-            <Image
-              src={drivingLessons[0].image.src}
-              alt={drivingLessons[0].image.alt}
-              width={drivingLessons[0].image.width}
-              height={drivingLessons[0].image.height}
-              priority
-              sizes="(max-width: 900px) 100vw, 45vw"
-              unoptimized={drivingLessons[0].image.src.endsWith(".svg")}
-            />
-            <figcaption>
-              {drivingLessons[0].image.caption} <a href={drivingLessons[0].image.sourceUrl} target="_blank" rel="noreferrer">المصدر: {drivingLessons[0].image.credit}، {drivingLessons[0].image.license}</a>
-            </figcaption>
+            <CourseArt />
+            <figcaption>دروس تقرؤها على مهلك، وتمارين تراجعها مع مدرب مؤهل.</figcaption>
           </figure>
         </div>
       </section>
@@ -111,7 +101,7 @@ export default function DrivingCoursePage() {
       <section className="course-principles">
         <div className="shell course-principles-grid">
           <div><span>01</span><h2>افهم</h2><p>إجابة مباشرة ومبدأ واحد واضح قبل التفاصيل.</p></div>
-          <div><span>02</span><h2>شاهد</h2><p>صور ورسوم مرخّصة تشرح ما يصعب وصفه بالكلمات.</p></div>
+          <div><span>02</span><h2>تصوّر</h2><p>صور ورسوم توضيحية تساعدك على فهم المهارة.</p></div>
           <div><span>03</span><h2>طبّق</h2><p>تمرين قصير ومعيار نجاح تنفذه مع مدرب مؤهل.</p></div>
         </div>
       </section>

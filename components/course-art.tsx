@@ -1,0 +1,8 @@
+export function CourseArt({ className = "" }: { className?: string }) {
+ return <svg className={className} viewBox="0 0 560 360" fill="none" aria-hidden="true">
+ <rect width="560" height="360" rx="28" fill="#EDEAF8" /><circle cx="455" cy="77" r="85" fill="#DDD5F2" /><circle cx="75" cy="315" r="110" fill="#E1DBF1" />
+ <path d="M-20 291C77 291 84 95 220 95S306 294 450 294H590" stroke="#B6ACCE" strokeWidth="76" /><path d="M-20 291C77 291 84 95 220 95S306 294 450 294H590" stroke="#FBFAFF" strokeWidth="3" strokeDasharray="15 15" />
+ <g transform="translate(219 144) rotate(-12 76 43)"><ellipse cx="78" cy="100" rx="91" ry="13" fill="#49396B" fillOpacity=".13" /><path d="M15 46 36 12C41 4 48 0 60 0h48c10 0 17 5 22 15l15 31" fill="#5C438D" /><path d="m47 15-16 29h94l-14-29H47Z" fill="#D7C8EF" /><path d="M80 14v31" stroke="#5C438D" strokeWidth="6" /><rect x="0" y="42" width="160" height="48" rx="17" fill="#6B4BA0" /><path d="M13 48h31m69 0h33" stroke="#F9D7A1" strokeWidth="8" strokeLinecap="round" /><rect x="20" y="79" width="23" height="23" rx="8" fill="#30263F" /><rect x="118" y="79" width="23" height="23" rx="8" fill="#30263F" /><path d="M60 70h41" stroke="#AF97CD" strokeWidth="5" strokeLinecap="round" /></g>
+ <rect x="53" y="50" width="103" height="74" rx="17" fill="white" /><path d="m87 84 13 13 25-29" stroke="#6B4BA0" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+ <circle cx="442" cy="193" r="27" fill="#FFE3BE" /><path d="M442 179v27m-9-14 9-13 9 13" stroke="#976132" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /><circle cx="193" cy="292" r="7" fill="#6B4BA0" /><circle cx="396" cy="63" r="5" fill="#A88CCC" /></svg>;
+}
