@@ -1,6 +1,6 @@
 // Explicit service-first search titles; 2026 describes this edition, not a new source review.
 // Keep full descriptive H1s and factual Article headlines.
-export const searchTitles: Record<string, string> = {
+const editionTitles: Record<string, string> = {
   "foreign-nationality-permission": "إذن التجنس 2026: الوثائق والمتابعة بالخارج",
   "marriage-no-objection-certificate": "عدم ممانعة الزواج 2026: القيد والطلب بالخارج",
   "egyptian-nationality-foreign-wife": "جنسية زوجة المصري 2026: الملف والمتابعة",
@@ -112,7 +112,7 @@ export const searchTitles: Record<string, string> = {
   "ration-card-replacement": "بدل بطاقة التموين 2026: الإيقاف وطلب فاقد وتالف",
   "ration-card-governorate-transfer": "نقل بطاقة التموين 2026: الطلب بين المحافظات",
   "ration-card-activation": "تفعيل بطاقة التموين 2026: الشروط وخطوات المتابعة",
-  "old-rent-housing-apply": "السكن البديل 2026: الموعد المنشور ومتابعة الطلب",
+  "old-rent-housing-apply": "الإيجار القديم 2026: طلب السكن البديل قبل 12 أكتوبر",
   "old-rent-housing-eligibility": "السكن البديل 2026: مراجعة شروط أهلية الطلب",
   "old-rent-housing-documents": "السكن البديل 2026: تجهيز مستندات الإيجار والدخل",
   "old-rent-housing-post-office": "السكن البديل 2026: التقديم بمساعدة مكتب البريد",
@@ -131,7 +131,7 @@ export const searchTitles: Record<string, string> = {
   "north-delta-electricity": "فاتورة الكهرباء شمال الدلتا 2026: الاستعلام والسداد",
   "alexandria-electricity": "فاتورة الكهرباء الإسكندرية 2026: الاستعلام والسداد",
   "south-delta-electricity": "فاتورة الكهرباء جنوب الدلتا 2026: الاستعلام والسداد",
-  "north-cairo-electricity": "كهرباء شمال القاهرة 2026: تسجيل القراءة والاستعلام",
+  "north-cairo-electricity": "فاتورة الكهرباء شمال القاهرة 2026: الاستعلام والسداد",
   "vehicle-license-renewal-online": "رخصة المركبة 2026: التجديد أونلاين وشروط الطلب",
   "vehicle-license-lost-replacement": "بدل فاقد رخصة المركبة 2026: الطلب والشروط بمصر",
   "vehicle-license-damaged-replacement": "بدل تالف رخصة المركبة 2026: الطلب من مصر الرقمية",
@@ -139,3 +139,9 @@ export const searchTitles: Record<string, string> = {
   "driving-license-lost-replacement": "بدل فاقد رخصة القيادة 2026: الشروط وخطوات الطلب",
   "automated-birth-certificate": "شهادة الميلاد 2026: طلبها عبر بوابة مصر الرقمية"
 };
+
+const evergreenPrefixes = ["forms-", "slides-", "sheets-", "docs-", "windows-", "chrome-", "android-", "google-", "gmail-", "drive-", "iphone-", "lost-iphone-", "lost-android-"];
+export const searchTitles: Record<string, string> = Object.fromEntries(Object.entries(editionTitles).map(([slug, title]) => [slug, evergreenPrefixes.some((prefix) => slug.startsWith(prefix)) ? title.replace(/ 2026(?=:)/u, "") : title]));
+searchTitles["old-rent-housing-apply"] = "السكن البديل: الموعد المنشور وخطوات المتابعة";
+
+searchTitles["old-rent-housing-post-office"] = "السكن البديل عبر البريد: تحقق من إتاحة التقديم";

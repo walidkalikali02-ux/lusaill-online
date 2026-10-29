@@ -1,3 +1,4 @@
+import { ArticleCard } from "@/components/article-card";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -108,6 +109,7 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
           </div>
         </div>
 
+        {introduction && currentPage === 1 && <section className="brief-box"><h2>{introduction.title}</h2>{introduction.paragraphs.map((paragraph) => <section key={paragraph.heading}><h3>{paragraph.heading}</h3><p>{paragraph.text}</p></section>)}<p>آخر تحديث: <time dateTime={introduction.updatedAt}>{introduction.updatedAt}</time></p></section>}
 
         {paths.length > 0 && currentPage === 1 && <section className="brief-box"><h2>اختر المهمة التي تحتاجها</h2><div className="trust-grid">{paths.map((path) => <section className="trust-card" key={path.slug}><h3><Link href={`/guides/${path.slug}`}>{path.title}</Link></h3><p>{path.description}</p></section>)}</div></section>}
 
@@ -116,21 +118,7 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
           <section aria-labelledby="category-articles-title">
             <h2 id="category-articles-title">الأدلة المنشورة في هذا التصنيف</h2>
           <div className="articles-grid" style={{ marginBottom: 40 }}>
-            {publishedItems.map((item) => (
-              <Link key={item.slug} className="article-card" href={`/articles/${item.slug}`}>
-                <span className="article-card-tag">{cluster.name}</span>
-                <h3>{item.title}</h3>
-                <p className="article-card-desc">
-                  {item.quickAnswer
-                    ? item.quickAnswer.slice(0, 120) + (item.quickAnswer.length > 120 ? "…" : "")
-                    : `دليل شامل عن ${item.keyword} مع خطوات عملية.`}
-                </p>
-                <div className="article-card-footer">
-                  <span className="article-card-time">دليل عملي</span>
-                  <span className="article-card-link">اقرأ الدليل ←</span>
-                </div>
-              </Link>
-            ))}
+            {publishedItems.map(article => <ArticleCard key={article.slug} article={article} />)}
           </div>
           </section>
         )}
@@ -142,8 +130,6 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
             <Link className="button button-secondary" href="/categories" style={{ marginTop: 16 }}>تصفح التصنيفات الأخرى</Link>
           </div>
         )}
-
-        {introduction && currentPage === 1 && <section className="brief-box"><h2>{introduction.title}</h2>{introduction.paragraphs.map((paragraph) => <section key={paragraph.heading}><h3>{paragraph.heading}</h3><p>{paragraph.text}</p></section>)}<p>آخر تحديث: <time dateTime={introduction.updatedAt}>{introduction.updatedAt}</time></p></section>}
 
         {/* Pagination */}
         {totalPages > 1 && (

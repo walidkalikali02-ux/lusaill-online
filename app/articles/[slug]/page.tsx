@@ -1,3 +1,4 @@
+import { getArticleAdvisories } from "@/lib/article-audit-updates";
 import { electricityDetailText } from "@/lib/electricity-inquiry-detail";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
@@ -9,11 +10,7 @@ import { clusters } from "@/lib/clusters";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { searchTitles } from "@/lib/search-titles";
 import { howToArticles } from "@/lib/structured-data";
-import { ArticleBrief } from "@/components/article-brief";
-import { housingDeadlinePassed } from "@/lib/deadlines";
-
-// Re-evaluate deadline notices without requiring another publication.
-export const revalidate = 3600;
+import { ArticleBrief, ArticleSidebar } from "@/components/article-brief";
 
 export function generateStaticParams() {
   return articles.filter((article) => article.status === "published").map((article) => ({ slug: article.slug }));
@@ -52,12 +49,13 @@ function readingTime(article: Parameters<typeof wordCount>[0]): number {
   return Math.max(1, Math.ceil(wordCount(article) / 200));
 }
 
-function wordCount(article: { slug?: string; quickAnswer?: string; summaryTable?: { label: string; value: string }[]; steps?: { title: string; detail: string }[]; commonMistakes?: string[]; faqs?: { question: string; answer: string }[] }) {
+function wordCount(article: { slug?: string; quickAnswer?: string; summaryTable?: { label: string; value: string }[]; steps?: { title: string; detail: string }[]; practicalSections?: { title: string; intro?: string; columns: string[]; rows: string[][] }[]; commonMistakes?: string[]; faqs?: { question: string; answer: string }[] }) {
   const text = [
     article.quickAnswer,
     article.slug === "electricity-bill-inquiry" ? electricityDetailText : undefined,
     ...(article.summaryTable ?? []).flatMap((row) => [row.label, row.value]),
     ...(article.steps ?? []).flatMap((step) => [step.title, step.detail]),
+    ...(article.practicalSections ?? []).flatMap((section) => [section.title, section.intro, ...section.columns, ...section.rows.flat()]),
     ...(article.commonMistakes ?? []),
     ...(article.faqs ?? []).flatMap((faq) => [faq.question, faq.answer]),
   ].filter(Boolean).join(" ");
@@ -173,6 +171,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <span>{article.title}</span>
         </div>
 
+        <div className="article-layout">
+        <div className="article-reading-main">
         <div className="article-header">
           <span className="article-card-tag">{cluster.name}</span>
           <h1>{article.title}</h1>
@@ -193,19 +193,15 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
 
+        {getArticleAdvisories(article).map((notice) => <section className="brief-box callout callout-warning" key={notice.title}>
+          <h2>{notice.title}</h2><p>{notice.detail}</p>
+          {notice.url.startsWith("/") ? <Link href={notice.url}>{notice.label}</Link> : <a href={notice.url} target="_blank" rel="noopener noreferrer">{notice.label}</a>}
+        </section>)}
+
         <section id="quick-answer" className="brief-box">
           <h2>الإجابة المباشرة</h2>
           <p>{article.quickAnswer}</p>
         </section>
-
-        {article.slug.startsWith("old-rent-housing-") && housingDeadlinePassed() && (
-          <section id="deadline-status" className="brief-box callout callout-warning" aria-labelledby="deadline-status-title">
-            <h2 id="deadline-status-title">مضى الموعد المنشور: تحقق قبل تقديم طلب جديد</h2>
-            <p>الموعد المذكور في المصادر المرتبطة بهذا الدليل هو <time dateTime="2026-10-12">12 أكتوبر 2026</time>. مضيّه لا يثبت وجود تمديد أو قبول طلبات جديدة؛ تحقق من إعلان الجهة الرسمي قبل اتباع خطوات التقديم.</p>
-            <p>إذا قدمت طلبًا بالفعل، احتفظ برقمه وتابع الإخطارات والنواقص من حسابك. <Link href="/articles/old-rent-housing-track">راجع دليل متابعة الطلب والتظلم</Link>.</p>
-            <p><a href="https://digital.gov.eg/" target="_blank" rel="noopener noreferrer">بوابة مصر الرقمية الرسمية</a> · <a href="https://shmff.gov.eg/" target="_blank" rel="noopener noreferrer">صندوق الإسكان الاجتماعي</a></p>
-          </section>
-        )}
 
         {article.coverImage ? (
           <Image
@@ -234,6 +230,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </details>
 
         <ArticleBrief article={article} cluster={cluster} related={related} />
+        </div>
+        <ArticleSidebar article={article} cluster={cluster} related={related} />
+        </div>
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />

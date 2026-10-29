@@ -10,13 +10,13 @@ load.extensions[".ts"] = (module, filename) => {
   const result = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020, esModuleInterop: true } });
   module._compile(result.outputText, filename);
 };
-const { articleJourneyByPath } = load("../lib/article-journeys.ts");
+const { articleJourneysBySlug } = load("../lib/article-journeys.ts");
 const { guidePaths, getGuidePath } = load("../lib/guide-paths.ts");
 const { articles, getRelatedArticles } = load("../lib/content.ts");
 const { housingDeadlinePassed } = load("../lib/deadlines.ts");
 
 assert.equal(new Set(guidePaths.map(path => path.slug)).size, guidePaths.length);
-assert.deepEqual(guidePaths.map(path => path.slug).sort(), Object.keys(articleJourneyByPath).sort(), "Every named journey needs exactly one task page");
+assert.deepEqual(guidePaths.map(path => path.slug).sort(), Object.keys(articleJourneysBySlug).sort(), "Every named journey needs exactly one task page");
 
 // Editorial expectations: these must stay true even when groups are reordered.
 const cases = {
@@ -24,19 +24,19 @@ const cases = {
   "consumer-protection-complaint-egypt": "consumer-protection",
   "passport-first-time-egypt": "passports",
   "work-permit-first-time-egypt": "work-permits",
-  "conscript-travel-permit-egypt": "military-documents",
+  "conscript-travel-permit-egypt": "military-service",
   "google-backup-codes": "account-security",
-  "newborn-birth-registration-egypt": "birth-documents",
+  "newborn-birth-registration-egypt": "birth-certificates",
   "national-id-first-time-egypt": "national-id",
   "paper-marriage-record-egypt": "marriage-records",
   "death-registration-burial-permit": "death-records",
-  "private-driving-license-first-time": "driving-license",
-  "verify-used-vehicle-license": "vehicle-check",
+  "private-driving-license-first-time": "driving-licences",
+  "verify-used-vehicle-license": "traffic",
   "slides-create-outline": "slides-build",
   "forms-create-registration": "forms-build",
   "south-delta-electricity": "electricity",
   "registered-mobile-lines": "telecom-lines",
-  "wifi-calling-egypt": "telecom-connectivity",
+  "wifi-calling-egypt": "telecom-internet",
   "esim-egypt": "telecom-devices",
   "insurance-number-inquiry": "social-insurance",
   "pension-payment-inquiry": "pensions",
@@ -61,3 +61,4 @@ for (const article of articles.filter(article => article.status === "published")
 assert.equal(housingDeadlinePassed(new Date("2026-10-12T23:59:59+03:00")), false);
 assert.equal(housingDeadlinePassed(new Date("2026-10-13T00:00:00+03:00")), true);
 console.log(`PASS: ${guidePaths.length} named task paths, ${Object.keys(cases).length} semantic regressions, all published recommendations and review dates`);
+

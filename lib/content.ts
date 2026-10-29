@@ -1,7 +1,9 @@
+import { applyArticleAuditUpdates, type PracticalSection } from "./article-audit-updates";
+import { housingDeadlinePassed } from "./deadlines";
 import { articleSeeds, type ArticleSeed } from "./articles-data";
 import { clusters, getCluster } from "./clusters";
 import { guideIllustrations } from "./guide-illustrations";
-import { articleJourneys } from "./article-journeys";
+import { getGuidePath } from "./guide-paths";
 import { publishedContent } from "./article-content";
 
 export type ArticleStatus = "not_started" | "drafting" | "needs_verification" | "published";
@@ -25,6 +27,7 @@ export type Article = ArticleSeed & {
   commonMistakes?: string[];
   sources?: SourceRef[];
   faqs?: FaqItem[];
+  practicalSections?: PracticalSection[];
 };
 
 function slugify(text: string): string {
@@ -45,11 +48,16 @@ export const articles: Article[] = articleSeeds.map((seed) => {
   usedSlugs.add(slug);
   const override = publishedContent.get(seed.id);
   const article: Article = { ...seed, slug, status: "not_started", ...override };
-  const illustrationUpdatedAt = guideIllustrations[article.slug]?.updatedAt;
-  if (illustrationUpdatedAt && new Date(illustrationUpdatedAt).getTime() > new Date(article.updatedAt ?? article.publishedAt ?? 0).getTime()) {
-    return { ...article, updatedAt: illustrationUpdatedAt };
+  if (article.slug === "old-rent-housing-apply" && housingDeadlinePassed()) {
+    article.title = "السكن البديل للإيجار القديم: الموعد المنشور وخطوات المتابعة";
+    article.metaDescription = "الموعد المنشور في هذا الدليل هو 12 أكتوبر 2026 وقد مضى. راجع الإعلان الرسمي الحالي قبل محاولة تقديم طلب جديد، وتابع طلبك من القناة الرسمية.";
+    article.quickAnswer = "الموعد المنشور في المصادر التي يشرحها هذا الدليل هو 12 أكتوبر 2026 وقد مضى. لا تعتبر الخطوات التالية تأكيدًا لاستمرار استقبال طلبات جديدة؛ راجع إعلان الجهة الرسمية الحالي أولًا. إذا سبق إرسال طلب، استخدم حسابك في مصر الرقمية لمتابعة الإخطارات والمستندات المطلوبة. يبقى الشرح أدناه مرجعًا للإجراء المنشور، ولا يثبت وجود تمديد أو عدمه.";
   }
-  return article;
+  const illustrationDate = guideIllustrations[article.slug]?.updatedAt;
+  const illustrated = illustrationDate && (!article.updatedAt || Date.parse(illustrationDate) > Date.parse(article.updatedAt))
+    ? { ...article, updatedAt: illustrationDate }
+    : article;
+  return applyArticleAuditUpdates(illustrated);
 });
 
 export const coreHundred = articles.filter((article) => article.id <= 100);
@@ -75,13 +83,16 @@ export function getClusterArticles(clusterSlug: string) {
 }
 
 export function getRelatedArticles(article: Article, count = 4) {
-  const group = articleJourneys.find((slugs) => slugs.includes(article.slug)) ?? [];
+  const group = getGuidePath(article.slug)?.articleSlugs ?? [];
   const explicit = (article.steps ?? []).flatMap((step) => step.relatedLink?.href.startsWith("/articles/") ? [step.relatedLink.href.slice(10)] : []);
   const preferred = [...new Set([...explicit, ...group])];
   const published = articles.filter((candidate) => candidate.status === "published" && candidate.id !== article.id);
   const relevant = preferred.flatMap((slug) => published.filter((candidate) => candidate.slug === slug));
-  // A shared category is not enough: recommend only an explicit link or task.
-  return relevant.slice(0, count);
+  // Avoid padding a task group with unrelated guides merely to fill four cards.
+  if (relevant.length) return relevant.slice(0, count);
+  return published.filter((candidate) => candidate.clusterCode === article.clusterCode)
+    .sort((a, b) => (b.updatedAt ?? "").localeCompare(a.updatedAt ?? ""))
+    .slice(0, count);
 }
 
 export function clusterProgress(clusterSlug: string) {
@@ -130,7 +141,7 @@ export const winningArticleTemplate = [
   { step: "قسم الأخطاء الشائعة", detail: "«الموقع لا يفتح»، «الرقم القومي مرفوض» — استعلامات مستقلة بحد ذاتها." },
   { step: "صندوق المصدر والتاريخ", detail: "الجهة الرسمية + تاريخ آخر تحقق." },
   { step: "روابط داخلية سياقية", detail: "تظهر فقط عندما يوجد دليل منشور ذو صلة حقيقية." },
-  { step: "FAQPage schema", detail: "للأسئلة الظاهرة فعلاً في الصفحة فقط." },
+  { step: "بيانات المقال ومسار التنقل", detail: "تعكس Article وBreadcrumbList المحتوى الظاهر؛ لا نعد بنتائج FAQ أو HowTo المنسقة." },
 ];
 
 export { clusters, getCluster };

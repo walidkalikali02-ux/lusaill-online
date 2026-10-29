@@ -5,6 +5,7 @@ import { siteConfig, absoluteUrl, siteSocialImage } from "@/lib/site-config";
 import { overallProgress } from "@/lib/content";
 
 export const metadata: Metadata = {
+  twitter: { card: "summary_large_image", title: "عن لوسيل", description: "لوسيل أدلة عربية للخدمات المصرية والحياة الرقمية، مع مصدر رسمي وتاريخ مراجعة لكل معلومة.", images: ["https://www.lusaill.online/opengraph-image"] },
   title: "عن لوسيل",
   description: "لوسيل أدلة عربية للخدمات المصرية والحياة الرقمية، مع مصدر رسمي وتاريخ مراجعة لكل معلومة.",
   alternates: pageAlternates("/about"),

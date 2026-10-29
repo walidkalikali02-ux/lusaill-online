@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { courseMeta, drivingLessons } from "@/lib/driving-course";
-import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 
 const coursePath = "/courses/learn-driving";
 
@@ -16,18 +16,13 @@ export const metadata: Metadata = {
     title: courseMeta.title,
     description: courseMeta.description,
     url: coursePath,
-    images: [{
-      url: drivingLessons[0].image.src,
-      width: drivingLessons[0].image.width,
-      height: drivingLessons[0].image.height,
-      alt: drivingLessons[0].image.alt,
-    }],
+    images: [siteSocialImage],
   },
   twitter: {
     card: "summary_large_image",
     title: courseMeta.title,
     description: courseMeta.description,
-    images: [drivingLessons[0].image.src],
+    images: [siteSocialImage.url],
   },
 };
 

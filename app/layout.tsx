@@ -1,11 +1,16 @@
+import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import "./globals.css";
+import "./editorial.css";
+import "./identity.css";
 import { SiteAnalytics } from "@/components/site-analytics";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
+
+const bodyFont = IBM_Plex_Sans_Arabic({ weight: ["400", "700"], subsets: ["arabic"], variable: "--font-arabic-body", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -27,7 +32,7 @@ export const metadata: Metadata = {
     "geo.region": siteConfig.geo.region,
     "geo.placename": siteConfig.geo.placename,
     ICBM: siteConfig.geo.icbm,
-    "theme-color": "#145da0",
+    "theme-color": "#182e49",
     ...Object.fromEntries(
       [
         siteConfig.verification.google ? ["google-site-verification", siteConfig.verification.google] : null,
@@ -73,10 +78,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   };
 
   return (
-    <html lang={siteConfig.language} dir="rtl">
+    <html lang={siteConfig.language} dir="rtl" className={bodyFont.variable}>
       <head>
         <link rel="alternate" type="application/rss+xml" href={absoluteUrl("/feed.xml")} />
-        <meta name="theme-color" content="#145da0" />
+        <meta name="theme-color" content="#182e49" />
         <meta name="color-scheme" content="light" />
       </head>
       <body>

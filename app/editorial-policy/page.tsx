@@ -4,6 +4,7 @@ import { methodologyNotes, winningArticleTemplate } from "@/lib/content";
 import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
+  twitter: { card: "summary_large_image", title: "منهج التحرير والمراجعة", description: "كيف يبني لوسيل الدقة في محتوى الخدمات والإجراءات: مصادر أولية، تاريخ تحقق، بوابة جودة، وتصحيح واضح عند تغير المعلومات.", images: ["https://www.lusaill.online/opengraph-image"] },
   title: "منهج التحرير والمراجعة",
   description: "كيف يبني لوسيل الدقة في محتوى الخدمات والإجراءات: مصادر أولية، تاريخ تحقق، بوابة جودة، وتصحيح واضح عند تغير المعلومات.",
   alternates: pageAlternates("/editorial-policy"),
