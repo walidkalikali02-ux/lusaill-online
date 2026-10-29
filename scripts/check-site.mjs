@@ -60,7 +60,15 @@ if (new URL(origin).hostname === '127.0.0.1') {
 }
 for (const url of urls) {
   assert(url.startsWith(`${official}/`), `Noncanonical sitemap: ${url}`);
-  const html = await get(local(url));
+  const pageResponse = await fetch(local(url));
+  assert.equal(pageResponse.status, 200, `${url}: HTTP ${pageResponse.status}`);
+  // Preview deployments intentionally send X-Robots-Tag: noindex.
+  // Inspect the canonical production host so that false negatives do not hide an actual block.
+  if (new URL(origin).origin === new URL(official).origin) {
+    const xRobotsTag = pageResponse.headers.get("x-robots-tag") ?? "";
+    assert(!/(?:^|,)\s*noindex(?:\s*(?:,|$))/i.test(xRobotsTag), `HTTP X-Robots-Tag blocks indexing: ${url}`);
+  }
+  const html = await pageResponse.text();
   assert(/<html[^>]*lang="ar"[^>]*dir="rtl"/.test(html), `Arabic direction missing: ${url}`);
   for (const language of ['ar-EG', 'x-default']) {
     const alternate = [...html.matchAll(/<link\b[^>]*>/g)].find((m) => new RegExp(`hreflang="${language}"`, 'i').test(m[0]))?.[0];
