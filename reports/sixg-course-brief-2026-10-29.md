@@ -1,0 +1,13 @@
+# Arabic 6G course — 29 October 2026
+
+Audience: Arabic-speaking introductory/intermediate telecom learners familiar with 5G. User explicitly requested the course from the supplied Free 6G Training and TutorialsPoint links. Problem: distinguish framework, study, experiment and deployed service while learning 6G research topics.
+
+Demand: unmeasured. No Search Console topic demand or keyword volumes used. User-requested curriculum is the reason for this course. Current web/search review covered the supplied sites and primary ITU, 3GPP and ETSI pages on 29 October 2026. TutorialsPoint mixes unsupported speed/latency promises with basic orientation; its resources page supplies little technical depth. Free 6G Training provides current analysis, but is secondary, not a standards authority. No copy or translation of their lessons was used.
+
+Primary evidence: ITU-R M.2160-0 (IMT-2030 framework, 2023); ITU IMT status and March 2026 technical-requirements update (formal December approval still future at review); ITU submission/evaluation process; 3GPP TR 22.870 and RAN #113 updates; 3GPP AI protocol study work item; ETSI GR ISC 003 architecture and ISC 004 security/privacy reports. Source roles and limitations are visible. Research examples are teaching scenarios, not measured or personally tested services.
+
+Original additional value: ten ordered Arabic units, twenty explained cases, ten four-choice checks with feedback, original SVGs, interactive evidence explorer, fourteen selected references with reading context, and three discussion exercises with expandable review points. Discussion is self-review, not a public community or stored submission. The course covers introduction, standardization, use cases, spectrum, AI, ISAC, architecture/trust, evaluating research, resources and discussion. It complements the existing 5G fundamentals course; no duplicated service articles or promises of commercial availability, zero latency or guaranteed throughput.
+
+Implementation: server-rendered/static lesson routes, separate blue course treatment within the established academy, accessible native controls, responsive syllabus, keyed quiz state, canonical/hreflang, Course/LearningResource/Breadcrumb structured data, fourth catalog card and eleven sitemap URLs. Existing article routes, article dates and previous courses preserved. Release base is current main/production 7025516460a8cb314f6906050d87e23ddd4d9180; prior PR #4 was merged while this course was being prepared. The release preserves subsequent homepage discovery, source notes and production HTTP noindex detection fixes.
+
+Validation is recorded in the release artifacts after checks; no traffic or Google indexing result is implied.

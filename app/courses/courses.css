@@ -18,3 +18,8 @@
 
 .academy-telecom-card .academy-card-art{background:#e7f2f0}.academy-telecom-card .telecom-diagram text{font-family:var(--font-arabic-body),sans-serif;text-anchor:middle;dominant-baseline:middle;font-size:16px;fill:#25515b}.academy-telecom-card .telecom-diagram .telecom-5g-label{font-size:25px;fill:#167a7a;font-weight:600}
 @media(min-width:1100px){.academy-three-courses{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.academy-three-courses .academy-card-art{height:225px}.academy-three-courses .academy-card-content{padding:24px}.academy-three-courses .academy-card-content h3{font-size:25px}.academy-three-courses .academy-card-meta{gap:7px;font-size:10px}.academy-three-courses .academy-card-bottom .academy-button{font-size:11px;padding-inline:13px}}
+
+/* Four available courses, two comparable cards per row. */
+.academy-four-courses{grid-template-columns:repeat(2,minmax(0,1fr))}.academy-sixg-card .academy-card-art{background:#edf2f8}.academy-sixg-card .sixg-diagram text{font-family:var(--font-arabic-body),sans-serif;text-anchor:middle;dominant-baseline:middle;font-size:16px;fill:#3f6597}.academy-sixg-card .sixg-diagram .sixg-center{font-size:38px;font-weight:600;fill:#3f6597}
+@media(max-width:600px){.academy-four-courses{grid-template-columns:1fr}}
+.academy-sixg-card .sixg-diagram .sixg-center{fill:white}.academy-sixg-card .sixg-diagram .sixg-center-sub{font-size:13px;fill:#e1eaf5}
