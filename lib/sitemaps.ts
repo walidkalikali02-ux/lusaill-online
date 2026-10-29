@@ -4,6 +4,7 @@ import { entities } from "@/lib/entities";
 import { absoluteUrl } from "@/lib/site-config";
 import { guidePaths } from "@/lib/guide-paths";
 import { guideIllustrations } from "@/lib/guide-illustrations";
+import { geometryLessons, geometryMeta, geometryPath, geometryLessonPath } from "@/lib/geometry-course";
 import { courseMeta, drivingLessons } from "@/lib/driving-course";
 
 import { categoryIntroductions } from "@/lib/category-introductions";
@@ -34,6 +35,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     { url: absoluteUrl("/editorial-policy"), lastModified: new Date("2026-10-01"), changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/authors/editorial-team"), lastModified: new Date("2026-10-01"), changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/courses"), changeFrequency: "monthly", priority: 0.9 },
+    { url: absoluteUrl(geometryPath), lastModified: new Date(geometryMeta.updatedAt), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/courses/learn-driving"), lastModified: new Date(courseMeta.updatedAt), changeFrequency: "monthly", priority: 0.9, images: [absoluteUrl(drivingLessons[0].image.src)] },
   ];
 
@@ -78,7 +80,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
   return {
     "sitemap-articles.xml": publishedArticleRoutes,
     "sitemap-categories.xml": clusterRoutes,
-    "sitemap-guides.xml": [...guideRoutes, ...courseRoutes, ...staticRoutes.filter((route) => route.url.includes("/courses/"))],
+    "sitemap-guides.xml": [...guideRoutes, ...courseRoutes, ...geometryLessons.flatMap(lesson => [geometryLessonPath(lesson.slug), `${geometryLessonPath(lesson.slug)}/worksheet`].map(path => ({url:absoluteUrl(path),lastModified:new Date(geometryMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7}))), ...staticRoutes.filter((route) => route.url.includes("/courses/"))],
     "sitemap-entities.xml": entityRoutes,
     "sitemap-pages.xml": staticRoutes.filter((route) => !route.url.includes("/courses/")),
   };
