@@ -67,7 +67,16 @@ if (new URL(origin).hostname === '127.0.0.1') {
 }
 await mapLimit(urls, async (url) => {
   assert(url.startsWith(`${official}/`), `Noncanonical sitemap: ${url}`);
-  const html = await get(local(url));
+  const pageResponse = await fetch(local(url), { signal: AbortSignal.timeout(45000) });
+  assert.equal(pageResponse.status, 200, `${url}: HTTP ${pageResponse.status}`);
+  // Only the canonical production host should be indexable.
+  // Vercel preview deployments intentionally return X-Robots-Tag: noindex.
+  if (new URL(origin).origin === new URL(official).origin) {
+    const tag = pageResponse.headers.get("x-robots-tag") ?? "";
+    assert(!/(?:^|[,;])\s*(?:(?:googlebot|googlebot-image)\s*:\s*)?noindex\b/i.test(tag), `HTTP X-Robots-Tag blocks Google indexing: ${url}`);
+  }
+  if (++checked % 40 === 0) console.log(`Checked ${checked} HTML/link requests`);
+  const html = await pageResponse.text();
   assert(/<html[^>]*lang="ar"[^>]*dir="rtl"/.test(html), `Arabic direction missing: ${url}`);
   for (const language of ['ar-EG', 'x-default']) {
     const alternate = [...html.matchAll(/<link\b[^>]*>/g)].find((m) => new RegExp(`hreflang="${language}"`, 'i').test(m[0]))?.[0];
