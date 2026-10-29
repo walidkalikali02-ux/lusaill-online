@@ -6,7 +6,7 @@ import { SiteHeader } from "./site-header";
 import { SiteIcon } from "./site-icon";
 export function SiteFrame({ children, footer }: { children: ReactNode; footer: ReactNode }) {
  const pathname = usePathname();
- const coursePlan = pathname.startsWith("/courses/3d-figures-volumes") ? "/courses/3d-figures-volumes#course-plan" : pathname.startsWith("/courses/learn-driving") ? "/courses/learn-driving#course-plan" : "/courses#available-courses";
+ const coursePlan = pathname.startsWith("/courses/3d-figures-volumes") ? "/courses/3d-figures-volumes#course-plan" : pathname.startsWith("/courses/5g") ? "/courses/5g#course-plan" : pathname.startsWith("/courses/learn-driving") ? "/courses/learn-driving#course-plan" : "/courses#available-courses";
  const isAcademy = pathname === "/courses" || pathname.startsWith("/courses/");
  if (!isAcademy) return <><SiteHeader />{children}{footer}</>;
  return <><header className="academy-header"><div className="academy-width academy-header-inner">
