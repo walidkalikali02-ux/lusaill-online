@@ -1,9 +1,9 @@
 import type { GeometryDiagramKind } from "@/lib/geometry-course";
 const purple="#79579B", light="#DDD0EF", mint="#C6E1D9", peach="#F2D7B5", ink="#514064";
 function Box({x=100,y=110,w=180,h=115,d=60,grid=false}:{x?:number;y?:number;w?:number;h?:number;d?:number;grid?:boolean}) {
- return <g stroke={purple} strokeWidth="2.5" strokeLinejoin="round"><path d={`M${x} ${y}l${d} ${-d/2}h${w}l${-d} ${d/2}Z`} fill={mint}/><path d={`M${x+w} ${y}l${d} ${-d/2}v${h}l${-d} ${d/2}Z`} fill={light}/><path d={`M${x} ${y}h${w}v${h}h${-w}Z`} fill="#F4EEFA"/><path d={`M${x} ${y}v${h}m0 0 ${d} ${-d/2}h${w}M${x+d} ${y-d/2}v${h}`} strokeDasharray="6 5" opacity=".45"/>{grid && <g strokeWidth="1" opacity=".75">{[1,2,3].map(n=><path key={n} d={`M${x+w*n/4} ${y}v${h}m0 ${-h} ${d} ${-d/2}`}/>)}{[1,2].map(n=><path key={n} d={`M${x} ${y+h*n/3}h${w}l${d} ${-d/2}`}/>)}</g>}</g>;
+ return <g stroke={purple} strokeWidth="2.5" strokeLinejoin="round"><path d={`M${x} ${y}l${d} ${-d/2}h${w}l${-d} ${d/2}Z`} fill={mint}/><path d={`M${x+w} ${y}l${d} ${-d/2}v${h}l${-d} ${d/2}Z`} fill={light}/><path d={`M${x} ${y}h${w}v${h}h${-w}Z`} fill="#F4EEFA"/><path d={`M${x} ${y}v${h}m0 0 ${d} ${-d/2}h${w}M${x+d} ${y-d/2}v${h}`} strokeDasharray="6 5" opacity=".45" fill="none"/>{grid && <g strokeWidth="1" opacity=".75" fill="none">{[1,2,3].map(n=><path key={n} d={`M${x+w*n/4} ${y}v${h}m0 ${-h} ${d} ${-d/2}`}/>)}{[1,2].map(n=><path key={n} d={`M${x} ${y+h*n/3}h${w}l${d} ${-d/2}`}/>)}</g>}</g>;
 }
-function Triangle({x=90,y=245,small=false}:{x?:number;y?:number;small?:boolean}){const b=small?80:190,h=small?75:135,d=small?55:145;return <g stroke={purple} strokeWidth="2.5" strokeLinejoin="round"><path d={`M${x} ${y}l${b/2} ${-h} ${d} ${-45} ${b/2} ${h} ${-d} 45Z`} fill={light}/><path d={`M${x} ${y}l${d} -45h${b}l${-d} 45Z`} fill={mint}/><path d={`M${x} ${y}l${b/2} ${-h} ${b/2} ${h}Z`} fill="#FFF6E9"/><path d={`M${x+b/2} ${y-h}v${h}m-10-0v-10h10`} strokeDasharray="5 4"/></g>}
+function Triangle({x=90,y=245,small=false}:{x?:number;y?:number;small?:boolean}){const b=small?80:190,h=small?75:135,d=small?55:145;return <g stroke={purple} strokeWidth="2.5" strokeLinejoin="round"><path d={`M${x} ${y}l${b/2} ${-h} ${d} ${-45} ${b/2} ${h} ${-d} 45Z`} fill={light}/><path d={`M${x} ${y}l${d} -45h${b}l${-d} 45Z`} fill={mint}/><path d={`M${x} ${y}l${b/2} ${-h} ${b/2} ${h}Z`} fill="#FFF6E9"/><path d={`M${x+b/2} ${y-h}v${h}m-10-0v-10h10`} strokeDasharray="5 4" fill="none"/></g>}
 export function GeometryDiagram({kind,label,decorative=false}:{kind:GeometryDiagramKind;label?:string;decorative?:boolean}) {
  const triangular=kind==="triangular"||kind==="tent";
  return <svg className="geometry-diagram" viewBox="0 0 520 340" role={decorative?undefined:"img"} aria-label={decorative?undefined:label??"رسم تعليمي أصلي للمجسّمات"} aria-hidden={decorative?true:undefined}>
@@ -25,3 +25,4 @@ export function GeometryDiagram({kind,label,decorative=false}:{kind:GeometryDiag
  </>}
  </svg>;
 }
+
