@@ -9,7 +9,7 @@ import { courseMeta, drivingLessons } from "@/lib/driving-course";
 import { categoryIntroductions } from "@/lib/category-introductions";
 
 // Pin known content changes; never substitute build or deployment time.
-const articleTemplateUpdatedAt = new Date("2026-10-18T19:16:36Z");
+const articleTemplateUpdatedAt = new Date("2026-10-04");
 
 function latestPublishedUpdate(items: Array<{ updatedAt?: string }>): Date | undefined {
   const timestamps = items
@@ -33,6 +33,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     { url: absoluteUrl("/contact"),  changeFrequency: "yearly", priority: 0.5 },
     { url: absoluteUrl("/editorial-policy"), lastModified: new Date("2026-10-01"), changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/authors/editorial-team"), lastModified: new Date("2026-10-01"), changeFrequency: "monthly", priority: 0.5 },
+    { url: absoluteUrl("/courses"), changeFrequency: "monthly", priority: 0.9 },
     { url: absoluteUrl("/courses/learn-driving"), lastModified: new Date(courseMeta.updatedAt), changeFrequency: "monthly", priority: 0.9, images: [absoluteUrl(drivingLessons[0].image.src)] },
   ];
 
@@ -71,8 +72,8 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     }));
 
   const guideRoutes: MetadataRoute.Sitemap = [
-    { url: absoluteUrl("/guides"), lastModified: new Date("2026-10-18T19:16:36Z"), changeFrequency: "monthly", priority: 0.8 },
-    ...guidePaths.map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: new Date(Math.max(latestPublishedUpdate(articles.filter((article) => article.status === "published" && path.articleSlugs.includes(article.slug)))?.getTime() ?? 0, articleTemplateUpdatedAt.getTime())), changeFrequency: "monthly" as const, priority: 0.8 })),
+    { url: absoluteUrl("/guides"), lastModified: new Date("2026-10-02"), changeFrequency: "monthly", priority: 0.8 },
+    ...guidePaths.map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published" && path.articleSlugs.includes(article.slug))), changeFrequency: "monthly" as const, priority: 0.8 })),
   ];
   return {
     "sitemap-articles.xml": publishedArticleRoutes,

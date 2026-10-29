@@ -92,19 +92,20 @@ export default async function DrivingLessonPage({ params }: LessonPageProps) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
-      { "@type": "ListItem", position: 2, name: courseMeta.shortTitle, item: absoluteUrl(coursePath) },
-      { "@type": "ListItem", position: 3, name: lesson.title, item: absoluteUrl(path) },
+      { "@type": "ListItem", position: 2, name: "الكورسات", item: absoluteUrl("/courses") },
+      { "@type": "ListItem", position: 3, name: courseMeta.shortTitle, item: absoluteUrl(coursePath) },
+      { "@type": "ListItem", position: 4, name: lesson.title, item: absoluteUrl(path) },
     ],
   };
 
   return (
     <main id="main-content" className="course-lesson-page">
-      <div className="lesson-progress" aria-label={`الدرس ${lesson.order} من ${drivingLessons.length}`}>
+      <div className="lesson-progress" aria-label={`موضع الدرس ${lesson.order} من ${drivingLessons.length}، وليس نسبة إنجاز`}>
         <span style={{ width: `${(lesson.order / drivingLessons.length) * 100}%` }} />
       </div>
       <div className="shell lesson-shell">
         <nav className="breadcrumbs">
-          <Link href="/">الرئيسية</Link><span>/</span>
+          <Link href="/courses">الكورسات</Link><span>/</span>
           <Link href={coursePath}>تعلم القيادة</Link><span>/</span>
           <span>الدرس {lesson.order}</span>
         </nav>
@@ -122,6 +123,10 @@ export default async function DrivingLessonPage({ params }: LessonPageProps) {
           </div>
         </header>
 
+        <details className="academy-mobile-outline">
+          <summary>خطة الكورس · الدرس {lesson.order} من {drivingLessons.length}</summary>
+          <ol>{drivingLessons.map((item) => <li key={item.slug}><Link href={`${coursePath}/${item.slug}`} aria-current={item.slug === lesson.slug ? "page" : undefined}>{item.title}</Link></li>)}</ol>
+        </details>
         <div className="lesson-layout">
           <article className="lesson-content">
             <section className="lesson-answer" id="answer">
@@ -189,7 +194,7 @@ export default async function DrivingLessonPage({ params }: LessonPageProps) {
           <aside className="lesson-sidebar">
             <div className="course-outline">
               <span>محتويات الكورس</span>
-              <ol>{drivingLessons.map((item) => <li className={item.slug === lesson.slug ? "active" : ""} key={item.slug}><Link href={`${coursePath}/${item.slug}`}><span>{String(item.order).padStart(2, "0")}</span>{item.title}</Link></li>)}</ol>
+              <ol>{drivingLessons.map((item) => <li className={item.slug === lesson.slug ? "active" : ""} key={item.slug}><Link href={`${coursePath}/${item.slug}`} aria-current={item.slug === lesson.slug ? "page" : undefined}><span>{String(item.order).padStart(2, "0")}</span>{item.title}</Link></li>)}</ol>
             </div>
             <nav className="lesson-toc" aria-label="محتويات الدرس">
               <span>في هذا الدرس</span>
