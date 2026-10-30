@@ -1,0 +1,13 @@
+# Four requested Arabic courses — 30 October 2026
+
+Audience/problem: beginners seeking an Arabic route through the exact 79 supplied topics: advertising and marketing communications, Adaptive Software Development, decimal operations, fraction operations. The explicit course request overrides the site's normal Egyptian-service publishing preference. Search demand and Search Console impressions are unmeasured; no traffic forecast is asserted.
+
+Scope: four landing pages, 55 lessons, 20 original worksheets containing 120 solved exercises; 110 worked cases and 55 quizzes. Original educational text, cases, diagrams, review activities and tools; no copied TutorialsPoint prose, images, or exercise sets. Coverage.csv maps every supplied row to its destination.
+
+Primary sources/current search review: checked publisher OpenStax decimal and fraction chapters and Principles of Marketing promotion/IMC planning chapters; Agile Manifesto and principles; Jim Highsmith's author account of Speculate/Collaborate/Learn; CMU SEI Spiral Development report; NIST SSDF project; ICC 2024 code; FTC endorsement FAQ; W3C privacy and informative-image guidance. TutorialsPoint indexes establish requested scope. These results provide learning references, not measured query demand or ranking evidence. No claimed review of every page of every book. NIST is a complementary security reference, not the definition of ASD. ICC is self-regulation, FTC guidance is US-specific, and no local legal compliance finding is made.
+
+Additional value: separate course themes, Arabic learning sequence, two explained cases and a checked quiz in every lesson, client-side campaign goal/ASD cycle explorers, exact-rational arithmetic with Arabic digits and worked alignment/common denominators, original printable worksheets with separately revealed explanations. The estimate lesson explicitly rounds each operand before arithmetic and distinguishes approximation from the exact result.
+
+Difference from existing content: existing A/B course concerns experiments; marketing communications covers message, campaign, channel, research and brand choices. ASD compares lifecycle and risk models then teaches Highsmith's cycle. Existing geometry course concerns 3D volume; these math courses teach decimal/fraction addition and subtraction, unit consistency and word problems. No duplicate article or standalone search-variant pages.
+
+Validation planned: TypeScript, lint, SEO QA/path regression, independent Python Fraction-authored answers against exact JS arithmetic, Linux build, full sitemap/link/image crawl, browser mobile tools/quizzes/worksheets and previous course regressions, production verification. These checks do not establish indexing or organic traffic.
