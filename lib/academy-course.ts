@@ -1,3 +1,4 @@
+import whole from './whole-numbers-course.json';
 import marketing from './marketing-communications-course.json';
 import adaptive from './adaptive-software-course.json';
 import decimals from './decimal-operations-course.json';
@@ -6,8 +7,9 @@ import ab from './ab-course.json';
 import accounting from './accounting-course.json';
 import abbreviations from './abbreviations-course.json';
 import type { FiveGLesson,FiveGSource } from './fiveg-course';
-export type WorksheetItem={prompt:string;expression:string;answer:string;explanation:string;task:string};
-export type AcademyLesson=Omit<FiveGLesson,'reference'>&{glossaryCategory?:string;worksheet?:WorksheetItem[]};
+export type AcademyDataTable={headers:string[];rows:string[][]};
+export type WorksheetItem={dataTable?:AcademyDataTable;prompt:string;expression:string;answer:string;explanation:string;task:string};
+export type AcademyLesson=Omit<FiveGLesson,'reference'|'cases'>&{cases:(FiveGLesson['cases'][number]&{dataTable?:AcademyDataTable})[];dataTable?:AcademyDataTable;glossaryCategory?:string;worksheet?:WorksheetItem[]};
 export type GlossaryEntry={term:string;expanded:string;meaning:string;category:string;context:string};
 export type AcademyCourse={meta:{slug:string;title:string;description:string;publishedAt:string;updatedAt:string;level:string;subject:string;headline:string;audience:string;promise:string;displayTitle?:string;art?:string;planDescription?:string};lessons:AcademyLesson[];sources:Record<string,FiveGSource>;interviews?:{question:string;answer:string}[];glossary?:GlossaryEntry[];discussions?:{title:string;prompt:string;points:string[]}[]};
 export const abCourse:AcademyCourse=ab;
@@ -17,7 +19,8 @@ export const marketingCourse:AcademyCourse=marketing;
 export const adaptiveCourse:AcademyCourse=adaptive;
 export const decimalCourse:AcademyCourse=decimals;
 export const fractionCourse:AcademyCourse=fractions;
-export const addedCourses=[abCourse,abbreviationsCourse,accountingCourse,marketingCourse,adaptiveCourse,decimalCourse,fractionCourse];
+export const wholeNumberCourse:AcademyCourse=whole;
+export const addedCourses=[abCourse,abbreviationsCourse,accountingCourse,marketingCourse,adaptiveCourse,decimalCourse,fractionCourse,wholeNumberCourse];
 export const academyPath=(course:AcademyCourse)=>`/courses/${course.meta.slug}`;
 export const academyLessonPath=(course:AcademyCourse,slug:string)=>`${academyPath(course)}/${slug}`;
 

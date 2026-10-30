@@ -28,3 +28,5 @@
 
 .academy-accounting-basics-card{--course-ink:#476c50;--course-wash:#edf4ed;--course-soft:#d4e3d4}
 .academy-marketing-communications-card{--course-ink:#995b43;--course-wash:#f7eee8;--course-soft:#edd9cd}.academy-adaptive-software-development-card{--course-ink:#3d658a;--course-wash:#eaf1f7;--course-soft:#d5e2ef}.academy-adding-subtracting-decimals-card{--course-ink:#277783;--course-wash:#e8f4f4;--course-soft:#cde4e5}.academy-adding-subtracting-fractions-card{--course-ink:#62539c;--course-wash:#f0edf8;--course-soft:#ddd5ef}.academy-new-card .academy-original-diagram .academy-svg-math text{font-family:ui-monospace,monospace;font-size:31px;direction:ltr}
+
+.learning-course.course-adding-subtracting-whole-numbers,.academy-adding-subtracting-whole-numbers-card{--course-ink:#8b6528;--course-wash:#f7f1e5;--course-soft:#eaddbf}.academy-adding-subtracting-whole-numbers-card .academy-card-art{background:var(--course-wash)}
