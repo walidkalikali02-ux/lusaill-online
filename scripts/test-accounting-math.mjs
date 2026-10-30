@@ -1,0 +1,6 @@
+import assert from 'node:assert/strict';import{parseDecimal,depreciation,breakEven}from'../lib/accounting-math.mjs';
+assert.equal(parseDecimal('١٢٫٥'),12500000n);assert.equal(parseDecimal('۱۲.۵'),12500000n);for(const x of ['','-1','1e3','1,000','.5','1.1234567','1000000001'])assert.equal(parseDecimal(x),null);
+let r=depreciation('12000','2000','5');assert.equal(r.annual,2000);assert(Math.abs(r.monthly-2000/12)<1e-10);assert(depreciation('1','2','5').error);assert(depreciation('1','0','0').error);assert.equal(depreciation('0','0','1').annual,0);
+r=breakEven('80','50','12000','6000');assert.deepEqual(r,{contribution:30,breakEvenUnits:400,targetUnits:600});assert.equal(breakEven('0.2','0.1','0.3','0').breakEvenUnits,3);assert.equal(breakEven('3','0','10','0').breakEvenUnits,4);assert(breakEven('3','3','10','0').error);assert.equal(breakEven('1','0','0','0').targetUnits,0);assert(Number.isSafeInteger(breakEven('0.000001','0','1000000000','1000000000').targetUnits));
+assert.equal(110*(6-5)+5*(110-100),110*6-100*5);assert.equal(200+10000-500,9700);assert.equal(40+30-25,45);assert.equal(12000-8000,4000);
+console.log('Accounting: exact decimal rounding, Arabic inputs, depreciation, CVP, boundaries and worked numerical anchors PASS');
