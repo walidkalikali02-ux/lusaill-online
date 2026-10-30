@@ -7,7 +7,7 @@ import { SiteIcon } from "./site-icon";
 export function SiteFrame({ children, footer }: { children: ReactNode; footer: ReactNode }) {
  const pathname = usePathname();
  const courseSlug=pathname.split('/')[2];
- const coursePlan = ['learn-driving','3d-figures-volumes','5g','6g-networks','ab-testing','abbreviations','accounting-basics','marketing-communications','adaptive-software-development','adding-subtracting-decimals','adding-subtracting-fractions','adding-subtracting-whole-numbers'].includes(courseSlug) ? `/courses/${courseSlug}#course-plan` : '/courses#available-courses';
+ const coursePlan = ['learn-driving','3d-figures-volumes','5g','6g-networks','ab-testing','abbreviations','accounting-basics','marketing-communications','adaptive-software-development','adding-subtracting-decimals','adding-subtracting-fractions','adding-subtracting-whole-numbers','adobe-indesign','adobe-robohelp','advanced-excel-charts','advanced-excel-functions'].includes(courseSlug) ? `/courses/${courseSlug}#course-plan` : '/courses#available-courses';
  const isAcademy = pathname === "/courses" || pathname.startsWith("/courses/");
  if (!isAcademy) return <><SiteHeader />{children}{footer}</>;
  return <><header className="academy-header"><div className="academy-width academy-header-inner">
