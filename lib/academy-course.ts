@@ -1,0 +1,11 @@
+import ab from './ab-course.json';
+import abbreviations from './abbreviations-course.json';
+import type { FiveGLesson,FiveGSource } from './fiveg-course';
+export type AcademyLesson=Omit<FiveGLesson,'reference'>;
+export type GlossaryEntry={term:string;expanded:string;meaning:string;category:string;context:string};
+export type AcademyCourse={meta:{slug:string;title:string;description:string;publishedAt:string;updatedAt:string;level:string;subject:string;headline:string;audience:string;promise:string};lessons:AcademyLesson[];sources:Record<string,FiveGSource>;interviews?:{question:string;answer:string}[];glossary?:GlossaryEntry[]};
+export const abCourse:AcademyCourse=ab;
+export const abbreviationsCourse:AcademyCourse=abbreviations;
+export const addedCourses=[abCourse,abbreviationsCourse];
+export const academyPath=(course:AcademyCourse)=>`/courses/${course.meta.slug}`;
+export const academyLessonPath=(course:AcademyCourse,slug:string)=>`${academyPath(course)}/${slug}`;
