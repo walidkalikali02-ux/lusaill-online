@@ -21,6 +21,7 @@ const server = createServer((request, response) => {
     return;
   }
   if (request.url === "/image.webp") {
+    if (request.method === "HEAD") { response.writeHead(400); response.end(); return; }
     response.writeHead(200, { "content-type": "image/webp", "content-length": "4" });
     response.end("test");
     return;
@@ -54,6 +55,7 @@ assert.equal(summary.auditedUrls, 3);
 assert.equal(summary.non200, 1);
 assert.equal(summary.failedPages, 0);
 assert.equal(summary.pagesWithAltIssues, 1);
+assert.equal(summary.pagesWithBrokenImages, 0, "A working GET image must survive a HEAD 400");
 assert.equal(pages.find((page) => page.url.endsWith("/old")).statusCode, 301);
 assert.ok(pages.find((page) => page.url.endsWith("/old")).redirectDestination.endsWith("/article"));
 console.log("SEO audit integration test passed.");

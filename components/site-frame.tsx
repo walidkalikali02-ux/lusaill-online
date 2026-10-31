@@ -6,7 +6,8 @@ import { SiteHeader } from "./site-header";
 import { SiteIcon } from "./site-icon";
 export function SiteFrame({ children, footer }: { children: ReactNode; footer: ReactNode }) {
  const pathname = usePathname();
- const coursePlan = pathname.startsWith("/courses/6g-networks") ? "/courses/6g-networks#course-plan" : pathname.startsWith("/courses/3d-figures-volumes") ? "/courses/3d-figures-volumes#course-plan" : pathname.startsWith("/courses/5g") ? "/courses/5g#course-plan" : pathname.startsWith("/courses/learn-driving") ? "/courses/learn-driving#course-plan" : "/courses#available-courses";
+ const courseSlug=pathname.split('/')[2];
+ const coursePlan = ['learn-driving','3d-figures-volumes','5g','6g-networks','ab-testing','abbreviations','accounting-basics','marketing-communications','adaptive-software-development','adding-subtracting-decimals','adding-subtracting-fractions','adding-subtracting-whole-numbers','adobe-indesign','adobe-robohelp','advanced-excel-charts','advanced-excel-functions','advanced-excel','agile','agile-data-science','agile-testing','agritech','artificial-intelligence','ai-engineering','ai-with-python','aiml','ajax','algorithm-design','amazon-codewhisperer','amazon-marketplace'].includes(courseSlug) ? `/courses/${courseSlug}#course-plan` : '/courses#available-courses';
  const isAcademy = pathname === "/courses" || pathname.startsWith("/courses/");
  if (!isAcademy) return <><SiteHeader />{children}{footer}</>;
  return <><header className="academy-header"><div className="academy-width academy-header-inner">

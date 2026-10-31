@@ -29,7 +29,6 @@ export const articleJourneysBySlug: Record<string, string[]> = {
   "housing": ["old-rent-housing-eligibility", "old-rent-housing-documents", "old-rent-housing-apply", "old-rent-housing-post-office", "old-rent-housing-track"],
   "ration": ["ration-data-update", "ration-family-join", "ration-card-replacement", "ration-card-governorate-transfer", "ration-card-activation"],
   "civil-records": ["national-id-lost-replacement", "national-id-damaged-replacement", "automated-birth-certificate", "automated-death-certificate", "automated-marriage-certificate"],
-  "traffic-replacements": ["vehicle-violations-inquiry", "vehicle-license-renewal-online", "vehicle-license-lost-replacement", "vehicle-license-damaged-replacement", "driving-license-lost-replacement"],
   "account-security": ["google-backup-codes", "google-device-sessions", "gmail-phishing-report", "chrome-unwanted-notifications"],
   "google-files": ["drive-safe-sharing", "drive-file-restore", "google-data-download", "gmail-filters"],
   "android-backup": ["android-backup-check", "google-photos-free-device-space", "android-usb-file-transfer", "android-new-phone-transfer", "android-restore-contacts", "android-factory-reset-safe"],

@@ -3,7 +3,7 @@ import { housingDeadlinePassed } from "./deadlines";
 import { articleSeeds, type ArticleSeed } from "./articles-data";
 import { clusters, getCluster } from "./clusters";
 import { guideIllustrations } from "./guide-illustrations";
-import { articleJourneys } from "./article-journeys";
+import { getGuidePath } from "./guide-paths";
 import { publishedContent } from "./article-content";
 
 export type ArticleStatus = "not_started" | "drafting" | "needs_verification" | "published";
@@ -53,7 +53,10 @@ export const articles: Article[] = articleSeeds.map((seed) => {
     article.metaDescription = "الموعد المنشور في هذا الدليل هو 12 أكتوبر 2026 وقد مضى. راجع الإعلان الرسمي الحالي قبل محاولة تقديم طلب جديد، وتابع طلبك من القناة الرسمية.";
     article.quickAnswer = "الموعد المنشور في المصادر التي يشرحها هذا الدليل هو 12 أكتوبر 2026 وقد مضى. لا تعتبر الخطوات التالية تأكيدًا لاستمرار استقبال طلبات جديدة؛ راجع إعلان الجهة الرسمية الحالي أولًا. إذا سبق إرسال طلب، استخدم حسابك في مصر الرقمية لمتابعة الإخطارات والمستندات المطلوبة. يبقى الشرح أدناه مرجعًا للإجراء المنشور، ولا يثبت وجود تمديد أو عدمه.";
   }
-  const illustrated = guideIllustrations[article.slug] ? { ...article, updatedAt: guideIllustrations[article.slug].updatedAt ?? "2026-09-30T18:48:00+03:00" } : article;
+  const illustrationDate = guideIllustrations[article.slug]?.updatedAt;
+  const illustrated = illustrationDate && (!article.updatedAt || Date.parse(illustrationDate) > Date.parse(article.updatedAt))
+    ? { ...article, updatedAt: illustrationDate }
+    : article;
   return applyArticleAuditUpdates(illustrated);
 });
 
@@ -80,7 +83,7 @@ export function getClusterArticles(clusterSlug: string) {
 }
 
 export function getRelatedArticles(article: Article, count = 4) {
-  const group = articleJourneys.find((slugs) => slugs.includes(article.slug)) ?? [];
+  const group = getGuidePath(article.slug)?.articleSlugs ?? [];
   const explicit = (article.steps ?? []).flatMap((step) => step.relatedLink?.href.startsWith("/articles/") ? [step.relatedLink.href.slice(10)] : []);
   const preferred = [...new Set([...explicit, ...group])];
   const published = articles.filter((candidate) => candidate.status === "published" && candidate.id !== article.id);
