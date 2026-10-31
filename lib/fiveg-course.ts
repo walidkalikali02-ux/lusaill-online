@@ -1,0 +1,12 @@
+import data from "./fiveg-course.json";
+export type FiveGQuiz={question:string;choices:string[];correctIndex:number;explanation:string};
+export type FiveGLesson={slug:string;order:number;title:string;shortTitle:string;description:string;minutes:number;diagram:string;intro:string;objectives:string[];sections:{title:string;paragraphs:string[]}[];cases:{question:string;answer:string}[];misconceptions:string[];quiz:FiveGQuiz;reference:string;sourceIds:string[]};
+export type FiveGSource={title:string;url:string;note:string};
+export const fivegMeta=data.meta;
+export const fivegLessons=data.lessons as FiveGLesson[];
+export const fivegSources:Record<string,FiveGSource>=data.sources;
+export const fivegGlossary=data.glossary;
+export const fivegPath="/courses/5g";
+export const fivegMinutes=fivegLessons.reduce((sum,l)=>sum+l.minutes,0);
+export const fivegLessonPath=(slug:string)=>`${fivegPath}/${slug}`;
+export const getFiveGLesson=(slug:string)=>fivegLessons.find(l=>l.slug===slug);

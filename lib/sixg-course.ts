@@ -1,0 +1,11 @@
+import data from "./sixg-course.json";
+import type { FiveGLesson, FiveGSource } from "./fiveg-course";
+export type SixGLesson=Omit<FiveGLesson,'reference'>;
+export const sixgMeta=data.meta;
+export const sixgLessons=data.lessons as SixGLesson[];
+export const sixgSources:Record<string,FiveGSource>=data.sources;
+export const sixgDiscussions=data.discussions;
+export const sixgPath='/courses/6g-networks';
+export const sixgMinutes=sixgLessons.reduce((sum,l)=>sum+l.minutes,0);
+export const sixgLessonPath=(slug:string)=>`${sixgPath}/${slug}`;
+export const getSixGLesson=(slug:string)=>sixgLessons.find(l=>l.slug===slug);

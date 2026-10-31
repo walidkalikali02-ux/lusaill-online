@@ -1,0 +1,2894 @@
+[
+  {
+    "name": "BETADIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/betadist-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "BETAINV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/betainv-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "BINOMDIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/binomdist-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "CEILING",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/ceiling-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "CHIDIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/chidist-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "CHIINV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/chiinv-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "CHITEST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/chitest-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "CONFIDENCE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/confidence-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "COVAR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/covar-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "CRITBINOM",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/critbinom-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "EXPONDIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/expondist-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "FDIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/fdist-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "FINV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/finv-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "FLOOR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/floor-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "FTEST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/ftest-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "GAMMADIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/gammadist-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "GAMMAINV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/gammainv-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "HYPGEOMDIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/hypgeomdist-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "LOGINV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/loginv-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "LOGNORMDIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/lognormdist-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "MODE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/mode-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "NEGBINOMDIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/negbinomdist-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "NORMDIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/normdist-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "NORMINV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/norminv-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "NORMSDIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/normsdist-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "NORMSINV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/normsinv-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "PERCENTILE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/percentile-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "PERCENTRANK",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/percentrank-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "POISSON",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/poisson-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "QUARTILE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/quartile-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "RANK",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/rank-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "STDEV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/stdev-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "STDEVP",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/stdevp-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "TDIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/tdist-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "TINV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/tinv-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "TTEST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/ttest-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "VAR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/var-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "VARP",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/varp-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "WEIBULL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/weibull-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "ZTEST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/ztest-function",
+    "signatureIncluded": true,
+    "legacyNote": "دالة توافق: اقرأ مستندات الصيغة القديمة والبديل الحديث عند الحاجة، ولا تفترض تطابق الوسائط أو قواعد الذيل والإشارة."
+  },
+  {
+    "name": "AND",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/and-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FALSE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/false-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IF",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/if-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IFERROR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/iferror-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IFNA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/ifna-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IFS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/ifs-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "NOT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/not-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "OR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/or-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SWITCH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/switch-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TRUE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/true-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "XOR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/xor-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ARRAYTOTEXT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/arraytotext-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BAHTTEXT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/bahttext-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CHAR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/char-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CLEAN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/clean-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CODE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/code-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CONCAT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/concat-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CONCATENATE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/concatenate-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DBCS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dbcs-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DOLLAR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dollar-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "EXACT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/exact-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FIND",
+    "reference": "https://support.microsoft.com/en-us/excel/how-to-correct-a-value-error-in-find-findb-and-search-searchb-functions",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FINDB",
+    "reference": "https://support.microsoft.com/en-us/excel/how-to-correct-a-value-error-in-find-findb-and-search-searchb-functions",
+    "signatureIncluded": false,
+    "legacyNote": "اسم توافق قديم يعتمد على سياق محارف مزدوجة البايت؛ لا نساوي عد البايتات بعد المحارف، ولا نفترض أن العربية تعني محرفين. راجع المرجع والإصدار قبل استخدامه."
+  },
+  {
+    "name": "FIXED",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/fixed-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "LEFT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/left-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "LEFTB",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/left-function",
+    "signatureIncluded": false,
+    "legacyNote": "اسم توافق قديم يعتمد على سياق محارف مزدوجة البايت؛ لا نساوي عد البايتات بعد المحارف، ولا نفترض أن العربية تعني محرفين. راجع المرجع والإصدار قبل استخدامه."
+  },
+  {
+    "name": "LEN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/len-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "LENB",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/len-function",
+    "signatureIncluded": false,
+    "legacyNote": "اسم توافق قديم يعتمد على سياق محارف مزدوجة البايت؛ لا نساوي عد البايتات بعد المحارف، ولا نفترض أن العربية تعني محرفين. راجع المرجع والإصدار قبل استخدامه."
+  },
+  {
+    "name": "LOWER",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/lower-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MID",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/mid-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MIDB",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/mid-function",
+    "signatureIncluded": false,
+    "legacyNote": "اسم توافق قديم يعتمد على سياق محارف مزدوجة البايت؛ لا نساوي عد البايتات بعد المحارف، ولا نفترض أن العربية تعني محرفين. راجع المرجع والإصدار قبل استخدامه."
+  },
+  {
+    "name": "NUMBERVALUE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/numbervalue-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PHONETIC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/phonetic-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PROPER",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/proper-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "REPLACE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/replace-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "REPLACEB",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/replace-function",
+    "signatureIncluded": false,
+    "legacyNote": "اسم توافق قديم يعتمد على سياق محارف مزدوجة البايت؛ لا نساوي عد البايتات بعد المحارف، ولا نفترض أن العربية تعني محرفين. راجع المرجع والإصدار قبل استخدامه."
+  },
+  {
+    "name": "REPT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/rept-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "RIGHT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/right-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "RIGHTB",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/right-function",
+    "signatureIncluded": false,
+    "legacyNote": "اسم توافق قديم يعتمد على سياق محارف مزدوجة البايت؛ لا نساوي عد البايتات بعد المحارف، ولا نفترض أن العربية تعني محرفين. راجع المرجع والإصدار قبل استخدامه."
+  },
+  {
+    "name": "SEARCH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/search-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SEARCHB",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/search-function",
+    "signatureIncluded": false,
+    "legacyNote": "اسم توافق قديم يعتمد على سياق محارف مزدوجة البايت؛ لا نساوي عد البايتات بعد المحارف، ولا نفترض أن العربية تعني محرفين. راجع المرجع والإصدار قبل استخدامه."
+  },
+  {
+    "name": "SUBSTITUTE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/substitute-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "T",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/t-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TEXT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/text-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TEXTAFTER",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/textafter-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TEXTBEFORE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/textbefore-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TEXTJOIN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/textjoin-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TEXTSPLIT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/textsplit-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TRIM",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/trim-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "UNICHAR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/unichar-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "UNICODE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/unicode-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "UPPER",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/upper-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "VALUE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/value-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "VALUETOTEXT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/valuetotext-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DATE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/date-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DATEDIF",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/datedif-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DATEVALUE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/datevalue-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DAY",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/day-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DAYS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/days-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DAYS360",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/days360-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "EDATE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/edate-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "EOMONTH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/eomonth-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "HOUR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/hour-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISOWEEKNUM",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/isoweeknum-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MINUTE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/minute-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MONTH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/month-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "NETWORKDAYS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/networkdays-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "NETWORKDAYS.INTL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/networkdays-intl-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "NOW",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/now-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SECOND",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/second-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TIME",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/time-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TIMEVALUE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/timevalue-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TODAY",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/today-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "WEEKDAY",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/weekday-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "WEEKNUM",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/weeknum-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "WORKDAY",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/workday-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "WORKDAY.INTL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/workday-intl-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "YEAR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/year-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "YEARFRAC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/yearfrac-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CUBEKPIMEMBER",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/cubekpimember-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CUBEMEMBER",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/cubemember-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CUBEMEMBERPROPERTY",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/cubememberproperty-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CUBERANKEDMEMBER",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/cuberankedmember-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CUBESET",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/cubeset-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CUBESETCOUNT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/cubesetcount-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CUBEVALUE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/cubevalue-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ABS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/abs-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "AGGREGATE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/aggregate-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ARABIC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/arabic-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BASE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/base-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CEILING.MATH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/ceiling-math-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COMBIN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/combin-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COMBINA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/combina-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DECIMAL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/decimal-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DEGREES",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/degrees-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "EVEN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/even-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "EXP",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/exp-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FACT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/fact-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FACTDOUBLE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/factdouble-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FLOOR.MATH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/floor-math-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "GCD",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/gcd-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "INT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/int-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "LCM",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/lcm-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "LN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/ln-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "LOG",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/log-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "LOG10",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/log10-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MDETERM",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/mdeterm-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MINVERSE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/minverse-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MMULT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/mmult-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MOD",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/mod-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MROUND",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/mround-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MULTINOMIAL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/multinomial-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MUNIT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/munit-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ODD",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/odd-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PI",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/pi-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "POWER",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/power-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PRODUCT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/product-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "QUOTIENT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/quotient-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "RADIANS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/radians-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "RAND",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/rand-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "RANDBETWEEN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/randbetween-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ROMAN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/roman-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ROUND",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/round-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ROUNDDOWN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/rounddown-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ROUNDUP",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/roundup-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SERIESSUM",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/seriessum-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SIGN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sign-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SQRT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sqrt-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SQRTPI",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sqrtpi-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SUBTOTAL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/subtotal-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SUM",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sum-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SUMIF",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sumif-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SUMIFS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sumifs-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SUMPRODUCT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sumproduct-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SUMSQ",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sumsq-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SUMX2MY2",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sumx2my2-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SUMX2PY2",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sumx2py2-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SUMXMY2",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sumxmy2-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TRUNC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/trunc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ACOS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/acos-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ACOSH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/acosh-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ACOT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/acot-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ACOTH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/acoth-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ASIN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/asin-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ASINH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/asinh-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ATAN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/atan-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ATAN2",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/atan2-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ATANH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/atanh-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/cos-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COSH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/cosh-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/cot-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COTH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/coth-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CSC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/csc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CSCH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/csch-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SEC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sec-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SECH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sech-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SIN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sin-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SINH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sinh-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TAN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/tan-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TANH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/tanh-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DAVERAGE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/daverage-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DCOUNT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dcount-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DCOUNTA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dcounta-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DGET",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dget-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DMAX",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dmax-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DMIN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dmin-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DPRODUCT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dproduct-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DSTDEV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dstdev-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DSTDEVP",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dstdevp-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DSUM",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dsum-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DVAR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dvar-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DVARP",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dvarp-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FILTER",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/filter-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "RANDARRAY",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/randarray-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SEQUENCE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sequence-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SORT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sort-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SORTBY",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sortby-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "UNIQUE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/unique-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "XLOOKUP",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/xlookup-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "XMATCH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/xmatch-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BESSELI",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/besseli-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BESSELJ",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/besselj-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BESSELK",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/besselk-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BESSELY",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/bessely-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BIN2DEC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/bin2dec-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BIN2HEX",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/bin2hex-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BIN2OCT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/bin2oct-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BITAND",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/bitand-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BITLSHIFT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/bitlshift-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BITOR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/bitor-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BITRSHIFT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/bitrshift-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BITXOR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/bitxor-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COMPLEX",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/complex-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CONVERT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/convert-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DEC2BIN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dec2bin-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DEC2HEX",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dec2hex-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DEC2OCT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dec2oct-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DELTA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/delta-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ERF",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/erf-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ERF.PRECISE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/erf-precise-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ERFC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/erfc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ERFC.PRECISE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/erfc-precise-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "GESTEP",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/gestep-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "HEX2BIN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/hex2bin-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "HEX2DEC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/hex2dec-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "HEX2OCT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/hex2oct-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMABS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imabs-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMAGINARY",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imaginary-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMARGUMENT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imargument-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMCONJUGATE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imconjugate-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMCOS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imcos-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMCOSH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imcosh-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMCOT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imcot-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMCSC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imcsc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMCSCH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imcsch-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMDIV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imdiv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMEXP",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imexp-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMLN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imln-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMLOG2",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imlog2-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMLOG10",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imlog10-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMPOWER",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/impower-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMPRODUCT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/improduct-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMREAL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imreal-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMSEC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imsec-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMSECH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imsech-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMSIN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imsin-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMSINH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imsinh-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMSQRT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imsqrt-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMSUB",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imsub-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMSUM",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imsum-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IMTAN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/imtan-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "OCT2BIN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/oct2bin-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "OCT2DEC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/oct2dec-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "OCT2HEX",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/oct2hex-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ACCRINT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/accrint-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ACCRINTM",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/accrintm-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "AMORDEGRC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/amordegrc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "AMORLINC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/amorlinc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COUPDAYBS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/coupdaybs-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COUPDAYS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/coupdays-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COUPDAYSNC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/coupdaysnc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COUPNCD",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/coupncd-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COUPNUM",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/coupnum-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COUPPCD",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/couppcd-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CUMIPMT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/cumipmt-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CUMPRINC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/cumprinc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DB",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/db-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DDB",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/ddb-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DISC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/disc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DOLLARDE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dollarde-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DOLLARFR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/dollarfr-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DURATION",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/duration-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "EFFECT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/effect-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/fv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FVSCHEDULE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/fvschedule-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "INTRATE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/intrate-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IPMT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/ipmt-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "IRR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/irr-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISPMT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/ispmt-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MDURATION",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/mduration-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MIRR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/mirr-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "NOMINAL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/nominal-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "NPER",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/nper-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "NPV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/npv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ODDFPRICE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/oddfprice-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ODDFYIELD",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/oddfyield-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ODDLPRICE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/oddlprice-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ODDLYIELD",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/oddlyield-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PDURATION",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/pduration-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PMT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/pmt-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PPMT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/ppmt-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PRICE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/price-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PRICEDISC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/pricedisc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PRICEMAT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/pricemat-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/pv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "RATE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/rate-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "RECEIVED",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/received-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "RRI",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/rri-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SLN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sln-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SYD",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/syd-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TBILLEQ",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/tbilleq-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TBILLPRICE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/tbillprice-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TBILLYIELD",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/tbillyield-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "VDB",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/vdb-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "XIRR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/xirr-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "XNPV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/xnpv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "YIELD",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/yield-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "YIELDDISC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/yielddisc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "YIELDMAT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/yieldmat-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CELL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/cell-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ERROR.TYPE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/error-type-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "INFO",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/info-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISBLANK",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISERR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISERROR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISEVEN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/iseven-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISFORMULA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/isformula-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISLOGICAL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISNA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISNONTEXT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISNUMBER",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISODD",
+    "reference": "https://support.microsoft.com/en-us/excel/is-functions",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISREF",
+    "reference": "https://support.microsoft.com/en-us/excel/is-functions",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ISTEXT",
+    "reference": "https://support.microsoft.com/en-us/excel/is-functions",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "N",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/n-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "NA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/na-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SHEET",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sheet-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SHEETS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/sheets-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TYPE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/type-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ADDRESS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/address-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "AREAS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/areas-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CHOOSE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/choose-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COLUMN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/column-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COLUMNS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/columns-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FORMULATEXT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/formulatext-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "GETPIVOTDATA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/getpivotdata-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "HLOOKUP",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/hlookup-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "HYPERLINK",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/hyperlink-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "INDEX",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/index-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "INDIRECT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/indirect-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "LOOKUP",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/lookup-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MATCH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/match-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "OFFSET",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/offset-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ROW",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/row-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ROWS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/rows-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "RTD",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/rtd-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TRANSPOSE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/transpose-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "VLOOKUP",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/vlookup-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "AVEDEV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/avedev-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "AVERAGE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/average-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "AVERAGEA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/averagea-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "AVERAGEIF",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/averageif-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "AVERAGEIFS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/averageifs-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BETA.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/beta-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BETA.INV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/beta-inv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BINOM.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/binom-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BINOM.DIST.RANGE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/binom-dist-range-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "BINOM.INV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/binom-inv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CHISQ.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/chisq-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CHISQ.DIST.RT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/chisq-dist-rt-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CHISQ.INV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/chisq-inv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CHISQ.INV.RT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/chisq-inv-rt-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CHISQ.TEST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/chisq-test-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CONFIDENCE.NORM",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/confidence-norm-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CONFIDENCE.T",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/confidence-t-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "CORREL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/correl-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COUNT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/count-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COUNTA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/counta-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COUNTBLANK",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/countblank-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COUNTIF",
+    "reference": "https://support.microsoft.com/en-us/excel/get-started/use-the-countif-function-in-microsoft-excel",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COUNTIFS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/countifs-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COVARIANCE.P",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/covariance-p-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "COVARIANCE.S",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/covariance-s-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "DEVSQ",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/devsq-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "EXPON.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/expon-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "F.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/f-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "F.DIST.RT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/f-dist-rt-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "F.INV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/f-inv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "F.INV.RT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/f-inv-rt-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "F.TEST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/f-test-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FISHER",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/fisher-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FISHERINV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/fisherinv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FORECAST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/forecast-and-forecast-linear-functions",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FORECAST.ETS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/forecast-ets-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FORECAST.ETS.CONFINT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/forecast-ets-confint-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FORECAST.ETS.SEASONALITY",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/forecast-ets-seasonality-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FORECAST.ETS.STAT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/forecast-ets-stat-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FORECAST.LINEAR",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/forecast-and-forecast-linear-functions",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FREQUENCY",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/frequency-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "GAMMA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/gamma-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "GAMMA.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/gamma-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "GAMMA.INV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/gamma-inv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "GAMMALN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/gammaln-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "GAMMALN.PRECISE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/gammaln-precise-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "GAUSS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/gauss-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "GEOMEAN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/geomean-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "GROWTH",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/growth-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "HARMEAN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/harmean-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "HYPGEOM.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/hypgeom-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "INTERCEPT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/intercept-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "KURT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/kurt-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "LARGE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/large-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "LINEST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/linest-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "LOGEST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/logest-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "LOGNORM.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/lognorm-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "LOGNORM.INV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/lognorm-inv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MAX",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/max-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MAXA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/maxa-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MAXIFS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/maxifs-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MEDIAN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/median-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MIN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/min-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MINA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/mina-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MINIFS",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/minifs-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MODE.MULT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/mode-mult-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "MODE.SNGL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/mode-sngl-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "NEGBINOM.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/negbinom-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "NORM.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/norm-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "NORM.INV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/norm-inv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "NORM.S.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/norm-s-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "NORM.S.INV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/norm-s-inv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PEARSON",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/pearson-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PERCENTILE.EXC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/percentile-exc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PERCENTILE.INC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/percentile-inc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PERCENTRANK.EXC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/percentrank-exc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PERCENTRANK.INC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/percentrank-inc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PERMUT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/permut-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PERMUTATIONA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/permutationa-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PHI",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/phi-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "POISSON.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/poisson-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "PROB",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/prob-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "QUARTILE.EXC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/quartile-exc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "QUARTILE.INC",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/quartile-inc-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "RANK.AVG",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/rank-avg-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "RANK.EQ",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/rank-eq-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "RSQ",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/rsq-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SKEW",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/skew-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SKEW.P",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/skew-p-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SLOPE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/slope-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "SMALL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/small-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "STANDARDIZE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/standardize-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "STDEV.P",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/stdev-p-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "STDEV.S",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/stdev-s-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "STDEVA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/stdeva-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "STDEVPA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/stdevpa-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "STEYX",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/steyx-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "T.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/t-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "T.DIST.2T",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/t-dist-2t-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "T.DIST.RT",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/t-dist-rt-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "T.INV",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/t-inv-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "T.INV.2T",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/t-inv-2t-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "T.TEST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/t-test-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TREND",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/trend-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "TRIMMEAN",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/trimmean-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "VAR.P",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/var-p-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "VAR.S",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/var-s-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "VARA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/vara-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "VARPA",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/varpa-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "WEIBULL.DIST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/weibull-dist-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "Z.TEST",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/z-test-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "ENCODEURL",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/encodeurl-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "FILTERXML",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/filterxml-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  },
+  {
+    "name": "WEBSERVICE",
+    "reference": "https://support.microsoft.com/en-us/excel/functions/webservice-function",
+    "signatureIncluded": true,
+    "legacyNote": null
+  }
+]
