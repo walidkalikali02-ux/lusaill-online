@@ -1,0 +1,7 @@
+"use client";
+import {useId,useState} from "react";
+type Entry={title:string;task:string;review:string[];href:string};
+export function CurriculumPracticeLab({entries}:{entries:Entry[]}){
+ const id=useId();const [index,setIndex]=useState(0);const [show,setShow]=useState(false);const entry=entries[index];
+ return <section className="geometry-lab curriculum-practice-lab" aria-labelledby={`${id}-title`}><div><span className="academy-eyebrow">تدرّب على قرار واحد</span><h2 id={`${id}-title`}>اختر تمرينك</h2><p>اختر موضوعًا، نفّذ المهمة على ورق أو في بيئتك، ثم افتح معايير المراجعة. هذه أداة لاستكشاف التمارين؛ لا تشغّل البرامج أو ترسل إجاباتك.</p></div><div className="curriculum-lab-controls"><label htmlFor={`${id}-lesson`}>موضوع التمرين</label><select id={`${id}-lesson`} value={index} onChange={e=>{setIndex(Number(e.target.value));setShow(false);}}>{entries.map((e,i)=><option value={i} key={e.href}>{i+1}. {e.title}</option>)}</select><div aria-live="polite"><h3>{entry.title}</h3><p>{entry.task}</p><button className="academy-button" type="button" aria-expanded={show} aria-controls={`${id}-review`} onClick={()=>setShow(!show)}>{show?'إخفاء معايير المراجعة':'عرض معايير المراجعة'}</button><div id={`${id}-review`} hidden={!show}><h4>راجع نتيجتك</h4><ul>{entry.review.map(t=><li key={t}>{t}</li>)}</ul></div><a className="curriculum-lab-link" href={entry.href}>اقرأ الدرس والاختبار ←</a></div></div></section>;
+}
