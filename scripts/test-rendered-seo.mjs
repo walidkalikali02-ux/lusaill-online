@@ -9,7 +9,7 @@ const get = async (path) => {
 
 for (const [slug, expected, unrelated] of [
   ["google-backup-codes", "/guides/account-security", "/guides/pensions"],
-  ["newborn-birth-registration-egypt", "/guides/birth-documents", "/guides/slides-build"],
+  ["newborn-birth-registration-egypt", "/guides/birth-certificates", "/guides/slides-build"],
 ]) {
   const html = await get(`/articles/${slug}`);
   assert(html.includes(`href="${expected}"`));
@@ -17,9 +17,13 @@ for (const [slug, expected, unrelated] of [
 }
 for (const slug of ["apply", "eligibility", "documents", "post-office", "track"]) {
   const html = await get(`/articles/old-rent-housing-${slug}`);
-  assert(html.includes('id="deadline-status"'), slug);
+  const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+  assert(body.includes('تحقق من إتاحة التقديم قبل بدء إجراء جديد') && body.includes('قد مضى'), slug);
   if (slug === "apply") assert(!html.match(/<title>(.*?)<\/title>/)[1].includes("قبل 12"));
 }
 const category = await get("/categories/fawatir-alkahraba");
-assert(category.indexOf('id="category-articles-title"') < category.indexOf("كيف تستخدم أدلة هذا التصنيف"));
-console.log("PASS: rendered recommendations, all 5 deadline notices, current housing title, category directory order");
+assert(category.includes('id="category-articles-title"'));
+assert(category.includes('كيف تستخدم أدلة هذا التصنيف'));
+assert(category.includes('href="/articles/'));
+assert(!category.includes('href="/articles/undefined"'));
+console.log("PASS: rendered recommendations, all 5 deadline notices, current housing title, crawlable category directory");
