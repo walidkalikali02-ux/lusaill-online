@@ -1,0 +1,2346 @@
+{
+  "checkedAt": "2026-11-01",
+  "note": "HTTP retrieval only, not factual verification. No authenticated procedure or customer payment was tested.",
+  "sources": [
+    {
+      "url": "https://bedc.gov.eg/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://bedc.gov.eg/",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5660
+    },
+    {
+      "url": "https://cairo.gov.eg/ar/governorate-entities/companies/south-cairo-electricity-distribution-company/services/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://cairo.gov.eg/ar/governorate-entities/companies/south-cairo-electricity-distribution-company/services/",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5227
+    },
+    {
+      "url": "https://digital.gov.eg/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/",
+      "contentType": "text/html",
+      "chars": 11
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1-%D8%A8%D8%AF%D9%84-%D8%AA%D8%A7%D9%84%D9%81-%D8%A3%D9%88-%D9%81%D8%A7%D9%82%D8%AF-%D9%84%D8%A8%D8%B7%D8%A7%D9%82%D8%A9-%D8%AA%D9%85%D9%88%D9%8A%D9%86",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1-%D8%A8%D8%AF%D9%84-%D8%AA%D8%A7%D9%84%D9%81-%D8%A3%D9%88-%D9%81%D8%A7%D9%82%D8%AF-%D9%84%D8%A8%D8%B7%D8%A7%D9%82%D8%A9-%D8%AA%D9%85%D9%88%D9%8A%D9%86",
+      "contentType": "text/html",
+      "chars": 49
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1-%D9%82%D8%B3%D9%8A%D9%85%D8%A9-%D8%B2%D9%88%D8%A7%D8%AC-%D9%85%D9%85%D9%8A%D9%83%D9%86%D8%A9-%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A9-%D9%85%D8%B3%D8%A8%D9%82%D8%A7",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1-%D9%82%D8%B3%D9%8A%D9%85%D8%A9-%D8%B2%D9%88%D8%A7%D8%AC-%D9%85%D9%85%D9%8A%D9%83%D9%86%D8%A9-%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A9-%D9%85%D8%B3%D8%A8%D9%82%D8%A7",
+      "contentType": "text/html",
+      "chars": 50
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%A7%D8%B3%D8%AA%D8%B9%D9%84%D8%A7%D9%85-%D8%B9%D9%86-%D9%85%D8%AE%D8%A7%D9%84%D9%81%D8%A7%D8%AA-%D8%B1%D8%AE%D8%B5%D8%A9-%D9%85%D8%B1%D9%83%D8%A8%D8%A9",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%A7%D8%B3%D8%AA%D8%B9%D9%84%D8%A7%D9%85-%D8%B9%D9%86-%D9%85%D8%AE%D8%A7%D9%84%D9%81%D8%A7%D8%AA-%D8%B1%D8%AE%D8%B5%D8%A9-%D9%85%D8%B1%D9%83%D8%A8%D8%A9",
+      "contentType": "text/html",
+      "chars": 43
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%A7%D8%B3%D8%AA%D9%85%D8%A7%D8%B1%D8%A9-%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%A7%D8%B3%D8%AA%D9%85%D8%A7%D8%B1%D8%A9-%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86",
+      "contentType": "text/html",
+      "chars": 42
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%A7%D8%B5%D8%AF%D8%A7%D8%B1-%D8%A8%D8%AF%D9%84-%D8%AA%D8%A7%D9%84%D9%81-%D8%B1%D8%AE%D8%B5%D8%A9-%D9%85%D8%B1%D9%83%D8%A8%D8%A9",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%A7%D8%B5%D8%AF%D8%A7%D8%B1-%D8%A8%D8%AF%D9%84-%D8%AA%D8%A7%D9%84%D9%81-%D8%B1%D8%AE%D8%B5%D8%A9-%D9%85%D8%B1%D9%83%D8%A8%D8%A9",
+      "contentType": "text/html",
+      "chars": 39
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%A7%D8%B5%D8%AF%D8%A7%D8%B1-%D8%A8%D8%AF%D9%84-%D9%81%D8%A7%D9%82%D8%AF-%D8%B1%D8%AE%D8%B5%D8%A9-%D9%82%D9%8A%D8%A7%D8%AF%D8%A9",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%A7%D8%B5%D8%AF%D8%A7%D8%B1-%D8%A8%D8%AF%D9%84-%D9%81%D8%A7%D9%82%D8%AF-%D8%B1%D8%AE%D8%B5%D8%A9-%D9%82%D9%8A%D8%A7%D8%AF%D8%A9",
+      "contentType": "text/html",
+      "chars": 39
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%A7%D8%B5%D8%AF%D8%A7%D8%B1-%D8%B4%D9%87%D8%A7%D8%AF%D8%A9-%D9%88%D9%81%D8%A7%D8%A9-%D9%85%D9%85%D9%8A%D9%83%D9%86%D8%A9-%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A9-%D9%85%D8%B3%D8%A8%D9%82%D8%A7",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%A7%D8%B5%D8%AF%D8%A7%D8%B1-%D8%B4%D9%87%D8%A7%D8%AF%D8%A9-%D9%88%D9%81%D8%A7%D8%A9-%D9%85%D9%85%D9%8A%D9%83%D9%86%D8%A9-%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A9-%D9%85%D8%B3%D8%A8%D9%82%D8%A7",
+      "contentType": "text/html",
+      "chars": 50
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%A8%D8%AF%D9%84-%D8%AA%D8%A7%D9%84%D9%81-%D8%A8%D8%B7%D8%A7%D9%82%D8%A9-%D8%A7%D9%84%D8%B1%D9%82%D9%85-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%A8%D8%AF%D9%84-%D8%AA%D8%A7%D9%84%D9%81-%D8%A8%D8%B7%D8%A7%D9%82%D8%A9-%D8%A7%D9%84%D8%B1%D9%82%D9%85-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A",
+      "contentType": "text/html",
+      "chars": 41
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%A8%D8%AF%D9%84-%D9%81%D8%A7%D9%82%D8%AF-%D8%A8%D8%B7%D8%A7%D9%82%D8%A9-%D8%A7%D9%84%D8%B1%D9%82%D9%85-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%A8%D8%AF%D9%84-%D9%81%D8%A7%D9%82%D8%AF-%D8%A8%D8%B7%D8%A7%D9%82%D8%A9-%D8%A7%D9%84%D8%B1%D9%82%D9%85-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A",
+      "contentType": "text/html",
+      "chars": 41
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%A8%D8%AF%D9%84-%D9%81%D8%A7%D9%82%D8%AF-%D8%B1%D8%AE%D8%B5%D8%A9-%D9%85%D8%B1%D9%83%D8%A8%D8%A9",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%A8%D8%AF%D9%84-%D9%81%D8%A7%D9%82%D8%AF-%D8%B1%D8%AE%D8%B5%D8%A9-%D9%85%D8%B1%D9%83%D8%A8%D8%A9",
+      "contentType": "text/html",
+      "chars": 33
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%AA%D8%AC%D8%AF%D9%8A%D8%AF-%D8%B1%D8%AE%D8%B5%D8%A9-%D9%85%D8%B1%D9%83%D8%A8%D8%A9",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%AA%D8%AC%D8%AF%D9%8A%D8%AF-%D8%B1%D8%AE%D8%B5%D8%A9-%D9%85%D8%B1%D9%83%D8%A8%D8%A9",
+      "contentType": "text/html",
+      "chars": 30
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%AA%D9%81%D8%B9%D9%8A%D9%84-%D8%A8%D8%B7%D8%A7%D9%82%D8%A9-%D8%AA%D9%85%D9%88%D9%8A%D9%86",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%AA%D9%81%D8%B9%D9%8A%D9%84-%D8%A8%D8%B7%D8%A7%D9%82%D8%A9-%D8%AA%D9%85%D9%88%D9%8A%D9%86",
+      "contentType": "text/html",
+      "chars": 31
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%B4%D9%87%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D9%85%D9%8A%D9%84%D8%A7%D8%AF",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%B4%D9%87%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D9%85%D9%8A%D9%84%D8%A7%D8%AF",
+      "contentType": "text/html",
+      "chars": 27
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D8%B6%D9%85-%D8%A3%D9%81%D8%B1%D8%A7%D8%AF-%D8%A3%D8%B3%D8%B1%D8%AA%D9%89",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D8%B6%D9%85-%D8%A3%D9%81%D8%B1%D8%A7%D8%AF-%D8%A3%D8%B3%D8%B1%D8%AA%D9%89",
+      "contentType": "text/html",
+      "chars": 28
+    },
+    {
+      "url": "https://digital.gov.eg/categories/terms/%D9%86%D9%82%D9%84-%D9%85%D9%86-%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9-%D8%A5%D9%84%D9%89-%D8%A3%D8%AE%D8%B1%D9%89",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/categories/terms/%D9%86%D9%82%D9%84-%D9%85%D9%86-%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9-%D8%A5%D9%84%D9%89-%D8%A3%D8%AE%D8%B1%D9%89",
+      "contentType": "text/html",
+      "chars": 36
+    },
+    {
+      "url": "https://egyptera.org/ar/ComplaintsForm.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://egyptera.org/ar/ComplaintsForm.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5853
+    },
+    {
+      "url": "https://egyptera.org/ar/ComplaintsProc.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://egyptera.org/ar/ComplaintsProc.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5074
+    },
+    {
+      "url": "https://egyptera.org/ar/ConsumerDuties.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://egyptera.org/ar/ConsumerDuties.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 4790
+    },
+    {
+      "url": "https://egyptera.org/ar/ConsumerRight.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://egyptera.org/ar/ConsumerRight.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5098
+    },
+    {
+      "url": "https://egyptera.org/ar/DisCompDuties.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://egyptera.org/ar/DisCompDuties.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5428
+    },
+    {
+      "url": "https://egyptera.org/ar/FAQ.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://egyptera.org/ar/FAQ.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 6417
+    },
+    {
+      "url": "https://egyptera.org/ar/docToEleConn.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://egyptera.org/ar/docToEleConn.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 8493
+    },
+    {
+      "url": "https://egyptera.org/en/BillCalcApp1/billcalc1.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://egyptera.org/en/BillCalcApp1/billcalc1.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 131
+    },
+    {
+      "url": "https://egyptera.org/en/TarrifApril2026.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://egyptera.org/en/TarrifApril2026.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 6640
+    },
+    {
+      "url": "https://eta.gov.eg/ar/content/atsl-bna-alfatwrt-alalktrwnyt",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://eta.gov.eg/ar/content/atsl-bna-alfatwrt-alalktrwnyt",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 3918
+    },
+    {
+      "url": "https://eta.gov.eg/ar/home",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://eta.gov.eg/ar/home",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 8050
+    },
+    {
+      "url": "https://eta.gov.eg/ar/taxation-districts",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://eta.gov.eg/ar/taxation-districts",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5019
+    },
+    {
+      "url": "https://eta.gov.eg/ar/your_guide_for_ETA_portalar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://eta.gov.eg/ar/your_guide_for_ETA_portalar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5600
+    },
+    {
+      "url": "https://eta.gov.eg/sites/default/files/2025-03/Guide.of_.The_.Egyptian.Tax_.Authority.Services.%28First%20Edition%29.pdf",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://eta.gov.eg/sites/default/files/2025-03/Guide.of_.The_.Egyptian.Tax_.Authority.Services.%28First%20Edition%29.pdf",
+      "contentType": "application/pdf",
+      "note": "Non-HTML source; retrieval is not content verification"
+    },
+    {
+      "url": "https://moi.gov.eg/News/GetDetails?newsId=b74b3b17-7bd1-403d-be5d-d7b1deadb1aa&sectionId=1",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://moi.gov.eg/News/GetDetails?newsId=b74b3b17-7bd1-403d-be5d-d7b1deadb1aa&sectionId=1",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2946
+    },
+    {
+      "url": "https://moi.gov.eg/Passports/home/PassportRequiredPapers",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://moi.gov.eg/Passports/home/PassportRequiredPapers",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 792
+    },
+    {
+      "url": "https://moi.gov.eg/Passports/home/PasswordLost",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://moi.gov.eg/Passports/home/PasswordLost",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 1580
+    },
+    {
+      "url": "https://moi.gov.eg/passports/certificate/index/1",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://moi.gov.eg/passports/certificate/index/1",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 1941
+    },
+    {
+      "url": "https://moss.gov.eg/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://moss.gov.eg/",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 9262
+    },
+    {
+      "url": "https://ncedc.gov.eg/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://ncedc.gov.eg/",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 3980
+    },
+    {
+      "url": "https://ncedc.gov.eg/AhliPayment",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://ncedc.gov.eg/AhliPayment",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 1052
+    },
+    {
+      "url": "https://portal.eta.gov.eg/ar/content/altwqy-alalktrwny",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://portal.eta.gov.eg/ar/content/altwqy-alalktrwny",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4382
+    },
+    {
+      "url": "https://portal.eta.gov.eg/ar/content/e-receipt-services",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://portal.eta.gov.eg/ar/content/e-receipt-services",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 6431
+    },
+    {
+      "url": "https://pos.eta.gov.eg/ar/faqs",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://pos.eta.gov.eg/ar/faqs",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 20183
+    },
+    {
+      "url": "https://sdedc.gov.eg/ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://sdedc.gov.eg/ar",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 9097
+    },
+    {
+      "url": "https://sdedc.gov.eg/ar/Bill_Payment",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://sdedc.gov.eg/ar/NoFatora?aspxerrorpath=/ar/Bill_Payment",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2692
+    },
+    {
+      "url": "https://sdedc.gov.eg/ar/Fatora",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://sdedc.gov.eg/ar/NoFatora?aspxerrorpath=/ar/Fatora",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2692
+    },
+    {
+      "url": "https://sdk.invoicing.eta.gov.eg/api/09-create-egs-code-usage/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://sdk.invoicing.eta.gov.eg/api/09-create-egs-code-usage/",
+      "contentType": "text/html",
+      "chars": 3201
+    },
+    {
+      "url": "https://sdk.invoicing.eta.gov.eg/faq/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://sdk.invoicing.eta.gov.eg/faq/",
+      "contentType": "text/html",
+      "chars": 3645
+    },
+    {
+      "url": "https://support.apple.com/en-us/101593",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.apple.com/en-us/101593",
+      "contentType": "text/html;charset=utf-8",
+      "chars": 7074
+    },
+    {
+      "url": "https://support.apple.com/en-us/108366",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.apple.com/en-us/108366",
+      "contentType": "text/html;charset=utf-8",
+      "chars": 1866
+    },
+    {
+      "url": "https://support.apple.com/en-us/108771",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.apple.com/en-us/108771",
+      "contentType": "text/html;charset=utf-8",
+      "chars": 3324
+    },
+    {
+      "url": "https://support.apple.com/en-us/108796",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.apple.com/en-us/108796",
+      "contentType": "text/html;charset=utf-8",
+      "chars": 2696
+    },
+    {
+      "url": "https://support.apple.com/en-us/108967",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.apple.com/en-us/108967",
+      "contentType": "text/html;charset=utf-8",
+      "chars": 1987
+    },
+    {
+      "url": "https://support.apple.com/en-us/120837",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.apple.com/en-us/120837",
+      "contentType": "text/html;charset=utf-8",
+      "chars": 6358
+    },
+    {
+      "url": "https://support.google.com/accounts/answer/1187538?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/accounts/answer/1187538?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4480
+    },
+    {
+      "url": "https://support.google.com/accounts/answer/185834?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/accounts/answer/185834?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 8243
+    },
+    {
+      "url": "https://support.google.com/accounts/answer/185839?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/accounts/answer/185839?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 8137
+    },
+    {
+      "url": "https://support.google.com/accounts/answer/3024190?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/accounts/answer/3024190?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 20064
+    },
+    {
+      "url": "https://support.google.com/accounts/answer/3067630?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/accounts/answer/3067630?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 6337
+    },
+    {
+      "url": "https://support.google.com/android/answer/12761392?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/android/answer/12761392?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 2923
+    },
+    {
+      "url": "https://support.google.com/android/answer/13530434?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/android/answer/13530434?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 2851
+    },
+    {
+      "url": "https://support.google.com/android/answer/13761358?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/android/answer/13761358?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 7414
+    },
+    {
+      "url": "https://support.google.com/android/answer/2819582?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/android/answer/2819582?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 9744
+    },
+    {
+      "url": "https://support.google.com/android/answer/6088915?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/android/answer/6088915?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5036
+    },
+    {
+      "url": "https://support.google.com/android/answer/6160491?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/android/answer/6160491?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 10270
+    },
+    {
+      "url": "https://support.google.com/android/answer/6179507?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/android/answer/6179507?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 6319
+    },
+    {
+      "url": "https://support.google.com/android/answer/9064445?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/android/answer/9064445?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 3933
+    },
+    {
+      "url": "https://support.google.com/android/answer/9431959?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/android/answer/9431959?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5531
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/111996?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/111996?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5787
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/142063?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/142063?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5809
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/173424?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/173424?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 7082
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/2364824?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/2364824?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4925
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/2392709?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/2392709?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5170
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/2765944?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/2765944?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 6737
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/2898334?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/2898334?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5446
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/3220216?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/3220216?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 6574
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/3296214?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/3296214?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4501
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/6130773?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/6130773?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4538
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/95314?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/95314?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5248
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/95414?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/95414?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5130
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/95426?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/95426?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5929
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/95472?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/95472?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 6115
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/95647?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/95647?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 10298
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/95669?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/95669?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 9661
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/95759?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/95759?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 8018
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/96816?hl=en&co=GENIE.Platform%3DDesktop",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/chrome/answer/96816?hl=en&co=GENIE.Platform%3DDesktop",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4386
+    },
+    {
+      "url": "https://support.google.com/docs/answer/10296604?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/10296604?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4153
+    },
+    {
+      "url": "https://support.google.com/docs/answer/11528737?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/11528737?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4031
+    },
+    {
+      "url": "https://support.google.com/docs/answer/116338?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/116338?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5609
+    },
+    {
+      "url": "https://support.google.com/docs/answer/1218656?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/1218656?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 7671
+    },
+    {
+      "url": "https://support.google.com/docs/answer/139706?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/139706?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 9094
+    },
+    {
+      "url": "https://support.google.com/docs/answer/141062?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/141062?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 2382
+    },
+    {
+      "url": "https://support.google.com/docs/answer/143346?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/143346?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4084
+    },
+    {
+      "url": "https://support.google.com/docs/answer/15473134?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/15473134?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 6485
+    },
+    {
+      "url": "https://support.google.com/docs/answer/1689475?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/1689475?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 3535
+    },
+    {
+      "url": "https://support.google.com/docs/answer/1696521?co=GENIE.Platform%3DDesktop&hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/1696521?co=GENIE.Platform%3DDesktop&hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5106
+    },
+    {
+      "url": "https://support.google.com/docs/answer/1696787?co=GENIE.Platform%3DDesktop&hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/1696787?co=GENIE.Platform%3DDesktop&hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 7443
+    },
+    {
+      "url": "https://support.google.com/docs/answer/1705254?co=GENIE.Platform%3DDesktop&hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/1705254?co=GENIE.Platform%3DDesktop&hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5500
+    },
+    {
+      "url": "https://support.google.com/docs/answer/186103?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/186103?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5242
+    },
+    {
+      "url": "https://support.google.com/docs/answer/187189?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/187189?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 3945
+    },
+    {
+      "url": "https://support.google.com/docs/answer/2763168?co=GENIE.Platform%3DDesktop&hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/2763168?co=GENIE.Platform%3DDesktop&hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 2643
+    },
+    {
+      "url": "https://support.google.com/docs/answer/2839588?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/2839588?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 6453
+    },
+    {
+      "url": "https://support.google.com/docs/answer/2917686?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/2917686?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4485
+    },
+    {
+      "url": "https://support.google.com/docs/answer/3378864?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/3378864?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 10490
+    },
+    {
+      "url": "https://support.google.com/docs/answer/3540681?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/3540681?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 8492
+    },
+    {
+      "url": "https://support.google.com/docs/answer/39003?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/39003?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 2997
+    },
+    {
+      "url": "https://support.google.com/docs/answer/56470?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/56470?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 6017
+    },
+    {
+      "url": "https://support.google.com/docs/answer/57859?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/57859?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4066
+    },
+    {
+      "url": "https://support.google.com/docs/answer/58515?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/58515?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4899
+    },
+    {
+      "url": "https://support.google.com/docs/answer/6033474?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/6033474?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4106
+    },
+    {
+      "url": "https://support.google.com/docs/answer/6281888?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/6281888?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 3764
+    },
+    {
+      "url": "https://support.google.com/docs/answer/6325535?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/6325535?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 3567
+    },
+    {
+      "url": "https://support.google.com/docs/answer/63824?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/63824?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 7942
+    },
+    {
+      "url": "https://support.google.com/docs/answer/6386827?co=GENIE.Platform%3DDesktop&hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/6386827?co=GENIE.Platform%3DDesktop&hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 3365
+    },
+    {
+      "url": "https://support.google.com/docs/answer/65129?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/65129?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 11171
+    },
+    {
+      "url": "https://support.google.com/docs/answer/7009814?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/7009814?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 6140
+    },
+    {
+      "url": "https://support.google.com/docs/answer/7032287?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/7032287?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5279
+    },
+    {
+      "url": "https://support.google.com/docs/answer/7322334?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/7322334?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5286
+    },
+    {
+      "url": "https://support.google.com/docs/answer/7663148?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/7663148?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4131
+    },
+    {
+      "url": "https://support.google.com/docs/answer/7684717?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/7684717?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 2937
+    },
+    {
+      "url": "https://support.google.com/docs/answer/78413?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/78413?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 6378
+    },
+    {
+      "url": "https://support.google.com/docs/answer/86629?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/86629?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5362
+    },
+    {
+      "url": "https://support.google.com/docs/answer/9060449?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/9060449?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4000
+    },
+    {
+      "url": "https://support.google.com/docs/answer/9109474?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/9109474?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5251
+    },
+    {
+      "url": "https://support.google.com/docs/answer/97447?hl=en",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/docs/answer/97447?hl=en",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 8720
+    },
+    {
+      "url": "https://support.google.com/drive/answer/1716222?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/drive/answer/1716222?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 2752
+    },
+    {
+      "url": "https://support.google.com/drive/answer/2375102?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/drive/answer/2375102?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4057
+    },
+    {
+      "url": "https://support.google.com/drive/answer/2423534?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/drive/answer/2423534?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5347
+    },
+    {
+      "url": "https://support.google.com/drive/answer/2424368?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/drive/answer/2424368?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4669
+    },
+    {
+      "url": "https://support.google.com/drive/answer/2494822?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/drive/answer/7166529?hl=ar&visit_id=639291144006963497-615791955&rd=1",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 11713
+    },
+    {
+      "url": "https://support.google.com/drive/answer/2494893?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/drive/answer/7166529?hl=ar&visit_id=639291144006984182-2836330123&rd=1",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 11714
+    },
+    {
+      "url": "https://support.google.com/mail/answer/118708?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/mail/answer/118708?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5030
+    },
+    {
+      "url": "https://support.google.com/mail/answer/6579?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/mail/answer/6579?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4035
+    },
+    {
+      "url": "https://support.google.com/mail/answer/7190?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/mail/answer/7190?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 6552
+    },
+    {
+      "url": "https://support.google.com/mail/answer/8253?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/mail/answer/8253?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 9707
+    },
+    {
+      "url": "https://support.google.com/photos/answer/6128843?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/photos/answer/6128843?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 5609
+    },
+    {
+      "url": "https://support.google.com/photos/answer/7652919?hl=ar",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.google.com/photos/answer/7652919?hl=ar",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 3868
+    },
+    {
+      "url": "https://support.microsoft.com/ar-sa/accessibility/windows/make-text-and-apps-bigger",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.microsoft.com/ar-sa/accessibility/windows/make-text-and-apps-bigger",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5421
+    },
+    {
+      "url": "https://support.microsoft.com/en-gb/windows/change-the-size-of-text-in-windows-1d5830c3-eee3-8eaa-836b-abcc37d99b9a",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.microsoft.com/en-gb/windows/experience/change-the-size-of-text-in-windows",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 4655
+    },
+    {
+      "url": "https://support.microsoft.com/en-gb/windows/experience/startup-boot/configure-startup-applications-in-windows?nochrome=true",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.microsoft.com/en-gb/windows/experience/startup-boot/configure-startup-applications-in-windows?nochrome=true",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5645
+    },
+    {
+      "url": "https://support.microsoft.com/en-gb/windows/experience/storage-filemanagement/zip-and-unzip-files",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.microsoft.com/en-gb/windows/experience/storage-filemanagement/zip-and-unzip-files",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5757
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/apps/change-default-apps-in-windows",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.microsoft.com/en-us/windows/apps/change-default-apps-in-windows",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5377
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/apps/use-snipping-tool-to-capture-screenshots",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.microsoft.com/en-us/windows/apps/use-snipping-tool-to-capture-screenshots",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 14362
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/apps/using-the-clipboard",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.microsoft.com/en-us/windows/apps/using-the-clipboard",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 9331
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/experience/configure-multiple-desktops-in-windows",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.microsoft.com/en-us/windows/experience/configure-multiple-desktops-in-windows",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 7626
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/share-things-with-nearby-devices-in-windows",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/share-things-with-nearby-devices-in-windows",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 11434
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/experience/snap-your-windows",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.microsoft.com/en-us/windows/experience/snap-your-windows",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 14267
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/free-up-drive-space-in-windows",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/free-up-drive-space-in-windows",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 17375
+    },
+    {
+      "url": "https://te.eg/en/about-te/faq/fixed-broadband",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://te.eg/en/about-te/faq/fixed-broadband",
+      "contentType": "text/html;charset=UTF-8",
+      "chars": 8258
+    },
+    {
+      "url": "https://te.eg/web/guest/personal/5g-mi",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://te.eg/web/guest/personal/5g-mi",
+      "contentType": "text/html;charset=UTF-8",
+      "chars": 7339
+    },
+    {
+      "url": "https://traffic.moi.gov.eg/Arabic/OurServices/InfoServices/InteriorMinisterDecision/Pages/Licenses-driving-rapid-transport-vehicles.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://traffic.moi.gov.eg/Arabic/OurServices/InfoServices/InteriorMinisterDecision/Pages/Licenses-driving-rapid-transport-vehicles.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 138
+    },
+    {
+      "url": "https://traffic.moi.gov.eg/Arabic/OurServices/InfoServices/InteriorMinisterDecision/Pages/replacement-lost-damaged-license.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://traffic.moi.gov.eg/Arabic/OurServices/InfoServices/InteriorMinisterDecision/Pages/replacement-lost-damaged-license.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 138
+    },
+    {
+      "url": "https://traffic.moi.gov.eg/Arabic/OurServices/Pages/Eservices.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://traffic.moi.gov.eg/Arabic/OurServices/Pages/Eservices.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 138
+    },
+    {
+      "url": "https://traffic.moi.gov.eg/Arabic/OurServices/Pages/VerifyVehicle.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://traffic.moi.gov.eg/Arabic/OurServices/Pages/VerifyVehicle.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 138
+    },
+    {
+      "url": "https://traffic.moi.gov.eg/Arabic/Pages/faq.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://traffic.moi.gov.eg/Arabic/Pages/faq.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 139
+    },
+    {
+      "url": "https://traffic.moi.gov.eg/Arabic/Pages/terms-drivinglicense-replacement-of-damaged.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://traffic.moi.gov.eg/Arabic/Pages/terms-drivinglicense-replacement-of-damaged.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 139
+    },
+    {
+      "url": "https://ueedc.com/autocode",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://ueedc.com/autocode",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 690
+    },
+    {
+      "url": "https://ueedc.com/ueed/company/chairman-message",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://ueedc.com/ueed/company/chairman-message",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2530
+    },
+    {
+      "url": "https://ueedc.com/ueed/company/sectors",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://ueedc.com/ueed/company/sectors",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 3937
+    },
+    {
+      "url": "https://ueedc.com/ueed/faq",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://ueedc.com/ueed/faq",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2774
+    },
+    {
+      "url": "https://www.cairo.gov.eg/ar/news/2026/734b2fc1caf44c9f87cdcbcf80afc57f",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.cairo.gov.eg/ar/news/2026/734b2fc1caf44c9f87cdcbcf80afc57f",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 6160
+    },
+    {
+      "url": "https://www.eta.gov.eg/ar/content/adlt-almmwlyn-lltaml-m-alfatwrt-alalktrwnyt",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.eta.gov.eg/ar/content/adlt-almmwlyn-lltaml-m-alfatwrt-alalktrwnyt",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4276
+    },
+    {
+      "url": "https://www.eta.gov.eg/ar/content/altsjyl-ly-mnzwmt-alfatwrt-alalktrwnyt",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.eta.gov.eg/ar/content/altsjyl-ly-mnzwmt-alfatwrt-alalktrwnyt",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 3713
+    },
+    {
+      "url": "https://www.eta.gov.eg/ar/content/e-invoice-services",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.eta.gov.eg/ar/content/e-invoice-services",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4040
+    },
+    {
+      "url": "https://www.eta.gov.eg/sites/default/files/2022-12/E-INVOICING-SELF-REGISTRATION.pdf",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.eta.gov.eg/sites/default/files/2022-12/E-INVOICING-SELF-REGISTRATION.pdf",
+      "contentType": "application/pdf",
+      "note": "Non-HTML source; retrieval is not content verification"
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/2",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/2",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2451
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/65",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/65",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 3053
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/73",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/73",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 9625
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/75",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/75",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 3091
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/77",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/77",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2282
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/79",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/79",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2057
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/80",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/80",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2616
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/82",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/82",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2629
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/84",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/84",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2803
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/86",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/86",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2723
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/90",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/90",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 3355
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/92",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/92",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2747
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/94",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/94",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2058
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/96",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/96",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 1910
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/98",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/98",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2431
+    },
+    {
+      "url": "https://www.mfa.gov.eg/ar/ratificationoffices/authenticationprocedure",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.mfa.gov.eg/ar/ratificationoffices/authenticationprocedure",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5947
+    },
+    {
+      "url": "https://www.moi.gov.eg/Account/RegisterUser",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.moi.gov.eg/Account/RegisterUser",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2522
+    },
+    {
+      "url": "https://www.moi.gov.eg/home/directoryservices",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.moi.gov.eg/home/directoryservices",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 1308
+    },
+    {
+      "url": "https://www.moi.gov.eg/passports/home/getpassport/1",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.moi.gov.eg/passports/home/getpassport/1",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 1709
+    },
+    {
+      "url": "https://www.moss.gov.eg/%D8%A7%D9%84%D8%A7%D8%B3%D8%A6%D9%84%D8%A9-%D8%A7%D9%84%D8%B4%D8%A7%D8%A6%D8%B9%D8%A9/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.moss.gov.eg/%D8%A7%D9%84%D8%A7%D8%B3%D8%A6%D9%84%D8%A9-%D8%A7%D9%84%D8%B4%D8%A7%D8%A6%D8%B9%D8%A9/",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 55015
+    },
+    {
+      "url": "https://www.moss.gov.eg/%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9/%D8%A7%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9-%D9%84%D9%84%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D9%86%D9%82%D8%AF%D9%8A-%D8%A3%D9%88%D9%84%D8%A7-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%A7%D9%84%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D9%86%D9%82%D8%AF%D9%8A-%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B7-%D8%AA%D9%83%D8%A7%D9%81%D9%84-%D9%88%D9%83%D8%B1%D8%A7%D9%85%D8%A9/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.moss.gov.eg/%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9/%D8%A7%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9-%D9%84%D9%84%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D9%86%D9%82%D8%AF%D9%8A-%D8%A3%D9%88%D9%84%D8%A7-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%A7%D9%84%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D9%86%D9%82%D8%AF%D9%8A-%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B7-%D8%AA%D9%83%D8%A7%D9%81%D9%84-%D9%88%D9%83%D8%B1%D8%A7%D9%85%D8%A9/",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5744
+    },
+    {
+      "url": "https://www.nosi.gov.eg/ar/Services/Pages/Info/GetBeneficiaryInfo.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.nosi.gov.eg/ar/Services/Pages/Info/GetBeneficiaryInfo.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5363
+    },
+    {
+      "url": "https://www.nosi.gov.eg/ar/Services/Pages/Info/GetInsuredDeduction.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.nosi.gov.eg/ar/Services/Pages/Info/GetInsuredDeduction.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5395
+    },
+    {
+      "url": "https://www.nosi.gov.eg/ar/Services/Pages/Info/GetInsuredDetails.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.nosi.gov.eg/ar/Services/Pages/Info/GetInsuredDetails.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5824
+    },
+    {
+      "url": "https://www.nosi.gov.eg/ar/Services/Pages/Info/GetLastPeriod.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.nosi.gov.eg/ar/Services/Pages/Info/GetLastPeriod.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5342
+    },
+    {
+      "url": "https://www.nosi.gov.eg/ar/Services/Pages/Info/GetPensionExpenses.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.nosi.gov.eg/ar/Services/Pages/Info/GetPensionExpenses.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5385
+    },
+    {
+      "url": "https://www.nosi.gov.eg/ar/Services/Pages/Info/PurchaseDurationEmp.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.nosi.gov.eg/ar/Services/Pages/Info/PurchaseDurationEmp.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 6301
+    },
+    {
+      "url": "https://www.nosi.gov.eg/ar/Services/pages/info/getallperiodsinfo.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.nosi.gov.eg/ar/Services/pages/info/getallperiodsinfo.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5462
+    },
+    {
+      "url": "https://www.sdedc.gov.eg/ar/NoFatora?aspxerrorpath=%2F",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.sdedc.gov.eg/ar/NoFatora?aspxerrorpath=%2F",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2692
+    },
+    {
+      "url": "https://www.tra.gov.eg/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.tra.gov.eg/",
+      "contentType": "text/html",
+      "chars": 507
+    },
+    {
+      "url": "https://aedc.gov.eg/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://aedc.gov.eg/modwanat/guideservices.pdf",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://assets.eehc.gov.eg/files/دليل المواطن للتعامل مع خدمات المنصة.pdf",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://bedc.gov.eg/اتصل-بنا/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://bedc.gov.eg/%D8%A7%D8%AA%D8%B5%D9%84-%D8%A8%D9%86%D8%A7/",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4582
+    },
+    {
+      "url": "https://bedc.gov.eg/خدمة-العملاء/ادخال-قراءة-العداد/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://bedc.gov.eg/%D8%AE%D8%AF%D9%85%D8%A9-%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%A1/%D8%A7%D8%AF%D8%AE%D8%A7%D9%84-%D9%82%D8%B1%D8%A7%D8%A1%D8%A9-%D8%A7%D9%84%D8%B9%D8%AF%D8%A7%D8%AF/",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4181
+    },
+    {
+      "url": "https://bedc.gov.eg/خدمة-العملاء/استعلام-و-سداد-فاتورة-الكهرباء/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://bedc.gov.eg/%D8%AE%D8%AF%D9%85%D8%A9-%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%A1/%D8%A7%D8%B3%D8%AA%D8%B9%D9%84%D8%A7%D9%85-%D9%88-%D8%B3%D8%AF%D8%A7%D8%AF-%D9%81%D8%A7%D8%AA%D9%88%D8%B1%D8%A9-%D8%A7%D9%84%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A1/",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 4148
+    },
+    {
+      "url": "https://bedc.gov.eg/خدمة-العملاء/دليل-العدادات-مسبوقة-الدفع/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://bedc.gov.eg/%D8%AE%D8%AF%D9%85%D8%A9-%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%A1/%D8%AF%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D8%B9%D8%AF%D8%A7%D8%AF%D8%A7%D8%AA-%D9%85%D8%B3%D8%A8%D9%88%D9%82%D8%A9-%D8%A7%D9%84%D8%AF%D9%81%D8%B9/",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 3979
+    },
+    {
+      "url": "https://blogs.realestate.gov.eg/ar/news/الإسكان-تشرح-طريقة-التقديم-على-شقق-الإ/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://blogs.realestate.gov.eg/ar/news/%D8%A7%D9%84%D8%A5%D8%B3%D9%83%D8%A7%D9%86-%D8%AA%D8%B4%D8%B1%D8%AD-%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%A7%D9%84%D8%AA%D9%82%D8%AF%D9%8A%D9%85-%D8%B9%D9%84%D9%89-%D8%B4%D9%82%D9%82-%D8%A7%D9%84%D8%A5/",
+      "contentType": "text/html; charset=UTF-8",
+      "chars": 2912
+    },
+    {
+      "url": "https://cpa.gov.eg/ar-EG/%D8%A7%D8%B3%D8%A6%D9%84%D8%A9-%D9%85%D8%AA%D9%83%D8%B1%D8%B1%D8%A9",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "url": "https://cpa.gov.eg/ar-eg/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "url": "https://cpa.gov.eg/ar-eg/%D8%A7%D8%AA%D8%B5%D9%84-%D8%A8%D9%86%D8%A7",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "url": "https://cpa.gov.eg/ar-eg/%D8%A7%D9%84%D8%AA%D9%82%D8%AF%D9%85-%D8%A8%D8%B4%D9%83%D9%88%D9%89",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "url": "https://cpa.gov.eg/ar-eg/%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%B2-%D9%81%D9%8A-%D8%A7%D9%84%D8%B5%D8%AD%D9%81/ArtMID/481/ArticleID/6749",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "url": "https://cpa.gov.eg/ar-eg/%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D8%A7%D8%B9%D9%84%D8%A7%D9%85%D9%8A%D8%A9/ArtMID/654/ArticleID/6789",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "url": "https://cpa.gov.eg/ar-eg/%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D8%A7%D8%B9%D9%84%D8%A7%D9%85%D9%8A%D8%A9/ArtMID/654/ArticleID/7041/%D8%AA%D8%B2%D8%A7%D9%85%D9%86%D8%A7-%D9%85%D8%B9-%D8%A5%D9%86%D8%B7%D9%84%D8%A7%D9%82-%D9%85%D9%88%D8%B3%D9%85-%D8%AA%D8%AE%D9%81%D9%8A%D8%B6%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9-%D8%A7%D9%84%D8%A8%D9%8A%D8%B6%D8%A7%D8%A1-%E3%80%8A-%D8%AC%D9%87%D8%A7%D8%B2-%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%87%D9%84%D9%83-%D9%8A%D9%8F%D8%AD%D8%B0%D8%B1-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%87%D9%84%D9%83%D9%8A%D9%86-%D9%85%D9%86-%D8%A7%D9%84%D8%A5%D9%86%D8%B3%D9%8A%D8%A7%D9%82-%D9%88%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D9%88%D9%87%D9%85%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D9%8F%D8%B6%D9%84%D9%84%D8%A9-%D8%8C-%D9%88%D9%8A%D9%87%D9%8A%D8%A8-%D8%A7%D9%84%D8%AA%D9%8F%D8%AC%D8%A7%D8%B1-%D9%88%D8%A7%D9%84%D9%85%D9%88%D8%B1%D8%AF%D9%8A%D9%86-%D8%A7%D9%84%D8%A5%D9%84%D8%AA%D8%B2%D8%A7%D9%85-%D8%A8%D8%A3%D8%AD%D9%83%D8%A7%D9%85-%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%87%D9%84%D9%83-%E3%80%8B",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "url": "https://cpa.gov.eg/ar-eg/%D8%AA%D8%AD%D8%B0%D9%8A%D8%B1%D8%A7%D8%AA",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "url": "https://cpa.gov.eg/ar-eg/%D8%AA%D8%B9%D8%B1%D9%8A%D9%81%D8%A7%D8%AA",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "url": "https://cpa.gov.eg/ar-eg/%D9%83%D9%8A%D9%81-%D8%AA%D8%AA%D9%82%D8%AF%D9%85-%D8%A8%D8%B4%D9%83%D9%88%D9%89",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "url": "https://cpa.gov.eg/ar-eg/%D9%85%D8%B1%D8%A7%D9%83%D8%B2-%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A9-%D8%A7%D9%84%D9%85%D8%B9%D8%AA%D9%85%D8%AF%D8%A9",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "url": "https://digital.gov.eg/gov-services/الحماية-الاجتماعية/04",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/gov-services/%D8%A7%D9%84%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9/04",
+      "contentType": "text/html",
+      "chars": 11
+    },
+    {
+      "url": "https://digital.gov.eg/gov-services/الخدمات-المدنية/06",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://digital.gov.eg/gov-services/%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D8%A9/06",
+      "contentType": "text/html",
+      "chars": 11
+    },
+    {
+      "url": "https://eehc.gov.eg/CMSEehc/%D9%85%D8%B1%D8%A7%D9%83%D8%B2-%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A9/02-%D8%B4%D8%B1%D9%83%D8%A9-%D8%B4%D9%85%D8%A7%D9%84-%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9-%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9-%D8%A7%D9%84%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A1/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "url": "https://eehc.gov.eg/CMSEehc/الاخبار/استعدادا-لعيد-الفطر-المبارك-وزارة-الكهرباء-والطاقة-المتجددة-فرق-طوارئ-ولجان-مرور-و465-مركز-خدمة-وسيارات-متنقلة-لتقديم-الخدمات-للمواطنين-خلال-فترة-الإجازة/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://eehc.gov.eg/CMSEehc/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%D8%A7-%D9%84%D8%B9%D9%8A%D8%AF-%D8%A7%D9%84%D9%81%D8%B7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B1%D9%83-%D9%88%D8%B2%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A1-%D9%88%D8%A7%D9%84%D8%B7%D8%A7%D9%82%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%AF%D8%AF%D8%A9-%D9%81%D8%B1%D9%82-%D8%B7%D9%88%D8%A7%D8%B1%D8%A6-%D9%88%D9%84%D8%AC%D8%A7%D9%86-%D9%85%D8%B1%D9%88%D8%B1-%D9%88465-%D9%85%D8%B1%D9%83%D8%B2-%D8%AE%D8%AF%D9%85%D8%A9-%D9%88%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA-%D9%85%D8%AA%D9%86%D9%82%D9%84%D8%A9-%D9%84%D8%AA%D9%82%D8%AF%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D9%84%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A%D9%86-%D8%AE%D9%84%D8%A7%D9%84-%D9%81%D8%AA%D8%B1%D8%A9-%D8%A7%D9%84%D8%A5%D8%AC%D8%A7%D8%B2%D8%A9/",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5085
+    },
+    {
+      "url": "https://eehc.gov.eg/CMSEehc/الاخبار/بيان-صحف-من-وزارة-الكهرباء-والطاقة-المتجددة/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://eehc.gov.eg/CMSEehc/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/%D8%A8%D9%8A%D8%A7%D9%86-%D8%B5%D8%AD%D9%81-%D9%85%D9%86-%D9%88%D8%B2%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A1-%D9%88%D8%A7%D9%84%D8%B7%D8%A7%D9%82%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%AF%D8%AF%D8%A9/",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 4498
+    },
+    {
+      "url": "https://eehc.gov.eg/CMSEehc/الاسئلة-الشائعة/الاسئلة-الشائعة/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://eehc.gov.eg/CMSEehc/%D8%A7%D9%84%D8%A7%D8%B3%D8%A6%D9%84%D8%A9-%D8%A7%D9%84%D8%B4%D8%A7%D8%A6%D8%B9%D8%A9/%D8%A7%D9%84%D8%A7%D8%B3%D8%A6%D9%84%D8%A9-%D8%A7%D9%84%D8%B4%D8%A7%D8%A6%D8%B9%D8%A9/",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 6930
+    },
+    {
+      "url": "https://help.unhcr.org/egypt/birth-certificates-for-newborns/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/11",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/12",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/122",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/13",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/17",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/196",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/198",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/2",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/358",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/359",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/360",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/361",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/363",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/521",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/547",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/Services/566",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/providers/1/services",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/providers/2/services",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/providers/3/services",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://psm.gov.eg/providers/65/services",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://publicservices.moi.gov.eg/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "url": "https://scedc.gov.eg/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "url": "https://shmff.gov.eg/wps/portal/MFF/mediacenter/News/News-Details/shmff41_2191_58998644948444477/!ut/p/z0/hY27DoIwGIVfRQdG87ekQDs2DhgjYWAQuzQNFqhKubRRH99q4qpnOl9yLiCgBmHV3XTKm9GqW-CTSGXKabqjBB_KokoQx2VVxSRHlCKo1AJ7EL9DYSVeim3RgZiU7zfGtiPUrh_almAZY4ZlQhmjKSGMUBKUZe-Sucyz4CCa0Xr99FCHwsdb76RaIjTos1GrJrAOZPXDRegbiNCfg-maH6nj6xcFw2dp/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://sis.gov.eg/ar/المركز-الإعلامي/الأخبار/وزيرة-الإسكان-تترأس-اجتماع-مجلس-إدارة-صندوق-الإسكان-الاجتماعي-ودعم-التمويل-العقاري-1/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://sis.gov.eg/ar/المركز-الإعلامي/الأخبار/وزيرة-الإسكان-مد-فترة-التقديم-للحصول-على-وحدات-سكنية-وغير-سكنية-بديلة-لمدة-٣-أشهر/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://sis.gov.eg/en/media-center/news/pm-s-remarks-on-electricity-load-shedding-taken-out-of-context/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://tagned.mod.gov.eg/18militaryServiceTravelPermissionC.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://tagned.mod.gov.eg/traveldocsInfo.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://www.alamiria.com/Sec/TashTxt?id=095RGAMAeKE%3D",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://www.eehc.gov.eg/CMSEehc/الاخبار/بيان-اعلامى-9-5-2023/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.eehc.gov.eg/CMSEehc/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/%D8%A8%D9%8A%D8%A7%D9%86-%D8%A7%D8%B9%D9%84%D8%A7%D9%85%D9%89-9-5-2023/",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 5006
+    },
+    {
+      "url": "https://www.eehc.gov.eg/CMSEehc/تواصل-معنا/تطبيقات-الهاتف-المحمول/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.eehc.gov.eg/CMSEehc/%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D9%85%D8%B9%D9%86%D8%A7/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%D8%A7%D8%AA-%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81-%D8%A7%D9%84%D9%85%D8%AD%D9%85%D9%88%D9%84/",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 1779
+    },
+    {
+      "url": "https://www.eehc.gov.eg/CMSEehc/معلومات-المستهلكين/التوزيع-الجغرافي-لشركات-توزيع-الكهرباء/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.eehc.gov.eg/CMSEehc/%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%87%D9%84%D9%83%D9%8A%D9%86/%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9-%D8%A7%D9%84%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A-%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D8%AA%D9%88%D8%B2%D9%8A%D8%B9-%D8%A7%D9%84%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A1/",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 2919
+    },
+    {
+      "url": "https://www.moee.gov.eg/test_new/serv2.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    {
+      "url": "https://www.moss.gov.eg/المركز-الإعلامي/الأخبار/بنك-ناصر-الاجتماعي-انطلاقة-نحو-التمكين-الاقتصادي-منتج-جديد-يوفر-تمويلات-حتى-30-ألف-جنيه-لمستفيدي-تكافل-وكرامة-عبر-منصة-تمكين/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "status": 200,
+      "finalUrl": "https://www.moss.gov.eg/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2-%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%85%D9%8A/%D8%A7%D9%84%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1/%D8%A8%D9%86%D9%83-%D9%86%D8%A7%D8%B5%D8%B1-%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A-%D8%A7%D9%86%D8%B7%D9%84%D8%A7%D9%82%D8%A9-%D9%86%D8%AD%D9%88-%D8%A7%D9%84%D8%AA%D9%85%D9%83%D9%8A%D9%86-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A-%D9%85%D9%86%D8%AA%D8%AC-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%8A%D9%88%D9%81%D8%B1-%D8%AA%D9%85%D9%88%D9%8A%D9%84%D8%A7%D8%AA-%D8%AD%D8%AA%D9%89-30-%D8%A3%D9%84%D9%81-%D8%AC%D9%86%D9%8A%D9%87-%D9%84%D9%85%D8%B3%D8%AA%D9%81%D9%8A%D8%AF%D9%8A-%D8%AA%D9%83%D8%A7%D9%81%D9%84-%D9%88%D9%83%D8%B1%D8%A7%D9%85%D8%A9-%D8%B9%D8%A8%D8%B1-%D9%85%D9%86%D8%B5%D8%A9-%D8%AA%D9%85%D9%83%D9%8A%D9%86/",
+      "contentType": "text/html; charset=utf-8",
+      "chars": 4590
+    },
+    {
+      "url": "https://www.msit.gov.eg/?p=5042",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "The read operation timed out"
+    },
+    {
+      "url": "https://www.ndedco.gov.eg/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "url": "https://www.ndedco.gov.eg/CallCenter1.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "url": "https://www.ndedco.gov.eg/shebakwahed.aspx",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "url": "https://www.psm.gov.eg/Services/193",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://www.psm.gov.eg/Services/548",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/التنظيم/خدمات-أجهزة-الاتصالات/الضوابط-والشروط-الرئيسية-الواجب-تواف-2/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/التنظيم/خدمات-حماية-الأطفال-على-الإنترنت/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/التنظيم/دليل-ونصائح-المستخدم/حقوق-مستخدمي-خدمات-الاتصالات-داخل-فرو/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/التنظيم/دليل-ونصائح-المستخدم/دليل-توعية-المستخدم-لتحسين-تجربة-استخ/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/التنظيم/ميثاق-حقوق-وواجبات-المستخدمين/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/الجهاز-القومي-لتنظيم-الاتصالات-يحدث-ت/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/الجهاز-القومي-لتنظيم-الاتصالات-يحظر-أ/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/الجهاز-القومي-لتنظيم-الاتصالات-يصدر-ق/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/الجهاز-القومي-لتنظيم-الاتصالات-يضع-قا/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/الجهاز-القومي-لتنظيم-الاتصالات-يضيف-خ/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/الجهاز-القومي-لتنظيم-الاتصالات-يطلق-ا/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/الجهاز-القومي-لتنظيم-الاتصالات-يطلق-ت-3/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/الجهاز-القومي-لتنظيم-الاتصالات-يعلن-إ/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/الجهاز-القومي-لتنظيم-الاتصالات-يغرم-ش-2/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/الجهاز-القومي-لتنظيم-الاتصالات-يقر-ال-3/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/الدكتور-عمرو-طلعت-وزير-الاتصالات-وتكن-9/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/المركز-الإعلامي/البيانات-الصحفية/الجهاز-القومي-لتنظيم-الاتصالات-يصدر-إ/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/المستخدمون/الأسئلة-المتكررة/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/المستخدمون/جودة-الخدمات/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/المستخدمون/شكاوى-خدمات-الاتصالات/التواصل-مع-ذوي-الهمم/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/المستخدمون/شكاوى-خدمات-الاتصالات/خطوات-ومتطلبات-تقديم-شكاوى-مستخدمي-ال/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/المستخدمون/شكاوى-خدمات-الاتصالات/طرق-التواصل-مع-الجهاز/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/خدمات-العملاء/myntra-app/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/خدمات-العملاء/إبلاغ-عن-إزعاج-أو-احتيال/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/ar/قواعد-جديدة-لتيسير-التنقل-بين-مقدمي-خد/",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.tra.gov.eg/wp-content/uploads/دليل-استخدام-تقنية-الشريحة-المدمجة-eSIM-بالسوق-المصري.pdf",
+      "checkedAt": "2026-11-01",
+      "claimVerification": "not_reviewed",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ]
+}
