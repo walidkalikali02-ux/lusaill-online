@@ -1,3 +1,5 @@
+import { publishedCmsDocument } from "@/lib/cms/public";
+import { CmsPublicArticle } from "@/components/cms/public-article";
 import { getArticleAdvisories } from "@/lib/article-audit-updates";
 import { electricityDetailText } from "@/lib/electricity-inquiry-detail";
 import { pageAlternates } from "@/lib/page-alternates";
@@ -16,10 +18,12 @@ export function generateStaticParams() {
   return articles.filter((article) => article.status === "published").map((article) => ({ slug: article.slug }));
 }
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  const managed = await publishedCmsDocument(slug);
+  if (managed) return managed.status === 'archived' ? { robots: { index: false, follow: false } } : {title:managed.title,description:managed.description,alternates:pageAlternates(`/articles/${managed.slug}`),robots:{index:true,follow:true},openGraph:{title:managed.title,description:managed.description,url:`/articles/${managed.slug}`,type:'article'}};
   const article = getArticleBySlug(slug);
   if (!article || article.status !== "published") return { robots: { index: false, follow: false } };
   return {
@@ -64,6 +68,9 @@ function wordCount(article: { slug?: string; quickAnswer?: string; summaryTable?
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const managed = await publishedCmsDocument(slug);
+  if (managed?.status === 'archived') notFound();
+  if (managed) return <CmsPublicArticle document={managed}/>;
   const article = getArticleBySlug(slug);
   if (!article || article.status !== "published") notFound();
 

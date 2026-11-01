@@ -14,15 +14,27 @@
     "seo:audit": "node scripts/seo-audit.mjs",
     "seo:audit:test": "node scripts/test-seo-audit.mjs",
     "seo:site-check": "node scripts/check-site.mjs",
-    "seo:paths": "node scripts/check-guide-paths.mjs"
+    "seo:paths": "node scripts/check-guide-paths.mjs",
+    "cms:test": "node scripts/test-cms.mjs && node --import tsx scripts/test-cms-import.mts"
   },
   "dependencies": {
+    "@supabase/ssr": "0.12.7",
+    "@supabase/supabase-js": "2.118.0",
+    "@tiptap/extension-image": "3.32.2",
+    "@tiptap/extension-link": "3.32.2",
+    "@tiptap/extension-placeholder": "3.32.2",
+    "@tiptap/extension-table": "3.32.2",
+    "@tiptap/pm": "3.32.2",
+    "@tiptap/react": "3.32.2",
+    "@tiptap/starter-kit": "3.32.2",
     "@vercel/analytics": "^2.0.1",
     "next": "16.4.3",
     "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react-dom": "19.2.6",
+    "zod": "4.6.7"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.5.14",
     "@tailwindcss/postcss": "4.1.14",
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",
@@ -30,6 +42,7 @@
     "eslint": "9.39.4",
     "eslint-config-next": "16.4.3",
     "tailwindcss": "4.1.14",
+    "tsx": "4.23.15",
     "typescript": "5.9.3"
   },
   "type": "module",

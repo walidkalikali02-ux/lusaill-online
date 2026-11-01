@@ -1,7 +1,8 @@
+import { refreshCmsSession } from "./lib/cms/session";
 import { NextResponse, type NextRequest } from "next/server";
 
 // Combine host and path normalization into a single application redirect.
-export function proxy(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const target = new URL(request.url);
   const host = request.headers.get("host")?.split(":")[0];
   const isProductionHost = host === "lusaill.online" || host === "www.lusaill.online";
@@ -18,6 +19,7 @@ export function proxy(request: NextRequest) {
   const needsHost = isProductionHost && (host !== "www.lusaill.online" || request.headers.get("x-forwarded-proto") === "http");
   if (isProductionHost) { target.protocol = "https:"; target.hostname = "www.lusaill.online"; target.port = ""; }
   if (needsHost || target.pathname !== originalPath) return NextResponse.redirect(target, 301);
+  if (target.pathname.startsWith("/admin") || target.pathname.startsWith("/api/cms")) return refreshCmsSession(request);
   return NextResponse.next();
 }
 

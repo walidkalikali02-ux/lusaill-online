@@ -1,0 +1,44 @@
+.cms-article {
+  max-width: 850px;
+  margin: 24px auto;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+.cms-article h1 {
+  line-height: 1.6;
+}
+.cms-article h2 {
+  margin-top: 28px;
+}
+.cms-article table {
+  width: 100%;
+  border-collapse: collapse;
+  display: block;
+  overflow: auto;
+}
+.cms-article td,
+.cms-article th {
+  border: 1px solid #d7e3df;
+  padding: 12px;
+  text-align: right;
+}
+.cms-article img {
+  max-width: 100%;
+  height: auto;
+}
+.cms-article .cms-answer,
+.cms-article .cms-block-warning,
+.cms-article .cms-block-deadline {
+  border: 1px solid #d7e3df;
+  border-radius: 12px;
+  padding: 20px;
+  background: #f2f7f4;
+}
+.cms-article .cms-block {
+  margin-block: 24px;
+}
+.cms-article blockquote {
+  border-inline-start: 4px solid #176b58;
+  padding: 0 20px;
+  margin: 24px 0;
+}
