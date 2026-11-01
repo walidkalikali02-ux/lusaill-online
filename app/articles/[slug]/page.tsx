@@ -1,3 +1,4 @@
+import { HousingPressUpdate } from "@/components/housing-press-update";
 import { getArticleAdvisories } from "@/lib/article-audit-updates";
 import { electricityDetailText } from "@/lib/electricity-inquiry-detail";
 import { pageAlternates } from "@/lib/page-alternates";
@@ -193,6 +194,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
 
+        {article.slug.startsWith("old-rent-housing-") && <p className="article-meta-item">المراجعة أعلاه تخص المتابعة الصحفية؛ تواريخ التحقق من المصادر الرسمية منفصلة ومبيّنة أدناه.</p>}
+        {article.slug.startsWith("old-rent-housing-") && <HousingPressUpdate />}
         {getArticleAdvisories(article).map((notice) => <section className="brief-box callout callout-warning" key={notice.title}>
           <h2>{notice.title}</h2><p>{notice.detail}</p>
           {notice.url.startsWith("/") ? <Link href={notice.url}>{notice.label}</Link> : <a href={notice.url} target="_blank" rel="noopener noreferrer">{notice.label}</a>}
@@ -219,6 +222,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <details className="toc-mobile">
           <summary>محتويات الدليل</summary>
           <nav>
+            {article.slug.startsWith("old-rent-housing-") && <a href="#housing-press-followup">تحديث أخبار التمديد</a>}
             <a href="#quick-answer">الإجابة الفورية</a>
             <a href="#summary">الملخص</a>
             <a href="#steps">خطوات التنفيذ</a>
