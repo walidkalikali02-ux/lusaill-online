@@ -21,3 +21,12 @@ for (const article of articles) {
 console.log(
   `PASS: ${articles.length} existing articles import with sources, summary, practical sections, steps and FAQs`,
 );
+
+for (const article of articles.filter(a=>a.slug.startsWith("old-rent-housing-"))) {
+  const doc = importArticle(article);
+  assert.equal(doc.status, "published");
+  assert(doc.blocks.some(b=>b.id === "housing-press-followup" && b.text.includes("لم نتمكن")));
+  assert.equal(doc.blocks.filter(b=>b.id.startsWith("housing-press-source-")).length, 4);
+  assert.deepEqual(doc.sources.map(s=>s.checkedAt), article.sources?.map(s=>s.checkedAt));
+}
+console.log("PASS: CMS import preserves housing uncertainty and separately labelled press sources");

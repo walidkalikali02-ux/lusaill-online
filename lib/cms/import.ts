@@ -1,3 +1,4 @@
+import { housingPressUpdate } from "../housing-press-update";
 import type { Article } from "@/lib/content";
 import type { CmsDocument } from "./model";
 export function importArticle(a: Article): CmsDocument {
@@ -56,6 +57,15 @@ export function importArticle(a: Article): CmsDocument {
       ]),
     },
     blocks: [
+      ...(a.slug.startsWith("old-rent-housing-") ? [{
+        id: "housing-press-followup", kind: "warning" as const,
+        title: "متابعة صحفية: موعد التمديد لم يُؤكد رسميًا",
+        text: housingPressUpdate.answer, sourceUrl: "", mediaUrl: "",
+      }, ...housingPressUpdate.sources.map((source, i) => ({
+        id: `housing-press-source-${i}`, kind: "warning" as const,
+        title: "مصدر صحفي للمتابعة", text: source.label,
+        sourceUrl: source.url, mediaUrl: "",
+      }))] : []),
       ...(a.slug === "electricity-bill-inquiry"
         ? [
             {
