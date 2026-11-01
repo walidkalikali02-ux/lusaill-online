@@ -11,6 +11,8 @@ import {
   warnings,
   type CmsDocument,
 } from "@/lib/cms/model";
+import { ReportImport } from "./report-import";
+import type { CmsReport } from "@/lib/cms/reports";
 import { browserCms } from "@/lib/cms/browser";
 const Editor = dynamic(() => import("./editor").then((m) => m.CmsEditor), {
   loading: () => <p>تحميل المحرر…</p>,
@@ -29,6 +31,7 @@ export function CmsWorkspace({ initial }: { initial: CmsDocument[] }) {
     from: "",
     to: "",
   });
+  const [reports, setReports] = useState<CmsReport[]>([]);
   const [widgets, setWidgets] = useState([
     "status",
     "tasks",
@@ -37,6 +40,12 @@ export function CmsWorkspace({ initial }: { initial: CmsDocument[] }) {
     "seo",
     "search",
   ]);
+  useEffect(() => {
+    fetch("/api/cms/reports")
+      .then((r) => (r.ok ? r.json() : []))
+      .then(setReports)
+      .catch(() => setError("تعذر تحميل تقارير البحث"));
+  }, []);
   useEffect(() => {
     fetch("/api/cms/documents")
       .then(async (r) => {
@@ -80,6 +89,22 @@ export function CmsWorkspace({ initial }: { initial: CmsDocument[] }) {
     outdated = visible.filter((d) =>
       warnings(d).some((w) => w.includes("مصدر") || w.includes("متأخرة")),
     );
+  const urls = new Set(
+    visible.map((d) => `https://www.lusaill.online/articles/${d.slug}`),
+  );
+  const performance = reports.find((r) => r.kind === "performance");
+  const performanceRows =
+    performance?.rows.filter((r) => urls.has(r.url)) ?? [];
+  const clicks = performanceRows.reduce((n, r) => n + (r.clicks ?? 0), 0),
+    impressions = performanceRows.reduce((n, r) => n + (r.impressions ?? 0), 0);
+  const position = impressions
+    ? performanceRows.reduce(
+        (n, r) => n + (r.position ?? 0) * (r.impressions ?? 0),
+        0,
+      ) / impressions
+    : null;
+  const indexing = reports.find((r) => r.kind === "indexing");
+  const indexingRows = indexing?.rows.filter((r) => urls.has(r.url)) ?? [];
   if (selected)
     return (
       <Editor
@@ -115,7 +140,7 @@ export function CmsWorkspace({ initial }: { initial: CmsDocument[] }) {
           </button>
         </div>
       </aside>
-      <main className="cms-main">
+      <main id="main-content" className="cms-main">
         <header className="cms-top">
           <div>
             <span className="cms-eyebrow">مساحة العمل / نظرة عامة</span>
@@ -237,6 +262,7 @@ export function CmsWorkspace({ initial }: { initial: CmsDocument[] }) {
             ))}
           </section>
         )}
+        <ReportImport onImported={(r) => setReports((prev) => [r, ...prev])} />
         <div className="cms-panels">
           {widgets.includes("tasks") && (
             <section className="cms-panel" id="cms-tasks">
@@ -305,24 +331,37 @@ export function CmsWorkspace({ initial }: { initial: CmsDocument[] }) {
                 فحصًا. هذه مراجعة بيانات المقال وليست تقرير فهرسة Google.
               </p>
               <p className="cms-muted">
-                حالة الفهرسة: لم يتم ربط Search Console بعد.
+                {indexing
+                  ? `${indexingRows.length} رابطًا في تقرير: ${indexing.reason} · تاريخ ${indexing.to}`
+                  : "حالة الفهرسة: لم يتم استيراد تقرير Search Console بعد."}
               </p>
             </section>
           )}
           {widgets.includes("search") && (
             <section className="cms-panel cms-search-metrics">
-              <h2>أداء البحث العضوي</h2>
+              <h2>أداء البحث العضوي للمقالات في التصفية</h2>
               <div>
-                {["النقرات", "مرات الظهور", "CTR", "متوسط الترتيب"].map((x) => (
-                  <p key={x}>
-                    {x}
-                    <strong>—</strong>
+                {[
+                  ["النقرات", performance ? clicks : "—"],
+                  ["مرات الظهور", performance ? impressions : "—"],
+                  [
+                    "CTR",
+                    impressions
+                      ? `${((clicks / impressions) * 100).toFixed(2)}%`
+                      : "—",
+                  ],
+                  ["متوسط الترتيب المحسوب", position?.toFixed(1) ?? "—"],
+                ].map(([name, value]) => (
+                  <p key={name}>
+                    {name}
+                    <strong>{value}</strong>
                   </p>
                 ))}
               </div>
               <p>
-                يظهر الأداء الفعلي بعد ربط Search Console؛ لا توجد بيانات متصلة
-                حاليًا.
+                {performance
+                  ? `لقطة من ملف الصفحات: ${performance.from} — ${performance.to} · ${performanceRows.length} صفًا مطابقًا للتصفية · استيراد ${performance.importedAt.slice(0, 10)}`
+                  : "استورد ملف أداء الصفحات لعرض قياسات فعلية. لا يوجد اتصال مباشر حاليًا."}
               </p>
             </section>
           )}

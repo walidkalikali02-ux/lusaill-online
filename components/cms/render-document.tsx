@@ -93,8 +93,8 @@ export function CmsPreview({ document: d }: { document: CmsDocument }) {
         {d.category} / {d.author}
       </p>
       <h1>{d.title}</h1>
-      <p>آخر مراجعة: {d.reviewedAt || "لم تُراجع بعد"}</p>
-      <section className="cms-answer">
+      <p>آخر مراجعة: {d.reviewedAt ? <time dateTime={d.reviewedAt}>{d.reviewedAt}</time> : "لم تُراجع بعد"}</p>
+      <section id="quick-answer" className="cms-answer">
         <h2>الإجابة المباشرة</h2>
         <p>{d.answer}</p>
       </section>
@@ -116,7 +116,7 @@ export function CmsPreview({ document: d }: { document: CmsDocument }) {
           id={
             b.kind === "step"
               ? `step-${d.blocks.filter((x) => x.kind === "step").findIndex((x) => x.id === b.id) + 1}`
-              : undefined
+              : b.kind === "faq" && d.blocks.find(x=>x.kind==="faq")?.id===b.id ? "faq" : undefined
           }
           key={b.id}
           className={`cms-block cms-block-${b.kind}`}
@@ -149,7 +149,7 @@ export function CmsPreview({ document: d }: { document: CmsDocument }) {
           )}
         </section>
       ))}
-      <section>
+      <section id="sources">
         <h2>المصادر الرسمية</h2>
         {d.sources.map((s, i) => (
           <p key={i}>

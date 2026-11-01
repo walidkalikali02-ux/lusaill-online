@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const statuses = [
+  "planned",
   "draft",
   "verification",
   "approval",
@@ -9,6 +10,7 @@ export const statuses = [
   "archived",
 ] as const;
 export const statusLabels: Record<string, string> = {
+  planned: "مخطط",
   draft: "مسودة",
   verification: "قيد التحقق",
   approval: "بانتظار الاعتماد",

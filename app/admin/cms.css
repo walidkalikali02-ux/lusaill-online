@@ -189,7 +189,7 @@
 }
 .cms-stats {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 12px;
   margin: 18px 0 24px;
 }
@@ -652,4 +652,21 @@
   .cms-row span {
     max-width: 100%;
   }
+}
+
+.cms-report-import {
+  margin-bottom: 24px;
+}
+.cms-report-import summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+.cms-report-import form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  align-items: end;
+}
+.cms-report-import form p {
+  grid-column: 1/-1;
 }

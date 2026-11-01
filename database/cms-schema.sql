@@ -46,7 +46,7 @@ grant select,insert,update,delete on public.cms_publications to authenticated;
 
 create or replace function public.cms_save(payload jsonb, expected_version integer)
 returns jsonb language plpgsql security invoker set search_path='' as $$
-declare current_version integer; next_version integer; next_doc jsonb; row_id uuid := (payload->>'id')::uuid;
+declare current_version integer; next_version integer; next_doc jsonb; public_doc jsonb; previous_public jsonb; row_id uuid := (payload->>'id')::uuid;
 begin
  if not exists(select 1 from public.cms_admins where user_id=auth.uid()) then raise exception 'FORBIDDEN'; end if;
  perform pg_advisory_xact_lock(hashtextextended('cms-publish-quota',0));
@@ -61,7 +61,9 @@ begin
  insert into public.cms_revisions(document_id,document,version,actor) values(row_id,next_doc,next_version,auth.uid());
  if payload->>'status'='published' then
    if not exists(select 1 from public.cms_publications where id=row_id) and (select count(*) from public.cms_publications where document->>'status'='published' and (published_at at time zone 'Asia/Qatar')::date=(now() at time zone 'Asia/Qatar')::date)>=20 then raise exception 'DAILY_LIMIT'; end if;
-   insert into public.cms_publications(id,slug,document) values(row_id,payload->>'slug',next_doc)
+   select document into previous_public from public.cms_publications where id=row_id;
+   public_doc:=case when previous_public - array['version','updatedAt','status','scheduledAt'] = next_doc - array['version','updatedAt','status','scheduledAt'] then previous_public else next_doc end;
+   insert into public.cms_publications(id,slug,document) values(row_id,payload->>'slug',public_doc)
    on conflict(id) do update set slug=excluded.slug,document=excluded.document,updated_at=now();
  elsif payload->>'status'='archived' then
    insert into public.cms_publications(id,slug,document) values(row_id,payload->>'slug',jsonb_build_object('id',row_id,'slug',payload->>'slug','title','مقال مؤرشف','description','','author','','category','','status','archived','answer','','summary','[]'::jsonb,'body','{"type":"doc","content":[]}'::jsonb,'blocks','[]'::jsonb,'sources','[]'::jsonb,'reviewedAt','','scheduledAt','','deadline','','updatedAt',now(),'version',next_version))
@@ -78,7 +80,7 @@ grant execute on function public.cms_save(jsonb,integer) to authenticated;
 -- Invoker function: only the server-side service role may execute it.
 create or replace function public.cms_publish_due() returns integer
 language plpgsql security invoker set search_path='' as $$
-declare item record; n integer:=0; next_doc jsonb; published_today integer;
+declare item record; n integer:=0; next_doc jsonb; public_doc jsonb; previous_public jsonb; published_today integer;
 begin
  perform pg_advisory_xact_lock(hashtextextended('cms-publish-quota',0));
  select count(*) into published_today from public.cms_publications where document->>'status'='published' and (published_at at time zone 'Asia/Qatar')::date=(now() at time zone 'Asia/Qatar')::date;
@@ -86,7 +88,9 @@ begin
   exit when published_today>=20;
   if exists(select 1 from jsonb_array_elements(item.document->'sources') s where nullif(s->>'checkedAt','') is null or (nullif(s->>'expiresAt','')::timestamptz < now())) then continue; end if;
   next_doc:=item.document||jsonb_build_object('status','published','updatedAt',now(),'version',item.version+1);
-  insert into public.cms_publications(id,slug,document) values(item.id,item.slug,next_doc) on conflict(id) do update set document=excluded.document,updated_at=now();
+  select document into previous_public from public.cms_publications where id=item.id;
+  public_doc:=case when previous_public - array['version','updatedAt','status','scheduledAt'] = next_doc - array['version','updatedAt','status','scheduledAt'] then previous_public else next_doc end;
+  insert into public.cms_publications(id,slug,document) values(item.id,item.slug,public_doc) on conflict(id) do update set document=excluded.document,updated_at=now();
   update public.cms_documents set document=next_doc,version=version+1,updated_at=now() where id=item.id;
   insert into public.cms_revisions(document_id,document,version,actor) values(item.id,next_doc,item.version+1,null);
   n:=n+1;published_today:=published_today+1;
@@ -99,3 +103,9 @@ grant execute on function public.cms_publish_due() to service_role;
 grant select,insert,update on public.cms_documents,public.cms_publications to service_role;
 grant insert,select on public.cms_revisions to service_role;
 grant usage,select on sequence public.cms_revisions_id_seq to service_role;
+
+create table public.cms_reports(id bigint generated always as identity primary key,report jsonb not null,created_at timestamptz not null default now());
+alter table public.cms_reports enable row level security;
+create policy admin_reports on public.cms_reports for all to authenticated using(exists(select 1 from public.cms_admins where user_id=auth.uid())) with check(exists(select 1 from public.cms_admins where user_id=auth.uid()));
+grant select,insert on public.cms_reports to authenticated;
+grant usage,select on sequence public.cms_reports_id_seq to authenticated;

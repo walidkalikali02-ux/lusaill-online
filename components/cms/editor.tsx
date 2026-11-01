@@ -181,7 +181,7 @@ export function CmsEditor({
     setTab("content");
   }
   return (
-    <main className="cms-editor-shell">
+    <main id="main-content" className="cms-editor-shell">
       <header className="cms-editor-top">
         <button
           className="cms-secondary"

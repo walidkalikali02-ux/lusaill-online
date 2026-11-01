@@ -47,12 +47,12 @@ export function CmsPublicArticle({ document: d }: { document: CmsDocument }) {
       })),
     });
   return (
-    <main className="shell" dir="rtl">
+    <main id="main-content" className="shell" dir="rtl">
       <nav aria-label="مسار التصفح">
         <Link href="/">الرئيسية</Link> / <Link href="/articles">كل الأدلة</Link>
       </nav>
       <CmsPreview document={d} />
-      <section className="brief-box">
+      <section id="next-step" className="brief-box">
         <h2>الخطوة التالية</h2>
         <Link href="/articles">تصفّح الأدلة المرتبطة بالخدمة</Link>
       </section>

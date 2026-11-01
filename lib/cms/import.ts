@@ -14,7 +14,9 @@ export function importArticle(a: Article): CmsDocument {
         ? "published"
         : a.status === "needs_verification"
           ? "verification"
-          : "draft",
+          : a.status === "not_started"
+            ? "planned"
+            : "draft",
     answer: a.quickAnswer ?? "",
     summary: a.summaryTable ?? [],
     body: {

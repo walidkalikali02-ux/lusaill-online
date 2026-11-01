@@ -7,7 +7,7 @@ export function CmsLogin({ configured }: { configured: boolean }) {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   return (
-    <main className="cms-login">
+    <main id="main-content" className="cms-login">
       <span className="cms-eyebrow">لوسيل / مساحة التحرير</span>
       <h1>مرحبًا بمدير التحرير</h1>
       <p>مساحة واحدة للمقالات والمصادر والمراجعات.</p>

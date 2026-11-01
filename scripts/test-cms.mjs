@@ -1,3 +1,4 @@
+import {parseCsv,parseSearchReport} from '../lib/cms/reports.ts';
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { PGlite } from "@electric-sql/pglite";
@@ -178,7 +179,18 @@ assert.equal(
   ).rows[0].n,
   0,
 );
+const current=(await db.query("select document from cms_publications where slug='quota-0'")).rows[0].document;
+const before=current.updatedAt;
+await as(admin,'select public.cms_save($1::jsonb,1)',[JSON.stringify(current)]);
+assert.equal((await db.query("select document from cms_publications where slug='quota-0'")).rows[0].document.updatedAt,before,'Unchanged publish must not advance sitemap lastmod');
 await db.close();
 console.log(
   "PASS: CMS validation, single-admin RLS, private drafts/revisions, atomic version conflict, publishing snapshots and safe archival",
 );
+
+assert.deepEqual(parseCsv('a,b\r\n"x,y","line\ntext"'),[['a','b'],['x,y','line\ntext']]);
+const report={kind:'performance',from:'2026-10-01',to:'2026-10-31',reason:'',csv:'Top pages,Clicks,Impressions,CTR,Position\nhttps://www.lusaill.online/articles/cms-test,5,100,5%,2.4'};
+assert.equal(parseSearchReport(report).rows[0].clicks,5);
+assert.throws(()=>parseSearchReport({...report,csv:report.csv.replace(',5,100,',',500,100,')}));
+assert.throws(()=>parseSearchReport({...report,csv:report.csv.replace('https://www.lusaill.online','https://other.example')}));
+console.log('PASS: actual CSV import, quoted cells, numeric validation and property isolation');
