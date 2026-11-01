@@ -1,0 +1,2673 @@
+{
+  "checkedAt": "2026-11-01",
+  "queryCount": 230,
+  "note": "مقتطف روابط من كل دفعة، بحد ثمانية؛ النتائج ليست مرتبة أو معتمدة لكل مقال منفرد.",
+  "batches": [
+    {
+      "id": "search-1",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "tax-card-first-time-egypt",
+        "simplified-tax-registration-egypt",
+        "tax-registration-data-update",
+        "tax-card-lost-damaged-replacement"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "دليـــل  الخــدمات الضريبيـة بمصلحة الضرائب المصرية",
+          "url": "https://www.incometax.gov.eg/sites/default/files/2025-08/guide.of_.the_.egyptian.tax_.authority.services.second%20edition.pdf"
+        },
+        {
+          "title": "نظام خدمات الضريبة",
+          "url": "https://www.mof.gov.kw/TCRS_Public/Content/MOF_user_manual_Public-v3.pdf"
+        },
+        {
+          "title": "الصفحة الرئيسية | مصلحة الضرائب المصرية",
+          "url": "https://www.incometax.gov.eg/ar/home"
+        },
+        {
+          "title": "تغيير بيانات بطاقة رقم قومي | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/node/65"
+        },
+        {
+          "title": "قرار وزير المالية رقم 420 لسنة 2025 | مصلحة الضرائب المصرية",
+          "url": "https://eta.gov.eg/ar/news/qrar-wzyr-almalyt-rqm-420-lsnt-2025"
+        },
+        {
+          "title": "طلب تعديل بيانات | مصلحة الضرائب المصرية",
+          "url": "https://portal.eta.gov.eg/ar/tlb-tdyl-byanat"
+        },
+        {
+          "title": "questions - SudanTax",
+          "url": "https://tax.gov.sd/questions/"
+        },
+        {
+          "title": "تعديل بيانات أو تدوين بيانات بسجل المصدرين",
+          "url": "https://www.goeic.gov.eg/upload/online/2024/06/documents/files/ar/1555.pdf"
+        }
+      ],
+      "resultCount": 29
+    },
+    {
+      "id": "search-2",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "vat-registration-status-certificate",
+        "tax-basic-data-certificate",
+        "tax-registration-reactivation",
+        "tax-registration-cancel-suspend"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "دليـــل  الخــدمات الضريبيـة بمصلحة الضرائب المصرية",
+          "url": "https://www.eta.gov.eg/sites/default/files/2025-08/guide.of_.the_.egyptian.tax_.authority.services.second_edition.pdf"
+        },
+        {
+          "title": "United Arab Emiratesالهيئة الاتحادية للضرائب",
+          "url": "https://tax.gov.ae/Datafolder/Files/Pdf/AR/executive-regulation-of-the-federal-decreelaw-no-8-of-2017-replace-10-2024-AR.pdf"
+        },
+        {
+          "title": "المادة (21)",
+          "url": "https://assets.u.ae/api/public/content/dd838f46316442128f218e1677fd7e5f?v=27bd5c6c"
+        },
+        {
+          "title": "Deregistering from VAt",
+          "url": "https://www.finance.gov.lb/en-us/Taxation/Individuals/VAT/Pages/Deregistering-from-VAt.aspx"
+        },
+        {
+          "title": "المادة (47) من اللائحة التنفيذية لقانون القيمة المضافة",
+          "url": "https://madar.tax/vat/regulation/article/47"
+        },
+        {
+          "title": "1. يجب على الشخص الحصول على رقم التسجيل الضريبي. التقدم للهيئة بطلب إلغاء التسجيل الضريبي إذا توقف عن مزاولة الأعمال أو نشاط الأعمال نتيجة للحل أو التصفية أو لأي أسباب أخرى، وفقاً للنماذج والإجراءات وخلال المدة التي تحددها الهيئة.",
+          "url": "https://mof.gov.ae/wp-content/uploads/2022/12/Federal-Decree-Law-No.-47-of-2022-AR.pdf"
+        },
+        {
+          "title": "نماذج",
+          "url": "https://finance.gov.lb/ar-lb/Taxation/Individuals/VAT/Pages/Forms.aspx"
+        },
+        {
+          "title": "إيقاف / إلغاء التسجيل",
+          "url": "https://zatca.gov.sa/ar/MediaCenter/Publications/Documents/%D9%85%D8%B9%D8%AC%D9%85%20%D8%A7%D9%84%D8%B2%D9%83%D8%A7%D8%A9%20%D9%88%D8%A7%D9%84%D8%B6%D8%B1%D9%8A%D8%A8%D8%A9%20%D9%88%D8%A7%D9%84%D8%AC%D9%85%D8%A7%D8%B1%D9%83.pdf"
+        }
+      ],
+      "resultCount": 21
+    },
+    {
+      "id": "search-3",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "consumer-protection-complaint-egypt",
+        "consumer-return-exchange-egypt",
+        "consumer-invoice-rights-egypt",
+        "product-warranty-repair-egypt"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "جهاز حماية المستهلك | كيف تتقدم بشكوى",
+          "url": "https://cpa.gov.eg/ar-eg/%D9%83%D9%8A%D9%81-%D8%AA%D8%AA%D9%82%D8%AF%D9%85-%D8%A8%D8%B4%D9%83%D9%88%D9%89"
+        },
+        {
+          "title": "جهاز حماية المستهلك | الشكاوى",
+          "url": "https://cpa.gov.eg/ar-eg/%D8%A7%D9%84%D8%B4%D9%83%D8%A7%D9%88%D9%89"
+        },
+        {
+          "title": "ضرورة الالتزام بالحد الأدنى للبيانات الواجب توافرها في إيصالات أوفواتير البيع للمستهلك النهائي | مصلحة الضرائب المصرية",
+          "url": "https://www.eta.gov.eg/ar/news/drwrt-alaltzam-balhd-aladny-llbyanat-alwajb-twafrha-fy-aysalat-awfwatyr-alby-llmsthlk-alnhayy"
+        },
+        {
+          "title": "معلومات الوزراء: \"حماية المستهلك\" يوضح حقوق المواطنين بشأن الاستبدال والإرجاع وضمان المنتجات - بوابة الأهرام",
+          "url": "https://gate.ahram.org.eg/News/5939302.aspx"
+        },
+        {
+          "title": "سياسة الاستبدال والاسترجاع:",
+          "url": "https://cpa.gov.om/Documents/Policies/%D8%AE%D9%84%D9%87%D8%A7%20%D8%AA%D8%AF%D9%88%D9%85.pdf"
+        },
+        {
+          "title": "مركز الاتصال الموحد (بيّنة – 935)",
+          "url": "https://mc.gov.sa/ar/mediacenter/Pages/bainah.aspx"
+        },
+        {
+          "title": "شكاوى المستهلكين | حقوق المستهلك دبي",
+          "url": "https://consumerrights.gov.ae/ar/submit-a-complaint/consumer-complaints"
+        },
+        {
+          "title": "آلية تقديم الشكاوى ورفع البلاغات",
+          "url": "https://mc.gov.sa/ar/guides/CustomerGuide/pages/ch5.aspx"
+        }
+      ],
+      "resultCount": 28
+    },
+    {
+      "id": "search-4",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "online-shopping-consumer-rights-egypt",
+        "misleading-ad-complaint-egypt",
+        "authorized-service-center-egypt",
+        "product-lifetime-spare-parts-egypt"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "عصر كير | جهازك في أيدٍ أمينة",
+          "url": "https://www.assrcare.com/ar"
+        },
+        {
+          "title": "جهاز حماية المستهلك يُحذر المُستهلكين من الإنسياق وراء الإعلانات الوهمية المُضللة. - جهاز حماية المستهلك",
+          "url": "https://cpa.gov.eg/ar-eg/%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D8%A7%D8%B9%D9%84%D8%A7%D9%85%D9%8A%D8%A9/ArtMID/654/ArticleID/7064/%D8%AC%D9%87%D8%A7%D8%B2-%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%87%D9%84%D9%83-%D9%8A%D9%8F%D8%AD%D8%B0%D8%B1-%D8%A7%D9%84%D9%85%D9%8F%D8%B3%D8%AA%D9%87%D9%84%D9%83%D9%8A%D9%86-%D9%85%D9%86-%D8%A7%D9%84%D8%A5%D9%86%D8%B3%D9%8A%D8%A7%D9%82-%D9%88%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D9%88%D9%87%D9%85%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D9%8F%D8%B6%D9%84%D9%84%D8%A9"
+        },
+        {
+          "title": "البوابة الالكترونية لنظام الشكاوي الموحد ( للتجارة الالكترونية ) – التابع للمركز العالمي لحماية التجارة الالكترونية",
+          "url": "https://shakwa.wcpec.com/"
+        },
+        {
+          "title": "دليل قانون حماية المستهلك",
+          "url": "https://www.economy.gov.lb/public/uploads/files/8197_2956_1326.pdf"
+        },
+        {
+          "title": "كيف يمكنك التعرف على الإعلان المضلل؟",
+          "url": "https://cpa.gov.om/Documents/Policies/%D8%AE%D9%84%D9%87%D8%A7%20%D8%AA%D8%AF%D9%88%D9%85.pdf"
+        },
+        {
+          "title": "التحقُّق من أهلية المستخدم للاستفادة من الضمان - مساعدة هاتف Pixel",
+          "url": "https://support.google.com/pixelphone/answer/6160400?hl=ar"
+        },
+        {
+          "title": "تفاصيل الخبر",
+          "url": "https://cpa.gov.om/ar/Pages/NewsDetail.aspx?NewsID=12362"
+        },
+        {
+          "title": "سياسة الضمان الشاملة في مصر",
+          "url": "https://res-de.rdmcenter.com/stc/home_product/ingco/userfiles/1/images/nrs/Egypt-INGCO-AGENT/images/Egypt%20INGCO%20Warranty%20Policy.pdf"
+        }
+      ],
+      "resultCount": 25
+    },
+    {
+      "id": "search-5",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "passport-first-time-egypt",
+        "passport-renewal-expired-full",
+        "passport-lost-inside-egypt",
+        "passport-damaged-replacement-egypt"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "",
+          "url": "https://moi.gov.eg/Passports/home/PasswordLost"
+        },
+        {
+          "title": "استخراج او تجديد جواز السفر - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/73"
+        },
+        {
+          "title": "جواز سفر بدل فاقد/تالف | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/node/53"
+        },
+        {
+          "title": "إصدار جواز سفر عماني لأول مرة",
+          "url": "https://www.rop.gov.om/pdfs/services/ServicesGuide.pdf"
+        },
+        {
+          "title": "",
+          "url": "https://www.cspd.gov.jo/AR/ListDetails/_%D8%AF%D9%84%D9%8A%D9%84__%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA/41/33"
+        },
+        {
+          "title": "الأسئلة الشائعة | مصري بالخارج",
+          "url": "https://cs.mfa.gov.eg/ar/SAF/faq"
+        },
+        {
+          "title": "خدمة الحصول على جواز سفر ميكن لأوّل مرة",
+          "url": "https://stmark-media.s3.amazonaws.com/Books/EgyptianGovernment.pdf"
+        },
+        {
+          "title": "وزارة الداخلية المصرية :: إستخراج جواز سفر",
+          "url": "https://www.moi.gov.eg/passports/home/GetPassport/1"
+        }
+      ],
+      "resultCount": 31
+    },
+    {
+      "id": "search-6",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "child-passport-egypt",
+        "passport-data-certificate-egypt",
+        "movement-certificate-egypt",
+        "passport-urgent-service-egypt"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "وزارة الداخلية المصرية :: الإدارة العامة للجوازات",
+          "url": "https://moi.gov.eg/passports/certificate"
+        },
+        {
+          "title": "الأسئلة الشائعة | مصري بالخارج",
+          "url": "https://cs.mfa.gov.eg/ar/BAH/faq"
+        },
+        {
+          "title": "جواز سفر جديد/تجديد | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/node/54"
+        },
+        {
+          "title": "وزارة الداخلية المصرية :: إستخراج جواز سفر",
+          "url": "https://www.moi.gov.eg/passports/home/GetPassport/1"
+        },
+        {
+          "title": "استخراج او تجديد جواز السفر - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/73"
+        },
+        {
+          "title": "",
+          "url": "https://moi.gov.eg/Passports/home/PassportRequiredPapers"
+        },
+        {
+          "title": "وزارة الداخلية المصرية :: الإدارة العامة للجوازات",
+          "url": "https://moi.gov.eg/passports"
+        },
+        {
+          "title": "طريقة ورسوم استخراج جواز السفر المستعجل.. الحق طيارتك - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8201727"
+        }
+      ],
+      "resultCount": 32
+    },
+    {
+      "id": "search-7",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "work-permit-first-time-egypt",
+        "work-permit-renewal-egypt",
+        "work-permit-lost-replacement",
+        "work-permit-clearance-egypt"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "استخراج أو تجديد تصريح العمل - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/84"
+        },
+        {
+          "title": "خدمات وزارة الداخلية",
+          "url": "https://publicservices.moi.gov.eg/"
+        },
+        {
+          "title": "التشغيل ومعلومات سوق العمل",
+          "url": "https://www.labour.gov.eg/ar/%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA/%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D8%A7%D8%B5%D8%AD%D8%A7%D8%A8-%D8%A7%D9%84%D8%A7%D8%B9%D9%85%D8%A7%D9%84/%D8%A7%D9%84%D8%AA%D8%B4%D8%BA%D9%8A%D9%84-%D9%88%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D8%B3%D9%88%D9%82-%D8%A7%D9%84%D8%B9%D9%85%D9%84/"
+        },
+        {
+          "title": "الأخبار - بوابة محافظة القاهرة",
+          "url": "https://www.cairo.gov.eg/ar/news/2024/7ea806afe8884c6d9e10afb527903cbf"
+        },
+        {
+          "title": "الإدارة العامة لتصاريح العمل",
+          "url": "https://site.moi.gov.eg/workpermits/Pages/home.aspx"
+        },
+        {
+          "title": "قطاع الوثائق",
+          "url": "https://www.cairo.gov.eg/ar/Imp%20Information/Police_and_Traffic/Documents/dalil_5damat.pdf"
+        },
+        {
+          "title": "بخطوات سهلة.. كيفية تجديد تصاريح العمل إلكترونيًا| بالصور - بوابة الأهرام",
+          "url": "https://gate.ahram.org.eg/News/5663083.aspx"
+        },
+        {
+          "title": "خطوات تجديد تصريح العمل 2026 أونلاين.. اعرف الأوراق المطلوبة - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8253148"
+        }
+      ],
+      "resultCount": 30
+    },
+    {
+      "id": "search-8",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "seasonal-work-permit-egypt",
+        "conscript-travel-permit-egypt",
+        "military-service-certificate-replacement",
+        "military-service-experience-certificate"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "إدارة التجنيد والتعبئة",
+          "url": "https://tagned.mod.gov.eg/traveldocsInfo.aspx"
+        },
+        {
+          "title": "◆ طلب بدل فاقد لشهادة تأدية الخدمة العامة / الإدارة العامة للخدمة العامة",
+          "url": "https://moss.gov.eg/%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%AA%D9%86%D9%85%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AB%D9%85%D8%A7%D8%B1/%D8%B7%D9%84%D8%A8-%D8%A8%D8%AF%D9%84-%D9%81%D8%A7%D9%82%D8%AF-%D9%84%D8%B4%D9%87%D8%A7%D8%AF%D8%A9-%D8%AA%D8%A3%D8%AF%D9%8A%D8%A9-%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9-%D8%A7%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9-%D9%84%D9%84%D8%AE%D8%AF%D9%85%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9/"
+        },
+        {
+          "title": "الحصول على تصاريح أذونات السفر",
+          "url": "https://stmark-media.s3.amazonaws.com/Books/EgyptianGovernment.pdf"
+        },
+        {
+          "title": "التجنيد والتعبئة - دليل الخدمات العامة",
+          "url": "https://psm.gov.eg/providers/66/services"
+        },
+        {
+          "title": "الطلبة بعد سن 18 سنة و ترغب في السفر للخارج عليهم استخراج تصريح سفر من إدارة التجنيد قبل الذهاب إلى المطار للسفر.",
+          "url": "https://miuegypt.edu.eg/wp-content/uploads/MIU-Student-Guide-2025-2026-V02.pdf"
+        },
+        {
+          "title": "خدمات وزارة الداخلية",
+          "url": "https://publicservices.moi.gov.eg/"
+        },
+        {
+          "title": "استخراج تصريح السفر من التجنيد: الاستعلام والدفع والتحميل",
+          "url": "https://www.horusvalley.com/egypt-military-travel-permit-online-guide/"
+        },
+        {
+          "title": "القوات المسلحة تفتتح أول مركز إلكترونى لتقديم خدمات التجنيد على شبكة الإنترنت العالمية",
+          "url": "https://www.mod.gov.eg/ModWebSite/NewsDetailsAr.aspx?id=35698"
+        }
+      ],
+      "resultCount": 30
+    },
+    {
+      "id": "search-9",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "paper-marriage-record-egypt",
+        "paper-divorce-record-egypt",
+        "divorce-certificate-online-egypt",
+        "paper-death-record-egypt"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "اللائحة التنفيذية لقانون الأحوال المدنية رقم 143 لسنة 1994",
+          "url": "https://lawyeregypt.net/%D8%A7%D9%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9-%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%D8%A9-%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%A7%D9%84%D8%A3%D8%AD%D9%88%D8%A7%D9%84-%D8%A7%D9%84%D9%85/"
+        },
+        {
+          "title": "توثيق طلاق",
+          "url": "https://www.moj.gov.sa/ar/eServices/pages/0205e7ab-9006-4cc5-9c42-cc279e08a831.aspx"
+        },
+        {
+          "title": "قطاع مصلحة الأحوال المدنية",
+          "url": "https://www.cairo.gov.eg/ar/Imp%20Information/Police_and_Traffic/Documents/dalil_5damat.pdf"
+        },
+        {
+          "title": "خدمات وزارة الداخلية",
+          "url": "https://publicservices.moi.gov.eg/"
+        },
+        {
+          "title": "ServicesList | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/serviceslist"
+        },
+        {
+          "title": "خدمة الحصول على صورة قيد طلاق ورقي",
+          "url": "https://stmark-media.s3.amazonaws.com/Books/EgyptianGovernment.pdf"
+        },
+        {
+          "title": "طلب اتمام اجراءات الزواج - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/80"
+        },
+        {
+          "title": "خطوات تسجيل الوفيات وشروط استخراج تصريح الدفن مجانا - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8366319"
+        }
+      ],
+      "resultCount": 22
+    },
+    {
+      "id": "search-10",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "newborn-birth-registration-egypt",
+        "death-registration-burial-permit",
+        "marriage-divorce-record-correction",
+        "late-birth-registration-pre-1962"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "استخراج شهادة ميلاد مولود جديد - دليل الخدمات العامة",
+          "url": "https://psm.gov.eg/Services/547?serviceName=%D8%A5%D8%AC%D8%B1%D8%A7%D8%A1%D8%A7%D8%AA-%D8%A7%D8%B3%D8%AA%D8%AE%D8%B1%D8%A7%D8%AC-%D8%B4%D9%87%D8%A7%D8%AF%D8%A9-%D9%85%D9%8A%D9%84%D8%A7%D8%AF--%D9%82%D9%8A%D8%AF-%D9%85%D9%88%D9%84%D9%88%D8%AF--%D8%AC%D8%AF%D9%8A%D8%AF"
+        },
+        {
+          "title": "طلب اتمام اجراءات الزواج - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/80"
+        },
+        {
+          "title": "استقبال وحفظ وإنهاء إجراءات الجثمان للدفن داخل المملكة",
+          "url": "https://prod.hrsd.gov.sa/sites/default/files/2024-07/%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%88%D8%A7%D9%81%D8%AF%D9%8A%D9%86.pdf"
+        },
+        {
+          "title": "خطوات تسجيل الوفيات وشروط استخراج تصريح الدفن مجانا - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8366319"
+        },
+        {
+          "title": "إصدار شهادة ميلاد مميكنة لأول مرة | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/node/7"
+        },
+        {
+          "title": "وزارة الصحة والسكان المصرية",
+          "url": "https://www.mohp.gov.eg/DynamicPages.aspx?page_id=28"
+        },
+        {
+          "title": "ServicesList | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/serviceslist"
+        },
+        {
+          "title": "",
+          "url": "https://www.laweg.net/framePlain.aspx?ItemID=55635&NID=70561&Type=6&action=ViewActivePages"
+        }
+      ],
+      "resultCount": 21
+    },
+    {
+      "id": "search-11",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "national-id-first-time-egypt",
+        "national-id-renewal-egypt",
+        "national-id-address-change",
+        "national-id-profession-change"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "إصدار بطاقة رقم قومي أول مرة | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/node/63"
+        },
+        {
+          "title": "خدمة تغيير البيانات بالبطاقة الشخصية - دليل الخدمات العامة",
+          "url": "https://psm.gov.eg/Services/122?serviceName=%D8%AE%D8%AF%D9%85%D8%A9-%D8%AA%D8%BA%D9%8A%D9%8A%D8%B1-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D9%87%D9%86%D8%A9-%D8%A8%D8%A7%D9%84%D8%A8%D8%B7%D8%A7%D9%82%D8%A9-%D8%A7%D9%84%D8%B4%D8%AE%D8%B5%D9%8A%D8%A9-%D8%B7%D8%A8%D9%82%D8%A7%D9%8B-%D9%84%D9%84%D8%B1%D9%82%D9%85-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A"
+        },
+        {
+          "title": "خدمة تغيير بيانات المهنة بالبطاقة الشخصية طبقاً للرقم القومي",
+          "url": "https://stmark-media.s3.amazonaws.com/Books/EgyptianGovernment.pdf"
+        },
+        {
+          "title": "تجديد بطاقة الرقم القومي - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/94"
+        },
+        {
+          "title": "القنصلية العامة لجمهورية مصر العربية بالرياض - تجديد بطاقة الرقم القومي",
+          "url": "https://stage2.egyptconsulates.org/id-card.html"
+        },
+        {
+          "title": "خطوات تغيير المهنة في بطاقة الرقم القومي 2026.. اعرف الأوراق المطلوبة - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8253232"
+        },
+        {
+          "title": "إستخراج بطاقة الرقم القومي لأول مرة",
+          "url": "https://portsaid.gov.eg/Upload/DocumentLibrary/AttachmentA/63/final.pdf"
+        },
+        {
+          "title": "ID – القنصلية العامة لجمهورية مصر العربية في باريس",
+          "url": "https://consulategypte.fr/id/"
+        }
+      ],
+      "resultCount": 31
+    },
+    {
+      "id": "search-12",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "national-id-marital-status-change",
+        "criminal-record-online-egypt",
+        "civil-status-home-service",
+        "civil-record-correction-egypt"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": ":: قطاع الأمن العام ::",
+          "url": "https://www.moi.gov.eg/PublicSecurity/Home/Department1"
+        },
+        {
+          "title": "تغيير الحالة الاجتماعية بالبطاقة الشخصية",
+          "url": "https://stmark-media.s3.amazonaws.com/Books/EgyptianGovernment.pdf"
+        },
+        {
+          "title": "خدمات وزارة الداخلية",
+          "url": "https://publicservices.moi.gov.eg/"
+        },
+        {
+          "title": "قطاع الأحوال المدنيه - دليل الخدمات العامة",
+          "url": "https://psm.gov.eg/providers/1/services"
+        },
+        {
+          "title": "تحديث بطاقات «تكافل وكرامة» وإصدار بطاقات جديدة لعام 2026 (خطوات التحديث) | المصري اليوم",
+          "url": "https://www.almasryalyoum.com/news/details/4395195"
+        },
+        {
+          "title": "قانون رقم 143 لسنة 1994 بتاريخ 09-06-1994",
+          "url": "https://mksegypt.org/ar/laws/23813"
+        },
+        {
+          "title": "الأحوال المدنية",
+          "url": "https://maosoa.com/wp-content/uploads/2023/01/%D8%AF%D9%84%D9%8A%D9%84-%D9%86%D8%B8%D8%A7%D9%85-%D8%A3%D8%A8%D8%B4%D8%B1-Pdf.pdf"
+        },
+        {
+          "title": "تغيير بيانات بطاقة رقم قومي | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/node/65"
+        }
+      ],
+      "resultCount": 30
+    },
+    {
+      "id": "search-13",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "birth-certificate-smart-machine",
+        "birth-certificate-attestation-egypt",
+        "birth-certificate-certified-translation",
+        "family-record-egypt"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "اجراءات التعامل مع مكاتب التصديقات - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/RatificationOffices/AuthenticationProcedure"
+        },
+        {
+          "title": "دليل المعاملات القنصلية",
+          "url": "https://sis.gov.eg/ar/%D8%A8%D9%88%D8%A7%D8%A8%D8%A9-%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D9%84%D9%84%D9%85%D8%B5%D8%B1%D9%8A%D9%8A%D9%86-%D8%A8%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC/%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%D8%A9/%D8%AF%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D9%85%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D9%82%D9%86%D8%B5%D9%84%D9%8A%D8%A9/"
+        },
+        {
+          "title": "الموقع الرسمي لوزارة الخارجية لدولة الإمارات العربية المتحدة",
+          "url": "https://www.mofa.gov.ae/ar-ae/Missions/Cairo/Services/Services-for-Individuals/Attestation-Information"
+        },
+        {
+          "title": "خدمات وزارة الداخلية",
+          "url": "https://publicservices.moi.gov.eg/"
+        },
+        {
+          "title": "متابعة طلب القيد",
+          "url": "https://eds.eg/join/track"
+        },
+        {
+          "title": "الأخبار - بوابة محافظة القاهرة",
+          "url": "https://www.cairo.gov.eg/ar/news/2020/3c148f7e67ee489d8b71d1ec2f9a89b1"
+        },
+        {
+          "title": "الحصول على شهادة الميلاد المميكنة التي تحمل الرقم القومي",
+          "url": "https://portsaid.gov.eg/Upload/DocumentLibrary/AttachmentA/63/final.pdf"
+        },
+        {
+          "title": "المعاملات القنصلية - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions"
+        }
+      ],
+      "resultCount": 31
+    },
+    {
+      "id": "search-14",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "personal-record-egypt",
+        "private-driving-license-first-time",
+        "private-driving-license-renewal",
+        "driving-license-damaged-replacement"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "المرور - الشروط و الأحكام",
+          "url": "https://traffic.moi.gov.eg/Arabic/Pages/terms-drivinglicense-replacement-of-damaged.aspx"
+        },
+        {
+          "title": "بدل تالف رخصة قيادة | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/node/45"
+        },
+        {
+          "title": "استخراج بدل فاقد أو تالف لرخص القيادة - دليل الخدمات العامة",
+          "url": "https://psm.gov.eg/Services/386?serviceName=%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%A8%D8%AF%D9%84-%D9%81%D8%A7%D9%82%D8%AF-%D8%A3%D9%88-%D8%AA%D8%A7%D9%84%D9%81-%D9%84%D8%B1%D8%AE%D8%B5-%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D8%AF%D8%A9"
+        },
+        {
+          "title": "المرور - الأسئلة الشائعة",
+          "url": "https://traffic.moi.gov.eg/Arabic/Pages/faq.aspx"
+        },
+        {
+          "title": "تجديد رخصة القيادة الخاصة.. الشروط والرسوم المطلوبة - بوابة الأهرام",
+          "url": "https://ahram.org.eg/News/5602774.aspx"
+        },
+        {
+          "title": "وزارة الداخلية المصرية :: دليل الخدمات",
+          "url": "https://www.moi.gov.eg/home/directoryservices"
+        },
+        {
+          "title": "رسوم استخراج رخصة القيادة الخاصة 2026 في مصر| الأوراق المطلوبة وخطوات التقديم بالتفصيل - بوابة الأهرام بيزنس",
+          "url": "https://business.ahram.org.eg/News/90188.aspx"
+        },
+        {
+          "title": "استخراج رخصة قيادة خاصة لأول مرة والأوراق المطلوبة - بوابة الأهرام",
+          "url": "https://ahram.org.eg/News/5478522.aspx"
+        }
+      ],
+      "resultCount": 30
+    },
+    {
+      "id": "search-15",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "motorcycle-driving-license-egypt",
+        "driving-license-medical-exam",
+        "professional-driving-license-egypt",
+        "foreign-driving-license-egypt"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "المرور - الأسئلة الشائعة",
+          "url": "https://traffic.moi.gov.eg/Arabic/Pages/faq.aspx"
+        },
+        {
+          "title": "Traffic - Driving Schools",
+          "url": "https://traffic.moi.gov.eg/English/OurServices/InfoServices/TrafficLaw/Pages/DrivingSchools.aspx"
+        },
+        {
+          "title": "إستخراج رخصة قيادة خاصة أو دراجة نارية",
+          "url": "https://portsaid.gov.eg/Upload/DocumentLibrary/AttachmentA/63/final.pdf"
+        },
+        {
+          "title": "استخراج رخصة قيادة دراجة نارية لأول مرة.. الشروط والأوراق - بوابة الأهرام",
+          "url": "https://gate.ahram.org.eg/News/5094116.aspx"
+        },
+        {
+          "title": "شروط ورسوم استخراج رخصة قيادة مهنية درجة ثالثة لأول مرة - بوابة الأهرام",
+          "url": "https://gate.ahram.org.eg/News/5966561.aspx"
+        },
+        {
+          "title": "قرار رقم 279 لسنة 2025 بشأن تنظيم ترخيص عمل الأجانب – الموسوعة القانونية – LAW HUB",
+          "url": "https://lawhub.info/eg/?p=17081"
+        },
+        {
+          "title": "المرور - رخص تسيير و قيادة مركبات النقل السريع",
+          "url": "https://traffic.moi.gov.eg/Arabic/OurServices/InfoServices/InteriorMinisterDecision/Pages/Licenses-driving-rapid-transport-vehicles.aspx"
+        },
+        {
+          "title": "الثانوية الأجنبية المعادلة",
+          "url": "https://cnu.mohesr.gov.eg/acceptance/%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D8%A3%D8%AC%D9%86%D8%A8%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%84%D8%A9"
+        }
+      ],
+      "resultCount": 25
+    },
+    {
+      "id": "search-16",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "verify-used-vehicle-license",
+        "esim-egypt",
+        "enable-5g-egypt",
+        "child-safe-mobile-internet"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "المرور - التأكد من صحة بيانات رخصة تسيير مركبة",
+          "url": "https://traffic.moi.gov.eg/Arabic/OurServices/Pages/VerifyVehicle.aspx"
+        },
+        {
+          "title": "وزير الاتصالات يشهد إطلاق خدمتي اطمن واطمن على الآخر لحماية الأطفال على الإنترنت",
+          "url": "https://sis.gov.eg/ar/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2-%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%85%D9%8A/%D8%A7%D9%84%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1/%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%D8%A7%D8%AA-%D9%8A%D8%B4%D9%87%D8%AF-%D8%A5%D8%B7%D9%84%D8%A7%D9%82-%D8%AE%D8%AF%D9%85%D8%AA%D9%8A-%D8%A7%D8%B7%D9%85%D9%86-%D9%88%D8%A7%D8%B7%D9%85%D9%86-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%A2%D8%AE%D8%B1-%D9%84%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%A3%D8%B7%D9%81%D8%A7%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA/"
+        },
+        {
+          "title": "e-SIM - Telecom Egypt",
+          "url": "https://www.te.eg/web/guest/w/e-sim"
+        },
+        {
+          "title": "وزير الاتصالات يشهد إطلاق خدمتي اطمن و اطمن على الآخر لتوفير بيئة إنترنت آمنة للأطفال",
+          "url": "https://mediadr.sis.gov.eg/handle/123456789/130160"
+        },
+        {
+          "title": "الحماية الأبوية الإنترنت البيت - Telecom Egypt",
+          "url": "https://www.te.eg/personal/fbb-parental-control"
+        },
+        {
+          "title": "إي آند مصر | حول شبكتك لل 5G",
+          "url": "https://www.etisalat.eg/portal/pages/plans/convert_to_5g.html"
+        },
+        {
+          "title": "NTRA launches eSIM technology in Egypt’s market - National Telecom Regulatory Authority",
+          "url": "https://www.tra.gov.eg/ar/ntra-launches-esim-technology-in-egypts-market/"
+        },
+        {
+          "title": "«تنظيم الاتصالات» يكشف تفاصيل إطلاق خدمات الإنترنت الآمن للأطفال - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8312893"
+        }
+      ],
+      "resultCount": 32
+    },
+    {
+      "id": "search-17",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "telecom-accessibility-egypt",
+        "telecom-device-warranty",
+        "reduce-home-internet-usage",
+        "register-promotional-calls"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "الضوابط والشروط الرئيسية الواجب توافرها في شهادة ضمان أجهزة الاتصالات - National Telecom Regulatory Authority",
+          "url": "https://www.tra.gov.eg/ar/%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%85/%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D8%A3%D8%AC%D9%87%D8%B2%D8%A9-%D8%A7%D9%84%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%D8%A7%D8%AA/%D8%A7%D9%84%D8%B6%D9%88%D8%A7%D8%A8%D8%B7-%D9%88%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D8%B7-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9-%D8%A7%D9%84%D9%88%D8%A7%D8%AC%D8%A8-%D8%AA%D9%88%D8%A7%D9%81-2/"
+        },
+        {
+          "title": "الأسئلة المتكررة - National Telecom Regulatory Authority",
+          "url": "https://www.tra.gov.eg/ar/%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85%D9%88%D9%86/%D8%A7%D9%84%D8%A3%D8%B3%D8%A6%D9%84%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D9%83%D8%B1%D8%B1%D8%A9/"
+        },
+        {
+          "title": "جهاز حماية المستهلك | أسئلة متكررة",
+          "url": "https://cpa.gov.eg/ar-eg/%D8%A7%D8%B3%D8%A6%D9%84%D8%A9-%D9%85%D8%AA%D9%83%D8%B1%D8%B1%D8%A9"
+        },
+        {
+          "title": "في إطار التزام الدولة بتمكين ذوي الإعاقة ودمجهم في المجتمع الرقمي، وقع الجهاز القومي لتنظيم الاتصالات والمجلس القومي للأشخاص ذوي الإعاقة بروتوكول تعاون يهدف إلى تفعيل آليات مشتركة للارتقاء بالخدمات المقدمة لهم في سوق الاتصالات المصري. - National Telecom Regulatory Authority",
+          "url": "https://www.tra.gov.eg/ar/%D9%81%D9%8A-%D8%A5%D8%B7%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%B2%D8%A7%D9%85-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D8%A9-%D8%A8%D8%AA%D9%85%D9%83%D9%8A%D9%86-%D8%B0%D9%88%D9%8A-%D8%A7%D9%84%D8%A5%D8%B9%D8%A7/"
+        },
+        {
+          "title": "ضمان الأجهزة الجديدة",
+          "url": "https://help.mobilemasr.com.eg/portal/ar/kb/articles/%D8%B6%D9%85%D8%A7%D9%86-%D8%A7%D9%84%D8%A3%D8%AC%D9%87%D8%B2%D8%A9-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9"
+        },
+        {
+          "title": "مضاعفة باقة الإنترنت الأرضي إلى 100 جيجا بنفس السعر| موعد التنفيذ وتفاصيل القرار الجديد في مصر - بوابة الأهرام بيزنس",
+          "url": "https://business.ahram.org.eg/UI/Front/Inner.aspx?NewsContentID=134629"
+        },
+        {
+          "title": "شروط الضمان | vivo مصر",
+          "url": "https://www.vivo.com/eg/ar/index/warrantyTerms/"
+        },
+        {
+          "title": "سياسة الضمان الشامله فى مصر",
+          "url": "https://res-de.togroup.com/stc/website-center/files/upload/Egypt-WADFOW-Website/Wadfow%20Warranty%20Policy%201.0%20a%2Ce.pdf"
+        }
+      ],
+      "resultCount": 23
+    },
+    {
+      "id": "search-18",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "buy-compliant-mobile-egypt",
+        "fixed-internet-provider-switch",
+        "fixed-internet-outage-compensation",
+        "internet-speed-test-myntra"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "MY NTRA User Guide",
+          "url": "https://tra.gov.eg/wp-content/uploads/2021/11/%D8%AF%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85%D9%8A%D9%86-MyNTRA-1.pdf"
+        },
+        {
+          "title": "الضوابط والشروط الرئيسية الواجب توافرها في شهادة ضمان أجهزة الاتصالات - National Telecom Regulatory Authority",
+          "url": "https://www.tra.gov.eg/ar/%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%85/%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D8%A3%D8%AC%D9%87%D8%B2%D8%A9-%D8%A7%D9%84%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%D8%A7%D8%AA/%D8%A7%D9%84%D8%B6%D9%88%D8%A7%D8%A8%D8%B7-%D9%88%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D8%B7-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9-%D8%A7%D9%84%D9%88%D8%A7%D8%AC%D8%A8-%D8%AA%D9%88%D8%A7%D9%81-2/"
+        },
+        {
+          "title": "فحص ضمان الموبايل والفاتورة في مصر",
+          "url": "https://mobilebosla.com/guides/warranty-egypt"
+        },
+        {
+          "title": "إذا كنت ترغب في شراء جهاز iPhone مستعمل - Apple دعم (EG)",
+          "url": "https://support.apple.com/ar-eg/104999"
+        },
+        {
+          "title": "تقرير فحص الموبايل المستعمل من موبايل مصر: نقطة بنقطة قبل الشحن",
+          "url": "https://test-audit-stg-2qnkm.ondigitalocean.app/inspection"
+        },
+        {
+          "title": "تنظيم الاتصالات يعتمد آليات جديدة لتعويض مشتركي خدمات الإنترنت عند انقطاع الخدمة - بوابة الأهرام",
+          "url": "https://gate.ahram.org.eg/News/4125215.aspx"
+        },
+        {
+          "title": "Consumer Protection Agency | Consumer Obligations",
+          "url": "https://cpa.gov.eg/en-us/Guidelines/Consumer-Obligations"
+        },
+        {
+          "title": "غيّر شركة الإنترنت الأرضي في 72 ساعة فقط",
+          "url": "https://www.alwafd.news/5684015"
+        }
+      ],
+      "resultCount": 28
+    },
+    {
+      "id": "search-19",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "mobile-network-quality-map",
+        "authorized-telecom-outlets",
+        "lost-sim-card",
+        "wifi-calling-egypt"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "الجهاز القومي لتنظيم الاتصالات يصدر تقرير نتائج قياسات جودة خدمة شبكات المحمول للربع الثاني لعام 2026 - National Telecom Regulatory Authority",
+          "url": "https://www.tra.gov.eg/ar/%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%B2-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A-%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%85-%D8%A7%D9%84%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%D8%A7%D8%AA-%D9%8A%D8%B5%D8%AF%D8%B1-%D8%AA-56/"
+        },
+        {
+          "title": "ماذا أفعل إذا فقدت أو سرقت الهاتف أو بطاقة SIM؟",
+          "url": "https://www.banquemisr.com/-/media/BM-Wallet/FAQ-Ar.ashx"
+        },
+        {
+          "title": "Wifi-calling - Telecom Egypt",
+          "url": "https://te.eg/web/guest/w/wifi-calling"
+        },
+        {
+          "title": "Change Of Ownership, Sim Card replacement & More | Orange Egypt",
+          "url": "https://www.orange.eg/ar/services/line-management"
+        },
+        {
+          "title": "إي آند مصر| مكالمات wi-fi",
+          "url": "https://www.etisalat.eg/portal/pages/services/wifi_calling.html"
+        },
+        {
+          "title": "تطبيق تليفوني",
+          "url": "https://www.telephony.gov.eg/"
+        },
+        {
+          "title": "مكالمات عبر الواي فاي | اتصل عبر شبكة الواي فاي من ڤودافون",
+          "url": "https://web.vodafone.com.eg/ar/wifi-calling"
+        },
+        {
+          "title": "لو خطك اتسرق.. كيف تستخرج بدل فاقد وتحميه من الاستغلال؟ - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8377959"
+        }
+      ],
+      "resultCount": 28
+    },
+    {
+      "id": "search-20",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "telecom-user-rights",
+        "registered-mobile-lines",
+        "registered-mobile-wallets",
+        "mobile-number-portability"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "الأسئلة المتكررة - National Telecom Regulatory Authority",
+          "url": "https://www.tra.gov.eg/ar/%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85%D9%88%D9%86/%D8%A7%D9%84%D8%A3%D8%B3%D8%A6%D9%84%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D9%83%D8%B1%D8%B1%D8%A9/"
+        },
+        {
+          "title": "خطوات نقل خط المحمول من شركة إلى أخرى بنفس الرقم خلال 24 ساعة",
+          "url": "https://www.tra.gov.eg/wp-content/uploads/2024/05/%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%B2-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A-%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%85-%D8%A7%D9%84%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%D8%A7%D8%AA-%D9%8A%D8%B5%D8%AF%D8%B1-%D8%AA%D9%82%D8%B1%D9%8A%D8%B1-%D9%86%D8%AA%D8%A7%D8%A6%D8%AC-%D9%82%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA-%D8%AC%D9%88%D8%AF%D8%A9-%D8%AE%D8%AF%D9%85%D8%A9-%D8%B4%D8%A8%D9%83%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AD%D9%85%D9%88%D9%84-%D9%84%D9%84%D8%B1%D8%A8%D8%B9-%D8%A7%D9%84%D8%A3%D9%88%D9%84-%D9%84%D8%B9%D8%A7%D9%85-2024-%D8%AA%D9%82%D8%B1%D9%8A%D8%B1.pdf"
+        },
+        {
+          "title": "كيفية الاستعلام عن خطوط المحمول المسجلة باسمك وإلغاء غير المستخدم منها| إنفوجراف - بوابة الأهرام",
+          "url": "https://ahram.org.eg/News/5885293.aspx"
+        },
+        {
+          "title": "number portability manual",
+          "url": "https://www.tra.gov.eg/wp-content/uploads/2020/11/%D8%AF%D9%84%D9%8A%D9%84-%D9%83%D8%A7%D9%85%D9%84-%D9%86%D9%82%D9%84-%D8%A7%D9%84%D8%A7%D8%B1%D9%82%D8%A7%D9%85.pdf"
+        },
+        {
+          "title": "بصمة الوجه على الأبواب| كيف تكشف كل أرقام المحمول المسجلة باسمك؟ - بوابة الأهرام بيزنس",
+          "url": "https://business.ahram.org.eg/UI/Front/Inner.aspx?NewsContentID=121565"
+        },
+        {
+          "title": "Mobile Number Portability - Telecom Egypt",
+          "url": "https://www.te.eg/w/mobile-number-portability"
+        },
+        {
+          "title": "«تنظيم الاتصالات» يتيح تطبيق \"أرقامي\" للمواطنين لمعرفة خطوط المحمول المسجلة بالاسم والرقم القومي - بوابة الأهرام",
+          "url": "https://gate.ahram.org.eg/News/4765166.aspx"
+        },
+        {
+          "title": "كيفية الاستعلام عن أرقامي.. خطوات معرفة خطوط المحمول المسجلة باسمك عبر My NTRA",
+          "url": "https://www.cairo24.com/2472251"
+        }
+      ],
+      "resultCount": 27
+    },
+    {
+      "id": "search-21",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "telecom-complaint",
+        "cancel-entertainment-services",
+        "report-spam-calls",
+        "electricity-meter-test"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "طريقة معرفة وإلغاء الخدمات المضافة على خطك | مصراوي",
+          "url": "https://www.masrawy.com/news/news_economy/details/2026/5/31/2995735/"
+        },
+        {
+          "title": "كيف تلغي خدمات المحمول الترفيهية لجميع الشبكات؟ | مصراوي",
+          "url": "https://www.masrawy.com/news/news_economy/details/2025/8/18/2838705/"
+        },
+        {
+          "title": "كيفية تقديم شكوى في الجهاز القومي ضد شركات الاتصالات.. تفاصيل - بوابة الأهرام",
+          "url": "https://gate.ahram.org.eg/News/5585619.aspx"
+        },
+        {
+          "title": "تعرف على طرق تقديم شكوى لتنظيم الاتصالات ضد شركات المحمول | مصراوي",
+          "url": "https://www.masrawy.com/news/news_economy/details/2025/3/12/2742711/"
+        },
+        {
+          "title": "الكود الموحد لالغاء الخدمات الترفيهية .. وهل فعلاً هذه الخدمات تسرق الرصيد؟ - موبيزات",
+          "url": "https://mobizat.net/ar/articles/unified-code-cancel-entertainment-services"
+        },
+        {
+          "title": "القومي للاتصالات: إطلاق كود موحد لإلغاء الاشتراك بخدمات المحمول مجانًا | مصراوي",
+          "url": "https://www.masrawy.com/news/news-videos/details/2021/11/1/2116007/index"
+        },
+        {
+          "title": "كيف تحمى نفسك من المكالمات الازعاجية وتتعرف على هوية المتصل؟| إنفوجراف - بوابة الأهرام",
+          "url": "https://gate.ahram.org.eg/News/5175483.aspx"
+        },
+        {
+          "title": "طريقة الإبلاغ عن الجرائم الإلكترونية ومكالمات النصب والمزعجة والمعاكسات | جهاز تنظيم الاتصالات",
+          "url": "https://abukabir.fawrye.com/2022/09/fraud.tra.gov.eg.html?hl=ar"
+        }
+      ],
+      "resultCount": 25
+    },
+    {
+      "id": "search-22",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "prepaid-meter-mobile-charge",
+        "electricity-consumer-rights",
+        "electricity-company-obligations",
+        "electricity-complaint"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "",
+          "url": "https://eehc.gov.eg/CMSEehc/%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D9%85%D8%B9%D9%86%D8%A7/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%D8%A7%D8%AA-%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81-%D8%A7%D9%84%D9%85%D8%AD%D9%85%D9%88%D9%84/"
+        },
+        {
+          "title": "حقوق المستهلك",
+          "url": "https://egyptera.org/ar/ConsumerRight.aspx"
+        },
+        {
+          "title": "واجبات المستهلك",
+          "url": "https://egyptera.org/ar/ConsumerDuties.aspx"
+        },
+        {
+          "title": "تقديم شكوى - جهاز تنظيم مرفق الكهرباء وحماية المستهلك",
+          "url": "https://egyera.org/complaint"
+        },
+        {
+          "title": "شحن عداد الكهرباء من المنزل 2026.. الخطوات والتطبيقات المتاحة لسداد الرصيد أونلاين | المصري اليوم",
+          "url": "https://www.almasryalyoum.com/news/details/4387638"
+        },
+        {
+          "title": "المنصة الموحدة لخدمات الكهرباء | الشركة القابضة لكهرباء مصر",
+          "url": "https://eservices.eehc.gov.eg/"
+        },
+        {
+          "title": "تعرف على الأوراق المطلوبة لتقديم شكوى لجهاز حماية المستهلك - جهاز حماية المستهلك",
+          "url": "https://cpa.gov.eg/ar-eg/%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%B2-%D9%81%D9%8A-%D8%A7%D9%84%D8%B5%D8%AD%D9%81/ArtMID/481/ArticleID/6750/%D8%AA%D8%B9%D8%B1%D9%81-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D8%A7%D9%82-%D8%A7%D9%84%D9%85%D8%B7%D9%84%D9%88%D8%A8%D8%A9-%D9%84%D8%AA%D9%82%D8%AF%D9%8A%D9%85-%D8%B4%D9%83%D9%88%D9%89-%D9%84%D8%AC%D9%87%D8%A7%D8%B2-%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%87%D9%84%D9%83"
+        },
+        {
+          "title": "شحن عداد الكهرباء من المنزل 2026.. 9 خطوات والتطبيقات المتاحة (تعرف عليها) | المصري اليوم",
+          "url": "https://www.almasryalyoum.com/news/details/4390072"
+        }
+      ],
+      "resultCount": 22
+    },
+    {
+      "id": "search-23",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "electricity-outage-report",
+        "electricity-meter-apply",
+        "code-electricity-meter",
+        "electricity-meter-transfer"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "طلب توصيل عداد كهرباء/ مياه إنشائي لرخصة من الهيئة - الهيئة العامة للتنمية الصناعية",
+          "url": "https://ida.gov.eg/ar/services/19"
+        },
+        {
+          "title": "مرفق الكهرباء يوضح إجراءات وخطوات نقل ملكية العداد للمشتركين - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8301032"
+        },
+        {
+          "title": "شركة مصر العليا لتوزيع الكهرباء - الرئيسية",
+          "url": "https://ueedc.com/ueed/faq"
+        },
+        {
+          "title": "المنصة الموحدة لخدمات الكهرباء | الشركة القابضة لكهرباء مصر",
+          "url": "https://eservices.eehc.gov.eg/services/CMTL"
+        },
+        {
+          "title": "الأخبار - بوابة محافظة القاهرة",
+          "url": "https://www.cairo.gov.eg/ar/news/2023/9fc1db20f20b489fa1d3ae53dc692bec"
+        },
+        {
+          "title": "شركة الأسكندرية لتوزيع الكهرباء",
+          "url": "https://aedc.gov.eg/AEDC.121.html"
+        },
+        {
+          "title": "شكاوى ومقترحات وبلاغات – شركة البحيرة لتوزيع الكهرباء",
+          "url": "https://bedc.gov.eg/%D8%AE%D8%AF%D9%85%D8%A9-%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%A1/complaints_and_suggestions/"
+        },
+        {
+          "title": "",
+          "url": "https://www.eehc.gov.eg/CMSEehc/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/%D8%A8%D9%8A%D8%A7%D9%86-%D8%A7%D8%B9%D9%84%D8%A7%D9%85%D9%89-9-5-2023/"
+        }
+      ],
+      "resultCount": 25
+    },
+    {
+      "id": "search-24",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "upper-egypt-electricity",
+        "beheira-electricity",
+        "foreign-nationality-permission",
+        "marriage-no-objection-certificate"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "الإدارة العامة للجوازات والهجرة والجنسية",
+          "url": "https://enationality.moi.gov.eg/UserApplications/Services/"
+        },
+        {
+          "title": "قطاع الوثائق",
+          "url": "https://www.cairo.gov.eg/ar/Imp%20Information/Police_and_Traffic/Documents/dalil_5damat.pdf"
+        },
+        {
+          "title": "وزارة الداخلية المصرية :: الإدارة العامة للجوازات",
+          "url": "https://moi.gov.eg/passports/nationality/index2/0"
+        },
+        {
+          "title": "الأسئلة الشائعة | مصري بالخارج",
+          "url": "https://cs.mfa.gov.eg/ar/SAF/faq?page=2"
+        },
+        {
+          "title": "الأسئلة الشائعة | مصري بالخارج",
+          "url": "https://cs.mfa.gov.eg/ar/BAH/faq?page=2"
+        },
+        {
+          "title": "الإدارة العامة للجوازات والهجرة والجنسية",
+          "url": "https://enationality.moi.gov.eg/UserApplications/Services/Index"
+        },
+        {
+          "title": "الأسئلة الشائعة | مصري بالخارج",
+          "url": "https://cs.mfa.gov.eg/ar/CHI/faq"
+        },
+        {
+          "title": "شركة البحيرة لتوزيع الكهرباء – وزارة الكهرباء والطاقة المتجددة",
+          "url": "https://bedc.gov.eg/"
+        }
+      ],
+      "resultCount": 29
+    },
+    {
+      "id": "search-25",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "egyptian-nationality-foreign-wife",
+        "palestinian-egyptian-travel-document",
+        "foreign-marriage-ratification",
+        "marriage-at-egyptian-mission"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "طلب التصادق على عقد زواج غير مصرى - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/82"
+        },
+        {
+          "title": "استخراج أو تجديد وثيقة السفر للفلسطينيين - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/90"
+        },
+        {
+          "title": "الإدارة العامة للجوازات والهجرة والجنسية",
+          "url": "https://enationality.moi.gov.eg/UserApplications/Services/"
+        },
+        {
+          "title": "وزارة الداخلية المصرية :: الإدارة العامة للجوازات",
+          "url": "https://moi.gov.eg/passports/home/index"
+        },
+        {
+          "title": "Acquisition of Egyptian Nationality اكتساب الجنسية المصرية – Embassy of Egypt, Washington DC",
+          "url": "https://egyptembassy.net/consular-services/immigration-citizenship/acquire-egyptian-citizenship/"
+        },
+        {
+          "title": "الإدارة العامة للجوازات والهجرة والجنسية",
+          "url": "https://enationality.moi.gov.eg/UserApplications/Services/Index"
+        },
+        {
+          "title": "اكتساب الزوجة الاجنبية الجنسية المصرية – Egypt Consulate UK",
+          "url": "https://egyptconsulate.co.uk/ar/consular-services/obtaining-egyptian-citizenship/"
+        },
+        {
+          "title": "المعاملات القنصلية - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions"
+        }
+      ],
+      "resultCount": 34
+    },
+    {
+      "id": "search-26",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "divorce-at-egyptian-mission",
+        "birth-certificate-abroad",
+        "national-id-renewal-abroad",
+        "criminal-record-abroad"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": ":: قطاع الأمن العام ::",
+          "url": "https://www.moi.gov.eg/PublicSecurity/Home/Department1"
+        },
+        {
+          "title": "الأسئلة الشائعة | مصري بالخارج",
+          "url": "https://cs.mfa.gov.eg/ar/QAT/faq"
+        },
+        {
+          "title": "استخراج صحيفة الحالة الجنائية - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/86"
+        },
+        {
+          "title": "طلب إستخراج شهادة ميلاد مصرية - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/65"
+        },
+        {
+          "title": "قطاع مصلحة الأحوال المدنية",
+          "url": "https://www.cairo.gov.eg/ar/Imp%20Information/Police_and_Traffic/Documents/dalil_5damat.pdf"
+        },
+        {
+          "title": "إيفاد لجان من مصلحة الأحوال المدنية لإصدار بطاقات الرقم القومي للمصريين بالخارج - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/Ministers/Details/MinistryNews/6935"
+        },
+        {
+          "title": "الأسئلة الشائعة | مصري بالخارج",
+          "url": "https://cs.mfa.gov.eg/ar/SAF/faq?page=2"
+        },
+        {
+          "title": "اشهاد طلاق - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/79"
+        }
+      ],
+      "resultCount": 31
+    },
+    {
+      "id": "search-27",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "consular-document-attestation",
+        "consular-power-of-attorney",
+        "newborn-passport-abroad",
+        "newborn-travel-document"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "الأسئلة الشائعة | مصري بالخارج",
+          "url": "https://cs.mfa.gov.eg/ar/BAH/faq"
+        },
+        {
+          "title": "وزارة الداخلية المصرية :: إستخراج جواز سفر",
+          "url": "https://www.moi.gov.eg/passports/home/GetPassport/1"
+        },
+        {
+          "title": "التصديق على المحررات - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/77"
+        },
+        {
+          "title": "اجراءات التعامل مع مكاتب التصديقات - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/RatificationOffices/AuthenticationProcedure"
+        },
+        {
+          "title": "Consular Service",
+          "url": "https://sis.gov.eg/en/egyptians-abroad-portal/government-services/consular-service/"
+        },
+        {
+          "title": "",
+          "url": "https://services.embassyofegypt.se/ar/errands/egyptian-travel-document"
+        },
+        {
+          "title": "وزارة الداخلية المصرية :: الإدارة العامة للجوازات",
+          "url": "https://www.moi.gov.eg/passports/foreigners/index/0"
+        },
+        {
+          "title": "الموقع الرسمي لوزارة الخارجية لدولة الإمارات العربية المتحدة",
+          "url": "https://www.mofa.gov.ae/ar-ae/Missions/Cairo/Services/Services-for-Individuals/Attestation-Information"
+        }
+      ],
+      "resultCount": 20
+    },
+    {
+      "id": "search-28",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "work-permit-abroad",
+        "insurance-number-inquiry",
+        "insurance-last-period",
+        "insurance-periods-wages"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "استخراج أو تجديد تصريح العمل - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/84"
+        },
+        {
+          "title": "الأسئلة الشائعة | مصري بالخارج",
+          "url": "https://cs.mfa.gov.eg/ar/RME/faq"
+        },
+        {
+          "title": "خدمات وزارة الداخلية",
+          "url": "https://publicservices.moi.gov.eg/"
+        },
+        {
+          "title": "المعاملات القنصلية - وزارة الخارجية",
+          "url": "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions"
+        },
+        {
+          "title": "الإدارة العامة لتصاريح العمل",
+          "url": "https://site.moi.gov.eg/workpermits/Pages/home.aspx"
+        },
+        {
+          "title": "شروط إصدار وتجديد تصاريح العمل للمصريين بالخارج.. تعرف على المستندات والفئات المستثناة | مصراوي إف إم",
+          "url": "https://www.masrawyfm.com/egypt/18474.html"
+        },
+        {
+          "title": "<4D6963726F736F667420576F7264202D20CFE1EDE120C7E1E3D3CACBE3D120E1CECFE3C7CA20C7E1E3E4C7D8DE20C7E1CDD1C920EDE6E1EDE620323031362E646F63>",
+          "url": "https://www.gafi.gov.eg/Arabic/StartaBusiness/InvestorGuide/SiteAssets/Pages/default/freezone.pdf"
+        },
+        {
+          "title": "قطاع الوثائق",
+          "url": "https://www.cairo.gov.eg/ar/Imp%20Information/Police_and_Traffic/Documents/dalil_5damat.pdf"
+        }
+      ],
+      "resultCount": 28
+    },
+    {
+      "id": "search-29",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "insurance-deductions-inquiry",
+        "pension-payment-inquiry",
+        "beneficiary-pensions-inquiry",
+        "insurance-purchase-duration"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "طلب حساب مدة سابقة ضمن مدد إشتراك المؤمن عليه وفقاً لأحكام المادة 34 من قانون التأمين الإجتماعى الصادر بالقانون رقم 79 لسنة 1975( شراء المدة).",
+          "url": "https://www.nosi.gov.eg/ar/Services/Pages/Info/PurchaseDurationEmp.aspx"
+        },
+        {
+          "title": "غلاف",
+          "url": "https://mediadr.sis.gov.eg/bitstream/handle/123456789/95826/MOM20250403_1200.pdf?isAllowed=y&sequence=1"
+        },
+        {
+          "title": "قبل ساعات من صرف معاش أكتوبر 2026.. رابط موقع التأمينات للاستعلام عنه - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8366982"
+        },
+        {
+          "title": "<table id=\"e1\">",
+          "url": "https://aca.gov.eg/Media/News/2022/12/14/2022-638066188732681272-268.pdf"
+        },
+        {
+          "title": "خدمة جديدة من التأمينات على «مصر الرقمية».. كيفية استعراض المعاشات المستحقة - الوطن",
+          "url": "https://www.elwatannews.com/news/details/7649004"
+        },
+        {
+          "title": "ضم مدة تأمينية سابقة في مصر: الشروط والخطوات وحالات الرفض",
+          "url": "https://www.horusvalley.com/egypt-add-previous-insurance-periods/"
+        },
+        {
+          "title": "كيف يمكنك الاستعلام عن المعاش المنصرف عبر منصة مصر الرقمية؟.. اتبع 5 خطوات - الوطن",
+          "url": "https://www.elwatannews.com/news/details/7391337"
+        },
+        {
+          "title": "رابط وخطوات استخراج بيان المعاش إلكترونيا.. بـ5 خطوات فقط - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8310339"
+        }
+      ],
+      "resultCount": 20
+    },
+    {
+      "id": "search-30",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "e-invoice-self-registration",
+        "e-invoice-digital-signature",
+        "e-invoice-gs1-egs-codes",
+        "e-receipt-readiness"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "<table id=\"e1\">",
+          "url": "https://www.incometax.gov.eg/sites/default/files/2024-02/ERECEIPT-FAQ-V24-31-1-2024.pdf"
+        },
+        {
+          "title": "ثالثاً: أسئلة عن تكويد السلع والخدمات:",
+          "url": "https://www.eta.gov.eg/sites/default/files/2021-09/e-Invoicing%20Solution%20FAQs.pdf"
+        },
+        {
+          "title": "خطوات تسجيل الممولين ذاتياً على البوابة الإلكترونية لمنظومة الفاتورة الإلكترونية (البورتال)",
+          "url": "https://www.eta.gov.eg/sites/default/files/2022-12/E-INVOICING-SELF-REGISTRATION.pdf"
+        },
+        {
+          "title": "التكويد علي المنظومه",
+          "url": "https://www.eta.gov.eg/sites/default/files/2023-05/e-invoice-engineer.pdf"
+        },
+        {
+          "title": "أولاً: التسجيل الذاتي",
+          "url": "https://www.eta.gov.eg/sites/default/files/2023-05/e-invoice-acc.pdf"
+        },
+        {
+          "title": "الأسئلة الشائعة | منصة تسجيل نقاط البيع",
+          "url": "https://pos.eta.gov.eg/ar/faqs"
+        },
+        {
+          "title": "دليلك للتعامل مع منظومة الفاتورة الالكترونية | مصلحة الضرائب المصرية",
+          "url": "https://portal.eta.gov.eg/ar/content/e-invoice-services"
+        },
+        {
+          "title": "دليـــل  الخــدمات الضريبيـة بمصلحة الضرائب المصرية",
+          "url": "https://eta.gov.eg/sites/default/files/2025-08/guide.of_.the_.egyptian.tax_.authority.services.second_edition.pdf"
+        }
+      ],
+      "resultCount": 26
+    },
+    {
+      "id": "search-31",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "e-invoice-registration-errors",
+        "takaful-karama-eligibility",
+        "takaful-karama-apply-documents",
+        "takaful-karama-inquiry-complaint"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "[الإدارة العامة للدعم النقدي] أولاً : برنامج الدعم النقدي المشروط (تكافل وكرامة)",
+          "url": "https://moss.gov.eg/%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9/%D8%A7%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9-%D9%84%D9%84%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D9%86%D9%82%D8%AF%D9%8A-%D8%A3%D9%88%D9%84%D8%A7-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%A7%D9%84%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D9%86%D9%82%D8%AF%D9%8A-%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B7-%D8%AA%D9%83%D8%A7%D9%81%D9%84-%D9%88%D9%83%D8%B1%D8%A7%D9%85%D8%A9/"
+        },
+        {
+          "title": "CB Short Version Sep 11 -  2025/2026",
+          "url": "https://assets.mof.gov.eg/files/46cda370-964f-11f0-b76d-8b8147e4b256.pdf"
+        },
+        {
+          "title": "قرار مجلس الوزراء رقم 2703 لسنة 2023 بتاريخ 2023-08-03",
+          "url": "https://www.mksegypt.org/ar/decisions/16952"
+        },
+        {
+          "title": "الاسئلة الشائعة",
+          "url": "https://www.moss.gov.eg/%D8%A7%D9%84%D8%A7%D8%B3%D8%A6%D9%84%D8%A9-%D8%A7%D9%84%D8%B4%D8%A7%D8%A6%D8%B9%D8%A9/"
+        },
+        {
+          "title": "الرئيسية - تكافل وكرامة",
+          "url": "https://sp.moss.gov.eg/main/index.php/ar/"
+        },
+        {
+          "title": "عزيزي القارئ",
+          "url": "https://www.comm.alexu.edu.eg/pdf/Egy01.pdf"
+        },
+        {
+          "title": "مديرية التضامن الاجتماعي - دليل الخدمات العامة",
+          "url": "https://psm.gov.eg/providers/17/services"
+        },
+        {
+          "title": "حل مشكلات الربط مع منظومة الفاتورة والإيصال الإلكتروني | دليل EgyTax",
+          "url": "https://egy-tax.com/docs/troubleshooting"
+        }
+      ],
+      "resultCount": 31
+    },
+    {
+      "id": "search-32",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "forms-create-registration",
+        "forms-question-types",
+        "forms-file-upload",
+        "forms-sections-routing"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "اختيار نوع الأسئلة في النموذج - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/7322334?hl=ar"
+        },
+        {
+          "title": "Show questions based on answers - Google Docs Editors Help",
+          "url": "https://support.google.com/docs/answer/141062?hl=en"
+        },
+        {
+          "title": "كيفية إنشاء النموذج الأول في \"نماذج Google\" - مركز تعلُّم Google Workspace",
+          "url": "https://support.google.com/a/users/answer/9303071?hl=ar"
+        },
+        {
+          "title": "REST Resource: forms  |  Google Forms  |  Google for Developers",
+          "url": "https://developers.google.com/workspace/forms/api/reference/rest/v1/forms?hl=ar"
+        },
+        {
+          "title": "How to make conditional questions in Google Forms (based on answer) | Jotform Blog",
+          "url": "https://www.jotform.com/google-forms/conditional-questions-google-forms/"
+        },
+        {
+          "title": "استخدام المنطق التفريعي في Microsoft Forms | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/forms/use-branching-logic-in-microsoft-forms"
+        },
+        {
+          "title": "إنشاء الاختبارات ووضع علامات عليها باستخدام \"نماذج Google\" - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/7032287?hl=ar-BR"
+        },
+        {
+          "title": "النماذج –الاستبانة باستخدام Google Form | مبادرة العطاء الرقمي",
+          "url": "https://attaa.mcit.gov.sa/library/view/2155"
+        }
+      ],
+      "resultCount": 22
+    },
+    {
+      "id": "search-33",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "forms-response-validation",
+        "forms-create-quiz",
+        "forms-publish-share",
+        "forms-manage-responses"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "إنشاء الاختبارات ووضع علامات عليها باستخدام \"نماذج Google\" - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/7032287?hl=ar"
+        },
+        {
+          "title": "Create & grade quizzes with Google Forms - Google Docs Editors Help",
+          "url": "https://support.google.com/docs/answer/7032287"
+        },
+        {
+          "title": "Publish and manage responders on the form  |  Google Forms  |  Google for Developers",
+          "url": "https://developers.google.com/workspace/forms/api/guides/publish-form"
+        },
+        {
+          "title": "How to create a Google Form on iPhone and iPad | Jotform Blog",
+          "url": "https://www.jotform.com/google-forms/how-to-make-a-google-form-on-iphone/"
+        },
+        {
+          "title": "How to Share a Google Form Editor Link (and Give Access)",
+          "url": "https://formester.com/blog/how-to-enable-access-for-google-forms/"
+        },
+        {
+          "title": "How to Share a Google Form (Link, Email, QR) — 2026",
+          "url": "https://gformsapp.com/how-to-share-a-google-form.html"
+        },
+        {
+          "title": "Googleフォーム Manual｜一般社団法人 全国PTA連絡協議会",
+          "url": "https://zen-p.net/sict/google1.html"
+        },
+        {
+          "title": "إنشاء اختبار على الإنترنت",
+          "url": "https://cdn-files.abegs.org/abegs-portal-prod/uploads/cfb6e49c-41d5-450a-9bc8-e7d871bfe46d.pdf"
+        }
+      ],
+      "resultCount": 22
+    },
+    {
+      "id": "search-34",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "forms-responses-sheets",
+        "forms-submit-errors",
+        "slides-create-outline",
+        "slides-theme-layout"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "View & manage form responses - Google Docs Editors Help",
+          "url": "https://support.google.com/docs/answer/139706?hl=en-Link"
+        },
+        {
+          "title": "Fix common errors while you respond to a Google Form - Google Docs Editors Help",
+          "url": "https://support.google.com/docs/answer/15473134?hl=en-GB"
+        },
+        {
+          "title": "رفع الملفات في Google Forms: كيف يعمل + الحدود",
+          "url": "https://www.formmaker.us/ar/blog/google-forms-file-upload.html"
+        },
+        {
+          "title": "كيفية ربط نماذج Google بـ جدول بيانات Google في 30 ثانية | Jotform Blog",
+          "url": "https://www.jotform.com/ar/google-forms/kayfiyat-rabt-google-forms-bi-google-sheets/"
+        },
+        {
+          "title": "Can Google Forms Pull Data from Google Sheets?",
+          "url": "https://www.itechguides.com/use-google-sheets-data-in-forms-choose-the-right-setup/"
+        },
+        {
+          "title": "إضافة الشرائح وحذفها وتنظيمها - جهاز الكمبيوتر - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/1694830?co=GENIE.Platform%3DDesktop&hl=ar"
+        },
+        {
+          "title": "How to Connect Google Forms to Google Sheets",
+          "url": "https://formmaker.us/blog/google-forms-link-to-google-sheets.html"
+        },
+        {
+          "title": "Google Forms File Upload Failed? 7 Fixes That Work",
+          "url": "https://www.itechguides.com/7-ways-to-fix-the-google-forms-file-upload-failed-error/"
+        }
+      ],
+      "resultCount": 35
+    },
+    {
+      "id": "search-35",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "slides-arrange-objects",
+        "slides-images-video",
+        "slides-linked-chart",
+        "slides-animation"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "Insert and arrange text, shapes, diagrams, and lines - Computer - Google Docs Editors Help",
+          "url": "https://support.google.com/docs/answer/1696521?hl=En"
+        },
+        {
+          "title": "Insert or delete images & videos - Computer - Google Docs Editors Help",
+          "url": "https://googlesupport.serverhump.com/docs/answer/97447"
+        },
+        {
+          "title": "Requests  |  Google Slides  |  Google for Developers",
+          "url": "https://developers.google.com/workspace/slides/api/reference/rest/v1/presentations/request?hl=ar"
+        },
+        {
+          "title": "محاذاة العناصر أو ترتيبها | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/office/graphics-visuals/align-or-arrange-objects"
+        },
+        {
+          "title": "إدراج الصور والفيديوهات أو حذفها - Android - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/97447/insert-or-delete-images-amp-videos-android?co=GENIE.Platform%3DAndroid"
+        },
+        {
+          "title": "How to Arrange and Align Objects in Google Slides - Tutorial",
+          "url": "https://slidesgo.com/slidesgo-school/google-slides-tutorials/how-to-arrange-and-align-objects-in-google-slides"
+        },
+        {
+          "title": "Add stock media & web images in Google Slides & Vids - Google Docs Editors Help",
+          "url": "https://site-2645cdc70146.proxynsfw.com/support-google-com/docs/answer/15001094?hl=en&ref_topic=14991921"
+        },
+        {
+          "title": "كيفية استخدام Google Slides لإنشاء عروض تقديمية - هاو عربي",
+          "url": "https://www.how-ar.com/how-to-use-google-slides-create-presentations/"
+        }
+      ],
+      "resultCount": 33
+    },
+    {
+      "id": "search-36",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "slides-presenter-notes",
+        "slides-captions",
+        "slides-audience-qa",
+        "slides-print-notes"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "طباعة الشرائح مع أو بدون ملاحظات المتحدث | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/powerpoint/print-slides-with-or-without-speaker-notes"
+        },
+        {
+          "title": "DeepL لبرنامج ‎Google Slides‏ – مركز المساعدة في DeepL",
+          "url": "https://support.deepl.com/hc/ar/articles/11836822600092-DeepL-%D9%84%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-Google-Slides"
+        },
+        {
+          "title": "قبول أسئلة الجمهور وتقديمها - جهاز الكمبيوتر - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/6386827?co=GENIE.Platform%3DDesktop&hl=ar"
+        },
+        {
+          "title": "كيفية إضافة ملاحظات المتحدث في عروض Google التقديمية: دليل شامل | HIX AI",
+          "url": "https://hix.ai/ar/hub/ai-slides/how-to-add-speaker-notes-in-google-slides"
+        },
+        {
+          "title": "كيفية استخدام ملاحظات المتحدث في العروض التقديمية من Google | WukiHow",
+          "url": "https://wukihow.com/arz/748657/how-to-use-speaker-notes-in-google-slides"
+        },
+        {
+          "title": "كيفية طباعة عروض جوجل التقديمية مع ملاحظات المتحدث (دليل خطوة بخطوة) - Autoppt",
+          "url": "https://autoppt.com/ar/blog/print-google-slides-with-notes/"
+        },
+        {
+          "title": "الذكاء الاصطناعي في Google Slides: عروض تقديمية | CoreGPT",
+          "url": "https://coregptapps.com/ar/slides"
+        },
+        {
+          "title": "Translate text from Google Slides  |  Google Workspace add-ons  |  Google for Developers",
+          "url": "https://developers.google.com/workspace/add-ons/editors/slides/quickstart/translate"
+        }
+      ],
+      "resultCount": 22
+    },
+    {
+      "id": "search-37",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "sheets-sort-filter",
+        "sheets-clean-import",
+        "sheets-freeze",
+        "sheets-dropdown"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "إنشاء قائمة منسدلة في خلية - جهاز الكمبيوتر - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/186103?co=GENIE.Platform%3DDesktop&hl=ar"
+        },
+        {
+          "title": "Create an in-cell dropdown list - Computer - Google Docs Editors Help",
+          "url": "https://support.google.com/docs/answer/186103"
+        },
+        {
+          "title": "استخدام ميزة \"التنظيف الذكي للبيانات\" في \"جداول بيانات Google\" لتحضير بياناتك للتحليل - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/10098582?hl=ar"
+        },
+        {
+          "title": "إنشاء تقرير مبيعات – الروابط، التنسيق والقائمة المنسدلة - جداول بيانات جوجل - أكاديمية حسوب",
+          "url": "https://academy.hsoub.com/apps/productivity/google-drive/google-sheets/%D8%A5%D9%86%D8%B4%D8%A7%D8%A1-%D8%AA%D9%82%D8%B1%D9%8A%D8%B1-%D9%85%D8%A8%D9%8A%D8%B9%D8%A7%D8%AA-%E2%80%93-%D8%A7%D9%84%D8%B1%D9%88%D8%A7%D8%A8%D8%B7%D8%8C-%D8%A7%D9%84%D8%AA%D9%86%D8%B3%D9%8A%D9%82-%D9%88%D8%A7%D9%84%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A7%D9%84%D9%85%D9%86%D8%B3%D8%AF%D9%84%D8%A9-r314/"
+        },
+        {
+          "title": "كفاءة حاسوب",
+          "url": "https://uodiyala.edu.iq/uploads/pdf/Computer%20Test/%D9%85%D9%86%D9%87%D8%AC%20%D9%83%D9%81%D8%A7%D8%A1%D8%A9%20%D8%A7%D9%84%D8%AD%D8%A7%D8%B3%D9%88%D8%A8%202013.pdf"
+        },
+        {
+          "title": "دورة جوجل شيتس (16) | كيفية تثبيت وتجميد الصفوف والأعمدة وإلغائها في Google Sheets ❄️ - YouTube",
+          "url": "https://www.youtube.com/watch?v=NZkkBVke6UE"
+        },
+        {
+          "title": "التعرّف على كيفية تحسين نقل البيانات - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/12236443?hl=ar"
+        },
+        {
+          "title": "كيفية تثبيت الصفوف والأعمدة في Google sheets في ثواني! - YouTube",
+          "url": "https://www.youtube.com/watch?v=I8eQonDW4kE"
+        }
+      ],
+      "resultCount": 20
+    },
+    {
+      "id": "search-38",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "sheets-checkbox",
+        "sheets-number-format",
+        "sheets-locale",
+        "sheets-protect"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "تنسيق الأرقام في جدول بيانات - جهاز الكمبيوتر - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/56470?co=GENIE.Platform%3DDesktop&hl=ar"
+        },
+        {
+          "title": "تنسيقات التاريخ والأرقام  |  Google Sheets  |  Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/guides/formats?hl=ar"
+        },
+        {
+          "title": "تنسيقات التاريخ والأرقام  |  Google Sheets  |  Google for Developers",
+          "url": "https://developers.google.cn/workspace/sheets/api/guides/formats?hl=ar"
+        },
+        {
+          "title": "Protect, hide and edit sheets - Computer - Google Docs Editors Help",
+          "url": "https://support.google.com/docs/answer/1218656?hl=en-GB"
+        },
+        {
+          "title": "حماية ورقة العمل | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/excel/protect-a-worksheet"
+        },
+        {
+          "title": "Set a spreadsheet’s location and calculation settings - Computer - Google Docs Editors Help",
+          "url": "https://exodusrust.com/v/https/support.google.com/docs/answer/58515?co=GENIE.Platform%3DDesktop&hl=en-GB&ref_topic=9055295"
+        },
+        {
+          "title": "6- ثم موافق، ثم تظهر نافذة أخرى لتأكيد كلمة المرور، ثم موافق.",
+          "url": "https://www.qou.edu/ar/faculties/smp/pdf/shipping-and-customs.pdf"
+        },
+        {
+          "title": "تقييد التغييرات على الملفات في Excel | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/excel/restrict-changes-to-files-in-excel"
+        }
+      ],
+      "resultCount": 21
+    },
+    {
+      "id": "search-39",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "sheets-print",
+        "sheets-chart",
+        "sheets-conditional-format",
+        "docs-pages-mode"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "أنواع المخططات والرسوم البيانية في \"جداول بيانات Google\" - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/190718?hl=ar"
+        },
+        {
+          "title": "إضافة مخطط أو رسم بياني وتعديلهما - جهاز الكمبيوتر - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/63824?co=GENIE.Platform%3DDesktop&hl=ar_eg"
+        },
+        {
+          "title": "تعيين منطقة الطباعة في ورقة عمل أو مسحها | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/excel/set-or-clear-a-print-area-on-a-worksheet"
+        },
+        {
+          "title": "الرسوم البيانية الخطية - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/9142593?hl=ar"
+        },
+        {
+          "title": "التنسيق الشرطي في جوجل شيت (12) طبقاً لأعلى قيم أو أقل قيم | Google Sheets - YouTube",
+          "url": "https://www.youtube.com/watch?v=NdiiED6viic"
+        },
+        {
+          "title": "التنسيق الشرطي في Google Sheets - تلوين الخلايا تلقائيًا - YouTube",
+          "url": "https://www.youtube.com/watch?v=HG3v54QKxVU"
+        },
+        {
+          "title": "إنشاءُ رسمٍ بيانيٍّ دائريٍّ باستخدام برمجية Excel أو Google Sheets",
+          "url": "https://www.nccd.gov.jo/EBV4.0/Root_Storage/AR/%D8%A7%D9%84%D9%85%D9%87%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9/G10/1/Digital%20Skills%20S1%20G10%20.pdf"
+        },
+        {
+          "title": "طباعة ورقة عمل أو مصنف | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/excel/get-started/print-a-worksheet-or-workbook"
+        }
+      ],
+      "resultCount": 19
+    },
+    {
+      "id": "search-40",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "docs-page-setup",
+        "docs-word-count",
+        "docs-headings-toc",
+        "docs-page-elements"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "استخدام الرؤوس والتذييلات وأرقام الصفحات والحواشي السفلية - جهاز الكمبيوتر - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/86629?co=GENIE.Platform%3DDesktop&hl=ar"
+        },
+        {
+          "title": "إضافة عنوان رئيسي أو عنوان فرعي أو جدول محتويات في مستند - جهاز الكمبيوتر - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/116338?co=GENIE.Platform%3DDesktop&hl=ar-sy"
+        },
+        {
+          "title": "Google Workspace Updates: Add different page numbers to different sections in Google Docs",
+          "url": "https://workspaceupdates.googleblog.com/2019/11/custom-page-numbers-docs.html"
+        },
+        {
+          "title": "Use headers, footers, page numbers and footnotes - Computer - Google Docs Editors Help",
+          "url": "https://support.google.com/docs/answer/86629?hl=en-PA"
+        },
+        {
+          "title": "Numéroter les pages de son document - Mettre en forme ses fichiers avec Google Docs - Tutoriels at Bibliothèques de l’universite Rennes 2",
+          "url": "https://tutos.bu.univ-rennes2.fr/c.php?g=714761&p=5173034"
+        },
+        {
+          "title": "Basic Formatting - Google Docs - Citation Manuals - Research Guides at Thomas University",
+          "url": "https://libguides.thomasu.edu/citations/google"
+        },
+        {
+          "title": "Como numerar páginas no Google Docs (passo a passo) · Daily Office",
+          "url": "https://dailyoffice.com.br/google-workspace/numerar-paginas-google-docs/"
+        },
+        {
+          "title": "تنسيق إعدادات الصفحة - مستند جوجل #Google #Docs - YouTube",
+          "url": "https://www.youtube.com/watch?v=AeTBzXZZI80"
+        }
+      ],
+      "resultCount": 19
+    },
+    {
+      "id": "search-41",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "docs-suggestions",
+        "docs-comments",
+        "docs-english-proofread",
+        "docs-translate"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "اقتراح تعديلات في \"مستندات Google\" - جهاز الكمبيوتر - مساعدة أدوات تحرير مستندات Google",
+          "url": "https://support.google.com/docs/answer/6033474?hl=AR"
+        },
+        {
+          "title": "Suggest edits on a document – MMDC",
+          "url": "https://support.mmdc.mcl.edu.ph/hc/en-us/articles/17674099113741-Suggest-edits-on-a-document"
+        },
+        {
+          "title": "DeepL لبرنامج ‎Google Docs‏ – مركز المساعدة في DeepL",
+          "url": "https://support.deepl.com/hc/ar/articles/7507973199388-DeepL-%D9%84%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-Google-Docs"
+        },
+        {
+          "title": "Google Workspace Updates: Sort, filter and manage comments faster in Google Docs, Sheets and Slides",
+          "url": "https://workspaceupdates.googleblog.com/2024/02/manage-comments-faster-google-docs-sheets-slides.html"
+        },
+        {
+          "title": "How to 'suggest' edits in docs : OUM Support",
+          "url": "https://oum.freshdesk.com/support/solutions/articles/36000488135-how-to-suggest-edits-in-docs"
+        },
+        {
+          "title": "Suggest edits in Google Docs - Computer - Google Docs Editors Help",
+          "url": "https://support.google.com/docs/answer/6033474?hl=en-R"
+        },
+        {
+          "title": "Google Docs Suggesting mode: review edits without losing the original | HowCurio",
+          "url": "https://howcurio.com/guides/share-google-docs-suggest-edits/"
+        },
+        {
+          "title": "Translate documents or write in a different language - Computer - Google Docs Editors Help",
+          "url": "https://support.google.com/docs/answer/187189?hl=en"
+        }
+      ],
+      "resultCount": 24
+    },
+    {
+      "id": "search-42",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "windows-clipboard",
+        "windows-screen-capture",
+        "windows-cleanup",
+        "windows-nearby-share"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "استخدم \"أداة القطع\" لالتقاط لقطات الشاشة | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/windows/apps/use-snipping-tool-to-capture-screenshots"
+        },
+        {
+          "title": "نسخ نافذة أو محتويات الشاشة | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/office/copy-the-window-or-screen-contents"
+        },
+        {
+          "title": "استخدام الحافظة | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/windows/apps/using-the-clipboard"
+        },
+        {
+          "title": "مشاركة الأشياء مع الأجهزة القريبة في Windows | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/windows/experience/connectivity-networking/share-things-with-nearby-devices-in-windows"
+        },
+        {
+          "title": "كيفية التقاط لقطة شاشة باستخدام أداة القصّ في Windows 11 - Lenovo Support TD",
+          "url": "https://support.lenovo.com/td/ar/solutions/ht517078"
+        },
+        {
+          "title": "Share things with nearby devices in Windows | Microsoft Support",
+          "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/share-things-with-nearby-devices-in-windows"
+        },
+        {
+          "title": "نقل الملفات عبر WiFi: شارك الملفات بين أي جهازين بلا كابل",
+          "url": "https://bishare.app/ar/wifi-file-transfer"
+        },
+        {
+          "title": "إرسال الملفات بين الأجهزة دون تطبيق | Nearsend",
+          "url": "https://nearsend.app/ar"
+        }
+      ],
+      "resultCount": 27
+    },
+    {
+      "id": "search-43",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "windows-zip",
+        "windows-snap",
+        "windows-desktops",
+        "windows-startup-apps"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "تكوين تطبيقات بدء التشغيل في Windows | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/windows/experience/startup-boot/configure-startup-applications-in-windows"
+        },
+        {
+          "title": "ضغط الملفات وإلغاء ضغطها | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/windows/experience/storage-filemanagement/zip-and-unzip-files"
+        },
+        {
+          "title": "كيفية استخدام ميزة تقسيم الشاشة في نظام التشغيل Windows 11 | دعم هواوي في قطر",
+          "url": "https://consumer.huawei.com/qa-ar/support/content/ar-eg15864851/"
+        },
+        {
+          "title": "Snap Your Windows | Microsoft Support",
+          "url": "https://support.microsoft.com/en-us/windows/experience/snap-your-windows"
+        },
+        {
+          "title": "[Windows 11/10] Snap windows | Official Support | ASUS USA",
+          "url": "https://www.asus.com/us/support/faq/1044681/"
+        },
+        {
+          "title": "كيف تقسّم الشاشة في ويندوز 11 | RebootDoctor",
+          "url": "https://rebootdoctor.com/ar/blog/taqsim-shaasha-windows-11/"
+        },
+        {
+          "title": "Zip and unzip files | Microsoft Support",
+          "url": "https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/zip-and-unzip-files?OCID=AID2000142_aff_7795_1243925&epi=rl2xnKiLcHs-JlH7D4UYENvpiz4sWD1JzA&irclickid=_h3ralxcn3kkfqwktkk0sohz3zv2xp69tfxittp9r00&irgwc=1&ranEAID=rl2xnKiLcHs&ranMID=43674&ranSiteID=rl2xnKiLcHs-JlH7D4UYENvpiz4sWD1JzA&tduid=%28ir__h3ralxcn3kkfqwktkk0sohz3zv2xp69tfxittp9r00%29%287795%29%281243925%29%28rl2xnKiLcHs-JlH7D4UYENvpiz4sWD1JzA%29%28%29"
+        },
+        {
+          "title": "كيفية القيام بالمهام المتعددة في Windows - دعم Microsoft",
+          "url": "https://support.microsoft.com/ar-sa/windows/%D9%83%D9%8A%D9%81%D9%8A%D8%A9-%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D9%85-%D8%A8%D8%A7%D9%84%D9%85%D9%87%D8%A7%D9%85-%D8%A7%D9%84%D9%85%D8%AA%D8%B9%D8%AF%D8%AF%D8%A9-%D9%81%D9%8A-windows-b4fa0333-98f8-ef43-e25c-06d4fb1d6960"
+        }
+      ],
+      "resultCount": 32
+    },
+    {
+      "id": "search-44",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "windows-text-size",
+        "windows-default-apps",
+        "chrome-update-check",
+        "chrome-cache-site-data"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "Make text and apps bigger | Microsoft Support",
+          "url": "https://support.microsoft.com/en-us/accessibility/windows/make-text-and-apps-bigger"
+        },
+        {
+          "title": "أجهزة الكمبيوتر الشخصي من HP - تغيير إعدادات العرض وصورة الخلفية والرموز وشاشة التوقف (Windows 11) | دعم HP®‎",
+          "url": "https://support.hp.com/emea_middle_east-ar/document/ish_4984408-6221879-16"
+        },
+        {
+          "title": "تغيير التطبيقات الافتراضية في Windows | Microsoft Support",
+          "url": "https://support.microsoft.com/ar-sa/windows/apps/change-default-apps-in-windows"
+        },
+        {
+          "title": "تحديث Google Chrome - جهاز الكمبيوتر - مساعدة متصفح Google Chrome",
+          "url": "https://support.google.com/chrome/answer/95414?hl=ar-SH"
+        },
+        {
+          "title": "كيفية تكبير أو تصغير حجم النص في ويندوز 11 - مدونة ركن للتكنلوجيا",
+          "url": "https://www.techrukn.com/takbir-hajm-an-nass-windows-11/"
+        },
+        {
+          "title": "How to Update Chrome to the Latest Version - Google Chrome",
+          "url": "https://www.google.com/intl/en_us/chrome/update/"
+        },
+        {
+          "title": "طريقة تحديث متصفّح Google Chrome",
+          "url": "https://www.google.com/intl/ar/chrome/update/"
+        },
+        {
+          "title": "How to make text larger in Windows 11 | My Computer My Way",
+          "url": "https://mcmw.abilitynet.org.uk/how-to-make-text-larger-in-windows-11"
+        }
+      ],
+      "resultCount": 26
+    },
+    {
+      "id": "search-45",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "chrome-reset-settings",
+        "chrome-bookmarks-transfer",
+        "chrome-default-search",
+        "chrome-download-errors"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "إصلاح أخطاء تنزيل الملفات - مساعدة متصفح Google Chrome",
+          "url": "https://support.google.com/chrome/answer/2898334?hl=ar"
+        },
+        {
+          "title": "ضبط محرك البحث التلقائي واختصارات طلبات البحث في المواقع الإلكترونية - جهاز الكمبيوتر - مساعدة متصفح Google Chrome",
+          "url": "https://support.google.com/chrome/answer/95426?hl=ar-MD"
+        },
+        {
+          "title": "الحصول على مساعدة بشأن رسائل الخطأ الشائعة في Chrome - مساعدة متصفح Google Chrome",
+          "url": "https://support.google.com/chrome/answer/95669?hl=ar-SH"
+        },
+        {
+          "title": "إصلاح أخطاء تعطُّل الصفحة \"عذرًا!\"والأخطاء الأخرى المتعلِّقة بتحميل الصفحة | كلية طب الزهراء - جامعة البصرة",
+          "url": "https://zahra.uobasrah.edu.iq/news/7606"
+        },
+        {
+          "title": "حظر بعض عمليات التنزيل في Google Chrome - مساعدة متصفح Google Chrome",
+          "url": "https://support.google.com/chrome/answer/6261569?hl=ar"
+        },
+        {
+          "title": "نظرة عامة على البرامج الضارة والبرامج غير المرغوب فيها | مجموعة خدمات بحث Google  |  Documentation  |  Google for Developers",
+          "url": "https://developers.google.com/search/docs/monitor-debug/security/malware?hl=ar"
+        },
+        {
+          "title": "إعدادات البحث",
+          "url": "https://www.google.com/preferences?hl=ar"
+        },
+        {
+          "title": "هل يستمر متصفحك في التحويل إلى بحث ياهو؟ إليك الحل في كروم، فايرفوكس، وأوبرا",
+          "url": "https://tips.webtech360.com/ar/windows/%D9%8A%D8%B3%D8%AA%D9%85%D8%B1-%D8%A7%D9%84%D9%85%D8%AA%D8%B5%D9%81%D8%AD-%D9%81%D9%8A-%D8%A7%D9%84%D8%AA%D8%A8%D8%AF%D9%8A%D9%84-%D8%A7%D9%95%D9%84%D9%89-%D8%A8%D8%AD%D8%AB-yahoo-%D8%A7%D9%95%D9%84%D9%8A%D9%83-%D9%83%D9%8A%D9%81%D9%8A%D8%A9-%D8%A7%D9%95%D8%B5%D9%84%D8%A7%D8%AD%D9%87-%D9%84%D9%85%D8%AA%D8%B5%D9%81%D8%AD-chrome-%D9%88-firefox-%D9%88-opera/88822360"
+        }
+      ],
+      "resultCount": 23
+    },
+    {
+      "id": "search-46",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "chrome-crash-diagnosis",
+        "chrome-translate-arabic",
+        "chrome-separate-profiles",
+        "chrome-guest-session"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "ترجمة الصفحات وتغيير لغات Chrome - جهاز الكمبيوتر - مساعدة متصفح Google Chrome",
+          "url": "https://support.google.com/chrome/answer/173424?hl=ar"
+        },
+        {
+          "title": "إصلاح Chrome في حال تعطّله أو تعذُّر فتحه - جهاز الكمبيوتر - مساعدة متصفح Google Chrome",
+          "url": "https://support.google.com/chrome/answer/142063?hl=ar"
+        },
+        {
+          "title": "إعدادات الخصوصية التي تتيح لك التحكّم في بياناتك - مركز الأمان",
+          "url": "https://safety.google/intl/ar_ALL/settings/privacy-settings/"
+        },
+        {
+          "title": "ميزات المتصفّح وأدواته: Google Chrome",
+          "url": "https://www.google.com/intl/ar/chrome/browser-tools/"
+        },
+        {
+          "title": "كيف أستخدم ترجمة Brave؟ – مركز المساعدة",
+          "url": "https://support.brave.app/hc/ar/articles/8963107404813-%D9%83%D9%8A%D9%81-%D8%A3%D8%B3%D8%AA%D8%AE%D8%AF%D9%85-%D8%AA%D8%B1%D8%AC%D9%85%D8%A9-Brave"
+        },
+        {
+          "title": "أدوات ترجمة المتصفح",
+          "url": "https://static.spokanecity.org/documents/civilrights/immigrant-and-refugee-affairs/language-access/browser-translation-guide-arabic.pdf"
+        },
+        {
+          "title": "شرح كيفية تفعيل ترجمة الصفحات في متصفح جوجل كروم (على الكمبيوتر والهاتف)",
+          "url": "https://www.noohfreestyle.com/2025/07/how-to-enable-and-adjust-google-chrome-translate-page-feature.html"
+        },
+        {
+          "title": "كيفية ترجمة صفحة ويب كاملة بـ 3 طرق مختلفة — عرفني دوت كوم",
+          "url": "https://3arrafni.com/translate-entire-page-on-browser/"
+        }
+      ],
+      "resultCount": 31
+    },
+    {
+      "id": "search-47",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "android-backup-check",
+        "lost-android-find-hub",
+        "android-app-permissions",
+        "google-photos-free-device-space"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "العثور على جهاز Android مفقود أو تأمينه أو محو بياناته - مساعدة Android",
+          "url": "https://support.google.com/android/answer/6160491?scdeb=scapi"
+        },
+        {
+          "title": "تغيير أذونات التطبيقات على هاتف Android - مساعدة Google Play",
+          "url": "https://support.google.com/googleplay/answer/9431959?hl=ar"
+        },
+        {
+          "title": "نسخ التطبيقات والبيانات من جهاز Android إلى آخر جديد - مساعدة Android",
+          "url": "https://support.google.com/android/answer/13761358?hl=ar"
+        },
+        {
+          "title": "العثور على هاتفك",
+          "url": "https://myaccount.google.com/intro/find-your-phone?hl=ar"
+        },
+        {
+          "title": "يتيح لك \"مركز العثور\" تحديد مكان جهازك أو قفله أو محو بياناته",
+          "url": "https://www.google.com/android/find/about?hl=ar"
+        },
+        {
+          "title": "احرص على إمكانية إيجاد هاتفك",
+          "url": "https://help.motorola.com/hc/3232/12/global/ar-eg/T1403250730.html"
+        },
+        {
+          "title": "إدارة أذونات التطبيقات",
+          "url": "https://help.motorola.com/hc/3777/16/global/ar-eg/CG1375231590.html"
+        },
+        {
+          "title": "Google Photos: Edit, Organize, Search, and Backup Your Photos",
+          "url": "https://www.google.com/intl/ar/photos/about/"
+        }
+      ],
+      "resultCount": 33
+    },
+    {
+      "id": "search-48",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "android-new-phone-transfer",
+        "android-restore-contacts",
+        "android-privacy-dashboard",
+        "android-usb-file-transfer"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "التبديل إلى جهاز Android جديد - مساعدة Android",
+          "url": "https://support.google.com/android/answer/6193424?hl=ar"
+        },
+        {
+          "title": "‫2. استعادة جهات الاتصال - مساعدة Android",
+          "url": "https://support.google.com/android/answer/12761392?hl=ar"
+        },
+        {
+          "title": "تعذُّر نقل البيانات إلى جهاز Android جديد - مساعدة Android",
+          "url": "https://support.google.com/android/answer/13769784?hl=ar"
+        },
+        {
+          "title": "نقل الملفات بين جهاز الكمبيوتر وجهاز Android - مساعدة Android",
+          "url": "https://support.google.com/android/answer/9064445?hl=ar"
+        },
+        {
+          "title": "جهات الاتصال - التطبيقات على Google Play",
+          "url": "https://play.google.com/store/apps/details?hl=ar&id=com.google.android.contacts"
+        },
+        {
+          "title": "نقل الملفات بأمان بين الهاتف والكمبيوتر - بوابة محافظة القاهرة",
+          "url": "https://cairo.gov.eg/ar/more/technology-and-internet/files-transfer-between-mobile-and-pc/"
+        },
+        {
+          "title": "تطبيقات تراقبك بصمت.. أداة مخفية في أندرويد تكشف الحقيقة",
+          "url": "https://www.akhbarona.com/mobile/technology/426825.html"
+        },
+        {
+          "title": "ماذا أفعل إذا كان الكمبيوتر أو الكمبيوتر المحمول غير قادر على قراءة هاتفي عند الاتصال عبر كابل USB؟",
+          "url": "https://www.mi.com/sa-ar/support/faq/details/KA-318209/"
+        }
+      ],
+      "resultCount": 29
+    },
+    {
+      "id": "search-49",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "android-location-permissions",
+        "android-factory-reset-safe",
+        "national-id-lost-replacement",
+        "national-id-damaged-replacement"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "إعادة ضبط جهاز Android على الإعدادات الأصلية - مساعدة Android",
+          "url": "https://support.google.com/android/answer/6088915?hl=ar"
+        },
+        {
+          "title": "إصدار بطاقة رقم قومي بدل تالف | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/node/64"
+        },
+        {
+          "title": "إصدار البطاقات الشخصية فاقد/تالف",
+          "url": "https://www.rop.gov.om/pdfs/services/ServicesGuide.pdf"
+        },
+        {
+          "title": "العثور على البطاقة",
+          "url": "https://icp.gov.ae/wp-content/uploads/2020/09/The-Executive-Regulations-of-the-Federal-Decree-Law-No.-9-of-2006-regarding-the-Population-Register-System-and-the-Emirates-ID-Card.pdf"
+        },
+        {
+          "title": "الاحتفاظ بنسخة احتياطية من البيانات أو استعادتها على جهاز Android - مساعدة Android",
+          "url": "https://support.google.com/android/answer/2819582?hl=ar"
+        },
+        {
+          "title": "هذا وبعد الكارت الموحد بطاقة إلكترونية مسبقة الدفع تستخدم لإيداع أو لاستقبال مبالغ مباشرة على البطاقة واتمام عمليات الشراء من ماكينات نقاط البيع لدى التجار أو السحب النقدي من ماكينات الصرافات الآلية للهيئة القومية للبريد؛ حيث يتم خصم المبلغ مباشرة من حساب البطاقة.",
+          "url": "https://mediadr.sis.gov.eg/bitstream/handle/123456789/34079/MCIT20230813_0835.pdf?isAllowed=y&sequence=4"
+        },
+        {
+          "title": "تغيير أذونات التطبيقات على هاتف Android - مساعدة Google Play",
+          "url": "https://support.google.com/googleplay/answer/9431959?hl=ar-AE"
+        },
+        {
+          "title": "قطاع مصلحة الأحوال المدنية",
+          "url": "https://www.cairo.gov.eg/ar/Imp%20Information/Police_and_Traffic/Documents/dalil_5damat.pdf"
+        }
+      ],
+      "resultCount": 32
+    },
+    {
+      "id": "search-50",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "automated-death-certificate",
+        "automated-marriage-certificate",
+        "ration-data-update",
+        "ration-family-join"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "إصدار شهادة وفاة مميكنة | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/node/8"
+        },
+        {
+          "title": "ServicesList | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/serviceslist"
+        },
+        {
+          "title": "ضم الزوجة والأبناء على بطاقة التموين 2026.. شروط جديدة لقبول إضافة أفراد الأسرة | المصري اليوم",
+          "url": "https://www.almasryalyoum.com/news/details/4340891"
+        },
+        {
+          "title": "متاح الآن.. ضم أفراد الأسرة على بطاقات التموين - اليوم السابع",
+          "url": "https://www.youm7.com/story/2026/5/26/%D9%85%D8%AA%D8%A7%D8%AD-%D8%A7%D9%84%D8%A2%D9%86-%D8%B6%D9%85-%D8%A3%D9%81%D8%B1%D8%A7%D8%AF-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1%D8%A9-%D8%B9%D9%84%D9%89-%D8%A8%D8%B7%D8%A7%D9%82%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D9%85%D9%88%D9%8A%D9%86/7428521"
+        },
+        {
+          "title": "تحديث بيانات المواطنين عبر منصة مصر الرقمية.. تحذير مهم من «التموين» قبل إرسال الاستمارة - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8349694"
+        },
+        {
+          "title": "من الفئات المستحقة لضم أفراد الأسرة على بطاقات التموين؟| اعرف الشروط والخطوات - بوابة الأهرام بيزنس",
+          "url": "https://business.ahram.org.eg/News/115698.aspx"
+        },
+        {
+          "title": "الحصول على شهادة الوفاة المميكنة - دليل الخدمات العامة",
+          "url": "https://psm.gov.eg/Services/205?serviceName=%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%B4%D9%87%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D9%88%D9%81%D8%A7%D8%A9-%D8%A7%D9%84%D9%85%D9%85%D9%8A%D9%83%D9%86%D8%A9"
+        },
+        {
+          "title": "أ- تعتمد المنظومة الجديدة على توفير حزمة من الخدمات للمواطنين من خلال كارت ذكي موحد ومؤمن بما يتناسب مع متطلبات الأمن السيبراني، بديلًا عن بطاقة الدعم التمويني الحالية وهي تمثل نقلة نوعية في مسار التحول الرقمي والحوكمة، بما يضمن وصول الدعم إلى مستحقيه وتقليل الهدر في الموارد المالية للدولة، كما تعزز هذه المنظومة الشمول المالي وتبسيط الإجراءات الحكومية.",
+          "url": "https://msit.gov.eg/wp-content/uploads/2025/12/%D9%85%D9%84%D8%AE%D8%B5-%D8%A3%D8%A8%D8%B1%D8%B2-%D8%A7%D9%84%D8%A7%D8%B9%D9%85%D8%A7%D9%84-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%AC%D8%A7%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%86%D9%88%D9%8A%D8%A9-%D9%88%D8%B2%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AA%D9%85%D9%88%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9-%D8%AE%D9%84%D8%A7%D9%84-%D8%A7%D9%84%D9%81%D8%AA%D8%B1%D8%A9-%D9%85%D9%86-%D9%8A%D9%86%D8%A7%D9%8A%D8%B1-%D8%AD%D8%AA%D9%8A-%D8%AF%D9%8A%D8%B3%D9%85%D8%A8%D8%B1-2025.pdf"
+        }
+      ],
+      "resultCount": 30
+    },
+    {
+      "id": "search-51",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "ration-card-replacement",
+        "ration-card-governorate-transfer",
+        "ration-card-activation",
+        "old-rent-housing-apply"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "السكن البديل للإيجار القديم 2026: آخر موعد وخطوات التقديم | أجّر",
+          "url": "https://www.ajar-eg.com/journal/alternative-housing-old-rent-application-deadline-october-2026-egypt"
+        },
+        {
+          "title": "رابط وخطوات الاستعلام عن طلب السكن البديل للإيجار القديم بالرقم القومي | المصري اليوم",
+          "url": "https://www.almasryalyoum.com/news/details/4383680"
+        },
+        {
+          "title": "السكن البديل للإيجار القديم 2026 الشروط والمستندات | أجّر",
+          "url": "https://www.ajar-eg.com/journal/alternative-housing-old-rent-egypt-2026"
+        },
+        {
+          "title": "بعد منح مهلة جديدة، رابط التقديم على وحدات السكن البديل لأصحاب الإيجار القديم",
+          "url": "https://www.vetogate.com/5760203"
+        },
+        {
+          "title": "البريد المصري يتيح التسجيل الإلكتروني لطلبات \"السكن البديل\" لمتضرري الإيجار القديم بدءاً من 18 يناير2026",
+          "url": "https://mediadr.sis.gov.eg/handle/123456789/118673"
+        },
+        {
+          "title": "«الإسكان» تحدد آخر موعد للتقديم على السكن البديل لمستأجري الإيجار القديم - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8369091"
+        },
+        {
+          "title": "مد التقديم على السكن البديل للإيجار القديم حتى 12 يناير 2027 | أجّر",
+          "url": "https://www.ajar-eg.com/journal/old-rent-alternative-housing-extension-jan-2027"
+        },
+        {
+          "title": "غدا.. كيف تسجل فى السكن البديل للإيجار القديم عبر البريد المصرى وبوابة مصر الرقمية؟ | المصري اليوم",
+          "url": "https://www.almasryalyoum.com/news/details/4176788"
+        }
+      ],
+      "resultCount": 29
+    },
+    {
+      "id": "search-52",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "old-rent-housing-eligibility",
+        "old-rent-housing-documents",
+        "old-rent-housing-post-office",
+        "old-rent-housing-track"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "البريد المصري يعلن إتاحة التسجيل الإلكتروني للمواطنين المخاطبين بقانون الإيجار القديم «السكن البديل»",
+          "url": "https://sis.gov.eg/ar/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2-%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%85%D9%8A/%D8%A7%D9%84%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1/%D8%A7%D9%84%D8%A8%D8%B1%D9%8A%D8%AF-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D9%8A%D8%B9%D9%84%D9%86-%D8%A5%D8%AA%D8%A7%D8%AD%D8%A9-%D8%A7%D9%84%D8%AA%D8%B3%D8%AC%D9%8A%D9%84-%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A-%D9%84%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A%D9%86-%D8%A7%D9%84%D9%85%D8%AE%D8%A7%D8%B7%D8%A8%D9%8A%D9%86-%D8%A8%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%A7%D9%84%D8%A5%D9%8A%D8%AC%D8%A7%D8%B1-%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85-%D8%A7%D9%84%D8%B3%D9%83%D9%86-%D8%A7%D9%84%D8%A8%D8%AF%D9%8A%D9%84/"
+        },
+        {
+          "title": "البريد المصري يتيح التسجيل الإلكتروني لطلبات \"السكن البديل\" لمتضرري الإيجار القديم بدءاً من 18 يناير2026",
+          "url": "https://mediadr.sis.gov.eg/handle/123456789/118673"
+        },
+        {
+          "title": "المستندات المطلوبة من أصحاب المحال والمهن لتقديم طلب «السكن البديل» - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8307701"
+        },
+        {
+          "title": "مركز خدمة المواطنين - الطلبات - صندوق الإسكان الإجتماعي ودعم التمويل العقاري",
+          "url": "https://cservices.shmff.gov.eg/ChangeUnitTest/UserServices/SubService"
+        },
+        {
+          "title": "كيفية التقديم على شقق الإسكان البديلة لمستأجري الإيجار القديم 2026| الشروط والأوراق المطلوبة - بوابة الأهرام بيزنس",
+          "url": "https://business.ahram.org.eg/UI/Front/Inner.aspx?NewsContentID=53642"
+        },
+        {
+          "title": "منصة السكن البديل: طريقة التقديم الرسمية بعد قانون الإيجار القديم | بروبرتي فايندر",
+          "url": "https://www.propertyfinder.eg/blog/%D9%85%D9%86%D8%B5%D8%A9-%D8%A7%D9%84%D8%B3%D9%83%D9%86-%D8%A7%D9%84%D8%A8%D8%AF%D9%8A%D9%84/"
+        },
+        {
+          "title": "6 أوراق «ذهبية» تضمن الحصول على السكن البديل 2026 للإيجار القديم - الوطن",
+          "url": "https://www.elwatannews.com/news/details/8308117"
+        },
+        {
+          "title": "قبل غلق باب التقديم.. تعرف علي الأوراق المطلوبه للحصول على شقة الإسكان البديل - اليوم السابع",
+          "url": "https://www.youm7.com/story/2026/4/22/%D9%82%D8%A8%D9%84-%D8%BA%D9%84%D9%82-%D8%A8%D8%A7%D8%A8-%D8%A7%D9%84%D8%AA%D9%82%D8%AF%D9%8A%D9%85-%D8%AA%D8%B9%D8%B1%D9%81-%D8%B9%D9%84%D9%8A-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D8%A7%D9%82-%D8%A7%D9%84%D9%85%D8%B7%D9%84%D9%88%D8%A8%D9%87-%D9%84%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89/7386471"
+        }
+      ],
+      "resultCount": 26
+    },
+    {
+      "id": "search-53",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "gmail-filters",
+        "google-backup-codes",
+        "google-data-download",
+        "chrome-unwanted-notifications"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "تسجيل الدخول باستخدام الرموز الاحتياطية - جهاز الكمبيوتر - مساعدة حساب Google",
+          "url": "https://support.google.com/accounts/answer/1187538?hl=ar"
+        },
+        {
+          "title": "إنشاء قواعد لفلترة الرسائل الإلكترونية - مساعدة Gmail",
+          "url": "https://support.google.com/mail/answer/6579?hl=ar"
+        },
+        {
+          "title": "إزالة الإعلانات والنوافذ المنبثقة والبرامج الضارة غير المرغوب فيها - جهاز الكمبيوتر - مساعدة متصفح Google Chrome",
+          "url": "https://support.google.com/chrome/answer/2765944?hl=ar-EG"
+        },
+        {
+          "title": "كيفية تنزيل بيانات المستخدم على Google - مساعدة حساب Google",
+          "url": "https://support.google.com/accounts/answer/3024190?hl=ar-TK"
+        },
+        {
+          "title": "حظر النوافذ المنبثقة أو السماح بها في Chrome - جهاز الكمبيوتر - مساعدة متصفح Google Chrome",
+          "url": "https://support.google.com/chrome/answer/95472?hl=ar-SH"
+        },
+        {
+          "title": "إدارة فلاتر Gmail  |  Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/guides/filter_settings?hl=ar"
+        },
+        {
+          "title": "وزارة التعليم العالي والبحث العلمي",
+          "url": "https://www.uomustansiriyah.edu.iq/media/lectures/12/12_2025_03_24%2102_48_20_AM.pdf"
+        },
+        {
+          "title": "كيف يمكن إيقاف ظهور نوافذ الإعلانات المنبثقة تلقائياً؟ | مساعدة | ASUS مِصر‎",
+          "url": "https://www.asus.com/eg/support/faq/1034050/"
+        }
+      ],
+      "resultCount": 28
+    },
+    {
+      "id": "search-54",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "drive-safe-sharing",
+        "drive-file-restore",
+        "google-device-sessions",
+        "gmail-phishing-report"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "الاطّلاع على الأجهزة التي تم تسجيل الدخول إلى حسابك منها - مساعدة حساب Google",
+          "url": "https://support.google.com/accounts/answer/3067630?hl=ar-CD"
+        },
+        {
+          "title": "الأجهزة",
+          "url": "https://myaccount.google.com/intro/device-activity?hl=ar"
+        },
+        {
+          "title": "استرداد الملفات والمجلدات المحذوفة لمستخدمي Drive  |  Drive & Docs  |  Google Workspace Help",
+          "url": "https://knowledge.workspace.google.com/admin/drive/recover-deleted-files-and-folders-for-drive-users?hl=ar&rd=1&visit_id=639193077920119151-1997516935"
+        },
+        {
+          "title": "طريقة تجنّب الرسائل الإلكترونية التي تهدف إلى التصيّد الاحتيالي والإبلاغ عنها - مساعدة Gmail",
+          "url": "https://support.google.com/mail/answer/8253?hl=ar-HR"
+        },
+        {
+          "title": "معرفة ما يحدث عند حذف ملف في Google Drive - مساعدة Google Drive",
+          "url": "https://support.google.com/drive/answer/14933051?hl=ar-MT"
+        },
+        {
+          "title": "نقل الملفات والمجلدات إلى المهملات أو حذفها  |  Google Drive  |  Google for Developers",
+          "url": "https://developers.google.com/workspace/drive/api/guides/delete?hl=ar"
+        },
+        {
+          "title": "الدخول منها إلى حسابك، ومواقعها التقريبية.",
+          "url": "https://insm-iq.org/wp-content/uploads/2025/08/Dalel.pdf"
+        },
+        {
+          "title": "See devices with account access - Google Account Help",
+          "url": "https://support.google.com/accounts/answer/3067630?hl=en"
+        }
+      ],
+      "resultCount": 27
+    },
+    {
+      "id": "search-55",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "iphone-backup-choice",
+        "lost-iphone-find-my",
+        "electricity-bill-inquiry",
+        "south-cairo-electricity"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "كيفية نسخ iPhone أو iPad أو iPod touch احتياطيًا - Apple دعم (QA)",
+          "url": "https://support.apple.com/ar-qa/118426"
+        },
+        {
+          "title": "طرق النسخ الاحتياطي لـ iPhone وiPad وiPod touch - Apple دعم (EG)",
+          "url": "https://support.apple.com/ar-eg/108771"
+        },
+        {
+          "title": "تحذيرات ونصائح من أبل عند فقدان أو سرقة هاتف آيفون | المصري اليوم",
+          "url": "https://www.almasryalyoum.com/news/details/4301712"
+        },
+        {
+          "title": "كيف تعمل نسخة احتياطية للآيفون؟ iCloud أو الكمبيوتر",
+          "url": "https://taqaniya.com/%D9%86%D8%B3%D8%AE%D8%A9-%D8%A7%D8%AD%D8%AA%D9%8A%D8%A7%D8%B7%D9%8A%D8%A9-%D9%84%D9%84%D8%A7%D9%8A%D9%81%D9%88%D9%86-icloud-%D8%A7%D9%88-%D8%A7%D9%84%D9%83%D9%85%D8%A8%D9%8A%D9%88%D8%AA%D8%B1/?amp=1"
+        },
+        {
+          "title": "إذا تعرض جهازك iPhone أو iPad للسرقة - Apple دعم (EG)",
+          "url": "https://support.apple.com/ar-eg/120837"
+        },
+        {
+          "title": "شركة شمال القاهرة لتوزيع الكهرباء",
+          "url": "https://ncedc.gov.eg/Home/index.html"
+        },
+        {
+          "title": "استعلم عن فواتيرك - بوابة محافظة القاهرة",
+          "url": "https://cairo.gov.eg/ar/more/check-your-bills/"
+        },
+        {
+          "title": "المنصة الموحدة لخدمات الكهرباء | الشركة القابضة لكهرباء مصر",
+          "url": "https://eservices.eehc.gov.eg/"
+        }
+      ],
+      "resultCount": 32
+    },
+    {
+      "id": "search-56",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "north-delta-electricity",
+        "alexandria-electricity",
+        "south-delta-electricity",
+        "north-cairo-electricity"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "شركه جنوب الدلتا لتوزيع الكهرباء",
+          "url": "https://sdedc.gov.eg/"
+        },
+        {
+          "title": "شركة شمال القاهرة لتوزيع الكهرباء",
+          "url": "https://ncedc.gov.eg/Home/index.html"
+        },
+        {
+          "title": "شركة الأسكندرية لتوزيع الكهرباء",
+          "url": "https://aedc.gov.eg/"
+        },
+        {
+          "title": "شركة الأسكندرية لتوزيع الكهرباء",
+          "url": "https://aedc.gov.eg/AEDC.121.html"
+        },
+        {
+          "title": "- شركة الاسكندرية لتوزيع الكهرباء",
+          "url": "https://alexapi.ahram.org.eg/Home/"
+        },
+        {
+          "title": "المنصة الموحدة لخدمات الكهرباء | الشركة القابضة لكهرباء مصر",
+          "url": "https://eservices.eehc.gov.eg/"
+        },
+        {
+          "title": "شركة الأسكندرية لتوزيع الكهرباء",
+          "url": "https://aedc.gov.eg/AEDC.smartservices.html"
+        },
+        {
+          "title": "لمحافظات القليوبية والمنوفية والغربية.. 6 طرق للاستعلام عن فاتورة الكهرباء | أموال الغد",
+          "url": "https://amwalalghad.com/2026/02/12/%D9%84%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA-%D8%A7%D9%84%D9%82%D9%84%D9%8A%D9%88%D8%A8%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D9%85%D9%86%D9%88%D9%81%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%BA%D8%B1%D8%A8/"
+        }
+      ],
+      "resultCount": 20
+    },
+    {
+      "id": "search-57",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "vehicle-license-renewal-online",
+        "vehicle-license-lost-replacement",
+        "vehicle-license-damaged-replacement",
+        "vehicle-violations-inquiry"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "الحصول علي بدل فاقد أو تالف لرخص القيادة",
+          "url": "https://portsaid.gov.eg/Upload/DocumentLibrary/AttachmentA/63/final.pdf"
+        },
+        {
+          "title": "بدل تالف رخصة قيادة | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/node/45"
+        },
+        {
+          "title": "وزارة الداخلية المصرية :: دليل الخدمات",
+          "url": "https://www.moi.gov.eg/home/directoryservices"
+        },
+        {
+          "title": "كيفية الاستعلام عن مخالفات المرور وسدادها إلكترونيًا - بوابة الأهرام",
+          "url": "https://gate.ahram.org.eg/News/5816333.aspx"
+        },
+        {
+          "title": "استخراج بدل فاقد لرخصة القيادة دون زحام| الشروط والمستندات المطلوبة - بوابة الأهرام بيزنس",
+          "url": "https://business.ahram.org.eg/News/126026.aspx"
+        },
+        {
+          "title": "ServicesList | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/serviceslist"
+        },
+        {
+          "title": "الإدارة العامة لنظم معلومات أجهزة المرور",
+          "url": "https://site.moi.gov.eg/traffic/Pages/home.aspx"
+        },
+        {
+          "title": "خطوات الاستعلام عن مخالفات المرور برقم الرخصة أو لوحة المركبة - بوابة الأهرام",
+          "url": "https://gate.ahram.org.eg/News/5644116.aspx"
+        }
+      ],
+      "resultCount": 29
+    },
+    {
+      "id": "search-58",
+      "checkedAt": "2026-11-01",
+      "topics": [
+        "driving-license-lost-replacement",
+        "automated-birth-certificate"
+      ],
+      "scope": "نتائج مجمعة لأربع استعلامات؛ ليست ترتيبًا مثبتًا ولا مقارنة يدوية لكل نتيجة",
+      "results": [
+        {
+          "title": "بدل فاقد رخصة قيادة | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/node/46"
+        },
+        {
+          "title": "المرور - الشروط و الأحكام",
+          "url": "https://traffic.moi.gov.eg/Arabic/Pages/terms-drivinglicense-replacement-of-damaged.aspx"
+        },
+        {
+          "title": "استخراج بدل فاقد أو تالف لرخص القيادة - دليل الخدمات العامة",
+          "url": "https://psm.gov.eg/Services/386?serviceName=%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%A8%D8%AF%D9%84-%D9%81%D8%A7%D9%82%D8%AF-%D8%A3%D9%88-%D8%AA%D8%A7%D9%84%D9%81-%D9%84%D8%B1%D8%AE%D8%B5-%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D8%AF%D8%A9"
+        },
+        {
+          "title": "الحصول علي بدل فاقد أو تالف لرخص القيادة",
+          "url": "https://portsaid.gov.eg/Upload/DocumentLibrary/AttachmentA/63/final.pdf"
+        },
+        {
+          "title": "استخراج بدل فاقد لرخصة القيادة دون زحام| الشروط والمستندات المطلوبة - بوابة الأهرام بيزنس",
+          "url": "https://business.ahram.org.eg/News/126026.aspx"
+        },
+        {
+          "title": "بدل تالف رخصة قيادة | مركز خدمات مصر",
+          "url": "https://www.khadamatmisr.gov.eg/node/45"
+        },
+        {
+          "title": "استخراج بدل فاقد رخصة قيادة| تفاصيل كاملة - بوابة الأهرام",
+          "url": "https://gate.ahram.org.eg/News/5106696.aspx"
+        },
+        {
+          "title": "الإدارة العامة للمرور - دليل الخدمات العامة",
+          "url": "https://psm.gov.eg/providers/47/services"
+        }
+      ],
+      "resultCount": 31
+    }
+  ]
+}

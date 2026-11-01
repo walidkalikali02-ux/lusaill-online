@@ -14,6 +14,9 @@ import { categoryIntroductions } from "@/lib/category-introductions";
 
 // Pin known content changes; never substitute build or deployment time.
 const articleTemplateUpdatedAt = new Date("2026-10-04");
+// Reader questions, topic navigation and case grouping changed on this date.
+// This is independent of article fact-check dates and deployment timestamps.
+const guideTemplateUpdatedAt = new Date("2026-11-01");
 
 function latestPublishedUpdate(items: Array<{ updatedAt?: string }>): Date | undefined {
   const timestamps = items
@@ -80,8 +83,8 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     }));
 
   const guideRoutes: MetadataRoute.Sitemap = [
-    { url: absoluteUrl("/guides"), lastModified: new Date("2026-10-02"), changeFrequency: "monthly", priority: 0.8 },
-    ...guidePaths.map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published" && path.articleSlugs.includes(article.slug))), changeFrequency: "monthly" as const, priority: 0.8 })),
+    { url: absoluteUrl("/guides"), lastModified: guideTemplateUpdatedAt, changeFrequency: "monthly", priority: 0.8 },
+    ...guidePaths.map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: new Date(Math.max(guideTemplateUpdatedAt.getTime(), latestPublishedUpdate(articles.filter((article) => article.status === "published" && path.articleSlugs.includes(article.slug)))?.getTime() ?? 0)), changeFrequency: "monthly" as const, priority: 0.8 })),
   ];
   return {
     "sitemap-articles.xml": publishedArticleRoutes,
