@@ -145,3 +145,5 @@ export const searchTitles: Record<string, string> = Object.fromEntries(Object.en
 searchTitles["old-rent-housing-apply"] = "السكن البديل: الموعد المنشور وخطوات المتابعة";
 
 searchTitles["old-rent-housing-post-office"] = "السكن البديل عبر البريد: تحقق من إتاحة التقديم";
+
+searchTitles["old-rent-housing-apply"] = "السكن البديل: متابعة خبر مد التقديم إلى يناير 2027";
