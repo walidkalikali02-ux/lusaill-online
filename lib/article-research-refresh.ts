@@ -105,6 +105,8 @@ export const articleResearchRefreshes: Record<string, Refresh> = {
     reason: "تمييز تحويل الكلام لنص عن الترجمة بين اللغات.", source: captions, sourceLabel: "Google Slides: التسميات التوضيحية أثناء العرض",
     apply: article => ({ ...article,
       title: "تشغيل التسميات التوضيحية في Google Slides",
+      keyword: "التسميات التوضيحية في Google Slides",
+      coverImageAlt: "رسم إرشادي أصلي لتشغيل التسميات التوضيحية أثناء عرض Google Slides",
       metaDescription: "عرض كلام المتحدث كنص في Google Slides: تشغيل Captions والميكروفون ومشاركة الشاشة وحدود الدقة والحفظ، دون وعد بالترجمة بين اللغات.",
       quickAnswer: "لإظهار كلامك كنص أثناء عرض Google Slides، افتح Captions preferences ثم Toggle captions واسمح بالميكروفون. تعمل الميزة عبر المتصفحات المدعومة واتصال الإنترنت، ولا تحفظ النص داخل العرض. التسميات التوضيحية ليست وعدًا بترجمة الكلام إلى لغة أخرى؛ اختبر لغة حديثك قبل العرض.",
     }),
