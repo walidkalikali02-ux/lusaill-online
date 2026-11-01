@@ -143,6 +143,11 @@ img { max-width: 100%; height: auto; }
 .trust-num { display: inline-flex; width: 36px; height: 36px; align-items: center; justify-content: center; border-radius: 10px; background: var(--ink); color: white; font-size: 14px; font-weight: 700; margin-bottom: 18px; }
 .trust-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
 .trust-card p { color: var(--ink-secondary); font-size: 14.5px; line-height: 1.75; }
+.topic-nav ul { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 24px 0; }
+.topic-nav a { display: block; padding: 10px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.topic-group { margin-top: 48px; scroll-margin-top: 100px; }
+.topic-group > h2 { margin-bottom: 12px; }
+.topic-group > p { margin-bottom: 24px; color: var(--ink-secondary); line-height: 1.8; }
 
 /* ─── Stats ─── */
 .stats-row { display: flex; justify-content: center; gap: 60px; padding: 40px 0; }

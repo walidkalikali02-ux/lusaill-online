@@ -42,6 +42,26 @@ for (const path of guidePaths) for(const slug of path.articleSlugs) assert(publi
 for(const slug of published) assert(getGuidePath(slug), `No task path for published article ${slug}`);
 console.log(`All ${published.size} published articles have task paths; all members are published.`);
 
+// Topic navigation must neither orphan an existing hub nor hide an article
+// when a flat hub is split into reader cases.
+const { topicClusters, readerQuestions, guideStages } = load("lib/topic-clusters.ts");
+const clusteredPaths = topicClusters.flatMap(cluster => cluster.pathSlugs);
+assert.equal(new Set(clusteredPaths).size, clusteredPaths.length, "A guide appears in more than one topic navigation group");
+assert.deepEqual([...clusteredPaths].sort(), guidePaths.map(path => path.slug).sort(), "Topic navigation must cover every guide exactly once");
+for (const path of guidePaths) assert(readerQuestions[path.slug], `Missing reader question: ${path.slug}`);
+for (const [slug, stages] of Object.entries(guideStages)) {
+  const path = guidePaths.find(item => item.slug === slug);
+  assert(path, `Unknown staged guide: ${slug}`);
+  const members = stages.flatMap(stage => stage.articleSlugs);
+  assert(stages.every(stage => stage.question && stage.articleSlugs.length), `Empty reader case: ${slug}`);
+  assert.equal(new Set(members).size, members.length, `Repeated article across reader cases: ${slug}`);
+  assert.deepEqual([...members].sort(), [...path.articleSlugs].sort(), `Reader cases omit or add an unrelated article: ${slug}`);
+}
+assert(!journeys.articleJourneysBySlug["birth-certificates"].includes("family-record-egypt"));
+assert(journeys.articleJourneysBySlug["telecom-lines"].includes("lost-sim-card"));
+assert(!journeys.articleJourneysBySlug["telecom-internet"].includes("lost-sim-card"));
+console.log(`Topic clusters passed: ${topicClusters.length} topics, ${clusteredPaths.length} hubs, ${Object.keys(guideStages).length} hubs with reader cases.`);
+
 // Article audit: a category move must reach every consumer of the article model.
 const {getArticleAdvisories, trafficArticleSlugs} = importSource("lib/article-audit-updates.ts");
 for (const slug of trafficArticleSlugs) assert.equal(articles.find(a => a.slug === slug)?.clusterCode, "C", `Traffic topic is outside its category: ${slug}`);
