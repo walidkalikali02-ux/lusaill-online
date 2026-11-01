@@ -1,4 +1,5 @@
 import { applyArticleResearchRefresh } from "./article-research-refresh";
+import { applyElectricityResearchRefresh } from "./electricity-research-refresh";
 import { applyHousingPressUpdate } from "./housing-press-update";
 import { applyArticleAuditUpdates, type PracticalSection } from "./article-audit-updates";
 import { housingDeadlinePassed } from "./deadlines";
@@ -59,7 +60,7 @@ export const articles: Article[] = articleSeeds.map((seed) => {
   const illustrated = illustrationDate && (!article.updatedAt || Date.parse(illustrationDate) > Date.parse(article.updatedAt))
     ? { ...article, updatedAt: illustrationDate }
     : article;
-  return applyHousingPressUpdate(applyArticleResearchRefresh(applyArticleAuditUpdates(illustrated)));
+  return applyElectricityResearchRefresh(applyHousingPressUpdate(applyArticleResearchRefresh(applyArticleAuditUpdates(illustrated))));
 });
 
 export const coreHundred = articles.filter((article) => article.id <= 100);
