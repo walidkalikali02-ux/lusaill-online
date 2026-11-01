@@ -50,7 +50,7 @@ const editionTitles: Record<string, string> = {
   "slides-linked-chart": "مخطط مرتبط 2026: ربط Google Sheets بعرض Slides",
   "slides-animation": "حركة الشرائح 2026: ضبط الانتقالات في Google Slides",
   "slides-presenter-notes": "ملاحظات المتحدث 2026: عرضها مع Google Slides",
-  "slides-captions": "ترجمة مباشرة 2026: تشغيلها في عرض Google Slides",
+  "slides-captions": "تسميات Google Slides: عرض كلام المتحدث كنص",
   "slides-audience-qa": "أسئلة الجمهور 2026: تشغيلها في Google Slides",
   "slides-print-notes": "طباعة الشرائح 2026: حفظ ملاحظات Google Slides",
   "sheets-sort-filter": "فرز البيانات 2026: تصفية Google Sheets دون خلط",
