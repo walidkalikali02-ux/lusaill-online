@@ -1,3 +1,4 @@
+import { publishedCmsDocuments } from "@/lib/cms/public";
 import { ArticleCard } from "@/components/article-card";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
@@ -18,7 +19,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ArticlesPage() {
+export default async function ArticlesPage() {
+  const managed = await publishedCmsDocuments();
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -28,7 +30,7 @@ export default function ArticlesPage() {
     ],
   };
 
-  const publishedArticles = articles.filter((a) => a.status === "published").sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "") || b.id - a.id);
+  const publishedArticles = articles.filter((a) => a.status === "published" && !managed.some(m=>m.slug===a.slug)).sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "") || b.id - a.id);
 
 
 
@@ -45,11 +47,12 @@ export default function ArticlesPage() {
           <h1>كل الأدلة</h1>
           <p>جميع الأدلة والمقالات العملية في موسوعة لوسيل.</p>
           <div className="article-meta" style={{ marginTop: 16 }}>
-            <span className="article-meta-item">{publishedArticles.length} دليلًا منشورًا</span>
+            <span className="article-meta-item">{publishedArticles.length + managed.filter(d=>d.status === "published").length} دليلًا منشورًا</span>
           </div>
         </div>
 
         <h2>أحدث الأدلة</h2>
+        {managed.filter(d=>d.status==='published').map(d=><article className="brief-box" key={d.id}><h3><Link href={`/articles/${d.slug}`}>{d.title}</Link></h3><p>{d.description}</p></article>)}
         {publishedArticles.length > 0 ? (
           <div className="articles-grid">
             {publishedArticles.slice(0, 12).map(article => <ArticleCard key={article.slug} article={article} />)}

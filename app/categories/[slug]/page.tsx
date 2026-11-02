@@ -1,9 +1,10 @@
+import { discoverableArticles } from "@/lib/cms/discovery-server";
 import { ArticleCard } from "@/components/article-card";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { clusters, getCluster, getClusterArticles, clusterProgress } from "@/lib/content";
+import { clusters, getCluster } from "@/lib/content";
 import { guidePaths } from "@/lib/guide-paths";
 import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 
@@ -25,7 +26,7 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   const { page: pageParam } = await searchParams;
   const cluster = getCluster(slug);
   if (!cluster) return {};
-  const publishedCount = getClusterArticles(cluster.slug).filter((article) => article.status === "published").length;
+  const publishedCount = (await discoverableArticles()).filter(article => article.clusterCode === cluster.code).length;
   const hasPublished = publishedCount > 0;
   const totalPages = Math.max(1, Math.ceil(publishedCount / ARTICLES_PER_PAGE));
   const requestedPage = pageNumber(pageParam);
@@ -55,8 +56,8 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
   const cluster = getCluster(slug);
   if (!cluster) notFound();
 
-  const items = getClusterArticles(cluster.slug).filter((item) => item.status === "published");
-  const progress = clusterProgress(cluster.slug);
+  const items = (await discoverableArticles()).filter(item => item.clusterCode === cluster.code);
+  const progress = { published: items.length };
   const introduction = categoryIntroductions[cluster.slug];
   const paths = guidePaths.filter((path) => path.articleSlugs.some((slug) => items.some((article) => article.slug === slug)));
   const totalPages = Math.ceil(items.length / ARTICLES_PER_PAGE);

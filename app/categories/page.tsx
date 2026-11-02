@@ -1,8 +1,9 @@
+import { discoverableArticles } from "@/lib/cms/discovery-server";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ClusterCard } from "@/components/cluster-card";
-import { clusters, overallProgress, clusterProgress } from "@/lib/content";
+import { clusters, coreHundred } from "@/lib/content";
 import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -18,9 +19,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ClustersPage() {
-  const progress = overallProgress();
-  const activeClusters = clusters.filter((cluster) => clusterProgress(cluster.slug).published > 0);
+export default async function ClustersPage() {
+  const published = await discoverableArticles();
+  const progress = { coreTotal: coreHundred.length, corePublished: published.filter(a=>a.id > 0 && a.id <= 100).length };
+  const activeClusters = clusters.filter((cluster) => published.some(a=>a.clusterCode === cluster.code));
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
