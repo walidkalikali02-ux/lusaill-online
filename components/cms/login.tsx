@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { browserCms } from "@/lib/cms/browser";
@@ -55,6 +56,7 @@ export function CmsLogin({ configured }: { configured: boolean }) {
           </label>
           <button disabled={busy}>{busy ? "جارٍ الدخول…" : "دخول آمن"}</button>
           <p role="alert">{error}</p>
+          <Link href="/admin/set-password">إنشاء كلمة المرور من الدعوة</Link>
         </form>
       )}
     </main>
