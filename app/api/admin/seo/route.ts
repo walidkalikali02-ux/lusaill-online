@@ -23,7 +23,10 @@ export async function POST(request:Request){
  if(body.action==="audit"){if(!["admin","editor","strategist"].includes(role))throw Error("FORBIDDEN");if(!Array.isArray(body.targets)||body.targets.length<1||body.targets.length>4||body.targets.some((k:unknown)=>typeof k!=="string"))throw Error("INVALID_DATA");
  const targets=body.targets.map((key:string)=>{const target=inventory.targets.find(t=>t.key===key);if(!target)throw Error("NOT_FOUND");return target;});
  const {error:syncError}=await client.rpc("seo_sync",{payload:targets});if(syncError)throw syncError;const batch=typeof body.requestId==="string"?body.requestId:randomUUID();
- const results=[];for(const target of targets){const doc=inventory.documents.get(target.key);const report=target.scope==="site"?await auditSite():await auditArticle(target,doc!);const h=createHash("sha256").update(batch+target.key).digest("hex");const id=`${h.slice(0,8)}-${h.slice(8,12)}-4${h.slice(13,16)}-8${h.slice(17,20)}-${h.slice(20,32)}`;
+ const results=[];for(const target of targets){const h=createHash("sha256").update(batch+target.key).digest("hex");const id=`${h.slice(0,8)}-${h.slice(8,12)}-4${h.slice(13,16)}-8${h.slice(17,20)}-${h.slice(20,32)}`;
+ const {data:existing,error:existingError}=await client.from("seo_review_runs").select("id,target_key,content_hash,report").eq("id",id).maybeSingle();if(existingError)throw existingError;
+ if(existing){if(existing.target_key!==target.key||existing.content_hash!==target.hash)throw Error("CONTENT_CHANGED");results.push({target:target.key,id,failures:existing.report.checks.filter((c:{status:string})=>["fail","error"].includes(c.status)).length});continue;}
+ const doc=inventory.documents.get(target.key);const report=target.scope==="site"?await auditSite():await auditArticle(target,doc!);
  const {data,error}=await client.rpc("seo_record_run",{run_id:id,target:target.key,hash:target.hash,report});if(error)throw error;results.push({target:target.key,id:data.id,failures:report.checks.filter(c=>["fail","error"].includes(c.status)).length});}
  return Response.json({results},{headers});}
  throw Error("INVALID_DATA");
