@@ -1,9 +1,9 @@
-import { requireAdmin } from "@/lib/cms/server";
+import { requireOps,opsError } from "@/lib/content-ops/server";
 import { documentSchema, publishErrors } from "@/lib/cms/model";
 export const dynamic = "force-dynamic";
 export async function GET() {
   try {
-    const { client } = await requireAdmin();
+    const { client } = await requireOps();
     const { data, error } = await client
       .from("cms_documents")
       .select("document")
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
   try {
     if (request.headers.get("origin") !== new URL(request.url).origin)
       return Response.json({ error: "طلب غير مسموح" }, { status: 403 });
-    const { client } = await requireAdmin();
+    const { client } = await requireOps();
     const raw = await request.text();
     if (raw.length > 1000000)
       return Response.json({ error: "المقال كبير جدًا" }, { status: 413 });
@@ -39,7 +39,7 @@ export async function POST(request: Request) {
       if (errors.length)
         return Response.json({ error: errors.join("، ") }, { status: 422 });
     }
-    const { data, error } = await client.rpc("cms_save", {
+    const { data, error } = await client.rpc("ops_cms_save", {
       payload: doc,
       expected_version: doc.version,
     });
@@ -48,7 +48,7 @@ export async function POST(request: Request) {
         {
           error: error.message.includes("VERSION_CONFLICT")
             ? "تعارض تعديل: أعد تحميل النسخة الأحدث قبل الحفظ"
-            : "تعذر الحفظ؛ تحقق من تفرّد الرابط واتصال قاعدة البيانات",
+            : opsError(error).message,
         },
         { status: error.message.includes("VERSION_CONFLICT") ? 409 : 400 },
       );

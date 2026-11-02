@@ -19,7 +19,7 @@ export async function proxy(request: NextRequest) {
   const needsHost = isProductionHost && (host !== "www.lusaill.online" || request.headers.get("x-forwarded-proto") === "http");
   if (isProductionHost) { target.protocol = "https:"; target.hostname = "www.lusaill.online"; target.port = ""; }
   if (needsHost || target.pathname !== originalPath) return NextResponse.redirect(target, 301);
-  if (target.pathname.startsWith("/admin") || target.pathname.startsWith("/api/cms")) return refreshCmsSession(request);
+  if (target.pathname.startsWith("/admin") || target.pathname.startsWith("/api/cms") || target.pathname.startsWith("/api/admin")) return refreshCmsSession(request);
   return NextResponse.next();
 }
 

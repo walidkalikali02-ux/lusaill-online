@@ -97,6 +97,8 @@ export function validRichBody(value: unknown, depth = 0): boolean {
   );
 }
 export const documentSchema = z.object({
+  operationsItemId: z.uuid().optional(),
+  editorialOverrideReason: z.string().max(3000).optional(),
   id: z.string().uuid(),
   slug: z
     .string()

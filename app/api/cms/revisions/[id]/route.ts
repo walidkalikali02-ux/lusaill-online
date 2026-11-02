@@ -1,10 +1,10 @@
-import { requireAdmin } from "@/lib/cms/server";
+import { requireOps } from "@/lib/content-ops/server";
 export async function GET(
   _: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
   try {
-    const { client } = await requireAdmin();
+    const { client } = await requireOps();
     const { id } = await params;
     const { data, error } = await client
       .from("cms_revisions")

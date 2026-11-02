@@ -17,10 +17,10 @@ import { browserCms } from "@/lib/cms/browser";
 const Editor = dynamic(() => import("./editor").then((m) => m.CmsEditor), {
   loading: () => <p>تحميل المحرر…</p>,
 });
-export function CmsWorkspace({ initial }: { initial: CmsDocument[] }) {
+export function CmsWorkspace({ initial,initialDocument }: { initial: CmsDocument[];initialDocument?:CmsDocument }) {
   const router = useRouter();
   const [documents, setDocuments] = useState(initial),
-    [selected, setSelected] = useState<CmsDocument | null>(null),
+    [selected, setSelected] = useState<CmsDocument | null>(initialDocument??null),
     [loading, setLoading] = useState(true),
     [error, setError] = useState("");
   const [filter, setFilter] = useState({
@@ -124,6 +124,7 @@ export function CmsWorkspace({ initial }: { initial: CmsDocument[] }) {
           لوسيل <small>إدارة المحتوى</small>
         </Link>
         <p className="cms-nav-active">▦ لوحة التحرير</p>
+        <Link href="/admin/content-ops">▦ عمليات المحتوى</Link>
         <a href="#cms-articles">▤ مكتبة المقالات</a>
         <a href="#cms-tasks">✓ التحقق والاعتماد</a>
         <a href="#cms-schedule">◷ النشر والمواعيد</a>
