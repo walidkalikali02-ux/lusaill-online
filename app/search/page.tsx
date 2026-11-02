@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideSearch } from "@/components/guide-search";
-import { articles } from "@/lib/content";
+import { discoverableArticles } from "@/lib/cms/discovery-server";
 import { searchGuides } from "@/lib/guide-search";
 import { pageAlternates } from "@/lib/page-alternates";
 export const metadata: Metadata = { title: "البحث في الأدلة", description: "ابحث عن الإجراء أو الخدمة التي تحتاجها في أدلة لوسيل.", robots: { index: false, follow: true }, alternates: pageAlternates("/search") };
 export default async function SearchPage({ searchParams }: { searchParams: Promise<{ q?: string | string[] }> }) {
   const params = await searchParams;
   const query = (typeof params.q === "string" ? params.q : "").trim().slice(0, 200);
-  const published = articles.filter((a) => a.status === "published");
+  const published = await discoverableArticles();
   const results = searchGuides(published, query);
   return <main id="main-content" className="category-page"><div className="shell"><div className="breadcrumbs"><Link href="/">الرئيسية</Link><span>/</span><span>البحث</span></div><h1>البحث في الأدلة</h1>
     <GuideSearch key={query} initialQuery={query} items={published.map(({slug,title,keyword}) => ({slug,title,keyword}))} />

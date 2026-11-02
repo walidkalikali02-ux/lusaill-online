@@ -5,6 +5,7 @@ import StarterKit from "@tiptap/starter-kit";
 import { TableKit } from "@tiptap/extension-table";
 import Image from "@tiptap/extension-image";
 import Placeholder from "@tiptap/extension-placeholder";
+import { clusters } from "@/lib/clusters";
 import { CmsPreview } from "./render-document";
 import {
   normalizeTopic,
@@ -292,10 +293,10 @@ export function CmsEditor({
               </label>
               <label>
                 التصنيف
-                <input
-                  value={doc.category}
-                  onChange={(e) => change({ category: e.target.value })}
-                />
+                <select value={doc.category} onChange={(e) => change({ category: e.target.value })}>
+                    <option value="">اختر التصنيف</option>
+                    {clusters.map(c=><option key={c.code} value={c.code}>{c.name}</option>)}
+                  </select>
               </label>
               <label>
                 آخر مراجعة

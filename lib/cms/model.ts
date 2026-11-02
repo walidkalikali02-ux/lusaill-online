@@ -193,6 +193,7 @@ function hasBodyH1(body: unknown): boolean {
 }
 export function publishErrors(d: CmsDocument) {
   return [
+    !/^[A-H]$/.test(d.category) ? "اختر تصنيفًا صالحًا للمقال" : "",
     hasBodyH1(d.body) ? "عنوان المقال هو H1؛ استخدم H2–H6 داخل النص" : "",
     d.blocks.some(
       (b) => b.kind === "faq" && (!b.title.trim() || !b.text.trim()),
