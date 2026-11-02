@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { browserCms } from "@/lib/cms/browser";
@@ -7,8 +7,23 @@ import { parseInvitation } from "@/lib/cms/invitation";
 export function CmsSetPassword({configured}:{configured:boolean}) {
   const router=useRouter();
   const [verified,setVerified]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState("");
+  const [checking,setChecking]=useState(configured);
+  useEffect(()=>{
+    if(!configured)return;
+    let active=true;
+    const client=browserCms();
+    void (async()=>{
+      try {
+        const {data:{user}}=await client.auth.getUser();
+        if(!user)return;
+        const {data}=await client.from("cms_admins").select("user_id").eq("user_id",user.id).maybeSingle();
+        if(active&&data)setVerified(true);
+      } finally {if(active)setChecking(false);}
+    })().catch(()=>{if(active)setError("تعذر التحقق من جلسة الدعوة. جرّب الرابط الجديد من بريدك.");});
+    return ()=>{active=false;};
+  },[configured]);
   return <main id="main-content" className="cms-login"><h1>إنشاء كلمة مرور المدير</h1>
-    {!configured ? <p>يلزم تفعيل اتصال قاعدة البيانات أولًا.</p> : !verified ? <>
+    {!configured ? <p>يلزم تفعيل اتصال قاعدة البيانات أولًا.</p> : checking ? <p role="status">جارٍ التحقق من جلسة الدعوة…</p> : !verified ? <>
       <p>من رسالة دعوة Supabase في بريدك، انسخ عنوان زر قبول الدعوة والصقه هنا. لا ترسل الرابط أو كلمة المرور في المحادثة.</p>
       <form onSubmit={async e=>{e.preventDefault();setError("");setBusy(true);const form=e.currentTarget;
         try { const link=parseInvitation(String(new FormData(form).get("invitation")),process.env.NEXT_PUBLIC_SUPABASE_URL!);
@@ -34,3 +49,4 @@ export function CmsSetPassword({configured}:{configured:boolean}) {
     <p role="alert">{error}</p><Link href="/admin/login">العودة لتسجيل الدخول</Link>
   </main>;
 }
+
