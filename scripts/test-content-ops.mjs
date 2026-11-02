@@ -6,6 +6,7 @@ await db.exec(`create role anon;create role authenticated;create role service_ro
 await db.exec(await readFile('database/cms-schema.sql','utf8'));
 await db.exec(await readFile('database/migrations/20261102_content_operations.sql','utf8'));
 await db.exec(await readFile('database/migrations/20261102_content_operations_private_rpc.sql','utf8'));
+await db.exec(await readFile('database/migrations/20261102_content_operations_assigned_briefs.sql','utf8'));
 const admin='11111111-1111-4111-8111-111111111111',writer='22222222-2222-4222-8222-222222222222',stranger='33333333-3333-4333-8333-333333333333';
 await db.exec(`insert into auth.users values('${admin}'),('${writer}'),('${stranger}');insert into public.cms_admins(user_id) values('${admin}');insert into public.ops_members(user_id,role,display_name) values('${writer}','writer','Writer');`);
 async function as(user,sql,params=[]){await db.exec(`set role authenticated;select set_config('request.jwt.claim.sub','${user}',false)`);try{return await db.query(sql,params);}finally{await db.exec('reset role');}}
@@ -76,8 +77,11 @@ let document={id:docId,slug:'operations-integration-test',title:'Verified servic
 async function cms(user,payload=document){const response=await as(user,'select public.ops_cms_save($1::jsonb,$2) as row',[JSON.stringify(payload),payload.version]);return response.rows[0].row;}
 await assert.rejects(cms(writer),/FORBIDDEN/);
 await assert.rejects(cms(admin),/BRIEF_REQUIRED/);
+const assignedBrief=(await db.query('select * from public.content_briefs where id=$1',[converted.briefId])).rows[0];
+await save(writer,'content_briefs',{...assignedBrief.data,problem:'Writer refined the assigned brief'},converted.itemId,1,assignedBrief.id);
+await assert.rejects(save(writer,'content_briefs',{...assignedBrief.data,status:'approved'},converted.itemId,2,assignedBrief.id),/APPROVAL_FORBIDDEN/);
 const generatedBrief=(await db.query('select * from public.content_briefs where id=$1',[converted.briefId])).rows[0];
-await save(admin,'content_briefs',{...generatedBrief.data,title:'Guide',problem:'P',audience:'A',country:'EG',informationGain:'Practical steps',officialSources:'https://sis.gov.eg',outline:'H2 steps',readerOutcome:'Done',status:'approved'},converted.itemId,1,generatedBrief.id);
+await save(admin,'content_briefs',{...generatedBrief.data,title:'Guide',problem:'P',audience:'A',country:'EG',informationGain:'Practical steps',officialSources:'https://sis.gov.eg',outline:'H2 steps',readerOutcome:'Done',status:'approved'},converted.itemId,2,generatedBrief.id);
 await save(admin,'content_outlines',{title:'Guide',status:'approved',sections:[{level:2,title:'Steps'}]},converted.itemId);
 async function move(stage,reason=''){const current=(await db.query('select version from public.content_items where id=$1',[converted.itemId])).rows[0];await as(admin,'select public.ops_transition($1,$2,$3,$4)',[converted.itemId,stage,reason,current.version]);}
 await move('brief');await move('outline');await move('drafting');
