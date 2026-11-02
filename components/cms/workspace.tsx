@@ -125,6 +125,7 @@ export function CmsWorkspace({ initial,initialDocument }: { initial: CmsDocument
         </Link>
         <p className="cms-nav-active">▦ لوحة التحرير</p>
         <Link href="/admin/content-ops">▦ عمليات المحتوى</Link>
+        <Link href="/admin/seo">✓ مهام المقالات وSEO</Link>
         <a href="#cms-articles">▤ مكتبة المقالات</a>
         <a href="#cms-tasks">✓ التحقق والاعتماد</a>
         <a href="#cms-schedule">◷ النشر والمواعيد</a>
@@ -396,6 +397,7 @@ export function CmsWorkspace({ initial,initialDocument }: { initial: CmsDocument
                         {d.title}
                       </button>
                       <small dir="ltr">/{d.slug}</small>
+                      <Link href={`/admin/seo?target=article:${d.id}`}>قائمة مهام المقال وSEO</Link>
                     </td>
                     <td>
                       <span className={`cms-badge cms-${d.status}`}>
