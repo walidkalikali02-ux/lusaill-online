@@ -17,10 +17,10 @@ import { browserCms } from "@/lib/cms/browser";
 const Editor = dynamic(() => import("./editor").then((m) => m.CmsEditor), {
   loading: () => <p>تحميل المحرر…</p>,
 });
-export function CmsWorkspace({ initial }: { initial: CmsDocument[] }) {
+export function CmsWorkspace({ initial,initialDocument }: { initial: CmsDocument[];initialDocument?:CmsDocument }) {
   const router = useRouter();
   const [documents, setDocuments] = useState(initial),
-    [selected, setSelected] = useState<CmsDocument | null>(null),
+    [selected, setSelected] = useState<CmsDocument | null>(initialDocument??null),
     [loading, setLoading] = useState(true),
     [error, setError] = useState("");
   const [filter, setFilter] = useState({

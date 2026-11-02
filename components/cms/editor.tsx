@@ -7,6 +7,7 @@ import Image from "@tiptap/extension-image";
 import Placeholder from "@tiptap/extension-placeholder";
 import { clusters } from "@/lib/clusters";
 import { CmsPreview } from "./render-document";
+import { EditorialContext } from "../content-ops/editor-context";
 import {
   normalizeTopic,
   statuses,
@@ -723,6 +724,7 @@ export function CmsEditor({
             </>
           )}
           <aside className="cms-editor-alerts">
+            <EditorialContext document={doc} onChange={change}/>
             <h2>فحص تحريري</h2>
             {warnings(doc).map((w) => (
               <p key={w}>◌ {w}</p>

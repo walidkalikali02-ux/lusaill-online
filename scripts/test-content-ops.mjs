@@ -67,7 +67,44 @@ await save(admin,'content_outlines',{status:'approved',approvalOverrideReason:'S
 await assert.rejects(as(writer,'insert into public.content_items(data) values($1::jsonb)',['{}']),/permission denied/);
 await assert.rejects(as(stranger,'select public.ops_transition($1,$2,$3,$4)',[unassigned.id,'brief','',1]),/FORBIDDEN/);
 assert.equal((await as(stranger,'select count(*)::int as n from public.content_items')).rows[0].n,0);
+// The release integration is tested separately from the additive planning migration.
+await db.exec(await readFile('database/migrations/20261102_cms_revoke_unsafe_ddl_grants.sql','utf8'));
+await db.exec(await readFile('database/migrations/20261102_content_operations_editor.sql','utf8'));
+await db.exec(await readFile('database/migrations/20261102_content_operations_release_gates.sql','utf8'));
+const docId='77777777-7777-4777-8777-777777777777';
+let document={id:docId,slug:'operations-integration-test',title:'Verified service guide',description:'Description',author:'Writer',category:'A',status:'draft',answer:'Direct answer',summary:[],body:{type:'doc',content:[{type:'paragraph',content:[{type:'text',text:'Reviewed body'}]}]},blocks:[],sources:[{label:'Official',url:'https://sis.gov.eg',checkedAt:new Date().toISOString(),expiresAt:''}],reviewedAt:new Date().toISOString(),scheduledAt:'',deadline:'',version:0,updatedAt:'',operationsItemId:converted.itemId};
+async function cms(user,payload=document){const response=await as(user,'select public.ops_cms_save($1::jsonb,$2) as row',[JSON.stringify(payload),payload.version]);return response.rows[0].row;}
+await assert.rejects(cms(writer),/FORBIDDEN/);
+await assert.rejects(cms(admin),/BRIEF_REQUIRED/);
+const generatedBrief=(await db.query('select * from public.content_briefs where id=$1',[converted.briefId])).rows[0];
+await save(admin,'content_briefs',{...generatedBrief.data,title:'Guide',problem:'P',audience:'A',country:'EG',informationGain:'Practical steps',officialSources:'https://sis.gov.eg',outline:'H2 steps',readerOutcome:'Done',status:'approved'},converted.itemId,1,generatedBrief.id);
+await save(admin,'content_outlines',{title:'Guide',status:'approved',sections:[{level:2,title:'Steps'}]},converted.itemId);
+async function move(stage,reason=''){const current=(await db.query('select version from public.content_items where id=$1',[converted.itemId])).rows[0];await as(admin,'select public.ops_transition($1,$2,$3,$4)',[converted.itemId,stage,reason,current.version]);}
+await move('brief');await move('outline');await move('drafting');
+document=await cms(writer);assert.equal(document.version,1);
+assert.equal((await db.query('select cms_document_id from public.content_items where id=$1',[converted.itemId])).rows[0].cms_document_id,docId);
+await assert.rejects(cms(writer,{...document,status:'published'}),/FORBIDDEN/);
+await assert.rejects(cms(admin,{...document,status:'published'}),/OPERATIONS_NOT_READY/);
+await move('editorial');await move('fact_check');await move('visual_seo');await move('final_approval');
+await save(editor,'content_reviews',{severity:'normal',result:'pass',note:'Reviewed'},converted.itemId);
+await move('ready');
+await assert.rejects(cms(admin,{...document,title:'Changed after review',status:'published'}),/APPROVAL_STALE/);
+document=await cms(publisher,{...document,status:'published'});
+assert.equal((await db.query('select document from public.cms_publications where id=$1',[docId])).rows[0].document.title,'Verified service guide');
+await assert.rejects(as(admin,'update public.cms_publications set document=$1::jsonb where id=$2',['{}',docId]),/permission denied/);
+await assert.rejects(as(writer,'truncate public.cms_publications'),/permission denied/);
+await assert.rejects(as(admin,'select public.cms_save($1::jsonb,$2)',[JSON.stringify({...document,title:'Bypass old API'}),document.version]),/APPROVAL_STALE/);
+const revised=await cms(editor,{...document,status:'draft',answer:'Changed answer after review'});
+assert.equal(revised.version,3);
+assert.equal((await db.query('select data from public.content_items where id=$1',[converted.itemId])).rows[0].data.stage,'editorial');
+assert.equal((await db.query('select document from public.cms_publications where id=$1',[docId])).rows[0].document.answer,'Direct answer');
+assert.equal((await as(stranger,'select count(*)::int as n from public.cms_documents')).rows[0].n,0);
+assert.equal((await as(writer,'select count(*)::int as n from public.cms_revisions where document_id=$1',[docId])).rows[0].n,3);
+const unlinked={...document,id:'88888888-8888-4888-8888-888888888888',slug:'legacy-maintenance',operationsItemId:undefined,status:'draft',version:0};
+await assert.rejects(cms(admin,unlinked),/OPERATIONS_REQUIRED/);
+await cms(admin,{...unlinked,editorialOverrideReason:'Explicit single-admin draft maintenance'});
+await assert.rejects(cms(admin,{...unlinked,status:'published',editorialOverrideReason:'Cannot skip final gates',version:1}),/OPERATIONS_NOT_READY/);
 await assert.rejects(as(writer,'update public.content_activity_log set action=$1',['tamper']),/permission denied/);
 await db.exec('set role anon');await assert.rejects(db.query('select count(*) as n from public.content_items'),/permission denied/);await db.exec('reset role');
 assert((await db.query('select count(*)::int as n from public.content_activity_log')).rows[0].n>8);
-await db.close();console.log('PASS: operations schema, admin/writer/nonmember isolation, approval gates, stage order, critical failures, optimistic versions and immutable activity');
+await db.close();console.log('PASS: six-role operations, evidence conversion, approvals, immutable history, writer-scoped CMS/revisions, publisher release, stale content rejection, draft snapshots and direct-write denial');
