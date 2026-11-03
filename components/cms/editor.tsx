@@ -8,6 +8,8 @@ import Placeholder from "@tiptap/extension-placeholder";
 import { clusters } from "@/lib/clusters";
 import { CmsPreview } from "./render-document";
 import { EditorialContext } from "../content-ops/editor-context";
+import dynamic from "next/dynamic";
+const SeoWorkspace=dynamic(()=>import("../seo/workspace").then(m=>m.SeoWorkspace),{loading:()=> <p>تحميل قائمة المهام…</p>});
 import {
   normalizeTopic,
   statuses,
@@ -226,6 +228,7 @@ export function CmsEditor({
       <div className="cms-editor-tabs">
         <button onClick={() => setTab("content")}>التحرير</button>
         <button onClick={() => setTab("metadata")}>المصادر والسيو</button>
+        <button onClick={() => setTab("seo")}>قائمة المهام وSEO</button>
         <button onClick={() => void history()}>سجل المراجعات</button>
         <a href={`/articles/${doc.slug}`} target="_blank" rel="noreferrer">
           الصفحة العامة ↗
@@ -244,7 +247,7 @@ export function CmsEditor({
           هاتف
         </button>
       </div>
-      <div className="cms-editor-grid">
+      {tab === "seo" ? <SeoWorkspace articleId={doc.id} slug={doc.slug} savedVersion={doc.version} embedded/> : <div className="cms-editor-grid">
         <section className="cms-edit-pane">
           {tab === "history" ? (
             <>
@@ -778,7 +781,7 @@ export function CmsEditor({
           </div>
           <CmsPreview document={doc} />
         </section>
-      </div>
+      </div>}
     </main>
   );
 }

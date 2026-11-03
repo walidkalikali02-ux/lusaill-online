@@ -1,0 +1,281 @@
+Identify the audience and the real problem the article should solve.
+Identify relevant topic clusters and seed keywords.
+Research keyword demand and realistic ranking difficulty.
+Identify long-tail and question-based keywords.
+Evaluate informational, transactional, and navigational search intent.
+Research audience questions in forums, communities, and search results.
+Identify an original angle and meaningful information gaps.
+Review top-ranking pages for the primary topic.
+Identify recurring headings, topics, and reader questions.
+Analyze competitor content formats and depth.
+Compare titles, descriptions, and SERP presentation.
+Find factual or practical information missing from competitors.
+Choose the article format best suited to search intent.
+Define the article's central promise and scope.
+Create a logical H2/H3 outline.
+Organize questions and answers in reader-friendly order.
+Include definitions, instructions, examples, and troubleshooting where relevant.
+Remove overlapping headings and repeated ideas.
+Plan internal links, sources, and supporting visuals.
+Create a headline with a clear reader benefit.
+Include the primary keyword naturally in the title.
+Use specificity, numbers, or modifiers only when useful.
+Avoid exaggerated or misleading headline claims.
+Answer the central reader question early in the introduction.
+Explain why the subject matters and what the article will deliver.
+Keep the introduction short, compelling, and relevant.
+Write comprehensive but focused explanations.
+Use clear, natural language and short paragraphs.
+Include actionable steps, examples, or case studies.
+Add original research, firsthand insights, or independently verified details.
+Incorporate relevant terminology and semantic keywords naturally.
+Use tables and lists to clarify complex comparisons.
+Add screenshots, diagrams, or videos where they help understanding.
+Ensure every section contributes useful information.
+Review and fact-check any AI-generated material.
+Check all facts, numbers, dates, and sources.
+Verify that all quoted or referenced information is accurately attributed.
+Correct spelling, grammar, and awkward sentences.
+Remove repetitive or filler text.
+Read difficult sections aloud to improve clarity.
+Review structure, transitions, and paragraph flow.
+Ensure examples and visuals support the content.
+Check for originality, practical usefulness, and completeness.
+Complete the final human editorial approval.
+Confirm that the article delivers on its headline.
+Add a helpful next-step or call to action.
+Link to related articles or tools where appropriate.
+Ensure all required supporting assets are ready.
+Confirm the content is approved for publication.
+Assign one primary search topic to the page.
+Identify secondary and related search terms.
+Compare target terms with existing website pages to avoid keyword cannibalization.
+Match content depth and format with search intent.
+Check competitive difficulty and topic opportunity.
+Ensure the subject complements the website's content clusters.
+Write a descriptive, concise, unique URL slug.
+Include the main keyword in the slug where natural.
+Write a compelling, accurate SEO title.
+Place the main keyword early in the title when appropriate.
+Write a unique meta description that summarizes the page.
+Check title and description relevance against current SERP patterns.
+Check that the canonical URL is correct.
+Use one clear primary H1 heading.
+Mention the primary topic naturally in the introduction.
+Structure the content with descriptive H2/H3 headings.
+Use related entities and terminology when relevant.
+Avoid keyword stuffing and unnecessary repetition.
+Add a direct answer to the main question where appropriate.
+Check that the entire page is readable on mobile.
+Use informative links to trustworthy external sources.
+Provide relevant, helpful visuals.
+Use descriptive image filenames.
+Write meaningful alt text for informative images.
+Optimize image file sizes and dimensions.
+Check that images render correctly on mobile.
+Verify media sources and applicable usage rights.
+Link to relevant pillar and supporting articles.
+Use descriptive and natural anchor text.
+Add contextual links where they are genuinely helpful.
+Check for orphan articles that lack internal links.
+Avoid excessive or irrelevant links.
+Check that linked pages are accessible and current.
+Verify the correct canonical URL and indexability directives.
+Confirm the article is accessible without authentication.
+Check for broken links.
+Validate any structured data applicable to the article.
+Preview the rendered page on desktop and mobile.
+Confirm that the page can be included in the appropriate XML sitemap.
+Publish and record the live URL and date.
+Configure Google Search Console.
+Configure Bing Webmaster Tools.
+Install and validate Google Analytics 4.
+Connect applicable analytics and search performance data.
+Choose an SEO research, auditing, and rank-tracking toolkit.
+Define measurable KPIs for search growth.
+Create a dashboard for traffic, rankings, indexing, and conversions.
+Generate an accurate XML sitemap containing canonical, indexable URLs.
+Verify sitemap URLs return successful responses.
+Submit the sitemap to Search Console and Bing Webmaster Tools.
+Review sitemap processing and discovery errors.
+Validate robots.txt syntax and accessibility.
+Check that important pages are not accidentally blocked from crawling.
+Exclude inappropriate internal, private, or duplicate URLs from the sitemap.
+Recheck sitemap and robots.txt behavior after significant deployments.
+Perform an initial crawl of the website.
+Review Search Console indexing and page status reports.
+Investigate pages marked Discovered – currently not indexed.
+Investigate pages marked Crawled – currently not indexed.
+Check indexing exclusions, noindex directives, and canonicalization.
+Review manual actions and security issues.
+Identify orphaned and inaccessible pages.
+Repair genuine server errors, internal linking issues, and broken routes.
+Use URL Inspection for important pages when investigating indexing problems.
+Check Core Web Vitals and important page performance.
+Optimize images, fonts, scripts, and page loading behavior.
+Verify mobile rendering, usability, and layout.
+Verify HTTPS and eliminate unintended mixed content.
+Audit 404 pages and unnecessary redirect chains.
+Ensure consistent www/non-www and HTTP/HTTPS redirects.
+Confirm pagination and navigation are crawlable.
+Review server status codes and hosting reliability.
+Crawl important pages with JavaScript rendering enabled.
+Confirm article content and links appear correctly in rendered HTML.
+Check that critical SEO metadata is available to search engines.
+Implement appropriate Article, Breadcrumb, Organization, and other valid schema types.
+Validate structured data syntax and eligibility.
+Compare rendered and source HTML when investigating indexing errors.
+Maintain an inventory of all published URLs.
+Identify duplicate, substantially overlapping, or thin content.
+Check whether pages satisfy distinct search intents.
+Consolidate overlapping pages when useful, with appropriate redirects.
+Update outdated information and broken references.
+Remove or noindex low-value pages only after reviewing their purpose.
+Reassess content performance and quality regularly.
+Review the website's existing backlink profile.
+Identify relevant referring domains and link quality.
+Analyze competitors' backlink sources.
+Prioritize legitimate outreach opportunities based on team resources.
+Develop useful original research or other link-worthy assets.
+Pursue relevant expert contributions and digital PR.
+Monitor newly acquired and lost backlinks.
+Review suspicious link patterns; use disavow only when justified.
+Identify which AI answer engines and discovery platforms matter to the audience.
+Test representative audience questions on selected AI platforms.
+Measure brand or content citations where reliable measurement is possible.
+Check whether permitted AI crawlers can access important public pages.
+Create clear, well-supported answers and consistent entity information.
+Monitor material inaccuracies in generated answers.
+Track changes in AI search visibility without assuming citations are guaranteed.
+Track organic clicks, impressions, CTR, and rankings.
+Analyze performance by article, topic cluster, location, and device.
+Monitor publication-to-discovery and indexation trends.
+Detect declining articles and prioritize meaningful refreshes.
+Repeat website crawling and technical audits regularly.
+Review the effectiveness of internal linking and content updates.
+Maintain an SEO issue backlog with owners, priorities, and deadlines.
+Measure outcomes after major optimization changes.
+Organize the website into a clear homepage → category → subcategory → article hierarchy.
+Audit click depth; aim to make priority pages reachable within roughly three clicks where practical.
+Detect and repair orphan pages.
+Ensure important pages have relevant internal links pointing to them.
+Connect related articles within topic clusters.
+Implement visible, crawlable breadcrumb navigation.
+Use consistent, descriptive URL paths.
+Define one preferred HTTPS and www/non-www domain version.
+Add correct self-referencing canonical tags to primary indexable pages.
+Point duplicate and alternate URLs to the intended canonical page.
+Check canonical, redirect, sitemap, and internal-link signals for consistency.
+Audit robots.txt rules for unintended crawling restrictions.
+Ensure critical CSS, JavaScript, and images are not blocked.
+Keep XML sitemaps limited to useful canonical, indexable URLs returning HTTP 200.
+Exclude redirects, errors, and duplicate URLs from XML sitemaps.
+Validate sitemap submission and processing in Google Search Console.
+Identify important pages that search engines cannot discover.
+Investigate important URLs excluded from Google's index.
+Diagnose Discovered – currently not indexed and Crawled – currently not indexed separately.
+Check accidental noindex directives, robots blocks, and canonical conflicts.
+Verify that important article text and links appear in server-rendered or initial HTML.
+Test key pages with JavaScript disabled and with a rendered crawler.
+Verify that internal navigation uses crawlable HTML links.
+Use URL Inspection to verify selected pages after fixes.
+Measure LCP; target 2.5 seconds or less at the 75th percentile.
+Measure INP; target 200 milliseconds or less at the 75th percentile.
+Measure CLS; target 0.1 or less at the 75th percentile.
+Check mobile viewport, text legibility, and touch-target usability.
+Verify that important content is available on the mobile version.
+Investigate server timeouts, 5xx responses, DNS errors, and soft 404s.
+Ensure HTTPS certificates and subdomains are configured correctly.
+Detect mixed HTTP/HTTPS resources and inconsistent redirects.
+Monitor uptime and response reliability for important page templates.
+Use meaningful HTML landmarks such as header, nav, main, article, and footer.
+Maintain a clear H1 and logical heading hierarchy.
+Use appropriate anchor and button elements for links and interactions.
+Validate HTML structure on representative templates.
+Add applicable JSON-LD structured data to articles and other page types.
+Ensure schema properties match visible, accurate page information.
+Validate schema syntax and Google rich-result eligibility where applicable.
+Keep article author, publication date, and image metadata consistent.
+Provide accurate Organization structured data on appropriate pages.
+Keep brand name, logo, contact details, and official profiles consistent.
+Use sameAs references only for verified official profiles.
+Connect author biographies to their associated articles.
+Make the website's editorial identity clear on About and policy pages.
+Review access rules for relevant AI crawlers and make intentional policy decisions.
+Verify that public article content is machine-readable without depending entirely on JavaScript.
+Inspect Google Search Console crawl statistics regularly.
+Review crawler logs where hosting infrastructure provides them.
+Identify repeated bot requests to errors, redirects, or blocked URLs.
+Run a comprehensive crawl-based technical audit at least quarterly.
+Repeat technical audits following major deployments or CMS changes.
+Track significant changes in crawl failures and indexing status.
+Monitor broken links, duplicate pages, and missing metadata.
+Maintain a prioritized technical SEO issue backlog with verification after fixes.
+Write a unique SEO title for the page.
+Include the main keyword near the beginning when natural.
+Check the title's length and SERP display; roughly 50–60 characters is a guideline.
+Use meaningful title modifiers such as guide, checklist, or review where relevant.
+Make the title compelling without exaggeration or clickbait.
+Write a unique meta description that accurately explains the content.
+Keep the description concise, with important information near the beginning.
+Use the main keyword naturally in the description.
+Add the current year only when freshness genuinely matters.
+Identify the specific search intent behind the primary keyword.
+Ensure the page format matches what the reader needs.
+Provide an immediate, clear answer to the main question.
+Add information not merely repeated from competitors.
+Include original experiences, research, examples, or case studies where available.
+Use current, verifiable information and credible references.
+Give step-by-step instructions for practical tasks.
+Check that each section provides a distinct benefit.
+Validate factual claims and avoid unsupported statements.
+Select a primary keyword and relevant secondary terms.
+Use the primary keyword naturally within the opening 100–150 words.
+Use a clear, descriptive H1 that reflects the subject.
+Include relevant keyword variations in appropriate H2/H3 headings.
+Organize headings in a meaningful hierarchy.
+Use target terminology naturally throughout the article.
+Include relevant long-tail queries where useful.
+Avoid forced repetition and keyword stuffing.
+Do not enforce an arbitrary keyword density.
+Divide the content into self-contained topical sections.
+Use descriptive headings that resemble actual reader questions.
+Start important sections with a concise, direct answer.
+Expand answers with supporting details, steps, and examples.
+Write key statements clearly enough to be understood out of context.
+Add relevant FAQ sections when real audience questions justify them.
+Use tables and lists when they improve information extraction.
+Check that conclusions and factual explanations can be understood without relying on surrounding sections.
+Use a concise, descriptive URL slug.
+Include the primary topic naturally in the URL.
+Add contextual links to useful related articles.
+Link from relevant established pages to new priority content.
+Use meaningful, natural link anchor text.
+Add images that improve explanations.
+Use descriptive filenames for images.
+Write concise, accurate alt text for meaningful images.
+Compress and appropriately size images to reduce loading cost.
+Review whether the SEO title communicates a genuine benefit.
+Use positive, engaging language when appropriate.
+Ensure the description matches the actual article.
+Review current SERP competitors for clarity and differentiation.
+Implement structured data appropriate to the page type.
+Validate schema and check rich-result eligibility where supported.
+Monitor the page's organic click-through rate after publication.
+Test meaningful title or description improvements on underperforming pages.
+Place the headline and useful introductory content prominently.
+Avoid oversized banners that push the answer far down the page.
+Use readable typography and comfortable line spacing.
+Keep paragraphs focused and easy to scan.
+Add clear H2 headings, bullets, and useful illustrations.
+Ensure the page works well on mobile screens.
+Prevent distracting or intrusive page elements.
+Check page-loading performance and visual stability.
+Track clicks and impressions in Google Search Console.
+Monitor CTR for important queries and pages.
+Track target keyword visibility over time.
+Examine meaningful engagement metrics using analytics.
+Investigate decreases in organic traffic.
+Recheck search intent when important rankings decline.
+Refresh outdated facts, screenshots, and instructions.
+Review priority articles monthly and perform periodic deeper content audits.
