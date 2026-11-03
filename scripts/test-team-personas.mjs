@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import { buildTeamPersonas, teamRoles } from '../lib/team-personas.ts';
+const domains = [{ id: 'guide:fawatir-alkahraba', title: 'الكهرباء', href: '/categories/fawatir-alkahraba', kind: 'guide' }, { id: 'course:geometry', title: 'المجسمات والحجوم', href: '/courses/geometry', kind: 'course' }];
+const before = buildTeamPersonas(domains);
+assert.equal(before[0].role, 'engineer');
+assert.equal(before[1].role, 'teacher');
+const future = { id: 'course:future-field', title: 'مجال جديد', href: '/courses/future-field', kind: 'course' };
+const after = buildTeamPersonas([...domains, future]);
+assert.equal(after.length, 3, 'New fields must receive a persona without a manual profile');
+assert.deepEqual(after.slice(0,2), before, 'Adding a field must preserve existing identities');
+assert.deepEqual(buildTeamPersonas([future,...domains]).slice(1), before, 'Reordering the catalog must preserve identities');
+assert(after.every(p => p.name && teamRoles[p.role] && p.bio.includes('شخصية تمثيلية') && p.bio.includes('الاسم مستعار')));
+assert.equal(new Set(after.map(p=>p.id)).size,after.length);
+assert.deepEqual(buildTeamPersonas([]),[]);
+console.log('PASS: automatic field coverage, stable pseudonyms, valid roles and explicit fictional biographies');

@@ -31,6 +31,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     { url: absoluteUrl("/articles"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "weekly", priority: 0.9 },
     { url: absoluteUrl("/categories"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/entities"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/team"), lastModified: new Date("2026-11-03"), changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/about"),  changeFrequency: "monthly", priority: 0.6 },
     { url: absoluteUrl("/privacy"),  changeFrequency: "yearly", priority: 0.3 },
     { url: absoluteUrl("/terms"), lastModified: new Date("2026-09-24"), changeFrequency: "yearly", priority: 0.3 },
@@ -100,3 +101,4 @@ export function sitemapResponse(name?: string) {
     : '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + Object.keys(groups).map((file) => '<sitemap><loc>' + absoluteUrl('/' + file) + '</loc></sitemap>').join('') + '</sitemapindex>';
   return new Response('<?xml version="1.0" encoding="UTF-8"?>' + body, { headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' } });
 }
+
