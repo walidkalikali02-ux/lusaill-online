@@ -34,7 +34,9 @@ export function checkProvenance(report:AnalysisReport,sources:SourceInput[],cata
  for(const group of [report.nodes,report.edges,report.intents,report.journeys,report.gaps,report.opportunities,report.coverage])for(const item of group)check(item.evidenceIds);
  const nodes=new Set(report.nodes.map(n=>n.id));if(nodes.size!==report.nodes.length)throw Error('معرّفات عقد مكررة');
  for(const e of report.edges)if(!nodes.has(e.from)||!nodes.has(e.to))throw Error('علاقة بلا عقدة');
- for(const c of report.claims){const s=sources.find(s=>s.id===c.sourceId);const section=s?.document.sections.find(p=>p.id===c.sectionId);if(!section||!section.text.includes(c.quote))throw Error('الاقتباس غير مطابق للمصدر');}
+ const quoteWords=new Map<string,number>();
+ for(const c of report.claims){const s=sources.find(s=>s.id===c.sourceId);const section=s?.document.sections.find(p=>p.id===c.sectionId);if(!section||!section.text.includes(c.quote))throw Error('الاقتباس غير مطابق للمصدر');quoteWords.set(c.sourceId,(quoteWords.get(c.sourceId)??0)+c.quote.trim().split(/\s+/).length);}
+ if([...quoteWords.values()].some(n=>n>25))throw Error('تجاوز الاقتباس المسموح من المصدر؛ استخدم إحالات ومقتطفات أقصر.');
  const urls=new Set(catalog.map(i=>i.url));
  for(const c of report.coverage){if(c.sourceIds.some(id=>!sources.some(s=>s.id===id)))throw Error('مصدر تغطية غير موجود');if(c.lusaillUrls.some(u=>!urls.has(u)))throw Error('صفحة لوسيل غير موجودة');}
  for(const o of report.opportunities){if(o.relatedUrls.some(u=>!urls.has(u)))throw Error('توصية برابط داخلي غير موجود');if(o.kind==='tool'&&!o.tool)throw Error('مواصفات الأداة ناقصة');if(o.kind==='document'&&!o.document)throw Error('مواصفات المستند ناقصة');if(o.provenance==='observed'&&!o.evidenceIds.length)throw Error('استنتاج مباشر بلا دليل');}
