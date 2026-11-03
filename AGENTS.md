@@ -31,3 +31,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Keep live-guide URLs stable. Change dateModified and visible update dates only after a real source/content review; add a month to a title only when the content actually concerns that billing month. Never rotate dates automatically to manufacture freshness.
 - Do not promise FAQ or HowTo rich-result traffic: Google deprecated HowTo rich results in September 2023 and stopped FAQ rich results on 7 May 2026. Keep semantically correct markup only, matching visible content; prioritize Article/BreadcrumbList correctness and useful answers.
 - A city electricity page needs distinct verified local service information, not a city-name substitution with the same portal/steps. Prefer sections within the company guide when the procedure is identical. KD=0, third-party result positions, and assumed AI/PAA gaps are not evidence of easy ranking.
+
+## Team directory
+
+- The user requested fictional cartoon team characters on 3 November 2026. Keep names explicitly pseudonymous, with prominent fictional-character disclosure. Never turn them into invented human reviewers, professional qualifications, universities, work histories, or Article/Person authors.
+- `/team` derives one character per published category and registered course through `lib/team-domains.ts`. Register future courses in `addedCourses` and categories in the existing catalog; verify the new field appears automatically and its content link resolves. Do not create a separate fake staff record as a publishing requirement.
+- Keep existing article attribution and the Organization identity at `/authors/editorial-team` intact. Run `node --experimental-strip-types scripts/test-team-personas.mjs` for identity/coverage changes.
+

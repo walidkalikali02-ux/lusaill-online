@@ -15,6 +15,7 @@ const assignedRoles: Record<string, TeamRole> = {
   "guide:fawatir-alkahraba": "engineer", "guide:digital-life": "writer",
   "guide:bawabat-misr-alraqmeya": "researcher", "guide:hemayat-almustahlik": "editor",
   "guide:shehadat-almilad-walsijil-almadani": "writer", "guide:rokhas-alqiyada-walmoror": "researcher",
+  "course:abbreviations": "editor", "course:accounting-basics": "researcher", "course:marketing-communications": "writer",
 };
 function roleFor(domain: TeamDomain): TeamRole {
   if (assignedRoles[domain.id]) return assignedRoles[domain.id];

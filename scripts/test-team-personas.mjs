@@ -12,4 +12,5 @@ assert.deepEqual(buildTeamPersonas([future,...domains]).slice(1), before, 'Reord
 assert(after.every(p => p.name && teamRoles[p.role] && p.bio.includes('شخصية تمثيلية') && p.bio.includes('الاسم مستعار')));
 assert.equal(new Set(after.map(p=>p.id)).size,after.length);
 assert.deepEqual(buildTeamPersonas([]),[]);
+assert.equal(buildTeamPersonas([{id:'course:abbreviations',title:'فهم الاختصارات',href:'/courses/abbreviations',kind:'course'}])[0].role,'editor');
 console.log('PASS: automatic field coverage, stable pseudonyms, valid roles and explicit fictional biographies');
