@@ -4,7 +4,7 @@ export const teamRoles = {
   teacher: { label: "الأستاذ", focus: "الشرح وبناء مسار التعلّم", task: "ترتيب المفاهيم من الأساسيات إلى التطبيق والتمرين." },
   writer: { label: "الكاتب", focus: "الصياغة وتجربة القراءة", task: "تحويل السؤال إلى شرح مباشر بلغة عربية سهلة." },
   researcher: { label: "الباحث", focus: "البحث وتنظيم المصادر", task: "جمع أسئلة المجال وتنظيم مراجعها وحدود استخدامها." },
-  editor: { label: "المدقق", focus: "الوضوح واتساق التفاصيل", task: "تمثيل دور مراجعة المصطلحات والروابط واتساق الشرح." },
+  editor: { label: "المدقق", focus: "الوضوح واتساق التفاصيل", task: "مراجعة المصطلحات والروابط واتساق الشرح." },
 } as const;
 export type TeamRole = keyof typeof teamRoles;
 export type TeamPersona = TeamDomain & { name: string; role: TeamRole; seed: number; bio: string };
@@ -31,6 +31,6 @@ export function buildTeamPersonas(domains: readonly TeamDomain[]): TeamPersona[]
     const seed = personaHash(domain.id);
     const role = roleFor(domain);
     const name = `${firstNames[seed % firstNames.length]} ${lastNames[Math.floor(seed / firstNames.length) % lastNames.length]}`;
-    return { ...domain, seed, role, name, bio: `شخصية تمثيلية لمجال «${domain.title}». ${teamRoles[role].task} الاسم مستعار، ولا يشير إلى مؤهل مهني أو مراجعة بشرية فعلية.` };
+    return { ...domain, seed, role, name, bio: `مجال الاهتمام: ${domain.title}. ${teamRoles[role].task}` };
   });
 }

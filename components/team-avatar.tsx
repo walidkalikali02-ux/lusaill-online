@@ -5,10 +5,10 @@ export function TeamAvatar({ seed, name, role, decorative = false }: Props) {
   const skin = ["#efc09d", "#c98d67", "#a96b4b", "#e2a77e"][seed % 4];
   const hair = ["#342c2a", "#51372b", "#262f36"][seed % 3];
   const longHair = seed % 2 === 1;
-  return <svg viewBox="0 0 200 200" width="200" height="200" role={decorative ? undefined : "img"} aria-hidden={decorative ? true : undefined} aria-label={decorative ? undefined : `رسم كرتوني للشخصية التمثيلية ${name}`}>
+  return <svg viewBox="0 0 200 200" width="200" height="200" role={decorative ? undefined : "img"} aria-hidden={decorative ? true : undefined} aria-label={decorative ? undefined : `رسم كرتوني — ${name}`}>
     <rect width="200" height="200" rx="100" fill={background}/>
     <path d="M14 149C48 118 145 119 190 150" fill="none" stroke="white" strokeWidth="2" opacity=".45"/>
-    <circle cx="164" cy="48" r="12" fill="white" opacity=".45"/><path d="M33 54v12m-6-6h12" stroke="white" strokeWidth="3"/>
+    <circle cx="164" cy="48" r="12" fill="white" opacity=".45"/><circle cx="33" cy="60" r="4" fill="white" opacity=".6"/>
     {longHair ? <path d="M55 111V77c0-55 91-55 91 0v53l-16 26H70Z" fill={hair}/> : null}
     <path d="M36 202v-22c0-34 27-51 64-51s64 17 64 51v22" fill={shirt}/>
     <path d="m80 134 20 34 20-34-7-11H87Z" fill="#faf8ee"/>
@@ -22,6 +22,6 @@ export function TeamAvatar({ seed, name, role, decorative = false }: Props) {
     <path d="m100 94-3 13h6m-13 9q10 8 20-1" fill="none" stroke="#894e3c" strokeWidth="2.3" strokeLinecap="round"/>
     {seed % 3 !== 0 ? <g fill="none" stroke="#343d41" strokeWidth="2.5"><rect x="70" y="86" width="26" height="17" rx="6"/><rect x="104" y="86" width="26" height="17" rx="6"/><path d="M96 92h8m-40-2h6m60 0h6"/></g> : null}
     {role === "engineer" && seed % 2 === 0 ? <g><path d="M60 66c0-49 80-49 80 0Z" fill="#e8b94f"/><rect x="54" y="61" width="92" height="10" rx="5" fill="#d49a2e"/><path d="M96 29v29m10-27v27" stroke="#f7db85" strokeWidth="5"/></g> : null}
-    <path d="M57 180h19m62-19v24m-6-18h12" stroke="white" strokeWidth="2" opacity=".45"/>
+    <path d="M57 180h19" stroke="white" strokeWidth="2" opacity=".45"/>
   </svg>;
 }
