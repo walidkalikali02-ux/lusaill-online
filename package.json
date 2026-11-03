@@ -18,7 +18,8 @@
     "cms:test": "node scripts/test-cms.mjs && node --import tsx scripts/test-cms-import.mts",
     "content-ops:test": "node scripts/test-content-ops.mjs",
     "seo:tasks:test": "node --import tsx scripts/test-seo-checklists.mts && node --import tsx scripts/test-seo-transport.mts",
-    "heatmap:test": "node --import tsx scripts/test-heatmap.mts"
+    "heatmap:test": "node --import tsx scripts/test-heatmap.mts",
+    "intelligence:test": "node --import tsx scripts/test-intelligence-crawl.mts && node --import tsx scripts/test-intelligence-db.mts && node --import tsx scripts/test-intelligence-analysis.mts"
   },
   "dependencies": {
     "@supabase/ssr": "0.12.7",

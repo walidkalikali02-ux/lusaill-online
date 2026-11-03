@@ -127,6 +127,7 @@ export function CmsWorkspace({ initial,initialDocument }: { initial: CmsDocument
         <Link href="/admin/content-ops">▦ عمليات المحتوى</Link>
         <Link href="/admin/seo">✓ مهام المقالات وSEO</Link>
         <Link href="/admin/heatmaps">◉ الخرائط الحرارية</Link>
+        <Link href="/admin/intelligence">◇ ذكاء الموضوعات</Link>
         <a href="#cms-articles">▤ مكتبة المقالات</a>
         <a href="#cms-tasks">✓ التحقق والاعتماد</a>
         <a href="#cms-schedule">◷ النشر والمواعيد</a>
