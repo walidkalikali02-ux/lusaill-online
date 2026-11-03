@@ -1,0 +1,1 @@
+{"crons":[{"path":"/api/heatmap/maintenance","schedule":"17 2 * * *"}]}

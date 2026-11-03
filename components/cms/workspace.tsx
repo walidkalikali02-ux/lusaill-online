@@ -126,6 +126,7 @@ export function CmsWorkspace({ initial,initialDocument }: { initial: CmsDocument
         <p className="cms-nav-active">▦ لوحة التحرير</p>
         <Link href="/admin/content-ops">▦ عمليات المحتوى</Link>
         <Link href="/admin/seo">✓ مهام المقالات وSEO</Link>
+        <Link href="/admin/heatmaps">◉ الخرائط الحرارية</Link>
         <a href="#cms-articles">▤ مكتبة المقالات</a>
         <a href="#cms-tasks">✓ التحقق والاعتماد</a>
         <a href="#cms-schedule">◷ النشر والمواعيد</a>

@@ -26,6 +26,14 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/",
+        headers: [{ key: "X-Frame-Options", value: "SAMEORIGIN" }, { key: "Content-Security-Policy", value: "frame-ancestors 'self'" }],
+      },
+      {
+        source: "/:section(articles|categories|guides|entities|courses)/:path*",
+        headers: [{ key: "X-Frame-Options", value: "SAMEORIGIN" }, { key: "Content-Security-Policy", value: "frame-ancestors 'self'" }],
+      },
+      {
         source: "/llms.txt",
         headers: [
           { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
