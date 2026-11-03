@@ -17,3 +17,5 @@ The map only overlays a live preview when the deployment/layout signature matche
 `npm run heatmap:test` covers sensitive-path/payload rejection, signed/tampered/expired grants, aggregate math, field masking, private data/RPC access, cumulative replay, test isolation, device filtering, daily caps and expiry. TypeScript, lint, SEO QA, remote builds and a real browser → start API → ingest API → database → admin report round-trip are release checks.
 
 Supabase CLI was unavailable due registry DNS ENOTFOUND. DDL was applied using the connected migration tool; the actual provider migration versions are recorded under database/migrations. Secret values are configured separately and are never part of the schema or source tree. Existing CMS content, publication approvals and Google indexing workflows are untouched.
+
+Preview matching quantizes geometry in 10-pixel units to tolerate the observed 1-pixel image rounding between iframe and direct page rendering. It tries the matching native/overlay scrollbar geometry locally in the preview before rejecting an incompatible layout. A full changed text line still changes the signature.
