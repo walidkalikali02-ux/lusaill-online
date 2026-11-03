@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./editorial.css";
 import "./identity.css";
+import { HeatmapTracker } from "@/components/heatmap/tracker";
 import { SiteAnalytics } from "@/components/site-analytics";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { SiteFrame } from "@/components/site-frame";
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <a className="skip-link" href="#main-content">انتقل إلى المحتوى</a>
         <SiteFrame footer={<SiteFooter />}>{children}</SiteFrame>
+        <HeatmapTracker />
         <SiteAnalytics />
         {measurementId && /^G-[A-Z0-9]+$/.test(measurementId) && <GoogleAnalytics measurementId={measurementId} />}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />

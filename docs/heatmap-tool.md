@@ -1,0 +1,21 @@
+# First-party heatmaps in the Lusaill CMS
+
+`/admin/heatmaps` provides click, scroll-reach and visible-area exposure maps over same-origin public-page previews. Filters select UTC dates (within 14 days), device class, exact viewport width, page and layout revision. JSON export contains aggregate measurements; SVG export contains the heat layer only. No historical page screenshot or session replay is claimed.
+
+The public tracker is deferred. Visitors must opt in using the small measurement preference panel; withdrawing consent stops collection and synchronizes across tabs. DNT/GPC, admin/API/search/contact pages, filtered content URLs and embedded previews are excluded. Field/form/contenteditable interactions and `[data-heatmap-mask]` regions are not collected. No text, field values, keystrokes, URL query values, persistent visitor ID, referrer or IP is stored in heatmap tables. Layout geometry is hashed locally; only the hash is sent. Measured page views are not unique visitors or all site traffic.
+
+Page-view grants are signed by the server for a single path, exact width, revision, test flag and 30-minute expiry. Start/ingest endpoints require the same origin; production visitor ingestion is limited to the canonical host. Cumulative bounded snapshots and atomic sequence checks prevent retransmission from adding a second view. Per-view limits and a daily site budget bound storage/update volume. The default is 5,000 consented views/day and a hard 200,000 update/day safety ceiling. Bot/spoofed client measurements cannot be treated as authenticated business evidence.
+
+Four private RLS tables have explicit deny policies and no direct browser table grants. Public entrypoints are invoker wrappers; privileged implementations remain in heatmap_private. Anonymous ingestion/purge require a server-only app key; report/configuration additionally verify membership in cms_admins. Production and preview use separate secrets. No service-role key is exposed or required.
+
+Collection starts paused for installation/testing. An admin can open a public page with `?heatmap_test=1`; server authentication is required to grant test collection even while public collection is paused. Test traffic is isolated and excluded from the default report. Activate public collection only after end-to-end verification. Empty states never contain invented customer activity.
+
+Data expires after 14 days. The authenticated daily Vercel maintenance cron runs at 02:17 UTC using CRON_SECRET and the server-only ingestion key. Report reads exclude and clean expired views; active ingestion also performs periodic cleanup. Pausing collection does not delete current measurements.
+
+The map only overlays a live preview when the deployment/layout signature matches the measured revision. Exact width and the measured viewport height are used for preview; the position slider navigates the preview while keeping heat coordinates aligned. Dynamic page states can differ, so this remains an approximate coordinate heatmap, not Clarity's element-based reconstruction. Visible-area time is distributed across visible bands in a focused tab; it does not measure gaze or comprehension.
+
+`npm run heatmap:test` covers sensitive-path/payload rejection, signed/tampered/expired grants, aggregate math, field masking, private data/RPC access, cumulative replay, test isolation, device filtering, daily caps and expiry. TypeScript, lint, SEO QA, remote builds and a real browser → start API → ingest API → database → admin report round-trip are release checks.
+
+Supabase CLI was unavailable due registry DNS ENOTFOUND. DDL was applied using the connected migration tool; the actual provider migration versions are recorded under database/migrations. Secret values are configured separately and are never part of the schema or source tree. Existing CMS content, publication approvals and Google indexing workflows are untouched.
+
+Preview matching quantizes geometry in 10-pixel units to tolerate the observed 1-pixel image rounding between iframe and direct page rendering. It tries the matching native/overlay scrollbar geometry locally in the preview before rejecting an incompatible layout. A full changed text line still changes the signature.

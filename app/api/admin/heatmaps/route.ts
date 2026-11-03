@@ -1,0 +1,9 @@
+import {z} from "zod";
+import {requireAdmin} from "@/lib/cms/server";
+import {publicHeatmapPath} from "@/lib/heatmap/model";
+import {heatmapConfigured,heatmapVersion,sameOrigin} from "@/lib/heatmap/server";
+export const dynamic="force-dynamic";
+const headers={"Cache-Control":"private,no-store"};
+const filtersSchema=z.object({from:z.string().date(),to:z.string().date(),path:z.string().refine(publicHeatmapPath),device:z.enum(["all","mobile","tablet","desktop"]),version:z.string().regex(/^[-a-zA-Z0-9]{0,40}$/),width:z.union([z.literal(""),z.coerce.number().int().min(280).max(3000)]),test:z.boolean()});
+export async function GET(request:Request){try{const {client}=await requireAdmin();const q=new URL(request.url).searchParams;const input=filtersSchema.parse({from:q.get("from"),to:q.get("to"),path:q.get("path")??"/",device:q.get("device")??"all",version:q.get("version")??"",width:q.get("width")??"",test:q.get("test")==="true"});const {data,error}=await client.rpc("heatmap_report",{filters:input});if(error)throw error;return Response.json({...data,configured:heatmapConfigured(),currentVersion:heatmapVersion()},{headers});}catch{return Response.json({error:"تعذر تحميل الخرائط؛ تحقق من الدخول والتواريخ وإعداد قاعدة البيانات"},{status:401,headers});}}
+export async function POST(request:Request){if(!sameOrigin(request))return new Response(null,{status:403});try{const {client}=await requireAdmin();const text=await request.text();if(text.length>1000)return new Response(null,{status:413});const value=z.object({enabled:z.boolean(),dailyCap:z.number().int().min(100).max(20000)}).strict().parse(JSON.parse(text));const {data,error}=await client.rpc("heatmap_configure",{value});if(error)throw error;return Response.json(data,{headers});}catch{return Response.json({error:"تعذر حفظ إعدادات الخرائط"},{status:400,headers});}}
