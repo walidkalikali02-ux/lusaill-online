@@ -3,15 +3,16 @@ import {requireOps} from "@/lib/content-ops/server";
 import {seoInventory} from "@/lib/seo/inventory";
 import {seoTemplate,taskUpdate} from "@/lib/seo/model";
 import {auditArticle,auditSite} from "@/lib/seo/run";
+import {indexingSnapshot} from "@/lib/seo/search-console";
 export const dynamic="force-dynamic";
 export const maxDuration=300;
 const headers={"Cache-Control":"private, no-store"};
 function failure(error:unknown){const text=error instanceof Error?error.message:String((error as {message?:string})?.message??"");const messages:Record<string,string>={VERSION_CONFLICT:"تعارض تعديل؛ أعد تحميل المهمة",CONTENT_CHANGED:"تغير المحتوى؛ حمّل القائمة الحالية قبل اعتمادها",EVIDENCE_REQUIRED:"أضف وصفًا واضحًا للدليل أو سبب التعطيل/عدم الانطباق (10 أحرف على الأقل)",FORBIDDEN:"لا تملك صلاحية هذا الإجراء",APPROVAL_FORBIDDEN:"المهمة تحتاج محررًا أو مدقق معلومات أو مديرًا",UNAUTHORIZED:"سجّل الدخول أولًا",TASK_SCOPE_MISMATCH:"هذه المهمة تتبع نطاقًا مختلفًا",NOT_FOUND:"المقال أو المهمة غير موجود",INVENTORY_FAILED:"تعذر تحميل مكتبة المقالات"};const key=Object.keys(messages).sort((a,b)=>b.length-a.length).find(k=>text.includes(k));return Response.json({error:key?messages[key]:"تعذر تنفيذ العملية؛ تحقق من الاتصال والحقول"},{status:key==="UNAUTHORIZED"?401:key==="FORBIDDEN"?403:key==="VERSION_CONFLICT"||key==="CONTENT_CHANGED"?409:400,headers});}
-export async function GET(request:Request){try{const {client,role,user}=await requireOps();const inventory=await seoInventory(client);const url=new URL(request.url);const key=url.searchParams.get("target");
+export async function GET(request:Request){try{const {client,role,user}=await requireOps();const inventory=await seoInventory(client);const {data:reports,error:reportError}=await client.from("cms_reports").select("report").order("created_at",{ascending:false}).limit(20);if(reportError)throw reportError;const searchConsole=indexingSnapshot((reports??[]).map(r=>r.report));const url=new URL(request.url);const key=url.searchParams.get("target");
  if(key){const target=inventory.targets.find(t=>t.key===key||t.documentId===key.replace(/^article:/,"")||t.documentId===url.searchParams.get("documentId"));if(!target)throw Error("NOT_FOUND");
  const [{data:record,error},{data:runs,error:runError},{data:activity,error:activityError}]=await Promise.all([client.from("seo_targets").select("*").eq("target_key",target.key).maybeSingle(),client.from("seo_review_runs").select("*").eq("target_key",target.key).order("created_at",{ascending:false}).limit(5),client.from("seo_task_activity").select("*").eq("target_key",target.key).order("created_at",{ascending:false}).limit(100)]);if(error||runError||activityError)throw Error("LOAD_FAILED");
- return Response.json({target,record,runs,activity,role,userId:user.id,template:seoTemplate},{headers});}
- const {data:summary,error}=await client.from("seo_target_summary").select("*").limit(1000);if(error)throw error;return Response.json({targets:inventory.targets,summary,role,userId:user.id,template:seoTemplate,asOf:new Date().toISOString()},{headers});
+ return Response.json({target,record,runs,activity,role,userId:user.id,template:seoTemplate,searchConsole},{headers});}
+ const {data:summary,error}=await client.from("seo_target_summary").select("*").limit(1000);if(error)throw error;return Response.json({targets:inventory.targets,summary,role,userId:user.id,template:seoTemplate,searchConsole,asOf:new Date().toISOString()},{headers});
  }catch(error){return failure(error);}}
 export async function POST(request:Request){
  if(request.headers.get("origin")!==new URL(request.url).origin)return Response.json({error:"طلب غير مسموح"},{status:403,headers});
