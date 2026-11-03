@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function IntelligencePage() {
+export default async function IntelligencePage({searchParams}:{searchParams:Promise<{project?:string}>}) {
   try { await requireAdmin(); } catch { redirect("/admin/login"); }
-  return <IntelligenceWorkspace />;
+  const {project}=await searchParams;
+  return <IntelligenceWorkspace initialProjectId={project&&/^[a-f0-9-]{36}$/.test(project)?project:""} />;
 }

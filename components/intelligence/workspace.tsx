@@ -66,8 +66,8 @@ function ScoreValue({value}:{value:unknown}) {
   return <>{typeof value==="boolean"?(value?"نعم":"لا"):value===null?"غير محسوب لغياب دليل كافٍ":label(value)}</>;
 }
 
-export function IntelligenceWorkspace() {
-  const [view,setView]=useState<View>("overview"),[projectId,setProjectId]=useState(""),[report,setReport]=useState<Report|null>(null);
+export function IntelligenceWorkspace({initialProjectId=""}:{initialProjectId?:string}) {
+  const [view,setView]=useState<View>("overview"),[projectId,setProjectId]=useState(initialProjectId),[report,setReport]=useState<Report|null>(null);
   const [loading,setLoading]=useState(true),[busy,setBusy]=useState(false),[error,setError]=useState(""),[actionError,setActionError]=useState(""),[notice,setNotice]=useState(""),[revision,setRevision]=useState(0);
   const [projectForm,setProjectForm]=useState({title:"",topic:"",country:"مصر"});
   const [importText,setImportText]=useState(""),[role,setRole]=useState("competitor"),[mode,setMode]=useState("urls");

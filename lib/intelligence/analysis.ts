@@ -2,9 +2,10 @@ import {z} from 'zod';
 import {analysisSchema,checkProvenance,editorialScores,type SourceInput,type CatalogItem} from './model';
 import {agents,systemPrompt} from './agents';
 
-export function intelligenceCapabilities(){return {ai:Boolean(process.env.AI_GATEWAY_MODEL&&(process.env.AI_GATEWAY_API_KEY||process.env.VERCEL_OIDC_TOKEN)),worker:true,model:process.env.AI_GATEWAY_MODEL??null,searchConsole:'import_only' as const,aiMode:'gateway_http',scheduled:Boolean(process.env.CRON_SECRET)};}
-export async function analyzeTopic(payload:{topic:string,country:string,sources:SourceInput[],catalog:CatalogItem[],unavailable?:unknown[]}){
- const token=process.env.AI_GATEWAY_API_KEY||process.env.VERCEL_OIDC_TOKEN,model=process.env.AI_GATEWAY_MODEL;
+export function intelligenceCapabilities(oidcToken?:string|null){return {ai:Boolean(process.env.AI_GATEWAY_MODEL&&(process.env.AI_GATEWAY_API_KEY||oidcToken||process.env.VERCEL_OIDC_TOKEN)),worker:true,model:process.env.AI_GATEWAY_MODEL??null,searchConsole:'import_only' as const,aiMode:'gateway_http',scheduled:Boolean(process.env.CRON_SECRET)};}
+export async function analyzeTopic(payload:{topic:string,country:string,sources:SourceInput[],catalog:CatalogItem[],unavailable?:unknown[]},oidcToken?:string|null){
+ // Vercel Function tokens rotate on the request header; build-time env tokens are not runtime credentials.
+ const token=process.env.AI_GATEWAY_API_KEY||oidcToken||process.env.VERCEL_OIDC_TOKEN,model=process.env.AI_GATEWAY_MODEL;
  if(!token||!model)throw Error('BLOCKED:يلزم ضبط AI_GATEWAY_MODEL ومصادقة AI Gateway في بيئة النشر؛ لم يُنفذ تحليل دلالي.');
  if(!payload.sources.length)throw Error('BLOCKED:لا توجد مصادر مستخرجة يمكن تحليلها.');
  const input=JSON.stringify({...payload,agents:agents.filter(a=>a.mode==='ai')});
