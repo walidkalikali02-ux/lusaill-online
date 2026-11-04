@@ -1,3 +1,4 @@
+import { searchTitles } from "@/lib/search-titles";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -18,20 +19,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!article) return { robots: { index: false, follow: false } };
   const path = `/food-safety/${article.slug}`;
   return {
-    title: article.title,
+    title: searchTitles[article.slug] ?? article.title,
     description: article.description,
     alternates: pageAlternates(path),
     robots: { index: true, follow: true },
     openGraph: {
       type: "article",
-      title: article.title,
+      title: searchTitles[article.slug] ?? article.title,
       description: article.description,
       url: path,
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
       images: [{ url: article.coverImage, alt: article.coverImageAlt }],
     },
-    twitter: { card: "summary_large_image", title: article.title, description: article.description, images: [article.coverImage] },
+    twitter: { card: "summary_large_image", title: searchTitles[article.slug] ?? article.title, description: article.description, images: [article.coverImage] },
   };
 }
 

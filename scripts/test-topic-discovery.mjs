@@ -29,6 +29,8 @@ for(const path of ["/articles/verify-electronic-certificate","/articles/move-in-
 const source=readFileSync("components/electricity-inquiry-detail.tsx","utf8");
 const targets=["electricity-complaint","electricity-consumer-rights","electricity-outage-report","electricity-meter-apply","electricity-meter-transfer","electricity-meter-test","prepaid-meter-mobile-charge","north-cairo-electricity","north-delta-electricity"];
 for(const slug of targets){assert(published.some(a=>a.slug===slug),"Unpublished contextual link");assert(source.includes('href="/articles/'+slug+'"'),"Missing service decision-table link");}
+const {searchTitles}=load("lib/search-titles.ts");
+for(const a of [...published,...foodSafetyArticles])assert((searchTitles[a.slug]??a.title).length+8<=60,"Search title exceeds project limit: "+a.slug);
 const companySlugs=load("lib/electricity-inquiry-detail.ts").electricityCompanies.map(c=>c.guide).filter(Boolean);
 assert.equal(companySlugs.length,7,"All seven published company guides must be linked from the bill hub");
 const normalized=text=>text.toLowerCase().replace(/[ً-ْـ]/g,"").replace(/[أإآ]/g,"ا").replace(/[^\p{L}\p{N}\s]/gu," ").replace(/\s+/g," ").trim();
