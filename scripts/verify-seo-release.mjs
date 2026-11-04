@@ -38,7 +38,7 @@ try {
   }
   const sitemap = await (await fetch(origin + "/sitemap-articles.xml")).text();
   assert(sitemap.includes('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'));
-  assert(sitemap.includes("<image:loc>https://www.lusaill.online/images/articles/alexandria-electricity.webp</image:loc>"));
+  assert(sitemap.includes("<image:loc>https://www.lusaill.online/images/articles/alexandria-electricity-guide.webp</image:loc>"));
   assert(sitemap.includes("<lastmod>2026-11-04T00:00:00.000Z</lastmod>"), "Preserve substantive tax-guide update");
   run(["scripts/check-site.mjs", origin, "--skip-external-images"]);
   run(["scripts/test-rendered-seo.mjs", origin]);
