@@ -3,6 +3,7 @@ import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { articles, clusters } from "@/lib/content";
+import { foodSafetyArticles } from "@/lib/food-safety";
 import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -49,6 +50,16 @@ export default function ArticlesPage() {
           </div>
         </div>
 
+        <section className="brief-box" aria-labelledby="food-safety-directory-title">
+          <h2 id="food-safety-directory-title">أدلة سلامة الغذاء والتسمم الغذائي</h2>
+          <p>مقالات مصوّرة للوقاية من التسمم الغذائي وفهم المخاطر وأعراض الإصابة.</p>
+          <ul style={{ paddingInlineStart: 24, marginTop: 12 }}>
+            {foodSafetyArticles.map((article) => (
+              <li key={article.slug} style={{ marginBottom: 8 }}><Link href={`/food-safety/${article.slug}`}>{article.title}</Link></li>
+            ))}
+          </ul>
+          <p style={{marginTop:14}}><Link href="/food-safety">تصفح قسم سلامة الغذاء كاملًا</Link></p>
+        </section>
         <h2>أحدث الأدلة</h2>
         {publishedArticles.length > 0 ? (
           <div className="articles-grid">
