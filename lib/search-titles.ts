@@ -1,6 +1,7 @@
 // Explicit service-first search titles; 2026 describes this edition, not a new source review.
 // Keep full descriptive H1s and factual Article headlines.
 const editionTitles: Record<string, string> = {
+  "wps-kingsoft-deleted-excel-recovery": "استرجاع ملف Excel المحذوف 2026: Kingsoft وWPS بأمان",
   "foreign-nationality-permission": "إذن التجنس 2026: الوثائق والمتابعة بالخارج",
   "marriage-no-objection-certificate": "عدم ممانعة الزواج 2026: القيد والطلب بالخارج",
   "egyptian-nationality-foreign-wife": "جنسية زوجة المصري 2026: الملف والمتابعة",

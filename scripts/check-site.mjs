@@ -123,7 +123,7 @@ await mapLimit(urls, async (url) => {
 });
 await mapLimit([...links], async (path) => { await get(local(path)); });
 let checkedImages = 0;
-await mapLimit([...images], async (src) => { if (skipExternal && (src.includes("url=https%3A") || src.startsWith("https://upload.wikimedia.org/"))) return; const r = await fetch(src.startsWith("https://upload.wikimedia.org/") ? src : local(src), {signal: AbortSignal.timeout(45000)}); assert.equal(r.status, 200, `Image unavailable: ${src}`); assert(r.headers.get('content-type')?.startsWith('image/'), `Not an image: ${src}`); await r.arrayBuffer(); if(++checkedImages % 40 === 0) console.log(`Checked ${checkedImages} images`); });
+await mapLimit([...images], async (src) => { const imageUrl = new URL(src, official); const external = imageUrl.origin !== official; if (skipExternal && (external || src.includes("url=https%3A"))) return; const r = await fetch(external ? imageUrl : local(src), {signal: AbortSignal.timeout(45000)}); assert.equal(r.status, 200, `Image unavailable: ${src}`); assert(r.headers.get("content-type")?.startsWith("image/"), `Not an image: ${src}`); await r.arrayBuffer(); if(++checkedImages % 40 === 0) console.log(`Checked ${checkedImages} images`); });
 const metrash = await get(`${origin}/entities/metrash`);
 assert(/<meta name="robots" content="[^"]*noindex/.test(metrash));
 assert(metrash.includes('"name":"قطر"'));
