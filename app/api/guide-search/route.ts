@@ -7,8 +7,10 @@ export async function GET(request: Request) {
   if (!query) return Response.json({ items: [], total: 0 }, { headers });
   try {
     const articles = await discoverableArticles();
-    const matches = searchGuides(articles.map(({ slug, title, keyword }) => ({ slug, title, keyword })), query);
-    return Response.json({ items: matches.slice(0, 6).map(({ slug, title }) => ({ slug, title })), total: matches.length }, { headers });
+    const matches = searchGuides(articles, query);
+    const direct = new Set(searchGuides(articles.map(({ slug, title, keyword }) => ({ slug, title, keyword })), query).map(article => article.slug));
+    const suggestions = [...matches.filter(article => direct.has(article.slug)), ...matches.filter(article => !direct.has(article.slug))];
+    return Response.json({ items: suggestions.slice(0, 6).map(({ slug, title }) => ({ slug, title })), total: matches.length }, { headers });
   } catch {
     return Response.json({ error: "SEARCH_UNAVAILABLE" }, { status: 503, headers: { ...headers, "Cache-Control": "no-store" } });
   }
