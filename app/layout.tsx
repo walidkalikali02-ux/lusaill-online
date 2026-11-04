@@ -8,6 +8,7 @@ import { HeatmapTracker } from "@/components/heatmap/tracker";
 import { SiteAnalytics } from "@/components/site-analytics";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { SiteFrame } from "@/components/site-frame";
+import { SiteFooter } from "@/components/site-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 
 const bodyFont = IBM_Plex_Sans_Arabic({ weight: ["400", "700"], subsets: ["arabic"], variable: "--font-arabic-body", display: "swap" });
@@ -86,7 +87,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body>
         <a className="skip-link" href="#main-content">انتقل إلى المحتوى</a>
-        <SiteFrame>{children}</SiteFrame>
+        <SiteFrame footer={<SiteFooter />}>{children}</SiteFrame>
         <HeatmapTracker />
         <SiteAnalytics />
         {measurementId && /^G-[A-Z0-9]+$/.test(measurementId) && <GoogleAnalytics measurementId={measurementId} />}

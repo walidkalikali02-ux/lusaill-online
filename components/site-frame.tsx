@@ -3,15 +3,14 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { SiteHeader } from "./site-header";
-import { SiteFooter } from "./site-footer";
 import { SiteIcon } from "./site-icon";
-export function SiteFrame({ children }: { children: ReactNode }) {
+export function SiteFrame({ children, footer }: { children: ReactNode; footer: ReactNode }) {
  const pathname = usePathname();
  if (pathname.startsWith("/admin")) return <>{children}</>;
  const courseSlug=pathname.split('/')[2];
  const coursePlan = ['learn-driving','3d-figures-volumes','5g','6g-networks','ab-testing','abbreviations','accounting-basics','marketing-communications','adaptive-software-development','adding-subtracting-decimals','adding-subtracting-fractions','adding-subtracting-whole-numbers','adobe-indesign','adobe-robohelp','advanced-excel-charts','advanced-excel-functions','advanced-excel','agile','agile-data-science','agile-testing','agritech','artificial-intelligence','ai-engineering','ai-with-python','aiml','ajax','algorithm-design','amazon-codewhisperer','amazon-marketplace'].includes(courseSlug) ? `/courses/${courseSlug}#course-plan` : '/courses#available-courses';
  const isAcademy = pathname === "/courses" || pathname.startsWith("/courses/");
- if (!isAcademy) return <><SiteHeader />{children}<SiteFooter /></>;
+ if (!isAcademy) return <><SiteHeader />{children}{footer}</>;
  return <><header className="academy-header"><div className="academy-width academy-header-inner">
  <Link href="/courses" className="academy-brand" aria-label="كورسات لوسيل - الرئيسية"><span className="academy-brand-icon"><SiteIcon name="book" width="23" height="23" /></span><span><strong>لوسيل <em>تعلّم</em></strong><small>مساحتك لخطوة جديدة</small></span></Link>
  <nav aria-label="تنقل الكورسات" className="academy-nav"><Link href="/courses" aria-current={pathname === "/courses" ? "page" : undefined}>الكورسات</Link><Link href={coursePlan}>{pathname === "/courses" ? "اختر كورسك" : "خطة التعلّم"}</Link></nav>
