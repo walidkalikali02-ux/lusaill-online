@@ -2681,5 +2681,117 @@
         "/images/step-maps/work-permit-renewal-egypt.webp"
       ]
     }
+  ],
+  "wps-kingsoft-deleted-excel-recovery": [
+    {
+      "src": "https://www.aiseesoft.de/images/datenrettung/datei-aus-temp-ordner-wiederherstellen.jpg",
+      "alt": "لقطة إرشادية من Windows File Explorer للمساعدة في تحديد مكان ملف Excel المفقود",
+      "width": 900,
+      "height": 520,
+      "step": 1,
+      "caption": "ابحث أولًا عن موضع الملف الأصلي؛ هذه لقطة توضيحية خارجية وليست من جهاز العميلة.",
+      "sourceUrls": [
+        "https://www.aiseesoft.de/support/excel-datei-wiederherstellen/"
+      ]
+    },
+    {
+      "src": "https://www.donemax.com/images/article/data-recovery/recover-deleted-text-files-from-windows.png",
+      "alt": "نافذة سلة المحذوفات في Windows مع قائمة الملفات وخيار استعادة ملف",
+      "width": 1000,
+      "height": 600,
+      "step": 2,
+      "caption": "مثال على البحث داخل سلة محذوفات Windows؛ قد تختلف الواجهة حسب إصدار النظام.",
+      "sourceUrls": [
+        "https://www.donemax.com/data-recovery/recover-deleted-text-file.html"
+      ]
+    },
+    {
+      "src": "https://res-academy.cache.wpscdn.com/images/seo_posts/20230321/8ef9a7152eab4e26bb8370445e3ccf51.png",
+      "alt": "صورة رسمية من WPS توضح القائمة Menu ثم Backup and Recovery ثم Auto Backup",
+      "width": 1200,
+      "height": 680,
+      "step": 3,
+      "caption": "لقطة أصلية من دليل WPS الرسمي لمسار النسخ الاحتياطية.",
+      "sourceUrls": [
+        "https://help.wps.com/articles/how-to-recover-files-deleted-by-mistake-and-unsaved-files-and-view-backup-files/"
+      ]
+    },
+    {
+      "src": "https://res-academy.cache.wpscdn.com/images/seo_posts/20230321/2cb287ca2ef2610d2e613e1103d84a00.png",
+      "alt": "صورة من WPS تعرض View Details في لوحة إدارة النسخ الاحتياطية",
+      "width": 1200,
+      "height": 680,
+      "step": 4,
+      "caption": "صورة من مركز مساعدة WPS لعرض تفاصيل ملفات النسخ الاحتياطية.",
+      "sourceUrls": [
+        "https://help.wps.com/articles/how-to-recover-files-deleted-by-mistake-and-unsaved-files-and-view-backup-files/"
+      ]
+    },
+    {
+      "src": "https://www.cisdem.com/media/upload/2026/06/23/recover-cloud-bin02.png",
+      "alt": "صورة توضيحية لسلة ملفات WPS Cloud المحذوفة وكيفية الوصول إلى عناصرها",
+      "width": 1000,
+      "height": 600,
+      "step": 5,
+      "caption": "مثال بصري لقائمة WPS Cloud Recycle Bin؛ المصدر Cisdem، والتحقق الإجرائي من WPS الرسمي.",
+      "sourceUrls": [
+        "https://www.cisdem.com/resource/recover-wps-file.html"
+      ]
+    },
+    {
+      "src": "https://res-academy.cache.wpscdn.com/images/seo_posts/20230321/1c1c3acc2d79be139a206cd038d807a9.png",
+      "alt": "صورة رسمية لقائمة الملفات الاحتياطية الموجودة في برنامج WPS Office",
+      "width": 1200,
+      "height": 680,
+      "step": 6,
+      "caption": "إذا لم يظهر الملف في نتائج Windows، فابحث عن اسمه أيضًا داخل ملفات WPS الاحتياطية؛ صورة WPS الرسمية.",
+      "sourceUrls": [
+        "https://help.wps.com/articles/how-to-recover-files-deleted-by-mistake-and-unsaved-files-and-view-backup-files/"
+      ]
+    },
+    {
+      "src": "https://support.microsoft.com/en-us/windows/media/file-history-properties-dialog-screenshot.png",
+      "alt": "صورة Microsoft الرسمية لخصائص File History وخيارات استعادة نسخة سابقة",
+      "width": 1000,
+      "height": 620,
+      "step": 7,
+      "caption": "نافذة النسخ السابقة من مرجع Microsoft؛ ظهور الإصدارات مشروط بإعداد نسخ احتياطي مسبق.",
+      "sourceUrls": [
+        "https://support.microsoft.com/ar-sa/windows/experience/backup-recovery/backup-and-restore-with-file-history"
+      ]
+    },
+    {
+      "src": "https://www.stellarinfo.com/public/image/catalog/article/data-recovery/recover-deleted-photos-from-onedrive/1-restore-onedrive-recycle-bin.jpg",
+      "alt": "واجهة سلة محذوفات OneDrive على الويب لاستعادة ملف محذوف",
+      "width": 1100,
+      "height": 600,
+      "step": 8,
+      "caption": "صورة توضيحية لسلة OneDrive من Stellar؛ مرجع خطوات الاسترجاع الرسمي من Microsoft.",
+      "sourceUrls": [
+        "https://www.stellarinfo.com/article/recover-deleted-photos-from-onedrive.php"
+      ]
+    },
+    {
+      "src": "https://www.easeus.de/images/en/data-recovery/drw-pro/windows-file-recovery-tool-full-review-easeus-4.jpg",
+      "alt": "لقطة توضيحية لنافذة Windows File Recovery التي تعمل بواسطة سطر الأوامر",
+      "width": 1100,
+      "height": 650,
+      "step": 9,
+      "caption": "صورة توضيحية للأداة، وقد تُظهر امتدادًا مختلفًا؛ استخدم أوامر ‎.xlsx‎ و‎.xls‎ المكتوبة في الدليل.",
+      "sourceUrls": [
+        "https://www.easeus.de/daten-wiederherstellen/windows-11-endgueltig-geloeschte-dateien-mit-cmd-wiederherstellen.html"
+      ]
+    },
+    {
+      "src": "https://res-academy.cache.wpscdn.com/images/seo_posts/20230321/1c1c3acc2d79be139a206cd038d807a9.png",
+      "alt": "عرض الملفات الاحتياطية من WPS لاختيار المصنف الصحيح بعد الاسترجاع",
+      "width": 1200,
+      "height": 680,
+      "step": 10,
+      "caption": "بعد الاسترجاع قارن النسخ وافتح المصنف للتحقق من الأوراق والصيغ؛ صورة WPS الرسمية.",
+      "sourceUrls": [
+        "https://help.wps.com/articles/how-to-recover-files-deleted-by-mistake-and-unsaved-files-and-view-backup-files/"
+      ]
+    }
   ]
 }

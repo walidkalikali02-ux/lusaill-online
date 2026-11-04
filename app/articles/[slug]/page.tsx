@@ -206,6 +206,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         {article.coverImage ? (
           <Image
             className="article-cover"
+            unoptimized={article.coverImage.startsWith("https://")}
             src={article.coverImage}
             alt={article.coverImageAlt ?? article.title}
             width={1200}

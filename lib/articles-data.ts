@@ -14,6 +14,8 @@ export type ArticleSeed = {
 // Transcribed verbatim from the keyword plan (OpenSEO / DataForSEO, أغسطس ٢٠٢٦).
 // volume/kd are the plan's estimates, not live data — re-verify before publishing.
 export const articleSeeds: ArticleSeed[] = [
+  // A real support question, search volume unmeasured; sources verified 2026-11-04.
+  { id: 331, clusterCode: "H", group: "bonus", title: "استرجاع ملف Excel محذوف من Kingsoft أو WPS Office: الدليل الكامل", keyword: "استرجاع ملف Excel محذوف من Kingsoft", volume: 0, kd: null, month: 1 },
   // Egyptian Tax Authority registration services verified against its official service guide on 22 October 2026.
   { id: 323, clusterCode: "B", group: "bonus", title: "استخراج البطاقة الضريبية 2026: التسجيل والمتابعة", keyword: "استخراج بطاقة ضريبية", volume: 0, kd: null, month: 1 },
   { id: 324, clusterCode: "B", group: "bonus", title: "التسجيل الضريبي المبسط 2026: متى تستخدمه؟", keyword: "التسجيل الضريبي المبسط", volume: 0, kd: null, month: 1 },
