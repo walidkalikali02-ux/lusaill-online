@@ -13,10 +13,6 @@ import { categoryIntroductions } from "@/lib/category-introductions";
 
 const ARTICLES_PER_PAGE = 30;
 
-function pageNumber(value?: string) {
-  const parsed = Number(value ?? 1);
-  return Number.isSafeInteger(parsed) && parsed > 0 ? parsed : null;
-}
 
 export function generateStaticParams() {
   return clusters.map((cluster) => ({ slug: cluster.slug }));
