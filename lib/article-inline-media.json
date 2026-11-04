@@ -2792,6 +2792,17 @@
       "sourceUrls": [
         "https://help.wps.com/articles/how-to-recover-files-deleted-by-mistake-and-unsaved-files-and-view-backup-files/"
       ]
+    },
+    {
+      "src": "https://res-academy.cache.wpscdn.com/upload/seo-engine-admin/2026-01-26/952a9a3af90ee4b154d495109f5d10f8.png",
+      "alt": "لقطة من WPS Academy تشرح تفعيل المزامنة السحابية لحماية الملفات من الفقد مستقبلًا",
+      "width": 1200,
+      "height": 680,
+      "step": 11,
+      "caption": "لقطة رسمية من WPS Academy لتفعيل Cloud Sync بوصفه إجراءً وقائيًا؛ قد تختلف القوائم بحسب إصدار التطبيق.",
+      "sourceUrls": [
+        "https://www.wps.com/academy/file-sync-in-wps-guide-quick-tutorials-1898105/"
+      ]
     }
   ]
 }
