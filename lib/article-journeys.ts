@@ -20,6 +20,7 @@ export const articleJourneysBySlug: Record<string, string[]> = {
   "sheets-workflow": ["sheets-dropdown", "sheets-checkbox", "sheets-protect", "sheets-print", "sheets-chart", "sheets-conditional-format"],
   "docs-layout": ["docs-pages-mode", "docs-page-setup", "docs-word-count", "docs-headings-toc", "docs-page-elements"],
   "docs-review": ["docs-suggestions", "docs-comments", "docs-english-proofread", "docs-translate"],
+  "excel-recovery": ["wps-kingsoft-deleted-excel-recovery", "drive-file-restore"],
   "windows-files": ["windows-cleanup", "windows-zip", "windows-nearby-share"],
   "windows-daily": ["windows-clipboard", "windows-screen-capture", "windows-default-apps"],
   "windows-workspace": ["windows-snap", "windows-desktops", "windows-startup-apps", "windows-text-size"],
