@@ -1,0 +1,1183 @@
+{
+  "engine": "Formula.js 4.6.1 independent local reference engine; not Microsoft Excel",
+  "adapters": [
+    "flattened Excel row arrays for Formula.js INTERCEPT",
+    "normalized BASE/DEC2HEX letter case; Excel representation retained",
+    "used library divide-by-zero sentinel for parser division"
+  ],
+  "passed": 164,
+  "failed": [],
+  "unverified": [],
+  "results": [
+    {
+      "name": "ABS",
+      "formula": "=ABS(-13)",
+      "expected": "13",
+      "actual": 13,
+      "pass": true
+    },
+    {
+      "name": "AND",
+      "formula": "=AND(TRUE,5>2)",
+      "expected": "TRUE",
+      "actual": "TRUE",
+      "pass": true
+    },
+    {
+      "name": "FALSE",
+      "formula": "=FALSE()",
+      "expected": "FALSE",
+      "actual": "FALSE",
+      "pass": true
+    },
+    {
+      "name": "IF",
+      "formula": "=IF(8>5,\"Yes\",\"No\")",
+      "expected": "Yes",
+      "actual": "Yes",
+      "pass": true
+    },
+    {
+      "name": "IFERROR",
+      "formula": "=IFERROR(1/0,\"Fallback\")",
+      "expected": "Fallback",
+      "actual": "Fallback",
+      "pass": true
+    },
+    {
+      "name": "IFNA",
+      "formula": "=IFNA(NA(),\"Missing\")",
+      "expected": "Missing",
+      "actual": "Missing",
+      "pass": true
+    },
+    {
+      "name": "IFS",
+      "formula": "=IFS(2>5,\"A\",2<5,\"B\")",
+      "expected": "B",
+      "actual": "B",
+      "pass": true
+    },
+    {
+      "name": "NOT",
+      "formula": "=NOT(TRUE)",
+      "expected": "FALSE",
+      "actual": "FALSE",
+      "pass": true
+    },
+    {
+      "name": "OR",
+      "formula": "=OR(FALSE,TRUE)",
+      "expected": "TRUE",
+      "actual": "TRUE",
+      "pass": true
+    },
+    {
+      "name": "SWITCH",
+      "formula": "=SWITCH(2,1,\"A\",2,\"B\",\"Other\")",
+      "expected": "B",
+      "actual": "B",
+      "pass": true
+    },
+    {
+      "name": "TRUE",
+      "formula": "=TRUE()",
+      "expected": "TRUE",
+      "actual": "TRUE",
+      "pass": true
+    },
+    {
+      "name": "XOR",
+      "formula": "=XOR(TRUE,TRUE)",
+      "expected": "FALSE",
+      "actual": "FALSE",
+      "pass": true
+    },
+    {
+      "name": "CONCAT",
+      "formula": "=CONCAT(\"Course\",\" Plan\")",
+      "expected": "Course Plan",
+      "actual": "Course Plan",
+      "pass": true
+    },
+    {
+      "name": "CONCATENATE",
+      "formula": "=CONCATENATE(\"Course\",\" Plan\")",
+      "expected": "Course Plan",
+      "actual": "Course Plan",
+      "pass": true
+    },
+    {
+      "name": "LEN",
+      "formula": "=LEN(\"Course\")",
+      "expected": "6",
+      "actual": 6,
+      "pass": true
+    },
+    {
+      "name": "LEFT",
+      "formula": "=LEFT(\"Course\",3)",
+      "expected": "Cou",
+      "actual": "Cou",
+      "pass": true
+    },
+    {
+      "name": "RIGHT",
+      "formula": "=RIGHT(\"Course\",3)",
+      "expected": "rse",
+      "actual": "rse",
+      "pass": true
+    },
+    {
+      "name": "MID",
+      "formula": "=MID(\"Course\",2,3)",
+      "expected": "our",
+      "actual": "our",
+      "pass": true
+    },
+    {
+      "name": "LOWER",
+      "formula": "=LOWER(\"ABC\")",
+      "expected": "abc",
+      "actual": "abc",
+      "pass": true
+    },
+    {
+      "name": "UPPER",
+      "formula": "=UPPER(\"abc\")",
+      "expected": "ABC",
+      "actual": "ABC",
+      "pass": true
+    },
+    {
+      "name": "PROPER",
+      "formula": "=PROPER(\"course plan\")",
+      "expected": "Course Plan",
+      "actual": "Course Plan",
+      "pass": true
+    },
+    {
+      "name": "EXACT",
+      "formula": "=EXACT(\"A\",\"a\")",
+      "expected": "FALSE",
+      "actual": "FALSE",
+      "pass": true
+    },
+    {
+      "name": "FIND",
+      "formula": "=FIND(\"o\",\"Course\")",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "SEARCH",
+      "formula": "=SEARCH(\"c\",\"Course\")",
+      "expected": "1",
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "name": "SUBSTITUTE",
+      "formula": "=SUBSTITUTE(\"A-B-A\",\"A\",\"X\")",
+      "expected": "X-B-X",
+      "actual": "X-B-X",
+      "pass": true
+    },
+    {
+      "name": "REPLACE",
+      "formula": "=REPLACE(\"ABCDE\",2,2,\"x\")",
+      "expected": "AxDE",
+      "actual": "AxDE",
+      "pass": true
+    },
+    {
+      "name": "REPT",
+      "formula": "=REPT(\"ab\",3)",
+      "expected": "ababab",
+      "actual": "ababab",
+      "pass": true
+    },
+    {
+      "name": "TRIM",
+      "formula": "=TRIM(\"  A   B  \")",
+      "expected": "A B",
+      "actual": "A B",
+      "pass": true
+    },
+    {
+      "name": "TEXTJOIN",
+      "formula": "=TEXTJOIN(\"-\",TRUE,\"A\",\"\",\"B\")",
+      "expected": "A-B",
+      "actual": "A-B",
+      "pass": true
+    },
+    {
+      "name": "UNICODE",
+      "formula": "=UNICODE(\"A\")",
+      "expected": "65",
+      "actual": 65,
+      "pass": true
+    },
+    {
+      "name": "UNICHAR",
+      "formula": "=UNICHAR(65)",
+      "expected": "A",
+      "actual": "A",
+      "pass": true
+    },
+    {
+      "name": "VALUE",
+      "formula": "=VALUE(\"125\")",
+      "expected": "125",
+      "actual": 125,
+      "pass": true
+    },
+    {
+      "name": "NUMBERVALUE",
+      "formula": "=NUMBERVALUE(\"1.234,5\",\",\",\".\")",
+      "expected": "1234.5",
+      "actual": 1234.5,
+      "pass": true
+    },
+    {
+      "name": "TEXTAFTER",
+      "formula": "=TEXTAFTER(\"A|B\",\"|\")",
+      "expected": "B",
+      "engineLimitation": "engine unsupported: TEXTAFTER",
+      "actual": "B",
+      "pass": true,
+      "method": "independent small-case semantic calculation, not Formula.js"
+    },
+    {
+      "name": "TEXTBEFORE",
+      "formula": "=TEXTBEFORE(\"A|B\",\"|\")",
+      "expected": "A",
+      "engineLimitation": "engine unsupported: TEXTBEFORE",
+      "actual": "A",
+      "pass": true,
+      "method": "independent small-case semantic calculation, not Formula.js"
+    },
+    {
+      "name": "DAY",
+      "formula": "=DAY(DATE(2026,1,15))",
+      "expected": "15",
+      "actual": 15,
+      "pass": true
+    },
+    {
+      "name": "MONTH",
+      "formula": "=MONTH(DATE(2026,1,15))",
+      "expected": "1",
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "name": "YEAR",
+      "formula": "=YEAR(DATE(2026,1,15))",
+      "expected": "2026",
+      "actual": 2026,
+      "pass": true
+    },
+    {
+      "name": "DAYS",
+      "formula": "=DAYS(DATE(2026,1,18),DATE(2026,1,15))",
+      "expected": "3",
+      "actual": 3,
+      "pass": true
+    },
+    {
+      "name": "TIME",
+      "formula": "=TIME(12,0,0)",
+      "expected": "0.5",
+      "actual": 0.5,
+      "pass": true
+    },
+    {
+      "name": "HOUR",
+      "formula": "=HOUR(TIME(12,30,0))",
+      "expected": "12",
+      "actual": 12,
+      "pass": true
+    },
+    {
+      "name": "MINUTE",
+      "formula": "=MINUTE(TIME(12,30,0))",
+      "expected": "30",
+      "actual": 30,
+      "pass": true
+    },
+    {
+      "name": "SECOND",
+      "formula": "=SECOND(TIME(12,30,45))",
+      "expected": "45",
+      "actual": 45,
+      "pass": true
+    },
+    {
+      "name": "WEEKDAY",
+      "formula": "=WEEKDAY(DATE(2026,1,5),2)",
+      "expected": "1",
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "name": "ISOWEEKNUM",
+      "formula": "=ISOWEEKNUM(DATE(2026,1,5))",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "NETWORKDAYS",
+      "formula": "=NETWORKDAYS(DATE(2026,1,5),DATE(2026,1,9))",
+      "expected": "5",
+      "actual": 5,
+      "pass": true
+    },
+    {
+      "name": "SUM",
+      "formula": "=SUM(2,5,8)",
+      "expected": "15",
+      "actual": 15,
+      "pass": true
+    },
+    {
+      "name": "PRODUCT",
+      "formula": "=PRODUCT(2,5,8)",
+      "expected": "80",
+      "actual": 80,
+      "pass": true
+    },
+    {
+      "name": "ROUND",
+      "formula": "=ROUND(12.346,2)",
+      "expected": "12.35",
+      "actual": 12.35,
+      "pass": true
+    },
+    {
+      "name": "ROUNDDOWN",
+      "formula": "=ROUNDDOWN(12.349,2)",
+      "expected": "12.34",
+      "actual": 12.34,
+      "pass": true
+    },
+    {
+      "name": "ROUNDUP",
+      "formula": "=ROUNDUP(-12.341,2)",
+      "expected": "-12.35",
+      "actual": -12.35,
+      "pass": true
+    },
+    {
+      "name": "INT",
+      "formula": "=INT(-2.3)",
+      "expected": "-3",
+      "actual": -3,
+      "pass": true
+    },
+    {
+      "name": "TRUNC",
+      "formula": "=TRUNC(-2.3)",
+      "expected": "-2",
+      "actual": -2,
+      "pass": true
+    },
+    {
+      "name": "CEILING.MATH",
+      "formula": "=CEILING.MATH(7.2,2)",
+      "expected": "8",
+      "actual": 8,
+      "pass": true
+    },
+    {
+      "name": "FLOOR.MATH",
+      "formula": "=FLOOR.MATH(7.2,2)",
+      "expected": "6",
+      "actual": 6,
+      "pass": true
+    },
+    {
+      "name": "MROUND",
+      "formula": "=MROUND(13,5)",
+      "expected": "15",
+      "actual": 15,
+      "pass": true
+    },
+    {
+      "name": "MOD",
+      "formula": "=MOD(17,5)",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "QUOTIENT",
+      "formula": "=QUOTIENT(-17,5)",
+      "expected": "-3",
+      "actual": -3,
+      "pass": true
+    },
+    {
+      "name": "EVEN",
+      "formula": "=EVEN(5)",
+      "expected": "6",
+      "actual": 6,
+      "pass": true
+    },
+    {
+      "name": "ODD",
+      "formula": "=ODD(6)",
+      "expected": "7",
+      "actual": 7,
+      "pass": true
+    },
+    {
+      "name": "FACT",
+      "formula": "=FACT(5)",
+      "expected": "120",
+      "actual": 120,
+      "pass": true
+    },
+    {
+      "name": "FACTDOUBLE",
+      "formula": "=FACTDOUBLE(7)",
+      "expected": "105",
+      "actual": 105,
+      "pass": true
+    },
+    {
+      "name": "GCD",
+      "formula": "=GCD(24,36)",
+      "expected": "12",
+      "actual": 12,
+      "pass": true
+    },
+    {
+      "name": "LCM",
+      "formula": "=LCM(6,8)",
+      "expected": "24",
+      "actual": 24,
+      "pass": true
+    },
+    {
+      "name": "COMBIN",
+      "formula": "=COMBIN(5,2)",
+      "expected": "10",
+      "actual": 10,
+      "pass": true
+    },
+    {
+      "name": "COMBINA",
+      "formula": "=COMBINA(3,2)",
+      "expected": "6",
+      "actual": 6,
+      "pass": true
+    },
+    {
+      "name": "DEGREES",
+      "formula": "=DEGREES(PI()/2)",
+      "expected": "90",
+      "actual": 90,
+      "pass": true
+    },
+    {
+      "name": "ARABIC",
+      "formula": "=ARABIC(\"XIV\")",
+      "expected": "14",
+      "actual": 14,
+      "pass": true
+    },
+    {
+      "name": "ROMAN",
+      "formula": "=ROMAN(14)",
+      "expected": "XIV",
+      "actual": "XIV",
+      "pass": true
+    },
+    {
+      "name": "BASE",
+      "formula": "=BASE(31,16)",
+      "expected": "1F",
+      "actual": "1F",
+      "pass": true
+    },
+    {
+      "name": "DECIMAL",
+      "formula": "=DECIMAL(\"1F\",16)",
+      "expected": "31",
+      "actual": 31,
+      "pass": true
+    },
+    {
+      "name": "SIGN",
+      "formula": "=SIGN(-8)",
+      "expected": "-1",
+      "actual": -1,
+      "pass": true
+    },
+    {
+      "name": "SQRT",
+      "formula": "=SQRT(81)",
+      "expected": "9",
+      "actual": 9,
+      "pass": true
+    },
+    {
+      "name": "EXP",
+      "formula": "=EXP(0)",
+      "expected": "1",
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "name": "LN",
+      "formula": "=LN(1)",
+      "expected": "0",
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "name": "LOG",
+      "formula": "=LOG(100,10)",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "LOG10",
+      "formula": "=LOG10(1000)",
+      "expected": "3",
+      "actual": 2.9999999999999996,
+      "pass": true
+    },
+    {
+      "name": "SUMSQ",
+      "formula": "=SUMSQ(2,3)",
+      "expected": "13",
+      "actual": 13,
+      "pass": true
+    },
+    {
+      "name": "MDETERM",
+      "formula": "=MDETERM({1,2;3,4})",
+      "expected": "-2",
+      "engineLimitation": "engine unsupported: MDETERM",
+      "actual": -2,
+      "pass": true,
+      "method": "independent small-case semantic calculation, not Formula.js"
+    },
+    {
+      "name": "POWER",
+      "formula": "=POWER(3,4)",
+      "expected": "81",
+      "actual": 81,
+      "pass": true
+    },
+    {
+      "name": "CONVERT",
+      "formula": "=CONVERT(1,\"m\",\"cm\")",
+      "expected": "100",
+      "actual": 100,
+      "pass": true
+    },
+    {
+      "name": "BIN2DEC",
+      "formula": "=BIN2DEC(\"1011\")",
+      "expected": "11",
+      "actual": 11,
+      "pass": true
+    },
+    {
+      "name": "DEC2BIN",
+      "formula": "=DEC2BIN(11)",
+      "expected": "1011",
+      "actual": "1011",
+      "pass": true
+    },
+    {
+      "name": "HEX2DEC",
+      "formula": "=HEX2DEC(\"1F\")",
+      "expected": "31",
+      "actual": 31,
+      "pass": true
+    },
+    {
+      "name": "DEC2HEX",
+      "formula": "=DEC2HEX(31)",
+      "expected": "1F",
+      "actual": "1F",
+      "pass": true
+    },
+    {
+      "name": "OCT2DEC",
+      "formula": "=OCT2DEC(\"17\")",
+      "expected": "15",
+      "actual": 15,
+      "pass": true
+    },
+    {
+      "name": "DEC2OCT",
+      "formula": "=DEC2OCT(15)",
+      "expected": "17",
+      "actual": "17",
+      "pass": true
+    },
+    {
+      "name": "BITAND",
+      "formula": "=BITAND(6,3)",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "BITOR",
+      "formula": "=BITOR(6,3)",
+      "expected": "7",
+      "actual": 7,
+      "pass": true
+    },
+    {
+      "name": "BITXOR",
+      "formula": "=BITXOR(6,3)",
+      "expected": "5",
+      "actual": 5,
+      "pass": true
+    },
+    {
+      "name": "BITLSHIFT",
+      "formula": "=BITLSHIFT(3,2)",
+      "expected": "12",
+      "actual": 12,
+      "pass": true
+    },
+    {
+      "name": "BITRSHIFT",
+      "formula": "=BITRSHIFT(12,2)",
+      "expected": "3",
+      "actual": 3,
+      "pass": true
+    },
+    {
+      "name": "DELTA",
+      "formula": "=DELTA(4,4)",
+      "expected": "1",
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "name": "GESTEP",
+      "formula": "=GESTEP(5,3)",
+      "expected": "1",
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "name": "IMABS",
+      "formula": "=IMABS(\"3+4i\")",
+      "expected": "5",
+      "actual": 5,
+      "pass": true
+    },
+    {
+      "name": "IMREAL",
+      "formula": "=IMREAL(\"3+4i\")",
+      "expected": "3",
+      "actual": 3,
+      "pass": true
+    },
+    {
+      "name": "IMAGINARY",
+      "formula": "=IMAGINARY(\"3+4i\")",
+      "expected": "4",
+      "actual": 4,
+      "pass": true
+    },
+    {
+      "name": "SLN",
+      "formula": "=SLN(1000,100,3)",
+      "expected": "300",
+      "actual": 300,
+      "pass": true
+    },
+    {
+      "name": "FV",
+      "formula": "=FV(0,10,-50)",
+      "expected": "500",
+      "actual": 500,
+      "pass": true
+    },
+    {
+      "name": "PV",
+      "formula": "=PV(0,10,-50)",
+      "expected": "500",
+      "actual": 500,
+      "pass": true
+    },
+    {
+      "name": "PMT",
+      "formula": "=PMT(0,10,1000)",
+      "expected": "-100",
+      "actual": -100,
+      "pass": true
+    },
+    {
+      "name": "NPV",
+      "formula": "=NPV(0,100,200)",
+      "expected": "300",
+      "actual": 300,
+      "pass": true
+    },
+    {
+      "name": "NPER",
+      "formula": "=NPER(0,-100,1000)",
+      "expected": "10",
+      "actual": 10,
+      "pass": true
+    },
+    {
+      "name": "RRI",
+      "formula": "=RRI(2,100,121)",
+      "expected": "0.1",
+      "actual": 0.10000000000000009,
+      "pass": true
+    },
+    {
+      "name": "PDURATION",
+      "formula": "=PDURATION(0.1,100,121)",
+      "expected": "2",
+      "actual": 1.9999999999999964,
+      "pass": true
+    },
+    {
+      "name": "ISNUMBER",
+      "formula": "=ISNUMBER(3)",
+      "expected": "TRUE",
+      "actual": "TRUE",
+      "pass": true
+    },
+    {
+      "name": "ISTEXT",
+      "formula": "=ISTEXT(\"3\")",
+      "expected": "TRUE",
+      "actual": "TRUE",
+      "pass": true
+    },
+    {
+      "name": "ISBLANK",
+      "formula": "=ISBLANK(\"\")",
+      "expected": "FALSE",
+      "actual": "FALSE",
+      "pass": true
+    },
+    {
+      "name": "ISERROR",
+      "formula": "=ISERROR(1/0)",
+      "expected": "TRUE",
+      "actual": "TRUE",
+      "pass": true
+    },
+    {
+      "name": "ISERR",
+      "formula": "=ISERR(NA())",
+      "expected": "FALSE",
+      "actual": "FALSE",
+      "pass": true
+    },
+    {
+      "name": "ISNA",
+      "formula": "=ISNA(NA())",
+      "expected": "TRUE",
+      "actual": "TRUE",
+      "pass": true
+    },
+    {
+      "name": "N",
+      "formula": "=N(TRUE)",
+      "expected": "1",
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "name": "TYPE",
+      "formula": "=TYPE(\"x\")",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "ISEVEN",
+      "formula": "=ISEVEN(4)",
+      "expected": "TRUE",
+      "actual": "TRUE",
+      "pass": true
+    },
+    {
+      "name": "ISODD",
+      "formula": "=ISODD(5)",
+      "expected": "TRUE",
+      "actual": "TRUE",
+      "pass": true
+    },
+    {
+      "name": "ISLOGICAL",
+      "formula": "=ISLOGICAL(TRUE)",
+      "expected": "TRUE",
+      "actual": "TRUE",
+      "pass": true
+    },
+    {
+      "name": "ISNONTEXT",
+      "formula": "=ISNONTEXT(5)",
+      "expected": "TRUE",
+      "actual": "TRUE",
+      "pass": true
+    },
+    {
+      "name": "ADDRESS",
+      "formula": "=ADDRESS(2,3)",
+      "expected": "$C$2",
+      "engineLimitation": "engine unsupported: ADDRESS",
+      "actual": "$C$2",
+      "pass": true,
+      "method": "independent small-case semantic calculation, not Formula.js"
+    },
+    {
+      "name": "CHOOSE",
+      "formula": "=CHOOSE(2,\"A\",\"B\")",
+      "expected": "B",
+      "actual": "B",
+      "pass": true
+    },
+    {
+      "name": "COLUMN",
+      "formula": "=COLUMN(C5)",
+      "expected": "3",
+      "engineLimitation": "context or syntax: C5",
+      "actual": 3,
+      "pass": true,
+      "method": "independent small-case semantic calculation, not Formula.js"
+    },
+    {
+      "name": "ROW",
+      "formula": "=ROW(C5)",
+      "expected": "5",
+      "engineLimitation": "context or syntax: C5",
+      "actual": 5,
+      "pass": true,
+      "method": "independent small-case semantic calculation, not Formula.js"
+    },
+    {
+      "name": "COLUMNS",
+      "formula": "=COLUMNS(A1:C2)",
+      "expected": "3",
+      "engineLimitation": "context or syntax: A1:C2",
+      "actual": 3,
+      "pass": true,
+      "method": "independent small-case semantic calculation, not Formula.js"
+    },
+    {
+      "name": "ROWS",
+      "formula": "=ROWS(A1:C2)",
+      "expected": "2",
+      "engineLimitation": "context or syntax: A1:C2",
+      "actual": 2,
+      "pass": true,
+      "method": "independent small-case semantic calculation, not Formula.js"
+    },
+    {
+      "name": "MATCH",
+      "formula": "=MATCH(\"B\",{\"A\",\"B\",\"C\"},0)",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "INDEX",
+      "formula": "=INDEX({10,20,30},1,2)",
+      "expected": "20",
+      "actual": 20,
+      "pass": true
+    },
+    {
+      "name": "XMATCH",
+      "formula": "=XMATCH(\"B\",{\"A\",\"B\",\"C\"},0)",
+      "expected": "2",
+      "engineLimitation": "engine unsupported: XMATCH",
+      "actual": 2,
+      "pass": true,
+      "method": "independent small-case semantic calculation, not Formula.js"
+    },
+    {
+      "name": "LOOKUP",
+      "formula": "=LOOKUP(6,{1,5,9},{10,50,90})",
+      "expected": "50",
+      "actual": 50,
+      "pass": true
+    },
+    {
+      "name": "VLOOKUP",
+      "formula": "=VLOOKUP(2,{1,\"A\";2,\"B\"},2,FALSE)",
+      "expected": "B",
+      "actual": "B",
+      "pass": true
+    },
+    {
+      "name": "HLOOKUP",
+      "formula": "=HLOOKUP(2,{1,2;\"A\",\"B\"},2,FALSE)",
+      "expected": "B",
+      "actual": "B",
+      "pass": true
+    },
+    {
+      "name": "XLOOKUP",
+      "formula": "=XLOOKUP(2,{1,2},{\"A\",\"B\"},\"Missing\",0)",
+      "expected": "B",
+      "engineLimitation": "engine unsupported: XLOOKUP",
+      "actual": "B",
+      "pass": true,
+      "method": "independent small-case semantic calculation, not Formula.js"
+    },
+    {
+      "name": "COUNT",
+      "formula": "=COUNT(1,\"x\",3)",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "COUNTA",
+      "formula": "=COUNTA(1,\"x\",3)",
+      "expected": "3",
+      "actual": 3,
+      "pass": true
+    },
+    {
+      "name": "AVERAGE",
+      "formula": "=AVERAGE(2,4,9)",
+      "expected": "5",
+      "actual": 5,
+      "pass": true
+    },
+    {
+      "name": "MEDIAN",
+      "formula": "=MEDIAN(2,4,9)",
+      "expected": "4",
+      "actual": 4,
+      "pass": true
+    },
+    {
+      "name": "MAX",
+      "formula": "=MAX(2,4,9)",
+      "expected": "9",
+      "actual": 9,
+      "pass": true
+    },
+    {
+      "name": "MIN",
+      "formula": "=MIN(2,4,9)",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "MODE.SNGL",
+      "formula": "=MODE.SNGL(2,2,7)",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "LARGE",
+      "formula": "=LARGE({3,8,5},2)",
+      "expected": "5",
+      "actual": 5,
+      "pass": true
+    },
+    {
+      "name": "SMALL",
+      "formula": "=SMALL({3,8,5},2)",
+      "expected": "5",
+      "actual": 5,
+      "pass": true
+    },
+    {
+      "name": "STDEV.S",
+      "formula": "=STDEV.S(2,4,6)",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "VAR.S",
+      "formula": "=VAR.S(2,4,6)",
+      "expected": "4",
+      "actual": 4,
+      "pass": true
+    },
+    {
+      "name": "RANK.EQ",
+      "formula": "=RANK.EQ(5,{9,5,5,1},0)",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "RANK.AVG",
+      "formula": "=RANK.AVG(5,{9,5,5,1},0)",
+      "expected": "2.5",
+      "actual": 2.5,
+      "pass": true
+    },
+    {
+      "name": "PERCENTILE.INC",
+      "formula": "=PERCENTILE.INC({0,10},0.25)",
+      "expected": "2.5",
+      "actual": 2.5,
+      "pass": true
+    },
+    {
+      "name": "QUARTILE.INC",
+      "formula": "=QUARTILE.INC({0,10,20,30,40},1)",
+      "expected": "10",
+      "actual": 10,
+      "pass": true
+    },
+    {
+      "name": "NORM.S.DIST",
+      "formula": "=NORM.S.DIST(0,TRUE)",
+      "expected": "0.5",
+      "actual": 0.5,
+      "pass": true
+    },
+    {
+      "name": "NORM.S.INV",
+      "formula": "=NORM.S.INV(0.5)",
+      "expected": "0",
+      "actual": -7.680546499059137e-17,
+      "pass": true
+    },
+    {
+      "name": "NORM.DIST",
+      "formula": "=NORM.DIST(10,10,2,TRUE)",
+      "expected": "0.5",
+      "actual": 0.5,
+      "pass": true
+    },
+    {
+      "name": "NORM.INV",
+      "formula": "=NORM.INV(0.5,10,2)",
+      "expected": "10",
+      "actual": 10,
+      "pass": true
+    },
+    {
+      "name": "BINOM.DIST",
+      "formula": "=BINOM.DIST(2,3,0.5,FALSE)",
+      "expected": "0.375",
+      "actual": 0.375,
+      "pass": true
+    },
+    {
+      "name": "EXPON.DIST",
+      "formula": "=EXPON.DIST(0,1,TRUE)",
+      "expected": "0",
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "name": "WEIBULL.DIST",
+      "formula": "=WEIBULL.DIST(0,2,1,TRUE)",
+      "expected": "0",
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "name": "BETA.DIST",
+      "formula": "=BETA.DIST(0.5,1,1,TRUE)",
+      "expected": "0.5",
+      "actual": 0.5000000000000002,
+      "pass": true
+    },
+    {
+      "name": "GAMMA",
+      "formula": "=GAMMA(5)",
+      "expected": "24",
+      "actual": 24,
+      "pass": true
+    },
+    {
+      "name": "STANDARDIZE",
+      "formula": "=STANDARDIZE(14,10,2)",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "CORREL",
+      "formula": "=CORREL({1,2,3},{2,4,6})",
+      "expected": "1",
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "name": "RSQ",
+      "formula": "=RSQ({1,2,3},{2,4,6})",
+      "expected": "1",
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "name": "SLOPE",
+      "formula": "=SLOPE({2,4,6},{1,2,3})",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "INTERCEPT",
+      "formula": "=INTERCEPT({2,4,6},{1,2,3})",
+      "expected": "0",
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "name": "GEOMEAN",
+      "formula": "=GEOMEAN(1,4)",
+      "expected": "2",
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "HARMEAN",
+      "formula": "=HARMEAN(2,6)",
+      "expected": "3",
+      "actual": 3,
+      "pass": true
+    },
+    {
+      "name": "PERMUT",
+      "formula": "=PERMUT(5,2)",
+      "expected": "20",
+      "actual": 20,
+      "pass": true
+    },
+    {
+      "name": "PERMUTATIONA",
+      "formula": "=PERMUTATIONA(3,2)",
+      "expected": "9",
+      "actual": 9,
+      "pass": true
+    },
+    {
+      "name": "ENCODEURL",
+      "formula": "=ENCODEURL(\"A B\")",
+      "expected": "A%20B",
+      "engineLimitation": "engine unsupported: ENCODEURL",
+      "actual": "A%20B",
+      "pass": true,
+      "method": "independent small-case semantic calculation, not Formula.js"
+    }
+  ]
+}

@@ -8,6 +8,7 @@
 
 import { readFileSync, readdirSync, statSync } from "fs";
 import { join, extname, basename } from "path";
+import { spawnSync } from "node:child_process";
 
 const issues = [];
 const warnings = [];
@@ -174,6 +175,11 @@ const nextConfigContent = readFileSync(nextConfigFile, "utf8");
 if (!nextConfigContent.includes("redirects") && !readFileSync("proxy.ts", "utf8").includes("NextResponse.redirect")) {
   check(nextConfigFile, "Missing redirect configuration");
 }
+
+// Named task memberships must remain correct when new article groups are added.
+console.log("🔍 Checking contextual task recommendations...");
+const taskCheck = spawnSync(process.execPath, ["scripts/test-article-paths.mjs"], { stdio: "inherit" });
+if (taskCheck.status !== 0) check("lib/guide-paths.ts", "Contextual task recommendation checks failed");
 
 // Report
 console.log("\n" + "=".repeat(60));

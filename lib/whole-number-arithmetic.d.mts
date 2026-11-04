@@ -1,0 +1,1 @@
+export function explainWholeNumbers(first:string,second:string,operation:string):{error:string;result?:never;steps?:never;aligned?:never;facts?:never}|{error?:never;result:string;steps:string[];aligned:string;facts:string[]};

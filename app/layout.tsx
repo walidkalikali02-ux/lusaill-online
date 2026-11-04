@@ -10,7 +10,7 @@ import { SiteFrame } from "@/components/site-frame";
 import { SiteFooter } from "@/components/site-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 
-const bodyFont = IBM_Plex_Sans_Arabic({ weight: ["400", "500", "600", "700"], subsets: ["arabic", "latin"], variable: "--font-arabic-body", display: "swap" });
+const bodyFont = IBM_Plex_Sans_Arabic({ weight: ["400", "700"], subsets: ["arabic"], variable: "--font-arabic-body", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

@@ -215,7 +215,7 @@ async function auditImage(image) {
     imageCache.set(image.url, (async () => {
       try {
         let result = await fetchWithRedirects(image.url, { method: "HEAD" });
-        if ([403, 405].includes(result.response.status)) {
+        if ([400, 403, 405].includes(result.response.status)) {
           result = await fetchWithRedirects(image.url, { method: "GET", headers: { range: "bytes=0-0" } });
         }
         return {

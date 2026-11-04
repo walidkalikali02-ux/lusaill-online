@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {parseCount,compareConversions} from '../lib/conversion-comparison.mjs';
+assert.equal(parseCount('١٢٣'),123);assert.equal(parseCount(' ۱۲۳ '),123);
+for(const s of ['-1','1.2','1e3','1,000','','Infinity','1000000001'])assert.equal(parseCount(s),null);
+const r=compareConversions('1000','50','1000','60');assert(Math.abs(r.rateA-5)<1e-10);assert(Math.abs(r.rateB-6)<1e-10);assert(Math.abs(r.difference-1)<1e-10);assert(Math.abs(r.lift-20)<1e-10);
+assert.equal(compareConversions('10','0','10','1').lift,null);
+assert(compareConversions('0','0','10','1').error);assert(compareConversions('10','11','10','1').error);
+const neg=compareConversions('100','10','100','5');assert(Math.abs(neg.lift+50)<1e-10);
+const tiny=compareConversions('1000000000','1','1000000000','2');assert.equal(tiny.lift,100);assert(tiny.rateA>0);
+assert.equal(compareConversions('10','0','10','0').difference,0);
+console.log('Conversion comparisons: arithmetic, Arabic input, zero baseline, negative and tiny rates, invalid counts PASS');

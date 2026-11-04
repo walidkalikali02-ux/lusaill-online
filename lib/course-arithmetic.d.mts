@@ -1,0 +1,1 @@
+export function solveCourseExpression(value:string,kind:'decimal'|'fraction'):{error:string;result?:never;commonDenominator?:never;estimate?:never;calculation?:never;aligned?:never}|{error?:never;result:string;commonDenominator:string;estimate:string;calculation:string;aligned:string};

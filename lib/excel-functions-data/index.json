@@ -1,0 +1,2495 @@
+{
+  "meta": {
+    "slug": "advanced-excel-functions",
+    "title": "كورس دوال Excel بالعربية",
+    "description": "مرجع تعلّم عربي من 499 وحدة: وظائف الدوال ووسائطها وأمثلة محلولة وتمارين واختبارات وبحث حسب الاسم والمجموعة، مع حدود الإصدارات.",
+    "publishedAt": "2026-10-30",
+    "updatedAt": "2026-10-30",
+    "level": "تأسيسي",
+    "subject": "تحليل البيانات",
+    "headline": "من السؤال إلى الصيغة.",
+    "displayTitle": "دوال Excel، بفهم.",
+    "art": "functions",
+    "audience": "لمن يعرف الخلية والنطاق والصيغة ويريد اختيار الدالة وبناء مدخلاتها. الأمثلة تستخدم أسماء وفواصل Excel الإنجليزية؛ قد تحتاج فواصل أو أسماء محلية في نسختك.",
+    "promise": "مرجع وتدريب أصلي؛ المعمل لا يشغّل محرك Excel ولا يصل إلى ملفاتك أو خدمات خارجية. لا اعتماد أو شهادة أو نصيحة مالية.",
+    "planDescription": "ابدأ بمجموعة مناسبة، ثم ابحث باسم الدالة. تضم الخطة 15 مجموعة تمهيدية ومراجعة ومصادر، مع درس خاص بكل اسم وظيفة.",
+    "caseNoun": "نشاطًا",
+    "caseHeading": "تطبيق ومراجعة المدخلات",
+    "practiceNoun": "بنى وسائط وأمثلة أصلية",
+    "versionNote": "التوفر يختلف بحسب إصدار Excel والمنصة. الدوال القديمة وذات الحرف B تحتاج مراجعة توافق؛ ظهور اسم هنا ليس ضمان تشغيل في نسختك."
+  },
+  "sources": {
+    "index": {
+      "title": "Microsoft: الدوال حسب الاسم",
+      "url": "https://support.microsoft.com/en-us/excel/excel-functions-alphabetical",
+      "note": "فهرس رسمي لوجهات المراجع وعلامات الإصدارات؛ لم ننقل أوصافه بالجملة."
+    },
+    "outline": {
+      "title": "قائمة المستخدم لدوال Excel",
+      "url": "https://www.tutorialspoint.com/advanced_excel_functions/index.htm",
+      "note": "نطاق التغطية وترتيب الموضوعات؛ النصوص والأمثلة هنا أصلية."
+    },
+    "fn-betadist": {
+      "title": "Microsoft: BETADIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/betadist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-betainv": {
+      "title": "Microsoft: BETAINV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/betainv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-binomdist": {
+      "title": "Microsoft: BINOMDIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/binomdist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-ceiling": {
+      "title": "Microsoft: CEILING",
+      "url": "https://support.microsoft.com/en-us/excel/functions/ceiling-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-chidist": {
+      "title": "Microsoft: CHIDIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/chidist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-chiinv": {
+      "title": "Microsoft: CHIINV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/chiinv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-chitest": {
+      "title": "Microsoft: CHITEST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/chitest-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-confidence": {
+      "title": "Microsoft: CONFIDENCE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/confidence-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-covar": {
+      "title": "Microsoft: COVAR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/covar-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-critbinom": {
+      "title": "Microsoft: CRITBINOM",
+      "url": "https://support.microsoft.com/en-us/excel/functions/critbinom-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-expondist": {
+      "title": "Microsoft: EXPONDIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/expondist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-fdist": {
+      "title": "Microsoft: FDIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/fdist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-finv": {
+      "title": "Microsoft: FINV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/finv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-floor": {
+      "title": "Microsoft: FLOOR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/floor-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-ftest": {
+      "title": "Microsoft: FTEST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/ftest-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-gammadist": {
+      "title": "Microsoft: GAMMADIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/gammadist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-gammainv": {
+      "title": "Microsoft: GAMMAINV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/gammainv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-hypgeomdist": {
+      "title": "Microsoft: HYPGEOMDIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/hypgeomdist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-loginv": {
+      "title": "Microsoft: LOGINV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/loginv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-lognormdist": {
+      "title": "Microsoft: LOGNORMDIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/lognormdist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-mode": {
+      "title": "Microsoft: MODE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/mode-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-negbinomdist": {
+      "title": "Microsoft: NEGBINOMDIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/negbinomdist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-normdist": {
+      "title": "Microsoft: NORMDIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/normdist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-norminv": {
+      "title": "Microsoft: NORMINV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/norminv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-normsdist": {
+      "title": "Microsoft: NORMSDIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/normsdist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-normsinv": {
+      "title": "Microsoft: NORMSINV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/normsinv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-percentile": {
+      "title": "Microsoft: PERCENTILE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/percentile-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-percentrank": {
+      "title": "Microsoft: PERCENTRANK",
+      "url": "https://support.microsoft.com/en-us/excel/functions/percentrank-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-poisson": {
+      "title": "Microsoft: POISSON",
+      "url": "https://support.microsoft.com/en-us/excel/functions/poisson-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-quartile": {
+      "title": "Microsoft: QUARTILE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/quartile-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-rank": {
+      "title": "Microsoft: RANK",
+      "url": "https://support.microsoft.com/en-us/excel/functions/rank-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-stdev": {
+      "title": "Microsoft: STDEV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/stdev-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-stdevp": {
+      "title": "Microsoft: STDEVP",
+      "url": "https://support.microsoft.com/en-us/excel/functions/stdevp-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-tdist": {
+      "title": "Microsoft: TDIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/tdist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-tinv": {
+      "title": "Microsoft: TINV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/tinv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-ttest": {
+      "title": "Microsoft: TTEST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/ttest-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-var": {
+      "title": "Microsoft: VAR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/var-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-varp": {
+      "title": "Microsoft: VARP",
+      "url": "https://support.microsoft.com/en-us/excel/functions/varp-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-weibull": {
+      "title": "Microsoft: WEIBULL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/weibull-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-ztest": {
+      "title": "Microsoft: ZTEST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/ztest-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-and": {
+      "title": "Microsoft: AND",
+      "url": "https://support.microsoft.com/en-us/excel/functions/and-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-false": {
+      "title": "Microsoft: FALSE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/false-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-if": {
+      "title": "Microsoft: IF",
+      "url": "https://support.microsoft.com/en-us/excel/functions/if-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-iferror": {
+      "title": "Microsoft: IFERROR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/iferror-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-ifna": {
+      "title": "Microsoft: IFNA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/ifna-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-ifs": {
+      "title": "Microsoft: IFS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/ifs-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-not": {
+      "title": "Microsoft: NOT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/not-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-or": {
+      "title": "Microsoft: OR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/or-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-switch": {
+      "title": "Microsoft: SWITCH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/switch-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-true": {
+      "title": "Microsoft: TRUE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/true-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-xor": {
+      "title": "Microsoft: XOR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/xor-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-arraytotext": {
+      "title": "Microsoft: ARRAYTOTEXT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/arraytotext-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-bahttext": {
+      "title": "Microsoft: BAHTTEXT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/bahttext-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-char": {
+      "title": "Microsoft: CHAR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/char-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-clean": {
+      "title": "Microsoft: CLEAN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/clean-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-code": {
+      "title": "Microsoft: CODE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/code-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-concat": {
+      "title": "Microsoft: CONCAT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/concat-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-concatenate": {
+      "title": "Microsoft: CONCATENATE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/concatenate-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dbcs": {
+      "title": "Microsoft: DBCS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dbcs-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dollar": {
+      "title": "Microsoft: DOLLAR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dollar-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-exact": {
+      "title": "Microsoft: EXACT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/exact-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-find": {
+      "title": "Microsoft: FIND",
+      "url": "https://support.microsoft.com/en-us/excel/how-to-correct-a-value-error-in-find-findb-and-search-searchb-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-findb": {
+      "title": "Microsoft: FINDB",
+      "url": "https://support.microsoft.com/en-us/excel/how-to-correct-a-value-error-in-find-findb-and-search-searchb-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-fixed": {
+      "title": "Microsoft: FIXED",
+      "url": "https://support.microsoft.com/en-us/excel/functions/fixed-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-left": {
+      "title": "Microsoft: LEFT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/left-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-leftb": {
+      "title": "Microsoft: LEFTB",
+      "url": "https://support.microsoft.com/en-us/excel/functions/left-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-len": {
+      "title": "Microsoft: LEN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/len-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-lenb": {
+      "title": "Microsoft: LENB",
+      "url": "https://support.microsoft.com/en-us/excel/functions/len-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-lower": {
+      "title": "Microsoft: LOWER",
+      "url": "https://support.microsoft.com/en-us/excel/functions/lower-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-mid": {
+      "title": "Microsoft: MID",
+      "url": "https://support.microsoft.com/en-us/excel/functions/mid-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-midb": {
+      "title": "Microsoft: MIDB",
+      "url": "https://support.microsoft.com/en-us/excel/functions/mid-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-numbervalue": {
+      "title": "Microsoft: NUMBERVALUE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/numbervalue-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-phonetic": {
+      "title": "Microsoft: PHONETIC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/phonetic-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-proper": {
+      "title": "Microsoft: PROPER",
+      "url": "https://support.microsoft.com/en-us/excel/functions/proper-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-replace": {
+      "title": "Microsoft: REPLACE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/replace-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-replaceb": {
+      "title": "Microsoft: REPLACEB",
+      "url": "https://support.microsoft.com/en-us/excel/functions/replace-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-rept": {
+      "title": "Microsoft: REPT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/rept-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-right": {
+      "title": "Microsoft: RIGHT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/right-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-rightb": {
+      "title": "Microsoft: RIGHTB",
+      "url": "https://support.microsoft.com/en-us/excel/functions/right-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-search": {
+      "title": "Microsoft: SEARCH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/search-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-searchb": {
+      "title": "Microsoft: SEARCHB",
+      "url": "https://support.microsoft.com/en-us/excel/functions/search-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-substitute": {
+      "title": "Microsoft: SUBSTITUTE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/substitute-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-t": {
+      "title": "Microsoft: T",
+      "url": "https://support.microsoft.com/en-us/excel/functions/t-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-text": {
+      "title": "Microsoft: TEXT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/text-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-textafter": {
+      "title": "Microsoft: TEXTAFTER",
+      "url": "https://support.microsoft.com/en-us/excel/functions/textafter-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-textbefore": {
+      "title": "Microsoft: TEXTBEFORE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/textbefore-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-textjoin": {
+      "title": "Microsoft: TEXTJOIN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/textjoin-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-textsplit": {
+      "title": "Microsoft: TEXTSPLIT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/textsplit-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-trim": {
+      "title": "Microsoft: TRIM",
+      "url": "https://support.microsoft.com/en-us/excel/functions/trim-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-unichar": {
+      "title": "Microsoft: UNICHAR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/unichar-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-unicode": {
+      "title": "Microsoft: UNICODE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/unicode-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-upper": {
+      "title": "Microsoft: UPPER",
+      "url": "https://support.microsoft.com/en-us/excel/functions/upper-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-value": {
+      "title": "Microsoft: VALUE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/value-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-valuetotext": {
+      "title": "Microsoft: VALUETOTEXT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/valuetotext-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-date": {
+      "title": "Microsoft: DATE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/date-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-datedif": {
+      "title": "Microsoft: DATEDIF",
+      "url": "https://support.microsoft.com/en-us/excel/functions/datedif-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-datevalue": {
+      "title": "Microsoft: DATEVALUE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/datevalue-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-day": {
+      "title": "Microsoft: DAY",
+      "url": "https://support.microsoft.com/en-us/excel/functions/day-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-days": {
+      "title": "Microsoft: DAYS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/days-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-days360": {
+      "title": "Microsoft: DAYS360",
+      "url": "https://support.microsoft.com/en-us/excel/functions/days360-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-edate": {
+      "title": "Microsoft: EDATE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/edate-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-eomonth": {
+      "title": "Microsoft: EOMONTH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/eomonth-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-hour": {
+      "title": "Microsoft: HOUR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/hour-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-isoweeknum": {
+      "title": "Microsoft: ISOWEEKNUM",
+      "url": "https://support.microsoft.com/en-us/excel/functions/isoweeknum-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-minute": {
+      "title": "Microsoft: MINUTE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/minute-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-month": {
+      "title": "Microsoft: MONTH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/month-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-networkdays": {
+      "title": "Microsoft: NETWORKDAYS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/networkdays-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-networkdays.intl": {
+      "title": "Microsoft: NETWORKDAYS.INTL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/networkdays-intl-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-now": {
+      "title": "Microsoft: NOW",
+      "url": "https://support.microsoft.com/en-us/excel/functions/now-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-second": {
+      "title": "Microsoft: SECOND",
+      "url": "https://support.microsoft.com/en-us/excel/functions/second-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-time": {
+      "title": "Microsoft: TIME",
+      "url": "https://support.microsoft.com/en-us/excel/functions/time-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-timevalue": {
+      "title": "Microsoft: TIMEVALUE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/timevalue-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-today": {
+      "title": "Microsoft: TODAY",
+      "url": "https://support.microsoft.com/en-us/excel/functions/today-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-weekday": {
+      "title": "Microsoft: WEEKDAY",
+      "url": "https://support.microsoft.com/en-us/excel/functions/weekday-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-weeknum": {
+      "title": "Microsoft: WEEKNUM",
+      "url": "https://support.microsoft.com/en-us/excel/functions/weeknum-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-workday": {
+      "title": "Microsoft: WORKDAY",
+      "url": "https://support.microsoft.com/en-us/excel/functions/workday-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-workday.intl": {
+      "title": "Microsoft: WORKDAY.INTL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/workday-intl-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-year": {
+      "title": "Microsoft: YEAR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/year-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-yearfrac": {
+      "title": "Microsoft: YEARFRAC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/yearfrac-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-cubekpimember": {
+      "title": "Microsoft: CUBEKPIMEMBER",
+      "url": "https://support.microsoft.com/en-us/excel/functions/cubekpimember-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-cubemember": {
+      "title": "Microsoft: CUBEMEMBER",
+      "url": "https://support.microsoft.com/en-us/excel/functions/cubemember-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-cubememberproperty": {
+      "title": "Microsoft: CUBEMEMBERPROPERTY",
+      "url": "https://support.microsoft.com/en-us/excel/functions/cubememberproperty-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-cuberankedmember": {
+      "title": "Microsoft: CUBERANKEDMEMBER",
+      "url": "https://support.microsoft.com/en-us/excel/functions/cuberankedmember-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-cubeset": {
+      "title": "Microsoft: CUBESET",
+      "url": "https://support.microsoft.com/en-us/excel/functions/cubeset-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-cubesetcount": {
+      "title": "Microsoft: CUBESETCOUNT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/cubesetcount-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-cubevalue": {
+      "title": "Microsoft: CUBEVALUE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/cubevalue-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-abs": {
+      "title": "Microsoft: ABS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/abs-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-aggregate": {
+      "title": "Microsoft: AGGREGATE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/aggregate-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-arabic": {
+      "title": "Microsoft: ARABIC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/arabic-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-base": {
+      "title": "Microsoft: BASE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/base-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-ceiling.math": {
+      "title": "Microsoft: CEILING.MATH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/ceiling-math-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-combin": {
+      "title": "Microsoft: COMBIN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/combin-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-combina": {
+      "title": "Microsoft: COMBINA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/combina-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-decimal": {
+      "title": "Microsoft: DECIMAL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/decimal-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-degrees": {
+      "title": "Microsoft: DEGREES",
+      "url": "https://support.microsoft.com/en-us/excel/functions/degrees-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-even": {
+      "title": "Microsoft: EVEN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/even-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-exp": {
+      "title": "Microsoft: EXP",
+      "url": "https://support.microsoft.com/en-us/excel/functions/exp-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-fact": {
+      "title": "Microsoft: FACT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/fact-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-factdouble": {
+      "title": "Microsoft: FACTDOUBLE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/factdouble-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-floor.math": {
+      "title": "Microsoft: FLOOR.MATH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/floor-math-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-gcd": {
+      "title": "Microsoft: GCD",
+      "url": "https://support.microsoft.com/en-us/excel/functions/gcd-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-int": {
+      "title": "Microsoft: INT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/int-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-lcm": {
+      "title": "Microsoft: LCM",
+      "url": "https://support.microsoft.com/en-us/excel/functions/lcm-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-ln": {
+      "title": "Microsoft: LN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/ln-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-log": {
+      "title": "Microsoft: LOG",
+      "url": "https://support.microsoft.com/en-us/excel/functions/log-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-log10": {
+      "title": "Microsoft: LOG10",
+      "url": "https://support.microsoft.com/en-us/excel/functions/log10-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-mdeterm": {
+      "title": "Microsoft: MDETERM",
+      "url": "https://support.microsoft.com/en-us/excel/functions/mdeterm-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-minverse": {
+      "title": "Microsoft: MINVERSE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/minverse-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-mmult": {
+      "title": "Microsoft: MMULT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/mmult-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-mod": {
+      "title": "Microsoft: MOD",
+      "url": "https://support.microsoft.com/en-us/excel/functions/mod-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-mround": {
+      "title": "Microsoft: MROUND",
+      "url": "https://support.microsoft.com/en-us/excel/functions/mround-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-multinomial": {
+      "title": "Microsoft: MULTINOMIAL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/multinomial-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-munit": {
+      "title": "Microsoft: MUNIT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/munit-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-odd": {
+      "title": "Microsoft: ODD",
+      "url": "https://support.microsoft.com/en-us/excel/functions/odd-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-pi": {
+      "title": "Microsoft: PI",
+      "url": "https://support.microsoft.com/en-us/excel/functions/pi-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-power": {
+      "title": "Microsoft: POWER",
+      "url": "https://support.microsoft.com/en-us/excel/functions/power-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-product": {
+      "title": "Microsoft: PRODUCT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/product-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-quotient": {
+      "title": "Microsoft: QUOTIENT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/quotient-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-radians": {
+      "title": "Microsoft: RADIANS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/radians-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-rand": {
+      "title": "Microsoft: RAND",
+      "url": "https://support.microsoft.com/en-us/excel/functions/rand-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-randbetween": {
+      "title": "Microsoft: RANDBETWEEN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/randbetween-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-roman": {
+      "title": "Microsoft: ROMAN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/roman-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-round": {
+      "title": "Microsoft: ROUND",
+      "url": "https://support.microsoft.com/en-us/excel/functions/round-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-rounddown": {
+      "title": "Microsoft: ROUNDDOWN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/rounddown-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-roundup": {
+      "title": "Microsoft: ROUNDUP",
+      "url": "https://support.microsoft.com/en-us/excel/functions/roundup-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-seriessum": {
+      "title": "Microsoft: SERIESSUM",
+      "url": "https://support.microsoft.com/en-us/excel/functions/seriessum-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sign": {
+      "title": "Microsoft: SIGN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sign-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sqrt": {
+      "title": "Microsoft: SQRT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sqrt-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sqrtpi": {
+      "title": "Microsoft: SQRTPI",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sqrtpi-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-subtotal": {
+      "title": "Microsoft: SUBTOTAL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/subtotal-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sum": {
+      "title": "Microsoft: SUM",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sum-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sumif": {
+      "title": "Microsoft: SUMIF",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sumif-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sumifs": {
+      "title": "Microsoft: SUMIFS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sumifs-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sumproduct": {
+      "title": "Microsoft: SUMPRODUCT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sumproduct-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sumsq": {
+      "title": "Microsoft: SUMSQ",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sumsq-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sumx2my2": {
+      "title": "Microsoft: SUMX2MY2",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sumx2my2-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sumx2py2": {
+      "title": "Microsoft: SUMX2PY2",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sumx2py2-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sumxmy2": {
+      "title": "Microsoft: SUMXMY2",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sumxmy2-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-trunc": {
+      "title": "Microsoft: TRUNC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/trunc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-acos": {
+      "title": "Microsoft: ACOS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/acos-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-acosh": {
+      "title": "Microsoft: ACOSH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/acosh-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-acot": {
+      "title": "Microsoft: ACOT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/acot-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-acoth": {
+      "title": "Microsoft: ACOTH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/acoth-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-asin": {
+      "title": "Microsoft: ASIN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/asin-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-asinh": {
+      "title": "Microsoft: ASINH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/asinh-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-atan": {
+      "title": "Microsoft: ATAN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/atan-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-atan2": {
+      "title": "Microsoft: ATAN2",
+      "url": "https://support.microsoft.com/en-us/excel/functions/atan2-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-atanh": {
+      "title": "Microsoft: ATANH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/atanh-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-cos": {
+      "title": "Microsoft: COS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/cos-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-cosh": {
+      "title": "Microsoft: COSH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/cosh-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-cot": {
+      "title": "Microsoft: COT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/cot-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-coth": {
+      "title": "Microsoft: COTH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/coth-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-csc": {
+      "title": "Microsoft: CSC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/csc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-csch": {
+      "title": "Microsoft: CSCH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/csch-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sec": {
+      "title": "Microsoft: SEC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sec-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sech": {
+      "title": "Microsoft: SECH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sech-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sin": {
+      "title": "Microsoft: SIN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sin-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sinh": {
+      "title": "Microsoft: SINH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sinh-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-tan": {
+      "title": "Microsoft: TAN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/tan-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-tanh": {
+      "title": "Microsoft: TANH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/tanh-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-daverage": {
+      "title": "Microsoft: DAVERAGE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/daverage-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dcount": {
+      "title": "Microsoft: DCOUNT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dcount-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dcounta": {
+      "title": "Microsoft: DCOUNTA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dcounta-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dget": {
+      "title": "Microsoft: DGET",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dget-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dmax": {
+      "title": "Microsoft: DMAX",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dmax-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dmin": {
+      "title": "Microsoft: DMIN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dmin-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dproduct": {
+      "title": "Microsoft: DPRODUCT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dproduct-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dstdev": {
+      "title": "Microsoft: DSTDEV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dstdev-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dstdevp": {
+      "title": "Microsoft: DSTDEVP",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dstdevp-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dsum": {
+      "title": "Microsoft: DSUM",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dsum-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dvar": {
+      "title": "Microsoft: DVAR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dvar-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dvarp": {
+      "title": "Microsoft: DVARP",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dvarp-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-filter": {
+      "title": "Microsoft: FILTER",
+      "url": "https://support.microsoft.com/en-us/excel/functions/filter-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-randarray": {
+      "title": "Microsoft: RANDARRAY",
+      "url": "https://support.microsoft.com/en-us/excel/functions/randarray-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sequence": {
+      "title": "Microsoft: SEQUENCE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sequence-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sort": {
+      "title": "Microsoft: SORT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sort-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sortby": {
+      "title": "Microsoft: SORTBY",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sortby-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-unique": {
+      "title": "Microsoft: UNIQUE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/unique-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-xlookup": {
+      "title": "Microsoft: XLOOKUP",
+      "url": "https://support.microsoft.com/en-us/excel/functions/xlookup-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-xmatch": {
+      "title": "Microsoft: XMATCH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/xmatch-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-besseli": {
+      "title": "Microsoft: BESSELI",
+      "url": "https://support.microsoft.com/en-us/excel/functions/besseli-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-besselj": {
+      "title": "Microsoft: BESSELJ",
+      "url": "https://support.microsoft.com/en-us/excel/functions/besselj-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-besselk": {
+      "title": "Microsoft: BESSELK",
+      "url": "https://support.microsoft.com/en-us/excel/functions/besselk-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-bessely": {
+      "title": "Microsoft: BESSELY",
+      "url": "https://support.microsoft.com/en-us/excel/functions/bessely-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-bin2dec": {
+      "title": "Microsoft: BIN2DEC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/bin2dec-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-bin2hex": {
+      "title": "Microsoft: BIN2HEX",
+      "url": "https://support.microsoft.com/en-us/excel/functions/bin2hex-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-bin2oct": {
+      "title": "Microsoft: BIN2OCT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/bin2oct-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-bitand": {
+      "title": "Microsoft: BITAND",
+      "url": "https://support.microsoft.com/en-us/excel/functions/bitand-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-bitlshift": {
+      "title": "Microsoft: BITLSHIFT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/bitlshift-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-bitor": {
+      "title": "Microsoft: BITOR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/bitor-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-bitrshift": {
+      "title": "Microsoft: BITRSHIFT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/bitrshift-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-bitxor": {
+      "title": "Microsoft: BITXOR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/bitxor-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-complex": {
+      "title": "Microsoft: COMPLEX",
+      "url": "https://support.microsoft.com/en-us/excel/functions/complex-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-convert": {
+      "title": "Microsoft: CONVERT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/convert-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dec2bin": {
+      "title": "Microsoft: DEC2BIN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dec2bin-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dec2hex": {
+      "title": "Microsoft: DEC2HEX",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dec2hex-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dec2oct": {
+      "title": "Microsoft: DEC2OCT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dec2oct-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-delta": {
+      "title": "Microsoft: DELTA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/delta-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-erf": {
+      "title": "Microsoft: ERF",
+      "url": "https://support.microsoft.com/en-us/excel/functions/erf-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-erf.precise": {
+      "title": "Microsoft: ERF.PRECISE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/erf-precise-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-erfc": {
+      "title": "Microsoft: ERFC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/erfc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-erfc.precise": {
+      "title": "Microsoft: ERFC.PRECISE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/erfc-precise-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-gestep": {
+      "title": "Microsoft: GESTEP",
+      "url": "https://support.microsoft.com/en-us/excel/functions/gestep-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-hex2bin": {
+      "title": "Microsoft: HEX2BIN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/hex2bin-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-hex2dec": {
+      "title": "Microsoft: HEX2DEC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/hex2dec-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-hex2oct": {
+      "title": "Microsoft: HEX2OCT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/hex2oct-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imabs": {
+      "title": "Microsoft: IMABS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imabs-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imaginary": {
+      "title": "Microsoft: IMAGINARY",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imaginary-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imargument": {
+      "title": "Microsoft: IMARGUMENT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imargument-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imconjugate": {
+      "title": "Microsoft: IMCONJUGATE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imconjugate-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imcos": {
+      "title": "Microsoft: IMCOS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imcos-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imcosh": {
+      "title": "Microsoft: IMCOSH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imcosh-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imcot": {
+      "title": "Microsoft: IMCOT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imcot-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imcsc": {
+      "title": "Microsoft: IMCSC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imcsc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imcsch": {
+      "title": "Microsoft: IMCSCH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imcsch-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imdiv": {
+      "title": "Microsoft: IMDIV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imdiv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imexp": {
+      "title": "Microsoft: IMEXP",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imexp-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imln": {
+      "title": "Microsoft: IMLN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imln-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imlog2": {
+      "title": "Microsoft: IMLOG2",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imlog2-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imlog10": {
+      "title": "Microsoft: IMLOG10",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imlog10-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-impower": {
+      "title": "Microsoft: IMPOWER",
+      "url": "https://support.microsoft.com/en-us/excel/functions/impower-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-improduct": {
+      "title": "Microsoft: IMPRODUCT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/improduct-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imreal": {
+      "title": "Microsoft: IMREAL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imreal-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imsec": {
+      "title": "Microsoft: IMSEC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imsec-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imsech": {
+      "title": "Microsoft: IMSECH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imsech-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imsin": {
+      "title": "Microsoft: IMSIN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imsin-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imsinh": {
+      "title": "Microsoft: IMSINH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imsinh-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imsqrt": {
+      "title": "Microsoft: IMSQRT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imsqrt-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imsub": {
+      "title": "Microsoft: IMSUB",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imsub-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imsum": {
+      "title": "Microsoft: IMSUM",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imsum-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-imtan": {
+      "title": "Microsoft: IMTAN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/imtan-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-oct2bin": {
+      "title": "Microsoft: OCT2BIN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/oct2bin-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-oct2dec": {
+      "title": "Microsoft: OCT2DEC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/oct2dec-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-oct2hex": {
+      "title": "Microsoft: OCT2HEX",
+      "url": "https://support.microsoft.com/en-us/excel/functions/oct2hex-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-accrint": {
+      "title": "Microsoft: ACCRINT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/accrint-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-accrintm": {
+      "title": "Microsoft: ACCRINTM",
+      "url": "https://support.microsoft.com/en-us/excel/functions/accrintm-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-amordegrc": {
+      "title": "Microsoft: AMORDEGRC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/amordegrc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-amorlinc": {
+      "title": "Microsoft: AMORLINC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/amorlinc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-coupdaybs": {
+      "title": "Microsoft: COUPDAYBS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/coupdaybs-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-coupdays": {
+      "title": "Microsoft: COUPDAYS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/coupdays-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-coupdaysnc": {
+      "title": "Microsoft: COUPDAYSNC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/coupdaysnc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-coupncd": {
+      "title": "Microsoft: COUPNCD",
+      "url": "https://support.microsoft.com/en-us/excel/functions/coupncd-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-coupnum": {
+      "title": "Microsoft: COUPNUM",
+      "url": "https://support.microsoft.com/en-us/excel/functions/coupnum-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-couppcd": {
+      "title": "Microsoft: COUPPCD",
+      "url": "https://support.microsoft.com/en-us/excel/functions/couppcd-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-cumipmt": {
+      "title": "Microsoft: CUMIPMT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/cumipmt-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-cumprinc": {
+      "title": "Microsoft: CUMPRINC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/cumprinc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-db": {
+      "title": "Microsoft: DB",
+      "url": "https://support.microsoft.com/en-us/excel/functions/db-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-ddb": {
+      "title": "Microsoft: DDB",
+      "url": "https://support.microsoft.com/en-us/excel/functions/ddb-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-disc": {
+      "title": "Microsoft: DISC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/disc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dollarde": {
+      "title": "Microsoft: DOLLARDE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dollarde-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-dollarfr": {
+      "title": "Microsoft: DOLLARFR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/dollarfr-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-duration": {
+      "title": "Microsoft: DURATION",
+      "url": "https://support.microsoft.com/en-us/excel/functions/duration-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-effect": {
+      "title": "Microsoft: EFFECT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/effect-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-fv": {
+      "title": "Microsoft: FV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/fv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-fvschedule": {
+      "title": "Microsoft: FVSCHEDULE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/fvschedule-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-intrate": {
+      "title": "Microsoft: INTRATE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/intrate-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-ipmt": {
+      "title": "Microsoft: IPMT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/ipmt-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-irr": {
+      "title": "Microsoft: IRR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/irr-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-ispmt": {
+      "title": "Microsoft: ISPMT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/ispmt-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-mduration": {
+      "title": "Microsoft: MDURATION",
+      "url": "https://support.microsoft.com/en-us/excel/functions/mduration-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-mirr": {
+      "title": "Microsoft: MIRR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/mirr-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-nominal": {
+      "title": "Microsoft: NOMINAL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/nominal-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-nper": {
+      "title": "Microsoft: NPER",
+      "url": "https://support.microsoft.com/en-us/excel/functions/nper-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-npv": {
+      "title": "Microsoft: NPV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/npv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-oddfprice": {
+      "title": "Microsoft: ODDFPRICE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/oddfprice-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-oddfyield": {
+      "title": "Microsoft: ODDFYIELD",
+      "url": "https://support.microsoft.com/en-us/excel/functions/oddfyield-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-oddlprice": {
+      "title": "Microsoft: ODDLPRICE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/oddlprice-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-oddlyield": {
+      "title": "Microsoft: ODDLYIELD",
+      "url": "https://support.microsoft.com/en-us/excel/functions/oddlyield-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-pduration": {
+      "title": "Microsoft: PDURATION",
+      "url": "https://support.microsoft.com/en-us/excel/functions/pduration-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-pmt": {
+      "title": "Microsoft: PMT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/pmt-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-ppmt": {
+      "title": "Microsoft: PPMT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/ppmt-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-price": {
+      "title": "Microsoft: PRICE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/price-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-pricedisc": {
+      "title": "Microsoft: PRICEDISC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/pricedisc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-pricemat": {
+      "title": "Microsoft: PRICEMAT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/pricemat-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-pv": {
+      "title": "Microsoft: PV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/pv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-rate": {
+      "title": "Microsoft: RATE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/rate-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-received": {
+      "title": "Microsoft: RECEIVED",
+      "url": "https://support.microsoft.com/en-us/excel/functions/received-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-rri": {
+      "title": "Microsoft: RRI",
+      "url": "https://support.microsoft.com/en-us/excel/functions/rri-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sln": {
+      "title": "Microsoft: SLN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sln-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-syd": {
+      "title": "Microsoft: SYD",
+      "url": "https://support.microsoft.com/en-us/excel/functions/syd-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-tbilleq": {
+      "title": "Microsoft: TBILLEQ",
+      "url": "https://support.microsoft.com/en-us/excel/functions/tbilleq-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-tbillprice": {
+      "title": "Microsoft: TBILLPRICE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/tbillprice-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-tbillyield": {
+      "title": "Microsoft: TBILLYIELD",
+      "url": "https://support.microsoft.com/en-us/excel/functions/tbillyield-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-vdb": {
+      "title": "Microsoft: VDB",
+      "url": "https://support.microsoft.com/en-us/excel/functions/vdb-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-xirr": {
+      "title": "Microsoft: XIRR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/xirr-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-xnpv": {
+      "title": "Microsoft: XNPV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/xnpv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-yield": {
+      "title": "Microsoft: YIELD",
+      "url": "https://support.microsoft.com/en-us/excel/functions/yield-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-yielddisc": {
+      "title": "Microsoft: YIELDDISC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/yielddisc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-yieldmat": {
+      "title": "Microsoft: YIELDMAT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/yieldmat-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-cell": {
+      "title": "Microsoft: CELL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/cell-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-error.type": {
+      "title": "Microsoft: ERROR.TYPE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/error-type-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-info": {
+      "title": "Microsoft: INFO",
+      "url": "https://support.microsoft.com/en-us/excel/functions/info-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-isblank": {
+      "title": "Microsoft: ISBLANK",
+      "url": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-iserr": {
+      "title": "Microsoft: ISERR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-iserror": {
+      "title": "Microsoft: ISERROR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-iseven": {
+      "title": "Microsoft: ISEVEN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/iseven-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-isformula": {
+      "title": "Microsoft: ISFORMULA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/isformula-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-islogical": {
+      "title": "Microsoft: ISLOGICAL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-isna": {
+      "title": "Microsoft: ISNA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-isnontext": {
+      "title": "Microsoft: ISNONTEXT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-isnumber": {
+      "title": "Microsoft: ISNUMBER",
+      "url": "https://support.microsoft.com/en-us/excel/functions/is-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-isodd": {
+      "title": "Microsoft: ISODD",
+      "url": "https://support.microsoft.com/en-us/excel/is-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-isref": {
+      "title": "Microsoft: ISREF",
+      "url": "https://support.microsoft.com/en-us/excel/is-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-istext": {
+      "title": "Microsoft: ISTEXT",
+      "url": "https://support.microsoft.com/en-us/excel/is-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-n": {
+      "title": "Microsoft: N",
+      "url": "https://support.microsoft.com/en-us/excel/functions/n-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-na": {
+      "title": "Microsoft: NA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/na-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sheet": {
+      "title": "Microsoft: SHEET",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sheet-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-sheets": {
+      "title": "Microsoft: SHEETS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/sheets-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-type": {
+      "title": "Microsoft: TYPE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/type-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-address": {
+      "title": "Microsoft: ADDRESS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/address-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-areas": {
+      "title": "Microsoft: AREAS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/areas-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-choose": {
+      "title": "Microsoft: CHOOSE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/choose-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-column": {
+      "title": "Microsoft: COLUMN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/column-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-columns": {
+      "title": "Microsoft: COLUMNS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/columns-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-formulatext": {
+      "title": "Microsoft: FORMULATEXT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/formulatext-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-getpivotdata": {
+      "title": "Microsoft: GETPIVOTDATA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/getpivotdata-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-hlookup": {
+      "title": "Microsoft: HLOOKUP",
+      "url": "https://support.microsoft.com/en-us/excel/functions/hlookup-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-hyperlink": {
+      "title": "Microsoft: HYPERLINK",
+      "url": "https://support.microsoft.com/en-us/excel/functions/hyperlink-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-index": {
+      "title": "Microsoft: INDEX",
+      "url": "https://support.microsoft.com/en-us/excel/functions/index-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-indirect": {
+      "title": "Microsoft: INDIRECT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/indirect-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-lookup": {
+      "title": "Microsoft: LOOKUP",
+      "url": "https://support.microsoft.com/en-us/excel/functions/lookup-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-match": {
+      "title": "Microsoft: MATCH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/match-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-offset": {
+      "title": "Microsoft: OFFSET",
+      "url": "https://support.microsoft.com/en-us/excel/functions/offset-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-row": {
+      "title": "Microsoft: ROW",
+      "url": "https://support.microsoft.com/en-us/excel/functions/row-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-rows": {
+      "title": "Microsoft: ROWS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/rows-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-rtd": {
+      "title": "Microsoft: RTD",
+      "url": "https://support.microsoft.com/en-us/excel/functions/rtd-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-transpose": {
+      "title": "Microsoft: TRANSPOSE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/transpose-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-vlookup": {
+      "title": "Microsoft: VLOOKUP",
+      "url": "https://support.microsoft.com/en-us/excel/functions/vlookup-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-avedev": {
+      "title": "Microsoft: AVEDEV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/avedev-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-average": {
+      "title": "Microsoft: AVERAGE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/average-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-averagea": {
+      "title": "Microsoft: AVERAGEA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/averagea-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-averageif": {
+      "title": "Microsoft: AVERAGEIF",
+      "url": "https://support.microsoft.com/en-us/excel/functions/averageif-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-averageifs": {
+      "title": "Microsoft: AVERAGEIFS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/averageifs-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-beta.dist": {
+      "title": "Microsoft: BETA.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/beta-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-beta.inv": {
+      "title": "Microsoft: BETA.INV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/beta-inv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-binom.dist": {
+      "title": "Microsoft: BINOM.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/binom-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-binom.dist.range": {
+      "title": "Microsoft: BINOM.DIST.RANGE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/binom-dist-range-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-binom.inv": {
+      "title": "Microsoft: BINOM.INV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/binom-inv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-chisq.dist": {
+      "title": "Microsoft: CHISQ.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/chisq-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-chisq.dist.rt": {
+      "title": "Microsoft: CHISQ.DIST.RT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/chisq-dist-rt-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-chisq.inv": {
+      "title": "Microsoft: CHISQ.INV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/chisq-inv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-chisq.inv.rt": {
+      "title": "Microsoft: CHISQ.INV.RT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/chisq-inv-rt-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-chisq.test": {
+      "title": "Microsoft: CHISQ.TEST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/chisq-test-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-confidence.norm": {
+      "title": "Microsoft: CONFIDENCE.NORM",
+      "url": "https://support.microsoft.com/en-us/excel/functions/confidence-norm-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-confidence.t": {
+      "title": "Microsoft: CONFIDENCE.T",
+      "url": "https://support.microsoft.com/en-us/excel/functions/confidence-t-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-correl": {
+      "title": "Microsoft: CORREL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/correl-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-count": {
+      "title": "Microsoft: COUNT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/count-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-counta": {
+      "title": "Microsoft: COUNTA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/counta-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-countblank": {
+      "title": "Microsoft: COUNTBLANK",
+      "url": "https://support.microsoft.com/en-us/excel/functions/countblank-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-countif": {
+      "title": "Microsoft: COUNTIF",
+      "url": "https://support.microsoft.com/en-us/excel/get-started/use-the-countif-function-in-microsoft-excel",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-countifs": {
+      "title": "Microsoft: COUNTIFS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/countifs-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-covariance.p": {
+      "title": "Microsoft: COVARIANCE.P",
+      "url": "https://support.microsoft.com/en-us/excel/functions/covariance-p-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-covariance.s": {
+      "title": "Microsoft: COVARIANCE.S",
+      "url": "https://support.microsoft.com/en-us/excel/functions/covariance-s-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-devsq": {
+      "title": "Microsoft: DEVSQ",
+      "url": "https://support.microsoft.com/en-us/excel/functions/devsq-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-expon.dist": {
+      "title": "Microsoft: EXPON.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/expon-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-f.dist": {
+      "title": "Microsoft: F.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/f-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-f.dist.rt": {
+      "title": "Microsoft: F.DIST.RT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/f-dist-rt-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-f.inv": {
+      "title": "Microsoft: F.INV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/f-inv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-f.inv.rt": {
+      "title": "Microsoft: F.INV.RT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/f-inv-rt-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-f.test": {
+      "title": "Microsoft: F.TEST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/f-test-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-fisher": {
+      "title": "Microsoft: FISHER",
+      "url": "https://support.microsoft.com/en-us/excel/functions/fisher-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-fisherinv": {
+      "title": "Microsoft: FISHERINV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/fisherinv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-forecast": {
+      "title": "Microsoft: FORECAST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/forecast-and-forecast-linear-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-forecast.ets": {
+      "title": "Microsoft: FORECAST.ETS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/forecast-ets-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-forecast.ets.confint": {
+      "title": "Microsoft: FORECAST.ETS.CONFINT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/forecast-ets-confint-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-forecast.ets.seasonality": {
+      "title": "Microsoft: FORECAST.ETS.SEASONALITY",
+      "url": "https://support.microsoft.com/en-us/excel/functions/forecast-ets-seasonality-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-forecast.ets.stat": {
+      "title": "Microsoft: FORECAST.ETS.STAT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/forecast-ets-stat-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-forecast.linear": {
+      "title": "Microsoft: FORECAST.LINEAR",
+      "url": "https://support.microsoft.com/en-us/excel/functions/forecast-and-forecast-linear-functions",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-frequency": {
+      "title": "Microsoft: FREQUENCY",
+      "url": "https://support.microsoft.com/en-us/excel/functions/frequency-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-gamma": {
+      "title": "Microsoft: GAMMA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/gamma-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-gamma.dist": {
+      "title": "Microsoft: GAMMA.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/gamma-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-gamma.inv": {
+      "title": "Microsoft: GAMMA.INV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/gamma-inv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-gammaln": {
+      "title": "Microsoft: GAMMALN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/gammaln-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-gammaln.precise": {
+      "title": "Microsoft: GAMMALN.PRECISE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/gammaln-precise-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-gauss": {
+      "title": "Microsoft: GAUSS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/gauss-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-geomean": {
+      "title": "Microsoft: GEOMEAN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/geomean-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-growth": {
+      "title": "Microsoft: GROWTH",
+      "url": "https://support.microsoft.com/en-us/excel/functions/growth-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-harmean": {
+      "title": "Microsoft: HARMEAN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/harmean-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-hypgeom.dist": {
+      "title": "Microsoft: HYPGEOM.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/hypgeom-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-intercept": {
+      "title": "Microsoft: INTERCEPT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/intercept-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-kurt": {
+      "title": "Microsoft: KURT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/kurt-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-large": {
+      "title": "Microsoft: LARGE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/large-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-linest": {
+      "title": "Microsoft: LINEST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/linest-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-logest": {
+      "title": "Microsoft: LOGEST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/logest-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-lognorm.dist": {
+      "title": "Microsoft: LOGNORM.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/lognorm-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-lognorm.inv": {
+      "title": "Microsoft: LOGNORM.INV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/lognorm-inv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-max": {
+      "title": "Microsoft: MAX",
+      "url": "https://support.microsoft.com/en-us/excel/functions/max-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-maxa": {
+      "title": "Microsoft: MAXA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/maxa-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-maxifs": {
+      "title": "Microsoft: MAXIFS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/maxifs-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-median": {
+      "title": "Microsoft: MEDIAN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/median-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-min": {
+      "title": "Microsoft: MIN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/min-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-mina": {
+      "title": "Microsoft: MINA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/mina-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-minifs": {
+      "title": "Microsoft: MINIFS",
+      "url": "https://support.microsoft.com/en-us/excel/functions/minifs-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-mode.mult": {
+      "title": "Microsoft: MODE.MULT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/mode-mult-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-mode.sngl": {
+      "title": "Microsoft: MODE.SNGL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/mode-sngl-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-negbinom.dist": {
+      "title": "Microsoft: NEGBINOM.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/negbinom-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-norm.dist": {
+      "title": "Microsoft: NORM.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/norm-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-norm.inv": {
+      "title": "Microsoft: NORM.INV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/norm-inv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-norm.s.dist": {
+      "title": "Microsoft: NORM.S.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/norm-s-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-norm.s.inv": {
+      "title": "Microsoft: NORM.S.INV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/norm-s-inv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-pearson": {
+      "title": "Microsoft: PEARSON",
+      "url": "https://support.microsoft.com/en-us/excel/functions/pearson-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-percentile.exc": {
+      "title": "Microsoft: PERCENTILE.EXC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/percentile-exc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-percentile.inc": {
+      "title": "Microsoft: PERCENTILE.INC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/percentile-inc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-percentrank.exc": {
+      "title": "Microsoft: PERCENTRANK.EXC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/percentrank-exc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-percentrank.inc": {
+      "title": "Microsoft: PERCENTRANK.INC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/percentrank-inc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-permut": {
+      "title": "Microsoft: PERMUT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/permut-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-permutationa": {
+      "title": "Microsoft: PERMUTATIONA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/permutationa-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-phi": {
+      "title": "Microsoft: PHI",
+      "url": "https://support.microsoft.com/en-us/excel/functions/phi-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-poisson.dist": {
+      "title": "Microsoft: POISSON.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/poisson-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-prob": {
+      "title": "Microsoft: PROB",
+      "url": "https://support.microsoft.com/en-us/excel/functions/prob-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-quartile.exc": {
+      "title": "Microsoft: QUARTILE.EXC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/quartile-exc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-quartile.inc": {
+      "title": "Microsoft: QUARTILE.INC",
+      "url": "https://support.microsoft.com/en-us/excel/functions/quartile-inc-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-rank.avg": {
+      "title": "Microsoft: RANK.AVG",
+      "url": "https://support.microsoft.com/en-us/excel/functions/rank-avg-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-rank.eq": {
+      "title": "Microsoft: RANK.EQ",
+      "url": "https://support.microsoft.com/en-us/excel/functions/rank-eq-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-rsq": {
+      "title": "Microsoft: RSQ",
+      "url": "https://support.microsoft.com/en-us/excel/functions/rsq-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-skew": {
+      "title": "Microsoft: SKEW",
+      "url": "https://support.microsoft.com/en-us/excel/functions/skew-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-skew.p": {
+      "title": "Microsoft: SKEW.P",
+      "url": "https://support.microsoft.com/en-us/excel/functions/skew-p-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-slope": {
+      "title": "Microsoft: SLOPE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/slope-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-small": {
+      "title": "Microsoft: SMALL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/small-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-standardize": {
+      "title": "Microsoft: STANDARDIZE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/standardize-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-stdev.p": {
+      "title": "Microsoft: STDEV.P",
+      "url": "https://support.microsoft.com/en-us/excel/functions/stdev-p-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-stdev.s": {
+      "title": "Microsoft: STDEV.S",
+      "url": "https://support.microsoft.com/en-us/excel/functions/stdev-s-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-stdeva": {
+      "title": "Microsoft: STDEVA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/stdeva-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-stdevpa": {
+      "title": "Microsoft: STDEVPA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/stdevpa-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-steyx": {
+      "title": "Microsoft: STEYX",
+      "url": "https://support.microsoft.com/en-us/excel/functions/steyx-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-t.dist": {
+      "title": "Microsoft: T.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/t-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-t.dist.2t": {
+      "title": "Microsoft: T.DIST.2T",
+      "url": "https://support.microsoft.com/en-us/excel/functions/t-dist-2t-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-t.dist.rt": {
+      "title": "Microsoft: T.DIST.RT",
+      "url": "https://support.microsoft.com/en-us/excel/functions/t-dist-rt-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-t.inv": {
+      "title": "Microsoft: T.INV",
+      "url": "https://support.microsoft.com/en-us/excel/functions/t-inv-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-t.inv.2t": {
+      "title": "Microsoft: T.INV.2T",
+      "url": "https://support.microsoft.com/en-us/excel/functions/t-inv-2t-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-t.test": {
+      "title": "Microsoft: T.TEST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/t-test-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-trend": {
+      "title": "Microsoft: TREND",
+      "url": "https://support.microsoft.com/en-us/excel/functions/trend-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-trimmean": {
+      "title": "Microsoft: TRIMMEAN",
+      "url": "https://support.microsoft.com/en-us/excel/functions/trimmean-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-var.p": {
+      "title": "Microsoft: VAR.P",
+      "url": "https://support.microsoft.com/en-us/excel/functions/var-p-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-var.s": {
+      "title": "Microsoft: VAR.S",
+      "url": "https://support.microsoft.com/en-us/excel/functions/var-s-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-vara": {
+      "title": "Microsoft: VARA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/vara-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-varpa": {
+      "title": "Microsoft: VARPA",
+      "url": "https://support.microsoft.com/en-us/excel/functions/varpa-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-weibull.dist": {
+      "title": "Microsoft: WEIBULL.DIST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/weibull-dist-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-z.test": {
+      "title": "Microsoft: Z.TEST",
+      "url": "https://support.microsoft.com/en-us/excel/functions/z-test-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-encodeurl": {
+      "title": "Microsoft: ENCODEURL",
+      "url": "https://support.microsoft.com/en-us/excel/functions/encodeurl-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-filterxml": {
+      "title": "Microsoft: FILTERXML",
+      "url": "https://support.microsoft.com/en-us/excel/functions/filterxml-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    },
+    "fn-webservice": {
+      "title": "Microsoft: WEBSERVICE",
+      "url": "https://support.microsoft.com/en-us/excel/functions/webservice-function",
+      "note": "مرجع الوظيفة وبنيتها وحدود مدخلاتها. الأمثلة هنا مستقلة؛ الصيغة التركيبية ليست نتيجة تنفيذ داخل Excel."
+    }
+  },
+  "parts": [
+    "part-01.json",
+    "part-02.json",
+    "part-03.json",
+    "part-04.json",
+    "part-05.json",
+    "part-06.json",
+    "part-07.json",
+    "part-08.json",
+    "part-09.json",
+    "part-10.json",
+    "part-11.json",
+    "part-12.json",
+    "part-13.json",
+    "part-14.json",
+    "part-15.json",
+    "part-16.json",
+    "part-17.json",
+    "part-18.json",
+    "part-19.json",
+    "part-20.json",
+    "part-21.json",
+    "part-22.json",
+    "part-23.json",
+    "part-24.json",
+    "part-25.json",
+    "part-26.json",
+    "part-27.json",
+    "part-28.json",
+    "part-29.json",
+    "part-30.json",
+    "part-31.json",
+    "part-32.json",
+    "part-33.json",
+    "part-34.json",
+    "part-35.json",
+    "part-36.json",
+    "part-37.json",
+    "part-38.json",
+    "part-39.json",
+    "part-40.json",
+    "part-41.json",
+    "part-42.json",
+    "part-43.json",
+    "part-44.json",
+    "part-45.json",
+    "part-46.json",
+    "part-47.json",
+    "part-48.json",
+    "part-49.json",
+    "part-50.json"
+  ]
+}
