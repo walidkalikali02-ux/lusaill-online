@@ -1,11 +1,11 @@
 import assert from "node:assert/strict";
-import {readFileSync,existsSync} from "node:fs";
+import {readFileSync,existsSync,statSync} from "node:fs";
 import {resolve,dirname} from "node:path";
 import ts from "typescript";
 const cache=new Map();
 function load(file){
  let path=resolve(file);
- if(!existsSync(path)){if(existsSync(path+".ts"))path+=".ts";else path=resolve(path,"index.ts");}
+ if(!existsSync(path)||!statSync(path).isFile()){if(existsSync(path+".ts"))path+=".ts";else path=resolve(path,"index.ts");}
  if(cache.has(path))return cache.get(path);
  if(path.endsWith(".json")){const value={default:JSON.parse(readFileSync(path,"utf8"))};cache.set(path,value);return value;}
  const exports={};cache.set(path,exports);
