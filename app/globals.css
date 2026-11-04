@@ -529,3 +529,6 @@ img { max-width: 100%; height: auto; }
 #quick-answer p { max-width: 75ch; font-size: 17px; line-height: 1.9; }
 .article-body .brief-box li { font-size: 16px; line-height: 1.85; }
 .article-body .todo-table th, .article-body .todo-table td { font-size: 16px; }
+
+/* Shared SVG symbols keep decorative paths out of each page response. */
+.site-icon { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }

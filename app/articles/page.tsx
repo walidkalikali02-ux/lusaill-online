@@ -8,11 +8,11 @@ import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "كل الأدلة",
-  description: "تصفح أدلة لوسيل لخدمات الكهرباء والحياة الرقمية: تنظيم البريد وحماية الحسابات وإدارة الملفات، مع خطوات واضحة وصور ومصادر رسمية وتاريخ مراجعة.",
+  description: "أدلة الخدمات الحكومية المصرية: الكهرباء والأحوال المدنية والمرور والتموين والمعاشات والضرائب وتكافل وكرامة، بخطوات عملية وروابط رسمية وتواريخ مراجعة.",
   alternates: pageAlternates("/articles"),
   openGraph: {
     title: "كل الأدلة — لوسيل",
-    description: "تصفح أدلة لوسيل لخدمات الكهرباء والحياة الرقمية: تنظيم البريد وحماية الحسابات وإدارة الملفات، مع خطوات واضحة وصور ومصادر رسمية وتاريخ مراجعة.",
+    description: "أدلة الخدمات الحكومية المصرية: الكهرباء والأحوال المدنية والمرور والتموين والمعاشات والضرائب وتكافل وكرامة، بخطوات عملية وروابط رسمية وتواريخ مراجعة.",
     url: "/articles",
     type: "website",
     images: [siteSocialImage],
@@ -45,7 +45,7 @@ export default async function ArticlesPage() {
         <div className="category-hero">
           <span className="article-card-tag">الأدلة</span>
           <h1>كل الأدلة</h1>
-          <p>جميع الأدلة والمقالات العملية في موسوعة لوسيل.</p>
+          <p>ابدأ بالخدمة التي تحتاجها: فواتير الكهرباء، وثائق الأحوال المدنية، المرور، التموين، المعاشات، الضرائب أو تكافل وكرامة. يضم الفهرس أيضًا الأدلة الرقمية المنشورة سابقًا؛ افتح الدليل للاطلاع على خطواته ومصادره وتاريخ مراجعته.</p>
           <div className="article-meta" style={{ marginTop: 16 }}>
             <span className="article-meta-item">{publishedArticles.length + managed.filter(d=>d.status === "published").length} دليلًا منشورًا</span>
           </div>
