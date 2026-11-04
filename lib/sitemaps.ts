@@ -1,5 +1,6 @@
 import { sixgLessons, sixgMeta, sixgPath, sixgLessonPath } from "@/lib/sixg-course";
 import type { MetadataRoute } from "next";
+import { getArticleModifiedAt } from "./content-modified";
 import { articles, clusters, clusterProgress } from "@/lib/content";
 import { foodSafetyArticles } from "@/lib/food-safety";
 import { entities } from "@/lib/entities";
@@ -12,12 +13,9 @@ import { courseMeta, drivingLessons } from "@/lib/driving-course";
 
 import { categoryIntroductions } from "@/lib/category-introductions";
 
-// Pin known content changes; never substitute build or deployment time.
-const articleTemplateUpdatedAt = new Date("2026-10-04");
-
-function latestPublishedUpdate(items: Array<{ updatedAt?: string }>): Date | undefined {
+function latestPublishedUpdate(items: Array<{ slug?: string; updatedAt?: string; publishedAt?: string }> ): Date | undefined {
   const timestamps = items
-    .map((item) => item.updatedAt)
+    .map((item) => getArticleModifiedAt(item))
     .filter((value): value is string => Boolean(value))
     .map((value) => new Date(value).getTime())
     .filter(Number.isFinite);
@@ -28,7 +26,7 @@ function latestPublishedUpdate(items: Array<{ updatedAt?: string }>): Date | und
 export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: absoluteUrl("/"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "weekly", priority: 1.0 },
-    { url: absoluteUrl("/food-safety"), lastModified: new Date("2026-11-04"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/food-safety"), lastModified: latestPublishedUpdate(foodSafetyArticles), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/articles"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "weekly", priority: 0.9 },
     { url: absoluteUrl("/categories"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/entities"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "monthly", priority: 0.8 },
@@ -73,7 +71,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     .filter((article) => article.status === "published")
     .map((article) => ({
       url: absoluteUrl(`/articles/${article.slug}`),
-      lastModified: new Date(Math.max(new Date(article.updatedAt ?? article.publishedAt ?? 0).getTime(), articleTemplateUpdatedAt.getTime())),
+      lastModified: getArticleModifiedAt(article) ? new Date(getArticleModifiedAt(article)!) : undefined,
       changeFrequency: "monthly" as const,
       priority: 0.9,
       images: [article.coverImage, guideIllustrations[article.slug]?.src].filter((src): src is string => Boolean(src)).map(absoluteUrl),

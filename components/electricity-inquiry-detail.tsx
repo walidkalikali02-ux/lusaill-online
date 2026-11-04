@@ -22,6 +22,23 @@ export function ElectricityInquiryDetail() {
     <ElectricityCalculator />
     <figure className="guide-figure"><Image src="/images/diagrams/electricity-cost-example.webp" alt="مثال حساب منزلي لاستهلاك 200 كيلوواط ساعة: طاقة 190 جنيهًا وخدمة عملاء 6 جنيهات، مجموع 196 قبل البنود الأخرى" width={1200} height={540} sizes="(max-width: 768px) 100vw, 760px" /><figcaption>رسم توضيحي أصلي وفق جدول الجهاز التنظيمي؛ ليس فاتورة أو لقطة واجهة رسمية.</figcaption></figure>
     {inquirySections.slice(3).map(section => <section id={section.id} className="brief-box" key={section.id}><h2>{section.title}</h2>{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<p><a href={section.source} target="_blank" rel="noopener noreferrer">المصدر الرسمي لهذا القسم</a></p></section>)}
-    <section id="electricity-next-services" className="brief-box"><h2>تسجيل القراءة والتقديم على عداد: اختر الخدمة المنفصلة</h2><p>إذا كانت مهمتك إرسال قراءة، استخدم قناة القراءة التي تعلنها شركتك مثل <Link href="/articles/north-cairo-electricity">دليل شمال القاهرة</Link>، أو <a href="https://bedc.gov.eg/" target="_blank" rel="noopener noreferrer">خدمة إبلاغ القراءة لدى البحيرة</a>. جهّز قراءة واضحة تخص العداد نفسه والفترة المطلوبة. وللتقديم على عداد انتقل إلى <a href="https://eservices.eehc.gov.eg/" target="_blank" rel="noopener noreferrer">المنصة الموحدة الرسمية</a> وراجع مستندات الطلب المتاح لحالتك؛ صفحة الاستعلام لا تقدّم طلب تركيب نيابة عنك.</p><p><Link href="/guides/electricity">جميع أدلة الكهرباء المنشورة</Link> تجمع المسارات المتاحة دون إنشاء صفحات محلية متشابهة بلا معلومات إضافية.</p></section>
+    <section id="electricity-next-services" className="brief-box">
+      <h2 id="electricity-task-routing">ما الخطوة التالية: فاتورة أم قراءة أم شحن أم شكوى؟</h2>
+      <p>ابدأ بنوع المهمة؛ سداد فاتورة شهرية يختلف عن شحن عداد مسبق الدفع، والإبلاغ عن قراءة لا يحل شكوى على مبلغ الفاتورة. احتفظ باسم الشركة ورقم الطلب أو العملية عند الانتقال بين القنوات.</p>
+      <div className="electricity-table-scroll" role="region" aria-label="اختيار دليل خدمة الكهرباء المناسب" tabIndex={0}>
+        <table className="todo-table">
+          <thead><tr><th scope="col">مهمتك</th><th scope="col">الدليل المناسب وما تراجعه</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">استعلام أو سداد فاتورة شهرية</th><td>اختر <a href="#electricity-companies">دليل شركة التوزيع على فاتورتك</a> من الجدول أعلاه؛ راجع رقم الحساب وقنوات السداد التي يشرحها دليلها، ولا تستخدم بيانات شركة أخرى.</td></tr>
+            <tr><th scope="row">إرسال قراءة العداد</th><td>راجع قناة القراءة في <a href="#electricity-companies">دليل شركتك</a>؛ أمثلة الأدلة المنشورة: <Link href="/articles/north-cairo-electricity">شمال القاهرة</Link> و<Link href="/articles/north-delta-electricity">شمال الدلتا</Link>. ظهور خدمة لدى شركة لا يثبت إتاحتها بالطريقة نفسها لدى شركة أخرى.</td></tr>
+            <tr><th scope="row">شحن عداد مسبق الدفع</th><td><Link href="/articles/prepaid-meter-mobile-charge">شحن العداد بالموبايل</Link> يوضح فحوص التوافق ومسار الشحن؛ لا تعتبره طريقة دفع لكل فاتورة شهرية.</td></tr>
+            <tr><th scope="row">اعتراض على مبلغ أو شكوى لم تُحل</th><td>اتبع <Link href="/articles/electricity-complaint">تقديم شكوى الكهرباء والتصعيد</Link>، وراجع <Link href="/articles/electricity-consumer-rights">حقوق مستخدم الكهرباء</Link> لتحديد ما توثقه في الشكوى.</td></tr>
+            <tr><th scope="row">انقطاع أو عطل</th><td>ابدأ بـ<Link href="/articles/electricity-outage-report">دليل بلاغ انقطاع الكهرباء</Link>. وإذا كان الاعتراض على قياس الاستهلاك، راجع <Link href="/articles/electricity-meter-test">طلب فحص العداد</Link> دون العبث به.</td></tr>
+            <tr><th scope="row">طلب عداد أو تغيير المشترك</th><td>اختر <Link href="/articles/electricity-meter-apply">طلب عداد جديد</Link> أو <Link href="/articles/electricity-meter-transfer">نقل ملكية العداد</Link>؛ كل منهما إجراء مستقل عن الاستعلام عن الفاتورة.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>تحديث تنظيم المسارات: <time dateTime="2026-11-04">4 نوفمبر 2026</time>. تواريخ التحقق من القنوات الرسمية مبيّنة في الأدلة المرتبطة.</p>
+    </section>
   </>;
 }

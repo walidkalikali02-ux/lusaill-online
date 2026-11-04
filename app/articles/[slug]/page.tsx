@@ -1,3 +1,4 @@
+import { getArticleModifiedAt } from "@/lib/content-modified";
 import { getArticleAdvisories } from "@/lib/article-audit-updates";
 import { electricityDetailText } from "@/lib/electricity-inquiry-detail";
 import { pageAlternates } from "@/lib/page-alternates";
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url: `/articles/${article.slug}`,
       type: "article",
       publishedTime: article.publishedAt ?? undefined,
-      modifiedTime: article.updatedAt ?? undefined,
+      modifiedTime: getArticleModifiedAt(article),
       images: article.coverImage ? [{ url: article.coverImage, alt: article.coverImageAlt ?? article.title }] : undefined,
     },
     twitter: {
@@ -86,7 +87,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   };
 
   const datePublished = article.publishedAt || undefined;
-  const dateModified = article.updatedAt || latestCheck || undefined;
+  const dateModified = getArticleModifiedAt(article);
   const mins = readingTime(article);
 
   const articleSchema = {
