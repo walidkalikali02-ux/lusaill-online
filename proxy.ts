@@ -1,3 +1,4 @@
+import { normalizeCategoryPagination } from "./lib/category-pagination";
 import { refreshCmsSession } from "./lib/cms/session";
 import { NextResponse, type NextRequest } from "next/server";
 
@@ -7,6 +8,7 @@ export async function proxy(request: NextRequest) {
   const host = request.headers.get("host")?.split(":")[0];
   const isProductionHost = host === "lusaill.online" || host === "www.lusaill.online";
   const originalPath = target.pathname;
+  const originalSearch = target.search;
   const cleanPath = originalPath.length > 1 ? originalPath.replace(/\/+$/, "") : originalPath;
   const aliases: Record<string, string> = {
     "/services/electricity-bill-inquiry": "/articles/electricity-bill-inquiry",
@@ -18,7 +20,8 @@ export async function proxy(request: NextRequest) {
   target.pathname = aliases[decodedPath] ?? (cleanPath === "/clusters" ? "/categories" : cleanPath.replace(/^\/clusters\//, "/categories/"));
   const needsHost = isProductionHost && (host !== "www.lusaill.online" || request.headers.get("x-forwarded-proto") === "http");
   if (isProductionHost) { target.protocol = "https:"; target.hostname = "www.lusaill.online"; target.port = ""; }
-  if (needsHost || target.pathname !== originalPath) return NextResponse.redirect(target, 301);
+  normalizeCategoryPagination(target);
+  if (needsHost || target.pathname !== originalPath || target.search !== originalSearch) return NextResponse.redirect(target, 301);
   if (target.pathname.startsWith("/admin") || target.pathname.startsWith("/api/cms") || target.pathname.startsWith("/api/admin")) return refreshCmsSession(request);
   return NextResponse.next();
 }

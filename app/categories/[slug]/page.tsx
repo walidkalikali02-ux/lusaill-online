@@ -1,3 +1,4 @@
+import { categoryPageNumber as pageNumber } from "@/lib/category-pagination";
 import { discoverableArticles } from "@/lib/cms/discovery-server";
 import { ArticleCard } from "@/components/article-card";
 import { pageAlternates } from "@/lib/page-alternates";
@@ -21,7 +22,7 @@ export function generateStaticParams() {
   return clusters.map((cluster) => ({ slug: cluster.slug }));
 }
 
-export async function generateMetadata({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<{ page?: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<{ page?: string | string[] }> }): Promise<Metadata> {
   const { slug } = await params;
   const { page: pageParam } = await searchParams;
   const cluster = getCluster(slug);
@@ -50,7 +51,7 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   };
 }
 
-export default async function ClusterPage({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<{ page?: string }> }) {
+export default async function ClusterPage({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<{ page?: string | string[] }> }) {
   const { slug } = await params;
   const { page: pageParam } = await searchParams;
   const cluster = getCluster(slug);
