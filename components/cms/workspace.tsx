@@ -124,7 +124,7 @@ export function CmsWorkspace({ initial,initialDocument }: { initial: CmsDocument
           لوسيل <small>إدارة المحتوى</small>
         </Link>
         <p className="cms-nav-active">▦ لوحة التحرير</p>
-        <Link href="/admin/content-ops">▦ عمليات المحتوى</Link>
+        <Link href="/admin/content-ops">▦ إدارة المحتوى</Link>
         <Link href="/admin/seo">✓ مهام المقالات وSEO</Link>
         <Link href="/admin/heatmaps">◉ الخرائط الحرارية</Link>
         <Link href="/admin/intelligence">◇ ذكاء الموضوعات</Link>
