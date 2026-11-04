@@ -6,7 +6,8 @@ export async function GET(request: Request) {
   if (query.length > 200) return Response.json({ error: "QUERY_TOO_LONG" }, { status: 400, headers: { ...headers, "Cache-Control": "no-store" } });
   if (!query) return Response.json({ items: [], total: 0 }, { headers });
   try {
-    const matches = searchGuides(await discoverableArticles(), query);
+    const articles = await discoverableArticles();
+    const matches = searchGuides(articles.map(({ slug, title, keyword }) => ({ slug, title, keyword })), query);
     return Response.json({ items: matches.slice(0, 6).map(({ slug, title }) => ({ slug, title })), total: matches.length }, { headers });
   } catch {
     return Response.json({ error: "SEARCH_UNAVAILABLE" }, { status: 503, headers: { ...headers, "Cache-Control": "no-store" } });
