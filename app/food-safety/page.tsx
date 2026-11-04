@@ -14,6 +14,15 @@ export const metadata: Metadata = {
 };
 
 export default function FoodSafetyHub() {
+  const breadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
+      { "@type": "ListItem", position: 2, name: "الأدلة", item: absoluteUrl("/articles") },
+      { "@type": "ListItem", position: 3, name: "سلامة الغذاء", item: absoluteUrl("/food-safety") },
+    ],
+  };
   const collection = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -53,6 +62,7 @@ export default function FoodSafetyHub() {
         <p style={{marginTop:36,color:"#60746d",fontSize:14}}>هذه معلومات تثقيفية عامة ولا تحل محل الرعاية الطبية أو فحص سلامة الطعام بواسطة مختص.</p>
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collection) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
     </main>
   );
 }

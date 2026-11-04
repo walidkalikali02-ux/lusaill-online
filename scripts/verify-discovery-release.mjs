@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {spawn,spawnSync} from "node:child_process";
 function run(args){const r=spawnSync(process.execPath,args,{stdio:"inherit",env:process.env});if(r.error)throw r.error;assert.equal(r.status,0,args.join(" "));}
-run(["node_modules/eslint/bin/eslint.js","lib/content.ts","lib/content-modified.ts","lib/sitemaps.ts","lib/electricity-inquiry-detail.ts","lib/search-titles.ts","scripts/check-site.mjs","components/electricity-inquiry-detail.tsx","app/articles/[slug]/page.tsx","app/food-safety/[slug]/page.tsx","scripts/test-topic-discovery.mjs","scripts/verify-discovery-release.mjs"]);
+run(["node_modules/eslint/bin/eslint.js","lib/content.ts","lib/content-modified.ts","lib/sitemaps.ts","lib/electricity-inquiry-detail.ts","lib/search-titles.ts","scripts/check-site.mjs","components/electricity-inquiry-detail.tsx","app/articles/[slug]/page.tsx","app/food-safety/[slug]/page.tsx","app/food-safety/page.tsx","scripts/test-topic-discovery.mjs","scripts/verify-discovery-release.mjs"]);
 run(["scripts/seo-qa.mjs"]);
 run(["scripts/check-guide-paths.mjs"]);
 run(["scripts/test-topic-discovery.mjs"]);
