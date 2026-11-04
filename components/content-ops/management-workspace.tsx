@@ -38,7 +38,7 @@ export function ContentManagement(){
  const active=data?.inventory.filter(i=>i.record&&!i.record.data.managementArchived)??[];
  const summary=data?managementSummary(data.inventory,data.tasks,data.asOf):null;
  const attention=data?active.filter(i=>itemNeedsAttention(i,data.asOf)):[];
- const tasks=data?.tasks.filter(t=>(!taskStatus||t.data.status===taskStatus)&&(!filter.owner||t.data.ownerId===filter.owner)&&(!filter.query||text(t.data.title).includes(filter.query)))??[];
+ const tasks=data?.tasks.filter(t=>!taskStatus||t.data.status===taskStatus)??[];
  const pending=active.filter(i=>i.record?.data.stage==='final_approval');
  const claims=data?.claims.filter(c=>c.status!=='verified'||isOverdue(c.expiresAt,data.asOf))??[];
  const calendarEntries=data?[...active.filter(i=>validDate(i.record?.data.dueAt)).map(i=>({id:i.id,title:i.title,date:text(i.record?.data.dueAt),kind:'follow',label:'متابعة',item:i})),...data.tasks.filter(t=>validDate(t.data.dueAt)&&!taskDone(t)).map(t=>({id:t.id,title:text(t.data.title),date:text(t.data.dueAt),kind:'task',label:'مهمة',task:t})),...data.inventory.filter(i=>i.workflowStatus==='scheduled'&&validDate(i.scheduledAt)).map(i=>({id:i.id+'scheduled',title:i.title,date:i.scheduledAt,kind:'publish',label:'نشر مجدول',item:i}))].sort((a,b)=>a.date.localeCompare(b.date)):[];
