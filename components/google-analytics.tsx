@@ -11,6 +11,8 @@ declare global {
   }
 }
 
+let ga4Initialized = false;
+
 function pageView(pathname: string) {
   if (navigator.doNotTrack === "1") return;
   let referrer = "";
@@ -34,15 +36,18 @@ export function GoogleAnalytics({ measurementId }: { measurementId: string }) {
     src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
     strategy="afterInteractive"
     onReady={() => {
-      if (navigator.doNotTrack === "1" || window.gtag) return;
+      if (navigator.doNotTrack === "1" || ga4Initialized) return;
       window.dataLayer ??= [];
-      window.gtag = (...args) => { window.dataLayer!.push(args); };
-      window.gtag("js", new Date());
+      if (!window.gtag) {
+        window.gtag = (...args) => { window.dataLayer!.push(args); };
+        window.gtag("js", new Date());
+      }
       window.gtag("config", measurementId, {
         send_page_view: false,
         allow_google_signals: false,
         allow_ad_personalization_signals: false,
       });
+      ga4Initialized = true;
       pageView(pathname);
     }}
   />;

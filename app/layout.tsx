@@ -1,4 +1,5 @@
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
+import Script from "next/script";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -83,6 +84,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="alternate" type="application/rss+xml" href={absoluteUrl("/feed.xml")} />
         <meta name="theme-color" content="#182e49" />
         <meta name="color-scheme" content="light" />
+        <Script id="gtm-datalayer" strategy="beforeInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        `}</Script>
+        <Script
+          id="gtm-container"
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-NRKFXNZ9"
+          strategy="afterInteractive"
+        />
       </head>
       <body>
         <a className="skip-link" href="#main-content">انتقل إلى المحتوى</a>
