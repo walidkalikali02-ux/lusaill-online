@@ -1,7 +1,6 @@
 // Explicit service-first search titles; 2026 describes this edition, not a new source review.
 // Keep full descriptive H1s and factual Article headlines.
 const editionTitles: Record<string, string> = {
-  "electricity-bill-inquiry": "فاتورة الكهرباء في مصر: الاستعلام حسب الشركة",
   "rice-food-poisoning": "تسمم الأرز المطبوخ: الحفظ وإعادة التسخين الآمن",
   "prevent-food-poisoning-at-home": "الوقاية من التسمم الغذائي بالمنزل: الحفظ والطهي",
   "food-poisoning-symptoms": "أعراض التسمم الغذائي: متى تظهر وتحتاج للطبيب؟",
@@ -22,7 +21,7 @@ const editionTitles: Record<string, string> = {
   "newborn-travel-document": "وثيقة سفر المولود 2026: الأوراق وحدود الاستخدام",
   "work-permit-abroad": "تصريح العمل 2026: الإصدار والتجديد للمصريين بالخارج",
 
-  "electricity-bill-inquiry": "استعلام فاتورة الكهرباء 2026: الشركات والحاسبة",
+  "electricity-bill-inquiry": "فاتورة الكهرباء في مصر: الاستعلام حسب الشركة",
   "insurance-number-inquiry": "الرقم التأميني 2026: الاستعلام بالرقم القومي في مصر",
   "insurance-last-period": "التأمينات 2026: الاستعلام عن آخر مدة مسجلة",
   "insurance-periods-wages": "التأمينات 2026: مراجعة مدد الاشتراك والأجور",
