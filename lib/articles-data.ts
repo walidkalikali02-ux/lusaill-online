@@ -245,7 +245,7 @@ export const articleSeeds: ArticleSeed[] = [
   { id: 125, clusterCode: "B", group: "bonus", title: "بدل فاقد أو تالف بطاقة التموين: إيقاف المفقودة وطلب البديل", keyword: "بدل فاقد بطاقة التموين", volume: 0, kd: null, month: 1 },
   { id: 126, clusterCode: "B", group: "bonus", title: "نقل بطاقة التموين من محافظة إلى أخرى عبر مصر الرقمية", keyword: "نقل بطاقة التموين محافظة", volume: 0, kd: null, month: 1 },
   { id: 127, clusterCode: "B", group: "bonus", title: "تفعيل بطاقة التموين بعد استلامها: الشروط وطريقة المتابعة", keyword: "تفعيل بطاقة التموين", volume: 0, kd: null, month: 1 },
-  { id: 118, clusterCode: "B", group: "bonus", title: "التسجيل في السكن البديل للإيجار القديم قبل 12 أكتوبر 2026", keyword: "تقديم السكن البديل", volume: 0, kd: null, month: 1 },
+  { id: 118, clusterCode: "B", group: "bonus", title: "التسجيل في السكن البديل للإيجار القديم حتى 12 يناير 2027", keyword: "تقديم السكن البديل", volume: 0, kd: null, month: 1 },
   { id: 119, clusterCode: "B", group: "bonus", title: "شروط السكن البديل: من يحق له التقديم وكيف تُفحص الأهلية؟", keyword: "شروط السكن البديل", volume: 0, kd: null, month: 1 },
   { id: 120, clusterCode: "B", group: "bonus", title: "مستندات السكن البديل: إثبات الإيجار والحالة الاجتماعية والدخل", keyword: "مستندات السكن البديل", volume: 0, kd: null, month: 1 },
   { id: 121, clusterCode: "B", group: "bonus", title: "التقديم على السكن البديل من مكتب البريد: ما الذي تحضره؟", keyword: "السكن البديل مكاتب البريد", volume: 0, kd: null, month: 1 },

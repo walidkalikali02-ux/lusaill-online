@@ -116,7 +116,7 @@ const editionTitles: Record<string, string> = {
   "ration-card-replacement": "بدل بطاقة التموين 2026: الإيقاف وطلب فاقد وتالف",
   "ration-card-governorate-transfer": "نقل بطاقة التموين 2026: الطلب بين المحافظات",
   "ration-card-activation": "تفعيل بطاقة التموين 2026: الشروط وخطوات المتابعة",
-  "old-rent-housing-apply": "الإيجار القديم 2026: طلب السكن البديل قبل 12 أكتوبر",
+  "old-rent-housing-apply": "السكن البديل للإيجار القديم: التقديم حتى 12 يناير 2027",
   "old-rent-housing-eligibility": "السكن البديل 2026: مراجعة شروط أهلية الطلب",
   "old-rent-housing-documents": "السكن البديل 2026: تجهيز مستندات الإيجار والدخل",
   "old-rent-housing-post-office": "السكن البديل 2026: التقديم بمساعدة مكتب البريد",
@@ -146,6 +146,5 @@ const editionTitles: Record<string, string> = {
 
 const evergreenPrefixes = ["forms-", "slides-", "sheets-", "docs-", "windows-", "chrome-", "android-", "google-", "gmail-", "drive-", "iphone-", "lost-iphone-", "lost-android-"];
 export const searchTitles: Record<string, string> = Object.fromEntries(Object.entries(editionTitles).map(([slug, title]) => [slug, evergreenPrefixes.some((prefix) => slug.startsWith(prefix)) ? title.replace(/ 2026(?=:)/u, "") : title]));
-searchTitles["old-rent-housing-apply"] = "السكن البديل: الموعد المنشور وخطوات المتابعة";
 
 searchTitles["old-rent-housing-post-office"] = "السكن البديل عبر البريد: تحقق من إتاحة التقديم";
