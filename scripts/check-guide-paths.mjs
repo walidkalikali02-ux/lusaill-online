@@ -59,6 +59,7 @@ for (const a of articles.filter(a => a.status === "published")) {
   assert.equal(after.length, housing ? 1 : 0, `Missing or misplaced deadline notice: ${a.slug}`);
 }
 const housingArticle = articles.find(a => a.slug === "old-rent-housing-apply");
-assert(!housingArticle.faqs.some(f => f.question.includes("اقترب الموعد")));
+assert(housingArticle.faqs.some(f => f.answer.includes("12 يناير 2027")));
+assert(!housingArticle.title.includes("12 أكتوبر"));
 assert(articles.find(a => a.slug === "seasonal-work-permit-egypt").quickAnswer.includes("ليس قائمة مستندات مكتملة"));
 console.log("Article audit regression passed: 8 category moves, 5 deadline notices, honest scope and valid practical tables.");

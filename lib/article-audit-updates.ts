@@ -36,13 +36,6 @@ function addSource(article: Article, label: string, url: string) {
 export function applyArticleAuditUpdates(input: Article): Article {
   const article: Article = { ...input };
   if (trafficArticleSlugs.has(article.slug)) article.clusterCode = "C";
-  if (article.slug === "old-rent-housing-apply" && housingDeadlinePassed()) {
-    article.faqs = article.faqs?.map(faq => faq.question === "ماذا أفعل إذا اقترب الموعد ولم أستكمل المستندات؟" ? {
-      question: "ماذا أفعل بعد مرور الموعد المنشور؟",
-      answer: "إذا سبق إرسال الطلب، تابع حسابك والإخطارات الخاصة باستكماله. إذا لم ترسل طلبًا، تحقق من أحدث إعلان رسمي عن استقبال الطلبات قبل محاولة إنشاء طلب جديد أو الذهاب إلى البريد؛ هذا الدليل لا يثبت وجود تمديد أو عدمه، ولا يعني تجهيز المستندات أن الطلب أُرسل.",
-    } : faq);
-    article.updatedAt = reviewedAt;
-  }
   if (article.slug === "old-rent-housing-post-office" && housingDeadlinePassed()) {
     article.metaDescription = `دور البريد في طلب السكن البديل ومستندات الزيارة. الموعد المنشور السابق ${housingDeadlineLabel} وقد مضى؛ تحقق من إعلان رسمي حالي قبل طلب تسجيل جديد.`;
     article.quickAnswer = `الموعد المنشور في هذه السلسلة هو ${housingDeadlineLabel} وقد مضى. قبل الذهاب إلى البريد لتسجيل طلب جديد، تحقق من إعلان الجهة الرسمي الحالي؛ لا يثبت هذا الشرح استمرار التقديم أو وجود تمديد. كان دور المكاتب المشاركة مساعدة المواطن في إدخال الطلب عبر مصر الرقمية، وليس تقرير الأهلية أو تخصيص الوحدة.`;
