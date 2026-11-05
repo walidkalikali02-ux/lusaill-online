@@ -53,8 +53,8 @@ for (const a of articles.filter(a => a.status === "published")) {
     for (const row of section.rows) assert.equal(row.length, section.columns.length, `Malformed table: ${a.slug}`);
   }
   const housing = a.slug.startsWith("old-rent-housing-");
-  const before = getArticleAdvisories(a, new Date("2026-10-12T12:00:00+03:00")).filter(n => n.title.includes("التقديم"));
-  const after = getArticleAdvisories(a, new Date("2026-10-27T12:00:00+03:00")).filter(n => n.title.includes("التقديم"));
+  const before = getArticleAdvisories(a, new Date("2027-01-12T23:59:59+02:00")).filter(n => n.title.includes("التقديم"));
+  const after = getArticleAdvisories(a, new Date("2027-01-13T00:00:00+02:00")).filter(n => n.title.includes("التقديم"));
   assert.equal(before.length, 0);
   assert.equal(after.length, housing ? 1 : 0, `Missing or misplaced deadline notice: ${a.slug}`);
 }

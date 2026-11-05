@@ -1,5 +1,5 @@
 import type { Article } from "./content";
-import { housingDeadlinePassed } from "./deadlines";
+import { housingDeadlineLabel, housingDeadlinePassed } from "./deadlines";
 
 export type PracticalSection = { title: string; intro?: string; columns: string[]; rows: string[][]; sourceUrl?: string };
 export type ArticleAdvisory = { title: string; detail: string; url: string; label: string };
@@ -17,7 +17,7 @@ export const trafficArticleSlugs = new Set([
 export function getArticleAdvisories(article: Article, now = new Date()): ArticleAdvisory[] {
   const notices: ArticleAdvisory[] = [];
   if (article.slug.startsWith("old-rent-housing-") && housingDeadlinePassed(now)) {
-    notices.push({ title: "تحقق من إتاحة التقديم قبل بدء إجراء جديد", detail: "الموعد المنشور الذي تستند إليه هذه السلسلة هو 12 أكتوبر 2026 وقد مضى. شرح المستندات أو إجراءات البريد لا يثبت استمرار استقبال طلبات جديدة أو وجود تمديد. راجع الإعلان الرسمي الحالي أولًا. إذا سبق إرسال طلب، افصل متابعته واستكمال نواقصه عن إنشاء طلب جديد.", url: "/articles/old-rent-housing-apply", label: "الموعد المنشور ومصادره" });
+    notices.push({ title: "تحقق من إتاحة التقديم قبل بدء إجراء جديد", detail: `مضى آخر موعد معلن للتقديم، ${housingDeadlineLabel}. راجع أحدث إعلان رسمي قبل تقديم طلب جديد. إذا سبق إرسال طلب، تابع حالته واستكمل ما تطلبه الجهة.`, url: "/articles/old-rent-housing-apply", label: "الموعد المنشور ومصادره" });
   }
   if (article.sources?.some(source => {
     const host = new URL(source.url).hostname;
@@ -44,8 +44,8 @@ export function applyArticleAuditUpdates(input: Article): Article {
     article.updatedAt = reviewedAt;
   }
   if (article.slug === "old-rent-housing-post-office" && housingDeadlinePassed()) {
-    article.metaDescription = "دور البريد في طلب السكن البديل ومستندات الزيارة. الموعد المنشور السابق 12 أكتوبر 2026 وقد مضى؛ تحقق من إعلان رسمي حالي قبل طلب تسجيل جديد.";
-    article.quickAnswer = "الموعد المنشور في هذه السلسلة هو 12 أكتوبر 2026 وقد مضى. قبل الذهاب إلى البريد لتسجيل طلب جديد، تحقق من إعلان الجهة الرسمي الحالي؛ لا يثبت هذا الشرح استمرار التقديم أو وجود تمديد. كان دور المكاتب المشاركة مساعدة المواطن في إدخال الطلب عبر مصر الرقمية، وليس تقرير الأهلية أو تخصيص الوحدة.";
+    article.metaDescription = `دور البريد في طلب السكن البديل ومستندات الزيارة. الموعد المنشور السابق ${housingDeadlineLabel} وقد مضى؛ تحقق من إعلان رسمي حالي قبل طلب تسجيل جديد.`;
+    article.quickAnswer = `الموعد المنشور في هذه السلسلة هو ${housingDeadlineLabel} وقد مضى. قبل الذهاب إلى البريد لتسجيل طلب جديد، تحقق من إعلان الجهة الرسمي الحالي؛ لا يثبت هذا الشرح استمرار التقديم أو وجود تمديد. كان دور المكاتب المشاركة مساعدة المواطن في إدخال الطلب عبر مصر الرقمية، وليس تقرير الأهلية أو تخصيص الوحدة.`;
     article.updatedAt = reviewedAt;
   }
   if (article.slug === "e-invoice-gs1-egs-codes") {

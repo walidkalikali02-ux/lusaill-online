@@ -1,5 +1,5 @@
 import { applyArticleAuditUpdates, type PracticalSection } from "./article-audit-updates";
-import { housingDeadlinePassed } from "./deadlines";
+import { housingDeadlineLabel, housingDeadlinePassed } from "./deadlines";
 import { articleSeeds, type ArticleSeed } from "./articles-data";
 import { clusters, getCluster } from "./clusters";
 import { articleJourneys } from "./article-journeys";
@@ -49,8 +49,8 @@ export const articles: Article[] = articleSeeds.map((seed) => {
   const article: Article = { ...seed, slug, status: "not_started", ...override };
   if (article.slug === "old-rent-housing-apply" && housingDeadlinePassed()) {
     article.title = "السكن البديل للإيجار القديم: الموعد المنشور وخطوات المتابعة";
-    article.metaDescription = "الموعد المنشور في هذا الدليل هو 12 أكتوبر 2026 وقد مضى. راجع الإعلان الرسمي الحالي قبل محاولة تقديم طلب جديد، وتابع طلبك من القناة الرسمية.";
-    article.quickAnswer = "الموعد المنشور في المصادر التي يشرحها هذا الدليل هو 12 أكتوبر 2026 وقد مضى. لا تعتبر الخطوات التالية تأكيدًا لاستمرار استقبال طلبات جديدة؛ راجع إعلان الجهة الرسمية الحالي أولًا. إذا سبق إرسال طلب، استخدم حسابك في مصر الرقمية لمتابعة الإخطارات والمستندات المطلوبة. يبقى الشرح أدناه مرجعًا للإجراء المنشور، ولا يثبت وجود تمديد أو عدمه.";
+    article.metaDescription = `الموعد المنشور في هذا الدليل هو ${housingDeadlineLabel} وقد مضى. راجع الإعلان الرسمي الحالي قبل محاولة تقديم طلب جديد، وتابع طلبك من القناة الرسمية.`;
+    article.quickAnswer = `الموعد المنشور في المصادر التي يشرحها هذا الدليل هو ${housingDeadlineLabel} وقد مضى. لا تعتبر الخطوات التالية تأكيدًا لاستمرار استقبال طلبات جديدة؛ راجع إعلان الجهة الرسمية الحالي أولًا. إذا سبق إرسال طلب، استخدم حسابك في مصر الرقمية لمتابعة الإخطارات والمستندات المطلوبة. يبقى الشرح أدناه مرجعًا للإجراء المنشور، ولا يثبت وجود تمديد أو عدمه.`;
   }
   // Illustration changes belong to dateModified, not the source-review date.
   return applyArticleAuditUpdates(article);
