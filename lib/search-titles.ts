@@ -1,6 +1,7 @@
 // Explicit service-first search titles; 2026 describes this edition, not a new source review.
 // Keep full descriptive H1s and factual Article headlines.
 const editionTitles: Record<string, string> = {
+  "electricity-bill-inquiry": "فاتورة الكهرباء في مصر: الاستعلام حسب الشركة",
   "rice-food-poisoning": "تسمم الأرز المطبوخ: الحفظ وإعادة التسخين الآمن",
   "prevent-food-poisoning-at-home": "الوقاية من التسمم الغذائي بالمنزل: الحفظ والطهي",
   "food-poisoning-symptoms": "أعراض التسمم الغذائي: متى تظهر وتحتاج للطبيب؟",
