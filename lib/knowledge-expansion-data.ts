@@ -1,3 +1,4 @@
+import { practicalStudyTopics } from "./knowledge-practical-studies-batch-05";
 import { educationBatchTopics } from "./knowledge-education-batch-04";
 import { editorialTopics } from "./knowledge-editorial-published";
 import { nextBatchTopics } from "./knowledge-next-batch";
@@ -22,12 +23,13 @@ export type KnowledgeTopic = {
   faq: { question: string; answer: string }[];
   sources: { label: string; url: string }[];
   related: { label: string; href: string }[];
-  tool: "crystal-guide" | "environmental-paths" | "major-choice" | "food-safety-checklist" | "immunity-facts" | "focus-week-plan" | "school-discipline-plan" | "writing-outline" | "game-lesson-builder" | "open-learning-checker";
+  tool: "crystal-guide" | "environmental-paths" | "major-choice" | "food-safety-checklist" | "immunity-facts" | "focus-week-plan" | "school-discipline-plan" | "writing-outline" | "game-lesson-builder" | "open-learning-checker" | "report-outline-builder" | "mindmap-builder";
 };
 export const knowledgeTopics: KnowledgeTopic[] = [
   ...editorialTopics,
   ...nextBatchTopics,
   ...educationBatchTopics,
+  ...practicalStudyTopics,
   {
     slug: "crystals-vs-precipitates",
     title: "البلورات والرواسب في المحاليل: الفرق وطرق التكوّن وتجربة آمنة",
