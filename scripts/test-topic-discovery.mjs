@@ -14,6 +14,21 @@ function load(file){
  return exports;
 }
 const {articles,clusters,isArticleIndexable}=load("lib/content.ts"),{foodSafetyArticles}=load("lib/food-safety.ts"),{sitemapGroups}=load("lib/sitemaps.ts"),{getGuidePath}=load("lib/guide-paths.ts"),{getArticleModifiedAt,latestContentDate}=load("lib/content-modified.ts"),{guideIllustrations}=load("lib/guide-illustrations.ts");
+// Keep publication and crawl eligibility tied to real content, not a manual approval flag.
+const emptyArticle = {
+  id: 999999, slug: "empty-placeholder", title: "عنوان فقط",
+  keyword: "عبارة بحث", status: "published",
+  metaDescription: "وصف SEO", quickAnswer: "  ",
+  summaryTable: [{label:"قيمة",value:"  "}],
+  steps: [{title:"الخطوة", detail:" \n "}],
+  faqs: [{question:"سؤال",answer:" "}],
+  sources: [{label:"المصدر",url:"https://example.org",checkedAt:"2026-11-06"}],
+};
+assert.equal(isArticleIndexable(emptyArticle), false, "Empty articles must never publish, even if status is published");
+assert.equal(isArticleIndexable({...emptyArticle,status:"drafting"}), false, "Draft metadata alone is not content");
+assert.equal(isArticleIndexable({...emptyArticle,quickAnswer:"إجابة واقعية مفيدة للقارئ."}), true, "Contentful articles must not need editorial approval");
+assert.equal(isArticleIndexable({...emptyArticle,status:"needs_verification",steps:[{title:"خطوة",detail:"شرح قابل للاستخدام"}]}), true, "Substantive steps automatically qualify");
+assert.equal(articles.filter(a => !isArticleIndexable(a)).some(a => a.quickAnswer?.trim() || a.steps?.some(x => x.detail.trim())), false, "No real content should be excluded as empty");
 assert.equal(latestContentDate("2026-10-22","2026-09-30"),"2026-10-22","An older image must not overwrite newer content");
 assert.equal(getArticleModifiedAt({slug:"legacy-without-image",updatedAt:"2026-09-20"}),"2026-09-20","No global date floor");
 assert.equal(getArticleModifiedAt({slug:"unknown"}),undefined,"Do not invent a date");
