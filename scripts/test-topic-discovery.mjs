@@ -13,7 +13,7 @@ function load(file){
  new Function("require","exports",code)((id)=>{assert(id.startsWith(".")||id.startsWith("@/"),"Unexpected data dependency "+id);return load(id.startsWith("@/")?resolve(id.slice(2)):resolve(dirname(path),id));},exports);
  return exports;
 }
-const {articles,clusters}=load("lib/content.ts"),{foodSafetyArticles}=load("lib/food-safety.ts"),{sitemapGroups}=load("lib/sitemaps.ts"),{getGuidePath}=load("lib/guide-paths.ts"),{getArticleModifiedAt,latestContentDate}=load("lib/content-modified.ts"),{guideIllustrations}=load("lib/guide-illustrations.ts");
+const {articles,clusters,isArticleIndexable}=load("lib/content.ts"),{foodSafetyArticles}=load("lib/food-safety.ts"),{sitemapGroups}=load("lib/sitemaps.ts"),{getGuidePath}=load("lib/guide-paths.ts"),{getArticleModifiedAt,latestContentDate}=load("lib/content-modified.ts"),{guideIllustrations}=load("lib/guide-illustrations.ts");
 assert.equal(latestContentDate("2026-10-22","2026-09-30"),"2026-10-22","An older image must not overwrite newer content");
 assert.equal(getArticleModifiedAt({slug:"legacy-without-image",updatedAt:"2026-09-20"}),"2026-09-20","No global date floor");
 assert.equal(getArticleModifiedAt({slug:"unknown"}),undefined,"Do not invent a date");
@@ -33,18 +33,18 @@ for(const url of urls){
  assert(match,"Non-category query URL in sitemap");
  const cluster=clusters.find(c=>c.slug===match[1]);
  assert(cluster,"Unknown category in sitemap");
- const publishedCount=articles.filter(a=>a.status==="published"&&a.clusterCode===cluster.code).length;
+ const publishedCount=articles.filter(a=>isArticleIndexable(a)&&a.clusterCode===cluster.code).length;
  assert(page<=Math.ceil(publishedCount/30),"Nonexistent category page in sitemap");
  assert.equal(u.search,`?page=${page}`,"Noncanonical query string in sitemap");
 }
 for(const cluster of clusters){
- const publishedCount=articles.filter(a=>a.status==="published"&&a.clusterCode===cluster.code).length;
+ const publishedCount=articles.filter(a=>isArticleIndexable(a)&&a.clusterCode===cluster.code).length;
  for(let page=2;page<=Math.ceil(publishedCount/30);page++)
   assert(urls.includes(`https://www.lusaill.online/categories/${cluster.slug}?page=${page}`),"Missing canonical category pagination from sitemap");
 }
-const published=articles.filter(a=>a.status==="published");
+const published=articles.filter(a=>isArticleIndexable(a));
 assert.equal(map.size,published.length+foodSafetyArticles.length);
-for(const a of articles){const url="https://www.lusaill.online/articles/"+a.slug;if(a.status!=="published"){assert(!map.has(url),"Draft/removed article leaked to sitemap");continue;}assert(getGuidePath(a.slug),"Published guide needs a task hub");const date=getArticleModifiedAt(a);assert(date,"Missing authentic content/publication date");assert(Date.parse(date)<=Date.now(),"Future modification date");assert.equal(new Date(map.get(url).lastModified).getTime(),Date.parse(date));if(guideIllustrations[a.slug]?.updatedAt)assert(Date.parse(date)>=Date.parse(guideIllustrations[a.slug].updatedAt));}
+for(const a of articles){const url="https://www.lusaill.online/articles/"+a.slug;if(!isArticleIndexable(a)){assert(!map.has(url),"Unwritten article leaked to sitemap");continue;}if(a.status==="published")assert(getGuidePath(a.slug),"Published guide needs a task hub");const date=getArticleModifiedAt(a);if(date){assert(Date.parse(date)<=Date.now(),"Future modification date");assert.equal(new Date(map.get(url).lastModified).getTime(),Date.parse(date));if(guideIllustrations[a.slug]?.updatedAt)assert(Date.parse(date)>=Date.parse(guideIllustrations[a.slug].updatedAt));}else{assert(!map.get(url).lastModified,"Do not invent a modification date");}}
 for(const a of foodSafetyArticles){const row=map.get("https://www.lusaill.online/food-safety/"+a.slug);assert(row);assert.equal(new Date(row.lastModified).getTime(),Date.parse(a.updatedAt));}
 for(const path of ["/articles/verify-electronic-certificate","/articles/move-in-condition-report","/categories/housing-utilities","/services/electricity-bill-inquiry"])assert(!urls.includes("https://www.lusaill.online"+path),"Retired/alias URL leaked");
 const source=readFileSync("components/electricity-inquiry-detail.tsx","utf8");
@@ -60,6 +60,6 @@ const grams=documents.map(d=>{const words=normalized(d.text).split(" ");return n
 const exact=new Map(),pairs=[];
 for(let i=0;i<documents.length;i++){const text=normalized(documents[i].text);assert(!exact.has(text),"Exact duplicate content: "+documents[i].url+" / "+exact.get(text));exact.set(text,documents[i].url);for(let j=0;j<i;j++){const a=grams[i],b=grams[j],small=a.size<b.size?a:b,large=a.size<b.size?b:a;let intersection=0;for(const token of small)if(large.has(token))intersection++;const score=intersection/(a.size+b.size-intersection||1);if(score>.15)pairs.push({score:Number(score.toFixed(4)),a:{url:documents[i].url,title:documents[i].title,answer:documents[i].text.slice(0,240)},b:{url:documents[j].url,title:documents[j].title,answer:documents[j].text.slice(0,240)}});}}
 pairs.sort((a,b)=>b.score-a.score);
-console.log("DISCOVERY_SUMMARY "+JSON.stringify({published:published.length,food:foodSafetyArticles.length,articleSitemap:map.size,allSitemapUrls:urls.length,nonPublishedExcluded:articles.length-published.length,exactDuplicates:0,companySlugs,contextTargets:targets,nearCandidates:pairs.slice(0,10),result:"PASS"}));
-for(const a of published){console.log("DISCOVERY_ARTICLE "+JSON.stringify({slug:a.slug,title:a.title,reviewedAt:a.updatedAt,publishedAt:a.publishedAt,modifiedAt:getArticleModifiedAt(a),imageModifiedAt:guideIllustrations[a.slug]?.updatedAt??null,category:a.clusterCode,hub:"/guides/"+getGuidePath(a.slug).slug}));await new Promise(resolve=>setTimeout(resolve,30));}
-console.log("PASS: sitemap completeness, excluded drafts/retirements, authentic dates, hub membership and relevant contextual targets");
+console.log("DISCOVERY_SUMMARY "+JSON.stringify({published:published.length,food:foodSafetyArticles.length,articleSitemap:map.size,allSitemapUrls:urls.length,unwrittenExcluded:articles.length-published.length,exactDuplicates:0,companySlugs,contextTargets:targets,nearCandidates:pairs.slice(0,10),result:"PASS"}));
+for(const a of published){console.log("DISCOVERY_ARTICLE "+JSON.stringify({slug:a.slug,title:a.title,reviewedAt:a.updatedAt,publishedAt:a.publishedAt,modifiedAt:getArticleModifiedAt(a),imageModifiedAt:guideIllustrations[a.slug]?.updatedAt??null,category:a.clusterCode,hub:getGuidePath(a.slug)?"/guides/"+getGuidePath(a.slug).slug:null}));await new Promise(resolve=>setTimeout(resolve,30));}
+console.log("PASS: sitemap completeness, excluded unwritten placeholders/retirements, authentic dates, hub membership and relevant contextual targets");

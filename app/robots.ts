@@ -1,4 +1,4 @@
-import { articles, clusters } from "@/lib/content";
+import { articles, clusters, isArticleIndexable } from "@/lib/content";
 import type { MetadataRoute } from "next";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 
@@ -7,7 +7,7 @@ import { absoluteUrl, siteConfig } from "@/lib/site-config";
 const CATEGORY_PAGE_SIZE = 30;
 const allowedCategoryPagination = clusters.flatMap((cluster) => {
   const publishedCount = articles.filter(
-    (article) => article.status === "published" && article.clusterCode === cluster.code
+    (article) => isArticleIndexable(article) && article.clusterCode === cluster.code
   ).length;
   const lastPage = Math.ceil(publishedCount / CATEGORY_PAGE_SIZE);
   return Array.from(

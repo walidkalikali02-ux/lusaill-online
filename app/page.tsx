@@ -4,7 +4,7 @@ import { GuideSearch } from "@/components/guide-search";
 import Link from "next/link";
 import { ArticleCard } from "@/components/article-card";
 import { SiteIcon, type IconName } from "@/components/site-icon";
-import { clusters, articles, clusterProgress } from "@/lib/content";
+import { clusters, articles, clusterProgress, isArticleIndexable } from "@/lib/content";
 import { guidePaths, getGuidePath } from "@/lib/guide-paths";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { housingDeadline, housingDeadlineCheckedAt, housingDeadlineLabel, housingDeadlinePassed, housingDeadlineSource } from "@/lib/deadlines";
@@ -12,7 +12,7 @@ export const metadata:Metadata={title:{absolute:"لوسيل | أدلة الخد�
 export const revalidate=3600;
 const topics:Record<string,{short:string;icon:IconName}>={A:{short:"فواتير الكهرباء",icon:"bolt"},B:{short:"الخدمات الحكومية",icon:"document"},C:{short:"القيادة والمرور",icon:"car"},G:{short:"السجل المدني",icon:"book"},H:{short:"الحياة الرقمية",icon:"screen"}};
 export default function Home(){
-  const published=articles.filter(a=>a.status==="published").sort((a,b)=>(b.publishedAt??"").localeCompare(a.publishedAt??"")||b.id-a.id);
+  const published=articles.filter(isArticleIndexable).sort((a,b)=>(b.publishedAt??"").localeCompare(a.publishedAt??"")||b.id-a.id);
   const active=clusters.filter(c=>clusterProgress(c.slug).published>0).sort((a,b)=>["A","C","G","B","H"].indexOf(a.code)-["A","C","G","B","H"].indexOf(b.code));
   const find=(slug:string)=>published.find(a=>a.slug===slug)!;
   const lead=find("electricity-bill-inquiry");

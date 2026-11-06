@@ -1,4 +1,4 @@
-import { articles } from "@/lib/content";
+import { articles, isArticleIndexable } from "@/lib/content";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { courseMeta, drivingLessons } from "@/lib/driving-course";
 
@@ -15,7 +15,7 @@ function escapeXml(value: string) {
 }
 
 export function GET() {
-  const published = articles.filter((article) => article.status === "published");
+  const published = articles.filter((article) => isArticleIndexable(article));
   const articleItems = published.map((article) => {
     const url = absoluteUrl(`/articles/${article.slug}`);
     const date = new Date(article.updatedAt ?? article.publishedAt ?? "2026-01-01").toUTCString();

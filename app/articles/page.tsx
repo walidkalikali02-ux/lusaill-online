@@ -2,7 +2,7 @@ import { ArticleCard } from "@/components/article-card";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { articles, clusters } from "@/lib/content";
+import { articles, clusters, isArticleIndexable } from "@/lib/content";
 import { foodSafetyArticles } from "@/lib/food-safety";
 import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
@@ -29,7 +29,7 @@ export default function ArticlesPage() {
     ],
   };
 
-  const publishedArticles = articles.filter((a) => a.status === "published").sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "") || b.id - a.id);
+  const publishedArticles = articles.filter(isArticleIndexable).sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "") || b.id - a.id);
 
 
 
