@@ -13,14 +13,35 @@ function load(file){
  new Function("require","exports",code)((id)=>{assert(id.startsWith(".")||id.startsWith("@/"),"Unexpected data dependency "+id);return load(id.startsWith("@/")?resolve(id.slice(2)):resolve(dirname(path),id));},exports);
  return exports;
 }
-const {articles}=load("lib/content.ts"),{foodSafetyArticles}=load("lib/food-safety.ts"),{sitemapGroups}=load("lib/sitemaps.ts"),{getGuidePath}=load("lib/guide-paths.ts"),{getArticleModifiedAt,latestContentDate}=load("lib/content-modified.ts"),{guideIllustrations}=load("lib/guide-illustrations.ts");
+const {articles,clusters}=load("lib/content.ts"),{foodSafetyArticles}=load("lib/food-safety.ts"),{sitemapGroups}=load("lib/sitemaps.ts"),{getGuidePath}=load("lib/guide-paths.ts"),{getArticleModifiedAt,latestContentDate}=load("lib/content-modified.ts"),{guideIllustrations}=load("lib/guide-illustrations.ts");
 assert.equal(latestContentDate("2026-10-22","2026-09-30"),"2026-10-22","An older image must not overwrite newer content");
 assert.equal(getArticleModifiedAt({slug:"legacy-without-image",updatedAt:"2026-09-20"}),"2026-09-20","No global date floor");
 assert.equal(getArticleModifiedAt({slug:"unknown"}),undefined,"Do not invent a date");
 assert.equal(latestContentDate("invalid","2026-10-01"),"2026-10-01");
 const groups=sitemapGroups(),all=Object.values(groups).flat(),urls=all.map(r=>r.url),map=new Map(groups["sitemap-articles.xml"].map(r=>[r.url,r]));
 assert.equal(new Set(urls).size,urls.length,"Duplicate sitemap URLs");
-for(const url of urls){const u=new URL(url);assert.equal(u.origin,"https://www.lusaill.online");assert(!u.search&&!u.hash,"Only canonical clean URLs in sitemap");}
+for(const url of urls){
+ const u=new URL(url);
+ assert.equal(u.origin,"https://www.lusaill.online");
+ assert(!u.hash,"Sitemap URLs must not have fragments");
+ if(!u.search)continue;
+ // Only real category pages beyond page one may use a query string in the sitemap.
+ assert.equal(u.searchParams.size,1,"Only canonical pagination parameters allowed");
+ const page=Number(u.searchParams.get("page"));
+ assert(Number.isSafeInteger(page)&&page>=2,"Invalid category pagination page");
+ const match=u.pathname.match(/^\\/categories\\/([a-z0-9-]+)$/);
+ assert(match,"Non-category query URL in sitemap");
+ const cluster=clusters.find(c=>c.slug===match[1]);
+ assert(cluster,"Unknown category in sitemap");
+ const publishedCount=articles.filter(a=>a.status==="published"&&a.clusterCode===cluster.code).length;
+ assert(page<=Math.ceil(publishedCount/30),"Nonexistent category page in sitemap");
+ assert.equal(u.search,`?page=${page}`,"Noncanonical query string in sitemap");
+}
+for(const cluster of clusters){
+ const publishedCount=articles.filter(a=>a.status==="published"&&a.clusterCode===cluster.code).length;
+ for(let page=2;page<=Math.ceil(publishedCount/30);page++)
+  assert(urls.includes(`https://www.lusaill.online/categories/${cluster.slug}?page=${page}`),"Missing canonical category pagination from sitemap");
+}
 const published=articles.filter(a=>a.status==="published");
 assert.equal(map.size,published.length+foodSafetyArticles.length);
 for(const a of articles){const url="https://www.lusaill.online/articles/"+a.slug;if(a.status!=="published"){assert(!map.has(url),"Draft/removed article leaked to sitemap");continue;}assert(getGuidePath(a.slug),"Published guide needs a task hub");const date=getArticleModifiedAt(a);assert(date,"Missing authentic content/publication date");assert(Date.parse(date)<=Date.now(),"Future modification date");assert.equal(new Date(map.get(url).lastModified).getTime(),Date.parse(date));if(guideIllustrations[a.slug]?.updatedAt)assert(Date.parse(date)>=Date.parse(guideIllustrations[a.slug].updatedAt));}
