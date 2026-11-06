@@ -7,7 +7,7 @@ import { pageAlternates } from "@/lib/page-alternates";
 import { absoluteUrl } from "@/lib/site-config";
 import styles from "./team.module.css";
 
-const description = "تعرّف إلى تخصصات فريق لوسيل في الهندسة والتعليم والكتابة والبحث والتدقيق، وتصفّح الملفات والنبذات والروابط لكل مجال. الأسماء والرسوم خيالية.";
+const description = "تعرّف إلى المجالات المعرفية في موسوعة لوسيل عبر شخصيات توضيحية من العلوم والتعليم والتقنية والكتابة والبحث، مع روابط لمقالات كل تخصص. الأسماء والرسوم خيالية.";
 export const metadata: Metadata = { title: "فريق لوسيل | وجوه المعرفة", description, alternates: pageAlternates("/team"), openGraph: { title: "فريق لوسيل", description, url: "/team", type: "website" } };
 type Query = { q?: string | string[]; role?: string | string[] };
 const normalize = (value: string) => value.normalize("NFKC").replace(/[ً-ْ]/g, "").replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").toLowerCase();
@@ -32,7 +32,7 @@ export default async function TeamPage({ searchParams }: { searchParams: Promise
       <form key={JSON.stringify([q, role])} action="/team#team-directory" method="get" className={styles.filters}><div><label htmlFor="team-query">ابحث عن اسم أو تخصص</label><input id="team-query" name="q" type="search" maxLength={120} defaultValue={q} placeholder="جرّب: الكهرباء، الرياضيات، البحث…"/></div><div><label htmlFor="team-role">الدور</label><select id="team-role" name="role" defaultValue={role}><option value="">كل الأدوار</option>{Object.entries(teamRoles).map(([key, value]) => <option key={key} value={key}>{value.label}</option>)}</select></div><button type="submit" className={styles.primary}>عرض النتائج</button>{q || role ? <Link href="/team#team-directory" className={styles.reset}>مسح التصفية</Link> : null}</form>
       <p className={styles.resultCount}>{visible.length.toLocaleString("ar-EG")} من {members.length.toLocaleString("ar-EG")} ملفًا</p>
       {visible.length ? <div className={styles.grid}>{visible.map(member => { const matches = getTeamArticles(member); return <article className={styles.card} key={member.id} id={teamPersonaAnchor(member)}>
-        <div className={styles.cardTop}><span>{member.kind === "course" ? "التعلّم والكورسات" : "الأدلة والخدمات"}</span><span className={styles.number} aria-hidden="true">✳</span></div>
+        <div className={styles.cardTop}><span>{member.kind === "course" ? "التعلّم والكورسات" : "المقالات والأدلة"}</span><span className={styles.number} aria-hidden="true">✳</span></div>
         <div className={styles.avatar}><TeamAvatar seed={member.seed} name={member.name} role={member.role}/></div>
         <div className={styles.identity}><h3>{member.name}</h3></div>
         <p className={styles.specialty}>{member.title}</p><p className={styles.role}>{teamRoles[member.role].label} في لوسيل</p><p className={styles.focus}>{teamRoles[member.role].task}</p>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   title: {
-    default: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية",
+    default: "لوسيل | موسوعة عربية شاملة للمعرفة",
     template: "%s | لوسيل",
   },
   description: siteConfig.description,
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   category: "reference",
   referrer: "origin-when-cross-origin",
   formatDetection: { email: false, address: false, telephone: false },
-  keywords: ["فواتير الكهرباء", "شركات توزيع الكهرباء", "تعلم القيادة", "خدمات إلكترونية", "أدلة عربية"],
+  keywords: ["موسوعة عربية", "موسوعة لوسيل", "العلوم", "الصحة", "التعليم", "التقنية", "الثقافة", "المعرفة", "أدلة عربية"],
   other: {
     "geo.region": siteConfig.geo.region,
     "geo.placename": siteConfig.geo.placename,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: siteConfig.locale,
     siteName: siteConfig.name,
-    title: "لوسيل | أدلة الخدمات المصرية والحياة الرقمية",
+    title: "لوسيل | موسوعة عربية شاملة للمعرفة",
     description: siteConfig.description,
     url: "/",
   },

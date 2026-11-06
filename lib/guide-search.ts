@@ -1,4 +1,4 @@
-export type SearchItem = { slug: string; title: string; keyword: string; quickAnswer?: string };
+export type SearchItem = { slug: string; title: string; keyword: string; quickAnswer?: string; href?: string; description?: string; category?: string };
 export const normalizeSearch = (value: string) => value.normalize("NFKC").replace(/[ً-ْ]/g, "").replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").toLowerCase();
 export function searchGuides<T extends SearchItem>(items: T[], query: string): T[] {
   const words = normalizeSearch(query).trim().split(/\s+/).filter(Boolean).slice(0, 20);

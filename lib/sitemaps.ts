@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 import { getArticleModifiedAt } from "./content-modified";
 import { articles, clusters, clusterProgress, isArticleIndexable } from "@/lib/content";
 import { foodSafetyArticles } from "@/lib/food-safety";
+import { knowledgeTopics } from "@/lib/knowledge-expansion-data";
 import { entities } from "@/lib/entities";
 import { absoluteUrl } from "@/lib/site-config";
 import { guidePaths } from "@/lib/guide-paths";
@@ -24,20 +25,21 @@ function latestPublishedUpdate(items: Array<{ slug?: string; updatedAt?: string;
 }
 
 export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
+  const knowledgeRoutes: MetadataRoute.Sitemap = knowledgeTopics
+    .filter(topic => Boolean(topic.directAnswer?.trim()) && topic.sections.length > 0)
+    .map(topic => ({
+      url: absoluteUrl(`/knowledge/${topic.slug}`),
+      lastModified: new Date(topic.publishedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      images: topic.image ? [absoluteUrl(topic.image)] : [],
+    }));
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: absoluteUrl("/"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleIndexable(article))), changeFrequency: "weekly", priority: 1.0 },
     { url: absoluteUrl("/food-safety"), lastModified: latestPublishedUpdate(foodSafetyArticles), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/knowledge"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/knowledge/roman-numerals"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/roman-numerals-education.svg")] },
     { url: absoluteUrl("/knowledge/learning-objectives"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/bloom-learning-levels-original.svg")] },
-    { url: absoluteUrl("/knowledge/crystals-vs-precipitates"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/knowledge/crystals-vs-precipitates.svg")] },
-    { url: absoluteUrl("/knowledge/environmental-majors"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/knowledge/environmental-majors.svg")] },
-    { url: absoluteUrl("/knowledge/choosing-university-major"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/knowledge/choosing-university-major.svg")] },
-    { url: absoluteUrl("/knowledge/food-poisoning-risky-foods"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/knowledge/food-safety-original.svg")] },
-    { url: absoluteUrl("/knowledge/immune-system-support"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/knowledge/immune-health-original.svg")] },
-    { url: absoluteUrl("/knowledge/improve-focus"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/knowledge/focus-week-original.svg")] },
-    { url: absoluteUrl("/knowledge/positive-school-discipline"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/knowledge/school-discipline-original.svg")] },
-    { url: absoluteUrl("/knowledge/writing-topic-steps"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/knowledge/writing-steps-original.svg")] },
     { url: absoluteUrl("/articles"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleIndexable(article))), changeFrequency: "weekly", priority: 0.9 },
     { url: absoluteUrl("/categories"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleIndexable(article))), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/entities"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleIndexable(article))), changeFrequency: "monthly", priority: 0.8 },
@@ -122,7 +124,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     "sitemap-categories.xml": [...clusterRoutes, ...categoryPaginationRoutes],
     "sitemap-guides.xml": [...guideRoutes, ...courseRoutes, ...sixgLessons.map(lesson => ({url:absoluteUrl(sixgLessonPath(lesson.slug)),lastModified:new Date(sixgMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...fivegLessons.map(lesson => ({url:absoluteUrl(fivegLessonPath(lesson.slug)),lastModified:new Date(fivegMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...geometryLessons.flatMap(lesson => [geometryLessonPath(lesson.slug), `${geometryLessonPath(lesson.slug)}/worksheet`].map(path => ({url:absoluteUrl(path),lastModified:new Date(geometryMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7}))), ...staticRoutes.filter((route) => route.url.includes("/courses/"))],
     "sitemap-entities.xml": entityRoutes,
-    "sitemap-pages.xml": staticRoutes.filter((route) => !route.url.includes("/courses/")),
+    "sitemap-pages.xml": [...staticRoutes.filter((route) => !route.url.includes("/courses/")), ...knowledgeRoutes],
   };
 }
 

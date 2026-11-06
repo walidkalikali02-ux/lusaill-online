@@ -1,13 +1,13 @@
 export const siteConfig = {
   name: "لوسيل",
-  tagline: "أدلة عربية للخدمات والحياة الرقمية",
+  tagline: "موسوعة عربية شاملة للمعرفة",
   url: "https://www.lusaill.online",
   locale: "ar_EG",
   language: "ar",
   market: "العالم العربي",
   searchEngine: "Google",
   description:
-"أدلة لوسيل للخدمات المصرية والسكن البديل والتموين والكهرباء والحياة الرقمية: خطوات واضحة، مستندات ومواعيد مهمة، ومصادر رسمية وتواريخ مراجعة لكل دليل.",
+"لوسيل موسوعة عربية متعددة المجالات تقدم مقالات ومعارف وأدلة في العلوم والصحة والتعليم والتقنية والحياة اليومية والخدمات، بمصادر واضحة وأدوات عملية، وتتوسع باستمرار.",
   publisher: "فريق لوسيل",
   owner: "Oualid Aisbouya",
   editorialEmail: "waisbouya@gmail.com",
@@ -30,5 +30,5 @@ export const siteSocialImage = {
   url: absoluteUrl("/opengraph-image"),
   width: 1200,
   height: 630,
-  alt: "لوسيل — أدلة عربية عملية موثقة",
+  alt: "لوسيل — موسوعة عربية متعددة المجالات",
 };
