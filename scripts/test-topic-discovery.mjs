@@ -29,7 +29,7 @@ for(const url of urls){
  assert.equal(u.searchParams.size,1,"Only canonical pagination parameters allowed");
  const page=Number(u.searchParams.get("page"));
  assert(Number.isSafeInteger(page)&&page>=2,"Invalid category pagination page");
- const match=u.pathname.match(/^\\/categories\\/([a-z0-9-]+)$/);
+ const match=u.pathname.match(new RegExp("^/categories/([a-z0-9-]+)$"));
  assert(match,"Non-category query URL in sitemap");
  const cluster=clusters.find(c=>c.slug===match[1]);
  assert(cluster,"Unknown category in sitemap");
