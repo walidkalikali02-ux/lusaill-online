@@ -159,7 +159,7 @@ for (const file of pageFiles) {
   }
 }
 
-// 11. Check for noindex on non-published articles
+// 11. Check for noindex handling on empty/unrenderable articles (not editorial status)
 console.log("🔍 Checking noindex handling...");
 const articlePageFile = "app/articles/[slug]/page.tsx";
 const articleContent = readFileSync(articlePageFile, "utf8");
