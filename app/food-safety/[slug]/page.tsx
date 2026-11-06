@@ -6,6 +6,8 @@ import { foodSafetyArticles, getFoodSafetyArticle } from "@/lib/food-safety";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { pageAlternates } from "@/lib/page-alternates";
 import "../food-safety.css";
+import { getFoodSafetyPersona } from "@/lib/team-domains";
+import { teamPersonaAnchor } from "@/lib/team-personas";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -40,6 +42,7 @@ export default async function FoodSafetyArticlePage({ params }: PageProps) {
   const { slug } = await params;
   const article = getFoodSafetyArticle(slug);
   if (!article) notFound();
+  const topicPersona = getFoodSafetyPersona();
   const path = `/food-safety/${article.slug}`;
   const articleSchema = {
     "@context": "https://schema.org",
@@ -75,6 +78,7 @@ export default async function FoodSafetyArticlePage({ params }: PageProps) {
             <div className="food-editorial-note">
               <p>المعلومات الواردة للتوعية العامة فقط، وليست تشخيصًا أو استشارة طبية. تُذكر مصادر الحقائق داخل المقال، ولا يُدّعى حصول مراجعة سريرية مستقلة. إذا ظهرت أعراض شديدة فاطلب رعاية طبية مناسبة.</p>
               <p>نُشر في <time dateTime={article.publishedAt}>{article.publishedAt}</time> — <Link href="/contact">الإبلاغ عن تصحيح</Link></p>
+              {topicPersona && <p>المسار التخصصي: <Link href={`/team#${teamPersonaAnchor(topicPersona)}`}>{topicPersona.name}</Link> (شخصية توضيحية لتنظيم المحتوى؛ ليست طبيبًا أو مراجعًا بشريًا).</p>}
             </div>
           </article>
           <aside className="food-aside" aria-label="أدلة ذات صلة">

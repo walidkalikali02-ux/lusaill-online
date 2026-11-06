@@ -34,6 +34,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     { url: absoluteUrl("/categories"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/entities"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/about"),  changeFrequency: "monthly", priority: 0.6 },
+    { url: absoluteUrl("/team"), changeFrequency: "monthly", priority: 0.6 },
     { url: absoluteUrl("/privacy"),  changeFrequency: "yearly", priority: 0.3 },
     { url: absoluteUrl("/terms"), lastModified: new Date("2026-09-24"), changeFrequency: "yearly", priority: 0.3 },
     { url: absoluteUrl("/contact"),  changeFrequency: "yearly", priority: 0.5 },

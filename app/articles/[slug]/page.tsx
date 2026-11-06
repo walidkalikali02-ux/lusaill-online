@@ -12,6 +12,8 @@ import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { searchTitles } from "@/lib/search-titles";
 import { howToArticles } from "@/lib/structured-data";
 import { ArticleBrief, ArticleSidebar } from "@/components/article-brief";
+import { getTeamPersonaForArticle } from "@/lib/team-domains";
+import { teamPersonaAnchor } from "@/lib/team-personas";
 
 export function generateStaticParams() {
   return articles.filter((article) => article.status === "published").map((article) => ({ slug: article.slug }));
@@ -70,6 +72,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   const cluster = clusters.find((item) => item.code === article.clusterCode);
   if (!cluster) notFound();
+  const topicPersona = getTeamPersonaForArticle(article);
 
   const related = getRelatedArticles(article);
   const latestCheck = article.sources?.length
@@ -181,6 +184,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {article.publishedAt && <span className="article-meta-item">نُشر: <time dateTime={article.publishedAt}>{article.publishedAt.slice(0, 10)}</time></span>}
             {article.updatedAt && <span className="article-meta-item">آخر مراجعة: <time dateTime={article.updatedAt}>{article.updatedAt.slice(0, 10)}</time></span>}
             <span className="article-meta-item"><Link href="/authors/editorial-team">فريق لوسيل</Link></span>
+            {topicPersona && <span className="article-meta-item">المسار التخصصي: <Link href={`/team#${teamPersonaAnchor(topicPersona)}`}>{topicPersona.name}</Link> (شخصية توضيحية، ليست مؤلفًا أو مراجعًا بشريًا)</span>}
             <span className="article-meta-item">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               {mins} دقائق قراءة
