@@ -29,6 +29,20 @@ export type Article = ArticleSeed & {
   practicalSections?: PracticalSection[];
 };
 
+/**
+ * Automatic indexability is determined by real reader-facing article content,
+ * never by its editorial approval status. A keyword-only seed is not a page.
+ */
+export function isArticleIndexable(article: Article): boolean {
+  return Boolean(
+    article.quickAnswer?.trim() ||
+    article.summaryTable?.some((row) => row.value.trim()) ||
+    article.steps?.some((step) => step.detail.trim()) ||
+    article.practicalSections?.some((section) => section.intro?.trim() || section.rows.length > 0) ||
+    article.faqs?.some((faq) => faq.answer.trim())
+  );
+}
+
 function slugify(text: string): string {
   return text
     .trim()
@@ -82,7 +96,7 @@ export function getRelatedArticles(article: Article, count = 4) {
   const group = articleJourneys.find((slugs) => slugs.includes(article.slug)) ?? [];
   const explicit = (article.steps ?? []).flatMap((step) => step.relatedLink?.href.startsWith("/articles/") ? [step.relatedLink.href.slice(10)] : []);
   const preferred = [...new Set([...explicit, ...group])];
-  const published = articles.filter((candidate) => candidate.status === "published" && candidate.id !== article.id);
+  const published = articles.filter((candidate) => isArticleIndexable(candidate) && candidate.id !== article.id);
   const relevant = preferred.flatMap((slug) => published.filter((candidate) => candidate.slug === slug));
   // Avoid padding a task group with unrelated guides merely to fill four cards.
   if (relevant.length) return relevant.slice(0, count);
@@ -93,13 +107,13 @@ export function getRelatedArticles(article: Article, count = 4) {
 
 export function clusterProgress(clusterSlug: string) {
   const items = getClusterArticles(clusterSlug);
-  const published = items.filter((item) => item.status === "published").length;
+  const published = items.filter((item) => isArticleIndexable(item)).length;
   return { total: items.length, published };
 }
 
 export function overallProgress() {
-  const published = articles.filter((article) => article.status === "published").length;
-  return { total: articles.length, published, coreTotal: coreHundred.length, corePublished: coreHundred.filter((a) => a.status === "published").length };
+  const published = articles.filter((article) => isArticleIndexable(article)).length;
+  return { total: articles.length, published, coreTotal: coreHundred.length, corePublished: coreHundred.filter((a) => isArticleIndexable(a)).length };
 }
 
 export const trafficProjection = [
