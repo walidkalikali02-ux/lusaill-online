@@ -3,6 +3,8 @@ import Link from "next/link";
 import { pageAlternates } from "@/lib/page-alternates";
 export const metadata:Metadata={title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),robots:{index:true,follow:true}};
 const guides=[
+{href:"/knowledge/how-to-write-a-report",title:"كيفية كتابة تقرير احترافي",description:"دليل التقرير الإداري والأكاديمي مع أمثلة ومولّد مخطط عملي.",kind:"كتابة التقارير · أداة أصلية"},
+{href:"/knowledge/mind-maps-for-studying",title:"الخرائط الذهنية للمذاكرة",description:"طريقة وأمثلة ومحرر خريطة ذهنية مع اختبار الاسترجاع.",kind:"مهارات الدراسة · أداة أصلية"},
 {href:"/knowledge/game-based-learning-classroom",title:"التعلم بالألعاب في الفصل الدراسي",description:"دليل بالأدلة وأمثلة قياس التعلم ومولّد خطة لعبة تعليمية.",kind:"التربية · خطة درس تفاعلية"},
 {href:"/knowledge/open-education-higher-learning",title:"التعليم المفتوح والتعليم عن بعد",description:"الفرق بين البرامج والمقررات المفتوحة والاعتراف بالمؤهلات وقائمة التحقق.",kind:"التعليم العالي · فاحص اعتماد"},
 {href:"/knowledge/food-poisoning-risky-foods",title:"10 أطعمة قد تسبب التسمم الغذائي",description:"الوقاية والطهي الآمن وقائمة تحقق منزلية مع مصادر CDC وWHO.",kind:"سلامة الغذاء · قائمة تفاعلية"},
