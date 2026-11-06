@@ -5,7 +5,7 @@ export type ArticleContentOverride = {
   slug?: string;
   title?: string;
   metaDescription?: string;
-  status: ArticleStatus;
+  status?: ArticleStatus;
   publishedAt?: string;
   updatedAt?: string;
   coverImage?: string;
