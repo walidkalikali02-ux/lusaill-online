@@ -8,11 +8,11 @@ import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "كل الأدلة",
-  description: "تصفح أدلة لوسيل لخدمات الكهرباء والحياة الرقمية: تنظيم البريد وحماية الحسابات وإدارة الملفات، مع خطوات واضحة وصور ومصادر رسمية وتاريخ مراجعة.",
+  description: "تصفّح الأدلة والمقالات العملية المنشورة في لوسيل: الخدمات والحياة الرقمية وسلامة الغذاء، مع روابط للمصادر وشروحات واضحة. وتصفح العلوم والتعليم عبر قسم المعارف.",
   alternates: pageAlternates("/articles"),
   openGraph: {
     title: "كل الأدلة — لوسيل",
-    description: "تصفح أدلة لوسيل لخدمات الكهرباء والحياة الرقمية: تنظيم البريد وحماية الحسابات وإدارة الملفات، مع خطوات واضحة وصور ومصادر رسمية وتاريخ مراجعة.",
+    description: "تصفّح الأدلة والمقالات العملية المنشورة في لوسيل: الخدمات والحياة الرقمية وسلامة الغذاء، مع روابط للمصادر وشروحات واضحة. وتصفح العلوم والتعليم عبر قسم المعارف.",
     url: "/articles",
     type: "website",
     images: [siteSocialImage],
@@ -44,7 +44,7 @@ export default function ArticlesPage() {
         <div className="category-hero">
           <span className="article-card-tag">الأدلة</span>
           <h1>كل الأدلة</h1>
-          <p>جميع الأدلة والمقالات العملية في موسوعة لوسيل.</p>
+          <p>هذا فهرس الأدلة العملية المنشورة في موسوعة لوسيل، وللمقالات العلمية والتعليمية والصحية تصفّح <Link href="/knowledge">المعارف والأدوات</Link>.</p>
           <div className="article-meta" style={{ marginTop: 16 }}>
             <span className="article-meta-item">{publishedArticles.length} دليلًا منشورًا</span>
           </div>

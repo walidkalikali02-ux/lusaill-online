@@ -7,7 +7,7 @@ import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "التصنيفات",
-  description: "تصفح التصنيفات التي تضم أدلة منشورة في لوسيل. ابدأ بخدمات شركات توزيع الكهرباء والاستعلام عن الفواتير، مع روابط رسمية وخطوات عملية.",
+  description: "تصفّح تصنيفات الأدلة العملية المنشورة في لوسيل. للمقالات في العلوم والصحة والتعليم وغيرها، زر قسم المعارف والأدوات.",
   alternates: pageAlternates("/categories"),
   openGraph: {
     title: "التصنيفات — لوسيل",
@@ -35,7 +35,7 @@ export default function ClustersPage() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "تصنيفات المقالات — لوسيل",
-    description: "تصنيفات المقالات في لوسيل: دليل شامل لكل إجراء حكومي في العالم العربي.",
+    description: "تصنيفات الأدلة العملية المنشورة في لوسيل، ضمن موسوعة تشمل مجالات معرفية متعددة.",
     numberOfItems: activeClusters.length,
     itemListElement: activeClusters.map((cluster, index) => ({
       "@type": "ListItem",
@@ -51,7 +51,7 @@ export default function ClustersPage() {
         <span className="eyebrow">خريطة المحتوى</span>
         <h1>تصنيفات المقالات</h1>
         <p className="text-lead">
-          تعرض هذه الصفحة التصنيفات التي تحتوي أدلة منشورة ومراجعة فقط. نضيف أي تصنيف جديد بعد اكتمال أول دليل موثق فيه.
+          تعرض هذه الصفحة تصنيفات قسم الأدلة العملية التي تحتوي على محتوى منشور، ولا تمثل جميع مجالات الموسوعة. يمكنك استكشاف العلوم والصحة والتعليم في قسم المعارف، والكورسات في قسم التعلم.
         </p>
 
         <div style={{ margin: "24px 0", padding: "16px 20px", background: "var(--paper-deep)", borderRadius: 8, border: "1px solid var(--line)" }}>

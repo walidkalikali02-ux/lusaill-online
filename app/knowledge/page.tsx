@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { pageAlternates } from "@/lib/page-alternates";
-export const metadata:Metadata={title:"معارف وأدوات تعليمية أصلية",description:"أدلة عربية وأدوات تعليمية أصلية من لوسيل مع جداول دقيقة وتمارين ومراجع واضحة.",alternates:pageAlternates("/knowledge"),robots:{index:true,follow:true}};
+export const metadata:Metadata={title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),robots:{index:true,follow:true}};
 const guides=[
 {href:"/knowledge/food-poisoning-risky-foods",title:"10 أطعمة قد تسبب التسمم الغذائي",description:"الوقاية والطهي الآمن وقائمة تحقق منزلية مع مصادر CDC وWHO.",kind:"سلامة الغذاء · قائمة تفاعلية"},
 {href:"/knowledge/immune-system-support",title:"عادات تدعم صحة جهاز المناعة",description:"التمييز بين الأدلة والادعاءات عن المكملات والعادات الصحية.",kind:"الصحة · تحليل الأدلة"},
@@ -17,8 +17,8 @@ const guides=[
 export default function KnowledgeIndex(){
 return <main id="main-content" className="shell" style={{paddingBlock:52}}>
 <nav aria-label="مسار التنقل" style={{color:"#64748b",marginBottom:16}}><Link href="/">الرئيسية</Link> / معارف وأدوات</nav>
-<h1 style={{fontSize:"clamp(30px,4vw,44px)",fontWeight:800,marginBottom:16}}>معارف وأدوات تعليمية من لوسيل</h1>
-<p style={{fontSize:18,color:"#475569",maxWidth:820,marginBottom:30}}>لا نكتفي بذكر المعلومة، بل نقدم جدولًا أو تمرينًا أو أداة تساعدك على التطبيق. اختر الموضوع الذي تريد تعلمه.</p>
+<h1 style={{fontSize:"clamp(30px,4vw,44px)",fontWeight:800,marginBottom:16}}>استكشف مقالات موسوعة لوسيل</h1>
+<p style={{fontSize:18,color:"#475569",maxWidth:820,marginBottom:30}}>اكتشف مقالات الموسوعة في موضوعات العلوم والصحة والتعليم والتقنية والحياة اليومية. بعض الموضوعات تتضمن جداول وتمارين وأدوات عملية تساعدك على الفهم، ونعمل على توسيع التغطية باستمرار.</p>
 <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(270px,1fr))",gap:18}}>
 {guides.map(guide=><Link href={guide.href} key={guide.href} style={{border:"1px solid #e2e8f0",borderRadius:16,background:"white",padding:24,display:"grid",gap:13}}>
 <span style={{fontSize:13,color:"#475569"}}>{guide.kind}</span><strong style={{fontSize:24}}>{guide.title}</strong><span style={{color:"#64748b"}}>{guide.description}</span><span style={{color:"#0f766e",fontWeight:700}}>افتح الدليل ←</span>
