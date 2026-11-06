@@ -4,6 +4,8 @@ import { getArticleModifiedAt } from "./content-modified";
 import { articles, clusters, clusterProgress, isArticleIndexable } from "@/lib/content";
 import { foodSafetyArticles } from "@/lib/food-safety";
 import { knowledgeTopics } from "@/lib/knowledge-expansion-data";
+import { encyclopediaCategories } from "@/lib/encyclopedia-taxonomy";
+import { getEncyclopediaCategoryItems } from "@/lib/encyclopedia-catalog";
 import { entities } from "@/lib/entities";
 import { absoluteUrl } from "@/lib/site-config";
 import { guidePaths } from "@/lib/guide-paths";
@@ -25,6 +27,15 @@ function latestPublishedUpdate(items: Array<{ slug?: string; updatedAt?: string;
 }
 
 export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
+  // Index the subject directory and only categories with real published content.
+  // Empty editorial-roadmap categories are intentionally absent from the sitemap.
+  const topicRoutes: MetadataRoute.Sitemap = encyclopediaCategories
+    .filter(category => getEncyclopediaCategoryItems(category).length >= 2)
+    .map(category => ({
+      url: absoluteUrl(`/topics/${category.slug}`),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }));
   const knowledgeRoutes: MetadataRoute.Sitemap = knowledgeTopics
     .filter(topic => Boolean(topic.directAnswer?.trim()) && topic.sections.length > 0)
     .map(topic => ({
@@ -38,6 +49,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     { url: absoluteUrl("/"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleIndexable(article))), changeFrequency: "weekly", priority: 1.0 },
     { url: absoluteUrl("/food-safety"), lastModified: latestPublishedUpdate(foodSafetyArticles), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/knowledge"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/topics"), changeFrequency: "monthly", priority: 0.9 },
     { url: absoluteUrl("/knowledge/roman-numerals"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/roman-numerals-education.svg")] },
     { url: absoluteUrl("/knowledge/learning-objectives"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/bloom-learning-levels-original.svg")] },
     { url: absoluteUrl("/articles"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleIndexable(article))), changeFrequency: "weekly", priority: 0.9 },
@@ -124,7 +136,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     "sitemap-categories.xml": [...clusterRoutes, ...categoryPaginationRoutes],
     "sitemap-guides.xml": [...guideRoutes, ...courseRoutes, ...sixgLessons.map(lesson => ({url:absoluteUrl(sixgLessonPath(lesson.slug)),lastModified:new Date(sixgMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...fivegLessons.map(lesson => ({url:absoluteUrl(fivegLessonPath(lesson.slug)),lastModified:new Date(fivegMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...geometryLessons.flatMap(lesson => [geometryLessonPath(lesson.slug), `${geometryLessonPath(lesson.slug)}/worksheet`].map(path => ({url:absoluteUrl(path),lastModified:new Date(geometryMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7}))), ...staticRoutes.filter((route) => route.url.includes("/courses/"))],
     "sitemap-entities.xml": entityRoutes,
-    "sitemap-pages.xml": [...staticRoutes.filter((route) => !route.url.includes("/courses/")), ...knowledgeRoutes],
+    "sitemap-pages.xml": [...staticRoutes.filter((route) => !route.url.includes("/courses/")), ...knowledgeRoutes, ...topicRoutes],
   };
 }
 
