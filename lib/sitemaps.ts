@@ -58,6 +58,22 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // Include only real, independently canonical category pagination URLs.
+  // A page's lastmod comes from the articles listed on that page, not the build date.
+  const CATEGORY_PAGE_SIZE = 30; // Keep aligned with app/categories/[slug]/page.tsx.
+  const categoryPaginationRoutes: MetadataRoute.Sitemap = clusters.flatMap((cluster) => {
+    const published = articles.filter((article) => article.status === "published" && article.clusterCode === cluster.code);
+    return Array.from({ length: Math.max(0, Math.ceil(published.length / CATEGORY_PAGE_SIZE) - 1) }, (_, index) => {
+      const page = index + 2;
+      return {
+        url: absoluteUrl(`/categories/${cluster.slug}?page=${page}`),
+        lastModified: latestPublishedUpdate(published.slice((page - 1) * CATEGORY_PAGE_SIZE, page * CATEGORY_PAGE_SIZE)),
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+      };
+    });
+  });
+
   const entityRoutes: MetadataRoute.Sitemap = entities
     .filter((entity) => articles.some((article) => article.status === "published" && entity.clusterCodes.includes(article.clusterCode)))
     .map((entity) => ({
@@ -91,7 +107,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
   ];
   return {
     "sitemap-articles.xml": [...publishedArticleRoutes, ...foodSafetyRoutes],
-    "sitemap-categories.xml": clusterRoutes,
+    "sitemap-categories.xml": [...clusterRoutes, ...categoryPaginationRoutes],
     "sitemap-guides.xml": [...guideRoutes, ...courseRoutes, ...sixgLessons.map(lesson => ({url:absoluteUrl(sixgLessonPath(lesson.slug)),lastModified:new Date(sixgMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...fivegLessons.map(lesson => ({url:absoluteUrl(fivegLessonPath(lesson.slug)),lastModified:new Date(fivegMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...geometryLessons.flatMap(lesson => [geometryLessonPath(lesson.slug), `${geometryLessonPath(lesson.slug)}/worksheet`].map(path => ({url:absoluteUrl(path),lastModified:new Date(geometryMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7}))), ...staticRoutes.filter((route) => route.url.includes("/courses/"))],
     "sitemap-entities.xml": entityRoutes,
     "sitemap-pages.xml": staticRoutes.filter((route) => !route.url.includes("/courses/")),
