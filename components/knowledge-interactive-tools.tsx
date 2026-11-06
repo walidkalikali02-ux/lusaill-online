@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import type { KnowledgeTopic } from "@/lib/knowledge-expansion-data";
+import { GameLessonBuilder, OpenLearningChecker } from "./knowledge-education-tools";
 
 const cardStyle={border:"1px solid #cbd5e1",background:"#f8fafc",padding:24,borderRadius:16,marginBlock:28} as const;
 
@@ -174,5 +175,7 @@ if(kind==="immunity-facts")return <ImmuneFacts/>;
 if(kind==="focus-week-plan")return <FocusWeekPlan/>;
 if(kind==="school-discipline-plan")return <SchoolDisciplinePlan/>;
 if(kind==="writing-outline")return <WritingOutline/>;
+if(kind==="game-lesson-builder")return <GameLessonBuilder/>;
+if(kind==="open-learning-checker")return <OpenLearningChecker/>;
 return <MajorChoice/>;
 }
