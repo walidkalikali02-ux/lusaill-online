@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { articles, getArticleBySlug, getRelatedArticles } from "@/lib/content";
+import { articles, getArticleBySlug, getRelatedArticles, isArticleIndexable } from "@/lib/content";
 import { clusters } from "@/lib/clusters";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { searchTitles } from "@/lib/search-titles";
@@ -14,7 +14,7 @@ import { howToArticles } from "@/lib/structured-data";
 import { ArticleBrief, ArticleSidebar } from "@/components/article-brief";
 
 export function generateStaticParams() {
-  return articles.filter((article) => article.status === "published").map((article) => ({ slug: article.slug }));
+  return articles.filter((article) => isArticleIndexable(article)).map((article) => ({ slug: article.slug }));
 }
 
 export const dynamicParams = false;
@@ -22,12 +22,12 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
-  if (!article || article.status !== "published") return { robots: { index: false, follow: false } };
+  if (!article || !isArticleIndexable(article)) return { robots: { index: false, follow: false } };
   return {
     title: searchTitles[article.slug] ?? article.title,
     description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث مع خطوات وروابط رسمية.`,
     alternates: pageAlternates(`/articles/${article.slug}`),
-    robots: { index: article.status === "published", follow: true },
+    robots: { index: isArticleIndexable(article), follow: true },
     openGraph: {
       title: searchTitles[article.slug] ?? article.title,
       description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث.`,
@@ -66,7 +66,7 @@ function wordCount(article: { slug?: string; quickAnswer?: string; summaryTable?
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
-  if (!article || article.status !== "published") notFound();
+  if (!article || !isArticleIndexable(article)) notFound();
 
   const cluster = clusters.find((item) => item.code === article.clusterCode);
   if (!cluster) notFound();
