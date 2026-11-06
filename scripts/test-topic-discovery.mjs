@@ -35,6 +35,17 @@ assert.equal(getArticleModifiedAt({slug:"unknown"}),undefined,"Do not invent a d
 assert.equal(latestContentDate("invalid","2026-10-01"),"2026-10-01");
 const groups=sitemapGroups(),all=Object.values(groups).flat(),urls=all.map(r=>r.url),map=new Map(groups["sitemap-articles.xml"].map(r=>[r.url,r]));
 assert.equal(new Set(urls).size,urls.length,"Duplicate sitemap URLs");
+// Content completeness regression: empty articles are never published or inserted in XML.
+const {knowledgeTopics}=load("lib/knowledge-expansion-data.ts");
+assert.equal(knowledgeTopics.length,3,"Expected three verified knowledge topics in batch 03");
+for(const topic of knowledgeTopics){
+ assert(topic.directAnswer.trim().length>=100,"Missing substantial direct answer: "+topic.slug);
+ assert(topic.sections.length>=4,"Insufficient section architecture: "+topic.slug);
+ assert(topic.sources.length>=3&&topic.sources.every(s=>s.url.startsWith("https://")),"Missing original sources: "+topic.slug);
+ assert(existsSync("public"+topic.image),"Missing original educational SVG: "+topic.slug);
+ assert(urls.includes("https://www.lusaill.online/knowledge/"+topic.slug),"Missing knowledge topic from sitemap: "+topic.slug);
+}
+
 for(const url of urls){
  const u=new URL(url);
  assert.equal(u.origin,"https://www.lusaill.online");
