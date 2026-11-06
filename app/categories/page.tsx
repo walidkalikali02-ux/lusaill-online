@@ -49,7 +49,7 @@ export default function ClustersPage() {
     <main id="main-content" className="text-page">
       <div className="shell text-shell">
         <span className="eyebrow">خريطة المحتوى</span>
-        <h1>تصنيفات المقالات</h1>
+        <h1>تصنيفات الأدلة العملية</h1>
         <p className="text-lead">
           تعرض هذه الصفحة تصنيفات قسم الأدلة العملية التي تحتوي على محتوى منشور، ولا تمثل جميع مجالات الموسوعة. يمكنك استكشاف العلوم والصحة والتعليم في قسم المعارف، والكورسات في قسم التعلم.
         </p>
@@ -72,6 +72,7 @@ export default function ClustersPage() {
           <p>انتقل إلى قائمة جميع الأدلة وقارن العناوين والملخصات، أو استخدم البحث في الموقع بكلمات تصف المشكلة نفسها. تجنب تطبيق حل مختلف لمجرد أنه أول نتيجة ظهرت. إذا لم يوجد دليل مناسب، يمكنك إرسال اقتراح موضوع عبر صفحة التواصل مع وصف عام للمشكلة ورابط الصفحة الرسمية إن توفر، دون بيانات شخصية. لا نعرض التصنيفات الفارغة ضمن هذه القائمة حتى لا نوجهك إلى صفحات بلا إرشاد منشور. ولتقييم طريقة إعداد المحتوى، اقرأ سياسة التحرير وصفحة فريق لوسيل؛ فهما توضحان دور المصادر وحدود المراجعة وكيفية طلب التصحيح.</p>
           <p><Link href="/guides">مسارات الأدلة</Link> · <Link href="/articles">كل الأدلة</Link> · <Link href="/contact">التواصل والتصحيح</Link></p>
         </section>
+        <p style={{marginBlock:20}}><Link href="/topics" style={{textDecoration:"underline",color:"var(--brand)"}}>استكشف جميع فئات الموسوعة، بما فيها العلوم والصحة والتعليم والتاريخ والفنون ←</Link></p>
         <h2>تصفح التصنيفات المتاحة</h2>
         <div className="cluster-grid">
           {activeClusters.map((cluster) => <ClusterCard cluster={cluster} key={cluster.slug} />)}

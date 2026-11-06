@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { SiteIcon } from "./site-icon";
-const primary=[{href:"/knowledge",label:"الموسوعة"},{href:"/articles",label:"الأدلة"},{href:"/courses",label:"التعلّم"},{href:"/about",label:"عن لوسيل"}];
+const primary=[{href:"/topics",label:"التصنيفات"},{href:"/knowledge",label:"الموسوعة"},{href:"/articles",label:"الأدلة"},{href:"/courses",label:"التعلّم"},{href:"/about",label:"عن لوسيل"}];
 const additional=[{href:"/guides",label:"مسارات المهام"},{href:"/food-safety",label:"الصحة وسلامة الغذاء"},{href:"/team#team-directory",label:"التخصصات"},{href:"/categories/fawatir-alkahraba",label:"فواتير الكهرباء"},{href:"/categories/rokhas-alqiyada-walmoror",label:"القيادة والمرور"},{href:"/categories/shehadat-almilad-walsijil-almadani",label:"السجل المدني"},{href:"/categories/bawabat-misr-alraqmeya",label:"الخدمات الحكومية"},{href:"/categories/digital-life",label:"الحياة الرقمية"},{href:"/entities",label:"الجهات والخدمات"},{href:"/editorial-policy",label:"منهج التحرير"},{href:"/contact",label:"تواصل معنا"}];
 export function SiteHeader(){
  const [menuOpen,setMenuOpen]=useState(false);const pathname=usePathname();
