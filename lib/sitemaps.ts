@@ -27,6 +27,9 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: absoluteUrl("/"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "weekly", priority: 1.0 },
     { url: absoluteUrl("/food-safety"), lastModified: latestPublishedUpdate(foodSafetyArticles), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/knowledge"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/knowledge/roman-numerals"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/roman-numerals-education.svg")] },
+    { url: absoluteUrl("/knowledge/learning-objectives"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/bloom-learning-levels-original.svg")] },
     { url: absoluteUrl("/articles"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "weekly", priority: 0.9 },
     { url: absoluteUrl("/categories"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/entities"), lastModified: latestPublishedUpdate(articles.filter((article) => article.status === "published")), changeFrequency: "monthly", priority: 0.8 },
