@@ -67,7 +67,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 </table></div>}
 {section.note && <aside style={{borderRight:"4px solid #f59e0b",background:"#fffbeb",padding:18,borderRadius:7,marginTop:14}}><strong>تنبيه</strong><p>{section.note}</p></aside>}
 </section>)}
-<KnowledgeInteractiveTool kind={topic.tool}/>
+<KnowledgeInteractiveTool kind={topic.tool} slug={topic.slug}/>
 <section id="frequently-asked-questions" style={{marginBlock:32}}>
 <h2 style={{fontSize:26,fontWeight:800,marginBottom:15}}>أسئلة شائعة</h2>
 {topic.faq.map((faq,i)=><details key={i} style={{marginBlock:10,border:"1px solid #e2e8f0",padding:16,borderRadius:10}}>
