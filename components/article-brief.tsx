@@ -2,6 +2,7 @@ import { ArticleCard } from "./article-card";
 import Image from "next/image";
 import inlineMedia from "@/lib/article-inline-media.json";
 import { ElectricityCompanies, ElectricityInquiryDetail } from "./electricity-inquiry-detail";
+import { ElectricitySearchActions, hasElectricitySearchActions } from "./electricity-search-actions";
 import { guideIllustrations } from "@/lib/guide-illustrations";
 import Link from "next/link";
 import type { Article } from "@/lib/content";
@@ -37,6 +38,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
         </section>
 
         {article.slug === "electricity-bill-inquiry" && <ElectricityCompanies />}
+        {hasElectricitySearchActions(article.slug) && <ElectricitySearchActions slug={article.slug} />}
 
         {renderMedia(0)}
 
@@ -148,6 +150,7 @@ export function ArticleSidebar({ article, cluster, related }: { article: Article
           <ul className="toc-list">
             <li><a href="#quick-answer">الإجابة الفورية</a></li>
             <li><a href="#summary">الملخص</a></li>
+            {hasElectricitySearchActions(article.slug) && <li><a href="#electricity-search-actions">إجابات الخدمات الشائعة</a></li>}
             <li><a href="#steps">خطوات التنفيذ</a></li>
             {article.slug === "electricity-bill-inquiry" && <><li><a href="#electricity-companies">الشركات التسع</a></li><li><a href="#calculator">حاسبة الفاتورة</a></li><li><a href="#inquiry-problems">حل مشكلات الاستعلام</a></li></>}
             {article.steps?.length ? <li><a href="#checklist">قائمة متابعة التنفيذ</a></li> : null}
