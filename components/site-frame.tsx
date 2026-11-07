@@ -8,6 +8,7 @@ export function SiteFrame({ children, footer }: { children: ReactNode; footer: R
  const pathname = usePathname();
  const coursePlan = pathname.startsWith("/courses/6g-networks") ? "/courses/6g-networks#course-plan" : pathname.startsWith("/courses/3d-figures-volumes") ? "/courses/3d-figures-volumes#course-plan" : pathname.startsWith("/courses/5g") ? "/courses/5g#course-plan" : pathname.startsWith("/courses/learn-driving") ? "/courses/learn-driving#course-plan" : "/courses#available-courses";
  const isAcademy = pathname === "/courses" || pathname.startsWith("/courses/");
+ if (pathname === "/reality-lab" || pathname.startsWith("/reality-lab/")) return <>{children}</>;
  if (!isAcademy) return <><SiteHeader />{children}{footer}</>;
  return <><header className="academy-header"><div className="academy-width academy-header-inner">
  <Link href="/courses" className="academy-brand" aria-label="كورسات لوسيل - الرئيسية"><span className="academy-brand-icon"><SiteIcon name="book" width="23" height="23" /></span><span><strong>لوسيل <em>تعلّم</em></strong><small>مساحتك لخطوة جديدة</small></span></Link>
