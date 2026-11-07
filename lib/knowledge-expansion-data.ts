@@ -1,3 +1,4 @@
+import { learningMethodsTopics } from "./knowledge-learning-methods-batch-06";
 import { practicalStudyTopics } from "./knowledge-practical-studies-batch-05";
 import { educationBatchTopics } from "./knowledge-education-batch-04";
 import { editorialTopics } from "./knowledge-editorial-published";
@@ -23,13 +24,14 @@ export type KnowledgeTopic = {
   faq: { question: string; answer: string }[];
   sources: { label: string; url: string }[];
   related: { label: string; href: string }[];
-  tool: "crystal-guide" | "environmental-paths" | "major-choice" | "food-safety-checklist" | "immunity-facts" | "focus-week-plan" | "school-discipline-plan" | "writing-outline" | "game-lesson-builder" | "open-learning-checker" | "report-outline-builder" | "mindmap-builder";
+  tool: "crystal-guide" | "environmental-paths" | "major-choice" | "food-safety-checklist" | "immunity-facts" | "focus-week-plan" | "school-discipline-plan" | "writing-outline" | "game-lesson-builder" | "open-learning-checker" | "report-outline-builder" | "mindmap-builder" | "polya-problem-trainer" | "sq3r-reading-workbook";
 };
 export const knowledgeTopics: KnowledgeTopic[] = [
   ...editorialTopics,
   ...nextBatchTopics,
   ...educationBatchTopics,
   ...practicalStudyTopics,
+  ...learningMethodsTopics,
   {
     slug: "crystals-vs-precipitates",
     title: "البلورات والرواسب في المحاليل: الفرق وطرق التكوّن وتجربة آمنة",
