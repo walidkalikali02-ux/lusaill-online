@@ -37,7 +37,7 @@ const groups=sitemapGroups(),all=Object.values(groups).flat(),urls=all.map(r=>r.
 assert.equal(new Set(urls).size,urls.length,"Duplicate sitemap URLs");
 // Content completeness regression: empty articles are never published or inserted in XML.
 const {knowledgeTopics}=load("lib/knowledge-expansion-data.ts");
-assert.equal(knowledgeTopics.length,14,"Expected fourteen authored knowledge topics including Polya and SQ3R guides");
+assert.equal(knowledgeTopics.length,16,"Expected sixteen authored knowledge topics including research and creative lesson guides");
 for(const topic of knowledgeTopics){
  assert(topic.directAnswer.trim().length>=100,"Missing substantial direct answer: "+topic.slug);
  assert(topic.sections.length>=4,"Insufficient section architecture: "+topic.slug);
