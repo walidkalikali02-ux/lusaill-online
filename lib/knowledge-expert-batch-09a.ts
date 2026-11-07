@@ -168,7 +168,7 @@ export const expertBatchA: KnowledgeTopic[] = [
         "href": "/knowledge/crystals-vs-precipitates"
       }
     ],
-    "tool": "environmental-paths"
+    "tool": "expert-knowledge-check"
   },
   {
     "slug": "strong-argument-evidence-criteria",
@@ -393,7 +393,7 @@ export const expertBatchA: KnowledgeTopic[] = [
         "href": "/knowledge/mind-maps-for-studying"
       }
     ],
-    "tool": "research-evidence-matrix"
+    "tool": "expert-knowledge-check"
   },
   {
     "slug": "molecular-formula-empirical-formula-calculation",
@@ -604,7 +604,7 @@ export const expertBatchA: KnowledgeTopic[] = [
         "href": "/knowledge/separate-oil-water"
       }
     ],
-    "tool": "crystal-guide"
+    "tool": "expert-knowledge-check"
   },
   {
     "slug": "separate-oil-water",
@@ -813,7 +813,7 @@ export const expertBatchA: KnowledgeTopic[] = [
         "href": "/knowledge/molecular-formula-empirical-formula-calculation"
       }
     ],
-    "tool": "crystal-guide"
+    "tool": "expert-knowledge-check"
   },
   {
     "slug": "separate-iron-sand",
@@ -1018,6 +1018,6 @@ export const expertBatchA: KnowledgeTopic[] = [
         "href": "/knowledge/crystals-vs-precipitates"
       }
     ],
-    "tool": "crystal-guide"
+    "tool": "expert-knowledge-check"
   }
 ];
