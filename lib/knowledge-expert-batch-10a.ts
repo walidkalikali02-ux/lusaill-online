@@ -54,7 +54,7 @@ export const expertBatch10A: KnowledgeTopic[] = [
           "Subject: Meeting Request — Project Milestones. Dear Ms. Taylor, I hope you are well. I would like to schedule a 20-minute meeting to review the upcoming project milestones and discuss two decisions before next week's planning session. Would Tuesday at 10:00 a.m. or Wednesday at 2:00 p.m. (Doha time, UTC+3) work for you? I can send a short agenda in advance. Please feel free to suggest another time. Best regards, [Your name].",
           "هذا نموذج أصلي تعليمي؛ الأسماء والمواعيد افتراضية وليست دعوة فعلية. لاحظ أنه يحدد مدة وسببًا وقرارين مطلوبين ويترك حرية الاختيار. إذا كان المدير يستخدم تقويمًا مشتركًا، يمكن أن تسأل عن نافذة مناسبة بدل فرض موعد محدد. لا تكتب I need you to meet me tomorrow دون تفسير إذا لم تكن هناك ضرورة حقيقية."
         ],
-        "points": "في حالة التواصل داخل الفريق يمكن اختصار التحية قليلًا، لكن لا تستغنِ عن الغرض والقرار المطلوبين."
+        "points": ["في حالة التواصل داخل الفريق يمكن اختصار التحية قليلًا، لكن لا تستغنِ عن الغرض والقرار المطلوبين."]
       },
       {
         "id": "samples-client",
