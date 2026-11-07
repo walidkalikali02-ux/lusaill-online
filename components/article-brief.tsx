@@ -2,6 +2,7 @@ import { ArticleCard } from "./article-card";
 import Image from "next/image";
 import inlineMedia from "@/lib/article-inline-media.json";
 import { ElectricityCompanies, ElectricityInquiryDetail } from "./electricity-inquiry-detail";
+import { ElectricityQuickStart } from "./electricity-quick-start";
 import { guideIllustrations } from "@/lib/guide-illustrations";
 import Link from "next/link";
 import type { Article } from "@/lib/content";
@@ -36,7 +37,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
           )}
         </section>
 
-        {article.slug === "electricity-bill-inquiry" && <ElectricityCompanies />}
+        {article.slug === "electricity-bill-inquiry" && <><ElectricityQuickStart /><ElectricityCompanies /></>}
 
         {renderMedia(0)}
 
@@ -149,7 +150,7 @@ export function ArticleSidebar({ article, cluster, related }: { article: Article
             <li><a href="#quick-answer">الإجابة الفورية</a></li>
             <li><a href="#summary">الملخص</a></li>
             <li><a href="#steps">خطوات التنفيذ</a></li>
-            {article.slug === "electricity-bill-inquiry" && <><li><a href="#electricity-companies">الشركات التسع</a></li><li><a href="#calculator">حاسبة الفاتورة</a></li><li><a href="#inquiry-problems">حل مشكلات الاستعلام</a></li></>}
+            {article.slug === "electricity-bill-inquiry" && <><li><a href="#electricity-quick-start">ابدأ الاستعلام</a></li><li><a href="#electricity-companies">الشركات التسع</a></li><li><a href="#calculator">حاسبة الفاتورة</a></li><li><a href="#inquiry-problems">حل مشكلات الاستعلام</a></li></>}
             {article.steps?.length ? <li><a href="#checklist">قائمة متابعة التنفيذ</a></li> : null}
             {article.commonMistakes?.length ? <li><a href="#mistakes">الأخطاء الشائعة</a></li> : null}
             <li><a href="#sources">المصادر الرسمية</a></li>

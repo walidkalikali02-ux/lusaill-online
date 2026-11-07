@@ -21,7 +21,7 @@ const editionTitles: Record<string, string> = {
   "newborn-travel-document": "وثيقة سفر المولود 2026: الأوراق وحدود الاستخدام",
   "work-permit-abroad": "تصريح العمل 2026: الإصدار والتجديد للمصريين بالخارج",
 
-  "electricity-bill-inquiry": "استعلام فاتورة الكهرباء 2026: الشركات والحاسبة",
+  "electricity-bill-inquiry": "فاتورة الكهرباء في مصر: الاستعلام حسب الشركة",
   "insurance-number-inquiry": "الرقم التأميني 2026: الاستعلام بالرقم القومي في مصر",
   "insurance-last-period": "التأمينات 2026: الاستعلام عن آخر مدة مسجلة",
   "insurance-periods-wages": "التأمينات 2026: مراجعة مدد الاشتراك والأجور",
