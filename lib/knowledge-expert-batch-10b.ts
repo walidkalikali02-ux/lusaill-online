@@ -145,7 +145,7 @@ export const expertBatch10B: KnowledgeTopic[] = [
       },
       {
         "label": "UNFPA — Population Dynamics",
-        "url": "https://www.unfpa.org/population-matters"
+        "url": "https://www.unfpa.org/data/world-population-dashboard"
       }
     ],
     "related": [
