@@ -3,6 +3,16 @@ import Link from "next/link";
 import { pageAlternates } from "@/lib/page-alternates";
 export const metadata:Metadata={title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),robots:{index:true,follow:true}};
 const guides=[
+{href:"/knowledge/lightning-charge-separation-clouds",title:"كيف تتكون الشحنات في السحب؟",description:"دليل كهرباء العواصف والبرق والسلامة، بمخطط واختبار.",kind:"الفيزياء · البرق"},
+{href:"/knowledge/strong-argument-evidence-criteria",title:"كيف تميّز البرهان القوي؟",description:"8 معايير للمنطق والحجج والأدلة والمغالطات.",kind:"التفكير النقدي · الأدلة"},
+{href:"/knowledge/molecular-formula-empirical-formula-calculation",title:"الصيغة الجزيئية والصيغة الأولية",description:"شرح محلول للكتلة المولية والمضاعفات وحاسبة.",kind:"الكيمياء · صيغة جزيئية"},
+{href:"/knowledge/separate-oil-water",title:"كيف نفصل الزيت عن الماء؟",description:"فصل السوائل غير الممتزجة والسكب وقمع الفصل.",kind:"الكيمياء · فصل السوائل"},
+{href:"/knowledge/separate-iron-sand",title:"فصل برادة الحديد عن الرمل",description:"تجربة مغناطيسية آمنة وحدود الفصل.",kind:"الكيمياء · فصل المخاليط"},
+{href:"/knowledge/meiosis-crossing-over-prophase-i",title:"العبور الوراثي في الطور التمهيدي الأول",description:"إعادة تركيب DNA والكيازما وأمثلة الأليلات.",kind:"الأحياء · الوراثة"},
+{href:"/knowledge/ants-acacia-mutualism",title:"النمل وأشجار السنط: كيف يحدث التكافل؟",description:"الأشواك المجوفة والرحيق والدفاع البيئي.",kind:"البيئة · المنفعة المتبادلة"},
+{href:"/knowledge/digit-versus-number",title:"الفرق بين الرقم والعدد",description:"القيمة المكانية والأرقام العشرية وتمارين.",kind:"رياضيات · مفاهيم"},
+{href:"/knowledge/probability-sample-space-outcomes",title:"النواتج الممكنة وفضاء العينة",description:"العملة والنرد ومخططات الشجرة وحاسبة.",kind:"الاحتمالات · فضاء العينة"},
+{href:"/knowledge/energy-flow-ecosystem",title:"انتقال الطاقة في النظام البيئي",description:"هرم الطاقة والشبكات الغذائية وكفاءة الانتقال.",kind:"علم البيئة · هرم الطاقة"},
 {href:"/knowledge/pie-chart-proportional-circle-guide",title:"تمثيل البيانات بالدائرة النسبية",description:"خطوات حساب النسب وزوايا القطاعات مع حاسبة رسم تفاعلية.",kind:"الإحصاء · حاسبة زوايا"},
 {href:"/knowledge/how-to-find-a-job",title:"كيف تحصل على وظيفة؟",description:"دليل البحث والتقديم الآمن والمقابلات ومتعقب طلبات قابل للتصدير.",kind:"التوظيف · متعقب CSV"},
 {href:"/knowledge/eight-steps-research-process",title:"الخطوات الثماني للعملية البحثية",description:"دليل بحث موثق مع مصفوفة ادعاءات وأدلة تفاعلية وخطة عملية.",kind:"البحث العلمي · مصفوفة أدلة"},
