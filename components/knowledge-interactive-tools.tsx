@@ -4,6 +4,7 @@ import type { KnowledgeTopic } from "@/lib/knowledge-expansion-data";
 import { GameLessonBuilder, OpenLearningChecker } from "./knowledge-education-tools";
 import { ReportOutlineBuilder, MindMapBuilder } from "./knowledge-practical-tools";
 import { PolyaTrainer, SQ3RWorkbook } from "./knowledge-learning-methods-tools";
+import { ResearchEvidenceMatrix, CreativeLessonPlanner } from "./knowledge-research-education-tools";
 
 const cardStyle={border:"1px solid #cbd5e1",background:"#f8fafc",padding:24,borderRadius:16,marginBlock:28} as const;
 
@@ -183,5 +184,7 @@ if(kind==="report-outline-builder")return <ReportOutlineBuilder/>;
 if(kind==="mindmap-builder")return <MindMapBuilder/>;
 if(kind==="polya-problem-trainer")return <PolyaTrainer/>;
 if(kind==="sq3r-reading-workbook")return <SQ3RWorkbook/>;
+if(kind==="research-evidence-matrix")return <ResearchEvidenceMatrix/>;
+if(kind==="creative-lesson-planner")return <CreativeLessonPlanner/>;
 return <MajorChoice/>;
 }
