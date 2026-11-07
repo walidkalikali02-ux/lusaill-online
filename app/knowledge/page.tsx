@@ -3,6 +3,8 @@ import Link from "next/link";
 import { pageAlternates } from "@/lib/page-alternates";
 export const metadata:Metadata={title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),robots:{index:true,follow:true}};
 const guides=[
+{href:"/knowledge/pie-chart-proportional-circle-guide",title:"تمثيل البيانات بالدائرة النسبية",description:"خطوات حساب النسب وزوايا القطاعات مع حاسبة رسم تفاعلية.",kind:"الإحصاء · حاسبة زوايا"},
+{href:"/knowledge/how-to-find-a-job",title:"كيف تحصل على وظيفة؟",description:"دليل البحث والتقديم الآمن والمقابلات ومتعقب طلبات قابل للتصدير.",kind:"التوظيف · متعقب CSV"},
 {href:"/knowledge/eight-steps-research-process",title:"الخطوات الثماني للعملية البحثية",description:"دليل بحث موثق مع مصفوفة ادعاءات وأدلة تفاعلية وخطة عملية.",kind:"البحث العلمي · مصفوفة أدلة"},
 {href:"/knowledge/creative-lesson-design",title:"تصميم درس إبداعي في 9 خطوات",description:"ربط الأهداف والتقييم والأنشطة مع مولد خطة 30 أو 45 أو 60 دقيقة.",kind:"التدريس · أداة خطة درس"},
 {href:"/knowledge/four-steps-math-problem-solving",title:"الخطوات الأربع لحل المسألة الرياضية",description:"طريقة بوليا مع أمثلة محلولة وأداة تدريب للمسائل خطوة بخطوة.",kind:"رياضيات · تدريب تفاعلي"},
