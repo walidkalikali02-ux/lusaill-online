@@ -3,6 +3,8 @@ import Link from "next/link";
 import { pageAlternates } from "@/lib/page-alternates";
 export const metadata:Metadata={title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),robots:{index:true,follow:true}};
 const guides=[
+{href:"/knowledge/four-steps-math-problem-solving",title:"الخطوات الأربع لحل المسألة الرياضية",description:"طريقة بوليا مع أمثلة محلولة وأداة تدريب للمسائل خطوة بخطوة.",kind:"رياضيات · تدريب تفاعلي"},
+{href:"/knowledge/sq3r-deep-reading",title:"الخطوات الخمس للقراءة المتعمقة",description:"طريقة SQ3R مع أمثلة وأسئلة ونموذج استرجاع ومراجعة تفاعلي.",kind:"دراسة وفهم · دفتر SQ3R"},
 {href:"/knowledge/how-to-write-a-report",title:"كيفية كتابة تقرير احترافي",description:"دليل التقرير الإداري والأكاديمي مع أمثلة ومولّد مخطط عملي.",kind:"كتابة التقارير · أداة أصلية"},
 {href:"/knowledge/mind-maps-for-studying",title:"الخرائط الذهنية للمذاكرة",description:"طريقة وأمثلة ومحرر خريطة ذهنية مع اختبار الاسترجاع.",kind:"مهارات الدراسة · أداة أصلية"},
 {href:"/knowledge/game-based-learning-classroom",title:"التعلم بالألعاب في الفصل الدراسي",description:"دليل بالأدلة وأمثلة قياس التعلم ومولّد خطة لعبة تعليمية.",kind:"التربية · خطة درس تفاعلية"},
