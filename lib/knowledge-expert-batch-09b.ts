@@ -195,7 +195,7 @@ export const expertBatchB: KnowledgeTopic[] = [
         "href": "/knowledge/energy-flow-ecosystem"
       }
     ],
-    "tool": "expert-quiz-meiosis"
+    "tool": "expert-knowledge-check"
   },
   {
     "slug": "ants-acacia-mutualism",
@@ -380,7 +380,7 @@ export const expertBatchB: KnowledgeTopic[] = [
         "href": "/knowledge/meiosis-crossing-over-prophase-i"
       }
     ],
-    "tool": "expert-quiz-mutualism"
+    "tool": "expert-knowledge-check"
   },
   {
     "slug": "digit-versus-number",
@@ -582,7 +582,7 @@ export const expertBatchB: KnowledgeTopic[] = [
         "href": "/knowledge/probability-sample-space-outcomes"
       }
     ],
-    "tool": "expert-quiz-digits"
+    "tool": "expert-knowledge-check"
   },
   {
     "slug": "probability-sample-space-outcomes",
@@ -817,7 +817,7 @@ export const expertBatchB: KnowledgeTopic[] = [
         "href": "/knowledge/pie-chart-proportional-circle-guide"
       }
     ],
-    "tool": "expert-quiz-probability"
+    "tool": "expert-knowledge-check"
   },
   {
     "slug": "energy-flow-ecosystem",
@@ -1056,6 +1056,6 @@ export const expertBatchB: KnowledgeTopic[] = [
         "href": "/knowledge/eight-steps-research-process"
       }
     ],
-    "tool": "expert-quiz-energy"
+    "tool": "expert-knowledge-check"
   }
 ];
