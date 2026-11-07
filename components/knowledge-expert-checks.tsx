@@ -1,6 +1,6 @@
+"use client";
 import {expert10Questions} from "@/lib/knowledge-expert-batch10-quiz-data";
 import {ConditionalProbabilityCalculator,PopulationChangeCalculator,TrainingGapCalculator} from "./knowledge-expert-batch10-calculators";
-"use client";
 import { useState } from "react";
 
 type QA={question:string,options:[string,string,string],correct:0|1|2,why:string};
