@@ -37,7 +37,7 @@ const groups=sitemapGroups(),all=Object.values(groups).flat(),urls=all.map(r=>r.
 assert.equal(new Set(urls).size,urls.length,"Duplicate sitemap URLs");
 // Content completeness regression: empty articles are never published or inserted in XML.
 const {knowledgeTopics}=load("lib/knowledge-expansion-data.ts");
-assert.equal(knowledgeTopics.length,28,"Expected 28 authored knowledge topics including ten expert reference guides");
+assert.equal(knowledgeTopics.length,38,"Expected 38 authored knowledge topics including twenty expert reference guides");
 const expertBatch = [...load("lib/knowledge-expert-batch-09a.ts").expertBatchA,...load("lib/knowledge-expert-batch-09b.ts").expertBatchB];
 assert.equal(expertBatch.length,10,"Ten expert guides required");
 assert.equal(new Set(expertBatch.map(t=>t.slug)).size,10,"Expert article slugs must be unique");
@@ -49,6 +49,20 @@ for (const t of expertBatch) {
   assert(t.tool==="expert-knowledge-check","Missing matching interactive quiz: "+t.slug);
   assert(existsSync("public"+t.image),"Missing educational illustration: "+t.slug);
   assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Missing article in sitemap: "+t.slug);
+}
+const newExpertBatch10=[...load("lib/knowledge-expert-batch-10a.ts").expertBatch10A,...load("lib/knowledge-expert-batch-10b.ts").expertBatch10B,...load("lib/knowledge-expert-batch-10c.ts").expertBatch10C,...load("lib/knowledge-expert-batch-10d.ts").expertBatch10D];
+const quiz10=load("lib/knowledge-expert-batch10-quiz-data.ts").expert10Questions;
+assert.equal(newExpertBatch10.length,10,"Ten new long-form expert guides required");
+assert.equal(new Set(newExpertBatch10.map(t=>t.slug)).size,10,"Duplicate new expert slug");
+for(const t of newExpertBatch10){
+ const body=[t.intro,t.directAnswer,...t.sections.flatMap(s=>[...(s.paragraphs||[]),...(s.points||[]),...(s.table?.rows||[]).flat()]),...t.faq.flatMap(a=>[a.question,a.answer])].join(" ");
+ const words=body.trim().split(/\s+/).length;
+ assert(words>=1000,"New expert article must contain 1000 meaningful words: "+t.slug+" "+words);
+ assert(t.sections.length>=8&&t.faq.length>=5&&t.sources.length>=3,"New expert structure incomplete: "+t.slug);
+ assert(t.tool==="expert-knowledge-check","No learning check: "+t.slug);
+ assert(quiz10[t.slug]?.qa.length===2,"Missing quiz content: "+t.slug);
+ assert(existsSync("public"+t.image),"Missing original infographic: "+t.slug);
+ assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Missing article in sitemap: "+t.slug);
 }
 for(const topic of knowledgeTopics){
  assert(topic.directAnswer.trim().length>=100,"Missing substantial direct answer: "+topic.slug);
