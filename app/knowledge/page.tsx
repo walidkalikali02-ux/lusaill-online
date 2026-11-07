@@ -3,6 +3,16 @@ import Link from "next/link";
 import { pageAlternates } from "@/lib/page-alternates";
 export const metadata:Metadata={title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),robots:{index:true,follow:true}};
 const guides=[
+{href:"/knowledge/meeting-request-email-english",title:"إيميل تحديد موعد اجتماع بالإنجليزي",description:"نماذج مهنية جاهزة للتعديل ورسائل متابعة وأخطاء يجب تجنبها.",kind:"الإنجليزية · نماذج"},
+{href:"/knowledge/conditional-probability-explained",title:"الاحتمال المشروط: قانون وأمثلة",description:"فهم المقام المشروط والاستقلال وجداول التكرار مع حاسبة.",kind:"الإحصاء · حاسبة"},
+{href:"/knowledge/population-growth-demographic-transition",title:"النمو السكاني والتحول الديموغرافي",description:"معادلة السكان والزيادة الطبيعية والهجرة وأداة حساب.",kind:"السكان · أداة"},
+{href:"/knowledge/first-year-university-adjustment",title:"التكيف مع الحياة الجامعية",description:"خطة الشهر الأول للدراسة والوقت والميزانية والدعم.",kind:"التعليم · خطة"},
+{href:"/knowledge/water-pollution-causes-treatment",title:"تلوث المياه وأسبابه ومعالجته",description:"مصادر التلوث والمسارات والمراقبة وإرشادات السلامة.",kind:"البيئة · مصادر"},
+{href:"/knowledge/work-stress-prevention-management",title:"ضغوط العمل وإدارتها",description:"المخاطر المهنية والحلول المؤسسية ودعم العاملين.",kind:"العمل · سلامة"},
+{href:"/knowledge/teach-children-reading-writing-foundations",title:"تأسيس الطفل في القراءة والكتابة",description:"الأصوات والحروف وفك الرموز والإملاء والفهم.",kind:"التعليم المبكر · نشاط"},
+{href:"/knowledge/safe-simple-chemistry-experiments",title:"تجارب كيميائية بسيطة وآمنة",description:"خمسة أنشطة توضيحية مع قواعد السلامة وتوثيق الملاحظات.",kind:"الكيمياء · تجارب"},
+{href:"/knowledge/training-needs-analysis",title:"تحديد الاحتياجات التدريبية للموظفين",description:"فجوة المهارة ومصفوفة الأولويات وحاسبة تدريبية.",kind:"الموارد البشرية · أداة"},
+{href:"/knowledge/soil-formation-five-factors",title:"كيف تتكوّن التربة؟",description:"العوامل الخمسة والمادة الأم والطبقات والملمس.",kind:"علوم الأرض · خريطة"},
 {href:"/knowledge/lightning-charge-separation-clouds",title:"كيف تتكون الشحنات في السحب؟",description:"دليل كهرباء العواصف والبرق والسلامة، بمخطط واختبار.",kind:"الفيزياء · البرق"},
 {href:"/knowledge/strong-argument-evidence-criteria",title:"كيف تميّز البرهان القوي؟",description:"8 معايير للمنطق والحجج والأدلة والمغالطات.",kind:"التفكير النقدي · الأدلة"},
 {href:"/knowledge/molecular-formula-empirical-formula-calculation",title:"الصيغة الجزيئية والصيغة الأولية",description:"شرح محلول للكتلة المولية والمضاعفات وحاسبة.",kind:"الكيمياء · صيغة جزيئية"},
