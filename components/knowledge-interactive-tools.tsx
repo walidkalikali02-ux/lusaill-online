@@ -6,6 +6,7 @@ import { ReportOutlineBuilder, MindMapBuilder } from "./knowledge-practical-tool
 import { PolyaTrainer, SQ3RWorkbook } from "./knowledge-learning-methods-tools";
 import { ResearchEvidenceMatrix, CreativeLessonPlanner } from "./knowledge-research-education-tools";
 import { PieAngleCalculator, JobApplicationTracker } from "./knowledge-data-career-tools";
+import { ExpertKnowledgeCheck } from "./knowledge-expert-checks";
 
 const cardStyle={border:"1px solid #cbd5e1",background:"#f8fafc",padding:24,borderRadius:16,marginBlock:28} as const;
 
@@ -171,7 +172,7 @@ return <section id="interactive-tool" style={cardStyle} aria-labelledby="writing
 </section>;
 }
 
-export function KnowledgeInteractiveTool({kind}: {kind:KnowledgeTopic["tool"]}){
+export function KnowledgeInteractiveTool({kind,slug}: {kind:KnowledgeTopic["tool"];slug?:string}){
 if(kind==="crystal-guide")return <CrystalGuide/>;
 if(kind==="environmental-paths")return <EnvironmentalPaths/>;
 if(kind==="food-safety-checklist")return <FoodSafetyChecklist/>;
@@ -189,5 +190,6 @@ if(kind==="research-evidence-matrix")return <ResearchEvidenceMatrix/>;
 if(kind==="creative-lesson-planner")return <CreativeLessonPlanner/>;
 if(kind==="pie-angle-calculator")return <PieAngleCalculator/>;
 if(kind==="job-application-tracker")return <JobApplicationTracker/>;
+if(kind==="expert-knowledge-check" && slug)return <ExpertKnowledgeCheck slug={slug}/>;
 return <MajorChoice/>;
 }
