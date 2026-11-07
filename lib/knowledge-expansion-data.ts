@@ -1,3 +1,5 @@
+import { expertBatchA } from "./knowledge-expert-batch-09a";
+import { expertBatchB } from "./knowledge-expert-batch-09b";
 import { dataAndCareerTopics } from "./knowledge-data-career-batch-08";
 import { researchEducationTopics } from "./knowledge-research-education-batch-07";
 import { learningMethodsTopics } from "./knowledge-learning-methods-batch-06";
@@ -26,7 +28,7 @@ export type KnowledgeTopic = {
   faq: { question: string; answer: string }[];
   sources: { label: string; url: string }[];
   related: { label: string; href: string }[];
-  tool: "crystal-guide" | "environmental-paths" | "major-choice" | "food-safety-checklist" | "immunity-facts" | "focus-week-plan" | "school-discipline-plan" | "writing-outline" | "game-lesson-builder" | "open-learning-checker" | "report-outline-builder" | "mindmap-builder" | "polya-problem-trainer" | "sq3r-reading-workbook" | "research-evidence-matrix" | "creative-lesson-planner" | "pie-angle-calculator" | "job-application-tracker";
+  tool: "crystal-guide" | "environmental-paths" | "major-choice" | "food-safety-checklist" | "immunity-facts" | "focus-week-plan" | "school-discipline-plan" | "writing-outline" | "game-lesson-builder" | "open-learning-checker" | "report-outline-builder" | "mindmap-builder" | "polya-problem-trainer" | "sq3r-reading-workbook" | "research-evidence-matrix" | "creative-lesson-planner" | "pie-angle-calculator" | "job-application-tracker" | "expert-knowledge-check";
 };
 export const knowledgeTopics: KnowledgeTopic[] = [
   ...editorialTopics,
@@ -36,6 +38,8 @@ export const knowledgeTopics: KnowledgeTopic[] = [
   ...learningMethodsTopics,
   ...researchEducationTopics,
   ...dataAndCareerTopics,
+  ...expertBatchA,
+  ...expertBatchB,
   {
     slug: "crystals-vs-precipitates",
     title: "البلورات والرواسب في المحاليل: الفرق وطرق التكوّن وتجربة آمنة",
