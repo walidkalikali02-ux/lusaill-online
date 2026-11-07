@@ -115,7 +115,7 @@ type RawBranch={served:number;requested:number;lostStock:number;lostQueue:number
 type OneRun={daily:LabDay[];branches:Record<BranchId,RawBranch>;requested:number;served:number;lostStock:number;lostQueue:number;revenue:number;waits:number[];roastKg:number;contribution:number};
 function one(input:LabInput,rep:number):OneRun {
   const rand=seeded((input.seed+rep*179426549)>>>0);
-  const bins=Object.fromEntries(BRANCHES.map(b=>[b.id,{served:0,requested:0,lostStock:0,lostQueue:0,revenue:0,waits:[],endStock:0}])) as Record<BranchId,RawBranch>;
+  const bins=Object.fromEntries(BRANCHES.map(b=>[b.id,{served:0,requested:0,lostStock:0,lostQueue:0,revenue:0,waits:[],endStock:0}])) as unknown as Record<BranchId,RawBranch>;
   const branchStock=Object.fromEntries(BRANCHES.map(b=>[b.id,b.stock])) as Record<BranchId,number>;
   const deliveries:{id:BranchId;due:number;kg:number}[]=[];
   let greenStock=160, warehouse=22, greenDeliveryDay=-1, roastedTotal=0;
