@@ -1,8 +1,11 @@
+import {expert10Questions} from "@/lib/knowledge-expert-batch10-quiz-data";
+import {ConditionalProbabilityCalculator,PopulationChangeCalculator,TrainingGapCalculator} from "./knowledge-expert-batch10-calculators";
 "use client";
 import { useState } from "react";
 
 type QA={question:string,options:[string,string,string],correct:0|1|2,why:string};
 const items:Record<string,{heading:string,qa:QA[]}>={
+...expert10Questions,
 "lightning-charge-separation-clouds":{heading:"اختبر فهمك لكهرباء السحب",qa:[
 {question:"ما العملية الرئيسية المرتبطة بفصل الشحنات في السحب الرعدية؟",options:["اصطدام جسيمات الجليد والغراوبل مع تيارات الهواء","احتكاك السحابة بالأرض مباشرة","ألوان السحابة الداكنة"],correct:0,why:"تنقل التصادمات في ظروف محددة شحنات بين الجسيمات؛ وتساعد التيارات على انفصال المناطق المشحونة."},
 {question:"أين يجب الاحتماء عند سماع الرعد؟",options:["تحت شجرة منفردة","داخل مبنى مغلق مناسب أو سيارة سقفها صلب","في مكان مكشوف لأن المطر لم يصل بعد"],correct:1,why:"الصواعق قد تصل إلى أماكن لا تمطر فيها مباشرة، والأماكن المكشوفة أو الأشجار لا توفر حماية."}
@@ -98,5 +101,8 @@ return <section id="interactive-tool" style={wrap} aria-labelledby="expert-learn
 {slug==="molecular-formula-empirical-formula-calculation"?<MolecularCalculator/>:null}
 {slug==="probability-sample-space-outcomes"?<ProbabilityCalculator/>:null}
 {slug==="energy-flow-ecosystem"?<EnergyCalculator/>:null}
+{slug==="conditional-probability-explained"?<ConditionalProbabilityCalculator/>:null}
+{slug==="population-growth-demographic-transition"?<PopulationChangeCalculator/>:null}
+{slug==="training-needs-analysis"?<TrainingGapCalculator/>:null}
 </section>;
 }
