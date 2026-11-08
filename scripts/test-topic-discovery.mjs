@@ -37,7 +37,7 @@ const groups=sitemapGroups(),all=Object.values(groups).flat(),urls=all.map(r=>r.
 assert.equal(new Set(urls).size,urls.length,"Duplicate sitemap URLs");
 // Content completeness regression: empty articles are never published or inserted in XML.
 const {knowledgeTopics}=load("lib/knowledge-expansion-data.ts");
-assert.equal(knowledgeTopics.length,38,"Expected 38 authored knowledge topics including twenty expert reference guides");
+assert.equal(knowledgeTopics.length,48,"Expected 48 authored knowledge topics including thirty expert reference guides");
 const expertBatch = [...load("lib/knowledge-expert-batch-09a.ts").expertBatchA,...load("lib/knowledge-expert-batch-09b.ts").expertBatchB];
 assert.equal(expertBatch.length,10,"Ten expert guides required");
 assert.equal(new Set(expertBatch.map(t=>t.slug)).size,10,"Expert article slugs must be unique");
@@ -63,6 +63,20 @@ for(const t of newExpertBatch10){
  assert(quiz10[t.slug]?.qa.length===2,"Missing quiz content: "+t.slug);
  assert(existsSync("public"+t.image),"Missing original infographic: "+t.slug);
  assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Missing article in sitemap: "+t.slug);
+}
+const batch11=[...load("lib/knowledge-batch-11a.ts").batch11A,...load("lib/knowledge-batch-11b.ts").batch11B,...load("lib/knowledge-batch-11c.ts").batch11C,...load("lib/knowledge-batch-11d.ts").batch11D];
+const quiz11=load("lib/knowledge-batch-11-quiz.ts").batch11Questions;
+assert.equal(batch11.length,10,"Exactly ten expert guides required in batch 11");
+assert.equal(new Set(batch11.map(t=>t.slug)).size,10,"Duplicate slug in batch 11");
+for(const article of batch11){
+ const body=[article.intro,article.directAnswer,...article.sections.flatMap(s=>[...(s.paragraphs||[]),...(s.points||[]),...(s.table?.rows||[]).flat()]),...article.faq.flatMap(a=>[a.question,a.answer])].join(" ");
+ const words=body.trim().split(/\s+/).length;
+ assert(words>=1000,"Batch 11 article shorter than 1000 words: "+article.slug+" "+words);
+ assert(article.sections.length>=8&&article.faq.length>=5&&article.sources.length>=3,"Incomplete expert structure: "+article.slug);
+ assert(article.tool==="expert-knowledge-check","No guided knowledge check: "+article.slug);
+ assert(quiz11[article.slug]?.qa.length===2,"Missing two-question quiz: "+article.slug);
+ assert(existsSync("public"+article.image),"Missing original infographic: "+article.slug);
+ assert(urls.includes("https://www.lusaill.online/knowledge/"+article.slug),"Missing indexable article in sitemap: "+article.slug);
 }
 for(const topic of knowledgeTopics){
  assert(topic.directAnswer.trim().length>=100,"Missing substantial direct answer: "+topic.slug);
