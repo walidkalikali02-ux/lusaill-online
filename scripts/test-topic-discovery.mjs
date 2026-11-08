@@ -84,7 +84,7 @@ const quiz12=load("lib/knowledge-batch-12-quiz.ts").batch12Questions;
 assert.equal(batch12.length,10,"Exactly ten guides required for batch 12");
 assert.equal(new Set(batch12.map(t=>t.slug)).size,10,"Batch 12 slugs unique");
 for(const article of batch12){
- const words=[article.intro,article.directAnswer,...article.sections.flatMap(s=>[...(s.paragraphs||[]),...(s.points||[])]),...article.faq.flatMap(x=>[x.question,x.answer])].join(" ").trim().split(/\\s+/).length;
+ const words=[article.intro,article.directAnswer,...article.sections.flatMap(s=>[...(s.paragraphs||[]),...(s.points||[])]),...article.faq.flatMap(x=>[x.question,x.answer])].join(" ").trim().split(/\s+/).length;
  assert(words>=1000,"Expert guide shorter than 1000 words: "+article.slug+" "+words);
  assert(article.sections.length>=8&&article.faq.length>=5&&article.sources.length>=3,"Incomplete batch 12 article: "+article.slug);
  assert(article.tool==="expert-knowledge-check"&&quiz12[article.slug]?.qa.length===2,"Missing knowledge test: "+article.slug);
