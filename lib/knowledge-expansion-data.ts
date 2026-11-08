@@ -1,3 +1,7 @@
+import { batch11A } from "./knowledge-batch-11a";
+import { batch11B } from "./knowledge-batch-11b";
+import { batch11C } from "./knowledge-batch-11c";
+import { batch11D } from "./knowledge-batch-11d";
 import { expertBatch10A } from "./knowledge-expert-batch-10a";
 import { expertBatch10B } from "./knowledge-expert-batch-10b";
 import { expertBatch10C } from "./knowledge-expert-batch-10c";
@@ -48,6 +52,10 @@ export const knowledgeTopics: KnowledgeTopic[] = [
   ...expertBatch10B,
   ...expertBatch10C,
   ...expertBatch10D,
+  ...batch11A,
+  ...batch11B,
+  ...batch11C,
+  ...batch11D,
   {
     slug: "crystals-vs-precipitates",
     title: "البلورات والرواسب في المحاليل: الفرق وطرق التكوّن وتجربة آمنة",
