@@ -1,3 +1,5 @@
+import { batch13A } from "./knowledge-batch-13a";
+import { batch13B } from "./knowledge-batch-13b";
 import { batch12A } from "./knowledge-batch-12a";
 import { batch12B } from "./knowledge-batch-12b";
 import { batch11A } from "./knowledge-batch-11a";
@@ -60,6 +62,8 @@ export const knowledgeTopics: KnowledgeTopic[] = [
   ...batch11D,
   ...batch12A,
   ...batch12B,
+  ...batch13A,
+  ...batch13B,
   {
     slug: "crystals-vs-precipitates",
     title: "البلورات والرواسب في المحاليل: الفرق وطرق التكوّن وتجربة آمنة",

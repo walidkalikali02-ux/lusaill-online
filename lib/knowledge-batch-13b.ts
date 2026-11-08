@@ -1,5 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
-// Batch 13 part B: original Arabic research ethics, publishing and evidence guides.
+// Expert Arabic educational guide collection, published 2026-11-08.
 export const batch13B: KnowledgeTopic[] = [
   {
     "slug": "research-ethics-informed-consent-integrity",
@@ -117,7 +117,20 @@ export const batch13B: KnowledgeTopic[] = [
         "url": "https://www.unesco.org/en/legal-affairs/recommendation-open-science"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "تحكيم الأبحاث والمجلات المفترسة: كيف تقيّم المجلة العلمية قبل الاستشهاد أو النشر؟",
+        "href": "/knowledge/peer-review-predatory-journals-how-to-check"
+      },
+      {
+        "label": "القيمة الاحتمالية P-value: معناها وأخطاء الدلالة الإحصائية مع أمثلة واضحة",
+        "href": "/knowledge/p-value-statistical-significance-errors"
+      },
+      {
+        "label": "صياغة الفرضية العلمية",
+        "href": "/knowledge/scientific-hypothesis-variables"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -236,7 +249,20 @@ export const batch13B: KnowledgeTopic[] = [
         "url": "https://ori.hhs.gov/rcr-casebook-research-misconduct"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "إعادة إنتاج نتائج البحث والعلم المفتوح: التوثيق والتسجيل المسبق والبيانات القابلة للمراجعة",
+        "href": "/knowledge/research-reproducibility-open-science-preregistration"
+      },
+      {
+        "label": "أخلاقيات البحث العلمي: الموافقة المستنيرة والخصوصية والنزاهة وحماية المشاركين",
+        "href": "/knowledge/research-ethics-informed-consent-integrity"
+      },
+      {
+        "label": "قراءة الدراسة العلمية وتقييمها",
+        "href": "/knowledge/how-to-read-scientific-study-results"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -355,7 +381,20 @@ export const batch13B: KnowledgeTopic[] = [
         "url": "https://icmje.org/recommendations/"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "المصادر الأولية والثانوية والثالثية: الفرق وكيف تختار مرجعًا موثوقًا لبحثك",
+        "href": "/knowledge/primary-secondary-tertiary-sources-research"
+      },
+      {
+        "label": "تحكيم الأبحاث والمجلات المفترسة: كيف تقيّم المجلة العلمية قبل الاستشهاد أو النشر؟",
+        "href": "/knowledge/peer-review-predatory-journals-how-to-check"
+      },
+      {
+        "label": "الخطوات الثماني للعملية البحثية",
+        "href": "/knowledge/eight-steps-research-process"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -474,7 +513,20 @@ export const batch13B: KnowledgeTopic[] = [
         "url": "https://libguides.usc.edu/evaluate/scholarlyarticles"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "الدراسة المقطعية والأترابية والحالات والشواهد: كيف تختلف التصاميم الرصدية؟",
+        "href": "/knowledge/cross-sectional-cohort-case-control-studies"
+      },
+      {
+        "label": "إعادة إنتاج نتائج البحث والعلم المفتوح: التوثيق والتسجيل المسبق والبيانات القابلة للمراجعة",
+        "href": "/knowledge/research-reproducibility-open-science-preregistration"
+      },
+      {
+        "label": "التحقق من صحة المعلومات على الإنترنت",
+        "href": "/knowledge/verify-online-information-critical-thinking"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -593,7 +645,20 @@ export const batch13B: KnowledgeTopic[] = [
         "url": "https://www.equator-network.org/"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "البحث الكمي والنوعي والمختلط: الفروق والمناهج والأمثلة وكيف تختار التصميم",
+        "href": "/knowledge/qualitative-vs-quantitative-mixed-research"
+      },
+      {
+        "label": "المصادر الأولية والثانوية والثالثية: الفرق وكيف تختار مرجعًا موثوقًا لبحثك",
+        "href": "/knowledge/primary-secondary-tertiary-sources-research"
+      },
+      {
+        "label": "الفرق بين الارتباط والسببية",
+        "href": "/knowledge/correlation-vs-causation-examples"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

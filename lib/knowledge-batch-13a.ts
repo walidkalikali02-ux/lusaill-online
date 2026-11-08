@@ -1,5 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
-// Batch 13 part A: five original long-form research-methodology guides, 2026-11-08.
+// Expert Arabic educational guide collection, published 2026-11-08.
 export const batch13A: KnowledgeTopic[] = [
   {
     "slug": "qualitative-vs-quantitative-mixed-research",
@@ -117,7 +117,20 @@ export const batch13A: KnowledgeTopic[] = [
         "url": "https://openstax.org/books/introductory-statistics-2e/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "صياغة سؤال البحث العلمي: شرح PICO وتحويل الموضوع العام إلى سؤال قابل للدراسة",
+        "href": "/knowledge/formulate-research-question-pico-framework"
+      },
+      {
+        "label": "الدراسة المقطعية والأترابية والحالات والشواهد: كيف تختلف التصاميم الرصدية؟",
+        "href": "/knowledge/cross-sectional-cohort-case-control-studies"
+      },
+      {
+        "label": "كيف تقرأ دراسة علمية وتقيّم نتائجها؟",
+        "href": "/knowledge/how-to-read-scientific-study-results"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -236,7 +249,20 @@ export const batch13A: KnowledgeTopic[] = [
         "url": "https://libguides.usc.edu/evaluate/scholarlyarticles"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "المراجعة المنهجية والتحليل التلوي: الفرق وخطوات البحث وتقييم قوة الأدلة",
+        "href": "/knowledge/systematic-review-vs-meta-analysis-guide"
+      },
+      {
+        "label": "البحث الكمي والنوعي والمختلط: الفروق والمناهج والأمثلة وكيف تختار التصميم",
+        "href": "/knowledge/qualitative-vs-quantitative-mixed-research"
+      },
+      {
+        "label": "الفرضية العلمية والمتغيرات",
+        "href": "/knowledge/scientific-hypothesis-variables"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -355,7 +381,20 @@ export const batch13A: KnowledgeTopic[] = [
         "url": "https://www.equator-network.org/"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "فترة الثقة 95%: ما معناها وكيف تُحسب وتُفسَّر بأمثلة إحصائية؟",
+        "href": "/knowledge/confidence-interval-95-percent-explained"
+      },
+      {
+        "label": "صياغة سؤال البحث العلمي: شرح PICO وتحويل الموضوع العام إلى سؤال قابل للدراسة",
+        "href": "/knowledge/formulate-research-question-pico-framework"
+      },
+      {
+        "label": "كيف تقرأ دراسة علمية وتقيّم نتائجها؟",
+        "href": "/knowledge/how-to-read-scientific-study-results"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -470,7 +509,20 @@ export const batch13A: KnowledgeTopic[] = [
         "url": "https://openstax.org/books/introductory-statistics-2e/pages/preface"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "القيمة الاحتمالية P-value: معناها وأخطاء الدلالة الإحصائية مع أمثلة واضحة",
+        "href": "/knowledge/p-value-statistical-significance-errors"
+      },
+      {
+        "label": "المراجعة المنهجية والتحليل التلوي: الفرق وخطوات البحث وتقييم قوة الأدلة",
+        "href": "/knowledge/systematic-review-vs-meta-analysis-guide"
+      },
+      {
+        "label": "حجم العينة في البحث العلمي",
+        "href": "/knowledge/sample-size-research-how-many-participants"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -589,7 +641,20 @@ export const batch13A: KnowledgeTopic[] = [
         "url": "https://openstax.org/books/introductory-statistics-2e/pages/8-introduction"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "أخلاقيات البحث العلمي: الموافقة المستنيرة والخصوصية والنزاهة وحماية المشاركين",
+        "href": "/knowledge/research-ethics-informed-consent-integrity"
+      },
+      {
+        "label": "فترة الثقة 95%: ما معناها وكيف تُحسب وتُفسَّر بأمثلة إحصائية؟",
+        "href": "/knowledge/confidence-interval-95-percent-explained"
+      },
+      {
+        "label": "فهم الانحراف المعياري والتباين",
+        "href": "/knowledge/standard-deviation-variance-step-by-step"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];
