@@ -1,4 +1,5 @@
 "use client";
+import {batch16Questions} from "@/lib/knowledge-batch-16-quiz";
 import {batch15Questions} from "@/lib/knowledge-batch-15-quiz";
 import {batch14Questions} from "@/lib/knowledge-batch-14-quiz";
 import {batch13Questions} from "@/lib/knowledge-batch-13-quiz";
@@ -16,6 +17,7 @@ const items:Record<string,{heading:string,qa:QA[]}>={
 ...batch13Questions,
 ...batch14Questions,
 ...batch15Questions,
+...batch16Questions,
 ...expert10Questions,
 "lightning-charge-separation-clouds":{heading:"اختبر فهمك لكهرباء السحب",qa:[
 {question:"ما العملية الرئيسية المرتبطة بفصل الشحنات في السحب الرعدية؟",options:["اصطدام جسيمات الجليد والغراوبل مع تيارات الهواء","احتكاك السحابة بالأرض مباشرة","ألوان السحابة الداكنة"],correct:0,why:"تنقل التصادمات في ظروف محددة شحنات بين الجسيمات؛ وتساعد التيارات على انفصال المناطق المشحونة."},
