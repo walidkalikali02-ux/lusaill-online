@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 15: original, independently structured Arabic educational content, November 2026.
 export const batch15B: KnowledgeTopic[] = [
   {
     "slug": "cyberbullying-online-harassment-how-to-report",
@@ -116,7 +117,20 @@ export const batch15B: KnowledgeTopic[] = [
         "url": "https://consumer.ftc.gov/articles/how-protect-your-privacy-online"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "البصمة الرقمية: كيف تعرف المعلومات المنشورة عنك وتقلل ظهورها على الإنترنت؟",
+        "href": "/knowledge/digital-footprint-how-to-remove-personal-info"
+      },
+      {
+        "label": "الأمان الرقمي للأطفال: دليل الوالدين للتطبيقات والألعاب والخصوصية والتواصل الآمن",
+        "href": "/knowledge/children-online-safety-parent-guide"
+      },
+      {
+        "href": "/knowledge/social-media-account-privacy-impersonation-guide",
+        "label": "حماية حسابات التواصل الاجتماعي"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch15B: KnowledgeTopic[] = [
         "url": "https://www.unicef.org/stories/how-to-stop-cyberbullying"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "خطة الاستجابة للحوادث السيبرانية للشركات الصغيرة: من اكتشاف الاختراق إلى استعادة العمل",
+        "href": "/knowledge/small-business-cyber-incident-response-plan"
+      },
+      {
+        "label": "التنمر الإلكتروني والتحرش عبر الإنترنت: كيفية توثيق الإساءة والإبلاغ وحماية الضحية",
+        "href": "/knowledge/cyberbullying-online-harassment-how-to-report"
+      },
+      {
+        "href": "/knowledge/browser-privacy-cookies-tracking-guide",
+        "label": "الخصوصية والتتبع عبر المتصفح"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -354,7 +381,20 @@ export const batch15B: KnowledgeTopic[] = [
         "url": "https://www.cisa.gov/stopransomware"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "سرقة الهوية: كيف تعرف أن شخصًا استخدم بياناتك وكيف تستعيد حقوقك وحساباتك؟",
+        "href": "/knowledge/identity-theft-recovery-and-fraud-reporting"
+      },
+      {
+        "label": "البصمة الرقمية: كيف تعرف المعلومات المنشورة عنك وتقلل ظهورها على الإنترنت؟",
+        "href": "/knowledge/digital-footprint-how-to-remove-personal-info"
+      },
+      {
+        "href": "/knowledge/backup-3-2-1-ransomware-data-recovery",
+        "label": "النسخ الاحتياطي وحماية البيانات"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

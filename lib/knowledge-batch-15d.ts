@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 15: original, independently structured Arabic educational content, November 2026.
 export const batch15D: KnowledgeTopic[] = [
   {
     "slug": "fake-online-job-offers-remote-work-scams",
@@ -116,7 +117,20 @@ export const batch15D: KnowledgeTopic[] = [
         "url": "https://consumer.ftc.gov/articles/what-do-if-you-were-scammed"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "احتيال الدعم الفني ورسائل الفيروسات المزيفة: كيف تحمي جهازك من التحكم عن بُعد؟",
+        "href": "/knowledge/fake-tech-support-popups-remote-access-scams"
+      },
+      {
+        "label": "أمان التخزين السحابي ومشاركة الملفات: كيف تضبط الروابط والصلاحيات وتحمي المستندات؟",
+        "href": "/knowledge/secure-cloud-storage-files-sharing-permissions"
+      },
+      {
+        "href": "/knowledge/phishing-emails-sms-qr-scams-detection",
+        "label": "فهم أساليب التصيد والرسائل المزيفة"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch15D: KnowledgeTopic[] = [
         "url": "https://www.cisa.gov/secure-our-world"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "ماذا تفعل بعد تسريب بياناتك الشخصية؟ خطة حماية الحسابات والبطاقات والهوية",
+        "href": "/knowledge/personal-data-breach-response-steps"
+      },
+      {
+        "label": "الوظائف الوهمية والعمل عن بُعد: كيف تكشف عروض التوظيف الاحتيالية وتحمي بياناتك؟",
+        "href": "/knowledge/fake-online-job-offers-remote-work-scams"
+      },
+      {
+        "href": "/knowledge/smartphone-security-android-iphone-privacy-checklist",
+        "label": "حماية الأجهزة والحسابات"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

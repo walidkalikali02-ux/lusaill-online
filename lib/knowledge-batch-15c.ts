@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 15: original, independently structured Arabic educational content, November 2026.
 export const batch15C: KnowledgeTopic[] = [
   {
     "slug": "identity-theft-recovery-and-fraud-reporting",
@@ -116,7 +117,20 @@ export const batch15C: KnowledgeTopic[] = [
         "url": "https://www.nist.gov/cyberframework"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "أمان التخزين السحابي ومشاركة الملفات: كيف تضبط الروابط والصلاحيات وتحمي المستندات؟",
+        "href": "/knowledge/secure-cloud-storage-files-sharing-permissions"
+      },
+      {
+        "label": "خطة الاستجابة للحوادث السيبرانية للشركات الصغيرة: من اكتشاف الاختراق إلى استعادة العمل",
+        "href": "/knowledge/small-business-cyber-incident-response-plan"
+      },
+      {
+        "href": "/knowledge/passkeys-vs-two-factor-authentication-guide",
+        "label": "مفاتيح المرور والمصادقة الآمنة"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch15C: KnowledgeTopic[] = [
         "url": "https://www.nist.gov/privacy-framework"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "الوظائف الوهمية والعمل عن بُعد: كيف تكشف عروض التوظيف الاحتيالية وتحمي بياناتك؟",
+        "href": "/knowledge/fake-online-job-offers-remote-work-scams"
+      },
+      {
+        "label": "سرقة الهوية: كيف تعرف أن شخصًا استخدم بياناتك وكيف تستعيد حقوقك وحساباتك؟",
+        "href": "/knowledge/identity-theft-recovery-and-fraud-reporting"
+      },
+      {
+        "href": "/knowledge/backup-3-2-1-ransomware-data-recovery",
+        "label": "استعادة الملفات والنسخ الاحتياطية"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

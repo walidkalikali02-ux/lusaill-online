@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 15: original, independently structured Arabic educational content, November 2026.
 export const batch15A: KnowledgeTopic[] = [
   {
     "slug": "personal-data-breach-response-steps",
@@ -116,7 +117,20 @@ export const batch15A: KnowledgeTopic[] = [
         "url": "https://www.cisa.gov/secure-our-world"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "الاحتيال باستنساخ الصوت والتزييف العميق: خطوات التحقق من المكالمات والفيديوهات",
+        "href": "/knowledge/ai-voice-cloning-deepfake-fraud-prevention"
+      },
+      {
+        "label": "احتيال الدعم الفني ورسائل الفيروسات المزيفة: كيف تحمي جهازك من التحكم عن بُعد؟",
+        "href": "/knowledge/fake-tech-support-popups-remote-access-scams"
+      },
+      {
+        "href": "/knowledge/protect-online-accounts-from-hacking",
+        "label": "كيفية حماية الحسابات من الاختراق"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch15A: KnowledgeTopic[] = [
         "url": "https://consumer.ftc.gov/articles/what-do-if-you-were-scammed"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "الأمان الرقمي للأطفال: دليل الوالدين للتطبيقات والألعاب والخصوصية والتواصل الآمن",
+        "href": "/knowledge/children-online-safety-parent-guide"
+      },
+      {
+        "label": "ماذا تفعل بعد تسريب بياناتك الشخصية؟ خطة حماية الحسابات والبطاقات والهوية",
+        "href": "/knowledge/personal-data-breach-response-steps"
+      },
+      {
+        "href": "/knowledge/phishing-emails-sms-qr-scams-detection",
+        "label": "التعرف على رسائل وروابط التصيد"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -354,7 +381,20 @@ export const batch15A: KnowledgeTopic[] = [
         "url": "https://consumer.ftc.gov/articles/how-protect-your-privacy-online"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "التنمر الإلكتروني والتحرش عبر الإنترنت: كيفية توثيق الإساءة والإبلاغ وحماية الضحية",
+        "href": "/knowledge/cyberbullying-online-harassment-how-to-report"
+      },
+      {
+        "label": "الاحتيال باستنساخ الصوت والتزييف العميق: خطوات التحقق من المكالمات والفيديوهات",
+        "href": "/knowledge/ai-voice-cloning-deepfake-fraud-prevention"
+      },
+      {
+        "href": "/knowledge/smartphone-security-android-iphone-privacy-checklist",
+        "label": "ضبط أمان الهواتف الذكية"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];
