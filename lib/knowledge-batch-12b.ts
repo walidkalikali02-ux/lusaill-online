@@ -1,5 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
-// Expert Arabic batch 12, part B: independently sourced education and environment guides.
+// Original Arabic expert guides. References are linked at the end of each article.
 export const batch12B: KnowledgeTopic[] = [
   {
     "slug": "sampling-bias-surveys-types-prevention",
@@ -117,7 +117,20 @@ export const batch12B: KnowledgeTopic[] = [
         "url": "https://www.pewresearch.org/writing-survey-questions/"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "الرسوم البيانية المضللة: 10 أخطاء تكشف التلاعب بالمحاور والبيانات",
+        "href": "/knowledge/misleading-graphs-how-to-read-charts"
+      },
+      {
+        "label": "الانحراف المعياري والتباين: طريقة الحساب والتفسير وأمثلة عملية",
+        "href": "/knowledge/standard-deviation-variance-step-by-step"
+      },
+      {
+        "label": "التحقق من صحة المعلومات على الإنترنت: خطوات التفكير النقدي وكشف التضليل",
+        "href": "/knowledge/verify-online-information-critical-thinking"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -236,7 +249,20 @@ export const batch12B: KnowledgeTopic[] = [
         "url": "https://www.sciencelearn.org.nz/resources/recognising-false-information-online"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "حجم العينة في البحث العلمي: كيف تقدّره ولماذا لا يكفي العدد وحده؟",
+        "href": "/knowledge/sample-size-research-how-many-participants"
+      },
+      {
+        "label": "تحيز العينة في البحث والاستبيانات: الأنواع والأمثلة وطرق الوقاية",
+        "href": "/knowledge/sampling-bias-surveys-types-prevention"
+      },
+      {
+        "label": "كيف تقرأ دراسة علمية؟ دليل فهم المنهج والنتائج والجداول وحدود الاستنتاج",
+        "href": "/knowledge/how-to-read-scientific-study-results"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -355,7 +381,20 @@ export const batch12B: KnowledgeTopic[] = [
         "url": "https://aapor.org/standards-and-ethics/best-practices/"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "مؤشر جودة الهواء AQI وجسيمات PM2.5: كيف تفهم القراءات والألوان؟",
+        "href": "/knowledge/air-quality-index-aqi-pm25-explained"
+      },
+      {
+        "label": "الرسوم البيانية المضللة: 10 أخطاء تكشف التلاعب بالمحاور والبيانات",
+        "href": "/knowledge/misleading-graphs-how-to-read-charts"
+      },
+      {
+        "label": "الفرق بين الارتباط والسببية: أمثلة توضح كيف تفكر في البيانات",
+        "href": "/knowledge/correlation-vs-causation-examples"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -478,7 +517,20 @@ export const batch12B: KnowledgeTopic[] = [
         "url": "https://www.who.int/publications/i/item/9789289062701"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "البصمة الكربونية: ما معناها وكيف نحسبها مع أمثلة وحدود التقدير؟",
+        "href": "/knowledge/carbon-footprint-calculation-guide"
+      },
+      {
+        "label": "حجم العينة في البحث العلمي: كيف تقدّره ولماذا لا يكفي العدد وحده؟",
+        "href": "/knowledge/sample-size-research-how-many-participants"
+      },
+      {
+        "label": "المتوسط والوسيط والمنوال: الفرق وطريقة الحساب مع أمثلة محلولة",
+        "href": "/knowledge/mean-median-mode-with-examples"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -597,7 +649,20 @@ export const batch12B: KnowledgeTopic[] = [
         "url": "https://www.ipcc.ch/report/ar6/syr/"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "التحقق من صحة المعلومات على الإنترنت: خطوات التفكير النقدي وكشف التضليل",
+        "href": "/knowledge/verify-online-information-critical-thinking"
+      },
+      {
+        "label": "مؤشر جودة الهواء AQI وجسيمات PM2.5: كيف تفهم القراءات والألوان؟",
+        "href": "/knowledge/air-quality-index-aqi-pm25-explained"
+      },
+      {
+        "label": "الانحراف المعياري والتباين: طريقة الحساب والتفسير وأمثلة عملية",
+        "href": "/knowledge/standard-deviation-variance-step-by-step"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

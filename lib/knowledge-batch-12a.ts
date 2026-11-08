@@ -1,5 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
-// Expert Arabic batch 12, part A; original editorial examples and independently linked references.
+// Original Arabic expert guides. References are linked at the end of each article.
 export const batch12A: KnowledgeTopic[] = [
   {
     "slug": "verify-online-information-critical-thinking",
@@ -117,7 +117,20 @@ export const batch12A: KnowledgeTopic[] = [
         "url": "https://www.sciencelearn.org.nz/resources/recognising-false-information-online"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "كيف تقرأ دراسة علمية؟ دليل فهم المنهج والنتائج والجداول وحدود الاستنتاج",
+        "href": "/knowledge/how-to-read-scientific-study-results"
+      },
+      {
+        "label": "البصمة الكربونية: ما معناها وكيف نحسبها مع أمثلة وحدود التقدير؟",
+        "href": "/knowledge/carbon-footprint-calculation-guide"
+      },
+      {
+        "label": "تحيز العينة في البحث والاستبيانات: الأنواع والأمثلة وطرق الوقاية",
+        "href": "/knowledge/sampling-bias-surveys-types-prevention"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -236,7 +249,20 @@ export const batch12A: KnowledgeTopic[] = [
         "url": "https://www.cochrane.org/evidence"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "الفرق بين الارتباط والسببية: أمثلة توضح كيف تفكر في البيانات",
+        "href": "/knowledge/correlation-vs-causation-examples"
+      },
+      {
+        "label": "التحقق من صحة المعلومات على الإنترنت: خطوات التفكير النقدي وكشف التضليل",
+        "href": "/knowledge/verify-online-information-critical-thinking"
+      },
+      {
+        "label": "الرسوم البيانية المضللة: 10 أخطاء تكشف التلاعب بالمحاور والبيانات",
+        "href": "/knowledge/misleading-graphs-how-to-read-charts"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -355,7 +381,20 @@ export const batch12A: KnowledgeTopic[] = [
         "url": "https://www.cdc.gov/field-epi-manual/php/chapters/describing-epi-data.html"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "المتوسط والوسيط والمنوال: الفرق وطريقة الحساب مع أمثلة محلولة",
+        "href": "/knowledge/mean-median-mode-with-examples"
+      },
+      {
+        "label": "كيف تقرأ دراسة علمية؟ دليل فهم المنهج والنتائج والجداول وحدود الاستنتاج",
+        "href": "/knowledge/how-to-read-scientific-study-results"
+      },
+      {
+        "label": "حجم العينة في البحث العلمي: كيف تقدّره ولماذا لا يكفي العدد وحده؟",
+        "href": "/knowledge/sample-size-research-how-many-participants"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -470,7 +509,20 @@ export const batch12A: KnowledgeTopic[] = [
         "url": "https://openstax.org/books/introductory-statistics-2e/pages/2-7-measures-of-the-spread-of-the-data"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "الانحراف المعياري والتباين: طريقة الحساب والتفسير وأمثلة عملية",
+        "href": "/knowledge/standard-deviation-variance-step-by-step"
+      },
+      {
+        "label": "الفرق بين الارتباط والسببية: أمثلة توضح كيف تفكر في البيانات",
+        "href": "/knowledge/correlation-vs-causation-examples"
+      },
+      {
+        "label": "مؤشر جودة الهواء AQI وجسيمات PM2.5: كيف تفهم القراءات والألوان؟",
+        "href": "/knowledge/air-quality-index-aqi-pm25-explained"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -589,7 +641,20 @@ export const batch12A: KnowledgeTopic[] = [
         "url": "https://openstax.org/books/introductory-statistics-2e/pages/6-introduction"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "label": "تحيز العينة في البحث والاستبيانات: الأنواع والأمثلة وطرق الوقاية",
+        "href": "/knowledge/sampling-bias-surveys-types-prevention"
+      },
+      {
+        "label": "المتوسط والوسيط والمنوال: الفرق وطريقة الحساب مع أمثلة محلولة",
+        "href": "/knowledge/mean-median-mode-with-examples"
+      },
+      {
+        "label": "البصمة الكربونية: ما معناها وكيف نحسبها مع أمثلة وحدود التقدير؟",
+        "href": "/knowledge/carbon-footprint-calculation-guide"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];
