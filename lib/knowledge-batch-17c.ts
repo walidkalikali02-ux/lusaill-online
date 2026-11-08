@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 17: original Arabic financial literacy guides. Illustrative figures are not personal financial recommendations.
 export const batch17C: KnowledgeTopic[] = [
   {
     "slug": "credit-score-report-how-to-check-improve",
@@ -158,7 +159,20 @@ export const batch17C: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/saving-vs-investing-risk-liquidity-diversification",
+        "label": "الادخار أم الاستثمار؟ الفرق بين العائد والمخاطرة والسيولة وكيف تحدد أفق أهدافك"
+      },
+      {
+        "href": "/knowledge/debt-snowball-vs-avalanche-repayment-plan",
+        "label": "خطة سداد الديون: الفرق بين كرة الثلج والانهيار الجليدي وكيف تتجنب التعثر"
+      },
+      {
+        "href": "/knowledge/identity-theft-recovery-and-fraud-reporting",
+        "label": "الحماية من انتحال الهوية المالية"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -319,7 +333,20 @@ export const batch17C: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/insurance-policy-premium-deductible-exclusions-guide",
+        "label": "كيف تقرأ وثيقة التأمين؟ شرح القسط والتحمل والتغطية والاستثناءات والمطالبة"
+      },
+      {
+        "href": "/knowledge/credit-score-report-how-to-check-improve",
+        "label": "التقرير الائتماني والدرجة الائتمانية: كيف تفهمهما وتصحح الأخطاء وتحسن سجل السداد؟"
+      },
+      {
+        "href": "/knowledge/correlation-vs-causation-examples",
+        "label": "الارتباط والسببية في البيانات"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -480,7 +507,20 @@ export const batch17C: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/subscription-audit-recurring-payments-cancel",
+        "label": "كيف تراجع الاشتراكات والمدفوعات المتكررة؟ خطة لخفض المصروف الشهري وإلغاء الرسوم غير اللازمة"
+      },
+      {
+        "href": "/knowledge/saving-vs-investing-risk-liquidity-diversification",
+        "label": "الادخار أم الاستثمار؟ الفرق بين العائد والمخاطرة والسيولة وكيف تحدد أفق أهدافك"
+      },
+      {
+        "href": "/knowledge/verify-online-information-critical-thinking",
+        "label": "مهارات التحقق من المعلومات"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -641,7 +681,20 @@ export const batch17C: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/monthly-budget-50-30-20-arabic-guide",
+        "label": "كيف تنشئ ميزانية شهرية ناجحة؟ شرح قاعدة 50/30/20 وتوزيع الراتب بالأمثلة"
+      },
+      {
+        "href": "/knowledge/insurance-policy-premium-deductible-exclusions-guide",
+        "label": "كيف تقرأ وثيقة التأمين؟ شرح القسط والتحمل والتغطية والاستثناءات والمطالبة"
+      },
+      {
+        "href": "/knowledge/digital-wallet-mobile-payments-scams-protection",
+        "label": "حماية المدفوعات الإلكترونية"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

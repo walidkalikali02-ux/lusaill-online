@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 17: original Arabic financial literacy guides. Illustrative figures are not personal financial recommendations.
 export const batch17A: KnowledgeTopic[] = [
   {
     "slug": "monthly-budget-50-30-20-arabic-guide",
@@ -158,7 +159,20 @@ export const batch17A: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/emergency-fund-how-much-where-to-save",
+        "label": "صندوق الطوارئ المالي: كم شهرًا تحتاج وكيف تبدأ الادخار وأين تحتفظ بالمبلغ؟"
+      },
+      {
+        "href": "/knowledge/subscription-audit-recurring-payments-cancel",
+        "label": "كيف تراجع الاشتراكات والمدفوعات المتكررة؟ خطة لخفض المصروف الشهري وإلغاء الرسوم غير اللازمة"
+      },
+      {
+        "href": "/knowledge/mean-median-mode-with-examples",
+        "label": "فهم متوسط المصروفات والأرقام"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -319,7 +333,20 @@ export const batch17A: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/inflation-purchasing-power-real-wages-guide",
+        "label": "التضخم والقوة الشرائية: لماذا ترتفع الأسعار وكيف تحسب أثرها على راتبك ومدخراتك؟"
+      },
+      {
+        "href": "/knowledge/monthly-budget-50-30-20-arabic-guide",
+        "label": "كيف تنشئ ميزانية شهرية ناجحة؟ شرح قاعدة 50/30/20 وتوزيع الراتب بالأمثلة"
+      },
+      {
+        "href": "/knowledge/backup-3-2-1-ransomware-data-recovery",
+        "label": "مبادئ إدارة الطوارئ وحفظ المعلومات"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -480,7 +507,20 @@ export const batch17A: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/compound-interest-compound-growth-examples",
+        "label": "الفائدة المركبة والنمو التراكمي: شرح المعادلة بأمثلة على الادخار والاستثمار والديون"
+      },
+      {
+        "href": "/knowledge/emergency-fund-how-much-where-to-save",
+        "label": "صندوق الطوارئ المالي: كم شهرًا تحتاج وكيف تبدأ الادخار وأين تحتفظ بالمبلغ؟"
+      },
+      {
+        "href": "/knowledge/misleading-graphs-how-to-read-charts",
+        "label": "قراءة الرسوم الإحصائية دون تضليل"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

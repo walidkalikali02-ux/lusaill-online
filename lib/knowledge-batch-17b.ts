@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 17: original Arabic financial literacy guides. Illustrative figures are not personal financial recommendations.
 export const batch17B: KnowledgeTopic[] = [
   {
     "slug": "compound-interest-compound-growth-examples",
@@ -158,7 +159,20 @@ export const batch17B: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/apr-vs-interest-rate-loan-total-cost",
+        "label": "الفائدة السنوية APR وتكلفة القرض الحقيقية: كيف تقارن عروض التمويل والأقساط؟"
+      },
+      {
+        "href": "/knowledge/inflation-purchasing-power-real-wages-guide",
+        "label": "التضخم والقوة الشرائية: لماذا ترتفع الأسعار وكيف تحسب أثرها على راتبك ومدخراتك؟"
+      },
+      {
+        "href": "/knowledge/mean-median-mode-with-examples",
+        "label": "المتوسطات الحسابية وتفسير الأرقام"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -319,7 +333,20 @@ export const batch17B: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/debt-snowball-vs-avalanche-repayment-plan",
+        "label": "خطة سداد الديون: الفرق بين كرة الثلج والانهيار الجليدي وكيف تتجنب التعثر"
+      },
+      {
+        "href": "/knowledge/compound-interest-compound-growth-examples",
+        "label": "الفائدة المركبة والنمو التراكمي: شرح المعادلة بأمثلة على الادخار والاستثمار والديون"
+      },
+      {
+        "href": "/knowledge/misleading-graphs-how-to-read-charts",
+        "label": "كشف المقارنات الرسومية المضللة"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -480,7 +507,20 @@ export const batch17B: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/credit-score-report-how-to-check-improve",
+        "label": "التقرير الائتماني والدرجة الائتمانية: كيف تفهمهما وتصحح الأخطاء وتحسن سجل السداد؟"
+      },
+      {
+        "href": "/knowledge/apr-vs-interest-rate-loan-total-cost",
+        "label": "الفائدة السنوية APR وتكلفة القرض الحقيقية: كيف تقارن عروض التمويل والأقساط؟"
+      },
+      {
+        "href": "/knowledge/verify-online-information-critical-thinking",
+        "label": "التحقق من العروض والمعلومات"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];
