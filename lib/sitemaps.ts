@@ -50,6 +50,8 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     { url: absoluteUrl("/food-safety"), lastModified: latestPublishedUpdate(foodSafetyArticles), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/knowledge"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/topics"), changeFrequency: "monthly", priority: 0.9 },
+    { url: absoluteUrl("/caricatures"), lastModified: new Date("2026-11-08"), changeFrequency: "weekly", priority: 0.8 },
+    { url: absoluteUrl("/caricatures/gaza-flooded-tents"), lastModified: new Date("2026-11-08"), changeFrequency: "monthly", priority: 0.85, images: [absoluteUrl("/images/caricatures/gaza-flooded-tents.svg")] },
     { url: absoluteUrl("/services"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/services/website-design"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/knowledge/roman-numerals"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/roman-numerals-education.svg")] },

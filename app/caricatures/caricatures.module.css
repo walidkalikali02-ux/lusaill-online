@@ -1,0 +1,32 @@
+
+.page{background:#f2eadf;color:#26343b;min-height:80vh;padding:30px 0 85px}
+.wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
+.crumb{font-size:13px;color:#666;margin-bottom:28px;display:flex;gap:10px}
+.eyebrow{display:inline-block;color:#a9503a;font-size:13px;font-weight:700;margin-bottom:12px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;padding:28px 0 60px}
+.hero h1,.title{font-size:clamp(34px,5vw,60px);line-height:1.35;font-weight:800;color:#283943;margin-bottom:17px}
+.hero p,.intro{font-size:17px;line-height:2;color:#526069}
+.figure{border:2px solid #283943;box-shadow:11px 11px 0 #ae5b44;background:#ddd0bd}
+.figure img{width:100%;height:auto;display:block}
+.action{display:inline-block;background:#283943;color:white;padding:11px 19px;margin-top:20px;font-weight:700}
+.sectionTitle{font-size:27px;font-weight:800;border-top:2px solid #38474c;padding-top:18px;margin:12px 0 20px}
+.artCard{display:grid;grid-template-columns:1.1fr 1fr;background:#fffaf2;border:1px solid #d2c5b4;max-width:950px}
+.artCard img{width:100%;height:100%;object-fit:cover}
+.artCopy{padding:25px;align-self:center}
+.artCopy h2{font-size:28px;line-height:1.55;margin:6px 0}
+.artCopy p{font-size:15px;line-height:1.9;color:#60666a}
+.date{color:#a2543d;font-size:13px;font-weight:700}
+.articleHeader{max-width:900px;margin-bottom:30px}
+.articleHeader .intro{margin-top:10px}
+.articleMeta{font-size:13px;color:#6d7070;margin-top:14px}
+.caption{font-size:13px;margin-top:20px;line-height:1.9;color:#6b6c69}
+.content{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:45px;margin-top:45px}
+.prose{font-size:17px;line-height:2.15}
+.prose h2{font-size:27px;font-weight:800;margin:30px 0 10px}
+.prose p{margin:8px 0 17px}
+.prose ul{padding-right:24px;margin-bottom:17px}
+.side{align-self:start;border-top:4px solid #ac5b46;background:#e2d7c7;padding:21px;position:sticky;top:106px}
+.side strong{display:block;margin-bottom:13px}
+.side a{display:block;padding:7px 0;font-size:14px;border-bottom:1px solid #cbbbac}
+.back{display:inline-block;border-bottom:2px solid #a8513b;margin-top:20px;font-weight:700}
+@media(max-width:850px){.hero,.artCard,.content{grid-template-columns:1fr}.side{position:static}.hero{padding:0 0 35px}.figure{box-shadow:5px 5px 0 #ae5b44}}
