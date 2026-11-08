@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 16: original Arabic digital security knowledge guides.
 export const batch16C: KnowledgeTopic[] = [
   {
     "slug": "account-recovery-backup-codes-emergency-plan",
@@ -116,7 +117,20 @@ export const batch16C: KnowledgeTopic[] = [
         "url": "https://consumer.ftc.gov/articles/how-recognize-avoid-phishing-scams"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/browser-extensions-security-permissions-audit",
+        "label": "أمان إضافات المتصفح Chrome وEdge وFirefox: الصلاحيات والتحديثات وكشف الإضافات الخبيثة"
+      },
+      {
+        "href": "/knowledge/secure-device-disposal-resale-data-erasure",
+        "label": "بيع الهاتف أو الكمبيوتر المستعمل بأمان: حذف البيانات وإعادة الضبط والتخلص من وسائط التخزين"
+      },
+      {
+        "href": "/knowledge/passkeys-vs-two-factor-authentication-guide",
+        "label": "مفاتيح المرور والمصادقة"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch16C: KnowledgeTopic[] = [
         "url": "https://cyber.gov.rw/article/6-best-practices-for-securing-browser-extensions"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/digital-wallet-mobile-payments-scams-protection",
+        "label": "أمان المحافظ الرقمية وتطبيقات الدفع: كيف تحمي أموالك قبل التحويل وبعده؟"
+      },
+      {
+        "href": "/knowledge/account-recovery-backup-codes-emergency-plan",
+        "label": "خطة استرداد الحسابات: رموز الطوارئ ومفاتيح المرور والهاتف المفقود دون فقدان الوصول"
+      },
+      {
+        "href": "/knowledge/browser-privacy-cookies-tracking-guide",
+        "label": "إعدادات خصوصية المتصفح"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -354,7 +381,20 @@ export const batch16C: KnowledgeTopic[] = [
         "url": "https://www.cisa.gov/secure-our-world"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/donation-charity-scam-checklist-online",
+        "label": "التبرع الإلكتروني الآمن: كيف تتحقق من الجمعيات والحملات وتحمي أموالك من الاحتيال؟"
+      },
+      {
+        "href": "/knowledge/browser-extensions-security-permissions-audit",
+        "label": "أمان إضافات المتصفح Chrome وEdge وFirefox: الصلاحيات والتحديثات وكشف الإضافات الخبيثة"
+      },
+      {
+        "href": "/knowledge/safe-online-shopping-payment-scam-prevention",
+        "label": "التسوق والدفع الآمن"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -473,7 +513,20 @@ export const batch16C: KnowledgeTopic[] = [
         "url": "https://www.nist.gov/privacy-framework"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/sim-swap-esim-port-out-fraud-protection",
+        "label": "احتيال تبديل شريحة SIM وeSIM: كيف تحمي رقم هاتفك وتستعيده عند سرقته؟"
+      },
+      {
+        "href": "/knowledge/digital-wallet-mobile-payments-scams-protection",
+        "label": "أمان المحافظ الرقمية وتطبيقات الدفع: كيف تحمي أموالك قبل التحويل وبعده؟"
+      },
+      {
+        "href": "/knowledge/phishing-emails-sms-qr-scams-detection",
+        "label": "كشف روابط ورسائل التصيد"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

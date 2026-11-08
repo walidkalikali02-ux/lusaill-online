@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 16: original Arabic digital security knowledge guides.
 export const batch16B: KnowledgeTopic[] = [
   {
     "slug": "ransomware-attack-first-response-and-recovery",
@@ -116,7 +117,20 @@ export const batch16B: KnowledgeTopic[] = [
         "url": "https://www.nist.gov/itl/smallbusinesscyber"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/business-email-compromise-invoice-fraud-prevention",
+        "label": "احتيال البريد الإلكتروني للشركات BEC: كيف تمنع تزوير فواتير الموردين وتحويل الأموال؟"
+      },
+      {
+        "href": "/knowledge/smart-home-iot-cameras-locks-security",
+        "label": "حماية المنزل الذكي: كاميرات Wi-Fi والأقفال والمساعدات الصوتية وأجهزة إنترنت الأشياء"
+      },
+      {
+        "href": "/knowledge/backup-3-2-1-ransomware-data-recovery",
+        "label": "قاعدة النسخ الاحتياطي 3-2-1"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch16B: KnowledgeTopic[] = [
         "url": "https://www.nist.gov/cyberframework"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/secure-device-disposal-resale-data-erasure",
+        "label": "بيع الهاتف أو الكمبيوتر المستعمل بأمان: حذف البيانات وإعادة الضبط والتخلص من وسائط التخزين"
+      },
+      {
+        "href": "/knowledge/ransomware-attack-first-response-and-recovery",
+        "label": "برمجيات الفدية Ransomware: علامات الإصابة وخطة الاستجابة واستعادة الملفات بأمان"
+      },
+      {
+        "href": "/knowledge/small-business-cyber-incident-response-plan",
+        "label": "خطة الاستجابة للحوادث للشركات"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -354,7 +381,20 @@ export const batch16B: KnowledgeTopic[] = [
         "url": "https://www.nist.gov/privacy-framework"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/account-recovery-backup-codes-emergency-plan",
+        "label": "خطة استرداد الحسابات: رموز الطوارئ ومفاتيح المرور والهاتف المفقود دون فقدان الوصول"
+      },
+      {
+        "href": "/knowledge/business-email-compromise-invoice-fraud-prevention",
+        "label": "احتيال البريد الإلكتروني للشركات BEC: كيف تمنع تزوير فواتير الموردين وتحويل الأموال؟"
+      },
+      {
+        "href": "/knowledge/smartphone-security-android-iphone-privacy-checklist",
+        "label": "حماية بيانات الهواتف"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 16: original Arabic digital security knowledge guides.
 export const batch16A: KnowledgeTopic[] = [
   {
     "slug": "sim-swap-esim-port-out-fraud-protection",
@@ -116,7 +117,20 @@ export const batch16A: KnowledgeTopic[] = [
         "url": "https://www.cisa.gov/secure-our-world"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/end-to-end-encryption-messaging-privacy-guide",
+        "label": "التشفير التام بين الطرفين في تطبيقات المحادثة: ما الذي يحميه وما الذي لا يحميه؟"
+      },
+      {
+        "href": "/knowledge/donation-charity-scam-checklist-online",
+        "label": "التبرع الإلكتروني الآمن: كيف تتحقق من الجمعيات والحملات وتحمي أموالك من الاحتيال؟"
+      },
+      {
+        "href": "/knowledge/protect-online-accounts-from-hacking",
+        "label": "حماية الحسابات من الاختراق"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch16A: KnowledgeTopic[] = [
         "url": "https://www.nist.gov/privacy-framework"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/smart-home-iot-cameras-locks-security",
+        "label": "حماية المنزل الذكي: كاميرات Wi-Fi والأقفال والمساعدات الصوتية وأجهزة إنترنت الأشياء"
+      },
+      {
+        "href": "/knowledge/sim-swap-esim-port-out-fraud-protection",
+        "label": "احتيال تبديل شريحة SIM وeSIM: كيف تحمي رقم هاتفك وتستعيده عند سرقته؟"
+      },
+      {
+        "href": "/knowledge/browser-privacy-cookies-tracking-guide",
+        "label": "الخصوصية والتتبع الرقمي"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -354,7 +381,20 @@ export const batch16A: KnowledgeTopic[] = [
         "url": "https://www.nist.gov/cyberframework"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/ransomware-attack-first-response-and-recovery",
+        "label": "برمجيات الفدية Ransomware: علامات الإصابة وخطة الاستجابة واستعادة الملفات بأمان"
+      },
+      {
+        "href": "/knowledge/end-to-end-encryption-messaging-privacy-guide",
+        "label": "التشفير التام بين الطرفين في تطبيقات المحادثة: ما الذي يحميه وما الذي لا يحميه؟"
+      },
+      {
+        "href": "/knowledge/home-wifi-router-security-guide",
+        "label": "تأمين الراوتر المنزلي"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];
