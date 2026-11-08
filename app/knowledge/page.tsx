@@ -3,6 +3,16 @@ import Link from "next/link";
 import { pageAlternates } from "@/lib/page-alternates";
 export const metadata:Metadata={title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),robots:{index:true,follow:true}};
 const guides=[
+{href:"/knowledge/scientific-hypothesis-variables",title:"الفرضية العلمية والمتغيرات",description:"تصميم تجربة وفحص المتغيرات وتفسير النتائج.",kind:"العلوم · منهج بحث"},
+{href:"/knowledge/long-division-step-by-step",title:"القسمة المطولة خطوة بخطوة",description:"خارج القسمة والباقي والأصفار وحاسبة تحقق.",kind:"الرياضيات · حاسبة"},
+{href:"/knowledge/times-higher-education-ranking-methodology-2027",title:"تصنيف THE العالمي للجامعات 2027",description:"المنهجية الرسمية وأوزان الركائز وكيف تقرأ الترتيب.",kind:"الجامعات · تصنيف"},
+{href:"/knowledge/water-conservation-home-school",title:"ترشيد المياه في المنزل والمدرسة",description:"العداد والتسربات وتقدير الهدر وحاسبة مياه.",kind:"البيئة · حاسبة"},
+{href:"/knowledge/my-future-self-essay-arabic-english",title:"تعبير كيف أرى نفسي في المستقبل",description:"نماذج عربية وإنجليزية أصلية وتدرج في كتابة الطموح.",kind:"التعبير · نماذج"},
+{href:"/knowledge/how-internet-changed-the-world-essay-arabic-english",title:"تعبير كيف غيّر الإنترنت العالم",description:"فوائد وتحديات ونماذج بالإنجليزية والعربية.",kind:"التقنية · تعبير"},
+{href:"/knowledge/how-to-choose-a-true-friend",title:"كيف تختار الصديق الحقيقي؟",description:"الاحترام والثقة والحدود وحل الخلافات ونموذج تعبير.",kind:"العلاقات · إرشاد"},
+{href:"/knowledge/chemical-reactivity-properties-factors",title:"العوامل المؤثرة في التفاعل الكيميائي",description:"طاقة التنشيط والتركيز والحرارة والسطح والمحفز.",kind:"الكيمياء · شرح"},
+{href:"/knowledge/living-organisms-dependence-ecology",title:"اعتماد المخلوقات الحية بعضها على بعض",description:"التغذية والتكافل والتنافس والتطفل والشبكات.",kind:"الأحياء · بيئة"},
+{href:"/knowledge/mathematical-induction-examples-proof",title:"الاستقراء الرياضي مع 3 أمثلة",description:"حالة الأساس وفرض الاستقراء والبرهان خطوة بخطوة.",kind:"الرياضيات · برهان"},
 {href:"/knowledge/meeting-request-email-english",title:"إيميل تحديد موعد اجتماع بالإنجليزي",description:"نماذج مهنية جاهزة للتعديل ورسائل متابعة وأخطاء يجب تجنبها.",kind:"الإنجليزية · نماذج"},
 {href:"/knowledge/conditional-probability-explained",title:"الاحتمال المشروط: قانون وأمثلة",description:"فهم المقام المشروط والاستقلال وجداول التكرار مع حاسبة.",kind:"الإحصاء · حاسبة"},
 {href:"/knowledge/population-growth-demographic-transition",title:"النمو السكاني والتحول الديموغرافي",description:"معادلة السكان والزيادة الطبيعية والهجرة وأداة حساب.",kind:"السكان · أداة"},
