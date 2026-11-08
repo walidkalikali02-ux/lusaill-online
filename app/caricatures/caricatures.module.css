@@ -30,3 +30,11 @@
 .side a{display:block;padding:7px 0;font-size:14px;border-bottom:1px solid #cbbbac}
 .back{display:inline-block;border-bottom:2px solid #a8513b;margin-top:20px;font-weight:700}
 @media(max-width:850px){.hero,.artCard,.content{grid-template-columns:1fr}.side{position:static}.hero{padding:0 0 35px}.figure{box-shadow:5px 5px 0 #ae5b44}}
+
+.artGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
+.artGrid .artCard{display:flex;flex-direction:column;max-width:none;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}
+.artGrid .artCard:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(29,45,49,.13)}
+.artGrid .artCard img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.artGrid .artCopy{padding:23px}
+.artGrid .artCopy h3{font-size:24px;font-weight:800;line-height:1.6;margin:8px 0}
+@media(max-width:700px){.artGrid{grid-template-columns:1fr}}
