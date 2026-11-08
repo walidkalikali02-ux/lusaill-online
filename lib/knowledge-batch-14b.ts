@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 14: original Arabic cybersecurity and privacy education; 2026-11-08.
 export const batch14B: KnowledgeTopic[] = [
   {
     "slug": "password-manager-setup-secure-vault-guide",
@@ -112,7 +113,20 @@ export const batch14B: KnowledgeTopic[] = [
     "publishedAt": "2026-11-08",
     "image": "/images/knowledge/batch14-password-manager-setup-secure-vault-guide.svg",
     "imageAlt": "خريطة تعليمية عن مدير كلمات المرور: كيف تختاره وتستخدمه وتحمي خزنة الحسابات؟",
-    "related": [],
+    "related": [
+      {
+        "label": "تأمين الهاتف من الاختراق والتجسس: إعدادات أندرويد وآيفون خطوة بخطوة",
+        "href": "/knowledge/smartphone-security-android-iphone-privacy-checklist"
+      },
+      {
+        "label": "مفاتيح المرور Passkeys والمصادقة الثنائية: الفروق والأمان وخيارات الاسترداد",
+        "href": "/knowledge/passkeys-vs-two-factor-authentication-guide"
+      },
+      {
+        "label": "التقييم النقدي للمصادر",
+        "href": "/knowledge/verify-online-information-critical-thinking"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -227,7 +241,20 @@ export const batch14B: KnowledgeTopic[] = [
     "publishedAt": "2026-11-08",
     "image": "/images/knowledge/batch14-smartphone-security-android-iphone-privacy-checklist.svg",
     "imageAlt": "خريطة تعليمية عن تأمين الهاتف من الاختراق والتجسس: إعدادات أندرويد وآيفون خطوة بخطوة",
-    "related": [],
+    "related": [
+      {
+        "label": "كشف رسائل التصيد والروابط المزيفة: البريد وSMS وواتساب ورموز QR",
+        "href": "/knowledge/phishing-emails-sms-qr-scams-detection"
+      },
+      {
+        "label": "مدير كلمات المرور: كيف تختاره وتستخدمه وتحمي خزنة الحسابات؟",
+        "href": "/knowledge/password-manager-setup-secure-vault-guide"
+      },
+      {
+        "label": "أمان الحسابات الرئيسية",
+        "href": "/knowledge/protect-online-accounts-from-hacking"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

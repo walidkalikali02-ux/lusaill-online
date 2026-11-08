@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 14: original Arabic cybersecurity and privacy education; 2026-11-08.
 export const batch14A: KnowledgeTopic[] = [
   {
     "slug": "protect-online-accounts-from-hacking",
@@ -116,7 +117,20 @@ export const batch14A: KnowledgeTopic[] = [
     "publishedAt": "2026-11-08",
     "image": "/images/knowledge/batch14-protect-online-accounts-from-hacking.svg",
     "imageAlt": "خريطة تعليمية عن حماية الحسابات من الاختراق: دليل عملي لتأمين البريد الإلكتروني والتطبيقات",
-    "related": [],
+    "related": [
+      {
+        "label": "مفاتيح المرور Passkeys والمصادقة الثنائية: الفروق والأمان وخيارات الاسترداد",
+        "href": "/knowledge/passkeys-vs-two-factor-authentication-guide"
+      },
+      {
+        "label": "حماية حسابات التواصل الاجتماعي والخصوصية: كشف انتحال الهوية واسترداد الحساب",
+        "href": "/knowledge/social-media-account-privacy-impersonation-guide"
+      },
+      {
+        "label": "حماية كلمات المرور الأساسية",
+        "href": "/knowledge/protect-online-accounts-from-hacking"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch14A: KnowledgeTopic[] = [
     "publishedAt": "2026-11-08",
     "image": "/images/knowledge/batch14-passkeys-vs-two-factor-authentication-guide.svg",
     "imageAlt": "خريطة تعليمية عن مفاتيح المرور Passkeys والمصادقة الثنائية: الفروق والأمان وخيارات الاسترداد",
-    "related": [],
+    "related": [
+      {
+        "label": "مدير كلمات المرور: كيف تختاره وتستخدمه وتحمي خزنة الحسابات؟",
+        "href": "/knowledge/password-manager-setup-secure-vault-guide"
+      },
+      {
+        "label": "حماية الحسابات من الاختراق: دليل عملي لتأمين البريد الإلكتروني والتطبيقات",
+        "href": "/knowledge/protect-online-accounts-from-hacking"
+      },
+      {
+        "label": "كيفية التحقق من صحة المعلومات",
+        "href": "/knowledge/verify-online-information-critical-thinking"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

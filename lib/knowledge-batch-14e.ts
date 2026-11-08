@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 14: original Arabic cybersecurity and privacy education; 2026-11-08.
 export const batch14E: KnowledgeTopic[] = [
   {
     "slug": "safe-online-shopping-payment-scam-prevention",
@@ -116,7 +117,20 @@ export const batch14E: KnowledgeTopic[] = [
     "publishedAt": "2026-11-08",
     "image": "/images/knowledge/batch14-safe-online-shopping-payment-scam-prevention.svg",
     "imageAlt": "مخطط تعليمي أصلي عن التسوق الإلكتروني الآمن: كيف تتأكد من المتجر وتحمي بطاقتك من الاحتيال؟",
-    "related": [],
+    "related": [
+      {
+        "label": "حماية حسابات التواصل الاجتماعي والخصوصية: كشف انتحال الهوية واسترداد الحساب",
+        "href": "/knowledge/social-media-account-privacy-impersonation-guide"
+      },
+      {
+        "label": "النسخ الاحتياطي 3-2-1 وحماية الملفات من الفقد وبرمجيات الفدية",
+        "href": "/knowledge/backup-3-2-1-ransomware-data-recovery"
+      },
+      {
+        "label": "كشف رسائل التصيد",
+        "href": "/knowledge/phishing-emails-sms-qr-scams-detection"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch14E: KnowledgeTopic[] = [
     "publishedAt": "2026-11-08",
     "image": "/images/knowledge/batch14-social-media-account-privacy-impersonation-guide.svg",
     "imageAlt": "مخطط تعليمي أصلي عن حماية حسابات التواصل الاجتماعي والخصوصية: كشف انتحال الهوية واسترداد الحساب",
-    "related": [],
+    "related": [
+      {
+        "label": "حماية الحسابات من الاختراق: دليل عملي لتأمين البريد الإلكتروني والتطبيقات",
+        "href": "/knowledge/protect-online-accounts-from-hacking"
+      },
+      {
+        "label": "التسوق الإلكتروني الآمن: كيف تتأكد من المتجر وتحمي بطاقتك من الاحتيال؟",
+        "href": "/knowledge/safe-online-shopping-payment-scam-prevention"
+      },
+      {
+        "label": "حماية البريد والحسابات",
+        "href": "/knowledge/protect-online-accounts-from-hacking"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

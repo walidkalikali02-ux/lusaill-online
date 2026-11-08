@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 14: original Arabic cybersecurity and privacy education; 2026-11-08.
 export const batch14C: KnowledgeTopic[] = [
   {
     "slug": "phishing-emails-sms-qr-scams-detection",
@@ -116,7 +117,20 @@ export const batch14C: KnowledgeTopic[] = [
     "publishedAt": "2026-11-08",
     "image": "/images/knowledge/batch14-phishing-emails-sms-qr-scams-detection.svg",
     "imageAlt": "رسم تعليمي يشرح كشف التصيد والروابط المزيفة",
-    "related": [],
+    "related": [
+      {
+        "label": "تأمين شبكة Wi‑Fi المنزلية والراوتر: خطوات تغيير الإعدادات وحماية الأجهزة",
+        "href": "/knowledge/home-wifi-router-security-guide"
+      },
+      {
+        "label": "تأمين الهاتف من الاختراق والتجسس: إعدادات أندرويد وآيفون خطوة بخطوة",
+        "href": "/knowledge/smartphone-security-android-iphone-privacy-checklist"
+      },
+      {
+        "label": "تأمين حساب البريد",
+        "href": "/knowledge/protect-online-accounts-from-hacking"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

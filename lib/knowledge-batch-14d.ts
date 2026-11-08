@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 14: original Arabic cybersecurity and privacy education; 2026-11-08.
 export const batch14D: KnowledgeTopic[] = [
   {
     "slug": "home-wifi-router-security-guide",
@@ -116,7 +117,20 @@ export const batch14D: KnowledgeTopic[] = [
     "publishedAt": "2026-11-08",
     "image": "/images/knowledge/batch14-home-wifi-router-security-guide.svg",
     "imageAlt": "مخطط تعليمي يشرح تأمين شبكة Wi‑Fi المنزلية والراوتر: خطوات تغيير الإعدادات وحماية الأجهزة",
-    "related": [],
+    "related": [
+      {
+        "label": "خصوصية المتصفح وملفات Cookies: كيف تقلل التتبع وتحمي بياناتك؟",
+        "href": "/knowledge/browser-privacy-cookies-tracking-guide"
+      },
+      {
+        "label": "كشف رسائل التصيد والروابط المزيفة: البريد وSMS وواتساب ورموز QR",
+        "href": "/knowledge/phishing-emails-sms-qr-scams-detection"
+      },
+      {
+        "label": "حماية الهاتف من الاختراق",
+        "href": "/knowledge/smartphone-security-android-iphone-privacy-checklist"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch14D: KnowledgeTopic[] = [
     "publishedAt": "2026-11-08",
     "image": "/images/knowledge/batch14-browser-privacy-cookies-tracking-guide.svg",
     "imageAlt": "مخطط تعليمي يشرح خصوصية المتصفح وملفات Cookies: كيف تقلل التتبع وتحمي بياناتك؟",
-    "related": [],
+    "related": [
+      {
+        "label": "النسخ الاحتياطي 3-2-1 وحماية الملفات من الفقد وبرمجيات الفدية",
+        "href": "/knowledge/backup-3-2-1-ransomware-data-recovery"
+      },
+      {
+        "label": "تأمين شبكة Wi‑Fi المنزلية والراوتر: خطوات تغيير الإعدادات وحماية الأجهزة",
+        "href": "/knowledge/home-wifi-router-security-guide"
+      },
+      {
+        "label": "كيفية كشف الاحتيال الرقمي",
+        "href": "/knowledge/phishing-emails-sms-qr-scams-detection"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -354,7 +381,20 @@ export const batch14D: KnowledgeTopic[] = [
     "publishedAt": "2026-11-08",
     "image": "/images/knowledge/batch14-backup-3-2-1-ransomware-data-recovery.svg",
     "imageAlt": "مخطط تعليمي يشرح النسخ الاحتياطي 3-2-1 وحماية الملفات من الفقد وبرمجيات الفدية",
-    "related": [],
+    "related": [
+      {
+        "label": "التسوق الإلكتروني الآمن: كيف تتأكد من المتجر وتحمي بطاقتك من الاحتيال؟",
+        "href": "/knowledge/safe-online-shopping-payment-scam-prevention"
+      },
+      {
+        "label": "خصوصية المتصفح وملفات Cookies: كيف تقلل التتبع وتحمي بياناتك؟",
+        "href": "/knowledge/browser-privacy-cookies-tracking-guide"
+      },
+      {
+        "label": "تأمين الهاتف والملفات",
+        "href": "/knowledge/smartphone-security-android-iphone-privacy-checklist"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];
