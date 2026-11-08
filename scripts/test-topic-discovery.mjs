@@ -37,7 +37,7 @@ const groups=sitemapGroups(),all=Object.values(groups).flat(),urls=all.map(r=>r.
 assert.equal(new Set(urls).size,urls.length,"Duplicate sitemap URLs");
 // Content completeness regression: empty articles are never published or inserted in XML.
 const {knowledgeTopics}=load("lib/knowledge-expansion-data.ts");
-assert.equal(knowledgeTopics.length,68,"Expected 68 authored knowledge topics including batch 13");
+assert.equal(knowledgeTopics.length,78,"Expected 78 authored knowledge topics including batch 14");
 const expertBatch = [...load("lib/knowledge-expert-batch-09a.ts").expertBatchA,...load("lib/knowledge-expert-batch-09b.ts").expertBatchB];
 assert.equal(expertBatch.length,10,"Ten expert guides required");
 assert.equal(new Set(expertBatch.map(t=>t.slug)).size,10,"Expert article slugs must be unique");
@@ -107,6 +107,23 @@ for(const t of batch13){
  assert(t.related.length>=3 && t.related.every(l=>l.href.startsWith("/knowledge/")),"Missing internal contextual navigation: "+t.slug);
  assert(existsSync("public"+t.image),"Missing original batch 13 infographic: "+t.slug);
  assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Batch 13 article missing sitemap: "+t.slug);
+}
+
+
+const batch14=[...load("lib/knowledge-batch-14a.ts").batch14A,...load("lib/knowledge-batch-14b.ts").batch14B,...load("lib/knowledge-batch-14c.ts").batch14C,...load("lib/knowledge-batch-14d.ts").batch14D,...load("lib/knowledge-batch-14e.ts").batch14E];
+const quiz14=load("lib/knowledge-batch-14-quiz.ts").batch14Questions;
+assert.equal(batch14.length,10,"Exactly ten knowledge guides required in batch 14");
+assert.equal(new Set(batch14.map(t=>t.slug)).size,10,"Batch 14 must have unique URLs");
+for(const t of batch14){
+ const body=[t.intro,t.directAnswer,...t.sections.flatMap(s=>[...(s.paragraphs||[]),...(s.points||[])]),...t.faq.flatMap(f=>[f.question,f.answer])].join(" ");
+ const count=body.trim().split(/\s+/).length;
+ assert(count>=1000,"Batch 14 expert article too short: "+t.slug+" "+count);
+ assert(t.sections.length>=8 && t.faq.length>=5 && t.sources.length>=3,"Batch 14 incomplete FAQ/sections/sources "+t.slug);
+ assert(t.description.length>=85 && t.description.length<=195,"Batch 14 SEO description missing "+t.slug);
+ assert(t.related.length>=3,"Batch 14 missing internal navigation "+t.slug);
+ assert(t.tool==="expert-knowledge-check" && quiz14[t.slug]?.qa.length===2,"Batch 14 missing interactive checks "+t.slug);
+ assert(existsSync("public"+t.image),"Batch 14 graphic missing "+t.slug);
+ assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Batch 14 missing sitemap URL "+t.slug);
 }
 
 for(const topic of knowledgeTopics){
