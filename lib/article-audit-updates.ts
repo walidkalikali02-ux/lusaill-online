@@ -108,9 +108,12 @@ export function applyArticleAuditUpdates(input: Article): Article {
   if (getEncyclopedicContent(article.slug)) {
     // A new modified timestamp is recorded only for articles with substantive source-linked rewrites.
     const newBatch = new Set(["movement-certificate-egypt", "private-driving-license-first-time", "chrome-cache-site-data", "national-id-first-time-egypt", "automated-birth-certificate", "civil-record-correction-egypt"]);
-    article.updatedAt = newBatch.has(article.slug)
-      ? "2026-11-09T16:28:00+03:00"
-      : "2026-11-09T12:49:00+03:00";
+    const batch4 = new Set(["national-id-renewal-egypt", "national-id-address-change", "national-id-profession-change", "national-id-marital-status-change"]);
+    article.updatedAt = batch4.has(article.slug)
+      ? "2026-11-09T17:29:00+03:00"
+      : newBatch.has(article.slug)
+        ? "2026-11-09T16:28:00+03:00"
+        : "2026-11-09T12:49:00+03:00";
   }
   return article;
 }
