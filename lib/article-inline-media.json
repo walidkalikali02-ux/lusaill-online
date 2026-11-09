@@ -1589,19 +1589,6 @@
       ]
     }
   ],
-  "old-rent-housing-apply": [
-    {
-      "src": "/images/step-maps/old-rent-housing-apply.webp",
-      "alt": "خريطة خطوات التسجيل في السكن البديل للإيجار القديم قبل 12 أكتوبر 2026: افصل هذا البرنامج عن الإعلانات السكنية الأخرى؛ جهّز الإثباتات والحساب الصحيح؛ افتح الخدمة من البوابة الحكومية؛ املأ البيانات وفق الواقع والمستندات؛ راجع الطلب وأرسله ثم تابع حالته",
-      "width": 1200,
-      "height": 894,
-      "step": 0,
-      "caption": "خريطة توضيحية خاصة بهذا الدليل؛ اقرأ تفاصيل كل خطوة أدناه. رسم تحريري أصلي وليس لقطة شاشة أو إثباتًا لإتمام الخدمة.",
-      "sourceUrls": [
-        "/images/step-maps/old-rent-housing-apply.webp"
-      ]
-    }
-  ],
   "old-rent-housing-documents": [
     {
       "src": "/images/step-maps/old-rent-housing-documents.webp",
