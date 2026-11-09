@@ -49,7 +49,7 @@ for (const t of expertBatch) {
   assert(t.sections.length>=8&&t.faq.length>=5&&t.sources.length>=3,"Missing article structure, FAQ or sources: "+t.slug);
   assert(t.tool==="expert-knowledge-check","Missing matching interactive quiz: "+t.slug);
   assert(existsSync("public"+t.image),"Missing educational illustration: "+t.slug);
-  assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Missing article in sitemap: "+t.slug);
+  assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),isKnowledgeSearchReady(t),"Knowledge sitemap must match temporary quality gate: "+t.slug);
 }
 const newExpertBatch10=[...load("lib/knowledge-expert-batch-10a.ts").expertBatch10A,...load("lib/knowledge-expert-batch-10b.ts").expertBatch10B,...load("lib/knowledge-expert-batch-10c.ts").expertBatch10C,...load("lib/knowledge-expert-batch-10d.ts").expertBatch10D];
 const quiz10=load("lib/knowledge-expert-batch10-quiz-data.ts").expert10Questions;
@@ -63,7 +63,7 @@ for(const t of newExpertBatch10){
  assert(t.tool==="expert-knowledge-check","No learning check: "+t.slug);
  assert(quiz10[t.slug]?.qa.length===2,"Missing quiz content: "+t.slug);
  assert(existsSync("public"+t.image),"Missing original infographic: "+t.slug);
- assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Missing article in sitemap: "+t.slug);
+ assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),isKnowledgeSearchReady(t),"Knowledge sitemap must match temporary quality gate: "+t.slug);
 }
 const batch11=[...load("lib/knowledge-batch-11a.ts").batch11A,...load("lib/knowledge-batch-11b.ts").batch11B,...load("lib/knowledge-batch-11c.ts").batch11C,...load("lib/knowledge-batch-11d.ts").batch11D];
 const quiz11=load("lib/knowledge-batch-11-quiz.ts").batch11Questions;
@@ -77,7 +77,7 @@ for(const article of batch11){
  assert(article.tool==="expert-knowledge-check","No guided knowledge check: "+article.slug);
  assert(quiz11[article.slug]?.qa.length===2,"Missing two-question quiz: "+article.slug);
  assert(existsSync("public"+article.image),"Missing original infographic: "+article.slug);
- assert(urls.includes("https://www.lusaill.online/knowledge/"+article.slug),"Missing indexable article in sitemap: "+article.slug);
+ assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+article.slug),isKnowledgeSearchReady(article),"Knowledge sitemap must match temporary quality gate: "+article.slug);
 }
 
 const batch12=[...load("lib/knowledge-batch-12a.ts").batch12A,...load("lib/knowledge-batch-12b.ts").batch12B];
@@ -91,7 +91,7 @@ for(const article of batch12){
  assert(article.tool==="expert-knowledge-check"&&quiz12[article.slug]?.qa.length===2,"Missing knowledge test: "+article.slug);
  assert(article.related.length>=2,"Missing contextual internal links: "+article.slug);
  assert(existsSync("public"+article.image),"Missing original graphic: "+article.slug);
- assert(urls.includes("https://www.lusaill.online/knowledge/"+article.slug),"Missing sitemap URL: "+article.slug);
+ assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+article.slug),isKnowledgeSearchReady(article),"Knowledge sitemap must match temporary quality gate: "+article.slug);
 }
 
 
@@ -107,7 +107,7 @@ for(const t of batch13){
  assert(t.tool==="expert-knowledge-check"&&quiz13[t.slug]?.qa.length===2,"Missing interactive learning questions: "+t.slug);
  assert(t.related.length>=3 && t.related.every(l=>l.href.startsWith("/knowledge/")),"Missing internal contextual navigation: "+t.slug);
  assert(existsSync("public"+t.image),"Missing original batch 13 infographic: "+t.slug);
- assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Batch 13 article missing sitemap: "+t.slug);
+ assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),isKnowledgeSearchReady(t),"Knowledge sitemap must match temporary quality gate: "+t.slug);
 }
 
 
@@ -124,7 +124,7 @@ for(const t of batch14){
  assert(t.related.length>=3,"Batch 14 missing internal navigation "+t.slug);
  assert(t.tool==="expert-knowledge-check" && quiz14[t.slug]?.qa.length===2,"Batch 14 missing interactive checks "+t.slug);
  assert(existsSync("public"+t.image),"Batch 14 graphic missing "+t.slug);
- assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Batch 14 missing sitemap URL "+t.slug);
+ assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),isKnowledgeSearchReady(t),"Knowledge sitemap must match temporary quality gate: "+t.slug);
 }
 
 
@@ -140,7 +140,7 @@ for(const t of batch15){
  assert(t.related.length>=3&&t.related.every(x=>x.href.startsWith("/knowledge/")),"Batch 15 internal links missing: "+t.slug);
  assert(t.tool==="expert-knowledge-check"&&quiz15[t.slug]?.qa.length===2,"Batch 15 interactive checks missing: "+t.slug);
  assert(existsSync("public"+t.image),"Batch 15 original infographic missing: "+t.slug);
- assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Batch 15 URL missing from sitemap: "+t.slug);
+ assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),isKnowledgeSearchReady(t),"Knowledge sitemap must match temporary quality gate: "+t.slug);
 }
 
 
@@ -156,7 +156,7 @@ for(const t of batch16){
  assert(t.related.length>=3&&t.related.every(l=>l.href.startsWith("/knowledge/")),"Batch 16 missing internal navigation: "+t.slug);
  assert(t.tool==="expert-knowledge-check"&&quiz16[t.slug]?.qa.length===2,"Batch 16 missing interactive quiz: "+t.slug);
  assert(existsSync("public"+t.image),"Batch 16 educational diagram missing: "+t.slug);
- assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Batch 16 URL missing in sitemap: "+t.slug);
+ assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),isKnowledgeSearchReady(t),"Knowledge sitemap must match temporary quality gate: "+t.slug);
 }
 
 
@@ -172,7 +172,7 @@ for(const t of batch17){
  assert(t.related.length>=3&&t.related.every(l=>l.href.startsWith("/knowledge/")),"Batch 17 internal links missing: "+t.slug);
  assert(t.tool==="expert-knowledge-check"&&quiz17[t.slug]?.qa.length===2,"Batch 17 interactive checks missing: "+t.slug);
  assert(existsSync("public"+t.image),"Batch 17 original educational graphic missing: "+t.slug);
- assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Batch 17 URL not in sitemap: "+t.slug);
+ assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),isKnowledgeSearchReady(t),"Knowledge sitemap must match temporary quality gate: "+t.slug);
 }
 
 
@@ -188,7 +188,7 @@ for(const t of batch18){
  assert(t.related.length>=3&&t.related.every(x=>x.href.startsWith("/knowledge/")),"Batch 18 missing internal links "+t.slug);
  assert(t.tool==="expert-knowledge-check"&&quiz18[t.slug]?.qa.length===2,"Batch 18 must have two quiz items "+t.slug);
  assert(existsSync("public"+t.image),"Batch 18 original concept graphic missing "+t.slug);
- assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Batch 18 sitemap missing "+t.slug);
+ assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),isKnowledgeSearchReady(t),"Knowledge sitemap must match temporary quality gate: "+t.slug);
 }
 
 
@@ -204,7 +204,7 @@ for(const t of batch19){
  assert(t.related.length>=3&&t.related.every(x=>x.href.startsWith("/knowledge/")),"Batch 19 missing internal article links: "+t.slug);
  assert(t.tool==="expert-knowledge-check"&&quiz19[t.slug]?.qa.length===2,"Batch 19 interactive questions missing: "+t.slug);
  assert(existsSync("public"+t.image),"Batch 19 original learning diagram missing: "+t.slug);
- assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Batch 19 sitemap URL missing: "+t.slug);
+ assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),isKnowledgeSearchReady(t),"Knowledge sitemap must match temporary quality gate: "+t.slug);
 }
 
 
@@ -220,7 +220,7 @@ for(const t of batch20){
  assert(t.related.length>=3&&t.related.every(x=>x.href.startsWith("/knowledge/")),"Batch 20 internal links missing: "+t.slug);
  assert(t.tool==="expert-knowledge-check"&&quiz20[t.slug]?.qa.length===2,"Batch 20 interactive quiz missing: "+t.slug);
  assert(existsSync("public"+t.image),"Batch 20 original infographic missing: "+t.slug);
- assert(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),"Batch 20 sitemap missing "+t.slug);
+ assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+t.slug),isKnowledgeSearchReady(t),"Knowledge sitemap must match temporary quality gate: "+t.slug);
 }
 
 for(const topic of knowledgeTopics){
@@ -228,7 +228,7 @@ for(const topic of knowledgeTopics){
  assert(topic.sections.length>=4,"Insufficient section architecture: "+topic.slug);
  assert(topic.sources.length>=3&&topic.sources.every(s=>s.url.startsWith("https://")),"Missing original sources: "+topic.slug);
  assert(existsSync("public"+topic.image),"Missing original educational SVG: "+topic.slug);
- assert(urls.includes("https://www.lusaill.online/knowledge/"+topic.slug),"Missing knowledge topic from sitemap: "+topic.slug);
+ assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+topic.slug),isKnowledgeSearchReady(topic),"Knowledge sitemap must match temporary quality gate: "+topic.slug);
 }
 
 for(const url of urls){
