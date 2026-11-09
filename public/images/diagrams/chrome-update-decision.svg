@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640">
+<title>كيف تتخذ قرارًا عند تحديث Chrome؟</title>
+<desc>ابدأ من فحص Chrome. إذا كان التحديث جاهزًا أعد التشغيل، وإذا ظهرت رسالة خطأ شخّصها، وإذا كان النظام غير مدعوم أو الجهاز مُدار راجع الجهة المختصة ثم تحقق من النتيجة.</desc>
+<rect width="1200" height="640" fill="#f7faf7"/>
+<text x="600" y="75" font-family="Arial,sans-serif" font-size="42" font-weight="700" text-anchor="middle" fill="#183f38" direction="rtl">خريطة قرار: تحديث Google Chrome</text>
+<rect x="360" y="110" width="480" height="86" rx="22" fill="#166c62"/>
+<text x="600" y="161" font-family="Arial,sans-serif" font-size="25" font-weight="700" text-anchor="middle" fill="#fff" direction="rtl">افتح «معلومات عن Google Chrome»</text>
+<path d="M600 196 L600 245" stroke="#718e85" stroke-width="4"/>
+<path d="M590 237 L600 250 L610 237" stroke="#718e85" fill="none" stroke-width="4"/>
+<rect x="73" y="260" width="320" height="115" rx="18" fill="#e5f3ef" stroke="#7da89d" stroke-width="2"/>
+<text x="233" y="302" font-family="Arial,sans-serif" font-size="23" text-anchor="middle" fill="#17473e" font-weight="700" direction="rtl">يطلب إعادة التشغيل؟</text>
+<text x="233" y="340" font-family="Arial,sans-serif" font-size="19" text-anchor="middle" fill="#17473e" direction="rtl">احفظ عملك ثم أعد التشغيل</text>
+<rect x="440" y="260" width="320" height="115" rx="18" fill="#fff5de" stroke="#d5b05d" stroke-width="2"/>
+<text x="600" y="302" font-family="Arial,sans-serif" font-size="23" text-anchor="middle" fill="#6b4914" font-weight="700" direction="rtl">تظهر رسالة خطأ؟</text>
+<text x="600" y="340" font-family="Arial,sans-serif" font-size="19" text-anchor="middle" fill="#6b4914" direction="rtl">سجّل نصها وحدد السبب</text>
+<rect x="807" y="260" width="320" height="115" rx="18" fill="#f3eafa" stroke="#a88cc1" stroke-width="2"/>
+<text x="967" y="302" font-family="Arial,sans-serif" font-size="23" text-anchor="middle" fill="#4c2d6e" font-weight="700" direction="rtl">سياسة مسؤول أو نظام قديم؟</text>
+<text x="967" y="340" font-family="Arial,sans-serif" font-size="19" text-anchor="middle" fill="#4c2d6e" direction="rtl">راجع الصلاحيات ومتطلبات الدعم</text>
+<path d="M600 196 L233 260 M600 196 L967 260" stroke="#718e85" stroke-width="3" fill="none"/>
+<path d="M233 375 L233 427 L600 427 M600 375 L600 427 M967 375 L967 427 L600 427" stroke="#718e85" stroke-width="3" fill="none"/>
+<path d="M600 427 L600 466" stroke="#718e85" stroke-width="4"/>
+<path d="M590 457 L600 470 L610 457" stroke="#718e85" fill="none" stroke-width="4"/>
+<rect x="280" y="475" width="640" height="83" rx="21" fill="#166c62"/>
+<text x="600" y="524" font-family="Arial,sans-serif" font-size="25" text-anchor="middle" fill="white" font-weight="700" direction="rtl">ارجع إلى صفحة المعلومات وتحقّق من النتيجة</text>
+<text x="600" y="599" font-family="Arial,sans-serif" font-size="17" fill="#56736b" text-anchor="middle" direction="rtl">مخطط تحريري من موسوعة لوسيل • ليس لقطة شاشة من Chrome</text>
+</svg>
