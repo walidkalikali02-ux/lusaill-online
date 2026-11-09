@@ -64,7 +64,7 @@ const rows = articles.filter(isArticleIndexable).map(a => {
  if(!a.metaDescription?.trim())missing.push("no_specific_meta_description");
  if(a.metaDescription?.length>200)missing.push("long_meta_description");
  if(!a.updatedAt)missing.push("missing_content_review_date");
- if(!d && (a.practicalSections?.length??0)<2)missing.push("limited_added_depth");
+ if(!d && (a.practicalSections?.length??0)<2 && !gate.isArticleSearchReady(a))missing.push("limited_added_depth");
  return {slug:a.slug,title:a.title,cluster:a.clusterCode,words:wc,sourceLinks:refs.length,searchReady:gate.isArticleSearchReady(a),issues:missing};
 });
 const key=s=>String(s||"").trim().toLocaleLowerCase("ar").replace(/[\s\p{P}]+/gu," ");
