@@ -5,12 +5,27 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-const file=fs.readFileSync("lib/encyclopedic-content.ts","utf8");
-const start="export const encyclopedicContent: Record<string, EncyclopedicContent> = ";
-const end=";\nexport const getEncyclopedicContent";
-const from=file.indexOf(start), until=file.lastIndexOf(end);
-if(from<0||until<0)throw new Error("Encyclopedic content registry could not be parsed");
-const registry=JSON.parse(file.slice(from+start.length,until));
+function readRegistry(pathname, startMarker, endMarker) {
+  const source=fs.readFileSync(pathname,"utf8");
+  const from=source.indexOf(startMarker);
+  const until=source.lastIndexOf(endMarker);
+  if(from<0||until<=from)throw new Error("Encyclopedic content registry could not be parsed: "+pathname);
+  return JSON.parse(source.slice(from+startMarker.length,until));
+}
+const registry=readRegistry(
+  "lib/encyclopedic-content.ts",
+  "export const encyclopedicContent: Record<string, EncyclopedicContent> = ",
+  ";\\nconst electricityReferenceExpansions".replace("\\\\n","\\n"),
+);
+const supplemental=[
+  ["upper-egypt-electricity","lib/electricity-upper-reference.ts","upperEgyptElectricityExpansion"],
+  ["beheira-electricity","lib/electricity-beheira-reference.ts","beheiraElectricityExpansion"],
+  ["south-delta-electricity","lib/electricity-south-delta-reference.ts","southDeltaElectricityExpansion"],
+];
+for(const [slug,pathname,name] of supplemental){
+  if(registry[slug])throw new Error("Duplicate encyclopedia slug: "+slug);
+  registry[slug]=readRegistry(pathname,`export const ${name}: EncyclopedicContent = `,";\\n".replace("\\\\n","\\n"));
+}
 let bad=0;
 for (const [slug, article] of Object.entries(registry)) {
   const body=article.sections.flatMap(section=>[section.title,...section.paragraphs,...(section.bullets??[])]).join(" ");
