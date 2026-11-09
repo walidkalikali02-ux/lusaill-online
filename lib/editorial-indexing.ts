@@ -2,6 +2,7 @@ import { articles, type Article } from "./content";
 import { knowledgeTopics, type KnowledgeTopic } from "./knowledge-expansion-data";
 import { foodSafetyArticles, type FoodSafetyArticle } from "./food-safety";
 import { getEncyclopedicContent } from "./encyclopedic-content";
+import { verifiedServiceHubs } from "./verified-service-hubs";
 
 /**
  * Temporary, conservative editorial index gate for the cleanup phase.
@@ -76,4 +77,10 @@ export function isSearchReadyHref(href: string): boolean {
     return Boolean(article && isFoodSafetySearchReady(article));
   }
   return true; // Courses and other standalone non-article destinations.
+}
+
+/** A service directory is search-ready when it has original decision content or a ready detail guide. */
+export function isGuidePathSearchReady(path: { slug: string; articleSlugs: readonly string[] }): boolean {
+  if (verifiedServiceHubs[path.slug]) return true;
+  return path.articleSlugs.some((slug) => articles.some((article) => article.slug === slug && isArticleSearchReady(article)));
 }

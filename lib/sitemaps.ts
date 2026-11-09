@@ -10,6 +10,7 @@ import { getEncyclopediaCategoryItems } from "@/lib/encyclopedia-catalog";
 import { entities } from "@/lib/entities";
 import { absoluteUrl } from "@/lib/site-config";
 import { guidePaths } from "@/lib/guide-paths";
+import { isGuidePathSearchReady } from "@/lib/editorial-indexing";
 import { guideIllustrations } from "@/lib/guide-illustrations";
 import { fivegLessons, fivegMeta, fivegPath, fivegLessonPath } from "@/lib/fiveg-course";
 import { geometryLessons, geometryMeta, geometryPath, geometryLessonPath } from "@/lib/geometry-course";
@@ -122,7 +123,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
 
   const guideRoutes: MetadataRoute.Sitemap = [
     { url: absoluteUrl("/guides"), lastModified: new Date("2026-10-02"), changeFrequency: "monthly", priority: 0.8 },
-    ...guidePaths.map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article) && path.articleSlugs.includes(article.slug))), changeFrequency: "monthly" as const, priority: 0.8 })),
+    ...guidePaths.filter(isGuidePathSearchReady).map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article) && path.articleSlugs.includes(article.slug))), changeFrequency: "monthly" as const, priority: 0.8 })),
   ];
   return {
     "sitemap-articles.xml": [...publishedArticleRoutes, ...foodSafetyRoutes],
