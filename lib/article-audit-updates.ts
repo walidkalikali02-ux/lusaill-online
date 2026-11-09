@@ -113,8 +113,11 @@ export function applyArticleAuditUpdates(input: Article): Article {
     const electricityReview = new Set(["upper-egypt-electricity", "beheira-electricity", "south-delta-electricity", "code-electricity-meter", "electricity-complaint"]);
     const chromeResearchReview = new Set(["chrome-reset-settings", "chrome-bookmarks-transfer", "chrome-separate-profiles"]);
     const consularMeterReview = new Set(["work-permit-abroad", "consular-power-of-attorney", "prepaid-meter-mobile-charge"]);
-    article.updatedAt = consularMeterReview.has(article.slug)
-      ? "2026-11-09T22:11:00+03:00"
+    const vitalRecordsReview = new Set(["paper-marriage-record-egypt", "paper-divorce-record-egypt", "paper-death-record-egypt", "newborn-birth-registration-egypt", "death-registration-burial-permit"]);
+    article.updatedAt = vitalRecordsReview.has(article.slug)
+      ? "2026-11-09T22:21:00+03:00"
+      : consularMeterReview.has(article.slug)
+        ? "2026-11-09T22:11:00+03:00"
       : chromeResearchReview.has(article.slug)
         ? "2026-11-09T20:42:00+03:00"
       : electricityReview.has(article.slug)
