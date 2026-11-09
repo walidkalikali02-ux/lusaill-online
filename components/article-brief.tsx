@@ -8,6 +8,9 @@ import type { Article } from "@/lib/content";
 import type { Cluster } from "@/lib/clusters";
 import { GuideChecklist } from "./guide-checklist";
 import { getGuidePath } from "@/lib/guide-paths";
+import { getArticlePresentation } from "@/lib/article-presentation";
+import { getEncyclopedicContent } from "@/lib/encyclopedic-content";
+import { ArticleEncyclopedicExpansion } from "./encyclopedic-sections";
 
 export function ArticleBrief({ article, cluster, related }: { article: Article; cluster: Cluster; related: Article[] }) {
   const media = (inlineMedia as Record<string, {src:string;alt:string;width:number;height:number;step:number;caption:string;sourceUrls:string[]}[]>)[article.slug] ?? [];
@@ -18,11 +21,13 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
   const illustration = guideIllustrations[article.slug];
   const path = getGuidePath(article.slug);
   const nextStep = related[0];
+  const presentation = getArticlePresentation(article);
   return (
-      <div className="article-body">
+      <div className={`article-body article-format-${presentation.kind}`}>
+        <p className="editorial-format-label">{presentation.label}</p>
         {/* Summary Table */}
         <section id="summary" className="brief-box">
-          <h2>الملخص</h2>
+          <h2>{presentation.summaryHeading}</h2>
           {article.summaryTable?.length ? (
             <table className="todo-table">
               <tbody>
@@ -42,7 +47,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
 
         {/* Steps */}
         <section id="steps" className="brief-box">
-          <h2>{article.slug === "electricity-bill-inquiry" ? "الاستعلام عن فاتورة الكهرباء برقم الحساب: خطوات التنفيذ" : "خطوات التنفيذ"}</h2>
+          <h2>{article.slug === "electricity-bill-inquiry" ? "الاستعلام عن فاتورة الكهرباء برقم الحساب: خطوات التنفيذ" : presentation.stepsHeading}</h2>
           {article.steps?.length ? (
             <div className="steps-list">
               {article.steps.map((step, i) => (
@@ -69,6 +74,8 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
 
         {article.slug === "electricity-bill-inquiry" && <ElectricityInquiryDetail />}
 
+        <ArticleEncyclopedicExpansion slug={article.slug} />
+
         {article.practicalSections?.map((section) => <section className="brief-box" key={section.title}>
           <h2>{section.title}</h2>
           {section.intro && <p>{section.intro}</p>}
@@ -84,7 +91,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
         {article.steps?.length ? <GuideChecklist steps={article.steps.map((step) => step.title)} /> : null}
         {path && <section className="brief-box"><h2>اختر الدليل المناسب لحالتك</h2><p>{path.description}</p><Link href={`/guides/${path.slug}`}>{path.title}</Link></section>}
         <section id="next-step" className="brief-box">
-          <h2>الخطوة التالية المرتبطة</h2>
+          <h2>{presentation.relatedHeading}</h2>
           {nextStep ? <p>إذا كانت هذه هي مهمتك التالية، راجع <Link href={`/articles/${nextStep.slug}`}>{nextStep.title}</Link> قبل بدء الإجراء.</p> : <p>راجع باقي الأدلة في <Link href={`/categories/${cluster.slug}`}>{cluster.name}</Link> واختر ما يناسب حالتك.</p>}
           <p><Link href={`/categories/${cluster.slug}`}>مركز أدلة {cluster.name}</Link>{path && <> · <Link href={`/guides/${path.slug}`}>مسار المهمة كاملًا</Link></>}</p>
         </section>
@@ -92,14 +99,14 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
         {/* Common Mistakes */}
         {article.commonMistakes?.length ? (
           <section id="mistakes" className="brief-box callout callout-warning">
-            <div className="callout-title">الأخطاء الشائعة</div>
+            <div className="callout-title">{presentation.mistakesHeading}</div>
             <ul>{article.commonMistakes.map((item) => <li key={item}>{item}</li>)}</ul>
           </section>
         ) : null}
 
         {/* Sources */}
         <section id="sources" className="brief-box">
-          <h2>المصادر الرسمية</h2>
+          <h2>{presentation.sourcesHeading}</h2>
           {article.sources?.length ? (
             <ul>
               {article.sources.map((source) => (
@@ -116,7 +123,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
         {/* FAQs */}
         {article.faqs?.length ? (
           <section id="faq" className="brief-box">
-            <h2>الأسئلة الشائعة</h2>
+            <h2>{presentation.faqHeading}</h2>
             <ul>{article.faqs.map((faq) => <li key={faq.question}><strong>{faq.question}</strong> — {faq.answer}</li>)}</ul>
           </section>
         ) : null}
@@ -141,19 +148,23 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
 }
 
 export function ArticleSidebar({ article, cluster, related }: { article: Article; cluster: Cluster; related: Article[] }) {
+  const presentation = getArticlePresentation(article);
+  const deepContent = getEncyclopedicContent(article.slug);
   return (
       <aside className="sidebar">
         <div className="toc">
           <h2>في هذا الدليل</h2>
           <ul className="toc-list">
             <li><a href="#quick-answer">الإجابة الفورية</a></li>
-            <li><a href="#summary">الملخص</a></li>
-            <li><a href="#steps">خطوات التنفيذ</a></li>
+            <li><a href="#summary">{presentation.summaryHeading}</a></li>
+            <li><a href="#steps">{presentation.stepsHeading}</a></li>
+            {deepContent && <li><a href="#in-depth">شرح متعمق</a></li>}
             {article.slug === "electricity-bill-inquiry" && <><li><a href="#electricity-companies">الشركات التسع</a></li><li><a href="#calculator">حاسبة الفاتورة</a></li><li><a href="#inquiry-problems">حل مشكلات الاستعلام</a></li></>}
             {article.steps?.length ? <li><a href="#checklist">قائمة متابعة التنفيذ</a></li> : null}
             {article.commonMistakes?.length ? <li><a href="#mistakes">الأخطاء الشائعة</a></li> : null}
-            <li><a href="#sources">المصادر الرسمية</a></li>
-            {article.faqs?.length ? <li><a href="#faq">الأسئلة الشائعة</a></li> : null}
+            <li><a href="#sources">{presentation.sourcesHeading}</a></li>
+            {deepContent && <li><a href="#encyclopedic-sources">مصادر البحث الإضافية</a></li>}
+            {article.faqs?.length ? <li><a href="#faq">{presentation.faqHeading}</a></li> : null}
           </ul>
         </div>
 

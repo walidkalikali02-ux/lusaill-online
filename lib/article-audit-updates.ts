@@ -1,5 +1,6 @@
 import type { Article } from "./content";
 import { housingDeadlineLabel, housingDeadlinePassed } from "./deadlines";
+import { getEncyclopedicContent } from "./encyclopedic-content";
 
 export type PracticalSection = { title: string; intro?: string; columns: string[]; rows: string[][]; sourceUrl?: string };
 export type ArticleAdvisory = { title: string; detail: string; url: string; label: string };
@@ -103,5 +104,7 @@ export function applyArticleAuditUpdates(input: Article): Article {
     addSource(article, "الجهاز: إعلان الصيانة والقنوات الحالية — تحقق إتاحة فقط", "https://www.tra.gov.eg/");
     article.updatedAt = reviewedAt;
   }
+  // Only substantially revised, source-backed essays have a new editorial modified date.
+  if (getEncyclopedicContent(article.slug)) article.updatedAt = "2026-11-09T12:49:00+03:00";
   return article;
 }

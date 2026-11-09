@@ -14,6 +14,8 @@ import { howToArticles } from "@/lib/structured-data";
 import { ArticleBrief, ArticleSidebar } from "@/components/article-brief";
 import { getTeamPersonaForArticle } from "@/lib/team-domains";
 import { teamPersonaAnchor } from "@/lib/team-personas";
+import { getEncyclopedicContent } from "@/lib/encyclopedic-content";
+import { getArticlePresentation } from "@/lib/article-presentation";
 
 export function generateStaticParams() {
   return articles.filter((article) => isArticleIndexable(article)).map((article) => ({ slug: article.slug }));
@@ -56,6 +58,7 @@ function wordCount(article: { slug?: string; quickAnswer?: string; summaryTable?
   const text = [
     article.quickAnswer,
     article.slug === "electricity-bill-inquiry" ? electricityDetailText : undefined,
+    ...((getEncyclopedicContent(article.slug ?? "")?.sections ?? []).flatMap((section) => [section.title, ...section.paragraphs, ...(section.bullets ?? [])])),
     ...(article.summaryTable ?? []).flatMap((row) => [row.label, row.value]),
     ...(article.steps ?? []).flatMap((step) => [step.title, step.detail]),
     ...(article.practicalSections ?? []).flatMap((section) => [section.title, section.intro, ...section.columns, ...section.rows.flat()]),
@@ -92,6 +95,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const datePublished = article.publishedAt || undefined;
   const dateModified = getArticleModifiedAt(article);
   const mins = readingTime(article);
+  const deepContent = getEncyclopedicContent(article.slug);
+  const presentation = getArticlePresentation(article);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -102,7 +107,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     url: absoluteUrl(`/articles/${article.slug}`),
     inLanguage: siteConfig.language,
     articleSection: cluster.name,
-    keywords: [article.keyword, cluster.name],
+    keywords: [article.keyword, cluster.name, ...(deepContent?.keywords ?? [])],
     wordCount: wordCount(article),
     timeRequired: `PT${mins}M`,
     author: {
@@ -226,11 +231,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <summary>محتويات الدليل</summary>
           <nav>
             <a href="#quick-answer">الإجابة الفورية</a>
-            <a href="#summary">الملخص</a>
-            <a href="#steps">خطوات التنفيذ</a>
+            <a href="#summary">{presentation.summaryHeading}</a>
+            <a href="#steps">{presentation.stepsHeading}</a>
+            {deepContent && <a href="#in-depth">شرح متعمق</a>}
             {article.slug === "electricity-bill-inquiry" && <><a href="#electricity-companies">الشركات التسع</a><a href="#calculator">حاسبة الفاتورة</a><a href="#inquiry-problems">حل مشكلات الاستعلام</a></>}
             {article.commonMistakes?.length ? <a href="#mistakes">الأخطاء الشائعة</a> : null}
-            <a href="#sources">المصادر الرسمية</a>
+            <a href="#sources">{presentation.sourcesHeading}</a>
+            {deepContent && <a href="#encyclopedic-sources">مصادر البحث الإضافية</a>}
             {article.faqs?.length ? <a href="#faq">الأسئلة الشائعة</a> : null}
           </nav>
         </details>
