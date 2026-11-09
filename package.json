@@ -7,14 +7,15 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "npm run seo:paths && next build",
+    "build": "npm run editorial:qa && npm run seo:paths && next build",
     "start": "next start",
     "lint": "eslint .",
     "seo:qa": "node scripts/seo-qa.mjs",
     "seo:audit": "node scripts/seo-audit.mjs",
     "seo:audit:test": "node scripts/test-seo-audit.mjs",
     "seo:site-check": "node scripts/check-site.mjs",
-    "seo:paths": "node scripts/check-guide-paths.mjs && node scripts/test-topic-discovery.mjs"
+    "seo:paths": "node scripts/check-guide-paths.mjs && node scripts/test-topic-discovery.mjs",
+    "editorial:qa": "node scripts/encyclopedia-quality.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
