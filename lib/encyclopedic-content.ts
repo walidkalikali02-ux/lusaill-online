@@ -15,6 +15,9 @@ import { newbornPassportAbroadReference } from "./consular-newborn-passport-refe
 import { newbornTravelDocumentReference } from "./consular-temporary-travel-reference";
 import { consularAttestationReference } from "./consular-attestation-reference";
 import { criminalRecordAbroadReference } from "./consular-criminal-record-reference";
+import { androidBackupCheckReference } from "./android-backup-check-reference";
+import { androidContactsRestoreReference } from "./android-contacts-restore-reference";
+import { googlePhotosSpaceReference } from "./android-google-photos-space-reference";
 
 export type EncyclopedicSection = {
   id: string;
@@ -3992,5 +3995,8 @@ const electricityReferenceExpansions: Record<string, EncyclopedicContent> = {
   "newborn-travel-document": newbornTravelDocumentReference,
   "consular-document-attestation": consularAttestationReference,
   "criminal-record-abroad": criminalRecordAbroadReference,
+  "android-backup-check": androidBackupCheckReference,
+  "android-restore-contacts": androidContactsRestoreReference,
+  "google-photos-free-device-space": googlePhotosSpaceReference,
 };
 export const getEncyclopedicContent = (slug: string) => electricityReferenceExpansions[slug] ?? encyclopedicContent[slug];

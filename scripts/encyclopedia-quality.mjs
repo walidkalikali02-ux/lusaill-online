@@ -37,6 +37,9 @@ const supplemental = [
   ["newborn-travel-document", "lib/consular-temporary-travel-reference.ts", "newbornTravelDocumentReference"],
   ["consular-document-attestation", "lib/consular-attestation-reference.ts", "consularAttestationReference"],
   ["criminal-record-abroad", "lib/consular-criminal-record-reference.ts", "criminalRecordAbroadReference"],
+  ["android-backup-check", "lib/android-backup-check-reference.ts", "androidBackupCheckReference"],
+  ["android-restore-contacts", "lib/android-contacts-restore-reference.ts", "androidContactsRestoreReference"],
+  ["google-photos-free-device-space", "lib/android-google-photos-space-reference.ts", "googlePhotosSpaceReference"],
 ];
 for (const [slug, pathname, name] of supplemental) {
   if (registry[slug]) throw new Error("Duplicate encyclopedia slug: " + slug);
