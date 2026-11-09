@@ -1,6 +1,6 @@
-import type { Article } from "./content";
-import type { KnowledgeTopic } from "./knowledge-expansion-data";
-import type { FoodSafetyArticle } from "./food-safety";
+import { articles, type Article } from "./content";
+import { knowledgeTopics, type KnowledgeTopic } from "./knowledge-expansion-data";
+import { foodSafetyArticles, type FoodSafetyArticle } from "./food-safety";
 import { getEncyclopedicContent } from "./encyclopedic-content";
 
 /**
@@ -58,4 +58,22 @@ export function isKnowledgeSearchReady(topic: KnowledgeTopic): boolean {
 const clinicallyReviewedSlugs = new Set<string>();
 export function isFoodSafetySearchReady(article: FoodSafetyArticle): boolean {
   return clinicallyReviewedSlugs.has(article.slug);
+}
+
+/** Match category-directory and sitemap entries against the page's actual robots policy. */
+export function isSearchReadyHref(href: string): boolean {
+  if (href.startsWith("/articles/")) {
+    const article = articles.find((a) => "/articles/" + a.slug === href);
+    return Boolean(article && isArticleSearchReady(article));
+  }
+  if (href.startsWith("/knowledge/")) {
+    const slug = href.slice("/knowledge/".length);
+    const topic = knowledgeTopics.find((item) => item.slug === slug);
+    return topic ? isKnowledgeSearchReady(topic) : true; // Special independently-authored educational routes.
+  }
+  if (href.startsWith("/food-safety/")) {
+    const article = foodSafetyArticles.find((a) => "/food-safety/" + a.slug === href);
+    return Boolean(article && isFoodSafetySearchReady(article));
+  }
+  return true; // Courses and other standalone non-article destinations.
 }

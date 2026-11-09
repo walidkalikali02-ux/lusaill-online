@@ -1,8 +1,8 @@
 import { sixgLessons, sixgMeta, sixgPath, sixgLessonPath } from "@/lib/sixg-course";
 import type { MetadataRoute } from "next";
 import { getArticleModifiedAt } from "./content-modified";
-import { articles, clusters, clusterProgress } from "@/lib/content";
-import { isArticleSearchReady, isKnowledgeSearchReady, isFoodSafetySearchReady } from "@/lib/editorial-indexing";
+import { articles, clusters } from "@/lib/content";
+import { isArticleSearchReady, isKnowledgeSearchReady, isFoodSafetySearchReady, isSearchReadyHref } from "@/lib/editorial-indexing";
 import { foodSafetyArticles } from "@/lib/food-safety";
 import { knowledgeTopics } from "@/lib/knowledge-expansion-data";
 import { encyclopediaCategories } from "@/lib/encyclopedia-taxonomy";
@@ -31,7 +31,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
   // Index the subject directory and only categories with real published content.
   // Empty editorial-roadmap categories are intentionally absent from the sitemap.
   const topicRoutes: MetadataRoute.Sitemap = encyclopediaCategories
-    .filter(category => getEncyclopediaCategoryItems(category).length >= 2)
+    .filter(category => getEncyclopediaCategoryItems(category).filter(item => isSearchReadyHref(item.href)).length >= 2)
     .map(category => ({
       url: absoluteUrl(`/topics/${category.slug}`),
       changeFrequency: "monthly" as const,
@@ -82,28 +82,16 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     images: [absoluteUrl(lesson.image.src)],
   }));
 
-  const clusterRoutes: MetadataRoute.Sitemap = clusters.filter((cluster) => clusterProgress(cluster.slug).published > 0).map((cluster) => ({
+  const clusterRoutes: MetadataRoute.Sitemap = clusters.filter((cluster) => articles.some((article) => isArticleSearchReady(article) && article.clusterCode === cluster.code)).map((cluster) => ({
     url: absoluteUrl(`/categories/${cluster.slug}`),
     lastModified: new Date(Math.max(latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article) && article.clusterCode === cluster.code))?.getTime() ?? 0, new Date(categoryIntroductions[cluster.slug]?.updatedAt ?? 0).getTime())),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  // Include only real, independently canonical category pagination URLs.
-  // A page's lastmod comes from the articles listed on that page, not the build date.
-  const CATEGORY_PAGE_SIZE = 30; // Keep aligned with app/categories/[slug]/page.tsx.
-  const categoryPaginationRoutes: MetadataRoute.Sitemap = clusters.flatMap((cluster) => {
-    const published = articles.filter((article) => isArticleSearchReady(article) && article.clusterCode === cluster.code);
-    return Array.from({ length: Math.max(0, Math.ceil(published.length / CATEGORY_PAGE_SIZE) - 1) }, (_, index) => {
-      const page = index + 2;
-      return {
-        url: absoluteUrl(`/categories/${cluster.slug}?page=${page}`),
-        lastModified: latestPublishedUpdate(published.slice((page - 1) * CATEGORY_PAGE_SIZE, page * CATEGORY_PAGE_SIZE)),
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
-      };
-    });
-  });
+  // Temporarily omit category pagination from the XML sitemap during editorial triage.
+  // The paginated URLs remain accessible for readers, but should not be indexable until reviewed.
+  const categoryPaginationRoutes: MetadataRoute.Sitemap = [];
 
   const entityRoutes: MetadataRoute.Sitemap = entities
     .filter((entity) => articles.some((article) => isArticleSearchReady(article) && entity.clusterCodes.includes(article.clusterCode)))

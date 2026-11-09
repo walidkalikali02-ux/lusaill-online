@@ -5,6 +5,7 @@ import { encyclopediaCategories, getEncyclopediaCategory } from "@/lib/encyclope
 import { getCategoryUrl, getEncyclopediaCategoryItems, getEncyclopediaSubtopicItems } from "@/lib/encyclopedia-catalog";
 import { pageAlternates } from "@/lib/page-alternates";
 import { absoluteUrl } from "@/lib/site-config";
+import { isSearchReadyHref } from "@/lib/editorial-indexing";
 import styles from "./topic.module.css";
 
 type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ section?: string | string[]; page?: string | string[] }> };
@@ -16,7 +17,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const [{ slug }, query] = await Promise.all([params, searchParams]);
   const category = getEncyclopediaCategory(slug);
   if (!category) return { robots: { index: false, follow: false } };
-  const count = getEncyclopediaCategoryItems(category).length;
+  const count = getEncyclopediaCategoryItems(category).filter(item => isSearchReadyHref(item.href)).length;
   const filtered = typeof query.section === "string" && category.subtopics.includes(query.section);
   const page = typeof query.page === "string" ? Number(query.page) : 1;
   return {

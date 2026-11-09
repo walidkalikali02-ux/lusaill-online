@@ -8,6 +8,7 @@ import { guidePaths } from "@/lib/guide-paths";
 import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 
 import { categoryIntroductions } from "@/lib/category-introductions";
+import { isArticleSearchReady } from "@/lib/editorial-indexing";
 
 const ARTICLES_PER_PAGE = 30;
 
@@ -26,7 +27,7 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   const cluster = getCluster(slug);
   if (!cluster) return {};
   const publishedCount = getClusterArticles(cluster.slug).filter((article) => isArticleIndexable(article)).length;
-  const hasPublished = publishedCount > 0;
+  const hasPublished = getClusterArticles(cluster.slug).some(isArticleSearchReady);
   const totalPages = Math.max(1, Math.ceil(publishedCount / ARTICLES_PER_PAGE));
   const requestedPage = pageNumber(pageParam);
   const currentPage = Math.min(requestedPage ?? 1, totalPages);
@@ -38,7 +39,7 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
     title,
     description,
     alternates: pageAlternates(canonicalPath),
-    robots: { index: hasPublished && validPage, follow: true },
+    robots: { index: hasPublished && validPage && currentPage === 1, follow: true },
     openGraph: {
       title,
       description,
