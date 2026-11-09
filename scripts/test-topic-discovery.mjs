@@ -45,6 +45,7 @@ for(const slug of ["driving-licences","work-permits","passports"]){
   assert(hub && path,"Missing verified service hub: "+slug);
   assert(hub.sections.length>=4&&hub.choices.length>=5&&hub.factRows.length>=4,"Hub missing user decision content: "+slug);
   assert(hub.description.length>=90&&hub.description.length<=200,"Hub meta description needs specific length: "+slug);
+  assert(hub.seoTitle.length+9<=60,"Hub SEO title too long: "+slug);
   assert(hub.references.length>=2&&hub.references.every(ref=>/^https:\/\/(?:[a-z-]+\.)?moi\.gov\.eg\//.test(ref.url)),"Service hub must cite official ministry references: "+slug);
   assert(hub.factRows.every(fact=>hub.references[fact.source]),"Broken service hub reference: "+slug);
   assert(hub.choices.every(c=>path.articleSlugs.includes(c.slug)),"Service hub must target existing task-path article: "+slug);

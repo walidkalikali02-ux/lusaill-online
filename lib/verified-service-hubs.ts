@@ -1,5 +1,6 @@
 export type VerifiedServiceHub = {
   title: string;
+  seoTitle: string;
   description: string;
   eyebrow: string;
   intro: string;
@@ -16,6 +17,7 @@ export type VerifiedServiceHub = {
  */
 export const verifiedServiceHubs: Record<string, VerifiedServiceHub> = {
   "driving-licences": {
+    "seoTitle": "رخصة القيادة في مصر: إصدار وتجديد وبدل فاقد",
     "title": "دليل رخص القيادة في مصر: أول إصدار وتجديد وبدل فاقد أو تالف",
     "description": "اختر المعاملة الصحيحة لرخصة القيادة في مصر: إصدار أول مرة، تجديد، بدل فاقد أو تالف، الكشف الطبي ونوع الرخصة، مع قواعد المرور ومصادر وزارة الداخلية.",
     "eyebrow": "المرور المصري · رخصة السائق لا رخصة المركبة",
@@ -140,6 +142,7 @@ export const verifiedServiceHubs: Record<string, VerifiedServiceHub> = {
     ]
   },
   "work-permits": {
+    "seoTitle": "تصاريح العمل في مصر: إصدار وتجديد وبدل فاقد",
     "title": "تصاريح العمل للمصريين: أول مرة وتجديد وبدل فاقد ومخالصة",
     "description": "دليل قرار تصاريح العمل المصرية: اختر إصدار أول مرة أو تجديدًا أو بدل فاقد أو مخالصة أو تصريحًا موسميًا، وتحقق من المتطلبات والدفع عبر وزارة الداخلية.",
     "eyebrow": "خدمات وزارة الداخلية · قطاع تصاريح العمل",
@@ -241,6 +244,7 @@ export const verifiedServiceHubs: Record<string, VerifiedServiceHub> = {
     ]
   },
   "passports": {
+    "seoTitle": "جواز السفر المصري: استخراج وتجديد وبدل فاقد",
     "title": "جواز السفر المصري: أول إصدار وتجديد وبدل فاقد أو تالف",
     "description": "دليل شامل لاختيار معاملة جواز السفر المصري: أول مرة أو تجديد أو بدل فاقد أو تالف، جواز الطفل، وطلبات الخارج، مع مصادر إدارة الجوازات.",
     "eyebrow": "مصر · الإدارة العامة للجوازات والهجرة والجنسية",

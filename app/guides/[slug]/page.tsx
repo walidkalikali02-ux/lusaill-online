@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const path = guidePaths.find((item) => item.slug === slug);
   if (!path) return { robots: { index: false } };
   const hub = verifiedServiceHubs[slug];
-  const title = hub?.title ?? path.title;
+  const title = hub?.seoTitle ?? path.title;
   const description = hub?.description ?? path.description;
   return { title, description, alternates: pageAlternates(`/guides/${slug}`),
     robots: { index: isGuidePathSearchReady(path), follow: true },
