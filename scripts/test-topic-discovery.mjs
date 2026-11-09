@@ -36,6 +36,25 @@ assert.equal(getArticleModifiedAt({slug:"unknown"}),undefined,"Do not invent a d
 assert.equal(latestContentDate("invalid","2026-10-01"),"2026-10-01");
 const groups=sitemapGroups(),all=Object.values(groups).flat(),urls=all.map(r=>r.url),map=new Map(groups["sitemap-articles.xml"].map(r=>[r.url,r]));
 assert.equal(new Set(urls).size,urls.length,"Duplicate sitemap URLs");
+
+const {verifiedServiceHubs}=load("lib/verified-service-hubs.ts");
+const {guidePaths}=load("lib/guide-paths.ts");
+const {isGuidePathSearchReady}=load("lib/editorial-indexing.ts");
+for(const slug of ["driving-licences","work-permits","passports"]){
+  const hub=verifiedServiceHubs[slug], path=guidePaths.find(item=>item.slug===slug);
+  assert(hub && path,"Missing verified service hub: "+slug);
+  assert(hub.sections.length>=4&&hub.choices.length>=5&&hub.factRows.length>=4,"Hub missing user decision content: "+slug);
+  assert(hub.description.length>=90&&hub.description.length<=200,"Hub meta description needs specific length: "+slug);
+  assert(hub.seoTitle.length+9<=60,"Hub SEO title too long: "+slug);
+  assert(hub.references.length>=2&&hub.references.every(ref=>/^https:\/\/(?:[a-z-]+\.)?moi\.gov\.eg\//.test(ref.url)),"Service hub must cite official ministry references: "+slug);
+  assert(hub.factRows.every(fact=>hub.references[fact.source]),"Broken service hub reference: "+slug);
+  assert(hub.choices.every(c=>path.articleSlugs.includes(c.slug)),"Service hub must target existing task-path article: "+slug);
+  assert(urls.includes("https://www.lusaill.online/guides/"+slug),"Verified hub missing in XML sitemap: "+slug);
+}
+for(const path of guidePaths){
+  assert.equal(urls.includes("https://www.lusaill.online/guides/"+path.slug),isGuidePathSearchReady(path),"Guide path sitemap/indexing mismatch: "+path.slug);
+}
+
 // Content completeness regression: empty articles are never published or inserted in XML.
 const {knowledgeTopics}=load("lib/knowledge-expansion-data.ts");
 assert.equal(knowledgeTopics.length,138,"Expected 138 authored knowledge topics including batch 20");

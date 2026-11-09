@@ -2,6 +2,8 @@ import { articles, type Article } from "./content";
 import { knowledgeTopics, type KnowledgeTopic } from "./knowledge-expansion-data";
 import { foodSafetyArticles, type FoodSafetyArticle } from "./food-safety";
 import { getEncyclopedicContent } from "./encyclopedic-content";
+import { verifiedServiceHubs } from "./verified-service-hubs";
+import { electricityDetailText } from "./electricity-inquiry-detail";
 
 /**
  * Temporary, conservative editorial index gate for the cleanup phase.
@@ -18,6 +20,7 @@ export function isArticleSearchReady(article: Article): boolean {
   const deep = getEncyclopedicContent(article.slug);
   const text = [
     article.quickAnswer,
+    article.slug === "electricity-bill-inquiry" ? electricityDetailText : undefined,
     ...(article.summaryTable ?? []).flatMap((row) => [row.label, row.value]),
     ...(article.steps ?? []).flatMap((step) => [step.title, step.detail]),
     ...(article.practicalSections ?? []).flatMap((section) => [section.title, section.intro, ...section.columns, ...section.rows.flat()]),
@@ -32,7 +35,15 @@ export function isArticleSearchReady(article: Article): boolean {
   ]);
   const hasStructure = (deep?.sections.length ?? 0) >= 3 ||
     ((article.steps?.length ?? 0) >= 3 && (article.practicalSections?.length ?? 0) >= 2);
-  return words(text) >= 900 && citationCount >= 2 && hasStructure && !hasDraftMaterial(text);
+  // Two individual decision-led guides were spot-checked against official WPS/Microsoft
+  // and Egyptian electricity-regulator sources on 2026-11-09. Their utility and source
+  // coverage are not captured by the generic deep-section counter. This does NOT
+  // certify that every link or claim has been independently verified.
+  const individuallyTriaged = new Set(["wps-kingsoft-deleted-excel-recovery", "electricity-bill-inquiry"]);
+  const sufficientDecisionContent = individuallyTriaged.has(article.slug)
+    && citationCount >= 4 && (article.steps?.length ?? 0) >= 4 && (article.faqs?.length ?? 0) >= 4;
+  return words(text) >= 900 && citationCount >= 2
+    && (hasStructure || sufficientDecisionContent) && !hasDraftMaterial(text);
 }
 
 export function isMedicalKnowledgeTopic(topic: KnowledgeTopic): boolean {
@@ -76,4 +87,10 @@ export function isSearchReadyHref(href: string): boolean {
     return Boolean(article && isFoodSafetySearchReady(article));
   }
   return true; // Courses and other standalone non-article destinations.
+}
+
+/** A service directory is search-ready when it has original decision content or a ready detail guide. */
+export function isGuidePathSearchReady(path: { slug: string; articleSlugs: readonly string[] }): boolean {
+  if (verifiedServiceHubs[path.slug]) return true;
+  return path.articleSlugs.some((slug) => articles.some((article) => article.slug === slug && isArticleSearchReady(article)));
 }
