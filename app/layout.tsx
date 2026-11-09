@@ -28,7 +28,6 @@ export const metadata: Metadata = {
   category: "reference",
   referrer: "origin-when-cross-origin",
   formatDetection: { email: false, address: false, telephone: false },
-  keywords: ["موسوعة عربية", "موسوعة لوسيل", "العلوم", "الصحة", "التعليم", "التقنية", "الثقافة", "المعرفة", "أدلة عربية"],
   other: {
     "geo.region": siteConfig.geo.region,
     "geo.placename": siteConfig.geo.placename,

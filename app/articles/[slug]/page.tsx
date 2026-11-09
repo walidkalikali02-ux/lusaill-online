@@ -16,6 +16,7 @@ import { getTeamPersonaForArticle } from "@/lib/team-domains";
 import { teamPersonaAnchor } from "@/lib/team-personas";
 import { getEncyclopedicContent } from "@/lib/encyclopedic-content";
 import { getArticlePresentation } from "@/lib/article-presentation";
+import { isArticleSearchReady } from "@/lib/editorial-indexing";
 
 export function generateStaticParams() {
   return articles.filter((article) => isArticleIndexable(article)).map((article) => ({ slug: article.slug }));
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: searchTitles[article.slug] ?? article.title,
     description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث مع خطوات وروابط رسمية.`,
     alternates: pageAlternates(`/articles/${article.slug}`),
-    robots: { index: isArticleIndexable(article), follow: true },
+    robots: { index: isArticleSearchReady(article), follow: true },
     openGraph: {
       title: searchTitles[article.slug] ?? article.title,
       description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث.`,

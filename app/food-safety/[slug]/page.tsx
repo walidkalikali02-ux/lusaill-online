@@ -8,6 +8,7 @@ import { pageAlternates } from "@/lib/page-alternates";
 import "../food-safety.css";
 import { getFoodSafetyPersona } from "@/lib/team-domains";
 import { teamPersonaAnchor } from "@/lib/team-personas";
+import { isFoodSafetySearchReady } from "@/lib/editorial-indexing";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: searchTitles[article.slug] ?? article.title,
     description: article.description,
     alternates: pageAlternates(path),
-    robots: { index: true, follow: true },
+    robots: { index: isFoodSafetySearchReady(article), follow: true },
     openGraph: {
       type: "article",
       title: searchTitles[article.slug] ?? article.title,

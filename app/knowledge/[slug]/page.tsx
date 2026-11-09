@@ -6,6 +6,7 @@ import { pageAlternates } from "@/lib/page-alternates";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { knowledgeTopics, getKnowledgeTopic } from "@/lib/knowledge-expansion-data";
 import { KnowledgeInteractiveTool } from "@/components/knowledge-interactive-tools";
+import { isKnowledgeSearchReady, isMedicalKnowledgeTopic } from "@/lib/editorial-indexing";
 
 export const dynamicParams = false;
 export const revalidate = 86400;
@@ -17,7 +18,7 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
   if(!topic || !topic.directAnswer?.trim() || !topic.sections.length)return {robots:{index:false,follow:false}};
   const path="/knowledge/"+topic.slug;
   return {title:topic.title,description:topic.description,alternates:pageAlternates(path),
-    robots:{index:true,follow:true},
+    robots:{index:isKnowledgeSearchReady(topic),follow:true},
     openGraph:{title:topic.title,description:topic.description,url:path,type:"article",publishedTime:topic.publishedAt,
       images:[{url:topic.image,alt:topic.imageAlt}]},
     twitter:{card:"summary_large_image",title:topic.title,description:topic.description,images:[topic.image]}};
@@ -42,6 +43,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 <h1 style={{fontSize:"clamp(29px,4vw,43px)",fontWeight:800,lineHeight:1.5,marginBlock:14}}>{topic.title}</h1>
 <p style={{fontSize:18}}>{topic.intro}</p>
 <p style={{fontSize:13,color:"#64748b",marginBlock:13}}>إعداد: فريق لوسيل · تاريخ النشر: <time dateTime={topic.publishedAt}>{topic.publishedAt}</time></p>
+{isMedicalKnowledgeTopic(topic) && <p role="note" style={{background:"#fff7ed",padding:12,borderRadius:8,fontSize:14}}>هذه معلومات عامة، ولم تُوثَّق لهذا المقال مراجعة تخصصية مستقلة حتى الآن. لا تستخدمه بدل التقييم الطبي أو تعليمات الجهات الصحية الرسمية.</p>}
 </header>
 <figure style={{marginBlock:27}}>
 <Image src={topic.image} alt={topic.imageAlt} width={1200} height={630} unoptimized style={{width:"100%",height:"auto",borderRadius:16}} priority/>
@@ -75,7 +77,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 </section>
 <section id="sources" style={{borderTop:"1px solid #e2e8f0",paddingTop:20,marginTop:24}}>
 <h2 style={{fontSize:25,fontWeight:800,marginBottom:12}}>المراجع والمصادر</h2>
-<p>اعتمد هذا الدليل على مصادر المؤسسات المدرجة أدناه. الأمثلة والأدوات والجداول المقارنة مكتوبة لأغراض تعليمية من إعداد لوسيل، وتُراجع عند تحديث البيانات.</p>
+<p>هذه مراجع للاطلاع، لكن لم تُفحص صلاحية جميع روابطها في جولة التدقيق الحالية. تحقق من أحدث نسخة للمصدر قبل الاعتماد على معلومة متغيرة؛ والأمثلة والأدوات التعليمية لا تُعد نتائج تجارب ميدانية فعلية.</p>
 <ul style={{paddingInlineStart:24,marginTop:10}}>
 {topic.sources.map(item=><li key={item.url} style={{marginBottom:7}}><a href={item.url} target="_blank" rel="noopener noreferrer" style={{color:"#0d7490",textDecoration:"underline"}}>{item.label}</a></li>)}</ul>
 </section>
