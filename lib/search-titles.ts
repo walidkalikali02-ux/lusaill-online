@@ -116,7 +116,7 @@ const editionTitles: Record<string, string> = {
   "ration-card-replacement": "بدل بطاقة التموين 2026: الإيقاف وطلب فاقد وتالف",
   "ration-card-governorate-transfer": "نقل بطاقة التموين 2026: الطلب بين المحافظات",
   "ration-card-activation": "تفعيل بطاقة التموين 2026: الشروط وخطوات المتابعة",
-  "old-rent-housing-apply": "السكن البديل: طلب الإيجار القديم حتى 12 يناير",
+  "old-rent-housing-apply": "السكن البديل للإيجار القديم: التقديم حتى 12 يناير 2027",
   "old-rent-housing-eligibility": "السكن البديل 2026: مراجعة شروط أهلية الطلب",
   "old-rent-housing-documents": "السكن البديل 2026: تجهيز مستندات الإيجار والدخل",
   "old-rent-housing-post-office": "السكن البديل 2026: التقديم بمساعدة مكتب البريد",
