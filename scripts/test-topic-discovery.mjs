@@ -16,6 +16,17 @@ function load(file){
 const {articles,clusters,isArticleIndexable}=load("lib/content.ts"),{foodSafetyArticles}=load("lib/food-safety.ts"),{sitemapGroups}=load("lib/sitemaps.ts"),{getGuidePath}=load("lib/guide-paths.ts"),{getArticleModifiedAt,latestContentDate}=load("lib/content-modified.ts"),{guideIllustrations}=load("lib/guide-illustrations.ts");
 const {isArticleSearchReady,isKnowledgeSearchReady,isFoodSafetySearchReady}=load("lib/editorial-indexing.ts");
 const {getEncyclopedicContent}=load("lib/encyclopedic-content.ts");
+for(const slug of ["android-backup-check","android-restore-contacts","google-photos-free-device-space"]){
+  const article=articles.find(a=>a.slug===slug);
+  const deep=getEncyclopedicContent(slug);
+  assert(article&&deep,"Missing Android data safety reference article: "+slug);
+  assert(deep.sections.length>=7 && deep.sources.length>=4,"Android guide lacks independent depth or sources: "+slug);
+  assert(deep.sections.every(section=>section.sourceUrls?.length>=1 && section.sourceUrls.every(url=>deep.sources.some(source=>source.url===url))),"Android guide has unmatched chapter citation: "+slug);
+  assert(isArticleSearchReady(article),"Android guide does not satisfy editorial search gate: "+slug);
+}
+assert(getEncyclopedicContent("android-backup-check").sections.some(section=>section.paragraphs.some(p=>p.includes("ليست جميع التطبيقات"))),"Android guide must warn about unsupported app backup");
+assert(getEncyclopedicContent("android-restore-contacts").sections.some(section=>section.paragraphs.some(p=>p.includes("ثلاثين يومًا"))),"Contacts guide must document the trash window");
+assert(getEncyclopedicContent("google-photos-free-device-space").sections.some(section=>section.paragraphs.some(p=>p.includes("النسخ المحلية"))),"Photos guide must distinguish local deletion from backup");
 for(const slug of ["newborn-travel-document","consular-document-attestation","criminal-record-abroad"]){
   const article=articles.find(a=>a.slug===slug);
   const deep=getEncyclopedicContent(slug);
