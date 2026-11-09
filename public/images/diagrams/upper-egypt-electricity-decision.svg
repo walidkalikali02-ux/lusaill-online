@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="chart-title chart-desc">
+<title id="chart-title">مصر العليا: من الإيصال إلى نتيجة موثوقة</title><desc id="chart-desc">تمييز الرقم المطلوب قبل إدخال البيانات أو الدفع. اختر الشركة راجع الفاتورة والمحافظة، حدد الكود الكود الإلكتروني على الإيصال، راجع النتيجة طابق الحساب والشهر والمبلغ، تصرف بأمان سداد بإيصال أو مراجعة الفرع.</desc>
+<rect width="1200" height="640" fill="#ffffff"/>
+<rect width="1200" height="158" fill="#12384c"/>
+<text x="600" y="70" fill="#ffffff" font-size="39" font-family="Arial,sans-serif" direction="rtl" text-anchor="middle" font-weight="700">مصر العليا: من الإيصال إلى نتيجة موثوقة</text>
+<text x="600" y="113" fill="#d3eef0" font-size="22" font-family="Arial,sans-serif" direction="rtl" text-anchor="middle">تمييز الرقم المطلوب قبل إدخال البيانات أو الدفع</text>
+<g font-family="Arial,Tahoma,sans-serif"><g><rect x="65" y="236" width="225" height="200" rx="22" fill="#eff7fb" stroke="#c7d9df" stroke-width="2"/>
+<circle cx="177" cy="281" r="25" fill="#126d70"/><text x="177" y="291" font-size="28" text-anchor="middle" font-weight="700" fill="#fff">1</text>
+<text x="177" y="338" font-size="26" text-anchor="middle" font-weight="700" fill="#17354d" direction="rtl">اختر الشركة</text>
+<text x="177" y="381" font-size="19" text-anchor="middle" fill="#426278" direction="rtl">راجع الفاتورة</text>
+<text x="177" y="413" font-size="19" text-anchor="middle" fill="#426278" direction="rtl">والمحافظة</text></g>
+<g><rect x="355" y="236" width="225" height="200" rx="22" fill="#e7f8f3" stroke="#c7d9df" stroke-width="2"/>
+<circle cx="467" cy="281" r="25" fill="#126d70"/><text x="467" y="291" font-size="28" text-anchor="middle" font-weight="700" fill="#fff">2</text>
+<text x="467" y="338" font-size="26" text-anchor="middle" font-weight="700" fill="#17354d" direction="rtl">حدد الكود</text>
+<text x="467" y="381" font-size="19" text-anchor="middle" fill="#426278" direction="rtl">الكود الإلكتروني</text>
+<text x="467" y="413" font-size="19" text-anchor="middle" fill="#426278" direction="rtl">على الإيصال</text></g>
+<g><rect x="645" y="236" width="225" height="200" rx="22" fill="#eff7fb" stroke="#c7d9df" stroke-width="2"/>
+<circle cx="757" cy="281" r="25" fill="#126d70"/><text x="757" y="291" font-size="28" text-anchor="middle" font-weight="700" fill="#fff">3</text>
+<text x="757" y="338" font-size="26" text-anchor="middle" font-weight="700" fill="#17354d" direction="rtl">راجع النتيجة</text>
+<text x="757" y="381" font-size="19" text-anchor="middle" fill="#426278" direction="rtl">طابق الحساب</text>
+<text x="757" y="413" font-size="19" text-anchor="middle" fill="#426278" direction="rtl">والشهر والمبلغ</text></g>
+<g><rect x="935" y="236" width="225" height="200" rx="22" fill="#f3f0fb" stroke="#c7d9df" stroke-width="2"/>
+<circle cx="1047" cy="281" r="25" fill="#126d70"/><text x="1047" y="291" font-size="28" text-anchor="middle" font-weight="700" fill="#fff">4</text>
+<text x="1047" y="338" font-size="26" text-anchor="middle" font-weight="700" fill="#17354d" direction="rtl">تصرف بأمان</text>
+<text x="1047" y="381" font-size="19" text-anchor="middle" fill="#426278" direction="rtl">سداد بإيصال</text>
+<text x="1047" y="413" font-size="19" text-anchor="middle" fill="#426278" direction="rtl">أو مراجعة الفرع</text></g><path d="M298 335 L345 335" stroke="#126d70" stroke-width="5" fill="none"/><path d="M338 325 L348 335 L338 345" stroke="#126d70" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M588 335 L635 335" stroke="#126d70" stroke-width="5" fill="none"/><path d="M628 325 L638 335 L628 345" stroke="#126d70" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M878 335 L925 335" stroke="#126d70" stroke-width="5" fill="none"/><path d="M918 325 L928 335 L918 345" stroke="#126d70" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+<rect x="65" y="487" width="1070" height="85" rx="14" fill="#fff8e9" stroke="#e5c889"/>
+<text x="600" y="525" fill="#5e4a13" font-size="23" direction="rtl" text-anchor="middle" font-family="Arial,Tahoma,sans-serif">لا تستبدل الكود الإلكتروني برقم جسم العداد أو رقم بطاقة الهوية.</text>
+<text x="600" y="553" fill="#5e4a13" font-size="19" direction="rtl" text-anchor="middle" font-family="Arial,Tahoma,sans-serif">ظهور الفاتورة لا يعني أنها مدفوعة.</text>
+<text x="600" y="616" fill="#687c88" font-size="16" direction="rtl" text-anchor="middle" font-family="Arial,Tahoma,sans-serif">رسم تحريري توضيحي أصلي من موسوعة لوسيل — ليس صورة شاشة رسمية أو إثبات عملية</text>
+</svg>
