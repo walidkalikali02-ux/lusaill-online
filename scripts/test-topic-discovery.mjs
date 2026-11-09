@@ -16,6 +16,17 @@ function load(file){
 const {articles,clusters,isArticleIndexable}=load("lib/content.ts"),{foodSafetyArticles}=load("lib/food-safety.ts"),{sitemapGroups}=load("lib/sitemaps.ts"),{getGuidePath}=load("lib/guide-paths.ts"),{getArticleModifiedAt,latestContentDate}=load("lib/content-modified.ts"),{guideIllustrations}=load("lib/guide-illustrations.ts");
 const {isArticleSearchReady,isKnowledgeSearchReady,isFoodSafetySearchReady}=load("lib/editorial-indexing.ts");
 const {getEncyclopedicContent}=load("lib/encyclopedic-content.ts");
+for(const slug of ["newborn-travel-document","consular-document-attestation","criminal-record-abroad"]){
+  const article=articles.find(a=>a.slug===slug);
+  const deep=getEncyclopedicContent(slug);
+  assert(article&&deep,"Consular travel/legalization/criminal record article missing: "+slug);
+  assert(deep.sections.length>=7 && deep.sources.length>=3,"Consular reference lacks depth and sources: "+slug);
+  assert(deep.sections.every(section => section.sourceUrls?.length>=1 && section.sourceUrls.every(url=>deep.sources.some(s=>s.url===url))),"A section has missing or unmatched source URLs: "+slug);
+  assert(isArticleSearchReady(article),"Consular reference should satisfy temporary editorial index rules: "+slug);
+}
+const travel=getEncyclopedicContent("newborn-travel-document");
+assert(travel.sections.some(section=>section.paragraphs.some(p=>p.includes("العودة إلى أرض الوطن"))),"Qatar-specific return limitation must be explicit");
+assert(travel.sections.some(section=>section.paragraphs.some(p=>p.includes("أي خلفية"))),"Conflicting local and central photo requirements must be disclosed");
 for(const slug of ["birth-certificate-abroad","national-id-renewal-abroad","newborn-passport-abroad"]){
   const article=articles.find(a=>a.slug===slug);
   const deep=getEncyclopedicContent(slug);

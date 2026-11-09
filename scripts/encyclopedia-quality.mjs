@@ -34,6 +34,9 @@ const supplemental = [
   ["birth-certificate-abroad", "lib/consular-birth-certificate-reference.ts", "birthCertificateAbroadReference"],
   ["national-id-renewal-abroad", "lib/consular-national-id-reference.ts", "nationalIdRenewalAbroadReference"],
   ["newborn-passport-abroad", "lib/consular-newborn-passport-reference.ts", "newbornPassportAbroadReference"],
+  ["newborn-travel-document", "lib/consular-temporary-travel-reference.ts", "newbornTravelDocumentReference"],
+  ["consular-document-attestation", "lib/consular-attestation-reference.ts", "consularAttestationReference"],
+  ["criminal-record-abroad", "lib/consular-criminal-record-reference.ts", "criminalRecordAbroadReference"],
 ];
 for (const [slug, pathname, name] of supplemental) {
   if (registry[slug]) throw new Error("Duplicate encyclopedia slug: " + slug);
