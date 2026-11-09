@@ -16,6 +16,16 @@ function load(file){
 const {articles,clusters,isArticleIndexable}=load("lib/content.ts"),{foodSafetyArticles}=load("lib/food-safety.ts"),{sitemapGroups}=load("lib/sitemaps.ts"),{getGuidePath}=load("lib/guide-paths.ts"),{getArticleModifiedAt,latestContentDate}=load("lib/content-modified.ts"),{guideIllustrations}=load("lib/guide-illustrations.ts");
 const {isArticleSearchReady,isKnowledgeSearchReady,isFoodSafetySearchReady}=load("lib/editorial-indexing.ts");
 const {getEncyclopedicContent}=load("lib/encyclopedic-content.ts");
+for(const slug of ["birth-certificate-abroad","national-id-renewal-abroad","newborn-passport-abroad"]){
+  const article=articles.find(a=>a.slug===slug);
+  const deep=getEncyclopedicContent(slug);
+  assert(article&&deep, "Consular child/ID reference article missing: "+slug);
+  assert(deep.sections.length>=7&&deep.sources.length>=3, "Consular child/ID reference lacks depth or source count: "+slug);
+  assert(deep.sections.every(section => section.sourceUrls?.length>=1 && section.sourceUrls.every(url => deep.sources.some(source=>source.url===url))), "Unmatched or absent section sources: "+slug);
+  assert(isArticleSearchReady(article), "Consular child/ID reference must pass editorial search requirements: "+slug);
+}
+const idGuide=getEncyclopedicContent("national-id-renewal-abroad");
+assert(idGuide.sections.some(section=>section.paragraphs.some(p=>p.includes("27 أكتوبر 2026"))), "Past committee dates need a clear end date warning");
 for(const slug of ["work-permit-abroad","consular-power-of-attorney","prepaid-meter-mobile-charge"]){
   const article=articles.find(a=>a.slug===slug);
   const deep=getEncyclopedicContent(slug);
