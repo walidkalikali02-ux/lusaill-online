@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Expert batch 18: evidence-based Arabic learning strategies, independently researched.
 export const batch18A: KnowledgeTopic[] = [
   {
     "slug": "spaced-repetition-study-schedule-forget-less",
@@ -116,7 +117,20 @@ export const batch18A: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/active-recall-retrieval-practice-self-testing",
+        "label": "الاسترجاع النشط للمعلومات: طريقة المذاكرة بالاختبار الذاتي بدل إعادة القراءة"
+      },
+      {
+        "href": "/knowledge/sq3r-active-critical-reading-textbooks-research",
+        "label": "القراءة النشطة للكتب والمقالات العلمية: شرح طريقة SQ3R لفهم النص وتذكره ونقده"
+      },
+      {
+        "href": "/knowledge/how-to-read-scientific-study-results",
+        "label": "قراءة الدراسات العلمية"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch18A: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/interleaving-practice-math-language-learning",
+        "label": "التعلّم المتداخل Interleaving: متى تخلط أنواع التمارين وكيف يختلف عن التكرار المتباعد؟"
+      },
+      {
+        "href": "/knowledge/spaced-repetition-study-schedule-forget-less",
+        "label": "التكرار المتباعد للمذاكرة: كيف تراجع الدروس دون نسيان وتبني جدولًا قابلًا للتنفيذ؟"
+      },
+      {
+        "href": "/knowledge/verify-online-information-critical-thinking",
+        "label": "التحقق من صحة المعلومات"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -354,7 +381,20 @@ export const batch18A: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/cornell-note-taking-method-examples",
+        "label": "طريقة كورنيل لتدوين الملاحظات: تقسيم الصفحة وتحويل الدرس إلى أسئلة للمراجعة"
+      },
+      {
+        "href": "/knowledge/active-recall-retrieval-practice-self-testing",
+        "label": "الاسترجاع النشط للمعلومات: طريقة المذاكرة بالاختبار الذاتي بدل إعادة القراءة"
+      },
+      {
+        "href": "/knowledge/mean-median-mode-with-examples",
+        "label": "المتوسطات والأمثلة الحسابية"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Expert batch 18: evidence-based Arabic learning strategies, independently researched.
 export const batch18B: KnowledgeTopic[] = [
   {
     "slug": "cornell-note-taking-method-examples",
@@ -116,7 +117,20 @@ export const batch18B: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/metacognition-self-regulated-learning-plan-monitor-evaluate",
+        "label": "ما وراء المعرفة وتنظيم التعلّم الذاتي: كيف تخطط وتراقب فهمك وتقيّم النتائج؟"
+      },
+      {
+        "href": "/knowledge/interleaving-practice-math-language-learning",
+        "label": "التعلّم المتداخل Interleaving: متى تخلط أنواع التمارين وكيف يختلف عن التكرار المتباعد؟"
+      },
+      {
+        "href": "/knowledge/primary-secondary-tertiary-sources-research",
+        "label": "المصادر الأولية والثانوية"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch18B: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/exam-study-plan-five-day-revision-schedule",
+        "label": "خطة مذاكرة للامتحانات في 5 أيام أو أسبوعين: توزيع الوقت والمراجعة والاختبارات التجريبية"
+      },
+      {
+        "href": "/knowledge/cornell-note-taking-method-examples",
+        "label": "طريقة كورنيل لتدوين الملاحظات: تقسيم الصفحة وتحويل الدرس إلى أسئلة للمراجعة"
+      },
+      {
+        "href": "/knowledge/qualitative-vs-quantitative-mixed-research",
+        "label": "تصميم البحوث العلمية"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -354,7 +381,20 @@ export const batch18B: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/beat-procrastination-study-focus-small-steps",
+        "label": "التغلب على التسويف الدراسي: لماذا نؤجل المذاكرة وكيف نبدأ ونحافظ على التركيز؟"
+      },
+      {
+        "href": "/knowledge/metacognition-self-regulated-learning-plan-monitor-evaluate",
+        "label": "ما وراء المعرفة وتنظيم التعلّم الذاتي: كيف تخطط وتراقب فهمك وتقيّم النتائج؟"
+      },
+      {
+        "href": "/knowledge/how-to-read-scientific-study-results",
+        "label": "فهم نتائج الدراسات"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

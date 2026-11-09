@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Expert batch 18: evidence-based Arabic learning strategies, independently researched.
 export const batch18C: KnowledgeTopic[] = [
   {
     "slug": "beat-procrastination-study-focus-small-steps",
@@ -116,7 +117,20 @@ export const batch18C: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/dual-coding-visual-verbal-learning-diagrams",
+        "label": "الترميز المزدوج في المذاكرة: كيف تجمع الرسوم التوضيحية بالكلمات لفهم الدروس؟"
+      },
+      {
+        "href": "/knowledge/exam-study-plan-five-day-revision-schedule",
+        "label": "خطة مذاكرة للامتحانات في 5 أيام أو أسبوعين: توزيع الوقت والمراجعة والاختبارات التجريبية"
+      },
+      {
+        "href": "/knowledge/verify-online-information-critical-thinking",
+        "label": "التفكير النقدي"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch18C: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/worked-examples-fading-math-problem-solving",
+        "label": "التعلّم من الأمثلة المحلولة: كيف تنتقل من مشاهدة الحل إلى حل المسائل باستقلال؟"
+      },
+      {
+        "href": "/knowledge/beat-procrastination-study-focus-small-steps",
+        "label": "التغلب على التسويف الدراسي: لماذا نؤجل المذاكرة وكيف نبدأ ونحافظ على التركيز؟"
+      },
+      {
+        "href": "/knowledge/misleading-graphs-how-to-read-charts",
+        "label": "الرسوم البيانية المضللة"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -354,7 +381,20 @@ export const batch18C: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/sq3r-active-critical-reading-textbooks-research",
+        "label": "القراءة النشطة للكتب والمقالات العلمية: شرح طريقة SQ3R لفهم النص وتذكره ونقده"
+      },
+      {
+        "href": "/knowledge/dual-coding-visual-verbal-learning-diagrams",
+        "label": "الترميز المزدوج في المذاكرة: كيف تجمع الرسوم التوضيحية بالكلمات لفهم الدروس؟"
+      },
+      {
+        "href": "/knowledge/mean-median-mode-with-examples",
+        "label": "الأمثلة الحسابية والإحصاء"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -473,7 +513,20 @@ export const batch18C: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/spaced-repetition-study-schedule-forget-less",
+        "label": "التكرار المتباعد للمذاكرة: كيف تراجع الدروس دون نسيان وتبني جدولًا قابلًا للتنفيذ؟"
+      },
+      {
+        "href": "/knowledge/worked-examples-fading-math-problem-solving",
+        "label": "التعلّم من الأمثلة المحلولة: كيف تنتقل من مشاهدة الحل إلى حل المسائل باستقلال؟"
+      },
+      {
+        "href": "/knowledge/primary-secondary-tertiary-sources-research",
+        "label": "اختيار المصادر الموثوقة"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];
