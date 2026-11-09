@@ -25,7 +25,7 @@ for(const slug of ["newborn-travel-document","consular-document-attestation","cr
   assert(isArticleSearchReady(article),"Consular reference should satisfy temporary editorial index rules: "+slug);
 }
 const travel=getEncyclopedicContent("newborn-travel-document");
-assert(travel.sections.some(section=>section.paragraphs.some(p=>p.includes("أرض الوطن فقط") && p.includes("القنصلية المصرية في قطر"))),"Qatar-specific return limitation must be explicit");
+assert(travel.sections.some(section=>section.paragraphs.some(p=>p.includes("أرض الوطن فقط") && p.includes("البعثة المصرية في قطر"))),"Qatar-specific return limitation must be explicit");
 assert(travel.sections.some(section=>section.paragraphs.some(p=>p.includes("أي خلفية"))),"Conflicting local and central photo requirements must be disclosed");
 for(const slug of ["birth-certificate-abroad","national-id-renewal-abroad","newborn-passport-abroad"]){
   const article=articles.find(a=>a.slug===slug);
