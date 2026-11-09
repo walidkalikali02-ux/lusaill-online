@@ -25,6 +25,9 @@ const supplemental = [
   ["south-delta-electricity", "lib/electricity-south-delta-reference.ts", "southDeltaElectricityExpansion"],
   ["code-electricity-meter", "lib/electricity-code-reference.ts", "codeElectricityMeterExpansion"],
   ["electricity-complaint", "lib/electricity-complaint-reference.ts", "electricityComplaintExpansion"],
+  ["chrome-reset-settings", "lib/chrome-reset-reference.ts", "chromeResetReference"],
+  ["chrome-bookmarks-transfer", "lib/chrome-bookmarks-reference.ts", "chromeBookmarksReference"],
+  ["chrome-separate-profiles", "lib/chrome-profiles-reference.ts", "chromeProfilesReference"],
 ];
 for (const [slug, pathname, name] of supplemental) {
   if (registry[slug]) throw new Error("Duplicate encyclopedia slug: " + slug);
