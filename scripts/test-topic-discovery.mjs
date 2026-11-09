@@ -16,6 +16,14 @@ function load(file){
 const {articles,clusters,isArticleIndexable}=load("lib/content.ts"),{foodSafetyArticles}=load("lib/food-safety.ts"),{sitemapGroups}=load("lib/sitemaps.ts"),{getGuidePath}=load("lib/guide-paths.ts"),{getArticleModifiedAt,latestContentDate}=load("lib/content-modified.ts"),{guideIllustrations}=load("lib/guide-illustrations.ts");
 const {isArticleSearchReady,isKnowledgeSearchReady,isFoodSafetySearchReady}=load("lib/editorial-indexing.ts");
 const {getEncyclopedicContent}=load("lib/encyclopedic-content.ts");
+for(const slug of ["work-permit-abroad","consular-power-of-attorney","prepaid-meter-mobile-charge"]){
+  const article=articles.find(a=>a.slug===slug);
+  const deep=getEncyclopedicContent(slug);
+  assert(article&&deep, "Consular/meter source remediation article missing: "+slug);
+  assert(deep.sections.length>=7&&deep.sources.length>=3, "Consular/meter article needs depth and sources: "+slug);
+  assert(deep.sections.every(section => section.sourceUrls?.every(url => deep.sources.some(source=>source.url===url))),"Consular/meter article has unsupported chapter source: "+slug);
+  assert(isArticleSearchReady(article), "Consular/meter article must satisfy editorial search rules: "+slug);
+}
 for(const slug of ["chrome-reset-settings","chrome-bookmarks-transfer","chrome-separate-profiles"]){
   const article=articles.find(a=>a.slug===slug);
   const deep=getEncyclopedicContent(slug);

@@ -28,6 +28,9 @@ const supplemental = [
   ["chrome-reset-settings", "lib/chrome-reset-reference.ts", "chromeResetReference"],
   ["chrome-bookmarks-transfer", "lib/chrome-bookmarks-reference.ts", "chromeBookmarksReference"],
   ["chrome-separate-profiles", "lib/chrome-profiles-reference.ts", "chromeProfilesReference"],
+  ["work-permit-abroad", "lib/consular-work-permit-reference.ts", "workPermitAbroadReference"],
+  ["consular-power-of-attorney", "lib/consular-poa-reference.ts", "consularPowerOfAttorneyReference"],
+  ["prepaid-meter-mobile-charge", "lib/prepaid-meter-mobile-reference.ts", "prepaidMeterMobileReference"],
 ];
 for (const [slug, pathname, name] of supplemental) {
   if (registry[slug]) throw new Error("Duplicate encyclopedia slug: " + slug);
