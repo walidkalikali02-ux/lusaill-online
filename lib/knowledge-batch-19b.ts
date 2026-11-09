@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 19: original Arabic expert educational project management guides, November 2026.
 export const batch19B: KnowledgeTopic[] = [
   {
     "slug": "smart-project-goals-kpis-okr-examples",
@@ -116,7 +117,20 @@ export const batch19B: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/gantt-chart-project-schedule-dependencies-milestones",
+        "label": "مخطط جانت Gantt Chart: كيف تنشئ جدول مشروع واقعي بالتبعيات والمعالم؟"
+      },
+      {
+        "href": "/knowledge/project-scope-creep-change-control-requests",
+        "label": "إدارة نطاق المشروع ومنع Scope Creep: كيف تتعامل مع طلبات التغيير دون تعطيل التسليم؟"
+      },
+      {
+        "href": "/knowledge/mean-median-mode-with-examples",
+        "label": "كيف نفهم المتوسطات ومؤشرات الأداء؟"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch19B: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/critical-path-method-cpm-float-examples",
+        "label": "طريقة المسار الحرج CPM: كيف تحسب مدة المشروع والوقت الاحتياطي للأنشطة؟"
+      },
+      {
+        "href": "/knowledge/smart-project-goals-kpis-okr-examples",
+        "label": "الأهداف الذكية SMART في إدارة المشاريع: كيف تصوغ نتائج قابلة للقياس وتفرقها عن KPI وOKR؟"
+      },
+      {
+        "href": "/knowledge/metacognition-self-regulated-learning-plan-monitor-evaluate",
+        "label": "مراقبة التقدم وتقييم الأداء"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -354,7 +381,20 @@ export const batch19B: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/project-risk-register-probability-impact-response",
+        "label": "سجل مخاطر المشروع Risk Register: كيف تقيم الاحتمال والأثر وتبني خطط الاستجابة؟"
+      },
+      {
+        "href": "/knowledge/gantt-chart-project-schedule-dependencies-milestones",
+        "label": "مخطط جانت Gantt Chart: كيف تنشئ جدول مشروع واقعي بالتبعيات والمعالم؟"
+      },
+      {
+        "href": "/knowledge/mean-median-mode-with-examples",
+        "label": "المفاهيم الحسابية والقياس"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

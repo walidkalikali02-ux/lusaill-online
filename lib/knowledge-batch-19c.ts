@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 19: original Arabic expert educational project management guides, November 2026.
 export const batch19C: KnowledgeTopic[] = [
   {
     "slug": "project-risk-register-probability-impact-response",
@@ -116,7 +117,20 @@ export const batch19C: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/raci-matrix-roles-responsibilities-template",
+        "label": "مصفوفة RACI لتوزيع المسؤوليات: من ينفذ ومن يعتمد ومن يُستشار ومن يُبلّغ؟"
+      },
+      {
+        "href": "/knowledge/critical-path-method-cpm-float-examples",
+        "label": "طريقة المسار الحرج CPM: كيف تحسب مدة المشروع والوقت الاحتياطي للأنشطة؟"
+      },
+      {
+        "href": "/knowledge/conditional-probability-explained",
+        "label": "فهم الاحتمالات وتقدير عدم اليقين"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch19C: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/kanban-board-wip-limits-cycle-time-throughput",
+        "label": "لوحة كانبان Kanban: كيف تدير تدفق العمل وتحدد WIP وتقرأ وقت الدورة؟"
+      },
+      {
+        "href": "/knowledge/project-risk-register-probability-impact-response",
+        "label": "سجل مخاطر المشروع Risk Register: كيف تقيم الاحتمال والأثر وتبني خطط الاستجابة؟"
+      },
+      {
+        "href": "/knowledge/metacognition-self-regulated-learning-plan-monitor-evaluate",
+        "label": "التخطيط ومراقبة التنفيذ"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -354,7 +381,20 @@ export const batch19C: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/stakeholder-analysis-power-interest-communication-plan",
+        "label": "تحليل أصحاب المصلحة Stakeholders: مصفوفة القوة والاهتمام وخطة التواصل في المشروع"
+      },
+      {
+        "href": "/knowledge/raci-matrix-roles-responsibilities-template",
+        "label": "مصفوفة RACI لتوزيع المسؤوليات: من ينفذ ومن يعتمد ومن يُستشار ومن يُبلّغ؟"
+      },
+      {
+        "href": "/knowledge/beat-procrastination-study-focus-small-steps",
+        "label": "تحديد المهام والحد من التسويف"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -473,7 +513,20 @@ export const batch19C: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/project-charter-template-example-approval",
+        "label": "ميثاق المشروع Project Charter: كيف تبدأ مشروعًا واضح الأهداف والصلاحيات؟"
+      },
+      {
+        "href": "/knowledge/kanban-board-wip-limits-cycle-time-throughput",
+        "label": "لوحة كانبان Kanban: كيف تدير تدفق العمل وتحدد WIP وتقرأ وقت الدورة؟"
+      },
+      {
+        "href": "/knowledge/qualitative-vs-quantitative-mixed-research",
+        "label": "جمع الآراء والبيانات النوعية"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

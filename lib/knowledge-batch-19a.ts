@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 19: original Arabic expert educational project management guides, November 2026.
 export const batch19A: KnowledgeTopic[] = [
   {
     "slug": "project-charter-template-example-approval",
@@ -116,7 +117,20 @@ export const batch19A: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/work-breakdown-structure-wbs-100-percent-rule",
+        "label": "هيكل تقسيم العمل WBS: كيف تقسم المشروع إلى مخرجات وحزم عمل دون نسيان النطاق؟"
+      },
+      {
+        "href": "/knowledge/stakeholder-analysis-power-interest-communication-plan",
+        "label": "تحليل أصحاب المصلحة Stakeholders: مصفوفة القوة والاهتمام وخطة التواصل في المشروع"
+      },
+      {
+        "href": "/knowledge/metacognition-self-regulated-learning-plan-monitor-evaluate",
+        "label": "التخطيط والمراقبة والتقييم"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch19A: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/project-scope-creep-change-control-requests",
+        "label": "إدارة نطاق المشروع ومنع Scope Creep: كيف تتعامل مع طلبات التغيير دون تعطيل التسليم؟"
+      },
+      {
+        "href": "/knowledge/project-charter-template-example-approval",
+        "label": "ميثاق المشروع Project Charter: كيف تبدأ مشروعًا واضح الأهداف والصلاحيات؟"
+      },
+      {
+        "href": "/knowledge/exam-study-plan-five-day-revision-schedule",
+        "label": "تنظيم العمل وفق خطة مرحلية"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -354,7 +381,20 @@ export const batch19A: KnowledgeTopic[] = [
         ]
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/smart-project-goals-kpis-okr-examples",
+        "label": "الأهداف الذكية SMART في إدارة المشاريع: كيف تصوغ نتائج قابلة للقياس وتفرقها عن KPI وOKR؟"
+      },
+      {
+        "href": "/knowledge/work-breakdown-structure-wbs-100-percent-rule",
+        "label": "هيكل تقسيم العمل WBS: كيف تقسم المشروع إلى مخرجات وحزم عمل دون نسيان النطاق؟"
+      },
+      {
+        "href": "/knowledge/verify-online-information-critical-thinking",
+        "label": "التحقق من المعلومات والادعاءات"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];
