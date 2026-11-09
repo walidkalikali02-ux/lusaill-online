@@ -18,3 +18,37 @@ html,body{overflow-x:clip}
 @media(min-width:1101px){.category-nav{font-size:13px}.article-card--compact h3{font-size:14px}.article-card--compact .article-card-tag{font-size:9px}.topic-grid .article-card h3{font-size:13px}}
 
 .article-directory-index{margin:45px 0 60px;padding-top:25px;border-top:1px solid var(--border)}.article-directory-index>h2{font-size:22px;margin-bottom:8px}.article-directory-index>p{font-size:20px;color:var(--ink-secondary);margin-bottom:25px}.article-directory-index>section{margin-top:30px;padding:24px 28px;background:white;border:1px solid var(--border);border-radius:15px}.article-directory-index h3{display:flex;justify-content:space-between;align-items:center;gap:15px;font-size:15px;line-height:1.9;margin-bottom:15px;color:var(--brand)}.article-directory-index h3>span{font-family:var(--font-arabic-body),serif;font-size:16px;white-space:nowrap;color:var(--ink-muted)}.article-directory-index ul{columns:2;column-gap:35px;list-style:none}.article-directory-index li{break-inside:avoid;padding:10px 0;border-bottom:1px solid var(--border-light);font-size:19px;line-height:1.9}.article-directory-index li a:hover{color:var(--brand);text-decoration:underline}@media(max-width:600px){.article-directory-index{margin-top:30px}.article-directory-index ul{columns:1}.article-directory-index>section{padding:20px}.article-directory-index h3{font-size:12px}.article-directory-index h3>span{font-size:14px}}
+
+
+/* Subject-aware encyclopedia chapters: substantive longform content, not padded FAQ text. */
+.editorial-format-label{display:inline-flex;align-items:center;gap:8px;width:fit-content;margin:0 0 1.15rem;padding:6px 14px;border:1px solid var(--border);background:var(--accent-light);color:var(--brand);border-radius:99px;font-size:.76rem;font-weight:700}
+.article-format-digital .editorial-format-label{background:#edf5ff;color:#285d91;border-color:#cde0f4}
+.article-format-traffic .editorial-format-label{background:#edf2fc;color:#244f8c}
+.article-format-tax .editorial-format-label{background:#f6f0e6;color:#77541c}
+.article-format-rights .editorial-format-label{background:#f5edfa;color:#694194}
+.article-format-finance .editorial-format-label{background:#fff2ee;color:#9a4a32}
+.encyclopedia-expansion{display:grid;gap:22px;margin:34px 0}
+.encyclopedia-intro{padding:30px;border-radius:20px;background:#f0f6f2;border:1px solid #d9e7dd}
+.encyclopedia-intro h2{font-size:clamp(1.45rem,2.3vw,2rem);line-height:1.45;margin:.3rem 0 1.1rem;color:#173f35}
+.encyclopedia-intro p{font-size:1rem;line-height:1.85;margin:10px 0}
+.encyclopedia-eyebrow{color:#26735f;font-size:.82rem;font-weight:700}
+.encyclopedia-chapters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px}
+.encyclopedia-chapters a{display:flex;gap:10px;align-items:flex-start;padding:13px;border:1px solid #d1e1d8;border-radius:12px;background:#fff;text-decoration:none;font-size:.88rem;line-height:1.65;color:#22483f}
+.encyclopedia-chapters a:hover,.encyclopedia-chapters a:focus-visible{border-color:#4c9a84;background:#f6fbf7}
+.encyclopedia-chapters span{color:#137466;font-weight:800;font-variant-numeric:tabular-nums;direction:ltr;flex-shrink:0}
+.encyclopedia-chapter{scroll-margin-top:112px;overflow:hidden}
+.encyclopedia-chapter h2{line-height:1.5;margin:6px 0 20px;font-size:1.5rem}
+.encyclopedia-chapter p{margin:12px 0 19px;line-height:2.05;font-size:1.05rem}
+.encyclopedia-chapter-number{font-size:.78rem;color:#467566;font-weight:700}
+.encyclopedia-checkpoints{border-right:4px solid #4b8d77;background:#f5faf6;border-radius:10px;padding:14px 20px;margin:18px 0}
+.encyclopedia-checkpoints h3{font-size:1.04rem;margin:0 0 8px}
+.encyclopedia-checkpoints ul{margin:0;padding-right:22px}
+.encyclopedia-checkpoints li{padding:4px 0;font-size:.98rem;line-height:1.8}
+.encyclopedia-figure{margin:22px 0}
+.encyclopedia-figure img{width:100%;height:auto;display:block;border-radius:15px;border:1px solid #e1e9e1}
+.encyclopedia-figure figcaption{margin-top:9px;color:var(--ink-secondary);font-size:.83rem;line-height:1.8}
+.encyclopedia-references{display:flex;flex-wrap:wrap;gap:8px 12px;border-top:1px solid var(--border);padding-top:13px;font-size:.8rem}
+.encyclopedia-references a{text-decoration:underline;text-underline-offset:3px}
+.encyclopedia-source-index ol{padding-right:22px}
+.encyclopedia-source-index li{margin:10px 0;font-size:.94rem;line-height:1.8}
+@media(max-width:720px){.encyclopedia-intro{padding:20px}.encyclopedia-chapters{grid-template-columns:1fr}.encyclopedia-chapter h2{font-size:1.27rem}.encyclopedia-chapter p{font-size:1rem}.encyclopedia-checkpoints{padding:13px}}
