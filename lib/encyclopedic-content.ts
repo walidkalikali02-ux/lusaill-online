@@ -12,6 +12,9 @@ import { prepaidMeterMobileReference } from "./prepaid-meter-mobile-reference";
 import { birthCertificateAbroadReference } from "./consular-birth-certificate-reference";
 import { nationalIdRenewalAbroadReference } from "./consular-national-id-reference";
 import { newbornPassportAbroadReference } from "./consular-newborn-passport-reference";
+import { newbornTravelDocumentReference } from "./consular-temporary-travel-reference";
+import { consularAttestationReference } from "./consular-attestation-reference";
+import { criminalRecordAbroadReference } from "./consular-criminal-record-reference";
 
 export type EncyclopedicSection = {
   id: string;
@@ -3986,5 +3989,8 @@ const electricityReferenceExpansions: Record<string, EncyclopedicContent> = {
   "birth-certificate-abroad": birthCertificateAbroadReference,
   "national-id-renewal-abroad": nationalIdRenewalAbroadReference,
   "newborn-passport-abroad": newbornPassportAbroadReference,
+  "newborn-travel-document": newbornTravelDocumentReference,
+  "consular-document-attestation": consularAttestationReference,
+  "criminal-record-abroad": criminalRecordAbroadReference,
 };
 export const getEncyclopedicContent = (slug: string) => electricityReferenceExpansions[slug] ?? encyclopedicContent[slug];

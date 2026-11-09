@@ -115,8 +115,11 @@ export function applyArticleAuditUpdates(input: Article): Article {
     const consularMeterReview = new Set(["work-permit-abroad", "consular-power-of-attorney", "prepaid-meter-mobile-charge"]);
     const vitalRecordsReview = new Set(["paper-marriage-record-egypt", "paper-divorce-record-egypt", "paper-death-record-egypt", "newborn-birth-registration-egypt", "death-registration-burial-permit"]);
     const familyConsularReview = new Set(["birth-certificate-abroad", "national-id-renewal-abroad", "newborn-passport-abroad"]);
-    article.updatedAt = familyConsularReview.has(article.slug)
+    const consularTravelReview = new Set(["newborn-travel-document", "consular-document-attestation", "criminal-record-abroad"]);
+    article.updatedAt = consularTravelReview.has(article.slug)
       ? "2026-11-09T22:11:00+03:00"
+      : familyConsularReview.has(article.slug)
+        ? "2026-11-09T22:11:00+03:00"
       : vitalRecordsReview.has(article.slug)
         ? "2026-11-09T22:21:00+03:00"
       : consularMeterReview.has(article.slug)
