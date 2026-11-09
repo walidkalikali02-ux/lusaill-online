@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640">
+<title>ما الإجراء الضريبي المناسب لحالتك؟</title><desc>دليل استرشادي يوضح أربعة مسارات: إعادة تفعيل التسجيل بعد الاستبعاد، إعادة مزاولة النشاط السابق، تعديل بيانات تسجيل لا يزال نشطًا، أو مراجعة المصلحة بشأن تسجيل كيان قانوني جديد.</desc>
+<rect width="1200" height="640" fill="#fcfaf5"/>
+<text x="600" y="62" text-anchor="middle" fill="#3a362b" font-size="37" font-weight="700" font-family="Arial,sans-serif" direction="rtl">أي إجراء ضريبي يلائم حالتك؟</text>
+<text x="600" y="100" text-anchor="middle" fill="#74664c" font-size="20" font-family="Arial,sans-serif" direction="rtl">ابدأ بفهم حالة التسجيل والكيان القانوني، ثم راجع المصلحة</text>
+<rect x="350" y="129" width="500" height="85" rx="20" fill="#164f4b"/>
+<text x="600" y="181" text-anchor="middle" font-size="25" fill="#fff" font-weight="700" font-family="Arial,sans-serif" direction="rtl">ما وضع الملف الضريبي الحالي؟</text>
+<path d="M600 214 V246 M600 246 H150 V278 M600 246 H450 V278 M600 246 H750 V278 M600 246 H1050 V278" fill="none" stroke="#8ba8a1" stroke-width="4"/>
+<rect x="25" y="278" width="250" height="187" rx="16" fill="#e9f6f2" stroke="#72a69a" stroke-width="2"/>
+<text x="150" y="320" text-anchor="middle" font-size="23" font-weight="700" fill="#235a51" font-family="Arial,sans-serif" direction="rtl">مستبعد ثم زال السبب</text>
+<text x="150" y="358" text-anchor="middle" font-size="20" fill="#235a51" font-family="Arial,sans-serif" direction="rtl">اسأل عن إعادة التفعيل</text>
+<text x="150" y="392" text-anchor="middle" font-size="19" fill="#235a51" font-family="Arial,sans-serif" direction="rtl">نموذج 9 تسجيل</text>
+<rect x="325" y="278" width="250" height="187" rx="16" fill="#f7f0e4" stroke="#d0af74" stroke-width="2"/>
+<text x="450" y="320" text-anchor="middle" font-size="22" font-weight="700" fill="#795d2d" font-family="Arial,sans-serif" direction="rtl">أُلغي نهائيًا وتعود</text>
+<text x="450" y="357" text-anchor="middle" font-size="19" fill="#795d2d" font-family="Arial,sans-serif" direction="rtl">بالكيان نفسه؟</text>
+<text x="450" y="395" text-anchor="middle" font-size="19" fill="#795d2d" font-family="Arial,sans-serif" direction="rtl">راجع إعادة المزاولة</text>
+<rect x="625" y="278" width="250" height="187" rx="16" fill="#eaf0ff" stroke="#93a7d5" stroke-width="2"/>
+<text x="750" y="320" text-anchor="middle" font-size="22" font-weight="700" fill="#334b7c" font-family="Arial,sans-serif" direction="rtl">ملف نشط وبيانات تغيّرت</text>
+<text x="750" y="358" text-anchor="middle" font-size="19" fill="#334b7c" font-family="Arial,sans-serif" direction="rtl">عنوان، فرع، نشاط؟</text>
+<text x="750" y="395" text-anchor="middle" font-size="19" fill="#334b7c" font-family="Arial,sans-serif" direction="rtl">راجع تعديل البيانات</text>
+<rect x="925" y="278" width="250" height="187" rx="16" fill="#f8eaf1" stroke="#c4a0b5" stroke-width="2"/>
+<text x="1050" y="320" text-anchor="middle" font-size="22" font-weight="700" fill="#764962" font-family="Arial,sans-serif" direction="rtl">كيان قانوني جديد</text>
+<text x="1050" y="358" text-anchor="middle" font-size="19" fill="#764962" font-family="Arial,sans-serif" direction="rtl">لا تفترض عودة الرقم</text>
+<text x="1050" y="395" text-anchor="middle" font-size="19" fill="#764962" font-family="Arial,sans-serif" direction="rtl">حدد مسار التسجيل</text>
+<rect x="168" y="505" width="864" height="71" rx="17" fill="#244b46"/>
+<text x="600" y="547" text-anchor="middle" font-size="24" fill="#fff" font-weight="700" font-family="Arial,sans-serif" direction="rtl">احفظ رقم الطلب وقرار المصلحة وتاريخ الفحص بعد التنفيذ</text>
+<text x="600" y="615" text-anchor="middle" font-size="16" fill="#786e61" font-family="Arial,sans-serif" direction="rtl">رسم تحريري من موسوعة لوسيل • لا يغني عن التحقق الرسمي من شروط كل ملف</text>
+</svg>
