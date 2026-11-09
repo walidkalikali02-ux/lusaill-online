@@ -111,8 +111,11 @@ export function applyArticleAuditUpdates(input: Article): Article {
     const batch4 = new Set(["national-id-renewal-egypt", "national-id-address-change", "national-id-profession-change", "national-id-marital-status-change"]);
     const batch5 = new Set(["national-id-lost-replacement", "national-id-damaged-replacement", "automated-marriage-certificate", "automated-death-certificate", "divorce-certificate-online-egypt"]);
     const electricityReview = new Set(["upper-egypt-electricity", "beheira-electricity", "south-delta-electricity", "code-electricity-meter", "electricity-complaint"]);
-    article.updatedAt = electricityReview.has(article.slug)
-      ? "2026-11-09T19:08:00+03:00"
+    const chromeResearchReview = new Set(["chrome-reset-settings", "chrome-bookmarks-transfer", "chrome-separate-profiles"]);
+    article.updatedAt = chromeResearchReview.has(article.slug)
+      ? "2026-11-09T20:42:00+03:00"
+      : electricityReview.has(article.slug)
+        ? "2026-11-09T19:08:00+03:00"
       : batch5.has(article.slug)
         ? "2026-11-09T19:08:00+03:00"
       : batch4.has(article.slug)

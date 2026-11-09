@@ -15,6 +15,15 @@ function load(file){
 }
 const {articles,clusters,isArticleIndexable}=load("lib/content.ts"),{foodSafetyArticles}=load("lib/food-safety.ts"),{sitemapGroups}=load("lib/sitemaps.ts"),{getGuidePath}=load("lib/guide-paths.ts"),{getArticleModifiedAt,latestContentDate}=load("lib/content-modified.ts"),{guideIllustrations}=load("lib/guide-illustrations.ts");
 const {isArticleSearchReady,isKnowledgeSearchReady,isFoodSafetySearchReady}=load("lib/editorial-indexing.ts");
+const {getEncyclopedicContent}=load("lib/encyclopedic-content.ts");
+for(const slug of ["chrome-reset-settings","chrome-bookmarks-transfer","chrome-separate-profiles"]){
+  const article=articles.find(a=>a.slug===slug);
+  const deep=getEncyclopedicContent(slug);
+  assert(article&&deep, "Chrome source remediation article missing: "+slug);
+  assert(deep.sections.length>=7&&deep.sources.length>=3, "Chrome article missing depth/sources: "+slug);
+  assert(deep.sections.every(section => section.sourceUrls?.every(url => deep.sources.some(s=>s.url===url))), "Chapter reference mismatch: "+slug);
+  assert(isArticleSearchReady(article), "Chrome source remediation must pass conservative search gate: "+slug);
+}
 // Keep publication and crawl eligibility tied to real content, not a manual approval flag.
 const emptyArticle = {
   id: 999999, slug: "empty-placeholder", title: "عنوان فقط",

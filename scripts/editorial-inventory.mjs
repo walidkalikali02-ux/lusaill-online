@@ -99,6 +99,12 @@ const summary={
 };
 console.log("EDITORIAL_INVENTORY_SUMMARY "+JSON.stringify(summary));
 if(duplicateMetas.length)console.log("EDITORIAL_DUPLICATE_META "+JSON.stringify(duplicateMetas.slice(0,20)));
+// Identify actionable short-source articles without conflating word count with veracity.
+// This report is advisory: adding any second URL does not automatically make claims reliable.
+const sourceGaps = rows.filter(row => row.sourceLinks < 2)
+  .sort((a,b) => a.sourceLinks - b.sourceLinks || b.words - a.words)
+  .slice(0,18).map(({slug,cluster,words,sourceLinks,searchReady}) => ({slug,cluster,words,sourceLinks,searchReady}));
+console.log("EDITORIAL_SOURCE_GAPS "+JSON.stringify({total:summary.fewerThanTwoSources,candidates:sourceGaps}));
 const opportunities = rows.filter(r=>!r.searchReady && r.sourceLinks>=2)
  .sort((a,b)=>b.words-a.words).slice(0,18);
 console.log("EDITORIAL_REVIEW_CANDIDATES "+JSON.stringify(opportunities));
