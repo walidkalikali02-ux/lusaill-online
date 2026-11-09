@@ -23,6 +23,8 @@ const supplemental = [
   ["upper-egypt-electricity", "lib/electricity-upper-reference.ts", "upperEgyptElectricityExpansion"],
   ["beheira-electricity", "lib/electricity-beheira-reference.ts", "beheiraElectricityExpansion"],
   ["south-delta-electricity", "lib/electricity-south-delta-reference.ts", "southDeltaElectricityExpansion"],
+  ["code-electricity-meter", "lib/electricity-code-reference.ts", "codeElectricityMeterExpansion"],
+  ["electricity-complaint", "lib/electricity-complaint-reference.ts", "electricityComplaintExpansion"],
 ];
 for (const [slug, pathname, name] of supplemental) {
   if (registry[slug]) throw new Error("Duplicate encyclopedia slug: " + slug);
