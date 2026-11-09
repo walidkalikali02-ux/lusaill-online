@@ -1,3 +1,7 @@
+import { upperEgyptElectricityExpansion } from "./electricity-upper-reference";
+import { beheiraElectricityExpansion } from "./electricity-beheira-reference";
+import { southDeltaElectricityExpansion } from "./electricity-south-delta-reference";
+
 export type EncyclopedicSection = {
   id: string;
   title: string;
@@ -2229,4 +2233,9 @@ export const encyclopedicContent: Record<string, EncyclopedicContent> = {
     ]
   }
 };
-export const getEncyclopedicContent = (slug: string) => encyclopedicContent[slug];
+const electricityReferenceExpansions: Record<string, EncyclopedicContent> = {
+  "upper-egypt-electricity": upperEgyptElectricityExpansion,
+  "beheira-electricity": beheiraElectricityExpansion,
+  "south-delta-electricity": southDeltaElectricityExpansion,
+};
+export const getEncyclopedicContent = (slug: string) => electricityReferenceExpansions[slug] ?? encyclopedicContent[slug];
