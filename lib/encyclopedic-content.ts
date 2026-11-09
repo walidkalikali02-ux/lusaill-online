@@ -9,6 +9,9 @@ import { chromeProfilesReference } from "./chrome-profiles-reference";
 import { workPermitAbroadReference } from "./consular-work-permit-reference";
 import { consularPowerOfAttorneyReference } from "./consular-poa-reference";
 import { prepaidMeterMobileReference } from "./prepaid-meter-mobile-reference";
+import { birthCertificateAbroadReference } from "./consular-birth-certificate-reference";
+import { nationalIdRenewalAbroadReference } from "./consular-national-id-reference";
+import { newbornPassportAbroadReference } from "./consular-newborn-passport-reference";
 
 export type EncyclopedicSection = {
   id: string;
@@ -3147,5 +3150,8 @@ const electricityReferenceExpansions: Record<string, EncyclopedicContent> = {
   "work-permit-abroad": workPermitAbroadReference,
   "consular-power-of-attorney": consularPowerOfAttorneyReference,
   "prepaid-meter-mobile-charge": prepaidMeterMobileReference,
+  "birth-certificate-abroad": birthCertificateAbroadReference,
+  "national-id-renewal-abroad": nationalIdRenewalAbroadReference,
+  "newborn-passport-abroad": newbornPassportAbroadReference,
 };
 export const getEncyclopedicContent = (slug: string) => electricityReferenceExpansions[slug] ?? encyclopedicContent[slug];
