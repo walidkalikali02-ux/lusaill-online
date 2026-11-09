@@ -107,6 +107,7 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
         {/* Sources */}
         <section id="sources" className="brief-box">
           <h2>{presentation.sourcesHeading}</h2>
+          <p role="note">تنبيه بشأن الروابط: لم تُفحص صلاحية جميع المراجع والرسوم في جولة التدقيق الحالية. راجع الموقع الرسمي للجهة وشروط الخدمة السارية قبل إدخال بيانات شخصية أو سداد أي مبلغ.</p>
           {article.sources?.length ? (
             <ul>
               {article.sources.map((source) => (

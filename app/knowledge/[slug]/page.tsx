@@ -77,7 +77,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 </section>
 <section id="sources" style={{borderTop:"1px solid #e2e8f0",paddingTop:20,marginTop:24}}>
 <h2 style={{fontSize:25,fontWeight:800,marginBottom:12}}>المراجع والمصادر</h2>
-<p>اعتمد هذا الدليل على مصادر المؤسسات المدرجة أدناه. الأمثلة والأدوات والجداول المقارنة مكتوبة لأغراض تعليمية من إعداد لوسيل، وتُراجع عند تحديث البيانات.</p>
+<p>هذه مراجع للاطلاع، لكن لم تُفحص صلاحية جميع روابطها في جولة التدقيق الحالية. تحقق من أحدث نسخة للمصدر قبل الاعتماد على معلومة متغيرة؛ والأمثلة والأدوات التعليمية لا تُعد نتائج تجارب ميدانية فعلية.</p>
 <ul style={{paddingInlineStart:24,marginTop:10}}>
 {topic.sources.map(item=><li key={item.url} style={{marginBottom:7}}><a href={item.url} target="_blank" rel="noopener noreferrer" style={{color:"#0d7490",textDecoration:"underline"}}>{item.label}</a></li>)}</ul>
 </section>
