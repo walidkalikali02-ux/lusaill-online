@@ -16,7 +16,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 - Only deploy walidkalikali02-ux/lusaill-online to Vercel project prj_GvzTCMz7VvyslHpXgfxjBUApCZnS. Canonical origin is https://www.lusaill.online.
 - Before editing, compare current main and the live production deployment. Never overwrite a newer tree or force-push.
-- Daily article count is a ceiling (20 in Qatar time), not a reason to publish an unproven topic. Check same-day publication dates and existing search intent first.
+- Daily article count is a ceiling (2 in Qatar time), not a reason to publish an unproven topic. Check same-day publication dates and existing search intent first.
 - A new topic brief must record its audience, exact problem, official sources, a current search-result review, the additional value beyond official help, and how it differs from published guides. Record measured search demand or Search Console evidence when available; otherwise explicitly say unmeasured and explain the real user need. Do not invent volume, competition, or performance.
 - For existing content, use actual Search Console query/page performance to prioritize when available. A publishing count or internal quality score is never a ranking or traffic result.
 - Never claim a procedure was personally tested, or invent named reviewers, credentials, interface screenshots, user experiences, or mailbox delivery.
@@ -31,3 +31,14 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Keep live-guide URLs stable. Change dateModified and visible update dates only after a real source/content review; add a month to a title only when the content actually concerns that billing month. Never rotate dates automatically to manufacture freshness.
 - Do not promise FAQ or HowTo rich-result traffic: Google deprecated HowTo rich results in September 2023 and stopped FAQ rich results on 7 May 2026. Keep semantically correct markup only, matching visible content; prioritize Article/BreadcrumbList correctness and useful answers.
 - A city electricity page needs distinct verified local service information, not a city-name substitution with the same portal/steps. Prefer sections within the company guide when the procedure is identical. KD=0, third-party result positions, and assumed AI/PAA gaps are not evidence of easy ranking.
+
+## Editorial recovery policy — 9 November 2026
+
+- Pause bulk publishing. Publish at most one or two individually verified guides per Qatar calendar day; prefer improving existing guides. No auto-publish queue or quantity-based quota.
+- Prioritize Egyptian government service procedures and practical digital-life troubleshooting. Retain other encyclopedia areas for later expert-led coverage, without inventing a narrow corporate mission.
+- Draft scaffolding must never appear publicly: «إضافات ذات قيمة», «صور مقترحة», «روابط داخلية تخطيطية», «بيانات تجريبية مختلقة». Convert genuine ideas into verified reader-facing material, or remove them.
+- Do not invent completed walkthroughs, screenshots, actual user errors, fees, processing times, statistics, authors, reviewers, expertise, or verification dates.
+- Temporarily noindex thin or weakly sourced pages while keeping them readable and linked. Include only search-ready pages in XML sitemaps, and do not confuse an internal word target with a Google ranking requirement.
+- Medical, tax, and legal content must identify actual contributors only when their real identities and qualifications are documented. Keep medical pages noindex until independent qualified review is verified; publication history is not evidence of clinical review.
+- Consolidate overlapping driving-licence, work-permit, and passport guides into decision-led canonical guides only after checking current official processes, actual costs, and redirects. Do not redirect or delete valid pages to an unfinished hub.
+- Request Google indexing gradually through the connected, authorized Search Console property, after the live deployment and each selected page pass QA; never claim indexing was requested without the actual action.

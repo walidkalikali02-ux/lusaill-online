@@ -1,7 +1,8 @@
 import { sixgLessons, sixgMeta, sixgPath, sixgLessonPath } from "@/lib/sixg-course";
 import type { MetadataRoute } from "next";
 import { getArticleModifiedAt } from "./content-modified";
-import { articles, clusters, clusterProgress, isArticleIndexable } from "@/lib/content";
+import { articles, clusters, clusterProgress } from "@/lib/content";
+import { isArticleSearchReady, isKnowledgeSearchReady, isFoodSafetySearchReady } from "@/lib/editorial-indexing";
 import { foodSafetyArticles } from "@/lib/food-safety";
 import { knowledgeTopics } from "@/lib/knowledge-expansion-data";
 import { encyclopediaCategories } from "@/lib/encyclopedia-taxonomy";
@@ -37,7 +38,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
       priority: 0.7,
     }));
   const knowledgeRoutes: MetadataRoute.Sitemap = knowledgeTopics
-    .filter(topic => Boolean(topic.directAnswer?.trim()) && topic.sections.length > 0)
+    .filter(isKnowledgeSearchReady)
     .map(topic => ({
       url: absoluteUrl(`/knowledge/${topic.slug}`),
       lastModified: new Date(topic.publishedAt),
@@ -46,8 +47,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
       images: topic.image ? [absoluteUrl(topic.image)] : [],
     }));
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: absoluteUrl("/"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleIndexable(article))), changeFrequency: "weekly", priority: 1.0 },
-    { url: absoluteUrl("/food-safety"), lastModified: latestPublishedUpdate(foodSafetyArticles), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article))), changeFrequency: "weekly", priority: 1.0 },
     { url: absoluteUrl("/knowledge"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/topics"), changeFrequency: "monthly", priority: 0.9 },
     { url: absoluteUrl("/caricatures"), lastModified: new Date("2026-11-08"), changeFrequency: "weekly", priority: 0.8 },
@@ -57,9 +57,9 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     { url: absoluteUrl("/services/website-design"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/knowledge/roman-numerals"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/roman-numerals-education.svg")] },
     { url: absoluteUrl("/knowledge/learning-objectives"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/bloom-learning-levels-original.svg")] },
-    { url: absoluteUrl("/articles"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleIndexable(article))), changeFrequency: "weekly", priority: 0.9 },
-    { url: absoluteUrl("/categories"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleIndexable(article))), changeFrequency: "monthly", priority: 0.8 },
-    { url: absoluteUrl("/entities"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleIndexable(article))), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/articles"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article))), changeFrequency: "weekly", priority: 0.9 },
+    { url: absoluteUrl("/categories"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article))), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/entities"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article))), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/about"),  changeFrequency: "monthly", priority: 0.6 },
     { url: absoluteUrl("/team"), changeFrequency: "monthly", priority: 0.6 },
     { url: absoluteUrl("/privacy"),  changeFrequency: "yearly", priority: 0.3 },
@@ -84,7 +84,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
 
   const clusterRoutes: MetadataRoute.Sitemap = clusters.filter((cluster) => clusterProgress(cluster.slug).published > 0).map((cluster) => ({
     url: absoluteUrl(`/categories/${cluster.slug}`),
-    lastModified: new Date(Math.max(latestPublishedUpdate(articles.filter((article) => isArticleIndexable(article) && article.clusterCode === cluster.code))?.getTime() ?? 0, new Date(categoryIntroductions[cluster.slug]?.updatedAt ?? 0).getTime())),
+    lastModified: new Date(Math.max(latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article) && article.clusterCode === cluster.code))?.getTime() ?? 0, new Date(categoryIntroductions[cluster.slug]?.updatedAt ?? 0).getTime())),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -93,7 +93,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
   // A page's lastmod comes from the articles listed on that page, not the build date.
   const CATEGORY_PAGE_SIZE = 30; // Keep aligned with app/categories/[slug]/page.tsx.
   const categoryPaginationRoutes: MetadataRoute.Sitemap = clusters.flatMap((cluster) => {
-    const published = articles.filter((article) => isArticleIndexable(article) && article.clusterCode === cluster.code);
+    const published = articles.filter((article) => isArticleSearchReady(article) && article.clusterCode === cluster.code);
     return Array.from({ length: Math.max(0, Math.ceil(published.length / CATEGORY_PAGE_SIZE) - 1) }, (_, index) => {
       const page = index + 2;
       return {
@@ -106,16 +106,16 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
   });
 
   const entityRoutes: MetadataRoute.Sitemap = entities
-    .filter((entity) => articles.some((article) => isArticleIndexable(article) && entity.clusterCodes.includes(article.clusterCode)))
+    .filter((entity) => articles.some((article) => isArticleSearchReady(article) && entity.clusterCodes.includes(article.clusterCode)))
     .map((entity) => ({
     url: absoluteUrl(`/entities/${entity.slug}`),
-    lastModified: entity.updatedAt ? new Date(entity.updatedAt) : latestPublishedUpdate(articles.filter((article) => isArticleIndexable(article) && entity.clusterCodes.includes(article.clusterCode))),
+    lastModified: entity.updatedAt ? new Date(entity.updatedAt) : latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article) && entity.clusterCodes.includes(article.clusterCode))),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
 
   const publishedArticleRoutes: MetadataRoute.Sitemap = articles
-    .filter((article) => isArticleIndexable(article))
+    .filter((article) => isArticleSearchReady(article))
     .map((article) => ({
       url: absoluteUrl(`/articles/${article.slug}`),
       lastModified: getArticleModifiedAt(article) ? new Date(getArticleModifiedAt(article)!) : undefined,
@@ -124,7 +124,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
       images: [article.coverImage, guideIllustrations[article.slug]?.src].filter((src): src is string => Boolean(src)).map(absoluteUrl),
     }));
 
-  const foodSafetyRoutes: MetadataRoute.Sitemap = foodSafetyArticles.map((article) => ({
+  const foodSafetyRoutes: MetadataRoute.Sitemap = foodSafetyArticles.filter(isFoodSafetySearchReady).map((article) => ({
     url: absoluteUrl(`/food-safety/${article.slug}`),
     lastModified: new Date(article.updatedAt),
     changeFrequency: "monthly" as const,
@@ -134,7 +134,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
 
   const guideRoutes: MetadataRoute.Sitemap = [
     { url: absoluteUrl("/guides"), lastModified: new Date("2026-10-02"), changeFrequency: "monthly", priority: 0.8 },
-    ...guidePaths.map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleIndexable(article) && path.articleSlugs.includes(article.slug))), changeFrequency: "monthly" as const, priority: 0.8 })),
+    ...guidePaths.map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article) && path.articleSlugs.includes(article.slug))), changeFrequency: "monthly" as const, priority: 0.8 })),
   ];
   return {
     "sitemap-articles.xml": [...publishedArticleRoutes, ...foodSafetyRoutes],

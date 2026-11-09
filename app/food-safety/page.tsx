@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "سلامة الغذاء والتسمم الغذائي",
   description: "أدلة عملية ومصورة حول الأطعمة التي قد تسبب التسمم الغذائي، حفظ الأرز، الوقاية المنزلية، والأعراض التي تستدعي الطبيب.",
   alternates: pageAlternates("/food-safety"),
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
   openGraph: { type: "website", url: "/food-safety", title: "سلامة الغذاء | لوسيل" },
 };
 
