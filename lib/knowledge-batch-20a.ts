@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 20: independently written Arabic food and nutrition safety guides.
 export const batch20A: KnowledgeTopic[] = [
   {
     "slug": "read-food-nutrition-facts-label-serving-size",
@@ -112,7 +113,20 @@ export const batch20A: KnowledgeTopic[] = [
         "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/fridge-freezer-food-storage-temperature-guide",
+        "label": "حفظ الطعام في الثلاجة والفريزر: درجات الحرارة والتخزين الآمن وبقايا الوجبات"
+      },
+      {
+        "href": "/knowledge/safe-packed-lunch-school-work-hot-weather",
+        "label": "وجبات المدرسة والعمل في الجو الحار: كيف تحفظ الساندويتشات والسلطات والحليب بأمان؟"
+      },
+      {
+        "href": "/knowledge/verify-online-information-critical-thinking",
+        "label": "التحقق من الادعاءات الغذائية"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -235,7 +249,20 @@ export const batch20A: KnowledgeTopic[] = [
         "url": "https://www.foodsafety.gov/food-safety-charts/food-safety-during-power-outage"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/cross-contamination-kitchen-cutting-boards-prevention",
+        "label": "التلوث المتبادل في المطبخ: كيف تفصل النيئ عن الجاهز وتحمي ألواح التقطيع والأدوات؟"
+      },
+      {
+        "href": "/knowledge/read-food-nutrition-facts-label-serving-size",
+        "label": "قراءة البطاقة الغذائية: حجم الحصة والسعرات والسكريات والصوديوم والمكونات"
+      },
+      {
+        "href": "/knowledge/safe-cooking-internal-temperature-thermometer",
+        "label": "حرارة الطهي المناسبة"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -350,7 +377,20 @@ export const batch20A: KnowledgeTopic[] = [
         "url": "https://www.cdc.gov/food-safety/prevention/index.html"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/food-expiry-use-by-best-before-date-meaning",
+        "label": "تاريخ الصلاحية ويفضل قبل: الفرق بين Use By وBest Before ومتى تتخلص من الطعام"
+      },
+      {
+        "href": "/knowledge/fridge-freezer-food-storage-temperature-guide",
+        "label": "حفظ الطعام في الثلاجة والفريزر: درجات الحرارة والتخزين الآمن وبقايا الوجبات"
+      },
+      {
+        "href": "/knowledge/fridge-freezer-food-storage-temperature-guide",
+        "label": "التخزين في الثلاجة"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -469,7 +509,20 @@ export const batch20A: KnowledgeTopic[] = [
         "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/food-allergy-label-reading-cross-contact-guide",
+        "label": "الحساسية الغذائية وقراءة الملصقات: الفرق بين الحساسية وعدم التحمل ومنع التلامس المتبادل"
+      },
+      {
+        "href": "/knowledge/cross-contamination-kitchen-cutting-boards-prevention",
+        "label": "التلوث المتبادل في المطبخ: كيف تفصل النيئ عن الجاهز وتحمي ألواح التقطيع والأدوات؟"
+      },
+      {
+        "href": "/knowledge/fridge-freezer-food-storage-temperature-guide",
+        "label": "حفظ الأغذية"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -588,7 +641,20 @@ export const batch20A: KnowledgeTopic[] = [
         "url": "https://www.who.int/publications/i/item/9789241594639"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/safe-cooking-internal-temperature-thermometer",
+        "label": "درجات حرارة الطهي الآمن: كيف تستخدم ميزان حرارة الطعام للدجاج واللحم والسمك؟"
+      },
+      {
+        "href": "/knowledge/food-expiry-use-by-best-before-date-meaning",
+        "label": "تاريخ الصلاحية ويفضل قبل: الفرق بين Use By وBest Before ومتى تتخلص من الطعام"
+      },
+      {
+        "href": "/knowledge/cross-contamination-kitchen-cutting-boards-prevention",
+        "label": "التلامس المتبادل في المطبخ"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];

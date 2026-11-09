@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from "./knowledge-expansion-data";
+// Batch 20: independently written Arabic food and nutrition safety guides.
 export const batch20B: KnowledgeTopic[] = [
   {
     "slug": "safe-cooking-internal-temperature-thermometer",
@@ -116,7 +117,20 @@ export const batch20B: KnowledgeTopic[] = [
         "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/food-poisoning-symptoms-when-seek-medical-care",
+        "label": "أعراض التسمم الغذائي: متى تظهر ومتى تحتاج إلى طبيب وكيف تحمي الآخرين؟"
+      },
+      {
+        "href": "/knowledge/food-allergy-label-reading-cross-contact-guide",
+        "label": "الحساسية الغذائية وقراءة الملصقات: الفرق بين الحساسية وعدم التحمل ومنع التلامس المتبادل"
+      },
+      {
+        "href": "/knowledge/cross-contamination-kitchen-cutting-boards-prevention",
+        "label": "منع انتقال الملوثات"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -239,7 +253,20 @@ export const batch20B: KnowledgeTopic[] = [
         "url": "https://www.who.int/news-room/fact-sheets/detail/food-safety"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/cooked-rice-reheating-bacillus-cereus-safety",
+        "label": "حفظ الأرز المطبوخ وإعادة تسخينه: ما خطر Bacillus cereus وكيف تمنع التسمم؟"
+      },
+      {
+        "href": "/knowledge/safe-cooking-internal-temperature-thermometer",
+        "label": "درجات حرارة الطهي الآمن: كيف تستخدم ميزان حرارة الطعام للدجاج واللحم والسمك؟"
+      },
+      {
+        "href": "/knowledge/fridge-freezer-food-storage-temperature-guide",
+        "label": "قواعد التبريد والحفظ"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -362,7 +389,20 @@ export const batch20B: KnowledgeTopic[] = [
         "url": "https://www.nhs.uk/live-well/eat-well/food-safety/how-to-reheat-rice/"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/wash-fruits-vegetables-safe-water-no-soap",
+        "label": "غسل الفواكه والخضار بأمان: هل نستخدم الخل أو الصابون وكيف نتعامل مع المنتجات المقطعة؟"
+      },
+      {
+        "href": "/knowledge/food-poisoning-symptoms-when-seek-medical-care",
+        "label": "أعراض التسمم الغذائي: متى تظهر ومتى تحتاج إلى طبيب وكيف تحمي الآخرين؟"
+      },
+      {
+        "href": "/knowledge/safe-cooking-internal-temperature-thermometer",
+        "label": "درجات حرارة الطهي"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -481,7 +521,20 @@ export const batch20B: KnowledgeTopic[] = [
         "url": "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-produce-safely"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/safe-packed-lunch-school-work-hot-weather",
+        "label": "وجبات المدرسة والعمل في الجو الحار: كيف تحفظ الساندويتشات والسلطات والحليب بأمان؟"
+      },
+      {
+        "href": "/knowledge/cooked-rice-reheating-bacillus-cereus-safety",
+        "label": "حفظ الأرز المطبوخ وإعادة تسخينه: ما خطر Bacillus cereus وكيف تمنع التسمم؟"
+      },
+      {
+        "href": "/knowledge/cross-contamination-kitchen-cutting-boards-prevention",
+        "label": "فصل الأدوات النظيفة"
+      }
+    ],
     "tool": "expert-knowledge-check"
   },
   {
@@ -600,7 +653,20 @@ export const batch20B: KnowledgeTopic[] = [
         "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/keeping-bag-lunches-safe"
       }
     ],
-    "related": [],
+    "related": [
+      {
+        "href": "/knowledge/read-food-nutrition-facts-label-serving-size",
+        "label": "قراءة البطاقة الغذائية: حجم الحصة والسعرات والسكريات والصوديوم والمكونات"
+      },
+      {
+        "href": "/knowledge/wash-fruits-vegetables-safe-water-no-soap",
+        "label": "غسل الفواكه والخضار بأمان: هل نستخدم الخل أو الصابون وكيف نتعامل مع المنتجات المقطعة؟"
+      },
+      {
+        "href": "/knowledge/fridge-freezer-food-storage-temperature-guide",
+        "label": "حفظ الوجبات"
+      }
+    ],
     "tool": "expert-knowledge-check"
   }
 ];
