@@ -107,7 +107,7 @@ export function applyArticleAuditUpdates(input: Article): Article {
   // Only substantially revised, source-backed essays have a new editorial modified date.
   if (getEncyclopedicContent(article.slug)) {
     // A new modified timestamp is recorded only for articles with substantive source-linked rewrites.
-    const newBatch = new Set(["movement-certificate-egypt", "private-driving-license-first-time", "chrome-cache-site-data"]);
+    const newBatch = new Set(["movement-certificate-egypt", "private-driving-license-first-time", "chrome-cache-site-data", "national-id-first-time-egypt", "automated-birth-certificate", "civil-record-correction-egypt"]);
     article.updatedAt = newBatch.has(article.slug)
       ? "2026-11-09T16:28:00+03:00"
       : "2026-11-09T12:49:00+03:00";
