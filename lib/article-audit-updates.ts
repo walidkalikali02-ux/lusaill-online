@@ -109,11 +109,14 @@ export function applyArticleAuditUpdates(input: Article): Article {
     // A new modified timestamp is recorded only for articles with substantive source-linked rewrites.
     const newBatch = new Set(["movement-certificate-egypt", "private-driving-license-first-time", "chrome-cache-site-data", "national-id-first-time-egypt", "automated-birth-certificate", "civil-record-correction-egypt"]);
     const batch4 = new Set(["national-id-renewal-egypt", "national-id-address-change", "national-id-profession-change", "national-id-marital-status-change"]);
-    article.updatedAt = batch4.has(article.slug)
-      ? "2026-11-09T17:29:00+03:00"
-      : newBatch.has(article.slug)
-        ? "2026-11-09T16:28:00+03:00"
-        : "2026-11-09T12:49:00+03:00";
+    const batch5 = new Set(["national-id-lost-replacement", "national-id-damaged-replacement", "automated-marriage-certificate", "automated-death-certificate", "divorce-certificate-online-egypt"]);
+    article.updatedAt = batch5.has(article.slug)
+      ? "2026-11-09T19:08:00+03:00"
+      : batch4.has(article.slug)
+        ? "2026-11-09T17:29:00+03:00"
+        : newBatch.has(article.slug)
+          ? "2026-11-09T16:28:00+03:00"
+          : "2026-11-09T12:49:00+03:00";
   }
   return article;
 }
