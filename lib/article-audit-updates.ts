@@ -117,8 +117,11 @@ export function applyArticleAuditUpdates(input: Article): Article {
     const familyConsularReview = new Set(["birth-certificate-abroad", "national-id-renewal-abroad", "newborn-passport-abroad"]);
     const consularTravelReview = new Set(["newborn-travel-document", "consular-document-attestation", "criminal-record-abroad"]);
     const androidSafetyReview = new Set(["android-backup-check", "android-restore-contacts", "google-photos-free-device-space"]);
-    article.updatedAt = androidSafetyReview.has(article.slug)
-      ? "2026-11-10T01:50:00+03:00"
+    const marriageConsularReview = new Set(["marriage-no-objection-certificate", "marriage-at-egyptian-mission", "foreign-marriage-ratification"]);
+    article.updatedAt = marriageConsularReview.has(article.slug)
+      ? "2026-11-10T10:03:00+03:00"
+      : androidSafetyReview.has(article.slug)
+        ? "2026-11-10T01:50:00+03:00"
       : consularTravelReview.has(article.slug)
         ? "2026-11-09T22:11:00+03:00"
       : familyConsularReview.has(article.slug)
