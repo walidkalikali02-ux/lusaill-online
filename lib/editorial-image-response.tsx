@@ -1,10 +1,12 @@
 import { ImageResponse } from "next/og";
 import { absoluteUrl } from "@/lib/site-config";
+import { nextTenCoverDirections, type CoverDirection } from "@/lib/next-ten-cover-directions";
 
 export const COVER_IMAGE_SIZE = { width: 1200, height: 630 } as const;
 export const MAP_IMAGE_SIZE = { width: 1200, height: 730 } as const;
 
 export type VisualSubject = {
+  slug?: string;
   title: string;
   category: string;
   image?: string;
@@ -132,6 +134,8 @@ function coverWords(title: string) {
  * The source artwork remains accessible and credited where it was originally.
  */
 export async function createEditorialCoverImage(subject: VisualSubject) {
+  const directed = subject.slug ? nextTenCoverDirections[subject.slug] : undefined;
+  if (directed) return createDirectedCoverImage(subject, directed);
   const theme = themeFor(subject.category);
   const [font, art] = await Promise.all([getArabicFont(), coverArtUrl(subject.image)]);
   const family = font ? "Almarai" : "sans-serif";
@@ -231,6 +235,89 @@ export async function createEditorialCoverImage(subject: VisualSubject) {
             <div style={{ display: "flex", color: theme.accent, fontSize: 14, letterSpacing: 1 }}>LUSAILL.ONLINE</div>
           </div>
         </div>
+      </div>
+    </div>,
+    responseOptions(COVER_IMAGE_SIZE, font),
+  );
+}
+
+
+function DirectedMotif({ kind, color }: { kind: CoverDirection["symbol"]; color: string }) {
+  const stroke = { fill: "none", stroke: color, strokeWidth: 4, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+  const booklet = <><rect x="13" y="11" width="38" height="50" rx="5" {...stroke}/><path d="M21 20h22M21 48h22" {...stroke}/><circle cx="32" cy="35" r="6" {...stroke}/></>;
+  let art;
+  switch(kind) {
+    case "passport": art = booklet; break;
+    case "refresh": art = <><path d="M47 20a23 23 0 1 0 9 22" {...stroke}/><path d="M47 8v14H33" {...stroke}/><path d="M19 37h26" {...stroke}/></>; break;
+    case "lost": art = <><rect x="13" y="9" width="30" height="42" rx="4" {...stroke}/><circle cx="46" cy="48" r="10" {...stroke}/><path d="m53 56 9 9" {...stroke}/></>; break;
+    case "damaged": art = <><rect x="13" y="10" width="39" height="49" rx="5" {...stroke}/><path d="m38 12-11 17 12 7-12 17" {...stroke}/></>; break;
+    case "child": art = <><rect x="12" y="15" width="45" height="42" rx="6" {...stroke}/><circle cx="34" cy="33" r="7" {...stroke}/><path d="M21 51c0-11 26-11 26 0" {...stroke}/></>; break;
+    case "document": art = <><path d="M16 8h29l11 11v43H16zM45 8v13h11M23 31h25M23 41h25M23 51h16" {...stroke}/></>; break;
+    case "movement": art = <><circle cx="16" cy="49" r="7" {...stroke}/><circle cx="54" cy="15" r="7" {...stroke}/><path d="M20 42c1-17 21 2 29-19M45 29l6-7 7 7" {...stroke}/></>; break;
+    case "clock": art = <><circle cx="35" cy="35" r="24" {...stroke}/><path d="M35 17v20l14 7M27 7h16" {...stroke}/></>; break;
+    case "complaint": art = <><rect x="16" y="11" width="41" height="48" rx="5" {...stroke}/><path d="M24 22h23M24 34h23M24 46h14" {...stroke}/><circle cx="15" cy="54" r="7" {...stroke}/></>; break;
+    case "exchange": art = <><path d="M11 23h43l-11-11M54 23 43 35M57 47H14l11-11M14 47l11 11" {...stroke}/></>; break;
+  }
+  return <svg viewBox="0 0 72 72" width="72" height="72">{art}</svg>;
+}
+
+async function createDirectedCoverImage(subject: VisualSubject, direction: CoverDirection) {
+  const palettes = {
+    travel: { dark: "#0D2946", accent: "#F8BB4E", light: "#FFF7E9", layer: "#2F7DA8" },
+    service: { dark: "#20354B", accent: "#F3B95E", light: "#FAF8F2", layer: "#5687AB" },
+    consumer: { dark: "#103E43", accent: "#D0F0D9", light: "#F5FAF4", layer: "#299E94" },
+  } as const;
+  const colors = palettes[direction.palette];
+  const [font, art] = await Promise.all([getArabicFont(), coverArtUrl(subject.image)]);
+  const family = font ? "Almarai" : "sans-serif";
+  const fullTitle = subject.title.replace(/\s+/gu, " ").trim();
+  const fontSize = fullTitle.length > 62 ? 32 : fullTitle.length > 48 ? 36 : fullTitle.length > 34 ? 40 : 46;
+  const key = hashText(fullTitle);
+
+  return new ImageResponse(
+    <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100%", fontFamily: family, background: colors.light, overflow: "hidden" }}>
+      <div style={{ display: "flex", height: 79, flexShrink: 0, padding: "15px 39px", alignItems: "center", justifyContent: "space-between", background: "#FFFEFC" }}>
+        <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: 11, fontSize: 17, color: colors.dark }}>
+          <span style={{ display: "flex", height: 11, width: 11, borderRadius: 10, background: colors.layer }} />
+          <span>ملف إرشادي مصوّر</span>
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: 13, color: colors.dark, fontSize: 33, fontWeight: 900, direction: "rtl" }}>
+          <span>لوسيل</span>
+          <span style={{ display: "flex", width: 37, height: 37, background: colors.accent, borderRadius: 11, transform: "rotate(-14deg)" }} />
+        </div>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "row", height: 422, width: "100%", flexShrink: 0 }}>
+        <div style={{ display: "flex", height: "100%", width: "53%", position: "relative", flexShrink: 0, overflow: "hidden", background: "linear-gradient(140deg," + colors.layer + "," + colors.dark + ")" }}>
+          {art ? <img src={art} alt="" width={635} height={422} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: key % 2 ? "62% 50%" : "37% 50%" }} /> :
+            <div style={{ display: "flex", position: "absolute", width: 290, height: 290, border: "42px solid " + colors.accent, borderRadius: 70, top: 58, left: 70, transform: "rotate(23deg)", opacity: 0.58 }} />}
+          <div style={{ display: "flex", position: "absolute", top: 25, left: 29, width: 104, height: 104, alignItems: "center", justifyContent: "center", borderRadius: 26, background: "#FFFFFF", border: "3px solid " + colors.accent }}>
+            <DirectedMotif kind={direction.symbol} color={colors.dark} />
+          </div>
+          <div style={{ display: "flex", position: "absolute", bottom: 23, left: 29, alignItems: "center", gap: 10, borderRadius: 17, padding: "12px 21px", background: colors.dark, color: "#FFFFFF", fontSize: 21, fontWeight: 800 }}>
+            {direction.tag}
+          </div>
+          <div style={{ display: "flex", position: "absolute", width: 240, height: 240, borderRadius: "50%", border: "3px solid " + colors.accent, right: -98, bottom: -105, opacity: .8 }} />
+        </div>
+        <div style={{ display: "flex", height: "100%", flex: 1, flexDirection: "column", justifyContent: "center", padding: "22px 35px", background: "linear-gradient(130deg," + colors.dark + ",#07192D)", color: "#FFFFFF", direction: "rtl" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, color: colors.accent, fontSize: 16, marginBottom: 17 }}>
+            <span style={{ display: "flex", width: 38, height: 3, background: colors.accent }} />
+            {subject.category}
+          </div>
+          <div style={{ display: "flex", fontSize, lineHeight: 1.48, textAlign: "right", fontWeight: 900, overflowWrap: "break-word", marginBottom: 15 }}>{fullTitle}</div>
+          <div style={{ display: "flex", color: "#E2E9EA", fontSize: 17, lineHeight: 1.5 }}>دليل لوسيل للمتطلبات والخطوات والمراجعة</div>
+        </div>
+      </div>
+
+      <div style={{ display: "flex", height: 129, background: colors.light, padding: "15px 27px", gap: 13, alignItems: "stretch", justifyContent: "space-between", direction: "rtl" }}>
+        {direction.cues.map((cue, index) => (
+          <div key={cue} style={{ display: "flex", width: 267, alignItems: "center", gap: 12, padding: "12px 13px", borderRadius: 19, background: "#FFFFFF", border: "1px solid #E6E8E7" }}>
+            <div style={{ display: "flex", width: 62, height: 62, flexShrink: 0, alignItems: "center", justifyContent: "center", borderRadius: 16, background: index === 0 ? colors.accent : "#EAF0F0" }}>
+              <span style={{ display: "flex", color: colors.dark, fontWeight: 900, fontSize: 25 }}>{String(index + 1).padStart(2, "0")}</span>
+            </div>
+            <span style={{ display: "flex", color: colors.dark, fontWeight: 800, fontSize: cue.length > 17 ? 15 : 18, lineHeight: 1.5, textAlign: "right" }}>{cue}</span>
+          </div>
+        ))}
       </div>
     </div>,
     responseOptions(COVER_IMAGE_SIZE, font),
