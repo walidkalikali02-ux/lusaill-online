@@ -70,6 +70,20 @@ assert(kiosk.sources.some(source => source.url === "https://psm.gov.eg/Services/
 assert(kiosk.steps.some(step => step.relatedLink?.href === "/articles/civil-record-correction-egypt"),
   "No link from smart kiosk to civil-record correction");
 console.log("Smart-kiosk birth-certificate official-source and failure-route checks passed.");
+const outage = articles.find(a => a.slug === "electricity-outage-report");
+assert(outage?.status === "published", "Missing published outage guide");
+assert((outage.practicalSections?.length ?? 0) >= 2, "Outage guide must distinguish risk decisions and follow-up");
+assert(outage.practicalSections.some(section => section.rows.some(row => row.join(" ").includes("شرر"))),
+  "Outage safety guidance missing from practical matrix");
+assert(outage.practicalSections.some(section => section.rows.some(row => row.join(" ").includes("رقم الشكوى"))),
+  "Outage complaint-follow-up matrix missing");
+assert(outage.sources.some(source => source.url === "https://eservices.eehc.gov.eg/"),
+  "Official 121 contact source missing");
+assert(outage.sources.some(source => source.url === "https://moere.gov.eg/cmp/follow.aspx"),
+  "Ministry complaint follow-up source missing");
+assert(outage.steps.some(step => step.relatedLink?.href === "/articles/electricity-complaint"),
+  "Outage escalation must link to electricity complaint guide");
+console.log("Electricity outage safety, official 121 and follow-up integrity passed.");
 console.log(`All ${published.size} published articles have task paths; all members are published.`);
 
 // Article audit: a category move must reach every consumer of the article model.
