@@ -55,7 +55,7 @@
 | 14 | `foreign-marriage-ratification` | 1391 | 7 | 6 |
 | 15 | `foreign-nationality-permission` | 1382 | 7 | 5 |
 | 15 | `egyptian-nationality-foreign-wife` | 1398 | 7 | 5 |
-| 15 | `palestinian-egyptian-travel-document` | 1359 | 7 | 5 |
+| 15 | `palestinian-egyptian-travel-document` | 1368 | 7 | 5 |
 
 
 ### ملاحظات الدفعة الخامسة عشرة — الجنسية المصرية ووثيقة سفر الفلسطينيين

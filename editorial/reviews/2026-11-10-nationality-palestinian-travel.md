@@ -7,8 +7,8 @@
 |---|---:|---:|---:|
 | `/articles/foreign-nationality-permission` | 1,382 | 7 | 5 |
 | `/articles/egyptian-nationality-foreign-wife` | 1,398 | 7 | 5 |
-| `/articles/palestinian-egyptian-travel-document` | 1,359 | 7 | 5 |
-| **المجموع** | **4,139** | **21** | — |
+| `/articles/palestinian-egyptian-travel-document` | 1,368 | 7 | 5 |
+| **المجموع** | **4,148** | **21** | — |
 
 ## 1. إذن التجنس بجنسية أجنبية مع الاحتفاظ بالمصرية
 - [وزارة الخارجية: قائمة الأوراق والتقديم](https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/98): شهادات ميلاد مقدم الطلب والأب، الجواز المصري الساري، البطاقة، الجواز الأجنبي، شهادة التجنس، موافقة الزوج في حالة طلب الزوجة، أربع صور، ثم إرسال البعثة الملف إلى الجوازات والهجرة والجنسية.
