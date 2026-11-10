@@ -22,6 +22,7 @@ import { marriageNoObjectionReference } from "./consular-marriage-no-objection-r
 import { marriageAtMissionReference } from "./consular-marriage-at-mission-reference";
 import { divorceAtMissionReference } from "./consular-divorce-at-mission-reference";
 import { marriageDivorceRecordCorrectionReference } from "./marriage-divorce-record-correction-reference";
+import { familyRecordAfterDivorceReference } from "./family-record-after-divorce-reference";
 import { foreignMarriageRatificationReference } from "./consular-foreign-marriage-ratification-reference";
 import { foreignNationalityPermissionReference } from "./foreign-nationality-permission-reference";
 import { egyptianNationalityForeignWifeReference } from "./egyptian-nationality-foreign-wife-reference";
@@ -4010,6 +4011,7 @@ const electricityReferenceExpansions: Record<string, EncyclopedicContent> = {
   "marriage-at-egyptian-mission": marriageAtMissionReference,
   "divorce-at-egyptian-mission": divorceAtMissionReference,
   "marriage-divorce-record-correction": marriageDivorceRecordCorrectionReference,
+  "family-record-egypt": familyRecordAfterDivorceReference,
   "foreign-marriage-ratification": foreignMarriageRatificationReference,
   "foreign-nationality-permission": foreignNationalityPermissionReference,
   "egyptian-nationality-foreign-wife": egyptianNationalityForeignWifeReference,
