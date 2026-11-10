@@ -21,6 +21,9 @@ import { googlePhotosSpaceReference } from "./android-google-photos-space-refere
 import { marriageNoObjectionReference } from "./consular-marriage-no-objection-reference";
 import { marriageAtMissionReference } from "./consular-marriage-at-mission-reference";
 import { foreignMarriageRatificationReference } from "./consular-foreign-marriage-ratification-reference";
+import { foreignNationalityPermissionReference } from "./foreign-nationality-permission-reference";
+import { egyptianNationalityForeignWifeReference } from "./egyptian-nationality-foreign-wife-reference";
+import { palestinianEgyptianTravelReference } from "./palestinian-egyptian-travel-reference";
 
 export type EncyclopedicSection = {
   id: string;
@@ -4004,5 +4007,8 @@ const electricityReferenceExpansions: Record<string, EncyclopedicContent> = {
   "marriage-no-objection-certificate": marriageNoObjectionReference,
   "marriage-at-egyptian-mission": marriageAtMissionReference,
   "foreign-marriage-ratification": foreignMarriageRatificationReference,
+  "foreign-nationality-permission": foreignNationalityPermissionReference,
+  "egyptian-nationality-foreign-wife": egyptianNationalityForeignWifeReference,
+  "palestinian-egyptian-travel-document": palestinianEgyptianTravelReference,
 };
 export const getEncyclopedicContent = (slug: string) => electricityReferenceExpansions[slug] ?? encyclopedicContent[slug];

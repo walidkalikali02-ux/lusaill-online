@@ -16,6 +16,17 @@ function load(file){
 const {articles,clusters,isArticleIndexable}=load("lib/content.ts"),{foodSafetyArticles}=load("lib/food-safety.ts"),{sitemapGroups}=load("lib/sitemaps.ts"),{getGuidePath}=load("lib/guide-paths.ts"),{getArticleModifiedAt,latestContentDate}=load("lib/content-modified.ts"),{guideIllustrations}=load("lib/guide-illustrations.ts");
 const {isArticleSearchReady,isKnowledgeSearchReady,isFoodSafetySearchReady}=load("lib/editorial-indexing.ts");
 const {getEncyclopedicContent}=load("lib/encyclopedic-content.ts");
+for(const slug of ["foreign-nationality-permission","egyptian-nationality-foreign-wife","palestinian-egyptian-travel-document"]){
+  const article=articles.find(a=>a.slug===slug);
+  const deep=getEncyclopedicContent(slug);
+  assert(article&&deep,"Nationality/Palestinian travel article missing: "+slug);
+  assert(deep.sections.length>=7 && deep.sources.length>=4,"Nationality/Palestinian guide lacks depth or official sources: "+slug);
+  assert(deep.sections.every(section => section.sourceUrls?.length>=1 && section.sourceUrls.every(url => deep.sources.some(s=>s.url===url))),"Missing chapter citations or source URL mismatch: "+slug);
+  assert(isArticleSearchReady(article),"Nationality/Palestinian guide must satisfy the conservative editorial search gate: "+slug);
+}
+assert(getEncyclopedicContent("foreign-nationality-permission").sections.some(s=>s.paragraphs.some(p=>p.includes("مع عدم الاحتفاظ"))),"Foreign naturalization needs a distinct non-retention path warning");
+assert(getEncyclopedicContent("egyptian-nationality-foreign-wife").sections.some(s=>s.paragraphs.some(p=>p.includes("ستة أشهر") && p.includes("القنصلية"))),"Wife citizenship requires explicit consular six-month follow-up warning");
+assert(getEncyclopedicContent("palestinian-egyptian-travel-document").sections.some(s=>s.paragraphs.some(p=>p.includes("اثني عشر عامًا") && p.includes("ستة عشر عامًا"))),"Palestinian travel document must distinguish central vs local child ages");
 for(const slug of ["marriage-no-objection-certificate","marriage-at-egyptian-mission","foreign-marriage-ratification"]){
   const article=articles.find(a=>a.slug===slug);
   const deep=getEncyclopedicContent(slug);
