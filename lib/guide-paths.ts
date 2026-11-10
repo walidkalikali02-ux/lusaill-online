@@ -58,7 +58,7 @@ export function getGuidePath(articleSlug: string) {
   const primary: Record<string, string> = {
     "automated-birth-certificate": "birth-certificates", "family-record-egypt": "personal-records",
     "personal-record-egypt": "personal-records", "automated-death-certificate": "death-records",
-    "automated-marriage-certificate": "marriage-records", "civil-record-correction-egypt": "national-id",
+    "automated-marriage-certificate": "marriage-records", "civil-record-correction-egypt": "birth-certificates",
     "marriage-divorce-record-correction": "marriage-records", "driving-license-lost-replacement": "driving-licences",
     "work-permit-abroad": "work-permits",
   };
