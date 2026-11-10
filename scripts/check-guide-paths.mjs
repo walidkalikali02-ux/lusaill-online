@@ -46,6 +46,20 @@ const {articles} = importSource("lib/content.ts");
 const published = new Set(articles.filter(a => a.status === "published").map(a => a.slug));
 for (const path of guidePaths) for(const slug of path.articleSlugs) assert(published.has(slug), `Unpublished member ${slug} in ${path.slug}`);
 for(const slug of published) assert(getGuidePath(slug), `No task path for published article ${slug}`);
+const requiredCivilTransitions = [
+  ["paper-death-record-egypt", "death-registration-burial-permit"],
+  ["death-registration-burial-permit", "paper-death-record-egypt"],
+  ["death-registration-burial-permit", "automated-death-certificate"],
+  ["newborn-birth-registration-egypt", "automated-birth-certificate"],
+  ["newborn-birth-registration-egypt", "birth-certificate-abroad"],
+];
+for (const [origin, destination] of requiredCivilTransitions) {
+  const article = articles.find((a) => a.slug === origin);
+  assert(article?.steps?.some((step) => step.relatedLink?.href === `/articles/${destination}`),
+    `Missing civil-record transition: ${origin} -> ${destination}`);
+  assert(published.has(destination), `Unpublished civil-record destination: ${destination}`);
+}
+console.log("Civil birth/death route integrity passed.");
 console.log(`All ${published.size} published articles have task paths; all members are published.`);
 
 // Article audit: a category move must reach every consumer of the article model.
