@@ -80,8 +80,8 @@ async function coverArtUrl(image?: string): Promise<string | null> {
       // preserve the complete, accessible source SVG on the article page.
       const sourceSvg = Buffer.from(buffer).toString("utf8");
       const shapesOnly = sourceSvg
-        .replace(/<text\\b[^>]*>[\\s\\S]*?<\\/text>/gi, "")
-        .replace(/<foreignObject\\b[^>]*>[\\s\\S]*?<\\/foreignObject>/gi, "");
+        .replace(/<text\b[^>]*>[\s\S]*?<\/text>/gi, "")
+        .replace(/<foreignObject\b[^>]*>[\s\S]*?<\/foreignObject>/gi, "");
       return "data:image/svg+xml;base64," + Buffer.from(shapesOnly).toString("base64");
     }
     return "data:" + type + ";base64," + Buffer.from(buffer).toString("base64");
