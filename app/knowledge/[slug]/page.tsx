@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import { EditorialCover } from "@/components/editorial-cover";
 import { notFound } from "next/navigation";
 import { pageAlternates } from "@/lib/page-alternates";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
@@ -45,10 +45,14 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 <p style={{fontSize:13,color:"#64748b",marginBlock:13}}>إعداد: فريق لوسيل · تاريخ النشر: <time dateTime={topic.publishedAt}>{topic.publishedAt}</time></p>
 {isMedicalKnowledgeTopic(topic) && <p role="note" style={{background:"#fff7ed",padding:12,borderRadius:8,fontSize:14}}>هذه معلومات عامة، ولم تُوثَّق لهذا المقال مراجعة تخصصية مستقلة حتى الآن. لا تستخدمه بدل التقييم الطبي أو تعليمات الجهات الصحية الرسمية.</p>}
 </header>
-<figure style={{marginBlock:27}}>
-<Image src={topic.image} alt={topic.imageAlt} width={1200} height={630} unoptimized style={{width:"100%",height:"auto",borderRadius:16}} priority/>
-<figcaption style={{fontSize:13,color:"#64748b",marginTop:6}}>رسم تعليمي توضيحي من إعداد لوسيل، وليس صورة قياسات مخبرية أو بيانات إحصائية حقيقية.</figcaption>
-</figure>
+<EditorialCover
+  title={topic.title}
+  category={topic.category}
+  image={topic.image}
+  imageAlt={topic.imageAlt}
+  priority
+  description="مفهوم واضح · شرح متعمق · تطبيق عملي"
+/>
 <section aria-labelledby="direct-answer" style={{background:"#eff8f6",border:"1px solid #9fd5c9",borderRadius:14,padding:23}}>
 <h2 id="direct-answer" style={{fontSize:24,fontWeight:800,marginBottom:9}}>الإجابة المختصرة</h2><p style={{fontSize:17}}>{topic.directAnswer}</p>
 </section>
