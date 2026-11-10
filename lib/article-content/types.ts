@@ -1,4 +1,5 @@
 import type { ArticleStatus, FactRow, Step, FaqItem, SourceRef } from "../content";
+import type { PracticalSection } from "../article-audit-updates";
 
 export type ArticleContentOverride = {
   id: number;
@@ -16,4 +17,5 @@ export type ArticleContentOverride = {
   commonMistakes?: string[];
   sources?: SourceRef[];
   faqs?: FaqItem[];
+  practicalSections?: PracticalSection[];
 };
