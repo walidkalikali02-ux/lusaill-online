@@ -43,6 +43,9 @@ const supplemental = [
   ["marriage-no-objection-certificate", "lib/consular-marriage-no-objection-reference.ts", "marriageNoObjectionReference"],
   ["marriage-at-egyptian-mission", "lib/consular-marriage-at-mission-reference.ts", "marriageAtMissionReference"],
   ["foreign-marriage-ratification", "lib/consular-foreign-marriage-ratification-reference.ts", "foreignMarriageRatificationReference"],
+  ["foreign-nationality-permission", "lib/foreign-nationality-permission-reference.ts", "foreignNationalityPermissionReference"],
+  ["egyptian-nationality-foreign-wife", "lib/egyptian-nationality-foreign-wife-reference.ts", "egyptianNationalityForeignWifeReference"],
+  ["palestinian-egyptian-travel-document", "lib/palestinian-egyptian-travel-reference.ts", "palestinianEgyptianTravelReference"],
 ];
 for (const [slug, pathname, name] of supplemental) {
   if (registry[slug]) throw new Error("Duplicate encyclopedia slug: " + slug);
