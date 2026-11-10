@@ -15,6 +15,7 @@ function getSubject(kind: EditorialImageKind, slug: string): VisualSubject | nul
     const article = getArticleBySlug(slug);
     if (!article || !isArticleIndexable(article)) return null;
     return {
+      slug: article.slug,
       title: article.title,
       category: clusters.find(item => item.code === article.clusterCode)?.name ?? "دليل عملي",
       image: article.coverImage,
@@ -26,6 +27,7 @@ function getSubject(kind: EditorialImageKind, slug: string): VisualSubject | nul
     const topic = getKnowledgeTopic(slug);
     if (!topic?.directAnswer?.trim() || !topic.sections.length) return null;
     return {
+      slug: topic.slug,
       title: topic.title,
       category: topic.category,
       image: topic.image,
