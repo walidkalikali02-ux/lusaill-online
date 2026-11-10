@@ -34,7 +34,7 @@ function hashText(value: string) {
 }
 
 const arabicFontUrl =
-  "https://raw.githubusercontent.com/google/fonts/main/ofl/notokufiarabic/NotoKufiArabic%5Bwght%5D.ttf";
+  "https://raw.githubusercontent.com/google/fonts/main/ofl/almarai/Almarai-ExtraBold.ttf";
 
 let fontPromise: Promise<ArrayBuffer | null> | null = null;
 async function getArabicFont(): Promise<ArrayBuffer | null> {
@@ -90,7 +90,7 @@ function titleFontSize(title: string) {
 function responseOptions(size: { width: number; height: number }, font: ArrayBuffer | null) {
   return {
     ...size,
-    ...(font ? { fonts: [{ name: "Noto Kufi Arabic", data: font, weight: 700 as const, style: "normal" as const }] } : {}),
+    ...(font ? { fonts: [{ name: "Almarai", data: font, weight: 800 as const, style: "normal" as const }] } : {}),
     headers: { "Cache-Control": "public, max-age=3600, s-maxage=604800, stale-while-revalidate=86400" },
   };
 }
@@ -105,7 +105,7 @@ export async function createEditorialCoverImage(subject: VisualSubject) {
   const variant = hashText(subject.title) % 3;
   const artOnRight = variant === 1;
   const [font, art] = await Promise.all([getArabicFont(), coverArtUrl(subject.image)]);
-  const family = font ? "Noto Kufi Arabic" : "sans-serif";
+  const family = font ? "Almarai" : "sans-serif";
   return new ImageResponse(
     <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: artOnRight ? "row-reverse" : "row", background: theme.bg, fontFamily: family, overflow: "hidden" }}>
       <div style={{ width: "43%", height: "100%", display: "flex", position: "relative", flexShrink: 0, overflow: "hidden", background: "linear-gradient(140deg, " + theme.secondary + ", " + theme.bg + ")" }}>
@@ -146,7 +146,7 @@ export async function createEditorialMapImage(subject: VisualSubject) {
   const theme = themeFor(subject.category);
   const steps = (subject.items ?? []).filter(Boolean).slice(0, 4);
   const font = await getArabicFont();
-  const family = font ? "Noto Kufi Arabic" : "sans-serif";
+  const family = font ? "Almarai" : "sans-serif";
   return new ImageResponse(
     <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100%", padding: "44px 52px", background: "#F6F7F2", color: theme.bg, direction: "rtl", fontFamily: family }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", borderBottom: "3px solid " + theme.secondary, paddingBottom: 17 }}>
