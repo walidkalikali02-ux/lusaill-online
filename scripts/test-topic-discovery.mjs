@@ -16,6 +16,18 @@ function load(file){
 const {articles,clusters,isArticleIndexable}=load("lib/content.ts"),{foodSafetyArticles}=load("lib/food-safety.ts"),{sitemapGroups}=load("lib/sitemaps.ts"),{getGuidePath}=load("lib/guide-paths.ts"),{getArticleModifiedAt,latestContentDate}=load("lib/content-modified.ts"),{guideIllustrations}=load("lib/guide-illustrations.ts");
 const {isArticleSearchReady,isKnowledgeSearchReady,isFoodSafetySearchReady}=load("lib/editorial-indexing.ts");
 const {getEncyclopedicContent}=load("lib/encyclopedic-content.ts");
+for(const slug of ["marriage-no-objection-certificate","marriage-at-egyptian-mission","foreign-marriage-ratification"]){
+  const article=articles.find(a=>a.slug===slug);
+  const deep=getEncyclopedicContent(slug);
+  assert(article && deep,"Marriage consular guide missing: "+slug);
+  assert(deep.sections.length>=7 && deep.sources.length>=4,"Marriage consular guide needs multiple sources and depth: "+slug);
+  assert(deep.sections.every(section=>section.sourceUrls?.length>=1 && section.sourceUrls.every(url=>deep.sources.some(source=>source.url===url))),"Unmatched marriage chapter sources: "+slug);
+  assert(isArticleSearchReady(article),"Marriage guide not ready under conservative editorial source rules: "+slug);
+}
+const marriageNoObjection=getEncyclopedicContent("marriage-no-objection-certificate");
+assert(marriageNoObjection.sections.some(s=>s.paragraphs.some(p=>p.includes("قيد فردي") && p.includes("وزارة الخارجية"))),"Marriage CNI must verify Egyptian individual civil register legalization");
+const ratification=getEncyclopedicContent("foreign-marriage-ratification");
+assert(ratification.sections.some(s=>s.paragraphs.some(p=>p.includes("التصادق") && p.includes("إتمام زواج"))),"Marriage content must distinguish contract ratification from new marriage");
 for(const slug of ["android-backup-check","android-restore-contacts","google-photos-free-device-space"]){
   const article=articles.find(a=>a.slug===slug);
   const deep=getEncyclopedicContent(slug);
