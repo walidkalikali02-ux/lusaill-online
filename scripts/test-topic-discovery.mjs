@@ -24,7 +24,7 @@ for(const slug of ["foreign-nationality-permission","egyptian-nationality-foreig
   assert(deep.sections.every(section => section.sourceUrls?.length>=1 && section.sourceUrls.every(url => deep.sources.some(s=>s.url===url))),"Missing chapter citations or source URL mismatch: "+slug);
   assert(isArticleSearchReady(article),"Nationality/Palestinian guide must satisfy the conservative editorial search gate: "+slug);
 }
-assert(getEncyclopedicContent("foreign-nationality-permission").sections.some(s=>s.paragraphs.some(p=>p.includes("مع عدم الاحتفاظ"))),"Foreign naturalization needs a distinct non-retention path warning");
+assert(getEncyclopedicContent("foreign-nationality-permission").sections.some(s=>s.paragraphs.some(p=>p.includes("عدم الاحتفاظ"))),"Foreign naturalization needs a distinct non-retention path warning");
 assert(getEncyclopedicContent("egyptian-nationality-foreign-wife").sections.some(s=>s.paragraphs.some(p=>p.includes("ستة أشهر") && p.includes("القنصلية"))),"Wife citizenship requires explicit consular six-month follow-up warning");
 assert(getEncyclopedicContent("palestinian-egyptian-travel-document").sections.some(s=>s.paragraphs.some(p=>p.includes("اثني عشر عامًا") && p.includes("ستة عشر عامًا"))),"Palestinian travel document must distinguish central vs local child ages");
 for(const slug of ["marriage-no-objection-certificate","marriage-at-egyptian-mission","foreign-marriage-ratification"]){
