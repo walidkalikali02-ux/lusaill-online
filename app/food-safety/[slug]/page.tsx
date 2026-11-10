@@ -1,6 +1,7 @@
 import { searchTitles } from "@/lib/search-titles";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { EditorialCover } from "@/components/editorial-cover";
 import { notFound } from "next/navigation";
 import { foodSafetyArticles, getFoodSafetyArticle } from "@/lib/food-safety";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
@@ -75,6 +76,14 @@ export default async function FoodSafetyArticlePage({ params }: PageProps) {
         <nav className="food-breadcrumbs" aria-label="مسار التنقل"><Link href="/">الرئيسية</Link><span>/</span><Link href="/food-safety">سلامة الغذاء</Link><span>/</span><span>{article.title}</span></nav>
         <div className="food-layout">
           <article className="food-article">
+            <EditorialCover
+              title={article.title}
+              category="سلامة الغذاء"
+              image={article.coverImage}
+              imageAlt={article.coverImageAlt}
+              priority
+              description="شرح علمي ومراجع للسلامة الغذائية"
+            />
             <div className="food-article-rich" dangerouslySetInnerHTML={{ __html: article.bodyHtml }} />
             <div className="food-editorial-note">
               <p>المعلومات الواردة للتوعية العامة فقط، وليست تشخيصًا أو استشارة طبية. تُذكر مصادر الحقائق داخل المقال، ولا يُدّعى حصول مراجعة سريرية مستقلة. إذا ظهرت أعراض شديدة فاطلب رعاية طبية مناسبة.</p>

@@ -4,7 +4,7 @@ import { electricityDetailText } from "@/lib/electricity-inquiry-detail";
 import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import { EditorialCover } from "@/components/editorial-cover";
 import { notFound } from "next/navigation";
 import { articles, getArticleBySlug, getRelatedArticles, isArticleIndexable } from "@/lib/content";
 import { clusters } from "@/lib/clusters";
@@ -214,18 +214,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <p>{article.quickAnswer}</p>
         </section>
 
-        {article.coverImage ? (
-          <Image
-            className="article-cover"
-            unoptimized={article.coverImage.startsWith("https://")}
-            src={article.coverImage}
-            alt={article.coverImageAlt ?? article.title}
-            width={1200}
-            height={630}
-            sizes="(max-width: 768px) calc(100vw - 32px), (max-width: 1248px) calc(100vw - 48px), 1200px"
-            priority
-          />
-        ) : null}
+        <EditorialCover
+          title={article.title}
+          category={cluster.name}
+          image={article.coverImage}
+          imageAlt={article.coverImageAlt}
+          priority
+          description="دليل عملي بخطوات ومراجع"
+        />
 
         {/* Mobile TOC */}
         <details className="toc-mobile">

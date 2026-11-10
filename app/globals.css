@@ -529,3 +529,118 @@ img { max-width: 100%; height: auto; }
 #quick-answer p { max-width: 75ch; font-size: 17px; line-height: 1.9; }
 .article-body .brief-box li { font-size: 16px; line-height: 1.85; }
 .article-body .todo-table th, .article-body .todo-table td { font-size: 16px; }
+
+
+/* Lusaill article covers: one editorial concept, domain-specific art and compositions. */
+.editorial-cover {
+  --cover-surface: #091e33;
+  --cover-accent: #f8bf52;
+  --cover-tint: #0b8192;
+  margin: 20px 0 50px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 43% minmax(0, 57%);
+  direction: ltr;
+  aspect-ratio: 1200 / 630;
+  min-height: 270px;
+  background: var(--cover-surface);
+  border-radius: 20px;
+  isolation: isolate;
+  box-shadow: 0 16px 36px rgb(8 30 48 / 12%);
+}
+.editorial-cover--energy { --cover-surface: #0c2535; --cover-accent: #ffbb54; --cover-tint: #18a4a7; }
+.editorial-cover--health { --cover-surface: #16322e; --cover-accent: #c1e6bd; --cover-tint: #4b9c73; }
+.editorial-cover--science { --cover-surface: #162346; --cover-accent: #bbcdfc; --cover-tint: #637add; }
+.editorial-cover--civic { --cover-surface: #272642; --cover-accent: #eac99f; --cover-tint: #906e99; }
+.editorial-cover--technology { --cover-surface: #101d39; --cover-accent: #65e1e9; --cover-tint: #526dc5; }
+.editorial-cover--knowledge { --cover-surface: #19344b; --cover-accent: #d3e6cf; --cover-tint: #408a9b; }
+.editorial-cover__visual {
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 25% 20%, var(--cover-tint), #102c40 70%);
+  border-radius: 20px 0 0 20px;
+}
+.editorial-cover__art { object-fit: cover; object-position: center; filter: saturate(.92) contrast(1.03); }
+.editorial-cover__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 55%, rgb(3 15 30 / 42%));
+  pointer-events: none;
+}
+.editorial-cover__visual-accent {
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1;
+  border: 2px solid rgb(255 255 255 / 45%);
+  border-radius: 50%;
+  transform: translate(-47%, 47%);
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+.editorial-cover--layout-1 .editorial-cover__art { object-position: 35% 45%; }
+.editorial-cover--layout-2 .editorial-cover__art { object-position: 70% 50%; }
+.editorial-cover--layout-1 .editorial-cover__visual-accent { border-radius: 25%; transform: rotate(35deg) translate(4%, 8%); }
+.editorial-cover--layout-2 .editorial-cover__visual-accent { border-radius: 8%; transform: rotate(45deg) translate(-24%, 20%); }
+.editorial-cover__copy {
+  min-width: 0;
+  padding: clamp(21px, 3vw, 38px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  color: #fff;
+  background: radial-gradient(circle at 98% 0, rgb(255 255 255 / 7%), transparent 36%), var(--cover-surface);
+  border-radius: 0 20px 20px 0;
+}
+.editorial-cover__brand { display: flex; gap: 10px; align-items: center; font-size: clamp(19px, 2.1vw, 28px); font-weight: 900; line-height: 1.2; }
+.editorial-cover__brand-mark {
+  width: 33px;
+  height: 33px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--cover-surface);
+  background: var(--cover-accent);
+  font-size: 23px;
+}
+.editorial-cover__brand-dot { color: var(--cover-accent); }
+.editorial-cover__headline-block { display: flex; flex-direction: column; gap: clamp(7px, 1.1vw, 13px); }
+.editorial-cover__category { font-size: clamp(11px, 1.2vw, 14px); color: var(--cover-accent); font-weight: 800; }
+.editorial-cover__headline {
+  display: block;
+  font-size: clamp(20px, 2.65vw, 40px);
+  font-weight: 900;
+  line-height: 1.44;
+  letter-spacing: -.035em;
+  overflow-wrap: anywhere;
+  color: #fff;
+}
+.editorial-cover__subtitle { font-size: clamp(10px, 1.1vw, 15px); color: #d4dfe5; }
+.editorial-cover__url { font-size: clamp(10px, .85vw, 12px); letter-spacing: 2px; color: #b9c9d8; font-weight: 700; }
+.editorial-cover__caption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: -31px;
+  color: #607080;
+  font-size: 12px;
+  line-height: 1.45;
+  text-align: start;
+}
+.editorial-cover__placeholder { position: absolute; inset: 0; overflow: hidden; }
+.editorial-cover__orbit { display: block; position: absolute; border: 25px solid rgb(255 255 255 / 12%); width: 72%; aspect-ratio: 1; transform: rotate(32deg); border-radius: 26%; }
+.editorial-cover__orbit--one { top: -25%; left: -20%; }
+.editorial-cover__orbit--two { bottom: -38%; right: -20%; border-color: var(--cover-accent); opacity: .48; }
+.editorial-cover__orbit--three { top: 28%; left: 35%; width: 35%; border-width: 14px; border-color: rgb(255 255 255 / 30%); }
+@media (max-width: 700px) {
+  .editorial-cover { display: flex; flex-direction: column; aspect-ratio: auto; min-height: 0; border-radius: 16px; margin: 18px 0 52px; }
+  .editorial-cover__visual { height: 210px; min-height: 210px; border-radius: 16px 16px 0 0; }
+  .editorial-cover__visual::after { background: linear-gradient(0deg, rgb(3 15 30 / 22%), transparent 52%); }
+  .editorial-cover__copy { min-height: 260px; padding: 20px 22px; border-radius: 0 0 16px 16px; gap: 24px; }
+  .editorial-cover__headline { font-size: clamp(23px, 6vw, 34px); }
+  .editorial-cover__brand { font-size: 22px; }
+  .editorial-cover__subtitle { font-size: 13px; }
+  .editorial-cover__caption { bottom: -43px; }
+}
