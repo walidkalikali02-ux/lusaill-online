@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EditorialCover } from "@/components/editorial-cover";
+import Image from "next/image";
+import { editorialImagePath } from "@/lib/editorial-image-url";
 import { notFound } from "next/navigation";
 import { pageAlternates } from "@/lib/page-alternates";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
@@ -17,19 +19,21 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
   const {slug}=await params;const topic=getKnowledgeTopic(slug);
   if(!topic || !topic.directAnswer?.trim() || !topic.sections.length)return {robots:{index:false,follow:false}};
   const path="/knowledge/"+topic.slug;
+  const cover = editorialImagePath("knowledge", topic.slug);
   return {title:topic.title,description:topic.description,alternates:pageAlternates(path),
     robots:{index:isKnowledgeSearchReady(topic),follow:true},
     openGraph:{title:topic.title,description:topic.description,url:path,type:"article",publishedTime:topic.publishedAt,
-      images:[{url:topic.image,alt:topic.imageAlt}]},
-    twitter:{card:"summary_large_image",title:topic.title,description:topic.description,images:[topic.image]}};
+      images:[{url:cover,alt:"غلاف تحريري: "+topic.title,width:1200,height:630}]},
+    twitter:{card:"summary_large_image",title:topic.title,description:topic.description,images:[cover]}};
 }
 const tableCell={padding:"12px 14px",borderBottom:"1px solid #e2e8f0",verticalAlign:"top" as const};
 export default async function KnowledgeTopicPage({params}:{params:Promise<{slug:string}>}){
 const {slug}=await params;const topic=getKnowledgeTopic(slug);
 if(!topic || !topic.directAnswer?.trim() || !topic.sections.length)notFound();
 const path="/knowledge/"+topic.slug;const url=absoluteUrl(path);
+const cover=editorialImagePath("knowledge",topic.slug);
 const articleSchema={"@context":"https://schema.org","@type":"Article","@id":url+"#article",headline:topic.title,description:topic.description,url,inLanguage:"ar",articleSection:topic.category,datePublished:topic.publishedAt,dateModified:topic.publishedAt,
- author:{"@type":"Organization",name:siteConfig.publisher,url:absoluteUrl("/team")},publisher:{"@type":"Organization",name:siteConfig.name,url:absoluteUrl("/")},mainEntityOfPage:{"@type":"WebPage","@id":url},image:{"@type":"ImageObject",url:absoluteUrl(topic.image),width:1200,height:630}};
+ author:{"@type":"Organization",name:siteConfig.publisher,url:absoluteUrl("/team")},publisher:{"@type":"Organization",name:siteConfig.name,url:absoluteUrl("/")},mainEntityOfPage:{"@type":"WebPage","@id":url},image:{"@type":"ImageObject",url:absoluteUrl(cover),width:1200,height:630}};
 const breadcrumbSchema={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[
  {"@type":"ListItem",position:1,name:"الرئيسية",item:absoluteUrl("/")},
  {"@type":"ListItem",position:2,name:"معارف وأدوات",item:absoluteUrl("/knowledge")},
@@ -56,6 +60,19 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 <section aria-labelledby="direct-answer" style={{background:"#eff8f6",border:"1px solid #9fd5c9",borderRadius:14,padding:23}}>
 <h2 id="direct-answer" style={{fontSize:24,fontWeight:800,marginBottom:9}}>الإجابة المختصرة</h2><p style={{fontSize:17}}>{topic.directAnswer}</p>
 </section>
+{topic.sections.length >= 2 ? <figure className="guide-figure" style={{marginBlock:27}}>
+  <Image
+    src={editorialImagePath("knowledge",topic.slug,"map")}
+    alt={"خريطة مرئية لعناوين محاور " + topic.title}
+    width={1200}
+    height={730}
+    unoptimized
+    sizes="(max-width: 768px) calc(100vw - 32px), 880px"
+    loading="lazy"
+    style={{width:"100%",height:"auto",borderRadius:14}}
+  />
+  <figcaption>خريطة تحريرية تلخص محاور المقال كما وردت في أقسامه؛ ليست نتيجة تجربة أو بيانات إحصائية.</figcaption>
+</figure> : null}
 <nav aria-label="محتويات الدليل" style={{marginBlock:23,padding:18,border:"1px solid #e2e8f0",borderRadius:14}}>
 <strong>محتويات الدليل</strong><ul style={{paddingInlineStart:22,columns:2,columnWidth:"270px",marginTop:8}}>
 {topic.sections.map(s=><li key={s.id}><a href={"#"+s.id} style={{color:"#0d7490",textDecoration:"underline"}}>{s.heading}</a></li>)}
