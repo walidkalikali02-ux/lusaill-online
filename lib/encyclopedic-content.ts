@@ -20,6 +20,7 @@ import { androidContactsRestoreReference } from "./android-contacts-restore-refe
 import { googlePhotosSpaceReference } from "./android-google-photos-space-reference";
 import { marriageNoObjectionReference } from "./consular-marriage-no-objection-reference";
 import { marriageAtMissionReference } from "./consular-marriage-at-mission-reference";
+import { divorceAtMissionReference } from "./consular-divorce-at-mission-reference";
 import { foreignMarriageRatificationReference } from "./consular-foreign-marriage-ratification-reference";
 import { foreignNationalityPermissionReference } from "./foreign-nationality-permission-reference";
 import { egyptianNationalityForeignWifeReference } from "./egyptian-nationality-foreign-wife-reference";
@@ -4006,6 +4007,7 @@ const electricityReferenceExpansions: Record<string, EncyclopedicContent> = {
   "google-photos-free-device-space": googlePhotosSpaceReference,
   "marriage-no-objection-certificate": marriageNoObjectionReference,
   "marriage-at-egyptian-mission": marriageAtMissionReference,
+  "divorce-at-egyptian-mission": divorceAtMissionReference,
   "foreign-marriage-ratification": foreignMarriageRatificationReference,
   "foreign-nationality-permission": foreignNationalityPermissionReference,
   "egyptian-nationality-foreign-wife": egyptianNationalityForeignWifeReference,
