@@ -5,6 +5,7 @@ import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EditorialCover } from "@/components/editorial-cover";
+import { editorialImagePath } from "@/lib/editorial-image-url";
 import { notFound } from "next/navigation";
 import { articles, getArticleBySlug, getRelatedArticles, isArticleIndexable } from "@/lib/content";
 import { clusters } from "@/lib/clusters";
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const article = getArticleBySlug(slug);
   if (!article || !isArticleIndexable(article)) return { robots: { index: false, follow: false } };
+  const imagePath = editorialImagePath("articles", article.slug);
   return {
     title: searchTitles[article.slug] ?? article.title,
     description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث مع خطوات وروابط رسمية.`,
@@ -40,13 +42,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: "article",
       publishedTime: article.publishedAt ?? undefined,
       modifiedTime: getArticleModifiedAt(article),
-      images: article.coverImage ? [{ url: article.coverImage, alt: article.coverImageAlt ?? article.title }] : undefined,
+      images: [{ url: imagePath, alt: "غلاف تحريري: " + article.title, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: searchTitles[article.slug] ?? article.title,
       description: article.metaDescription ?? article.quickAnswer ?? `${article.keyword} — دليل عملي محدث.`,
-      images: article.coverImage ? [article.coverImage] : undefined,
+      images: [imagePath],
     },
   };
 }
@@ -98,6 +100,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const mins = readingTime(article);
   const deepContent = getEncyclopedicContent(article.slug);
   const presentation = getArticlePresentation(article);
+  const editorialImage = editorialImagePath("articles", article.slug);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -133,13 +136,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     },
     datePublished,
     dateModified,
-    image: article.coverImage ? {
+    image: {
       "@type": "ImageObject",
-      url: absoluteUrl(article.coverImage),
+      url: absoluteUrl(editorialImage),
       width: 1200,
       height: 630,
-      caption: article.coverImageAlt ?? article.title,
-    } : undefined,
+      caption: article.title,
+    },
   };
 
   const howToSchema = howToArticles.has(article.slug) && article.steps?.length
@@ -219,6 +222,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           category={cluster.name}
           image={article.coverImage}
           imageAlt={article.coverImageAlt}
+          imageUrl={editorialImage}
           priority
           description="دليل عملي بخطوات ومراجع"
         />

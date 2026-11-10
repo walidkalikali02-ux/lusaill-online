@@ -2,6 +2,7 @@ import { searchTitles } from "@/lib/search-titles";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EditorialCover } from "@/components/editorial-cover";
+import { editorialImagePath } from "@/lib/editorial-image-url";
 import { notFound } from "next/navigation";
 import { foodSafetyArticles, getFoodSafetyArticle } from "@/lib/food-safety";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const article = getFoodSafetyArticle(slug);
   if (!article) return { robots: { index: false, follow: false } };
   const path = `/food-safety/${article.slug}`;
+  const cover = editorialImagePath("food-safety", article.slug);
   return {
     title: searchTitles[article.slug] ?? article.title,
     description: article.description,
@@ -34,9 +36,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: path,
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
-      images: [{ url: article.coverImage, alt: article.coverImageAlt }],
+      images: [{ url: cover, alt: "غلاف تحريري: " + article.title, width: 1200, height: 630 }],
     },
-    twitter: { card: "summary_large_image", title: searchTitles[article.slug] ?? article.title, description: article.description, images: [article.coverImage] },
+    twitter: { card: "summary_large_image", title: searchTitles[article.slug] ?? article.title, description: article.description, images: [cover] },
   };
 }
 
@@ -46,6 +48,7 @@ export default async function FoodSafetyArticlePage({ params }: PageProps) {
   if (!article) notFound();
   const topicPersona = getFoodSafetyPersona();
   const path = `/food-safety/${article.slug}`;
+  const cover = editorialImagePath("food-safety", article.slug);
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -56,7 +59,7 @@ export default async function FoodSafetyArticlePage({ params }: PageProps) {
     url: absoluteUrl(path),
     datePublished: article.publishedAt,
     dateModified: article.updatedAt,
-    image: article.coverImage,
+    image: absoluteUrl(cover),
     author: { "@type": "Organization", name: siteConfig.publisher, url: absoluteUrl("/authors/editorial-team") },
     publisher: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
     mainEntityOfPage: absoluteUrl(path),
@@ -81,6 +84,7 @@ export default async function FoodSafetyArticlePage({ params }: PageProps) {
               category="سلامة الغذاء"
               image={article.coverImage}
               imageAlt={article.coverImageAlt}
+              imageUrl={cover}
               priority
               description="شرح علمي ومراجع للسلامة الغذائية"
             />

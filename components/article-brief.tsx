@@ -2,6 +2,7 @@ import { ArticleCard } from "./article-card";
 import Image from "next/image";
 import inlineMedia from "@/lib/article-inline-media.json";
 import { curatedWebMedia } from "@/lib/curated-web-media";
+import { editorialImagePath } from "@/lib/editorial-image-url";
 import { ElectricityCompanies, ElectricityInquiryDetail } from "./electricity-inquiry-detail";
 import { guideIllustrations } from "@/lib/guide-illustrations";
 import Link from "next/link";
@@ -58,6 +59,21 @@ export function ArticleBrief({ article, cluster, related }: { article: Article; 
 
         {renderMedia(0)}
         {renderCuratedMedia(0)}
+        {/* Add a real, topic-specific PNG map only where source images are absent. */}
+        {!media.length && !illustration && (article.steps?.length ?? 0) >= 2 ? (
+          <figure className="guide-figure">
+            <Image
+              src={editorialImagePath("articles", article.slug, "map")}
+              alt={"مخطط مرئي يلخص خطوات " + article.title}
+              width={1200}
+              height={730}
+              unoptimized
+              sizes="(max-width: 768px) calc(100vw - 32px), 760px"
+              loading="lazy"
+            />
+            <figcaption>خريطة توضيحية أعدتها لوسيل من عناوين الخطوات الواردة في هذا الدليل؛ ليست لقطة شاشة رسمية، والتفاصيل الكاملة أدناه.</figcaption>
+          </figure>
+        ) : null}
 
         {/* Steps */}
         <section id="steps" className="brief-box">
