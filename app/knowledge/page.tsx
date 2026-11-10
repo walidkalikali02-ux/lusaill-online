@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { editorialImagePath } from "@/lib/editorial-image-url";
+import { getKnowledgeTopic } from "@/lib/knowledge-expansion-data";
 import { pageAlternates } from "@/lib/page-alternates";
 export const metadata:Metadata={title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),robots:{index:true,follow:true}};
 const guides=[
@@ -150,9 +153,16 @@ return <main id="main-content" className="shell" style={{paddingBlock:52}}>
 <h1 style={{fontSize:"clamp(30px,4vw,44px)",fontWeight:800,marginBottom:16}}>استكشف مقالات موسوعة لوسيل</h1>
 <p style={{fontSize:18,color:"#475569",maxWidth:820,marginBottom:30}}>اكتشف مقالات الموسوعة في موضوعات العلوم والصحة والتعليم والتقنية والحياة اليومية. بعض الموضوعات تتضمن جداول وتمارين وأدوات عملية تساعدك على الفهم، ونعمل على توسيع التغطية باستمرار.</p>
 <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(270px,1fr))",gap:18}}>
-{guides.map(guide=><Link href={guide.href} key={guide.href} style={{border:"1px solid #e2e8f0",borderRadius:16,background:"white",padding:24,display:"grid",gap:13}}>
+{guides.map(guide => {
+  const slug = guide.href.slice("/knowledge/".length);
+  const topic = getKnowledgeTopic(slug);
+  return <Link href={guide.href} key={guide.href} style={{border:"1px solid #e2e8f0",borderRadius:16,background:"white",padding:24,display:"grid",gap:13}}>
+{topic?.directAnswer && topic.sections.length ? (
+  <Image src={editorialImagePath("knowledge", topic.slug)} alt={`غلاف لوسيل: ${topic.title}`} width={720} height={378} unoptimized loading="lazy" sizes="(max-width: 600px) 90vw, 360px" style={{width:"100%",height:"auto",borderRadius:12}}/>
+) : null}
 <span style={{fontSize:13,color:"#475569"}}>{guide.kind}</span><strong style={{fontSize:24}}>{guide.title}</strong><span style={{color:"#64748b"}}>{guide.description}</span><span style={{color:"#0f766e",fontWeight:700}}>افتح الدليل ←</span>
-</Link>)}
+</Link>;
+})}
 </div>
 <p style={{marginTop:22,color:"#205a52"}}><Link href="/topics" style={{textDecoration:"underline",fontWeight:700}}>استكشف جميع فئات الموسوعة ←</Link></p>
 <p style={{marginTop:28,color:"#64748b"}}>نوضح مصادرنا ونراجع المقالات عالية المخاطر قبل النشر. <Link href="/editorial-policy" style={{textDecoration:"underline"}}>منهج التحرير والتصحيح</Link>.</p>
