@@ -20,7 +20,7 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: ["*", "Googlebot", "Bingbot", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Anthropic-ai", "ClaudeBot"],
-      allow: ["/", "/_next/", "/images/", ...allowedCategoryPagination],
+      allow: ["/", "/_next/", "/images/", "/api/editorial-image/", ...allowedCategoryPagination],
       disallow: ["/api/", "/admin/", "/search", "/*?*"],
     },
     sitemap: absoluteUrl("/sitemap.xml"),
