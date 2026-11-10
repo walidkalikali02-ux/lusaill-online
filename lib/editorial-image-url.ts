@@ -7,5 +7,5 @@ export type EditorialImageView = "cover" | "map";
 export function editorialImagePath(kind: EditorialImageKind, slug: string, view: EditorialImageView = "cover") {
   const path = "/api/editorial-image/" + kind + "/" + encodeURIComponent(slug) + "/" + view;
   // The revised composition must bypass week-long CDN caching of older covers.
-  return kind === "articles" && view === "cover" && slug in nextTenCoverDirections ? path + "?v=20261111-2" : path;
+  return kind === "articles" && view === "cover" && slug in nextTenCoverDirections ? path + "?v=20261111-3" : path;
 }
