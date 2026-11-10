@@ -10,7 +10,8 @@ import { getSiteSearchItems } from "@/lib/site-search";
 import { EncyclopediaCategories } from "@/components/encyclopedia-categories";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { housingDeadline, housingDeadlineCheckedAt, housingDeadlineLabel, housingDeadlinePassed, housingDeadlineSource } from "@/lib/deadlines";
-export const metadata:Metadata={title:{absolute:"لوسيل | موسوعة عربية شاملة للمعرفة"},description:siteConfig.description,alternates:pageAlternates("/"),openGraph:{title:"لوسيل | موسوعة عربية شاملة للمعرفة",description:siteConfig.description,url:"/"}};
+const homeDescription = "لوسيل موسوعة عربية تشرح الخدمات الحكومية في مصر، من فواتير الكهرباء والتموين إلى المرور والسجل المدني، بأدلة توضح الخطوات والمستندات ومصادرها الرسمية.";
+export const metadata:Metadata={title:{absolute:"لوسيل | موسوعة عربية شاملة للمعرفة"},description:homeDescription,alternates:pageAlternates("/"),openGraph:{title:"لوسيل | موسوعة عربية شاملة للمعرفة",description:homeDescription,url:"/"}};
 export const revalidate=3600;
 const topics:Record<string,{short:string;icon:IconName}>={A:{short:"فواتير الكهرباء",icon:"bolt"},B:{short:"الخدمات الحكومية",icon:"document"},C:{short:"القيادة والمرور",icon:"car"},G:{short:"السجل المدني",icon:"book"},H:{short:"الحياة الرقمية",icon:"screen"}};
 export default function Home(){
@@ -24,7 +25,7 @@ export default function Home(){
   const latest=published.filter(a=>{const key=getGuidePath(a.slug)?.slug??a.clusterCode;const count=seenPaths.get(key)??0;if(count>=2)return false;seenPaths.set(key,count+1);return true;}).slice(0,6);
   const searchItems=getSiteSearchItems();
   const knowledgeCount=searchItems.filter(item=>item.href?.startsWith("/knowledge/")).length;
-  const websiteSchema={"@context":"https://schema.org","@type":"WebSite","@id":`${siteConfig.url}/#website`,url:siteConfig.url,name:siteConfig.name,description:siteConfig.description,inLanguage:siteConfig.language,publisher:{"@id":`${siteConfig.url}/#organization`}};
+  const websiteSchema={"@context":"https://schema.org","@type":"WebSite","@id":`${siteConfig.url}/#website`,url:siteConfig.url,name:siteConfig.name,description:homeDescription,inLanguage:siteConfig.language,publisher:{"@id":`${siteConfig.url}/#organization`}};
   const breadcrumbSchema={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"الرئيسية",item:absoluteUrl("/")}]};
   return <main id="main-content" className="magazine-home">
     <section className="hero identity-hero"><div className="shell identity-hero-grid"><div className="identity-intro"><span className="hero-eyebrow"><span aria-hidden="true"/>موسوعة عربية متعددة المجالات</span><h1>كل سؤال بداية،<br/><em>لمعرفة أوسع.</em></h1><p className="hero-sub">لوسيل موسوعة عربية تتناول العلوم والصحة والتعليم والتقنية والحياة اليومية، وتقدم مقالات وشروحات وأدلة عملية. نوسّع مجالات المعرفة باستمرار، ونوضح المصادر وحدود المعلومات.</p><div className="search-section"><GuideSearch items={searchItems}/></div><div className="identity-intro-note"><SiteIcon name="shield" width="17"/><span>موضوعات معرفية وشروحات وأدوات، مع مراجع يمكنك الرجوع إليها.</span></div></div><aside className="identity-taskboard" aria-labelledby="taskboard-title"><div className="taskboard-heading"><span>ابدأ من هنا</span><h2 id="taskboard-title">ماذا تريد أن تتعلم؟</h2></div><div className="identity-tasks">{[
