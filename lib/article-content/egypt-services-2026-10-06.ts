@@ -290,4 +290,27 @@ const specs: Spec[] = [
   },
 ];
 
-export const egyptServiceGuides = specs.map(makeGuide);
+const takafulWarning = {
+  label: "وزارة التضامن الاجتماعي: تحذير من صفحات تكافل وكرامة المزيفة (نوفمبر 2026)",
+  url: "https://www.moss.gov.eg/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2-%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%85%D9%8A/%D8%A7%D9%84%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1/%D8%A7%D9%84%D8%AA%D8%B6%D8%A7%D9%85%D9%86-%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A-%D8%AA%D8%AD%D8%B0%D8%B1-%D9%85%D9%86-%D8%B5%D9%81%D8%AD%D8%A7%D8%AA-%D9%85%D8%B2%D9%8A%D9%81%D8%A9-%D8%AA%D8%B1%D9%88%D8%AC-%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D9%85%D8%BA%D9%84%D9%88%D8%B7%D8%A9-%D8%B9%D9%86-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%AA%D9%83%D8%A7%D9%81%D9%84-%D9%88%D9%83%D8%B1%D8%A7%D9%85%D8%A9/",
+  checkedAt: "2026-11-10",
+};
+
+export const egyptServiceGuides = specs.map((spec) => {
+  const guide = makeGuide(spec);
+  if (spec.slug !== "takaful-karama-inquiry-complaint") return guide;
+
+  return {
+    ...guide,
+    updatedAt: takafulWarning.checkedAt,
+    steps: [
+      ...(guide.steps ?? []),
+      {
+        title: "تحقق من أي رسالة تطلب بياناتك",
+        detail: "حذرت وزارة التضامن من حسابات تنتحل صفة تكافل وكرامة. لا ترسل الرقم القومي أو صورة البطاقة إلى صفحة على مواقع التواصل تدّعي أنها تستعلم عن حالتك. للتحقق من الرسالة أو تقديم شكوى، اتصل بخط البرنامج 19680 أو بخط الوزارة 16439.",
+        sourceUrl: takafulWarning.url,
+      },
+    ],
+    sources: [...(guide.sources ?? []), takafulWarning],
+  };
+});
