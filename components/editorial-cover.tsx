@@ -5,6 +5,7 @@ type EditorialCoverProps = {
   category: string;
   image?: string;
   imageAlt?: string;
+  imageUrl?: string;
   priority?: boolean;
   /** A short identifying label, not a claim that the illustration documents an actual procedure. */
   description?: string;
@@ -29,6 +30,7 @@ export function EditorialCover({
   category,
   image,
   imageAlt,
+  imageUrl,
   priority = false,
   description = "دليل مبسط بمراجع واضحة",
 }: EditorialCoverProps) {
@@ -69,7 +71,8 @@ export function EditorialCover({
         <span className="editorial-cover__url" dir="ltr">LUSAILL.ONLINE</span>
       </div>
       <figcaption className="editorial-cover__caption">
-        غلاف تحريري من لوسيل. الصورة توضيحية للموضوع، وليست لقطة من بوابة رسمية أو إثباتًا لتنفيذ إجراء.
+        غلاف تحريري من لوسيل، وليس لقطة شاشة رسمية.
+        {imageUrl ? <> · <a href={imageUrl} target="_blank" rel="noopener noreferrer">عرض الغلاف كصورة PNG</a></> : null}
       </figcaption>
     </figure>
   );
