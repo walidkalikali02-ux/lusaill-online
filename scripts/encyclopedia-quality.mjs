@@ -74,5 +74,48 @@ for (const [slug, article] of Object.entries(registry)) {
     console.error(JSON.stringify({slug, duplicateIds, missingCitations, invalidSources, brokenIllustrations, inaccessibleImages, emptyParagraphs}));
   }
 }
+// Higher-risk editorial routes must keep their legal distinctions and primary sources.
+// These checks catch accidental deletion or replacement with generic text; they do not
+// certify that laws, fees or eligibility rules remain current.
+const sensitiveRoutes = [
+  {
+    slug: "foreign-nationality-permission",
+    official: "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/98",
+    required: ["الاحتفاظ", "عدم الاحتفاظ", "قرار", "المركز القانوني"],
+  },
+  {
+    slug: "egyptian-nationality-foreign-wife",
+    official: "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/92",
+    required: ["إعلان الرغبة", "سنتين", "ستة أشهر", "الحياة الزوجية"],
+  },
+  {
+    slug: "palestinian-egyptian-travel-document",
+    official: "https://www.mfa.gov.eg/ar/ConsularServicesAndTransactions/Details/90",
+    required: ["ثلاثة أشهر", "12", "16", "وثيقة", "الفلسطينية"],
+    localSource: "https://cs.mfa.gov.eg/ar/QAT/transaction-fees",
+    localTerms: ["610", "قطر", "وثيقة سفر مصرية", "وثيقة سفر فلسطينية"],
+  },
+];
+for (const rule of sensitiveRoutes) {
+  const article = registry[rule.slug];
+  const body = article ? JSON.stringify(article.sections) : "";
+  const officialLinked = article?.sources?.some(source => source.url === rule.official)
+    && article.sections.some(section => section.sourceUrls?.includes(rule.official));
+  const missingTerms = rule.required.filter(term => !body.includes(term));
+  const localLinked = !rule.localSource || (
+    article?.sources?.some(source => source.url === rule.localSource)
+    && article.sections.some(section => section.sourceUrls?.includes(rule.localSource))
+    && rule.localTerms.every(term => body.includes(term))
+  );
+  if (!article || !officialLinked || missingTerms.length || !localLinked) {
+    bad++;
+    console.error("FAIL legal-route-qa " + JSON.stringify({
+      slug: rule.slug, present: !!article, officialLinked: !!officialLinked,
+      missingTerms, localLinked: !!localLinked,
+    }));
+  } else {
+    console.log("PASS legal-route-qa " + rule.slug);
+  }
+}
 console.log("Quality-reviewed longform articles: " + Object.keys(registry).length);
 if (bad) process.exitCode = 1;
