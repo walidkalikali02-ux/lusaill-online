@@ -14,6 +14,11 @@ export const palestinianEgyptianTravelReference: EncyclopedicContent = {
   ],
   "sources": [
     {
+      "title": "سفارة مصر في الدوحة: متطلبات وثائق السفر الفلسطينية لمن انتهت وثيقتهم منذ ثلاث سنوات",
+      "url": "https://www.embassyofegyptdoha.org/554442719122",
+      "checkedAt": "2026-11-10"
+    },
+    {
       "title": "القنصلية المصرية في قطر: رسوم وثيقة السفر الفلسطينية (بيانات بعثة محلية قابلة للتغيير)",
       "url": "https://cs.mfa.gov.eg/ar/QAT/transaction-fees",
       "checkedAt": "2026-11-10"
