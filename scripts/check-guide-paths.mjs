@@ -60,6 +60,16 @@ for (const [origin, destination] of requiredCivilTransitions) {
   assert(published.has(destination), `Unpublished civil-record destination: ${destination}`);
 }
 console.log("Civil birth/death route integrity passed.");
+const kiosk = articles.find(a => a.slug === "birth-certificate-smart-machine");
+assert(kiosk, "Missing smart-kiosk birth-certificate guide");
+assert((kiosk.practicalSections?.length ?? 0) >= 2, "Smart-kiosk guide lacks route and failure-decision tables");
+assert(kiosk.practicalSections.some(section => section.title.includes("تعثر استخراج شهادة الميلاد")),
+  "Smart-kiosk troubleshooting matrix missing");
+assert(kiosk.sources.some(source => source.url === "https://psm.gov.eg/Services/534"),
+  "Official smart-kiosk service reference missing");
+assert(kiosk.steps.some(step => step.relatedLink?.href === "/articles/civil-record-correction-egypt"),
+  "No link from smart kiosk to civil-record correction");
+console.log("Smart-kiosk birth-certificate official-source and failure-route checks passed.");
 console.log(`All ${published.size} published articles have task paths; all members are published.`);
 
 // Article audit: a category move must reach every consumer of the article model.
