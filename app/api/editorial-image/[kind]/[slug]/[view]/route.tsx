@@ -4,6 +4,7 @@ import { getKnowledgeTopic } from "@/lib/knowledge-expansion-data";
 import { getFoodSafetyArticle } from "@/lib/food-safety";
 import { createEditorialCoverImage, createEditorialMapImage, type VisualSubject } from "@/lib/editorial-image-response";
 import type { EditorialImageKind } from "@/lib/editorial-image-url";
+import { nextTenCoverDirections } from "@/lib/next-ten-cover-directions";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -17,7 +18,9 @@ function getSubject(kind: EditorialImageKind, slug: string): VisualSubject | nul
     return {
       slug: article.slug,
       title: article.title,
-      category: clusters.find(item => item.code === article.clusterCode)?.name ?? "دليل عملي",
+      category: article.slug in nextTenCoverDirections
+        ? (article.slug.startsWith("consumer-") ? "حقوق المستهلك" : "الجوازات والهجرة")
+        : (clusters.find(item => item.code === article.clusterCode)?.name ?? "دليل عملي"),
       image: article.coverImage,
       items: article.steps?.map(step => step.title) ?? [],
       subtitle: "دليل عملي بخطوات ومراجع",
