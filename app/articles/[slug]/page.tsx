@@ -222,6 +222,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           category={cluster.name}
           image={article.coverImage}
           imageAlt={article.coverImageAlt}
+          imageUrl={editorialImage}
           priority
           description="دليل عملي بخطوات ومراجع"
         />
