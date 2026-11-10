@@ -16,6 +16,12 @@ assert(!guidePaths.find(p=>p.slug==="housing").articleSlugs.some(s=>s.startsWith
 assert.equal(new Set(guidePaths.map(p=>p.slug)).size,guidePaths.length);
 for(const p of guidePaths) { assert(p.articleSlugs.length,`Empty path ${p.slug}`); assert.equal(new Set(p.articleSlugs).size,p.articleSlugs.length); }
 assert.equal(getGuidePath("automated-birth-certificate").slug,"birth-certificates");
+assert.equal(getGuidePath("civil-record-correction-egypt").slug,"birth-certificates");
+assert.equal(getGuidePath("automated-death-certificate").slug,"death-records");
+assert(guidePaths.find(p=>p.slug==="birth-certificates")?.articleSlugs.includes("civil-record-correction-egypt"));
+assert(!guidePaths.find(p=>p.slug==="birth-certificates")?.articleSlugs.includes("personal-record-egypt"));
+assert(!guidePaths.find(p=>p.slug==="birth-certificates")?.articleSlugs.includes("family-record-egypt"));
+assert(guidePaths.find(p=>p.slug==="personal-records")?.articleSlugs.includes("family-record-egypt"));
 const search = load("lib/guide-search.ts");
 assert.equal(search.searchGuides([{slug:"a",title:"فاتورة الكهرباء",keyword:""}],"فَاتورة الكهرباء").length,1);
 assert.equal(search.searchGuides([{slug:"a",title:"أمان الحساب",keyword:""}],"امان").length,1);
