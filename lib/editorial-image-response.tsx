@@ -111,40 +111,125 @@ function responseOptions(size: { width: number; height: number }, font: ArrayBuf
  * topic-specific photo/illustration when accessible. Never invents official
  * screenshots or silently substitutes a photo from an unrelated subject.
  */
+function coverWords(title: string) {
+  const normalized = title.replace(/\s+/gu, " ").trim();
+  const words = normalized.split(" ");
+  const limited = words.length > 17 ? words.slice(0, 17) : words;
+  const cut = Math.max(1, Math.min(limited.length - 1, Math.round(limited.length * 0.47)));
+  const primary = limited.slice(0, cut).join(" ");
+  const emphasized = limited.slice(cut).join(" ");
+  return {
+    primary,
+    emphasized: emphasized || primary,
+    titleWasShortened: limited.length < words.length,
+  };
+}
+
+/**
+ * Editorial 2026 image format: an original Lusaill newsmagazine layout.
+ * It uses the *existing article-specific illustration* as a visual source,
+ * and gives every eligible slug a fresh PNG cover, not a generic shared photo.
+ * The source artwork remains accessible and credited where it was originally.
+ */
 export async function createEditorialCoverImage(subject: VisualSubject) {
   const theme = themeFor(subject.category);
-  const variant = hashText(subject.title) % 3;
-  const artOnRight = variant === 1;
   const [font, art] = await Promise.all([getArabicFont(), coverArtUrl(subject.image)]);
   const family = font ? "Almarai" : "sans-serif";
+  const { primary, emphasized, titleWasShortened } = coverWords(subject.title);
+  const count = primary.length + emphasized.length;
+  const primarySize = count > 100 ? 29 : count > 70 ? 36 : 44;
+  const emphasizedSize = emphasized.length > 50 ? 29 : emphasized.length > 34 ? 34 : 42;
+  const seed = hashText(subject.title);
+  const artSpot = seed % 3 === 0 ? "40% 50%" : seed % 3 === 1 ? "65% 48%" : "50% 50%";
+
   return new ImageResponse(
-    <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: artOnRight ? "row-reverse" : "row", background: theme.bg, fontFamily: family, overflow: "hidden" }}>
-      <div style={{ width: "43%", height: "100%", display: "flex", position: "relative", flexShrink: 0, overflow: "hidden", background: "linear-gradient(140deg, " + theme.secondary + ", " + theme.bg + ")" }}>
-        {art ? (
-          // next/og rasterizes the local/external editorial art into the PNG.
-          <img src={art} alt="" width={520} height={630} style={{ height: "100%", width: "100%", objectFit: "cover" }} />
-        ) : (
-          <div style={{ display: "flex", position: "absolute", inset: 0, alignItems: "center", justifyContent: "center" }}>
-            <div style={{ display: "flex", width: 390, height: 390, border: "55px solid " + theme.accent, borderRadius: variant === 2 ? 88 : 200, opacity: 0.65, transform: "rotate(-18deg)" }} />
-            <div style={{ display: "flex", width: 170, height: 170, border: "22px solid #ffffff", borderRadius: 60, position: "absolute", opacity: 0.36, transform: "rotate(22deg)" }} />
-          </div>
-        )}
-        <div style={{ display: "flex", position: "absolute", width: 280, height: 280, borderRadius: 140, border: "3px solid " + theme.accent, bottom: -130, right: -120, opacity: 0.8 }} />
-        <div style={{ display: "flex", position: "absolute", width: 100, height: 7, background: theme.accent, bottom: 49, left: 42 }} />
+    <div style={{
+      width: "100%", height: "100%", display: "flex", flexDirection: "column",
+      fontFamily: family, background: "#FAFBF8", overflow: "hidden",
+    }}>
+      <div style={{
+        width: "100%", height: 93, display: "flex", flexDirection: "row",
+        alignItems: "center", justifyContent: "space-between",
+        background: "#F8FBFA", padding: "16px 43px", flexShrink: 0,
+      }}>
+        <div style={{
+          display: "flex", alignItems: "center", gap: 11, background: theme.bg,
+          padding: "11px 20px", borderRadius: 33, color: "#FFFFFF",
+          fontSize: 21, fontWeight: 800,
+        }}>
+          <span style={{
+            display: "flex", width: 20, height: 20, borderRadius: 5,
+            transform: "rotate(18deg)", background: theme.accent,
+          }} />
+          {subject.category}
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 0, direction: "rtl" }}>
+          <div style={{ display: "flex", color: "#081D32", fontSize: 34, fontWeight: 900, lineHeight: 1.25 }}>لوسيل</div>
+          <div style={{ display: "flex", color: "#334F63", fontSize: 13, lineHeight: 1.3 }}>LUSAILL.ONLINE</div>
+        </div>
       </div>
-      <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", alignItems: "stretch", justifyContent: "space-between", color: "#FFFFFF", padding: "47px 49px", direction: "rtl", background: "linear-gradient(160deg, " + theme.bg + ", #071725)" }}>
-        <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-start", gap: 12 }}>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: 47, width: 47, borderRadius: 13, background: theme.accent, color: theme.bg, fontSize: 25, fontWeight: 900 }}>ل</div>
-          <div style={{ display: "flex", fontSize: 28, fontWeight: 900, color: "#FFFFFF" }}>لوسيل</div>
+      <div style={{
+        display: "flex", position: "relative", height: 537, width: "100%",
+        background: theme.bg, flexDirection: "row",
+      }}>
+        <div style={{
+          display: "flex", position: "relative", width: "51%", height: "100%",
+          flexShrink: 0, background: "linear-gradient(137deg, " + theme.secondary + ", " + theme.bg + ")",
+          overflow: "hidden",
+        }}>
+          {art ? (
+            <img src={art} alt="" height={537} width={612} style={{
+              width: "100%", height: "100%", objectFit: "cover", objectPosition: artSpot,
+            }} />
+          ) : (
+            <div style={{
+              display: "flex", position: "absolute", width: 440, height: 440,
+              left: -115, top: 30, border: "58px solid " + theme.accent,
+              borderRadius: seed % 2 ? 105 : 220, transform: "rotate(-22deg)",
+              opacity: 0.7,
+            }} />
+          )}
+          <div style={{
+            display: "flex", position: "absolute", width: 340, height: 340,
+            border: "3px solid " + theme.accent, borderRadius: 170,
+            right: -145, bottom: -180, opacity: .85,
+          }} />
+          <div style={{
+            display: "flex", position: "absolute", height: 9, width: 120,
+            left: 40, bottom: 35, background: theme.accent, borderRadius: 5,
+          }} />
         </div>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "right", gap: 15, width: "100%" }}>
-          <div style={{ display: "flex", color: theme.accent, fontSize: 18, fontWeight: 700, textAlign: "right" }}>{subject.category}</div>
-          <div style={{ display: "flex", width: "100%", color: "#FFFFFF", fontSize: titleFontSize(subject.title), fontWeight: 900, lineHeight: 1.52, textAlign: "right", overflowWrap: "break-word" }}>{subject.title}</div>
-          <div style={{ display: "flex", color: theme.soft, fontSize: 17, lineHeight: 1.6 }}>{subject.subtitle ?? "معرفة واضحة بخطوات ومراجع"}</div>
-        </div>
-        <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: 15, color: theme.soft }}>
-          <div style={{ display: "flex", width: 90, height: 4, background: theme.accent }} />
-          <div style={{ display: "flex", fontSize: 14, letterSpacing: 2 }}>LUSAILL.ONLINE</div>
+        <div style={{
+          display: "flex", position: "relative", width: "49%", height: "100%",
+          flexDirection: "column", justifyContent: "space-between", alignItems: "stretch",
+          background: "linear-gradient(130deg," + theme.bg + ", #061527)",
+          color: "white", padding: "33px 38px 35px 31px", direction: "rtl",
+        }}>
+          <div style={{ display: "flex", width: 105, height: 5, background: theme.accent, borderRadius: 4 }} />
+          <div style={{
+            display: "flex", flexDirection: "column", flex: 1,
+            justifyContent: "center", gap: 15, minWidth: 0,
+          }}>
+            <div style={{
+              display: "flex", width: "100%", color: "#FFFFFF",
+              fontSize: primarySize, fontWeight: 900, lineHeight: 1.45,
+              overflowWrap: "break-word", textAlign: "right",
+            }}>{primary}</div>
+            <div style={{
+              display: "flex", padding: "13px 16px 14px", borderRadius: 19,
+              background: theme.accent, color: theme.bg, fontSize: emphasizedSize,
+              fontWeight: 900, lineHeight: 1.43, overflowWrap: "break-word",
+              textAlign: "right", width: "100%",
+            }}>{emphasized}</div>
+          </div>
+          <div style={{
+            display: "flex", flexDirection: "column", gap: 8, textAlign: "right",
+          }}>
+            <div style={{
+              display: "flex", color: "#D6E5EB", fontSize: 17, lineHeight: 1.5,
+            }}>{titleWasShortened ? subject.title : (subject.subtitle ?? "دليل مصور بمصادر موثوقة")}</div>
+            <div style={{ display: "flex", color: theme.accent, fontSize: 14, letterSpacing: 1 }}>LUSAILL.ONLINE</div>
+          </div>
         </div>
       </div>
     </div>,
