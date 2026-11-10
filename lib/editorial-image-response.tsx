@@ -73,6 +73,17 @@ async function coverArtUrl(image?: string): Promise<string | null> {
     if (!["image/jpeg", "image/png", "image/webp", "image/svg+xml"].includes(type)) return null;
     const buffer = await response.arrayBuffer();
     if (buffer.byteLength > 2_800_000) return null;
+    if (type === "image/svg+xml") {
+      // Original educational diagrams may include Arabic SVG <text> labels.
+      // Satori's nested-SVG rasterizer can show them as missing-glyph squares.
+      // Keep the topic illustration's graphical shapes in social covers and
+      // preserve the complete, accessible source SVG on the article page.
+      const sourceSvg = Buffer.from(buffer).toString("utf8");
+      const shapesOnly = sourceSvg
+        .replace(/<text\\b[^>]*>[\\s\\S]*?<\\/text>/gi, "")
+        .replace(/<foreignObject\\b[^>]*>[\\s\\S]*?<\\/foreignObject>/gi, "");
+      return "data:image/svg+xml;base64," + Buffer.from(shapesOnly).toString("base64");
+    }
     return "data:" + type + ";base64," + Buffer.from(buffer).toString("base64");
   } catch {
     return null;
