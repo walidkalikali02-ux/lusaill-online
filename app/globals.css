@@ -644,3 +644,35 @@ img { max-width: 100%; height: auto; }
   .editorial-cover__subtitle { font-size: 13px; }
   .editorial-cover__caption { bottom: -43px; }
 }
+
+
+/* Render the final article cover asset itself. Keep its 1.905:1 dimensions
+ * unchanged on mobile, instead of stacking the image and text a second time. */
+.editorial-cover--raster {
+  display: block;
+  aspect-ratio: 1200 / 630;
+  min-height: 0;
+  width: 100%;
+  max-width: 1200px;
+  overflow: visible;
+  border: 0;
+  border-radius: 18px;
+  background: #0a2339;
+  margin: 22px 0 48px;
+}
+.editorial-cover--raster .editorial-cover__raster-image {
+  display: block;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 1200 / 630;
+  object-fit: contain;
+  border-radius: inherit;
+}
+.editorial-cover--raster .editorial-cover__caption {
+  bottom: -32px;
+  inset-inline: 0;
+}
+@media (max-width: 700px) {
+  .editorial-cover--raster { display: block; aspect-ratio: 1200 / 630; min-height: 0; margin-bottom: 51px; border-radius: 12px; }
+  .editorial-cover--raster .editorial-cover__caption { bottom: -45px; }
+}

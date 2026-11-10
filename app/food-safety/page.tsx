@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { editorialImagePath } from "@/lib/editorial-image-url";
 import { foodSafetyArticles } from "@/lib/food-safety";
 import { pageAlternates } from "@/lib/page-alternates";
 import { absoluteUrl } from "@/lib/site-config";
@@ -52,9 +54,7 @@ export default function FoodSafetyHub() {
         <section aria-label="أدلة سلامة الغذاء" className="food-safety-cards">
           {foodSafetyArticles.map((article) => (
             <Link className="food-safety-card" href={`/food-safety/${article.slug}`} key={article.slug}>
-              {/* Attributed Wikimedia Commons imagery, metadata shown within each article. */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={article.coverImage} alt={article.coverImageAlt} loading="lazy" referrerPolicy="no-referrer" />
+              <Image src={editorialImagePath("food-safety", article.slug)} alt={`غلاف لوسيل: ${article.title}`} width={720} height={378} unoptimized loading="lazy" />
               <div className="food-safety-card-copy"><h2>{article.title}</h2><p>{article.description}</p></div>
             </Link>
           ))}
