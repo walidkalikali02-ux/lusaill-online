@@ -54,6 +54,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
   category={topic.category}
   image={topic.image}
   imageAlt={topic.imageAlt}
+  imageUrl={cover}
   priority
   description="مفهوم واضح · شرح متعمق · تطبيق عملي"
 />
