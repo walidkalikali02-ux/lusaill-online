@@ -291,6 +291,9 @@ async function createDirectedCoverImage(subject: VisualSubject, direction: Cover
         <div style={{ display: "flex", height: "100%", width: "53%", position: "relative", flexShrink: 0, overflow: "hidden", background: "linear-gradient(140deg," + colors.layer + "," + colors.dark + ")" }}>
           {art ? <img src={art} alt="" width={635} height={422} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: key % 2 ? "62% 50%" : "37% 50%" }} /> :
             <div style={{ display: "flex", position: "absolute", width: 290, height: 290, border: "42px solid " + colors.accent, borderRadius: 70, top: 58, left: 70, transform: "rotate(23deg)", opacity: 0.58 }} />}
+          <div style={{ display: "flex", position: "absolute", top: 25, left: 29, width: 104, height: 104, alignItems: "center", justifyContent: "center", borderRadius: 26, background: "#FFFFFF", border: "3px solid " + colors.accent }}>
+            <DirectedMotif kind={direction.symbol} color={colors.dark} />
+          </div>
           <div style={{ display: "flex", position: "absolute", bottom: 23, left: 29, alignItems: "center", gap: 10, borderRadius: 17, padding: "12px 21px", background: colors.dark, color: "#FFFFFF", fontSize: 21, fontWeight: 800 }}>
             {direction.tag}
           </div>
