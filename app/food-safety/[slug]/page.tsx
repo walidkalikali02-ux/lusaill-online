@@ -84,6 +84,7 @@ export default async function FoodSafetyArticlePage({ params }: PageProps) {
               category="سلامة الغذاء"
               image={article.coverImage}
               imageAlt={article.coverImageAlt}
+              imageUrl={cover}
               priority
               description="شرح علمي ومراجع للسلامة الغذائية"
             />
