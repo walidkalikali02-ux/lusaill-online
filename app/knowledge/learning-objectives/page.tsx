@@ -21,7 +21,16 @@ const h2={fontSize:26,fontWeight:700,margin:"28px 0 12px"} as const;
 export default function LearningObjectivesPage(){
 const url=absoluteUrl(path);
 const schema={"@context":"https://schema.org","@type":"Article",headline:title,description,url,inLanguage:"ar",datePublished:"2026-11-06",author:{"@type":"Organization",name:"فريق لوسيل"},publisher:{"@type":"Organization",name:"لوسيل",url:absoluteUrl("/")},image:absoluteUrl("/images/bloom-learning-levels-original.svg")};
-return <main id="main-content" className="shell" style={{paddingBlock:44}}><nav aria-label="مسار التنقل" style={{color:"#64748b",marginBottom:18}}><Link href="/">الرئيسية</Link> / <Link href="/knowledge">معارف وأدوات</Link> / الأهداف التعليمية</nav>
+return <main id="main-content" className="shell" style={{paddingBlock:44}}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
+          { "@type": "ListItem", position: 2, name: "معارف وأدوات", item: absoluteUrl("/knowledge") },
+          { "@type": "ListItem", position: 3, name: "الأهداف التعليمية", item: absoluteUrl(path) },
+        ],
+      }) }} />
+      <nav aria-label="مسار التنقل" style={{color:"#64748b",marginBottom:18}}><Link href="/">الرئيسية</Link> / <Link href="/knowledge">معارف وأدوات</Link> / الأهداف التعليمية</nav>
 <article style={{maxWidth:950,margin:"auto"}}>
 <header><p style={{fontSize:14,color:"#475569"}}>التعليم · مهارات التدريس · دليل بأمثلة أصلية</p><h1 style={{fontSize:"clamp(28px,4vw,43px)",fontWeight:800,lineHeight:1.5,margin:"12px 0"}}>{title}</h1>
 <p style={{fontSize:18}}>الهدف التعليمي الجيد يوضح ما يستطيع المتعلم فعله بعد الدرس، وكيف نتحقق من إنجازه. مثلًا: «بنهاية الدرس، يقارن الطالب بين كسرين لهما المقام نفسه في أربع مسائل من أصل خمس» أكثر قابلية للتقييم من «أن يفهم الطالب الكسور».</p>
