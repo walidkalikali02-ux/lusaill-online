@@ -21,6 +21,7 @@ const box={background:"#fff",border:"1px solid #e5e7eb",padding:22,borderRadius:
 const h2={fontSize:26,fontWeight:700,marginTop:32,marginBottom:12} as const;
 export default function RomanNumeralsPage(){
   const url=absoluteUrl(path);
+  const breadcrumbSchema={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"الرئيسية",item:absoluteUrl("/")},{"@type":"ListItem",position:2,name:"معارف وأدوات",item:absoluteUrl("/knowledge")},{"@type":"ListItem",position:3,name:title,item:url}]};
   const schema={"@context":"https://schema.org","@type":"Article",headline:title,description,url,inLanguage:"ar",datePublished:"2026-11-06",
     author:{"@type":"Organization",name:"فريق لوسيل",url:absoluteUrl("/authors/editorial-team")},
     publisher:{"@type":"Organization",name:"لوسيل",url:absoluteUrl("/")},image:absoluteUrl("/images/roman-numerals-education.svg"),
@@ -62,6 +63,6 @@ export default function RomanNumeralsPage(){
       <p>راجعت التعريف والرموز وقواعد الكتابة الحديثة مقابل <a style={{color:"#2563eb",textDecoration:"underline"}} href="https://mathworld.wolfram.com/RomanNumerals.html" target="_blank" rel="noopener noreferrer">Wolfram MathWorld — Roman Numerals</a>، وهو مصدر رياضي مرجعي. تختلف بعض الكتابات التاريخية عن الاصطلاحات القياسية المعاصرة.</p>
       <p style={{marginTop:30}}>اقرأ أيضًا: <Link style={{color:"#2563eb",textDecoration:"underline"}} href="/knowledge/learning-objectives">كيف تكتب أهدافًا تعليمية قابلة للقياس؟</Link></p>
     </article>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumbSchema).replace(/</g,"\\u003c")}}/>
   </main>;
 }
