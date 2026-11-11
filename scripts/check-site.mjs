@@ -112,7 +112,9 @@ await mapLimit(urls, async (url) => {
     assert(html.includes('آخر مراجعة: <time'), `Last-reviewed date missing: ${url}`);
     assert(title.replace(/\s*\|\s*لوسيل$/, '').trim().length >= 10, `Non-descriptive article title: ${url}`);
     assert.equal([...html.matchAll(/id="quick-answer"/g)].length, 1, `Answer duplication: ${url}`);
-    assert(html.indexOf('id="quick-answer"') < html.indexOf('class="article-cover"'), `Answer follows cover: ${url}`);
+    const cover = /\bclass="(?:article-cover|editorial-cover)(?:[ "\t])/.exec(serverHtml);
+    assert(cover, `Article cover missing: ${url}`);
+    assert(serverHtml.indexOf('id="quick-answer"') < cover.index, `Answer follows cover: ${url}`);
     diagrams += html.includes('class="guide-figure"') ? 1 : 0;
   }
   for (const m of html.matchAll(/<a\b[^>]*href="(\/[^"]*)"/g)) if (!m[1].includes('#')) links.add(m[1].replace(/&amp;/g,'&'));
