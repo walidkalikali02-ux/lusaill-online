@@ -30,7 +30,7 @@ Do not claim 12 verified redirects: the complete old→new content-equivalence m
 
 ## T4 Sitemap / lastmod
 - `lib/sitemaps.ts` intentionally excludes articles that fail `isArticleSearchReady` and are `noindex` (see `lib/editorial-indexing.ts`). Adding these to the sitemap prematurely would contradict their robots directives.
-- `south-cairo-electricity` and `north-delta-electricity` were expanded with six original decision tables total, consumer-facing explanations, and official EEHC/EgyptERA source references; their substantive `updatedAt` is 2026-11-11. Both pages passed production-build checks for sitemap entries, HTTP 200, indexability and genuine dates, and were verified live after production deployment. Two additional historic gaps remain unidentified from the supplied report and require a URL diff.
+- `south-cairo-electricity` and `north-delta-electricity` were expanded with six original decision tables total, consumer-facing explanations, and official EEHC/EgyptERA source references; their substantive `updatedAt` is 2026-11-11. Both pages passed production-build checks for sitemap entries, HTTP 200, indexability and genuine dates, and were verified live after production deployment. A production-build audit compared 505 prerendered candidate routes against 307 sitemap URLs and found **zero** currently indexable, self-canonical HTML routes missing from the sitemap. The two unspecified historic gaps in the earlier report were not independently reproduced; dynamic/non-prerendered routes should be audited separately as they are introduced.
 - `getArticleModifiedAt` already derives from editorial update fields and recorded content changes, not build time. Do not update dates merely to force crawl.
 
 ## T5/T6 Webmaster tools
