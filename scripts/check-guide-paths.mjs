@@ -84,6 +84,25 @@ assert(outage.sources.some(source => source.url === "https://moere.gov.eg/cmp/fo
 assert(outage.steps.some(step => step.relatedLink?.href === "/articles/electricity-complaint"),
   "Outage escalation must link to electricity complaint guide");
 console.log("Electricity outage safety, official 121 and follow-up integrity passed.");
+const newMeterGuide = articles.find(a => a.slug === "electricity-meter-apply");
+assert(newMeterGuide?.status === "published", "Meter-installation guide is not published");
+assert((newMeterGuide.practicalSections?.length ?? 0) >= 2, "Meter-installation guide missing decision tables");
+assert(newMeterGuide.steps?.some(step => step.relatedLink?.href === "/articles/code-electricity-meter"),
+  "Meter installation must explain the separate coded-meter path");
+assert(newMeterGuide.sources?.some(source => source.url === "https://egyptera.org/en/docToEleConn.aspx"),
+  "Meter-installation official document requirements source missing");
+assert(newMeterGuide.steps?.some(step => step.relatedLink?.href === "/articles/electricity-complaint"),
+  "Meter-installation complaint path missing");
+const northCairoGuide = articles.find(a => a.slug === "north-cairo-electricity");
+assert(northCairoGuide?.status === "published", "North Cairo electricity guide is not published");
+assert((northCairoGuide.practicalSections?.length ?? 0) >= 2, "North Cairo bill/reading matrices missing");
+assert(northCairoGuide.updatedAt === "2026-11-11T11:54:00+03:00", "North Cairo reviewed date overwritten by old content layer");
+assert(northCairoGuide.quickAnswer?.includes("14 رقمًا"), "North Cairo electronic payment field explanation missing");
+assert(northCairoGuide.sources?.some(source => source.url === "https://ncedc.gov.eg/AhliPayment"),
+  "North Cairo payment form reference missing");
+assert(northCairoGuide.sources?.some(source => source.url === "https://ncedc.gov.eg/Home/complaints"),
+  "North Cairo complaint source missing");
+console.log("Meter installation and North Cairo billing guides official-source and navigation checks passed.");
 console.log(`All ${published.size} published articles have task paths; all members are published.`);
 
 // Article audit: a category move must reach every consumer of the article model.
