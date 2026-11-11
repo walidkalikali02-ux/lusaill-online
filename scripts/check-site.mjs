@@ -66,8 +66,10 @@ if (new URL(origin).hostname === '127.0.0.1') {
   assert.equal(apexRedirect.statusCode, 301, 'Apex redirect must be 301');
   assert.equal(apexRedirect.headers.location, `${official}/articles/old-rent-housing-apply?test=1`, 'Redirect must preserve path and query');
 }
+const pageCrawlFailures = [];
 await mapLimit(urls, async (url) => {
-  assert(url.startsWith(`${official}/`), `Noncanonical sitemap: ${url}`);
+  try {
+    assert(url.startsWith(`${official}/`), `Noncanonical sitemap: ${url}`);
   const pageResponse = await fetch(local(url), { signal: AbortSignal.timeout(45000) });
   assert.equal(pageResponse.status, 200, `${url}: HTTP ${pageResponse.status}`);
   // Only the canonical production host should be indexable.
@@ -137,7 +139,14 @@ await mapLimit(urls, async (url) => {
     assert(/alt="[^"]+"/.test(m[0]), `Image without meaningful alt: ${url}`);
     const src = m[0].match(/src="([^"]+)"/)?.[1]?.replace(/&amp;/g,'&'); if(src) images.add(src);
   }
+  } catch(error) {
+    pageCrawlFailures.push({url,message: error instanceof Error ? error.message : String(error)});
+  }
 });
+if(pageCrawlFailures.length) {
+  console.error("PAGE_CRAWL_FAILURES " + JSON.stringify({count:pageCrawlFailures.length,failures:pageCrawlFailures.slice(0,80)}));
+  throw new Error(`${pageCrawlFailures.length} sitemap pages failed QA`);
+}
 await mapLimit([...links], async (path) => { await get(local(path)); });
 let checkedImages = 0;
 await mapLimit([...images], async (src) => { const imageUrl = new URL(src, official); const external = imageUrl.origin !== official; if (skipExternal && (external || src.includes("url=https%3A"))) return; const r = await fetch(external ? imageUrl : local(src), {signal: AbortSignal.timeout(45000)}); assert.equal(r.status, 200, `Image unavailable: ${src}`); assert(r.headers.get("content-type")?.startsWith("image/"), `Not an image: ${src}`); await r.arrayBuffer(); if(++checkedImages % 40 === 0) console.log(`Checked ${checkedImages} images`); });
