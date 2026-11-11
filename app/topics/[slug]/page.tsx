@@ -56,6 +56,15 @@ export default async function TopicPage({ params, searchParams }: Props) {
   };
   return <main id="main-content" className={styles.page}>
     <div className="shell">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
+          { "@type": "ListItem", position: 2, name: "فئات الموسوعة", item: absoluteUrl("/topics") },
+          { "@type": "ListItem", position: 3, name: category.title, item: absoluteUrl(getCategoryUrl(category)) },
+        ],
+      }) }} />
       <nav aria-label="مسار التنقل" className={styles.breadcrumb}><Link href="/">الرئيسية</Link><span>/</span><Link href="/topics">فئات الموسوعة</Link><span>/</span><span>{category.title}</span></nav>
       <header className={styles.hero}>
         <span className={styles.icon} aria-hidden="true">{category.symbol}</span>
