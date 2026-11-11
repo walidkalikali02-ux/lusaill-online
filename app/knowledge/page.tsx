@@ -164,6 +164,14 @@ return <main id="main-content" className="shell" style={{paddingBlock:52}}>
 </Link>;
 })}
 </div>
+<section aria-labelledby="restored-science-heading" style={{marginTop:30,padding:20,border:"1px solid #e2e8f0",borderRadius:14}}>
+  <h2 id="restored-science-heading">مراجع علمية أعيد تحريرها</h2>
+  <p>أُعيد إعداد هذه الأدلة على روابطها القديمة بمراجع علمية، مع الفصل بين الرصد والتفسير وحدود البيانات.</p>
+  <ul style={{paddingInlineStart:24}}>
+    <li><Link href="/articles/weather-climate">الطقس والمناخ: الفرق بين التوقعات والمتوسطات الطويلة</Link></li>
+    <li><Link href="/articles/solar-system">النظام الشمسي والكواكب الثمانية وأجرامه الصغيرة</Link></li>
+  </ul>
+</section>
 <p style={{marginTop:22,color:"#205a52"}}><Link href="/topics" style={{textDecoration:"underline",fontWeight:700}}>استكشف جميع فئات الموسوعة ←</Link></p>
 <p style={{marginTop:28,color:"#64748b"}}>نوضح مصادرنا ونراجع المقالات عالية المخاطر قبل النشر. <Link href="/editorial-policy" style={{textDecoration:"underline"}}>منهج التحرير والتصحيح</Link>.</p>
 </main>;
