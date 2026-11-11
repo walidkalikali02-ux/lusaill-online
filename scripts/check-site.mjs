@@ -121,7 +121,10 @@ await mapLimit(urls, async (url) => {
     }
     assert(title.replace(/\s*\|\s*لوسيل$/, '').trim().length >= 10, `Non-descriptive article title: ${url}`);
     assert.equal([...html.matchAll(/id="quick-answer"/g)].length, 1, `Answer duplication: ${url}`);
-    if(!restoredScience) assert(html.indexOf('id="quick-answer"') < html.indexOf('class="article-cover"'), `Answer follows cover: ${url}`);
+    if(!restoredScience) {
+      const coverIndex = serverHtml.indexOf('<figure class="editorial-cover');
+      assert(coverIndex >= 0 && serverHtml.indexOf('id="quick-answer"') < coverIndex, `Direct answer must precede actual editorial cover: ${url}`);
+    }
     diagrams += html.includes('class="guide-figure"') ? 1 : 0;
   }
   for (const m of html.matchAll(/<a\b[^>]*href="(\/[^"]*)"/g)) if (!m[1].includes('#')) links.add(m[1].replace(/&amp;/g,'&'));
