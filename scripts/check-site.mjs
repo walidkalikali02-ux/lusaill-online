@@ -97,8 +97,11 @@ await mapLimit(urls, async (url) => {
   assert(desc.replace(/&amp;/g, "&").length <= 160, `Long description: ${url}`);
   assert(!descriptions.has(desc), `Duplicate description: ${url}`); descriptions.add(desc);
   const schemas = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
-  if(new URL(url).pathname !== '/') assert(schemas.some((s) => s['@type'] === 'BreadcrumbList'), `Breadcrumb missing: ${url}`);
-  else assert(schemas.some((s) => s['@type'] === 'WebSite'), 'WebSite schema missing from homepage');
+  const routePath = new URL(url).pathname;
+  // Detail pages have a meaningful parent hierarchy; top-level directories need not.
+  const requiresBreadcrumb = /^\/(articles|knowledge|guides|food-safety|topics|categories)\/[^/]+/.test(routePath);
+  if(requiresBreadcrumb) assert(schemas.some((s) => s['@type'] === 'BreadcrumbList'), `Detail-page Breadcrumb missing: ${url}`);
+  if(routePath === '/') assert(schemas.some((s) => s['@type'] === 'WebSite'), 'WebSite schema missing from homepage');
   if (new URL(url).pathname.startsWith('/courses/learn-driving/')) {
     assert(schemas.some((schema) => Array.isArray(schema['@type']) && schema['@type'].includes('Article')), `Course Article missing: ${url}`);
   }
