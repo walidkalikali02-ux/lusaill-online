@@ -1,6 +1,7 @@
 import { sixgLessons, sixgMeta, sixgPath, sixgLessonPath } from "@/lib/sixg-course";
 import type { MetadataRoute } from "next";
 import { getArticleModifiedAt } from "./content-modified";
+import { restoredScienceGuides } from "./restored-science-guides";
 import { articles, clusters } from "@/lib/content";
 import { isArticleSearchReady, isKnowledgeSearchReady, isFoodSafetySearchReady, isSearchReadyHref } from "@/lib/editorial-indexing";
 import { foodSafetyArticles } from "@/lib/food-safety";
@@ -114,6 +115,13 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
       images: [article.coverImage, guideIllustrations[article.slug]?.src].filter((src): src is string => Boolean(src)).map(absoluteUrl),
     }));
 
+  const restoredScienceRoutes: MetadataRoute.Sitemap = Object.values(restoredScienceGuides).map(guide => ({
+    url: absoluteUrl("/articles/" + guide.slug),
+    lastModified: new Date(guide.publishedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.65,
+  }));
+
   const foodSafetyRoutes: MetadataRoute.Sitemap = foodSafetyArticles.filter(isFoodSafetySearchReady).map((article) => ({
     url: absoluteUrl(`/food-safety/${article.slug}`),
     lastModified: new Date(article.updatedAt),
@@ -127,7 +135,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     ...guidePaths.filter(isGuidePathSearchReady).map((path) => ({ url: absoluteUrl(`/guides/${path.slug}`), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article) && path.articleSlugs.includes(article.slug))), changeFrequency: "monthly" as const, priority: 0.8 })),
   ];
   return {
-    "sitemap-articles.xml": [...publishedArticleRoutes, ...foodSafetyRoutes],
+    "sitemap-articles.xml": [...publishedArticleRoutes, ...restoredScienceRoutes, ...foodSafetyRoutes],
     "sitemap-categories.xml": [...clusterRoutes, ...categoryPaginationRoutes],
     "sitemap-guides.xml": [...guideRoutes, ...courseRoutes, ...sixgLessons.map(lesson => ({url:absoluteUrl(sixgLessonPath(lesson.slug)),lastModified:new Date(sixgMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...fivegLessons.map(lesson => ({url:absoluteUrl(fivegLessonPath(lesson.slug)),lastModified:new Date(fivegMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...geometryLessons.flatMap(lesson => [geometryLessonPath(lesson.slug), `${geometryLessonPath(lesson.slug)}/worksheet`].map(path => ({url:absoluteUrl(path),lastModified:new Date(geometryMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7}))), ...staticRoutes.filter((route) => route.url.includes("/courses/"))],
     "sitemap-entities.xml": entityRoutes,
