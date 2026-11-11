@@ -7,7 +7,7 @@ import { overallProgress } from "@/lib/content";
 export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: "عن لوسيل", description: siteConfig.description, images: ["https://www.lusaill.online/opengraph-image"] },
   title: "عن لوسيل",
-  description: siteConfig.description,
+  description: "تعرّف على موسوعة لوسيل ومجالاتها، وكيف يعدّ فريق التحرير أدلة الخدمات المصرية والمعارف مع توضيح المصادر والتصحيح وحدود المعلومات.",
   alternates: pageAlternates("/about"),
   openGraph: {
     title: "عن لوسيل",
