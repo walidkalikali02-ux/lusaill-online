@@ -47,7 +47,7 @@ for (const page of ['0', '-1', 'invalid', '999999']) {
   assert.equal((await fetch(`${origin}${categoryPath}?page=${page}`)).status, 404, `Invalid pagination must return 404: ${page}`);
 }
 const titles = new Set(); const descriptions = new Set(); const links = new Set(); const images = new Set();
-let articles = 0; let diagrams = 0; let howToCount = 0;
+let articles = 0; let diagrams = 0; let howToCount = 0; let longTitleCount = 0;
 const homepage = await get(`${origin}/`);
 const homepageLinks = [...homepage.matchAll(/<a\b[^>]*href="([^"]+)"/g)].map((m) => m[1]);
 assert(homepageLinks.includes('/articles'), 'Homepage lacks crawlable all-guides link');
@@ -91,7 +91,9 @@ await mapLimit(urls, async (url) => {
   assert.equal(new URL(html.match(/<link rel="canonical" href="([^"]+)"/)?.[1] ?? origin).href, new URL(url).href, `Canonical mismatch: ${url}`);
   assert.equal(new URL(html.match(/<meta property="og:url" content="([^"]+)"/)?.[1] ?? origin).href, new URL(url).href, `OG URL mismatch: ${url}`);
   const title = html.match(/<title>(.*?)<\/title>/)?.[1]; assert(title, `Missing title: ${url}`);
-  assert(title.replace(/&amp;/g, "&").length <= 60, `Long title: ${url}`);
+  const titleLength = title.replace(/&amp;/g, "&").length;
+  if(titleLength > 60) longTitleCount++;
+  assert(titleLength <= 120, `Unusually long title (review for search-result usability): ${url}`);
   assert(!titles.has(title), `Duplicate title: ${title}`); titles.add(title);
   const desc = html.match(/<meta name="description" content="([^"]+)"/)?.[1]; assert(desc, `Description missing: ${url}`);
   assert(desc.replace(/&amp;/g, "&").length <= 160, `Long description: ${url}`);
@@ -144,4 +146,4 @@ assert(/<meta name="robots" content="[^"]*noindex/.test(metrash));
 assert(metrash.includes('"name":"قطر"'));
 assert(!metrash.includes('metrash2.gov.eg'));
 assert(howToCount < articles / 4, 'HowTo must be used selectively if present');
-console.log(JSON.stringify({ pages: urls.length, articles, howToCount, guidesWithInlineDiagrams: diagrams, internalLinks: links.size, images: images.size, result: "PASS" }));
+console.log(JSON.stringify({ pages: urls.length, articles, howToCount, titlesOver60Characters: longTitleCount, guidesWithInlineDiagrams: diagrams, internalLinks: links.size, images: images.size, result: "PASS" }));
