@@ -7,7 +7,7 @@ import { ObjectiveBuilder } from "./objective-builder";
 const path="/knowledge/learning-objectives";
 const title="صياغة الأهداف التعليمية القابلة للقياس مع أمثلة وتصنيف بلوم";
 const description="دليل عملي لكتابة هدف تعليمي واضح وقابل للقياس: أمثلة قبل وبعد، مستويات بلوم الستة، قائمة تدقيق، وأداة مجانية لصياغة هدف الدرس.";
-export const metadata:Metadata={title,description,alternates:pageAlternates(path),robots:{index:true,follow:true},openGraph:{title,description,url:path,type:"article",images:[{url:"/images/bloom-learning-levels-original.svg",alt:"المستويات الستة في تصنيف بلوم المنقح"}]}};
+export const metadata:Metadata={title: "الأهداف التعليمية القابلة للقياس: أمثلة وتصنيف بلوم",description,alternates:pageAlternates(path),robots:{index:true,follow:true},openGraph:{title,description,url:path,type:"article",images:[{url:"/images/bloom-learning-levels-original.svg",alt:"المستويات الستة في تصنيف بلوم المنقح"}]}};
 export const revalidate=86400;
 const sections=[
 {level:"التذكر",verb:"يسمي، يعدد، يحدد",example:"يسمي المتعلم ثلاث خصائص للمادة بعد قراءة النص."},
