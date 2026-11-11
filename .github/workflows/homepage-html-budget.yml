@@ -31,3 +31,4 @@ jobs:
             sleep 1
           done
           npm run seo:homepage-budget -- http://127.0.0.1:3000
+          node scripts/verify-electricity-pages.mjs http://127.0.0.1:3000
