@@ -140,6 +140,8 @@ export function applyArticleAuditUpdates(input: Article): Article {
   }
   // Only substantially revised, source-backed essays have a new editorial modified date.
   if (getEncyclopedicContent(article.slug)) {
+    // New substantive edits in article overrides must never be replaced by an older historical review stamp.
+    const incomingUpdatedAt = article.updatedAt;
     // A new modified timestamp is recorded only for articles with substantive source-linked rewrites.
     const newBatch = new Set(["movement-certificate-egypt", "private-driving-license-first-time", "chrome-cache-site-data", "national-id-first-time-egypt", "automated-birth-certificate", "civil-record-correction-egypt"]);
     const batch4 = new Set(["national-id-renewal-egypt", "national-id-address-change", "national-id-profession-change", "national-id-marital-status-change"]);
@@ -178,6 +180,9 @@ export function applyArticleAuditUpdates(input: Article): Article {
         : newBatch.has(article.slug)
           ? "2026-11-09T16:28:00+03:00"
           : "2026-11-09T12:49:00+03:00";
+    if (incomingUpdatedAt && new Date(incomingUpdatedAt).getTime() > new Date(article.updatedAt).getTime()) {
+      article.updatedAt = incomingUpdatedAt;
+    }
   }
   return article;
 }
