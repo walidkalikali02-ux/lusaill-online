@@ -14,7 +14,7 @@ for (const slug of slugs) {
   const response = await fetch(url);
   assert.equal(response.status, 200, `${slug}: HTTP 200`);
   const html = await response.text();
-  assert(!/<meta\\s+name="robots"[^>]*noindex/i.test(html), `${slug}: must be indexable before inclusion in sitemap`);
+  assert(!html.includes('name="robots" content="noindex'), `${slug}: must be indexable before inclusion in sitemap`);
   assert(sitemap.includes(`<loc>${canonical}</loc>`), `${slug}: missing from XML sitemap`);
   assert(html.includes('href="/articles/electricity-bill-inquiry"'), `${slug}: missing central hub link`);
   assert(html.includes('application/ld+json'), `${slug}: missing JSON-LD`);
