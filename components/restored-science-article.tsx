@@ -7,7 +7,7 @@ import { pageAlternates } from "@/lib/page-alternates";
 export function metadataForRestoredScienceGuide(guide: RestoredScienceGuide): Metadata {
   const path = "/articles/" + guide.slug;
   return {
-    title: guide.title,
+    title: guide.slug === "weather-climate" ? "الطقس والمناخ: الفرق بينهما" : "النظام الشمسي: الكواكب الثمانية",
     description: guide.description,
     alternates: pageAlternates(path),
     robots: { index: true, follow: true },
