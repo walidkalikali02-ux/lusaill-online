@@ -19,7 +19,7 @@ Candidate redirects requiring manual full-content comparison (NOT implemented):
 - `/articles/record-observation-before-inference` → locate original section and replacement
 - `/articles/pricing-basics` → locate original section and replacement
 
-Two previously visible URLs should be **restored with substantive, sourced material** rather than redirected based on keyword proximity: `/articles/weather-climate` (historical 28 impressions), `/articles/solar-system` (22). Retain their current 404 until restored; do NOT return 410 while restoration is planned. A true permanently retired URL with no equivalent may return 410 and must remain out of XML/RSS.
+The previously visible URLs `/articles/weather-climate` (historical 28 impressions) and `/articles/solar-system` (22) have been rebuilt with new evidence-led articles (over 1,000 Arabic words each), metadata, Article/BreadcrumbList JSON-LD, sitemap entries, internal discovery links and search entries on this PR branch. Their original deleted bodies were unavailable, so this is **newly written replacement content on historical paths**, not a verbatim restoration. Verify both routes in preview before promotion. A truly retired URL without replacement may return 410.
 
 Do not claim 12 verified redirects: the complete old→new content-equivalence mapping has not been supplied, and only one pairing has been accepted here. Get historical URLs from Search Console Pages export and source revision history, assess each, and approve before redirecting.
 
@@ -30,7 +30,7 @@ Do not claim 12 verified redirects: the complete old→new content-equivalence m
 
 ## T4 Sitemap / lastmod
 - `lib/sitemaps.ts` intentionally excludes articles that fail `isArticleSearchReady` and are `noindex` (see `lib/editorial-indexing.ts`). Adding these to the sitemap prematurely would contradict their robots directives.
-- Audit missing `south-cairo-electricity` and `north-delta-electricity`, plus the other two URLs found by comparing live 200s and sitemap. Improve content and verify sources first; only then allow the shared readiness gate to include them.
+- `south-cairo-electricity` and `north-delta-electricity` were expanded with six original decision tables total, consumer-facing explanations, and official EEHC/EgyptERA source references; their substantive `updatedAt` is 2026-11-11. The existing `isArticleSearchReady` gate should now include them. The new build regression script verifies their sitemap entries, indexability and dates. Two additional historic gaps remain unidentified from the supplied report and require a URL diff.
 - `getArticleModifiedAt` already derives from editorial update fields and recorded content changes, not build time. Do not update dates merely to force crawl.
 
 ## T5/T6 Webmaster tools
@@ -65,3 +65,8 @@ Do not claim 12 verified redirects: the complete old→new content-equivalence m
 - Current article template already has a clearly labeled **الإجابة المباشرة** section and source references. Keep concise sourced answers, H2 task questions, explicit provenance/check dates and robust canonical URLs. AI citation inclusion is not guaranteed.
 - First genuine backlinks: create original utility (company-by-company error codes, verified links and a decision table), then pitch to legitimate Egyptian consumer-rights, local-service and community resource editors. Offer it as a useful resource, not paid spam links, reciprocal link schemes or fake reviews. Record outreach and actual backlinks with URL, date and referral status.
 - OpenSEO project currently reported as United States / English: manually change keyword-tracking project location to **Egypt** and language to **Arabic**, then validate query results against Google Search Console. This setting is in OpenSEO, not this repository.
+
+## Update on preview validation
+- PR #97 draft branch: `seo-recovery-egypt-2026-11-11`.
+- Vercel preview builds compile app changes; one intermediate build failed due to a sitemap-count assertion that assumed no restored pages. Test was corrected to count both restored science routes. Final preview build and the 150 KiB HTML budget need to pass before production promotion.
+- The 150 KiB threshold is a **target**, not a verified live result.
