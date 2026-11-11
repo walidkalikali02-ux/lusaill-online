@@ -15,7 +15,8 @@
     "seo:audit:test": "node scripts/test-seo-audit.mjs",
     "seo:site-check": "node scripts/check-site.mjs",
     "seo:paths": "node scripts/check-guide-paths.mjs && node scripts/test-topic-discovery.mjs",
-    "editorial:qa": "node scripts/encyclopedia-quality.mjs && node scripts/check-public-placeholders.mjs && node scripts/editorial-inventory.mjs"
+    "editorial:qa": "node scripts/encyclopedia-quality.mjs && node scripts/check-public-placeholders.mjs && node scripts/editorial-inventory.mjs",
+    "seo:homepage-budget": "node scripts/check-homepage-html.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
