@@ -346,7 +346,9 @@ for(const cluster of clusters){
 }
 const published=articles.filter(a=>isArticleIndexable(a));
 const searchReady=articles.filter(isArticleSearchReady);
-assert.equal(map.size,searchReady.length+foodSafetyArticles.filter(isFoodSafetySearchReady).length);
+const restoredScienceSlugs=["weather-climate","solar-system"];
+assert.equal(map.size,searchReady.length+foodSafetyArticles.filter(isFoodSafetySearchReady).length+restoredScienceSlugs.length);
+for(const slug of restoredScienceSlugs){const url="https://www.lusaill.online/articles/"+slug;assert(map.has(url),"Restored article missing from sitemap: "+slug);assert.equal(new Date(map.get(url).lastModified).toISOString().slice(0,10),"2026-11-11");}
 for(const a of articles){const url="https://www.lusaill.online/articles/"+a.slug;const ready=isArticleSearchReady(a);assert.equal(map.has(url),ready,"Article sitemap must match quality gate: "+a.slug);if(!isArticleIndexable(a))continue;if(a.status==="published")assert(getGuidePath(a.slug),"Published guide needs a task hub");if(!ready)continue;const date=getArticleModifiedAt(a);if(date){assert(Date.parse(date)<=Date.now(),"Future modification date");assert.equal(new Date(map.get(url).lastModified).getTime(),Date.parse(date));if(guideIllustrations[a.slug]?.updatedAt)assert(Date.parse(date)>=Date.parse(guideIllustrations[a.slug].updatedAt));}else{assert(!map.get(url).lastModified,"Do not invent a modification date");}}
 for(const a of foodSafetyArticles){const row=map.get("https://www.lusaill.online/food-safety/"+a.slug);assert.equal(Boolean(row),isFoodSafetySearchReady(a),"Unreviewed medical articles must stay outside sitemap");if(row)assert.equal(new Date(row.lastModified).getTime(),Date.parse(a.updatedAt));}
 for(const path of ["/articles/verify-electronic-certificate","/articles/move-in-condition-report","/categories/housing-utilities","/services/electricity-bill-inquiry"])assert(!urls.includes("https://www.lusaill.online"+path),"Retired/alias URL leaked");
