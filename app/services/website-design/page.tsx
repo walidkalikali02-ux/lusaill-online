@@ -57,7 +57,7 @@ export default function WebsiteDesignPage() {
       <div className={s.visual} role="img" aria-label="معاينة توضيحية لشكل موقع إلكتروني احترافي">
         <div className={s.browser}><div className={s.browserTop}><div className={s.dots}><i/><i/><i/></div><div className={s.browserBar}/></div>
           <div className={s.mockNav}><strong>علامتك</strong><small>الرئيسية &nbsp; الخدمات &nbsp; من نحن &nbsp; تواصل</small></div>
-          <div className={s.mockHero}><div><h3>اترك انطباعًا<br/>يستحق التذكّر.</h3><p>تجربة رقمية تعبّر عن جودة ما تقدّمه.</p><div className={s.mockButtons}><span/><span/></div></div><div className={s.mockCircle}/></div>
+          <div className={s.mockHero}><div><div className={s.mockHeadline}>اترك انطباعًا<br/>يستحق التذكّر.</div><p>تجربة رقمية تعبّر عن جودة ما تقدّمه.</p><div className={s.mockButtons}><span/><span/></div></div><div className={s.mockCircle}/></div>
           <div className={s.mockTiles}><div/><div/><div/></div>
         </div><div className={s.floatingStat}>✦ تصميم عربي متجاوب</div>
       </div>
