@@ -4,14 +4,16 @@ import type { Metadata } from "next";
 import { siteConfig, absoluteUrl, siteSocialImage } from "@/lib/site-config";
 import { overallProgress } from "@/lib/content";
 
+const aboutDescription = "تعرّف على موسوعة لوسيل العربية، ومنهجها في إعداد أدلة الخدمات الحكومية والمقالات المعرفية والأدوات التفاعلية، وكيف توثّق المعلومات وتراجع مصادرها.";
+
 export const metadata: Metadata = {
-  twitter: { card: "summary_large_image", title: "عن لوسيل", description: siteConfig.description, images: ["https://www.lusaill.online/opengraph-image"] },
+  twitter: { card: "summary_large_image", title: "عن لوسيل", description: aboutDescription, images: ["https://www.lusaill.online/opengraph-image"] },
   title: "عن لوسيل",
-  description: siteConfig.description,
+  description: aboutDescription,
   alternates: pageAlternates("/about"),
   openGraph: {
     title: "عن لوسيل",
-    description: siteConfig.description,
+    description: aboutDescription,
     url: "/about",
     type: "website",
     images: [siteSocialImage],
@@ -36,7 +38,7 @@ export default function AboutPage() {
     "@id": `${siteConfig.url}/about/#webpage`,
     url: absoluteUrl("/about"),
     name: "عن لوسيل",
-    description: siteConfig.description,
+    description: aboutDescription,
     inLanguage: siteConfig.language,
     isPartOf: { "@id": `${siteConfig.url}/#website` },
     about: { "@id": `${siteConfig.url}/#organization` },
