@@ -72,6 +72,14 @@ export default function ArticlesPage() {
             <Link className="button button-secondary" href="/categories" style={{ marginTop: 16 }}>تصفح التصنيفات</Link>
           </div>
         )}
+        <section className="article-directory-index" aria-labelledby="restored-science-title">
+          <h2 id="restored-science-title">مراجع علمية تمت إعادة تحريرها</h2>
+          <p>صفحات معرفية أعيد إعدادها على روابطها التاريخية بمصادر علمية واضحة.</p>
+          <ul>
+            <li><Link href="/articles/weather-climate">الطقس والمناخ: الفرق وقراءة البيانات الجوية</Link></li>
+            <li><Link href="/articles/solar-system">النظام الشمسي: الكواكب الثمانية وأجرامه الأخرى</Link></li>
+          </ul>
+        </section>
         <section className="article-directory-index" aria-labelledby="article-index-title">
           <h2 id="article-index-title">الفهرس الكامل حسب الموضوع</h2>
           <p>كل الأدلة المنشورة في مكان واحد. اختر الموضوع ثم المقال الذي يطابق مهمتك.</p>
