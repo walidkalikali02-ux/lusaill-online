@@ -11,7 +11,6 @@ import { articles, getArticleBySlug, getRelatedArticles, isArticleIndexable } fr
 import { clusters } from "@/lib/clusters";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { searchTitles } from "@/lib/search-titles";
-import { howToArticles } from "@/lib/structured-data";
 import { ArticleBrief, ArticleSidebar } from "@/components/article-brief";
 import { getTeamPersonaForArticle } from "@/lib/team-domains";
 import { teamPersonaAnchor } from "@/lib/team-personas";
@@ -145,36 +144,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     },
   };
 
-  const howToSchema = howToArticles.has(article.slug) && article.steps?.length
-    ? {
-        "@context": "https://schema.org",
-        "@type": "HowTo",
-        "@id": `${absoluteUrl(`/articles/${article.slug}`)}#howto`,
-        name: article.title,
-        description: article.quickAnswer,
-        inLanguage: siteConfig.language,
-        step: article.steps.map((step, index) => ({
-          "@type": "HowToStep",
-          position: index + 1,
-          name: step.title,
-          text: step.detail,
-          url: `${absoluteUrl(`/articles/${article.slug}`)}#step-${index + 1}`,
-        })),
-      }
-    : null;
-
-  const faqSchema = article.faqs?.length
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: article.faqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: { "@type": "Answer", text: faq.answer },
-        })),
-      }
-    : null;
-
   return (
     <main id="main-content" className="article-page">
       <div className="shell">
@@ -248,10 +217,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <ArticleSidebar article={article} cluster={cluster} related={related} />
         </div>
       </div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      {howToSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />}
-      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, "\\u003c") }} />
     </main>
   );
 }
