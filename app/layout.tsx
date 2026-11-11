@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   title: {
-    default: "لوسيل | موسوعة عربية شاملة للمعرفة",
+    default: "لوسيل | أدلة الخدمات المصرية",
     template: "%s | لوسيل",
   },
   description: siteConfig.description,

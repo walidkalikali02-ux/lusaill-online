@@ -10,7 +10,7 @@ const cover = "/images/caricatures/ai-ram-crisis.jpg";
 const title = "أزمة الرامات في عصر الذكاء الاصطناعي: كاريكاتير عن سباق الذاكرة";
 const description = "كاريكاتير ساخر يصور التنافس على شرائح الذاكرة بين مطوري الذكاء الاصطناعي والشركات والمستهلكين، مع شرح رموز المشهد والفرق بين ذاكرة RAM وHBM.";
 export const metadata: Metadata = {
-  title,
+  title: "أزمة الرامات والذكاء الاصطناعي",
   description,
   alternates: pageAlternates(path),
   robots: { index: true, follow: true },

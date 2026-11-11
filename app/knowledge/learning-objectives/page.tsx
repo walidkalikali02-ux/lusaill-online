@@ -20,6 +20,7 @@ const sections=[
 const h2={fontSize:26,fontWeight:700,margin:"28px 0 12px"} as const;
 export default function LearningObjectivesPage(){
 const url=absoluteUrl(path);
+const breadcrumbSchema={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"الرئيسية",item:absoluteUrl("/")},{"@type":"ListItem",position:2,name:"معارف وأدوات",item:absoluteUrl("/knowledge")},{"@type":"ListItem",position:3,name:title,item:url}]};
 const schema={"@context":"https://schema.org","@type":"Article",headline:title,description,url,inLanguage:"ar",datePublished:"2026-11-06",author:{"@type":"Organization",name:"فريق لوسيل"},publisher:{"@type":"Organization",name:"لوسيل",url:absoluteUrl("/")},image:absoluteUrl("/images/bloom-learning-levels-original.svg")};
 return <main id="main-content" className="shell" style={{paddingBlock:44}}><nav aria-label="مسار التنقل" style={{color:"#64748b",marginBottom:18}}><Link href="/">الرئيسية</Link> / <Link href="/knowledge">معارف وأدوات</Link> / الأهداف التعليمية</nav>
 <article style={{maxWidth:950,margin:"auto"}}>
@@ -49,5 +50,5 @@ return <main id="main-content" className="shell" style={{paddingBlock:44}}><nav 
 <h2 style={h2}>مصادر موثوقة</h2>
 <p>المرجع الرئيسي: <a href="https://teaching.cornell.edu/resource/blooms-taxonomy" style={{color:"#2563eb",textDecoration:"underline"}} target="_blank" rel="noopener noreferrer">Cornell University — Bloom’s Taxonomy</a> (فئات مستويات التفكير والأفعال الشائعة). الأمثلة والصياغات هنا من إعداد لوسيل لغرض التدريب، ولا تعكس نصًا حرفيًا للجامعة.</p>
 <p style={{marginTop:25}}>دليل مرتبط: <Link href="/knowledge/roman-numerals" style={{color:"#2563eb",textDecoration:"underline"}}>الأرقام الرومانية من 1 إلى 100 مع محول مجاني</Link>.</p>
-</article><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/></main>;
+</article><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumbSchema).replace(/</g,"\\u003c")}}/></main>;
 }

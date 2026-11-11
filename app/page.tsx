@@ -1,57 +1,104 @@
-import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
-import { GuideSearch } from "@/components/guide-search";
 import Link from "next/link";
 import { ArticleCard } from "@/components/article-card";
-import { SiteIcon, type IconName } from "@/components/site-icon";
-import { clusters, articles, clusterProgress, isArticleIndexable } from "@/lib/content";
-import { guidePaths, getGuidePath } from "@/lib/guide-paths";
-import { getSiteSearchItems } from "@/lib/site-search";
-import { EncyclopediaCategories } from "@/components/encyclopedia-categories";
-import { absoluteUrl, siteConfig } from "@/lib/site-config";
-import { housingDeadline, housingDeadlineCheckedAt, housingDeadlineLabel, housingDeadlinePassed, housingDeadlineSource } from "@/lib/deadlines";
-export const metadata:Metadata={title:{absolute:"لوسيل | موسوعة عربية شاملة للمعرفة"},description:siteConfig.description,alternates:pageAlternates("/"),openGraph:{title:"لوسيل | موسوعة عربية شاملة للمعرفة",description:siteConfig.description,url:"/"}};
-export const revalidate=3600;
-const topics:Record<string,{short:string;icon:IconName}>={A:{short:"فواتير الكهرباء",icon:"bolt"},B:{short:"الخدمات الحكومية",icon:"document"},C:{short:"القيادة والمرور",icon:"car"},G:{short:"السجل المدني",icon:"book"},H:{short:"الحياة الرقمية",icon:"screen"}};
-export default function Home(){
-  const published=articles.filter(isArticleIndexable).sort((a,b)=>(b.publishedAt??"").localeCompare(a.publishedAt??"")||b.id-a.id);
-  const active=clusters.filter(c=>clusterProgress(c.slug).published>0).sort((a,b)=>["A","C","G","B","H"].indexOf(a.code)-["A","C","G","B","H"].indexOf(b.code));
-  const find=(slug:string)=>published.find(a=>a.slug===slug)!;
-  const lead=find("electricity-bill-inquiry");
-  const featured=["private-driving-license-first-time","automated-birth-certificate","ration-data-update"].map(find);
-  const selected=["north-cairo-electricity","south-delta-electricity","private-driving-license-first-time","automated-birth-certificate","ration-card-replacement"].map(find);
-  const seenPaths=new Map<string,number>();
-  const latest=published.filter(a=>{const key=getGuidePath(a.slug)?.slug??a.clusterCode;const count=seenPaths.get(key)??0;if(count>=2)return false;seenPaths.set(key,count+1);return true;}).slice(0,6);
-  const searchItems=getSiteSearchItems();
-  const knowledgeCount=searchItems.filter(item=>item.href?.startsWith("/knowledge/")).length;
-  const websiteSchema={"@context":"https://schema.org","@type":"WebSite","@id":`${siteConfig.url}/#website`,url:siteConfig.url,name:siteConfig.name,description:siteConfig.description,inLanguage:siteConfig.language,publisher:{"@id":`${siteConfig.url}/#organization`}};
-  const breadcrumbSchema={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"الرئيسية",item:absoluteUrl("/")}]};
+import { SiteIcon } from "@/components/site-icon";
+import { articles } from "@/lib/content";
+import { pageAlternates } from "@/lib/page-alternates";
+import { siteConfig } from "@/lib/site-config";
+
+export const metadata: Metadata = {
+  title: { absolute: "لوسيل | أدلة الخدمات المصرية والكهرباء والمرور" },
+  description: siteConfig.description,
+  alternates: pageAlternates("/"),
+  openGraph: {
+    title: "لوسيل | أدلة الخدمات المصرية والكهرباء والمرور",
+    description: siteConfig.description,
+    url: "/",
+  },
+};
+export const revalidate = 3600;
+
+const serviceCategories = [
+  { title: "فواتير الكهرباء والعدادات", detail: "اختيار شركة التوزيع، الاستعلام عن الفاتورة، تسجيل القراءة، الشكاوى والسداد.", href: "/categories/fawatir-alkahraba", lead: "/articles/electricity-bill-inquiry", cta: "ابدأ بدليل الفواتير" },
+  { title: "السجل المدني والوثائق", detail: "شهادة الميلاد وبطاقة الرقم القومي وتصحيح القيود وجواز السفر.", href: "/categories/shehadat-almilad-walsijil-almadani", lead: "/articles/automated-birth-certificate", cta: "طريقة استخراج شهادة الميلاد" },
+  { title: "رخص القيادة والمرور", detail: "المستندات المطلوبة للرخص وخدمات المركبات والمخالفات.", href: "/categories/rokhas-alqiyada-walmoror", lead: "/articles/private-driving-license-first-time", cta: "دليل الرخصة لأول مرة" },
+  { title: "مصر الرقمية والتموين", detail: "بطاقة التموين، حساب مصر الرقمية والخدمات الإلكترونية الرسمية.", href: "/categories/bawabat-misr-alraqmeya", lead: "/articles/ration-data-update", cta: "راجع تحديث بيانات التموين" },
+] as const;
+
+const electricityPeers = [
+  { slug: "north-cairo-electricity", title: "كهرباء شمال القاهرة" },
+  { slug: "south-cairo-electricity", title: "كهرباء جنوب القاهرة" },
+  { slug: "north-delta-electricity", title: "كهرباء شمال الدلتا" },
+  { slug: "south-delta-electricity", title: "كهرباء جنوب الدلتا" },
+  { slug: "alexandria-electricity", title: "كهرباء الإسكندرية" },
+] as const;
+
+export default function Home() {
+  const featuredSlugs = ["electricity-bill-inquiry", "north-cairo-electricity", "automated-birth-certificate", "private-driving-license-first-time"];
+  const featured = featuredSlugs.map(slug => articles.find(article => article.slug === slug)).filter((article): article is (typeof articles)[number] => Boolean(article));
+  const websiteSchema = {
+    "@context": "https://schema.org", "@type": "WebSite",
+    "@id": siteConfig.url + "/#website", url: siteConfig.url,
+    name: siteConfig.name, description: siteConfig.description,
+    inLanguage: siteConfig.language, publisher: { "@id": siteConfig.url + "/#organization" },
+  };
+
   return <main id="main-content" className="magazine-home">
-    <section className="hero identity-hero"><div className="shell identity-hero-grid"><div className="identity-intro"><span className="hero-eyebrow"><span aria-hidden="true"/>موسوعة عربية متعددة المجالات</span><h1>كل سؤال بداية،<br/><em>لمعرفة أوسع.</em></h1><p className="hero-sub">لوسيل موسوعة عربية تتناول العلوم والصحة والتعليم والتقنية والحياة اليومية، وتقدم مقالات وشروحات وأدلة عملية. نوسّع مجالات المعرفة باستمرار، ونوضح المصادر وحدود المعلومات.</p><div className="search-section"><GuideSearch items={searchItems}/></div><div className="identity-intro-note"><SiteIcon name="shield" width="17"/><span>موضوعات معرفية وشروحات وأدوات، مع مراجع يمكنك الرجوع إليها.</span></div></div><aside className="identity-taskboard" aria-labelledby="taskboard-title"><div className="taskboard-heading"><span>ابدأ من هنا</span><h2 id="taskboard-title">ماذا تريد أن تتعلم؟</h2></div><div className="identity-tasks">{[
-      {title:"أستكشف العلوم",detail:"الكيمياء والطبيعة وتجارب مبسطة",href:"/knowledge/crystals-vs-precipitates",icon:"book" as const},
-      {title:"أفهم الصحة والغذاء",detail:"الصحة والتغذية وسلامة الطعام",href:"/knowledge/immune-system-support",icon:"shield" as const},
-      {title:"أتعلّم الرياضيات",detail:"أرقام ومسائل وأدوات تعليمية",href:"/knowledge/roman-numerals",icon:"grid" as const},
-      {title:"أفهم التقنية",detail:"الحسابات والأجهزة والحياة الرقمية",href:"/categories/digital-life",icon:"screen" as const},
-    ].map(task=><Link href={task.href} key={task.href}><SiteIcon name={task.icon} width="25" height="25"/><strong>{task.title}</strong><span>{task.detail}</span><SiteIcon name="arrow" width="16" height="16"/></Link>)}</div><Link className="taskboard-all" href="/knowledge">استكشف موضوعات الموسوعة <SiteIcon name="arrow" width="16"/></Link></aside></div><div className="shell identity-facts"><span><strong>{knowledgeCount}</strong> موضوعًا في قسم المعارف</span><span><strong>{published.length}</strong> دليلًا عمليًا منشورًا</span><span><strong>{active.length}</strong> تصنيفات للأدلة</span><Link href="/editorial-policy">تعرّف على منهج التحرير <SiteIcon name="arrow" width="16"/></Link></div></section>
-    <div className="shell home-editorial-wrap">
-      <EncyclopediaCategories />
-      <section className="identity-feature" aria-labelledby="featured-title"><div className="editorial-section-heading"><div><span className="identity-kicker">ضمن قسم الخدمات اليومية</span><h2 id="featured-title">أدلة وإجراءات مفيدة</h2></div><Link href="/articles">كل الأدلة <SiteIcon name="arrow" width="16"/></Link></div><div className="identity-feature-grid">{[lead,...featured].map((article,index)=><ArticleCard key={article.slug} article={article} priority={index===0}/>)}</div></section>
-      <section className="home-utilities" aria-label="طرق سريعة للوصول"><Link href="/articles/electricity-bill-inquiry#calculator"><span className="utility-icon"><SiteIcon name="bolt"/></span><span><small>احسب وافهم</small><strong>حاسبة فاتورة الكهرباء</strong></span><SiteIcon name="arrow" width="17"/></Link><Link href="/guides/birth-certificates"><span className="utility-icon"><SiteIcon name="document"/></span><span><small>قبل تجهيز الملف</small><strong>اختر شهادة الميلاد المناسبة</strong></span><SiteIcon name="arrow" width="17"/></Link><Link href="/guides/account-security"><span className="utility-icon"><SiteIcon name="shield"/></span><span><small>خطوة لحماية بياناتك</small><strong>تأمين حساب Google</strong></span><SiteIcon name="arrow" width="17"/></Link></section>
-      <section className="browse-section" aria-labelledby="key-service-links-title">
-        <div className="editorial-section-heading"><h2 id="key-service-links-title">من قسم الخدمات والإجراءات</h2><Link href="/articles">جميع الأدلة <SiteIcon name="arrow" width="16"/></Link></div>
-        <div className="trust-grid">
-          <div className="trust-card"><h3>فواتير الكهرباء والعدادات</h3><p>اختر الخطوة التي تريد تنفيذها بحسب حالة الفاتورة أو العداد.</p><p><Link href="/articles/electricity-bill-inquiry">الاستعلام عن الفاتورة</Link> · <Link href="/articles/alexandria-electricity">كهرباء الإسكندرية</Link> · <Link href="/articles/electricity-complaint">تقديم شكوى</Link> · <Link href="/articles/electricity-meter-apply">طلب عداد</Link></p></div>
-          <div className="trust-card"><h3>بطاقات ووثائق السجل المدني</h3><p>ابدأ بنوع الوثيقة، ثم راجع المستندات والشروط الرسمية.</p><p><Link href="/articles/automated-birth-certificate">شهادة الميلاد</Link> · <Link href="/articles/national-id-first-time-egypt">بطاقة الرقم القومي لأول مرة</Link> · <Link href="/articles/civil-record-correction-egypt">تصحيح بيانات القيد</Link> · <Link href="/articles/birth-certificate-smart-machine">ماكينات الشهادات</Link></p></div>
-          <div className="trust-card"><h3>إجراءات جواز السفر</h3><p>دليل مستقل لكل حالة، بدل اتباع خطوات إصدار لا تناسب طلبك.</p><p><Link href="/articles/passport-first-time-egypt">إصدار أول مرة</Link> · <Link href="/articles/passport-renewal-expired-full">التجديد</Link> · <Link href="/articles/passport-lost-inside-egypt">بدل فاقد</Link> · <Link href="/articles/child-passport-egypt">جواز الطفل</Link></p></div>
+    <section className="hero identity-hero"><div className="shell identity-hero-grid">
+      <div className="identity-intro">
+        <span className="hero-eyebrow">أدلة عملية للخدمات المصرية</span>
+        <h1>خدمتك في مصر،<br/><em>بخطوات أوضح.</em></h1>
+        <p className="hero-sub">اشرح مشكلة الفاتورة أو الرخصة أو الوثيقة التي تحتاجها. لوسيل يقدم أدلة مستقلة بروابط للمصادر الرسمية؛ تقديم الطلبات والدفع يتم لدى الجهات المختصة.</p>
+        <div className="search-section">
+          <form className="search-bar" role="search" action="/search" method="get">
+            <input name="q" type="search" maxLength={200} aria-label="ابحث في أدلة الخدمات المصرية" placeholder="مثال: الاستعلام عن فاتورة الكهرباء" />
+            <button type="submit" className="button button-primary search-submit">بحث</button>
+          </form>
         </div>
+        <p className="identity-intro-note">مصادر رسمية، خطوات واضحة، وحدود موضّحة للمعلومة.</p>
+      </div>
+      <aside className="identity-taskboard" aria-labelledby="home-priority-title">
+        <div className="taskboard-heading"><span>ابدأ من هنا</span><h2 id="home-priority-title">الخدمات الأكثر طلبًا</h2></div>
+        <div className="identity-tasks">
+          {serviceCategories.map(service => <Link href={service.lead} key={service.href}>
+            <SiteIcon name="document" width="22" height="22"/>
+            <strong>{service.title}</strong><span>{service.cta}</span>
+            <SiteIcon name="arrow" width="16" height="16"/>
+          </Link>)}
+        </div>
+        <Link className="taskboard-all" href="/articles">استعرض جميع الأدلة <SiteIcon name="arrow" width="16"/></Link>
+      </aside>
+    </div></section>
+    <div className="shell home-editorial-wrap">
+      <section className="browse-section" aria-labelledby="service-categories-heading">
+        <div className="editorial-section-heading"><h2 id="service-categories-heading">اختر نوع الخدمة</h2><Link href="/categories">كل التصنيفات <SiteIcon name="arrow" width="16"/></Link></div>
+        <div className="trust-grid">{serviceCategories.map(service => <div className="trust-card" key={service.href}>
+          <h3><Link href={service.href}>{service.title}</Link></h3><p>{service.detail}</p>
+          <p><Link href={service.lead}>{service.cta}</Link></p>
+        </div>)}</div>
       </section>
-      <section className="deadline-section magazine-deadline" aria-labelledby="deadlines-title"><span className="deadline-dot" aria-hidden="true"/><div><h2 id="deadlines-title">تحت المتابعة: السكن البديل للإيجار القديم</h2><p>{housingDeadlinePassed() ? "مضى آخر موعد معلن للتقديم: " : "مد مجلس الوزراء مهلة التقديم حتى "}<time dateTime={housingDeadline}>{housingDeadlineLabel}</time>{housingDeadlinePassed() ? "؛ راجع أحدث إعلان رسمي قبل تقديم طلب جديد." : "."}</p><details><summary>المستندات والمتابعة ومصدر الموعد</summary><p><Link href="/articles/old-rent-housing-eligibility">الشروط</Link> · <Link href="/articles/old-rent-housing-documents">المستندات</Link> · <Link href="/articles/old-rent-housing-post-office">مساعدة البريد</Link> · <Link href="/articles/old-rent-housing-track">المتابعة</Link></p><p><a href={housingDeadlineSource} target="_blank" rel="noopener noreferrer">قرار مجلس الوزراء في 28 أكتوبر 2026</a> · آخر تحقق: <time dateTime={housingDeadlineCheckedAt}>5 نوفمبر 2026</time></p></details></div><Link className="deadline-link" href="/articles/old-rent-housing-apply">اقرأ التفاصيل <SiteIcon name="arrow" width="16"/></Link></section>
-      <section className="browse-section"><div className="editorial-section-heading"><h2>تصنيفات الأدلة العملية</h2><Link href="/categories">كل تصنيفات الأدلة <SiteIcon name="arrow" width="16"/></Link></div><div className="category-ribbon">{active.map(c=><Link href={`/categories/${c.slug}`} key={c.code}><SiteIcon name={topics[c.code].icon} width="25" height="25"/><strong>{topics[c.code].short}</strong><span>{clusterProgress(c.slug).published} دليلًا</span></Link>)}</div></section>
-      <div className="magazine-content"><div className="magazine-main">{active.map(cluster=>{const preferred=published.filter(a=>a.clusterCode===cluster.code).sort((a,b)=>Number(selected.some(s=>s.slug===b.slug))-Number(selected.some(s=>s.slug===a.slug)));return <section className="topic-section" key={cluster.code}><div className="editorial-section-heading"><h2><SiteIcon name={topics[cluster.code].icon}/>{topics[cluster.code].short}</h2><Link href={`/categories/${cluster.slug}`}>عرض الكل <SiteIcon name="arrow" width="16"/></Link></div><div className="topic-grid">{preferred.slice(0,3).map(article=><ArticleCard article={article} key={article.slug}/>)}</div></section>;})}</div><aside className="magazine-sidebar identity-resource-strip"><section className="editorial-panel teal-panel"><SiteIcon name="car" width="36" height="36"/><small>مسار تعليمي</small><h2>تعلّم القيادة<br/>من أول خطوة.</h2><p>ثمانية دروس تبدأ بالمقعد والمرايا، وتنتقل إلى التحكم والتقاطعات والطرق السريعة.</p><Link className="button" href="/courses/learn-driving">استكشف الكورس <SiteIcon name="arrow" width="16"/></Link></section><section className="editorial-panel"><h2>ابدأ من مسار واضح</h2><div className="sidebar-paths">{guidePaths.filter(p=>["android-backup","chrome-repair","account-security"].includes(p.slug)).map(path=><Link key={path.slug} href={`/guides/${path.slug}`}><strong>{path.title}</strong><SiteIcon name="arrow" width="17"/></Link>)}</div><Link className="panel-more" href="/guides">كل مسارات المهام ←</Link></section><section className="editorial-panel correction-panel"><SiteIcon name="document" width="28" height="28"/><h2>وجدت معلومة تحتاج تصحيحًا؟</h2><p>أرسل رابط المقال والملاحظة لنراجعها مع المصدر.</p><Link href="/contact">تواصل مع فريق لوسيل ←</Link></section></aside></div>
-      <section className="home-services-promo" aria-labelledby="home-services-heading"><div><span>جديد من لوسيل • خدمات رقمية</span><h2 id="home-services-heading">موقع احترافي لنشاطك، مقابل 500 ريال قطري شهريًا</h2><p>عرّف العملاء بمشروعك بموقع جذاب ومتجاوب مع الجوال، واجعل التواصل معك أسهل.</p></div><Link href="/services/website-design">شاهد الخدمة وابدأ الطلب ←</Link></section>
-      <section className="latest-section"><div className="editorial-section-heading"><h2>أحدث الأدلة العملية</h2><Link href="/articles">تصفح الأدلة الـ{published.length} <SiteIcon name="arrow" width="16"/></Link></div><div className="articles-grid">{latest.map(article=><ArticleCard article={article} key={article.slug}/>)}</div></section>
-      <section className="editorial-method"><div><span className="section-eyebrow">معرفة تساعدك على اتخاذ الخطوة التالية</span><h2>كيف نكتب أدلة لوسيل؟</h2><Link href="/editorial-policy">المصادر ومنهج التحرير ←</Link></div><ol><li><span>01</span><strong>سؤال محدد</strong><p>نبدأ بمشكلة واضحة يحتاج القارئ إلى فهمها أو حلها.</p></li><li><span>02</span><strong>خطوات ومراجع</strong><p>نرتب الإجراء ونذكر المصادر وتواريخ التحقق وحدود الشرح.</p></li><li><span>03</span><strong>باب للتصحيح</strong><p>يمكنك الإبلاغ عن معلومة تغيرت أو تحتاج إلى مراجعة.</p></li></ol></section>
-      <section className="home-faq"><div className="editorial-section-heading"><h2>أسئلة عن لوسيل</h2><Link href="/about">تعرّف على الموقع ←</Link></div><details><summary>ما الذي أجدُه في لوسيل؟</summary><p>مقالات معرفية وأدوات وكورسات وأدلة عملية في مجالات مثل العلوم والصحة والتعليم والتقنية والحياة اليومية. قسم الخدمات الحكومية واحد من أقسام الموسوعة، ونضيف موضوعات جديدة باستمرار.</p></details><details><summary>هل تقدم لوسيل خدمات حكومية أو معاملات؟</summary><p>لوسيل موسوعة معرفية مستقلة، وليست جهة حكومية. تقديم الطلبات والدفع وفحص الأهلية يتم لدى الجهة الرسمية، وفق شروطها الحالية.</p></details><details><summary>كيف أبلغ عن خطأ أو معلومة قديمة؟</summary><p>استخدم <Link href="/contact">صفحة التواصل</Link> وأرفق رابط المقال والملاحظة والمصدر إن توفر.</p></details></section>
-    </div><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(websiteSchema)}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumbSchema)}}/>
+      <section className="identity-feature" aria-labelledby="home-guides-heading">
+        <div className="editorial-section-heading"><div><span className="identity-kicker">ابدأ بالدليل المناسب</span><h2 id="home-guides-heading">أدلة عملية موثقة</h2></div><Link href="/articles">جميع الأدلة <SiteIcon name="arrow" width="16"/></Link></div>
+        <div className="identity-feature-grid">{featured.map((article,index) => <ArticleCard key={article.slug} article={article} priority={index===0}/>)}</div>
+      </section>
+      <section className="browse-section" aria-labelledby="electricity-companies-heading">
+        <div className="editorial-section-heading"><h2 id="electricity-companies-heading">شركات توزيع الكهرباء في مصر</h2><Link href="/articles/electricity-bill-inquiry">دليل الفواتير والشركات <SiteIcon name="arrow" width="16"/></Link></div>
+        <p>تأكد أولًا من اسم الشركة المطبوع على فاتورتك، ثم استخدم دليلها؛ طرق الاستعلام ورقم المشترك قد تختلف من شركة لأخرى.</p>
+        <div className="category-ribbon">{electricityPeers.map(company => <Link key={company.slug} href={`/articles/${company.slug}`}><SiteIcon name="bolt" width="22"/><strong>{company.title}</strong></Link>)}</div>
+      </section>
+      <section className="editorial-method">
+        <div><span className="section-eyebrow">كيف نعدّ المعلومات؟</span><h2>محتوى عملي قابل للمراجعة</h2><Link href="/editorial-policy">منهج التحرير والمصادر</Link></div>
+        <ol>
+          <li><span>01</span><strong>إجابة مباشرة</strong><p>ما الإجراء المناسب لحالتك؟</p></li>
+          <li><span>02</span><strong>المصدر الرسمي</strong><p>اذهب إلى الجهة الصحيحة قبل إدخال بياناتك أو الدفع.</p></li>
+          <li><span>03</span><strong>تحديث وتصحيح</strong><p>راجع تاريخ التحقق وأبلغنا إن تغيّر الإجراء.</p></li>
+        </ol>
+      </section>
+      <section className="home-faq">
+        <h2>موسوعة لوسيل</h2>
+        <p>لوسيل موقع مستقل، وليس بوابة حكومية. وإذا كنت تبحث عن العلوم أو التعليم أو التقنية، يمكنك الوصول إلى <Link href="/knowledge">المعارف والأدوات</Link> أو <Link href="/topics">جميع موضوعات الموسوعة</Link>.</p>
+      </section>
+    </div>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema).replace(/</g, "\\u003c") }} />
   </main>;
 }

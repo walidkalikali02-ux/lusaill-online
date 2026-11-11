@@ -1,4 +1,5 @@
 import { articles, isArticleIndexable } from "./content";
+import { restoredScienceGuides } from "./restored-science-guides";
 import { knowledgeTopics } from "./knowledge-expansion-data";
 import { foodSafetyArticles } from "./food-safety";
 import { courseMeta } from "./driving-course";
@@ -33,6 +34,15 @@ export function getSiteSearchItems(): SearchItem[] {
     title: article.title, keyword: `سلامة الغذاء التسمم الغذائي ${article.description}`,
     description: article.description, category: "الصحة وسلامة الغذاء",
   }));
+  const restored: SearchItem[] = Object.values(restoredScienceGuides).map(guide => ({
+    slug: "restored:" + guide.slug,
+    href: "/articles/" + guide.slug,
+    title: guide.title,
+    keyword: guide.title + " " + guide.description,
+    quickAnswer: guide.directAnswer,
+    description: guide.description,
+    category: guide.category,
+  }));
   const courses: SearchItem[] = [
     { slug: "course:learn-driving", href: "/courses/learn-driving", title: courseMeta.title, keyword: "تعلم القيادة كورس سيارات تعليم", description: courseMeta.description, category: "التعليم والكورسات" },
     { slug: "course:geometry", href: geometryPath, title: geometryMeta.title, keyword: "الرياضيات المجسمات الحجوم تمارين هندسة", description: geometryMeta.description, category: "التعليم والكورسات" },
@@ -40,5 +50,5 @@ export function getSiteSearchItems(): SearchItem[] {
     { slug: "course:6g", href: sixgPath, title: sixgMeta.title, keyword: "تقنية اتصالات شبكات 6G", description: sixgMeta.description, category: "التعليم والكورسات" },
   ];
   // Special educational routes can also appear in the article catalog.
-  return [...new Map([...guides, ...knowledge, ...specialKnowledge, ...food, ...courses].map(item => [item.href, item])).values()];
+  return [...new Map([...guides, ...restored, ...knowledge, ...specialKnowledge, ...food, ...courses].map(item => [item.href, item])).values()];
 }

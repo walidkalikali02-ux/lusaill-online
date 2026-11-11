@@ -23,16 +23,20 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json();
-    const urls: string[] = body.urls || (body.url ? [body.url] : []);
-
-    if (urls.length === 0) {
-      return NextResponse.json({ error: "No URLs provided" }, { status: 400 });
+    const urls: unknown[] = Array.isArray(body?.urls) ? body.urls : (body?.url ? [body.url] : []);
+    if (!urls.length || urls.length > 100 || urls.some(url => typeof url !== "string")) {
+      return NextResponse.json({ error: "Provide 1–100 valid URL strings" }, { status: 400 });
     }
-
-    // Validate URLs are from our domain
-    const validUrls = urls.filter((url) => url.startsWith("https://www.lusaill.online"));
-    if (validUrls.length === 0) {
-      return NextResponse.json({ error: "All URLs must be from lusaill.online" }, { status: 400 });
+    // Parse the hostname exactly: startsWith() accepts attacker-controlled lookalike hosts.
+    const validUrls = (urls as string[]).filter(value => {
+      try {
+        const url = new URL(value);
+        return url.protocol === "https:" && url.hostname === "www.lusaill.online" &&
+          !url.username && !url.password && !url.port;
+      } catch { return false; }
+    });
+    if (validUrls.length !== urls.length) {
+      return NextResponse.json({ error: "Every URL must belong to https://www.lusaill.online" }, { status: 400 });
     }
 
     // Submit to IndexNow endpoint (Bing/Yandex)

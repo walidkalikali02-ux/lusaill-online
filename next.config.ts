@@ -17,6 +17,13 @@ const nextConfig: NextConfig = {
       ...["res-academy.cache.wpscdn.com", "www.cisdem.com", "www.aiseesoft.de", "www.donemax.com", "support.microsoft.com", "www.stellarinfo.com", "www.easeus.de"].map((hostname) => ({ protocol: "https" as const, hostname, pathname: "/**" })),
     ],
   },
+  // Redirect only where a genuine content-equivalent destination is verified.
+  // Keep weaker historical matches in the review inventory; never redirect everything to /.
+  async redirects() {
+    return [
+      { source: "/articles/active-recall", destination: "/knowledge/active-recall-retrieval-practice-self-testing", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {
