@@ -30,7 +30,15 @@ export default function TopicsIndexPage() {
     },
   };
   return <main id="main-content" className="shell" style={{ paddingBlock: 35 }}>
-    <nav aria-label="مسار التنقل" style={{ fontSize: 13, color: "#617181" }}><Link href="/">الرئيسية</Link> / فئات الموسوعة</nav>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
+          { "@type": "ListItem", position: 2, name: "فئات الموسوعة", item: absoluteUrl("/topics") },
+        ],
+      }) }} />
+      <nav aria-label="مسار التنقل" style={{ fontSize: 13, color: "#617181" }}><Link href="/">الرئيسية</Link> / فئات الموسوعة</nav>
     <div style={{ marginBlock: 25 }}>
       <h1 style={{ fontSize: "clamp(30px,4vw,46px)", fontWeight: 800, color: "#182e49", lineHeight: 1.4 }}>فهرس موسوعة لوسيل</h1>
       <p style={{ maxWidth: 840, lineHeight: 2, color: "#4b5c6d", marginTop: 10 }}>فهرس شامل للمجالات الرئيسية والتخصصات الفرعية في الموسوعة. يتوافر محتوى منشور حاليًا في {publishedCategories} مجالًا، ونعمل على توسيع بقية المجالات تدريجيًا. المقالات والأدلة مرتبطة بفئاتها حسب الموضوع.</p>
