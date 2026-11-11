@@ -26,7 +26,16 @@ export default function RomanNumeralsPage(){
     publisher:{"@type":"Organization",name:"لوسيل",url:absoluteUrl("/")},image:absoluteUrl("/images/roman-numerals-education.svg"),
     mainEntityOfPage:{"@type":"WebPage","@id":url}};
   return <main id="main-content" className="shell" style={{paddingBlock:44}}>
-    <nav aria-label="مسار التنقل" style={{color:"#64748b",marginBottom:18}}><Link href="/">الرئيسية</Link> / <Link href="/knowledge">معارف وأدوات</Link> / الأرقام الرومانية</nav>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
+          { "@type": "ListItem", position: 2, name: "معارف وأدوات", item: absoluteUrl("/knowledge") },
+          { "@type": "ListItem", position: 3, name: "الأرقام الرومانية", item: absoluteUrl(path) },
+        ],
+      }) }} />
+      <nav aria-label="مسار التنقل" style={{color:"#64748b",marginBottom:18}}><Link href="/">الرئيسية</Link> / <Link href="/knowledge">معارف وأدوات</Link> / الأرقام الرومانية</nav>
     <article style={{maxWidth:950,margin:"auto"}}>
       <header><p style={{fontSize:14,color:"#475569"}}>رياضيات · شرح أصلي وأداة تعليمية</p>
         <h1 style={{fontSize:"clamp(29px,4vw,44px)",fontWeight:800,lineHeight:1.5,margin:"12px 0"}}>{title}</h1>
