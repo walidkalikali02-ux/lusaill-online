@@ -9,7 +9,7 @@ const path="/knowledge/roman-numerals";
 const title="الأرقام الرومانية من 1 إلى 100: الجدول الكامل والقواعد ومحول مجاني";
 const description="تعلم الأرقام الرومانية من 1 إلى 100 بالجدول، وافهم رموز I وV وX وL وC وقواعد الجمع والطرح، واستخدم محولًا تفاعليًا دون تسجيل.";
 export const metadata: Metadata={
-  title, description, alternates:pageAlternates(path),
+  title: "الأرقام الرومانية من 1 إلى 100: جدول ومحول", description, alternates:pageAlternates(path),
   openGraph:{title,description,url:path,type:"article",images:[{url:"/images/roman-numerals-education.svg",alt:"الرموز الأساسية للأرقام الرومانية"}]},
   robots:{index:true,follow:true},
 };
