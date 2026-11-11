@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { SiteIcon } from "./site-icon";
-const primary=[{href:"/topics",label:"التصنيفات"},{href:"/knowledge",label:"الموسوعة"},{href:"/caricatures",label:"الكاريكاتير"},{href:"/articles",label:"الأدلة"},{href:"/courses",label:"التعلّم"},{href:"/services",label:"الخدمات"},{href:"/about",label:"عن لوسيل"}];
+const primary=[{href:"/categories/fawatir-alkahraba",label:"الكهرباء"},{href:"/categories/shehadat-almilad-walsijil-almadani",label:"السجل المدني"},{href:"/categories/rokhas-alqiyada-walmoror",label:"المرور"},{href:"/categories/bawabat-misr-alraqmeya",label:"مصر الرقمية"},{href:"/articles",label:"الأدلة"},{href:"/knowledge",label:"الموسوعة"},{href:"/about",label:"عن لوسيل"}];
 const additional=[{href:"/guides",label:"مسارات المهام"},{href:"/food-safety",label:"الصحة وسلامة الغذاء"},{href:"/team#team-directory",label:"التخصصات"},{href:"/categories/fawatir-alkahraba",label:"فواتير الكهرباء"},{href:"/categories/rokhas-alqiyada-walmoror",label:"القيادة والمرور"},{href:"/categories/shehadat-almilad-walsijil-almadani",label:"السجل المدني"},{href:"/categories/bawabat-misr-alraqmeya",label:"الخدمات الحكومية"},{href:"/categories/digital-life",label:"الحياة الرقمية"},{href:"/entities",label:"الجهات والخدمات"},{href:"/editorial-policy",label:"منهج التحرير"},{href:"/contact",label:"تواصل معنا"}];
 export function SiteHeader(){
  const [menuOpen,setMenuOpen]=useState(false);const pathname=usePathname();
