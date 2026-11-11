@@ -60,7 +60,15 @@ export default function CaricatureIndex() {
   return (
     <main id="main-content" className={s.page}>
       <div className={s.wrap}>
-        <nav className={s.crumb} aria-label="مسار التنقل"><Link href="/">الرئيسية</Link><span>/</span><span>الكاريكاتير</span></nav>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
+          { "@type": "ListItem", position: 2, name: "الكاريكاتير", item: absoluteUrl("/caricatures") },
+        ],
+      }) }} />
+      <nav className={s.crumb} aria-label="مسار التنقل"><Link href="/">الرئيسية</Link><span>/</span><span>الكاريكاتير</span></nav>
         <section className={s.hero}>
           <div>
             <span className={s.eyebrow}>رسوم تحكي ما وراء الخبر</span>
