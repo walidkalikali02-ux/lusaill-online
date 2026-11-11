@@ -19,7 +19,10 @@ function getSubject(kind: EditorialImageKind, slug: string): VisualSubject | nul
       slug: article.slug,
       title: article.title,
       category: article.slug in nextTenCoverDirections
-        ? (article.slug.startsWith("consumer-") ? "حقوق المستهلك" : "الجوازات والهجرة")
+        ? (nextTenCoverDirections[article.slug].palette === "tax"
+          ? "الضرائب والتسجيل"
+          : (["consumer", "commerce"].includes(nextTenCoverDirections[article.slug].palette)
+              ? "حقوق المستهلك" : "الجوازات والهجرة"))
         : (clusters.find(item => item.code === article.clusterCode)?.name ?? "دليل عملي"),
       image: article.coverImage,
       items: article.steps?.map(step => step.title) ?? [],

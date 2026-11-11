@@ -257,6 +257,16 @@ function DirectedMotif({ kind, color }: { kind: CoverDirection["symbol"]; color:
     case "clock": art = <><circle cx="35" cy="35" r="24" {...stroke}/><path d="M35 17v20l14 7M27 7h16" {...stroke}/></>; break;
     case "complaint": art = <><rect x="16" y="11" width="41" height="48" rx="5" {...stroke}/><path d="M24 22h23M24 34h23M24 46h14" {...stroke}/><circle cx="15" cy="54" r="7" {...stroke}/></>; break;
     case "exchange": art = <><path d="M11 23h43l-11-11M54 23 43 35M57 47H14l11-11M14 47l11 11" {...stroke}/></>; break;
+    case "receipt": art = <><path d="M16 8h40v55l-8-5-8 5-8-5-8 5-8-5z" {...stroke}/><path d="M24 22h24M24 33h24M24 44h12M41 45h8" {...stroke}/></>; break;
+    case "shield-check": art = <><path d="M36 7 58 15v17c0 15-9 25-22 33C23 57 14 47 14 32V15z" {...stroke}/><path d="m25 36 8 8 16-18" {...stroke}/></>; break;
+    case "shopping-bag": art = <><path d="M13 25h46l-4 37H17zM25 27v-8a11 11 0 0 1 22 0v8" {...stroke}/><path d="M28 46h16" {...stroke}/></>; break;
+    case "megaphone": art = <><path d="M13 27h15l27-16v49L28 44H13zM22 45l6 17h12l-8-17M59 24l8-5M61 38h8" {...stroke}/></>; break;
+    case "wrench": art = <><path d="M55 14a18 18 0 0 0-20 22L13 56a8 8 0 0 0 11 11l22-22a18 18 0 0 0 20-20l-11 10-10-10z" {...stroke}/></>; break;
+    case "gear": art = <><path d="M29 8h14l3 9 8 4 9-3 7 13-7 7 1 9-7 11-10-3-5 8H28l-3-9-8-4-9 3-6-13 7-7-1-9 7-11 10 3z" {...stroke}/><circle cx="36" cy="36" r="12" {...stroke}/></>; break;
+    case "tax-card": art = <><rect x="9" y="18" width="54" height="36" rx="6" {...stroke}/><path d="M9 29h54M20 43h16M44 42h10" {...stroke}/></>; break;
+    case "branch": art = <><circle cx="17" cy="17" r="7" {...stroke}/><circle cx="54" cy="17" r="7" {...stroke}/><circle cx="36" cy="55" r="7" {...stroke}/><path d="M17 25v10h19v11M54 25v10H36" {...stroke}/></>; break;
+    case "edit-document": art = <><path d="M14 8h32l10 11v20M46 8v12h10M14 8v55h28M23 31h24M23 43h14" {...stroke}/><path d="m39 57 19-19 8 8-19 19-11 3z" {...stroke}/></>; break;
+    case "copy-card": art = <><rect x="21" y="20" width="43" height="39" rx="5" {...stroke}/><path d="M13 52H9V11h42v4M29 33h27M29 44h14" {...stroke}/></>; break;
   }
   return <svg viewBox="0 0 72 72" width="72" height="72">{art}</svg>;
 }
@@ -266,6 +276,8 @@ async function createDirectedCoverImage(subject: VisualSubject, direction: Cover
     travel: { dark: "#0D2946", accent: "#F8BB4E", light: "#FFF7E9", layer: "#2F7DA8" },
     service: { dark: "#20354B", accent: "#F3B95E", light: "#FAF8F2", layer: "#5687AB" },
     consumer: { dark: "#103E43", accent: "#D0F0D9", light: "#F5FAF4", layer: "#299E94" },
+    commerce: { dark: "#24344A", accent: "#F7D28B", light: "#F8F5EF", layer: "#BC6F59" },
+    tax: { dark: "#302849", accent: "#E2C59A", light: "#FBF8F4", layer: "#8272AF" },
   } as const;
   const colors = palettes[direction.palette];
   const [font, art] = await Promise.all([getArabicFont(), coverArtUrl(subject.image)]);
