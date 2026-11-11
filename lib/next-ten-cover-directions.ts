@@ -1,3 +1,5 @@
+import { coverBatchThreeDirections } from "./cover-batch-three-directions";
+
 /**
  * Editorial art direction for the next ten hand-reviewed covers.
  *
@@ -8,11 +10,12 @@
 export type CoverDirection = {
   tag: string;
   cues: readonly [string, string, string, string];
-  symbol: "passport" | "refresh" | "lost" | "damaged" | "child" | "document" | "movement" | "clock" | "complaint" | "exchange";
-  palette: "travel" | "service" | "consumer";
+  symbol: "passport" | "refresh" | "lost" | "damaged" | "child" | "document" | "movement" | "clock" | "complaint" | "exchange" | "receipt" | "shield-check" | "shopping-bag" | "megaphone" | "wrench" | "gear" | "tax-card" | "branch" | "edit-document" | "copy-card";
+  palette: "travel" | "service" | "consumer" | "commerce" | "tax";
 };
 
 export const nextTenCoverDirections: Record<string, CoverDirection> = {
+  ...coverBatchThreeDirections,
   "passport-first-time-egypt": {
     tag: "جواز لأول مرة",
     cues: ["إثبات الهوية", "المستندات", "طلب الجواز", "الاستلام"],
