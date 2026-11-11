@@ -103,6 +103,27 @@ assert(northCairoGuide.sources?.some(source => source.url === "https://ncedc.gov
 assert(northCairoGuide.sources?.some(source => source.url === "https://ncedc.gov.eg/Home/complaints"),
   "North Cairo complaint source missing");
 console.log("Meter installation and North Cairo billing guides official-source and navigation checks passed.");
+// Electricity meter cluster: enforce service distinctions, source integrity, and real editorial update dates.
+const meterClusterChecks = [
+  ["code-electricity-meter", "https://cabinet.gov.eg/Meeting/Details/11912", "/articles/electricity-meter-apply"],
+  ["electricity-meter-transfer", "https://egyptera.org/ar/FAQ.aspx", "/articles/electricity-complaint"],
+  ["electricity-meter-test", "https://egyptera.org/ar/FAQ.aspx", "/articles/electricity-outage-report"],
+];
+for (const [slug, officialUrl, path] of meterClusterChecks) {
+  const article = articles.find(a => a.slug === slug);
+  assert(article?.status === "published", `Missing published meter guide: ${slug}`);
+  assert((article.practicalSections?.length ?? 0) >= 2, `Decision matrices missing: ${slug}`);
+  assert(article.practicalSections.every(section => section.rows.length >= 4 && section.rows.every(row => row.length === section.columns.length)),
+    `Invalid decision matrix: ${slug}`);
+  assert(article.sources.some(source => source.url === officialUrl), `Missing primary official source: ${slug}`);
+  assert(article.steps.some(step => step.relatedLink?.href === path), `Missing related service path: ${slug}`);
+  assert.equal(article.updatedAt, "2026-11-11T17:36:00+03:00", `Newer source review date overwritten: ${slug}`);
+}
+assert(articles.find(a => a.slug === "code-electricity-meter")?.quickAnswer.includes("28 أكتوبر 2026"),
+  "Temporary coded-meter concession must retain exact decision date");
+assert(articles.find(a => a.slug === "electricity-meter-test")?.quickAnswer.includes("15 دقيقة"),
+  "Safe 15-minute meter observation missing");
+console.log("Electricity code, transfer and meter-test editorial route checks passed.");
 console.log(`All ${published.size} published articles have task paths; all members are published.`);
 
 // Article audit: a category move must reach every consumer of the article model.
