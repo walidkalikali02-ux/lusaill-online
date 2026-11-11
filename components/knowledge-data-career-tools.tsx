@@ -19,8 +19,11 @@ export function PieAngleCalculator(){
  ]);
  const values=items.map(s=>({label:s.label.trim(),value:Number.isFinite(s.value)?Math.max(0,s.value):0}));
  const sum=values.reduce((a,s)=>a+s.value,0);
- let angle=0;
- const segments=values.map((v,i)=>{const start=angle;const sweep=sum>0?v.value/sum*360:0;angle+=sweep;return {...v,start,sweep,color:shades[i%shades.length]};});
+ const segments=values.map((v,i)=>{
+  const start=sum>0?values.slice(0,i).reduce((acc,prior)=>acc+prior.value,0)/sum*360:0;
+  const sweep=sum>0?v.value/sum*360:0;
+  return {...v,start,sweep,color:shades[i%shades.length]};
+ });
  const nonzero=segments.filter(s=>s.value>0);
  const setValue=(i:number,k:keyof Slice,v:string)=>setItems(a=>a.map((s,j)=>j===i?{...s,[k]:k==="label"?v:Math.max(0,Math.min(1000000,Number(v)||0))}:s));
  return <section id="interactive-tool" aria-labelledby="pie-calc-heading" style={sectionStyle}>
