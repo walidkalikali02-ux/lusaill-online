@@ -54,6 +54,15 @@ export default async function TopicPage({ params, searchParams }: Props) {
       itemListElement: visible.map((item, i) => ({ "@type": "ListItem", position: i + 1, name: item.title, url: absoluteUrl(item.href) })),
     },
   };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
+      { "@type": "ListItem", position: 2, name: "فئات الموسوعة", item: absoluteUrl("/topics") },
+      { "@type": "ListItem", position: 3, name: category.title, item: absoluteUrl(getCategoryUrl(category)) },
+    ],
+  };
   return <main id="main-content" className={styles.page}>
     <div className="shell">
       <nav aria-label="مسار التنقل" className={styles.breadcrumb}><Link href="/">الرئيسية</Link><span>/</span><Link href="/topics">فئات الموسوعة</Link><span>/</span><span>{category.title}</span></nav>
@@ -90,5 +99,6 @@ export default async function TopicPage({ params, searchParams }: Props) {
       <div className={styles.back}><Link href="/topics">العودة إلى فهرس الموسوعة الكامل ←</Link></div>
     </div>
     {fullList.length > 0 && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />}
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
   </main>;
 }
