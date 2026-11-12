@@ -55,8 +55,8 @@ const catalog = await get(`${origin}/articles`);
 for (const url of urls.filter((url) => new URL(url).pathname.startsWith('/articles/'))) assert(catalog.includes(`href="${new URL(url).pathname}"`), `Article not reachable in two clicks: ${url}`);
 const homeDescription = homepage.match(/<meta name="description" content="([^"]+)"/)?.[1] ?? '';
 assert(homeDescription.length >= 140 && homeDescription.length <= 155, 'Homepage description must be 140–155 characters');
-assert(homepage.includes('id="service-categories-heading"'), 'Egyptian services categories missing');
-assert(homepage.includes('id="electricity-companies-heading"'), 'Electricity guides directory missing');
+assert(homepage.includes('id="projects"'), 'Company projects section missing');
+for (const path of ['/knowledge', '/services', '/courses', '/caricatures', '/guides']) assert(homepageLinks.includes(path), 'Company project link missing: ' + path);
 if (new URL(origin).hostname === '127.0.0.1') {
   const apexRedirect = await new Promise((resolve, reject) => {
     const req = request(`${origin}/articles/old-rent-housing-apply?test=1`, { headers: { host: 'lusaill.online' } }, (response) => { response.resume(); resolve(response); });

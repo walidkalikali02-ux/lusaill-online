@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./editorial.css";
 import "./identity.css";
+import "./company.css";
 import { SiteAnalytics } from "@/components/site-analytics";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { SiteFrame } from "@/components/site-frame";
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   title: {
-    default: "لوسيل | أدلة الخدمات المصرية",
+    default: "شركة لوسيل | المعرفة والخدمات والمشاريع",
     template: "%s | لوسيل",
   },
   description: siteConfig.description,
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: siteConfig.locale,
     siteName: siteConfig.name,
-    title: "لوسيل | موسوعة عربية شاملة للمعرفة",
+    title: "شركة لوسيل | المعرفة والخدمات والمشاريع",
     description: siteConfig.description,
     url: "/",
   },

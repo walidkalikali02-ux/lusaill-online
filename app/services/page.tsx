@@ -19,7 +19,7 @@ export default function ServicesPage() {
     <section className={s.serviceHero}><div className={s.wrap}>
       <span className={s.eyebrow}>خدمات لوسيل الرقمية</span>
       <h1>من المعرفة إلى التنفيذ.</h1>
-      <p>في موسوعة لوسيل نشارك المعرفة، وفي قسم الخدمات نساعدك على تحويل أفكارك إلى حضور رقمي واضح وعملي. اختر الخدمة المناسبة لنشاطك وابدأ بخطوة بسيطة.</p>
+      <p>في شركة لوسيل نقدّم المعرفة عبر مشروع الموسوعة، ومن خلال خدماتنا الرقمية نساعدك على تحويل أفكارك إلى حضور رقمي واضح وعملي. اختر الخدمة المناسبة لنشاطك وابدأ بخطوة بسيطة.</p>
     </div></section>
     <div className={s.wrap}><nav className={s.crumbs} aria-label="مسار التصفح"><Link href="/">الرئيسية</Link> / الخدمات</nav></div>
     <section className={s.section}><div className={s.wrap}>

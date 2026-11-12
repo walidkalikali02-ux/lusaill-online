@@ -45,10 +45,10 @@ export default function AboutPage() {
   return (
     <main id="main-content" className="text-page">
       <div className="shell text-shell">
-        <span className="eyebrow">عن المشروع</span>
-        <h1>لوسيل — موسوعة عربية شاملة للمعرفة</h1>
+        <span className="eyebrow">عن شركة لوسيل</span>
+        <h1>شركة لوسيل — المعرفة والخدمات والمشاريع</h1>
         <p className="text-lead">
-          {siteConfig.description} هدفنا بناء مرجع عربي واسع يساعد القارئ على فهم الموضوعات والأسئلة في مختلف مجالات الحياة، مع توثيق المعلومات وتوضيح ما نعرفه وما يتطلب تحققًا إضافيًا.
+          {siteConfig.description} ومن خلال مشروع موسوعة لوسيل نبني مرجعًا عربيًا واسعًا يساعد القارئ على فهم الموضوعات والأسئلة في مختلف مجالات الحياة، مع توثيق المعلومات وتوضيح ما نعرفه وما يتطلب تحققًا إضافيًا.
         </p>
         <section aria-labelledby="encyclopedia-scope">
           <h2 id="encyclopedia-scope">موسوعة لجميع مجالات المعرفة</h2>

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "لوسيل — موسوعة عربية شاملة للمعرفة";
+export const alt = "شركة لوسيل — المعرفة والخدمات والمشاريع";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -14,21 +14,21 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#f7f3ea",
-          color: "#102a43",
+          background: "#111715",
+          color: "#f4f6ef",
           padding: "72px 84px",
           direction: "ltr",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <div style={{ display: "flex", fontSize: 30, color: "#145da0", letterSpacing: 2 }}>ARABIC KNOWLEDGE ENCYCLOPEDIA</div>
-          <div style={{ display: "flex", width: 64, height: 64, borderRadius: 18, background: "#145da0" }} />
+          <div style={{ display: "flex", fontSize: 30, color: "#b8cdbf", letterSpacing: 2 }}>KNOWLEDGE / SERVICES / PROJECTS</div>
+          <div style={{ display: "flex", width: 64, height: 64, borderRadius: 18, background: "#b8cdbf" }} />
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", fontSize: 102, fontWeight: 800, letterSpacing: -3 }}>LUSAILL</div>
-          <div style={{ display: "flex", fontSize: 40, marginTop: 22, color: "#334e68" }}>Explore science, learning and everyday knowledge.</div>
+          <div style={{ display: "flex", fontSize: 40, marginTop: 22, color: "#c1cec4" }}>Knowledge is the beginning. Impact is what we build.</div>
         </div>
-        <div style={{ display: "flex", fontSize: 28, color: "#627d98" }}>www.lusaill.online</div>
+        <div style={{ display: "flex", fontSize: 28, color: "#a7b7ac" }}>www.lusaill.online</div>
       </div>
     ),
     size,

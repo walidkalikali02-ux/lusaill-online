@@ -1,0 +1,87 @@
+/* Lusail company presentation */
+.company-home{background:#f4f4ef;color:#202322}
+.company-home .shell{width:min(1280px,calc(100% - 80px))}
+.company-header{background:#111715;color:#f6f7f1;border-color:#35413b}
+.company-header .brand-mark{background:transparent;border:1px solid #bfcfc6;color:#fff;border-radius:0}
+.company-header .brand small{color:#aab8af;letter-spacing:.18em}
+.company-header nav a:hover{color:#b5d2c0}
+.company-header .nav-cta{border-color:#7a8980;border-radius:0}
+.company-hero{position:relative;isolation:isolate;overflow:hidden;min-height:740px;background:#101713;color:#f5f6ef}
+.company-hero-content{position:relative;z-index:1;padding-top:45px}
+.company-kicker,.company-caption{display:flex;justify-content:space-between;gap:20px;font-size:12px;letter-spacing:.08em}
+.company-kicker{color:#c1cdc5}
+.company-hero h1{font-weight:400;font-size:clamp(65px,8vw,120px);line-height:1.22;margin:115px 0 55px;letter-spacing:-.045em;max-width:950px}
+.company-hero-bottom{display:flex;align-items:end;justify-content:space-between;gap:40px}
+.company-hero-bottom p{font-size:20px;color:#d1dad3;line-height:1.9;margin:0}
+.company-button{display:inline-flex;align-items:center;justify-content:space-between;gap:55px;background:#eff2e9;color:#17231c;padding:17px 23px;border:1px solid #eff2e9;transition:background .2s}
+.company-button:hover{background:#c3d6c8}
+.company-button span{font-size:25px;line-height:1}
+.company-caption{margin-top:65px;border-top:1px solid #5a696055;padding:20px 0;color:#bac6bd}
+.company-orbit{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse at 14% 55%,#56715b50,transparent 50%),linear-gradient(120deg,#0b100d,#18261c)}
+.company-orbit i{position:absolute;width:800px;height:800px;left:-310px;top:-30px;border:1px solid #99b3a04a;border-radius:50%;transform:rotate(-25deg) scaleX(.65)}
+.company-orbit i:nth-child(2){left:-190px;transform:rotate(25deg) scaleX(.65)}
+.company-orbit i:nth-child(3){left:-70px;transform:rotate(65deg) scaleX(.65)}
+.company-orbit span{position:absolute;left:22%;top:31%;width:8px;height:8px;background:#efffe5;border-radius:50%;box-shadow:0 0 60px 15px #b4d19b77}
+.company-label{font-size:13px;letter-spacing:.04em;display:block}
+.company-intro{padding-block:120px;display:grid;grid-template-columns:1fr 2fr;gap:60px;scroll-margin-top:100px}
+.company-intro h2,.company-principles h2{font-size:clamp(38px,5vw,68px);line-height:1.3;font-weight:400;margin:0 0 35px;letter-spacing:-.03em}
+.company-intro h2 span{color:#828b83}
+.company-intro p{font-size:20px;max-width:650px;line-height:1.9;color:#59625d}
+.company-projects{background:#e7eae3;padding:90px 0;scroll-margin-top:90px}
+.company-section-title{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:55px}
+.company-section-title h2,.company-end h2{font-size:clamp(36px,4.7vw,64px);font-weight:400;line-height:1.4;margin:22px 0 0}
+.company-section-title p{color:#5c665e}
+.company-project{display:grid;grid-template-columns:70px 1.1fr 1fr;gap:35px;border-top:1px solid #aab5aa;padding:38px 0;transition:background .2s}
+.company-project:last-child{border-bottom:1px solid #aab5aa}
+.company-project:hover{background:#dce2d8}
+.project-num{font-size:15px;color:#68766b}
+.project-tag{font-size:12px;color:#607365}
+.company-project h3{font-size:clamp(25px,3vw,38px);font-weight:400;margin:10px 0}
+.project-details p{margin:0 0 22px;color:#546056;line-height:1.9}
+.project-details>span{display:flex;justify-content:space-between;font-size:14px}
+.project-details b{font-size:24px;font-weight:400}
+.company-principles{padding-block:110px}
+.company-principles h2{margin-top:35px}
+.principle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:45px;margin-top:70px}
+.principle-grid>div{border-top:1px solid #abb4ab;padding-top:25px}
+.principle-grid span{font-size:13px;color:#7b877c}
+.principle-grid h3{font-weight:400;font-size:24px;margin:25px 0 12px}
+.principle-grid p{color:#626d64}
+.company-end{background:#23372a;color:#f3f5ed;padding:85px 0}
+.company-end h2{margin:20px 0 40px}
+.site-footer{background:#101713;color:#d2dbd3}
+.site-footer h2,.site-footer .footer-brand{color:#f3f5ed}
+.site-footer p,.site-footer a,.footer-bottom{color:#aebbb1}
+.company-home a:focus-visible,.site-header a:focus-visible{outline:3px solid #85ad91;outline-offset:5px}
+@media(max-width:760px){
+ .company-home .shell{width:calc(100% - 40px)}
+ .header-inner{gap:15px;flex-wrap:wrap;padding:16px 0}
+ .company-header nav{gap:16px;font-size:13px}
+ .brand strong{font-size:17px}
+ .company-kicker{font-size:10px}.company-kicker span:last-child{max-width:145px;text-align:left}
+ .company-hero{min-height:650px}.company-hero h1{font-size:clamp(48px,11vw,78px);margin:100px 0 40px}
+ .company-hero-bottom{align-items:start;flex-direction:column;gap:25px}.company-hero-bottom p{font-size:17px}
+ .company-caption{margin-top:45px;font-size:10px}
+ .company-intro{grid-template-columns:1fr;gap:35px;padding-block:70px}
+ .company-intro p{font-size:18px}
+ .company-section-title{display:block}.company-projects{padding-block:65px}
+ .company-project{grid-template-columns:35px 1fr;gap:15px}.project-details{grid-column:2}
+ .company-principles{padding-block:70px}.principle-grid{grid-template-columns:1fr;gap:25px;margin-top:40px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.company-home *{transition:none}}
+
+.company-home { font-family:var(--font-arabic-body),sans-serif; }
+.company-hero h1 { letter-spacing:-.04em; }
+.company-inline-link { display:inline-block;margin-top:20px;border-bottom:1px solid currentColor;padding-bottom:5px; }
+.company-header.identity-header { background:#111715;color:#f6f7f1;border-color:#35413b; }
+.company-header .brand strong,.company-header .brand-mark,.company-header .identity-nav a { color:#f6f7f1; }
+.company-header .masthead-search { background:transparent;color:#e5eee7;border-color:#68786b; }
+.company-header .masthead-search input { color:#f6f7f1; }
+.company-header .masthead-search input::placeholder { color:#bcc9bf; }
+.company-header .mobile-menu-btn,.company-header .header-search-btn { color:#f6f7f1;border-color:#728575; }
+.company-header .mobile-nav { background:#17221a;color:#f6f7f1; }
+.company-header .mobile-nav a { color:#f6f7f1; }
+.company-home h1,.company-home h2,.company-home h3{font-family:inherit}
+.company-hero .company-button{font-size:16px}
+@media(min-width:1000px){.company-header .identity-nav{display:flex;gap:30px}.company-header .masthead-search{max-width:240px}}
+.company-header .mobile-menu-btn,.company-header .header-search-btn{background:transparent;color:#f6f7f1}.company-header .masthead-search button{color:#f6f7f1}
