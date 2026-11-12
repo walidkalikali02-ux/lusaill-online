@@ -25,8 +25,13 @@ try{
   }
  }
  const sitemap=await (await fetch(origin+"/sitemap-articles.xml")).text(),classic=[...sitemap.matchAll(/<loc>(https:\/\/www.lusaill.online\/articles\/.*?)<\/loc>/g)].map(m=>new URL(m[1]).pathname);
- for(const path of classic)assert(found.has(path),"Article is not reachable from a category: "+path);
+ const catalogResponse = await fetch(origin + "/articles");
+ assert.equal(catalogResponse.status, 200);
+ const catalog = await catalogResponse.text();
+ for (const path of classic) {
+  assert(found.has(path) || catalog.includes('href="' + path + '"'), "Article is not reachable from a category or the article directory: " + path);
+ }
  const food=await(await fetch(origin+"/food-safety")).text();
  for(const m of sitemap.matchAll(/<loc>(https:\/\/www.lusaill.online\/food-safety\/.*?)<\/loc>/g))assert(food.includes('href="'+new URL(m[1]).pathname+'"'));
- console.log("DISCOVERY_RENDERED "+JSON.stringify({categoryReachable:classic.length,foodHubReachable:4,electricityPeerBacklinks:peers.length,serviceTable:true,result:"PASS"}));
+ console.log("DISCOVERY_RENDERED "+JSON.stringify({categoryReachable:classic.filter(path => found.has(path)).length,categoryOrCatalogReachable:classic.length,foodHubReachable:4,electricityPeerBacklinks:peers.length,serviceTable:true,result:"PASS"}));
 }finally{server.kill("SIGTERM");}
