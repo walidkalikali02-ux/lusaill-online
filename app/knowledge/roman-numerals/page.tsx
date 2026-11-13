@@ -1,3 +1,5 @@
+import MathArticleLab from "@/components/math-article-lab";
+import { getMathArticleLab } from "@/lib/math-article-labs";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,6 +22,7 @@ const rows=Array.from({length:100},(_,i)=>({number:i+1,roman:roman(i+1)}));
 const box={background:"#fff",border:"1px solid #e5e7eb",padding:22,borderRadius:14} as const;
 const h2={fontSize:26,fontWeight:700,marginTop:32,marginBottom:12} as const;
 export default function RomanNumeralsPage(){
+  const lab=getMathArticleLab("roman-numerals");
   const url=absoluteUrl(path);
   const breadcrumbSchema={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"الرئيسية",item:absoluteUrl("/")},{"@type":"ListItem",position:2,name:"معارف وأدوات",item:absoluteUrl("/knowledge")},{"@type":"ListItem",position:3,name:title,item:url}]};
   const schema={"@context":"https://schema.org","@type":"Article",headline:title,description,url,inLanguage:"ar",datePublished:"2026-11-06",
@@ -35,6 +38,7 @@ export default function RomanNumeralsPage(){
         <p style={{color:"#64748b",fontSize:13}}>نشر: 6 نوفمبر 2026 · إعداد: فريق لوسيل · المجال: تعليم الرياضيات</p>
       </header>
       <figure style={{margin:"26px 0"}}><Image src="/images/roman-numerals-education.svg" alt="مخطط أصلي يوضح قيم الرموز الرومانية I وV وX وL وC وD وM وأمثلة الطرح" width={1200} height={630} unoptimized style={{borderRadius:16,width:"100%",height:"auto"}}/><figcaption style={{fontSize:13,color:"#64748b",marginTop:8}}>رسم توضيحي من إعداد لوسيل للقيم الأساسية والصيغ القياسية الحديثة.</figcaption></figure>
+      {lab && <MathArticleLab lab={lab} />}
       <section style={box}><h2 style={{fontSize:23,fontWeight:700,marginBottom:8}}>الإجابة السريعة</h2>
         <p>رموز الأرقام الرومانية السبعة: <b dir="ltr">I = 1، V = 5، X = 10، L = 50، C = 100، D = 500، M = 1000</b>. تُجمع الرموز غالبًا من اليسار إلى اليمين، بينما تعني بعض التركيبات الخاصة الطرح مثل IV وIX.</p></section>
       <RomanConverter/>
