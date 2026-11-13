@@ -154,7 +154,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:52}}>
 <h1>موسوعة لوسيل</h1>
 <p>استكشف العلوم والصحة والتعليم والتقنية والحياة اليومية. ابدأ من سؤال، أو اختر مجالًا لتتصفّح مقالات الموسوعة وأدواتها.</p>
 <form action="/search" method="get" role="search"><input type="search" name="q" aria-label="ابحث في موسوعة لوسيل" placeholder="عن أي موضوع تبحث؟" maxLength={200} required /><button type="submit">بحث</button></form>
-<nav aria-label="استكشف الموسوعة"><Link href="/topics">تصفّح الفئات</Link><Link href="#encyclopedia-articles">المقالات والأدوات</Link><Link href="/food-safety">سلامة الغذاء</Link></nav>
+<nav aria-label="استكشف الموسوعة"><Link href="/topics">تصفّح الفئات</Link><Link href="#encyclopedia-articles">المقالات والأدوات</Link><Link href="/food-safety">سلامة الغذاء</Link><Link href="/knowledge/manahej">مناهج</Link></nav>
 </section>
 <h2 id="encyclopedia-articles">المقالات والأدوات</h2>
 <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(270px,1fr))",gap:18}}>
