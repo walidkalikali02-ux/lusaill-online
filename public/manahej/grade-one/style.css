@@ -35,6 +35,12 @@ p{line-height:1.65;margin:.4em 0}
 .lesson-link[data-status=done] .lesson-number{color:#15523d;background:#def2e8}
 .lesson-link[data-status=done] .lesson-status{color:#15523d;font-weight:700}
 .lesson-link[data-status=started] .lesson-status{color:#674015;font-weight:700}
+.lesson-intro{margin-bottom:12px;color:#48445d}
+.lesson-intro p:first-child{font-weight:750;font-size:1.16rem;color:#33245d}
+.lesson-reading{margin-block:20px;padding:16px 20px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.lesson-reading h2{margin:0 0 8px}
+.lesson-reading details,.lesson-hint{margin-block:8px 12px}
+.lesson-reading summary,.lesson-hint summary{cursor:pointer;color:var(--purple);font-weight:700;padding-block:8px}
 .term{margin-bottom:26px}
 .lesson-number{display:grid;place-items:center;min-width:36px;height:36px;border-radius:10px;font-weight:800}
 .lesson-link:hover,.grade[href]:hover{border-color:var(--purple)}

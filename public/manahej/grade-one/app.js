@@ -1,6 +1,7 @@
 (() => {
   const lessons = window.mathLessons;
   const units = window.mathUnits;
+  const guide = window.lessonGuide;
   const byId = new Map(lessons.map(item => [item.id, item]));
   const lessonOrder = units.flatMap(unit => unit.ids.map(id => byId.get(id)));
   const ar = window.arNumber;
@@ -57,6 +58,20 @@
     solid: ['أبرز الأسطح','أبرز الأسطح'],
     parts: ['قسّم الشكل','أضف خط تقسيم'],
     pattern: ['أظهر المجموعة الأولى','كرّر المجموعة']
+  };
+  const hints = {
+    count:'ابدأ من طرف المجموعة. عُدّ كل قطعة مرة واحدة.',
+    compare:'تخيّل أنك تضع قطعة من الصف الأول أمام كل قطعة في الصف الثاني. أين ستبقى قطع؟',
+    add:'ابدأ بعدد قطع المجموعة الأولى، ثم أكمل العدّ مع القطع المضافة.',
+    subtract:'انظر إلى القطع التي لم تُشطب. هذه القطع هي التي بقيت.',
+    line:'انظر إلى المسافة بين أول عددين. استخدم نفس القفزة بعد العدد الأخير.',
+    place:'تذكّر أن الحزمة الكاملة فيها عشر قطع.',
+    length:'ابدأ من طرف الشريط وضع مكعبات متلاصقة حتى تصل إلى الطرف الآخر.',
+    clock:'انظر إلى مكان العقرب القصير أولًا، ثم إلى العقرب الطويل.',
+    shape:'ابدأ عند رأس وتتبع كل خط مستقيم حتى تعود إلى البداية.',
+    solid:'ابحث عن الأسطح المستوية والمنحنية في الشكل.',
+    parts:'عدّ المساحات التي تحددها الخطوط وتحقق أنها متساوية.',
+    pattern:'ابحث عن أول مجموعة من الأشكال تظهر مرة أخرى بنفس الترتيب.'
   };
   function maxSteps(art) { return ({
     count: Math.max(1,art.n),compare:Math.min(art.a,art.b),line:3,
@@ -214,6 +229,7 @@
     prediction=null;
     step=0;
     phase='predict';
+    el('hint').open=false;
     checkpoint();
     render();
     el('prompt').focus();
@@ -221,6 +237,27 @@
 
   function start(item, replay=false) {
     lesson=item;
+    const article=guide[item.id];
+    el('lesson-hook').textContent=article.hook;
+    el('lesson-objective').textContent='هدف الدرس · '+article.objective;
+    el('recap').textContent=article.rule;
+    el('lesson-rule').textContent=article.rule;
+    el('lesson-example').textContent=article.example;
+    el('lesson-lab').textContent=article.lab;
+    el('lesson-source').href='https://tadribaty.com/math-g1-t'+item.term+'-student-book/';
+    el('mastery-question').textContent=article.question;
+    el('mastery-feedback').textContent='';
+    const options=article.options.map((option,index)=>{
+      const button=document.createElement('button');
+      button.type='button';
+      button.textContent=option;
+      button.addEventListener('click',()=>{
+        el('mastery-feedback').textContent=(index===article.answer?'إجابة صحيحة. ':'جرّب مرة أخرى. ')+article.reason;
+      });
+      return button;
+    });
+    el('mastery-choices').replaceChildren(...options);
+    el('hint').open=false;
     complete=false;
     el('catalog').hidden=true;
     el('lesson').hidden=false;
@@ -250,6 +287,8 @@
     el('progress').value=complete?lesson.stages.length:index+(phase==='review'?1:0);
     el('play').hidden=complete;
     el('result').hidden=!complete;
+    el('mastery').hidden=!complete;
+    el('lesson-reading').hidden=!complete && index===0 && phase!=='review';
     if (complete) {
       el('result-score').textContent='أفضل نتيجة: '+ar(scores[lesson.id])+' من '+fmt(lesson.stages.length*10)+'.';
       el('result-title').focus();
@@ -258,6 +297,9 @@
 
     const activity=lesson.stages[index];
     const art=activity.art;
+    el('hint').hidden=phase==='review';
+    el('hint-text').textContent=art.skip && (art.type==='add' || art.type==='subtract')
+      ? 'عُدّ الحزم أولًا. قيمة كل حزمة عشرة.' : hints[art.type];
     const limit=maxSteps(art);
     const status={predict:'توقّع',try:'جرّب',review:'افهم'}[phase];
     el('phase').textContent=ar(index+1)+' من '+ar(lesson.stages.length)+' · '+status;
@@ -267,6 +309,7 @@
     el('observation').textContent=phase==='try'&&step>0?'خطوات التجربة: '+ar(step)+' من '+ar(limit):'';
     el('feedback').hidden=phase!=='review';
     el('advance').hidden=phase==='predict';
+    el('retry-experiment').hidden=phase!=='try' || step===0;
 
     if (phase==='predict') {
       const shift=(lesson.id+index)%activity.options.length;
@@ -326,6 +369,13 @@
     }
   });
   el('repeat').addEventListener('click',()=>start(lesson,true));
+  el('retry-experiment').addEventListener('click',()=>{
+    if (phase!=='try') return;
+    step=0;
+    checkpoint();
+    render();
+    el('advance').focus();
+  });
   function route() {
     let hash='';
     try { hash=decodeURIComponent(location.hash); } catch {}
