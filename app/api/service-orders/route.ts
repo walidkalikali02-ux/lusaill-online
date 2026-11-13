@@ -1,5 +1,5 @@
 import { createHmac } from "node:crypto";
-import { getService, getQuestions, validAnswer, type AnswerMap } from "@/lib/service-orders";
+import { getService, getQuestions, validAnswer, type AnswerMap, readChatTurns, chatRecordId, briefRecordId } from "@/lib/service-orders";
 import { supabaseRequest } from "@/lib/order-storage";
 
 const badRequest = () => Response.json({ error: "يرجى إكمال إجابات الطلب ومراجعتها." }, { status: 400 });
@@ -34,6 +34,31 @@ export async function POST(request: Request) {
   if (Object.keys(answers).length !== questions.length ||
       questions.some(question => !(question.id in answers) || !validAnswer(question, answers[question.id]))) return badRequest();
 
+  const conversation = payload.conversation === undefined ? [] : readChatTurns(payload.conversation);
+  if (!conversation) return badRequest();
+
+  const records = questions.map(question => ({
+    id: question.id, question: question.label, answer: answers[question.id],
+  }));
+  if (payload.conversation !== undefined) {
+    const requirements = records.filter(item => !["name", "email"].includes(item.id) && item.answer)
+      .map(item => item.question + "\n" + item.answer).join("\n\n");
+    const customerNotes = conversation.filter(turn => turn.role === "customer" &&
+      !records.some(item => item.answer.startsWith(turn.text)))
+      .map(turn => "• " + turn.text).join("\n");
+    records.push({
+      id: briefRecordId, question: "ملخص متطلبات الطلب",
+      answer: service.name + "\n\n" + requirements +
+        (customerNotes ? "\n\nرسائل إضافية من العميل\n" + customerNotes : ""),
+    });
+    if (conversation.length) records.push({
+      id: chatRecordId, question: "سجل المحادثة", answer: JSON.stringify(conversation),
+    });
+  }
+  if (Buffer.byteLength(JSON.stringify(records)) > 63000) {
+    return Response.json({ error: "الطلب طويل جدًا. اختصر بعض الإجابات ثم حاول مجددًا." }, { status: 400 });
+  }
+
   const key = process.env.LUSAIL_ORDER_INTAKE_KEY;
   if (!key) return unavailable();
   const source = request.headers.get("x-vercel-forwarded-for") ?? request.headers.get("x-forwarded-for")?.split(",")[0] ?? "local";
@@ -45,7 +70,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         intake_key: key, order_id: payload.id, service_slug: service.slug,
         customer_name: answers.name, customer_email: answers.email,
-        order_answers: questions.map(question => ({ id: question.id, question: question.label, answer: answers[question.id] })),
+        order_answers: records,
         client_hash: clientHash,
       }),
     });

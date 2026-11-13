@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
-import { getService, services, statuses, type OrderStatus, type ServiceOrder } from "@/lib/service-orders";
+import { getService, services, statuses, chatRecordId, briefRecordId, readChatTurns, type OrderStatus, type ServiceOrder } from "@/lib/service-orders";
 import s from "../../services/orders.module.css";
 
 type Filters = { q: string; service: string; status: string; sort: string };
@@ -128,7 +128,9 @@ export function OrdersPanel() {
       `رقم الطلب: ${order.id}`,
       `الحالة: ${statuses[order.status]}`,
       `العميل: ${order.name} — ${order.email}`,
-      ...order.answers.filter(item => item.answer).map(item => `${item.question}\n${item.answer}`),
+      ...(order.answers.find(item => item.id === briefRecordId)?.answer
+        ? [order.answers.find(item => item.id === briefRecordId)!.answer]
+        : order.answers.filter(item => item.answer && item.id !== chatRecordId).map(item => `${item.question}\n${item.answer}`)),
     ].join("\n\n");
     try {
       await navigator.clipboard.writeText(summary);
@@ -192,7 +194,12 @@ export function OrdersPanel() {
       </div>
       <p aria-live="polite">{total !== null ? `الطلبات المطابقة: ${total}` : `الطلبات في هذه الصفحة: ${orders.length}`}</p>
       {!orders.length && !loading && <p className={s.panel}>لا توجد طلبات مطابقة.</p>}
-      <div className={s.orders}>{orders.map(order => <details className={s.panel} key={order.id}>
+      <div className={s.orders}>{orders.map(order => {
+        const brief = order.answers.find(item => item.id === briefRecordId)?.answer;
+        const storedChat = order.answers.find(item => item.id === chatRecordId)?.answer;
+        let turns = null;
+        try { if (storedChat) turns = readChatTurns(JSON.parse(storedChat)); } catch { /* Older records may have no transcript. */ }
+        return <details className={s.panel} key={order.id}>
         <summary><strong>{getService(order.service)?.name ?? order.service}</strong><span>{order.name}</span><span className={s.orderBadge} data-status={order.status}>{statuses[order.status]}</span></summary>
         <p><bdi className={s.reference}>{order.id}</bdi> · {dateFormat.format(new Date(order.created_at))}</p>
         <p>البريد الإلكتروني <bdi>{order.email}</bdi></p>
@@ -202,10 +209,21 @@ export function OrdersPanel() {
             {Object.entries(statuses).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
           </select>
         </label>
-        <dl className={s.review}>{order.answers.map(item => <div key={item.id}>
+        {brief && <section className={s.bubble} aria-label="ملخص متطلبات الطلب">
+          <h3>ملخص متطلبات الطلب</h3><p style={{ whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>{brief}</p>
+        </section>}
+        {!!turns?.length && <details className={s.panel}>
+          <summary>سجل المحادثة ({turns.length} رسالة)</summary>
+          <ol className={s.chatThread}>{turns.map((turn, i) => <li key={i} className={s.bubble}>
+            <strong>{turn.role === "customer" ? "العميل" : "مساعد لوسيل"}</strong>
+            <p>{turn.text}</p>
+          </li>)}</ol>
+        </details>}
+        <dl className={s.review}>{order.answers.filter(item => item.id !== briefRecordId && item.id !== chatRecordId).map(item => <div key={item.id}>
           <dt>{item.question}</dt><dd>{item.answer || "تم التخطي"}</dd>
         </div>)}</dl>
-      </details>)}</div>
+      </details>;
+      })}</div>
       <div className={s.actions} aria-label="صفحات الطلبات">
         <button className={s.secondary} disabled={page === 0 || busy || loading} onClick={() => goToPage(page - 1)}>السابق</button>
         <span>صفحة {page + 1}</span>

@@ -81,3 +81,20 @@ export function validAnswer(question: Question, answer: string) {
   if (question.email) return answer.length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answer);
   return answer.length <= (question.id === "name" ? 120 : 1600);
 }
+
+export type ChatTurn = { role: "customer" | "assistant"; text: string };
+export const maxChatTurns = 24;
+export const chatPrivateFields = new Set(["name", "email", "references", "footage-link", "current"]);
+export const chatRecordId = "service-chat-transcript";
+export const briefRecordId = "service-requirements-brief";
+
+export function readChatTurns(value: unknown): ChatTurn[] | null {
+  if (!Array.isArray(value) || value.length > maxChatTurns) return null;
+  const turns: ChatTurn[] = [];
+  for (const turn of value) {
+    if (!turn || (turn.role !== "customer" && turn.role !== "assistant") ||
+      typeof turn.text !== "string" || !turn.text.trim() || turn.text.length > 1000) return null;
+    turns.push({ role: turn.role, text: turn.text.trim() });
+  }
+  return turns;
+}

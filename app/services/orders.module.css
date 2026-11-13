@@ -66,3 +66,6 @@
 .orderBadge[data-status="in_progress"] { background: #e1eef7; color: #234e68; }
 .orderBadge[data-status="completed"] { background: #ddefe3; color: #23533b; }
 @media (max-width: 760px) { .orderFilters { grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); } }
+
+.chatThread { max-height: 350px; overflow-y: auto; padding: 8px; margin-block: 12px; list-style: none; }
+.chatThread p { white-space: pre-wrap; overflow-wrap: anywhere; }
