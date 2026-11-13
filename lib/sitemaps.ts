@@ -57,6 +57,9 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     { url: absoluteUrl("/caricatures/ai-ram-crisis"), lastModified: new Date("2026-11-08"), changeFrequency: "monthly", priority: 0.85, images: [absoluteUrl("/images/caricatures/ai-ram-crisis.jpg")] },
     { url: absoluteUrl("/services"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/services/website-design"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/services/video-editing"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/services/excel"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/services/social-design"), changeFrequency: "monthly", priority: 0.8 },
     // Separately authored routes; not included in knowledgeTopics.
     { url: absoluteUrl("/knowledge/roman-numerals"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/roman-numerals-education.svg")] },
     { url: absoluteUrl("/knowledge/learning-objectives"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/bloom-learning-levels-original.svg")] },

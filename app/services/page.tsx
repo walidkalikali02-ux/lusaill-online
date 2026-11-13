@@ -44,7 +44,7 @@ export default function ServicesPage() {
                 <strong>{service.price ?? "عرض سعر حسب الطلب"}</strong>
                 <div className={s.actions}>
                   <Link className={s.button} href={`/services/request?service=${service.slug}`} aria-label={`ابدأ طلب ${service.name}`}>ابدأ الطلب <span aria-hidden="true">←</span></Link>
-                  {service.slug === "website-design" && <Link className={s.textLink} href="/services/website-design">تفاصيل الخدمة</Link>}
+                  <Link className={s.textLink} href={`/services/${service.slug}`} aria-label={`تفاصيل ${service.name}`}>تفاصيل الخدمة</Link>
                 </div>
               </div>
             </article>;
