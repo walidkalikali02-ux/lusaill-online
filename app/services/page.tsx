@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "خدمات لوسيل الرقمية",
   description: "اطلب إنشاء موقع، مونتاج فيديو، إنشاء أو تعديل ملف إكسل، أو تصميم منشورات التواصل. حدّد متطلباتك في محادثة قصيرة.",
   alternates: pageAlternates("/services"),
+  openGraph: { title: "خدمات لوسيل الرقمية", description: "اطلب خدمة رقمية وحدّد تفاصيل مشروعك خطوة بخطوة.", url: "/services", type: "website" },
 };
 
 export default function ServicesPage() {
