@@ -25,14 +25,8 @@ const steps = [
   { number: "03", title: "نجهز الموقع للنشر", text: "نراجع التصميم والمحتوى والتواصل معك ثم ننسق موعد الإطلاق." },
 ];
 export default function WebsiteDesignPage() {
-  // Use only the verified Lusaill services number, configured in Vercel.
-  const number = (process.env.LUSAIL_SERVICES_WHATSAPP || "").replace(/\D/g, "");
-  const hasWhatsapp = number.length >= 8 && number.length <= 15;
-  const message = "مرحبًا فريق لوسيل، أرغب في طلب خدمة إنشاء موقع إلكتروني بسعر 500 ريال قطري شهريًا. أود معرفة خطوات البدء وتفاصيل الاشتراك.";
-  const contactUrl = hasWhatsapp
-    ? "https://wa.me/" + number + "?text=" + encodeURIComponent(message)
-    : "mailto:" + siteConfig.editorialEmail + "?subject=" + encodeURIComponent("طلب خدمة إنشاء موقع | لوسيل") + "&body=" + encodeURIComponent(message);
-  const contactLabel = hasWhatsapp ? "اطلب موقعك عبر واتساب" : "استفسر عن الخدمة بالبريد";
+  const contactUrl = '/services/request?service=website-design';
+  const contactLabel = 'ابدأ طلب إنشاء موقع';
   const serviceSchema = {
     "@context": "https://schema.org", "@type": "Service", name: "خدمة إنشاء المواقع الإلكترونية", description,
     serviceType: "تصميم وتطوير المواقع الإلكترونية",
@@ -51,7 +45,7 @@ export default function WebsiteDesignPage() {
         <span className={s.eyebrow}>خدمات لوسيل • إنشاء المواقع</span>
         <h1>مشروعك يستحق <span className={s.highlight}>موقعًا يُظهر قيمته.</span></h1>
         <p className={s.lead}>خلّ أول انطباع عن نشاطك احترافيًا. نصمّم لك موقعًا واضحًا وجذابًا يعرّف الناس بخدماتك، ويجعل التواصل معك خطوة سهلة — مقابل <strong>500 ريال قطري شهريًا.</strong></p>
-        <div className={s.actions}><a href={contactUrl} className={s.primaryCta} target={hasWhatsapp ? "_blank" : undefined} rel={hasWhatsapp ? "noopener noreferrer" : undefined}>{contactLabel} ←</a><a href="#what-you-get" className={s.secondaryCta}>اكتشف ما ستحصل عليه</a></div>
+        <div className={s.actions}><Link href={contactUrl} className={s.primaryCta}>{contactLabel} ←</Link><a href="#what-you-get" className={s.secondaryCta}>اكتشف ما ستحصل عليه</a></div>
         <p className={s.trustLine}>سعر شهري واضح · تصميم متجاوب · نطاق عمل نتفق عليه قبل البدء</p>
       </div>
       <div className={s.visual} role="img" aria-label="معاينة توضيحية لشكل موقع إلكتروني احترافي">
@@ -78,7 +72,7 @@ export default function WebsiteDesignPage() {
       </div>
       <aside className={s.priceBox} aria-label="سعر الاشتراك الشهري"><small>خدمة إنشاء المواقع من لوسيل</small>
         <div className={s.price}>500 <span>ر.ق / شهر</span></div><p className={s.priceCaption}>اشتراك شهري لخدمة إنشاء الموقع وإدارته وفق النطاق المتفق عليه.</p>
-        <a className={s.darkCta} href={contactUrl} target={hasWhatsapp ? "_blank" : undefined} rel={hasWhatsapp ? "noopener noreferrer" : undefined}>{contactLabel} ←</a>
+        <Link className={s.darkCta} href={contactUrl}>{contactLabel} ←</Link>
         <p className={s.priceFoot}>نوضح قبل الاشتراك تكاليف النطاق والاستضافة وأي إضافات خارج نطاق الخدمة، إن وجدت.</p>
       </aside>
     </div></div></section>
@@ -91,7 +85,7 @@ export default function WebsiteDesignPage() {
         <details><summary>ماذا أحتاج قبل طلب الموقع؟</summary><p>يكفي أن ترسل نوع النشاط واسم المشروع والصفحات التي تتوقع احتياجها وأمثلة لمواقع تعجبك. نساعدك بعد ذلك على ترتيب الخطوات.</p></details>
       </div>
     </div></section>
-    <section className={s.footCta}><div className={s.wrap}><h2>جاهز تخلي نشاطك يظهر بشكل أفضل؟</h2><p>احكِ لنا عن فكرتك، ونبدأ بتحديد الموقع المناسب لمشروعك.</p><a href={contactUrl} className={s.primaryCta} target={hasWhatsapp ? "_blank" : undefined} rel={hasWhatsapp ? "noopener noreferrer" : undefined}>{contactLabel} ←</a></div></section>
+    <section className={s.footCta}><div className={s.wrap}><h2>جاهز تخلي نشاطك يظهر بشكل أفضل؟</h2><p>احكِ لنا عن فكرتك، ونبدأ بتحديد الموقع المناسب لمشروعك.</p><Link href={contactUrl} className={s.primaryCta}>{contactLabel} ←</Link></div></section>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
   </main>;

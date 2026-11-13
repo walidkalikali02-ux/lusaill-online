@@ -1,37 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { pageAlternates } from "@/lib/page-alternates";
-import { absoluteUrl } from "@/lib/site-config";
-import s from "./services.module.css";
+import { services } from "@/lib/service-orders";
+import s from "./orders.module.css";
 
 export const metadata: Metadata = {
-  title: "خدمات لوسيل | حلول رقمية لأعمالك",
-  description: "اكتشف خدمات لوسيل الرقمية للأفراد والشركات. أنشئ موقعًا احترافيًا يعرض أعمالك ويُسهّل تواصل العملاء معك، مقابل 500 ريال قطري شهريًا.",
+  title: "خدمات لوسيل الرقمية",
+  description: "اطلب إنشاء موقع، مونتاج فيديو، إنشاء أو تعديل ملف إكسل، أو تصميم منشورات التواصل. حدّد متطلباتك في محادثة قصيرة.",
   alternates: pageAlternates("/services"),
-  openGraph: { title: "خدمات لوسيل | حلول رقمية لأعمالك", description: "خدمات رقمية لأعمالك، تبدأ بخدمة إنشاء المواقع مقابل 500 ريال قطري شهريًا.", url: "/services", type: "website" },
 };
+
 export default function ServicesPage() {
-  const breadcrumb = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
-    { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
-    { "@type": "ListItem", position: 2, name: "خدمات لوسيل", item: absoluteUrl("/services") },
-  ] };
-  return <main id="main-content" className={s.root}>
-    <section className={s.serviceHero}><div className={s.wrap}>
-      <span className={s.eyebrow}>خدمات لوسيل الرقمية</span>
-      <h1>من المعرفة إلى التنفيذ.</h1>
-      <p>من خلال خدمات لوسيل الرقمية نساعدك على تحويل أفكارك إلى حضور رقمي واضح وعملي. اختر الخدمة المناسبة لنشاطك وابدأ بخطوة بسيطة.</p>
-    </div></section>
-        <section className={s.section} id="available-services"><div className={s.wrap}>
-      <div className={s.sectionHeading}><span>أول خدماتنا</span><h2>خدمات تساعد مشروعك على النمو</h2><p>حلول رقمية سهلة البدء، بتفاصيل وتكلفة واضحتين قبل الاتفاق.</p></div>
-      <article className={s.serviceCard}><div>
-        <span className={s.eyebrow} style={{ background: "#e8f1f4", color: "#275773", borderColor: "#d5e6ed" }}>إنشاء وتصميم المواقع</span>
-        <h2>موقع احترافي يمثّل نشاطك</h2>
-        <p>موقع أنيق وسريع ومتوافق مع الجوال، يوضح خدماتك أو منتجاتك ويجعل الوصول إليك أسهل. مناسب للشركات والمشاريع الصغيرة والخدمات المهنية.</p>
-        <div className={s.servicePrice}>500 ريال قطري / شهريًا</div>
-        <Link href="/services/website-design" className={s.darkCta}>استكشف الخدمة واطلب موقعك ←</Link>
-      </div><div className={s.serviceArt} aria-hidden="true" /></article>
-      <p className={s.notice}>خدمات لوسيل الرقمية أحد مشاريع شركة لوسيل.</p>
-    </div></section>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+  return <main id="main-content" className={s.page}>
+    <header className={s.hero}>
+      <div className={s.wrap}>
+        <h1>خدمات لوسيل الرقمية</h1>
+        <p>اختر الخدمة التي تحتاجها. سنسألك خطوة بخطوة عن التفاصيل التي يحتاجها فريقنا لتقدير العمل والبدء معك.</p>
+      </div>
+    </header>
+    <section className={s.wrap} id="available-services" aria-label="الخدمات المتاحة">
+      <div className={s.grid}>{services.map(service => <article className={s.card} key={service.slug}>
+        <h2>{service.name}</h2>
+        <p>{service.description}</p>
+        <p className={s.price}>{service.price ?? "عرض سعر بحسب تفاصيل الطلب"}</p>
+        <div className={s.actions}>
+          <Link className={s.primary} href={`/services/request?service=${service.slug}`}>ابدأ الطلب <span aria-hidden="true">←</span></Link>
+          {service.slug === "website-design" && <Link className={s.back} href="/services/website-design">تفاصيل الاشتراك</Link>}
+        </div>
+      </article>)}</div>
+    </section>
   </main>;
 }
