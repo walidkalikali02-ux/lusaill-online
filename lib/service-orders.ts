@@ -88,12 +88,12 @@ export const chatPrivateFields = new Set(["name", "email", "references", "footag
 export const chatRecordId = "service-chat-transcript";
 export const briefRecordId = "service-requirements-brief";
 
-export function readChatTurns(value: unknown): ChatTurn[] | null {
-  if (!Array.isArray(value) || value.length > maxChatTurns) return null;
+export function readChatTurns(value: unknown, transcript = false): ChatTurn[] | null {
+  if (!Array.isArray(value) || value.length > (transcript ? 52 : maxChatTurns)) return null;
   const turns: ChatTurn[] = [];
   for (const turn of value) {
     if (!turn || (turn.role !== "customer" && turn.role !== "assistant") ||
-      typeof turn.text !== "string" || !turn.text.trim() || turn.text.length > 1000) return null;
+      typeof turn.text !== "string" || !turn.text.trim() || turn.text.length > (transcript ? 1600 : 1000)) return null;
     turns.push({ role: turn.role, text: turn.text.trim() });
   }
   return turns;

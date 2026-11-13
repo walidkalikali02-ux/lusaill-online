@@ -198,7 +198,7 @@ export function OrdersPanel() {
         const brief = order.answers.find(item => item.id === briefRecordId)?.answer;
         const storedChat = order.answers.find(item => item.id === chatRecordId)?.answer;
         let turns = null;
-        try { if (storedChat) turns = readChatTurns(JSON.parse(storedChat)); } catch { /* Older records may have no transcript. */ }
+        try { if (storedChat) turns = readChatTurns(JSON.parse(storedChat), true); } catch { /* Older records may have no transcript. */ }
         return <details className={s.panel} key={order.id}>
         <summary><strong>{getService(order.service)?.name ?? order.service}</strong><span>{order.name}</span><span className={s.orderBadge} data-status={order.status}>{statuses[order.status]}</span></summary>
         <p><bdi className={s.reference}>{order.id}</bdi> · {dateFormat.format(new Date(order.created_at))}</p>

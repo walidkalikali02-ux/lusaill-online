@@ -34,7 +34,7 @@ export async function POST(request: Request) {
   if (Object.keys(answers).length !== questions.length ||
       questions.some(question => !(question.id in answers) || !validAnswer(question, answers[question.id]))) return badRequest();
 
-  const conversation = payload.conversation === undefined ? [] : readChatTurns(payload.conversation);
+  const conversation = payload.conversation === undefined ? [] : readChatTurns(payload.conversation, true);
   if (!conversation) return badRequest();
 
   const records = questions.map(question => ({
@@ -44,7 +44,7 @@ export async function POST(request: Request) {
     const requirements = records.filter(item => !["name", "email"].includes(item.id) && item.answer)
       .map(item => item.question + "\n" + item.answer).join("\n\n");
     const customerNotes = conversation.filter(turn => turn.role === "customer" &&
-      !records.some(item => item.answer.startsWith(turn.text)))
+      turn.text !== "تم التخطي" && !records.some(item => item.answer === turn.text))
       .map(turn => "• " + turn.text).join("\n");
     records.push({
       id: briefRecordId, question: "ملخص متطلبات الطلب",
