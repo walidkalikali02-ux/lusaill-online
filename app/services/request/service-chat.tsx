@@ -8,7 +8,12 @@ import s from "./request.module.css";
 
 type VisibleTurn = ChatTurn & { id?: string };
 type Exchange = ChatTurn & { anchor: string; timing: "before" | "after" };
-const followupFields = new Set(["business", "purpose", "goal", "campaign"]);
+const followupFields: Readonly<Record<string, readonly string[]>> = {
+  "website-design": ["business", "goal"],
+  "video-editing": ["purpose", "style"],
+  excel: ["goal", "output"],
+  "social-design": ["platforms", "campaign"],
+};
 const reviewAnchor = "review";
 const extraTurnLimit = 12;
 
@@ -26,7 +31,6 @@ export function ServiceChat({ slug }: { slug: string }) {
   const [draft, setDraft] = useState("");
   const [inquiry, setInquiry] = useState("");
   const [mode, setMode] = useState<"answer" | "inquiry">("answer");
-  const [consent, setConsent] = useState(false);
   const [followup, setFollowup] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -43,7 +47,7 @@ export function ServiceChat({ slug }: { slug: string }) {
   const question = questions.find(item => !(item.id in answers));
   const completed = questions.filter(item => item.id in answers).length;
   const activeAnchor = followup ?? question?.id ?? reviewAnchor;
-  const canAsk = consent && exchanges.length <= extraTurnLimit - 2;
+  const canAsk = exchanges.length <= extraTurnLimit - 2;
 
   const visibleTurns = questions.flatMap<VisibleTurn>(item => {
     const answered = item.id in answers;
@@ -120,7 +124,7 @@ export function ServiceChat({ slug }: { slug: string }) {
     setDraft("");
     setError("");
     moveFocus.current = true;
-    if (answer && followupFields.has(question.id)) {
+    if (answer && followupFields[slug]?.includes(question.id)) {
       void talk(answer.slice(0, 600), "followup", question.id, activeAnswers, "after", false);
     }
   }
@@ -214,16 +218,7 @@ export function ServiceChat({ slug }: { slug: string }) {
       {generating && <p className={s.wait} role="status">مساعد لوسيل يكتب…</p>}
     </div>
     <div className={s.composer}>
-      <details className={s.settings}>
-        <summary>{consent ? "المساعد الذكي مفعّل" : "تفعيل المساعد الذكي للاستفسارات والمتابعة"}</summary>
-        <p id="ai-privacy">يتيح لك طرح استفسار ويضيف أسئلة متابعة حسب إجاباتك. تُرسل الرسائل ومقتطفات من وصف المشروع إلى OpenRouter. تجنّب المعلومات السرية. <Link href="/privacy">سياسة الخصوصية</Link></p>
-        <label><input type="checkbox" checked={consent} disabled={generating || busy} aria-describedby="ai-privacy"
-          onChange={event => {
-            const enabled = event.target.checked;
-            setConsent(enabled);
-            if (!enabled) { setMode("answer"); setFollowup(null); setInquiry(""); setDraft(""); }
-          }} /> تفعيل المساعد الذكي</label>
-      </details>
+      <p className={s.settings}>يمكنك الإجابة أو سؤال المساعد عن الخدمة. يستخدم المساعد OpenRouter للرد على الاستفسارات وطرح أسئلة متابعة بناءً على وصفك. تجنّب إرسال معلومات سرية. <Link href="/privacy">سياسة الخصوصية</Link></p>
       {(canAsk || mode === "inquiry") && !followup && <div className={s.modes} aria-label="نوع الرسالة">
         <button type="button" aria-pressed={mode === "answer"} disabled={generating || busy} onClick={() => { setMode("answer"); moveFocus.current = true; }}>{question ? "إجابة السؤال" : "مراجعة الطلب"}</button>
         <button type="button" aria-pressed={mode === "inquiry"} disabled={generating || busy} onClick={() => { setMode("inquiry"); moveFocus.current = true; }}>اسأل عن الخدمة</button>
