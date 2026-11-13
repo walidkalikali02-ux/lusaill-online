@@ -44,7 +44,7 @@ export default async function GuidePathPage({ params }: { params: Promise<{ slug
     }] : []),
   ];
   return <main id="main-content" className="category-page"><div className="shell">
-    <div className="breadcrumbs"><Link href="/">الرئيسية</Link><span>/</span><Link href="/guides">مسارات المهام</Link><span>/</span><span>{hub?.title ?? path.title}</span></div>
+    <div className="breadcrumbs"><Link href="/articles">رئيسية المشروع</Link><span>/</span><Link href="/guides">مسارات المهام</Link><span>/</span><span>{hub?.title ?? path.title}</span></div>
     <div className="category-hero"><h1>{hub?.title ?? path.title}</h1><p>{hub?.description ?? path.description}</p><p><strong>نطاق الخدمة: </strong>{path.scope}</p></div>
     {hub && <VerifiedServiceHubContent hub={hub} slugs={new Set(items.map((article) => article.slug))} />}
     {hub && extra.length > 0 && <section aria-labelledby="additional-services" className="brief-box">

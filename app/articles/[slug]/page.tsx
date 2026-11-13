@@ -148,7 +148,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     <main id="main-content" className="article-page">
       <div className="shell">
         <div className="breadcrumbs">
-          <Link href="/">الرئيسية</Link><span>/</span>
+          <Link href="/articles">رئيسية المشروع</Link><span>/</span>
           <Link href={`/categories/${cluster.slug}`}>{cluster.name}</Link><span>/</span>
           <span>{article.title}</span>
         </div>

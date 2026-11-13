@@ -1,22 +1,10 @@
-import { articles, isArticleIndexable } from "./content";
 import { restoredScienceGuides } from "./restored-science-guides";
 import { knowledgeTopics } from "./knowledge-expansion-data";
 import { foodSafetyArticles } from "./food-safety";
-import { courseMeta } from "./driving-course";
-import { geometryMeta, geometryPath } from "./geometry-course";
-import { fivegMeta, fivegPath } from "./fiveg-course";
-import { sixgMeta, sixgPath } from "./sixg-course";
 import type { SearchItem } from "./guide-search";
 
 /** Search only genuinely published pages; categories and topic routes remain unchanged. */
-export function getSiteSearchItems(): SearchItem[] {
-  const guides: SearchItem[] = articles.filter(isArticleIndexable).map(article => ({
-    slug: `article:${article.slug}`, href: `/articles/${article.slug}`,
-    title: article.title, keyword: article.keyword,
-    quickAnswer: article.quickAnswer,
-    description: article.metaDescription ?? article.quickAnswer?.slice(0, 180),
-    category: "أدلة عملية",
-  }));
+export function getEncyclopediaSearchItems(): SearchItem[] {
   const knowledge: SearchItem[] = knowledgeTopics
     .filter(topic => Boolean(topic.directAnswer?.trim()) && topic.sections.length > 0)
     .map(topic => ({
@@ -43,12 +31,5 @@ export function getSiteSearchItems(): SearchItem[] {
     description: guide.description,
     category: guide.category,
   }));
-  const courses: SearchItem[] = [
-    { slug: "course:learn-driving", href: "/courses/learn-driving", title: courseMeta.title, keyword: "تعلم القيادة كورس سيارات تعليم", description: courseMeta.description, category: "التعليم والكورسات" },
-    { slug: "course:geometry", href: geometryPath, title: geometryMeta.title, keyword: "الرياضيات المجسمات الحجوم تمارين هندسة", description: geometryMeta.description, category: "التعليم والكورسات" },
-    { slug: "course:5g", href: fivegPath, title: fivegMeta.title, keyword: "تقنية اتصالات شبكات 5G", description: fivegMeta.description, category: "التعليم والكورسات" },
-    { slug: "course:6g", href: sixgPath, title: sixgMeta.title, keyword: "تقنية اتصالات شبكات 6G", description: sixgMeta.description, category: "التعليم والكورسات" },
-  ];
-  // Special educational routes can also appear in the article catalog.
-  return [...new Map([...guides, ...restored, ...knowledge, ...specialKnowledge, ...food, ...courses].map(item => [item.href, item])).values()];
+  return [...knowledge, ...specialKnowledge, ...food, ...restored];
 }

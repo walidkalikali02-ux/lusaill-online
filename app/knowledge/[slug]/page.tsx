@@ -40,7 +40,7 @@ const breadcrumbSchema={"@context":"https://schema.org","@type":"BreadcrumbList"
  {"@type":"ListItem",position:3,name:topic.title,item:url}
 ]};
 return <main id="main-content" className="shell" style={{paddingBlock:45}}>
-<nav aria-label="مسار التنقل" style={{color:"#64748b",marginBottom:18}}><Link href="/">الرئيسية</Link> / <Link href="/knowledge">معارف وأدوات</Link> / {topic.category}</nav>
+<nav aria-label="مسار التنقل" style={{color:"#64748b",marginBottom:18}}><Link href="/knowledge">رئيسية المشروع</Link> / <Link href="/knowledge">معارف وأدوات</Link> / {topic.category}</nav>
 <article style={{maxWidth:990,margin:"auto",lineHeight:1.95,color:"#14273b"}}>
 <header>
 <p style={{color:"#0f766e",fontWeight:700}}>{topic.category} · دليل أصلي بمصادر واضحة</p>

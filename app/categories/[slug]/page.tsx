@@ -95,7 +95,7 @@ export default async function ClusterPage({ params, searchParams }: { params: Pr
     <main id="main-content" className="category-page">
       <div className="shell">
         <div className="breadcrumbs">
-          <Link href="/">الرئيسية</Link><span>/</span>
+          <Link href="/articles">رئيسية المشروع</Link><span>/</span>
           <Link href="/categories">التصنيفات</Link><span>/</span>
           <span>{cluster.name}</span>
         </div>

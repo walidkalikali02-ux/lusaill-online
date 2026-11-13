@@ -20,7 +20,7 @@ export default function GuidesPage() {
       mainEntity: { "@type": "ItemList", itemListElement: guidePaths.map((path, index) => ({ "@type": "ListItem", position: index + 1, name: path.title, url: absoluteUrl(`/guides/${path.slug}`) })) } },
   ];
   return <main id="main-content" className="category-page"><div className="shell">
-    <div className="breadcrumbs"><Link href="/">الرئيسية</Link><span>/</span><span>مسارات المهام</span></div>
+    <div className="breadcrumbs"><Link href="/articles">رئيسية المشروع</Link><span>/</span><span>مسارات المهام</span></div>
     <div className="category-hero"><h1>ابدأ من المهمة التي تحتاجها</h1><p>{description}</p></div>
     <div className="trust-grid">{guidePaths.map((path) => <section className="trust-card" key={path.slug}>
       <h2><Link href={`/guides/${path.slug}`}>{path.title}</Link></h2><p>{path.description}</p><p>{path.scope}</p>

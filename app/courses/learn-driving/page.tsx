@@ -76,7 +76,7 @@ export default function DrivingCoursePage() {
         <div className="shell course-hero-grid">
           <div className="course-hero-copy">
             <div className="breadcrumbs course-breadcrumbs">
-              <Link href="/">الرئيسية</Link><span>/</span><Link href="/courses">الكورسات</Link><span>/</span><span>تعلم القيادة</span>
+              <Link href="/courses">رئيسية المشروع</Link><span>/</span><Link href="/courses">الكورسات</Link><span>/</span><span>تعلم القيادة</span>
             </div>
             <span className="course-kicker">مسار عملي من الصفر · {drivingLessons.length} دروس مترابطة</span>
             <h1>{courseMeta.title}</h1>

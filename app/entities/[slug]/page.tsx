@@ -71,7 +71,7 @@ export default async function EntityPage({ params }: { params: Promise<{ slug: s
     <main id="main-content" className="text-page">
       <div className="shell text-shell">
         <div className="breadcrumbs">
-          <Link href="/">الرئيسية</Link><span>/</span>
+          <Link href="/articles">رئيسية المشروع</Link><span>/</span>
           <Link href="/entities">الجهات والخدمات</Link><span>/</span>
           <span>{entity.name}</span>
         </div>

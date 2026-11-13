@@ -50,7 +50,7 @@ export default function CaricaturePage() {
   return (
     <main id="main-content" className={s.page}>
       <div className={s.wrap}>
-        <nav className={s.crumb} aria-label="مسار التنقل"><Link href="/">الرئيسية</Link><span>/</span><Link href="/caricatures">الكاريكاتير</Link><span>/</span><span>أزمة الرامات</span></nav>
+        <nav className={s.crumb} aria-label="مسار التنقل"><Link href="/caricatures">رئيسية المشروع</Link><span>/</span><Link href="/caricatures">الكاريكاتير</Link><span>/</span><span>أزمة الرامات</span></nav>
         <header className={s.articleHeader}>
           <span className={s.eyebrow}>كاريكاتير تقني · الاقتصاد الرقمي</span>
           <h1 className={s.title}>{title}</h1>

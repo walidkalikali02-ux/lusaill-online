@@ -52,11 +52,24 @@ const homepage = await get(`${origin}/`);
 const homepageLinks = [...homepage.matchAll(/<a\b[^>]*href="([^"]+)"/g)].map((m) => m[1]);
 assert(homepageLinks.includes('/articles'), 'Homepage lacks crawlable all-guides link');
 const catalog = await get(`${origin}/articles`);
-for (const url of urls.filter((url) => new URL(url).pathname.startsWith('/articles/'))) assert(catalog.includes(`href="${new URL(url).pathname}"`), `Article not reachable in two clicks: ${url}`);
+const encyclopedia = await get(`${origin}/knowledge`);
+for (const [path, html] of await Promise.all([
+  ["/knowledge", Promise.resolve(encyclopedia)], ["/articles", Promise.resolve(catalog)],
+  ["/services"], ["/services/website-design"], ["/caricatures"], ["/topics"], ["/search?q=شبكات"]
+].map(async ([path, page]) => [path, page ? await page : await get(new URL(path, origin))]))) {
+  const project = path.startsWith("/services") ? "/services" : path === "/caricatures" ? "/caricatures" : path === "/articles" ? "/articles" : "/knowledge";
+  assert(html.includes(`data-project="${project}"`), `Incorrect project navigation: ${path}`);
+  const visibleHtml = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "");
+  for (const sibling of ["/courses", "/caricatures", "/services", "/knowledge", "/guides", "/food-safety"]) {
+    if ((project === "/knowledge" && sibling === "/food-safety") || (project === "/articles" && sibling === "/guides") || project === sibling) continue;
+    assert(!new RegExp(`href="${sibling}(?:[/#?]|")`).test(visibleHtml), `Unrelated project link (${sibling}) on ${path}`);
+  }
+}
+for (const url of urls.filter((url) => new URL(url).pathname.startsWith('/articles/'))) assert((/\/articles\/(solar-system|weather-climate)$/.test(url) ? encyclopedia : catalog).includes(`href="${new URL(url).pathname}"`), `Article not reachable in two clicks: ${url}`);
 const homeDescription = homepage.match(/<meta name="description" content="([^"]+)"/)?.[1] ?? '';
 assert(homeDescription.length >= 140 && homeDescription.length <= 155, 'Homepage description must be 140–155 characters');
 assert(homepage.includes('id="projects"'), 'Company projects section missing');
-for (const path of ['/knowledge', '/services', '/courses', '/caricatures', '/guides']) assert(homepageLinks.includes(path), 'Company project link missing: ' + path);
+for (const path of ['/knowledge', '/services', '/courses', '/caricatures']) assert(homepageLinks.includes(path), 'Company project link missing: ' + path);
 if (new URL(origin).hostname === '127.0.0.1') {
   const apexRedirect = await new Promise((resolve, reject) => {
     const req = request(`${origin}/articles/old-rent-housing-apply?test=1`, { headers: { host: 'lusaill.online' } }, (response) => { response.resume(); resolve(response); });

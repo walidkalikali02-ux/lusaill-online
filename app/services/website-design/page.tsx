@@ -62,7 +62,7 @@ export default function WebsiteDesignPage() {
         </div><div className={s.floatingStat}>✦ تصميم عربي متجاوب</div>
       </div>
     </div></div></section>
-    <div className={s.wrap}><nav className={s.crumbs} aria-label="مسار التصفح"><Link href="/">الرئيسية</Link> / <Link href="/services">الخدمات</Link> / إنشاء المواقع</nav></div>
+    <div className={s.wrap}><nav className={s.crumbs} aria-label="مسار التصفح"><Link href="/services">رئيسية المشروع</Link> / <Link href="/services">الخدمات</Link> / إنشاء المواقع</nav></div>
     <section className={s.section} id="what-you-get"><div className={s.wrap}>
       <div className={s.sectionHeading}><span>موقعك يبدأ من هنا</span><h2>كل ما يحتاجه زائرك، بتجربة واحدة واضحة</h2><p>نركز على بناء موقع يخدم هدف نشاطك بدل إضافة تفاصيل تقنية لا يحتاجها العميل.</p></div>
       <div className={s.gridThree}>{features.map((feature) => <article key={feature.title} className={s.featureCard}><span className={s.featureIcon} aria-hidden="true">{feature.icon}</span><h3>{feature.title}</h3><p>{feature.text}</p></article>)}</div>

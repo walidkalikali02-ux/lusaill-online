@@ -4,7 +4,7 @@ import Image from "next/image";
 import { editorialImagePath } from "@/lib/editorial-image-url";
 import { getKnowledgeTopic } from "@/lib/knowledge-expansion-data";
 import { pageAlternates } from "@/lib/page-alternates";
-export const metadata:Metadata={title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),openGraph:{url:"/knowledge",title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة."},robots:{index:true,follow:true}};
+export const metadata:Metadata={title:"موسوعة لوسيل | الصفحة الرئيسية",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),openGraph:{url:"/knowledge",title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة."},robots:{index:true,follow:true}};
 const guides=[
 {href:"/knowledge/read-food-nutrition-facts-label-serving-size",title:"قراءة الملصق الغذائي",description:"كيف تقرأ الملصق الغذائي وتقارن المنتجات باستخدام حجم الحصة والسعرات والسكريات المضافة والصوديوم وقائمة المكونات دون تضليل التسويق؟",kind:"التغذية والملصقات"},
 {href:"/knowledge/fridge-freezer-food-storage-temperature-guide",title:"حفظ الطعام في الثلاجة",description:"درجات حرارة الثلاجة والفريزر وحفظ الوجبات واللحوم والتبريد السريع ومنع تلوث الأطعمة، مع أمثلة على التخزين وإعادة التسخين.",kind:"سلامة الغذاء المنزلية"},
@@ -149,9 +149,14 @@ const guides=[
 ];
 export default function KnowledgeIndex(){
 return <main id="main-content" className="shell" style={{paddingBlock:52}}>
-<nav aria-label="مسار التنقل" style={{color:"#64748b",marginBottom:16}}><Link href="/">الرئيسية</Link> / معارف وأدوات</nav>
-<h1 style={{fontSize:"clamp(30px,4vw,44px)",fontWeight:800,marginBottom:16}}>استكشف مقالات موسوعة لوسيل</h1>
-<p style={{fontSize:18,color:"#475569",maxWidth:820,marginBottom:30}}>اكتشف مقالات الموسوعة في موضوعات العلوم والصحة والتعليم والتقنية والحياة اليومية. بعض الموضوعات تتضمن جداول وتمارين وأدوات عملية تساعدك على الفهم، ونعمل على توسيع التغطية باستمرار.</p>
+<section className="encyclopedia-welcome">
+<span>المعرفة العربية</span>
+<h1>موسوعة لوسيل</h1>
+<p>استكشف العلوم والصحة والتعليم والتقنية والحياة اليومية. ابدأ من سؤال، أو اختر مجالًا لتتصفّح مقالات الموسوعة وأدواتها.</p>
+<form action="/search" method="get" role="search"><input type="search" name="q" aria-label="ابحث في موسوعة لوسيل" placeholder="عن أي موضوع تبحث؟" maxLength={200} required /><button type="submit">بحث</button></form>
+<nav aria-label="استكشف الموسوعة"><Link href="/topics">تصفّح الفئات</Link><Link href="#encyclopedia-articles">المقالات والأدوات</Link><Link href="/food-safety">سلامة الغذاء</Link></nav>
+</section>
+<h2 id="encyclopedia-articles">المقالات والأدوات</h2>
 <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(270px,1fr))",gap:18}}>
 {guides.map(guide => {
   const slug = guide.href.slice("/knowledge/".length);

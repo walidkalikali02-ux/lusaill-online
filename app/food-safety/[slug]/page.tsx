@@ -76,7 +76,7 @@ export default async function FoodSafetyArticlePage({ params }: PageProps) {
   return (
     <main id="main-content" className="food-section-page">
       <div className="shell">
-        <nav className="food-breadcrumbs" aria-label="مسار التنقل"><Link href="/">الرئيسية</Link><span>/</span><Link href="/food-safety">سلامة الغذاء</Link><span>/</span><span>{article.title}</span></nav>
+        <nav className="food-breadcrumbs" aria-label="مسار التنقل"><Link href="/knowledge">رئيسية المشروع</Link><span>/</span><Link href="/food-safety">سلامة الغذاء</Link><span>/</span><span>{article.title}</span></nav>
         <div className="food-layout">
           <article className="food-article">
             <EditorialCover

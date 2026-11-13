@@ -85,3 +85,25 @@
 .company-hero .company-button{font-size:16px}
 @media(min-width:1000px){.company-header .identity-nav{display:flex;gap:30px}.company-header .masthead-search{max-width:240px}}
 .company-header .mobile-menu-btn,.company-header .header-search-btn{background:transparent;color:#f6f7f1}.company-header .masthead-search button{color:#f6f7f1}
+
+/* Project navigation stays within the current project. */
+.project-masthead,.project-footer{background:#fafbf8;color:#26342b;border-block:1px solid #d8e0d8}
+.project-masthead[data-project="/services"]{background:#eff5f7;color:#153d52}
+.project-masthead[data-project="/caricatures"]{background:#fcf4ea;color:#462f22}
+.project-masthead-inner{display:flex;align-items:center;justify-content:space-between;gap:22px;padding-block:20px}
+.project-masthead-inner nav{display:flex;gap:clamp(12px,2vw,28px);flex-wrap:wrap;font-size:14px}
+.project-masthead-inner nav a:hover,.project-masthead-inner nav a[aria-current]{text-decoration:underline;text-underline-offset:5px}
+.project-brand strong,.project-brand small{display:block}
+.project-brand strong{font-size:22px;font-weight:700}
+.project-brand small{font-size:12px;opacity:.85}
+.project-company-link{font-size:13px;border:1px solid currentColor;padding:8px 12px;white-space:nowrap}
+.project-footer .project-masthead-inner,.site-footer .project-masthead-inner{padding-block:28px}
+.encyclopedia-welcome{background:#eaf1eb;color:#1e3e34;border:1px solid #c9dbcd;border-radius:20px;padding:clamp(22px,5vw,58px);margin-bottom:38px}
+.encyclopedia-welcome h1{font-size:clamp(38px,6vw,66px);line-height:1.25;margin-block:12px}
+.encyclopedia-welcome p{max-width:46rem;line-height:1.8}
+.encyclopedia-welcome form{display:flex;gap:8px;margin-block:22px;max-width:40rem}
+.encyclopedia-welcome input{flex:1;min-width:0;border:1px solid #a6bdae;border-radius:8px;background:#fff;padding:12px}
+.encyclopedia-welcome button{background:#235545;color:#fff;border-radius:8px;padding:10px 20px}
+.encyclopedia-welcome nav{display:flex;gap:12px 22px;flex-wrap:wrap}
+.encyclopedia-welcome nav a{text-decoration:underline;text-underline-offset:5px}
+@media(max-width:720px){.project-masthead-inner{flex-wrap:wrap;gap:14px}.project-masthead-inner nav{order:2;flex-basis:100%}}

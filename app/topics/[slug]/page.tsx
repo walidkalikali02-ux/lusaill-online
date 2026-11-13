@@ -65,7 +65,7 @@ export default async function TopicPage({ params, searchParams }: Props) {
   };
   return <main id="main-content" className={styles.page}>
     <div className="shell">
-      <nav aria-label="مسار التنقل" className={styles.breadcrumb}><Link href="/">الرئيسية</Link><span>/</span><Link href="/topics">فئات الموسوعة</Link><span>/</span><span>{category.title}</span></nav>
+      <nav aria-label="مسار التنقل" className={styles.breadcrumb}><Link href="/knowledge">رئيسية المشروع</Link><span>/</span><Link href="/topics">فئات الموسوعة</Link><span>/</span><span>{category.title}</span></nav>
       <header className={styles.hero}>
         <span className={styles.icon} aria-hidden="true">{category.symbol}</span>
         <div><p className={styles.kicker}>قسم من موسوعة لوسيل</p><h1>{category.title}</h1><p>{category.summary}</p>

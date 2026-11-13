@@ -21,7 +21,7 @@ export default function FoodSafetyHub() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
-      { "@type": "ListItem", position: 2, name: "الأدلة", item: absoluteUrl("/articles") },
+      { "@type": "ListItem", position: 2, name: "موسوعة لوسيل", item: absoluteUrl("/knowledge") },
       { "@type": "ListItem", position: 3, name: "سلامة الغذاء", item: absoluteUrl("/food-safety") },
     ],
   };
@@ -45,7 +45,7 @@ export default function FoodSafetyHub() {
   return (
     <main id="main-content" className="food-section-page">
       <div className="shell">
-        <nav className="food-breadcrumbs" aria-label="مسار التنقل"><Link href="/">الرئيسية</Link><span>/</span><Link href="/articles">الأدلة</Link><span>/</span><span>سلامة الغذاء</span></nav>
+        <nav className="food-breadcrumbs" aria-label="مسار التنقل"><Link href="/knowledge">موسوعة لوسيل</Link><span>/</span><span>سلامة الغذاء</span></nav>
         <header className="category-hero">
           <span className="article-card-tag">أدلة مصورة ومراجع علمية</span>
           <h1>سلامة الغذاء والتسمم الغذائي</h1>

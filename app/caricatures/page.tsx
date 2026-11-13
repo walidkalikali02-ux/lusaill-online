@@ -60,7 +60,6 @@ export default function CaricatureIndex() {
   return (
     <main id="main-content" className={s.page}>
       <div className={s.wrap}>
-        <nav className={s.crumb} aria-label="مسار التنقل"><Link href="/">الرئيسية</Link><span>/</span><span>الكاريكاتير</span></nav>
         <section className={s.hero}>
           <div>
             <span className={s.eyebrow}>رسوم تحكي ما وراء الخبر</span>
@@ -75,7 +74,7 @@ export default function CaricatureIndex() {
           </figure>
         </section>
         <section aria-label="الأعمال المنشورة">
-          <h2 className={s.sectionTitle}>الأعمال المنشورة</h2>
+          <h2 className={s.sectionTitle} id="gallery">الأعمال المنشورة</h2>
           <div className={s.artGrid}>
             {gallery.map((item) => (
               <Link className={s.artCard} href={"/caricatures/" + item.slug} key={item.slug}>

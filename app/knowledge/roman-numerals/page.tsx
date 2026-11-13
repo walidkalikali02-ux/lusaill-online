@@ -27,7 +27,7 @@ export default function RomanNumeralsPage(){
     publisher:{"@type":"Organization",name:"لوسيل",url:absoluteUrl("/")},image:absoluteUrl("/images/roman-numerals-education.svg"),
     mainEntityOfPage:{"@type":"WebPage","@id":url}};
   return <main id="main-content" className="shell" style={{paddingBlock:44}}>
-    <nav aria-label="مسار التنقل" style={{color:"#64748b",marginBottom:18}}><Link href="/">الرئيسية</Link> / <Link href="/knowledge">معارف وأدوات</Link> / الأرقام الرومانية</nav>
+    <nav aria-label="مسار التنقل" style={{color:"#64748b",marginBottom:18}}><Link href="/knowledge">رئيسية المشروع</Link> / <Link href="/knowledge">معارف وأدوات</Link> / الأرقام الرومانية</nav>
     <article style={{maxWidth:950,margin:"auto"}}>
       <header><p style={{fontSize:14,color:"#475569"}}>رياضيات · شرح أصلي وأداة تعليمية</p>
         <h1 style={{fontSize:"clamp(29px,4vw,44px)",fontWeight:800,lineHeight:1.5,margin:"12px 0"}}>{title}</h1>
