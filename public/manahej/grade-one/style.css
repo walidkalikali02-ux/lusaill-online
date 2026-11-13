@@ -22,6 +22,19 @@ p{line-height:1.65;margin:.4em 0}
 .subject{margin-top:0}
 .score,.phase{font-weight:750;color:var(--purple)}
 .subject .score{color:#e0d2ff;margin-top:14px}
+.subject progress{display:block;max-width:360px;accent-color:#d4c0ff;margin:8px 0 16px}
+.resume,.term-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.resume .primary{background:#eee5ff;color:#26213e;border-color:#eee5ff}
+.resume span{color:#f3eaff}
+.term-links{margin-bottom:22px}
+.term-links a{display:inline-flex;align-items:center;min-height:44px;padding:8px 13px;background:#fff;border:1px solid var(--line);border-radius:12px;font-weight:700;text-decoration:none}
+.term-links a:hover{border-color:var(--purple)}
+.term{scroll-margin-top:16px}
+.unit{margin:0 0 22px}
+.unit h3{font-size:1.12rem;margin:0 0 10px}
+.lesson-link[data-status=done] .lesson-number{color:#15523d;background:#def2e8}
+.lesson-link[data-status=done] .lesson-status{color:#15523d;font-weight:700}
+.lesson-link[data-status=started] .lesson-status{color:#674015;font-weight:700}
 .term{margin-bottom:26px}
 .lesson-number{display:grid;place-items:center;min-width:36px;height:36px;border-radius:10px;font-weight:800}
 .lesson-link:hover,.grade[href]:hover{border-color:var(--purple)}

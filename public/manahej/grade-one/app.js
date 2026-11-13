@@ -1,10 +1,41 @@
 (() => {
   const lessons = window.mathLessons;
+  const units = window.mathUnits;
+  const byId = new Map(lessons.map(item => [item.id, item]));
+  const lessonOrder = units.flatMap(unit => unit.ids.map(id => byId.get(id)));
   const ar = window.arNumber;
   const el = id => document.getElementById(id);
   const storageKey = 'manahej-qatar-grade-one-v1';
+  const progressKey = 'manahej-qatar-grade-one-progress-v1';
   let scores = {};
-  try { scores = JSON.parse(localStorage.getItem(storageKey)) || {}; } catch {}
+  let progress = {last:null,drafts:{}};
+  function readStorage(key) {
+    try {
+      const value = JSON.parse(localStorage.getItem(key));
+      return value && typeof value === 'object' && !Array.isArray(value) ? value : {};
+    } catch {
+      return {};
+    }
+  }
+  const savedScores = readStorage(storageKey);
+  for (const item of lessons) {
+    const score = savedScores[item.id];
+    if (Number.isInteger(score) && score >= 0 && score <= item.stages.length*10) scores[item.id] = score;
+  }
+  const savedProgress = readStorage(progressKey);
+  progress.last = byId.has(savedProgress.last) ? savedProgress.last : null;
+  for (const item of lessons) {
+    const draft = savedProgress.drafts?.[item.id];
+    const activity = item.stages[draft?.index];
+    if (!Number.isInteger(draft?.index) || !activity || !Number.isInteger(draft.points) ||
+      draft.points < 0 || draft.points > (draft.index + (draft.phase === 'review' ? 1 : 0))*10 ||
+      !Number.isInteger(draft.step) || draft.step < 0 || draft.step > maxSteps(activity.art)) continue;
+    if (draft.phase === 'predict' ? draft.prediction === null && draft.step === 0 :
+      (draft.phase === 'try' || draft.phase === 'review') && activity.options.includes(draft.prediction) &&
+      (draft.phase !== 'review' || draft.step === maxSteps(activity.art))) {
+      progress.drafts[item.id] = draft;
+    }
+  }
   let lesson;
   let index;
   let prediction;
@@ -27,10 +58,10 @@
     parts: ['قسّم الشكل','أضف خط تقسيم'],
     pattern: ['أظهر المجموعة الأولى','كرّر المجموعة']
   };
-  const maxSteps = art => ({
+  function maxSteps(art) { return ({
     count: Math.max(1,art.n),compare:Math.min(art.a,art.b),line:3,
     length:art.n,clock:2,shape:Math.max(1,art.sides),parts:art.n===4?2:1,pattern:2
-  }[art.type] || 1);
+  }[art.type] || 1); }
   const show = value => typeof value === 'number' ? ar(value) : value;
   const fmt = score => ar(score) + ' نقطة';
   const token = (icon,kind='') => '<span class="token '+kind+'">'+icon+'</span>';
@@ -121,25 +152,60 @@
     }
   };
 
+  function saveProgress() {
+    try { localStorage.setItem(progressKey,JSON.stringify(progress)); } catch {}
+  }
+
+  function checkpoint() {
+    progress.last = lesson.id;
+    progress.drafts[lesson.id] = {index,prediction,step,phase,points};
+    saveProgress();
+  }
+
   function renderCatalog() {
-    el('catalog-score').textContent = 'مجموع أفضل نتائجك · '+fmt(Object.values(scores).reduce((total,value)=>total+value,0));
+    const finished = Object.keys(scores).length;
+    el('catalog-score').textContent = 'أكملت '+ar(finished)+' من '+ar(lessons.length)+' درسًا · '+fmt(Object.values(scores).reduce((total,value)=>total+value,0));
+    el('catalog-progress').max = lessons.length;
+    el('catalog-progress').value = finished;
+    const last = byId.get(progress.last);
+    const draft = last && progress.drafts[last.id];
+    const next = last && lessonOrder.slice(lessonOrder.indexOf(last)+1).find(item=>!Object.hasOwn(scores,item.id));
+    const target = draft ? last : next || lessonOrder.find(item=>!Object.hasOwn(scores,item.id)) || last || lessonOrder[0];
+    el('resume-link').href = '#درس-'+target.id;
+    el('resume-link').textContent = draft ? 'كمّل من حيث توقفت ←' : finished === lessons.length ? 'راجع درسًا ←' :
+      last || finished ? 'ابدأ الدرس التالي ←' : 'ابدأ أول درس ←';
+    el('resume-detail').textContent = target.title + (draft ? ' · المرحلة '+ar(draft.index+1)+' من '+ar(target.stages.length) : '');
     el('terms').replaceChildren();
     for (const term of [1,2]) {
       const group = document.createElement('section');
       group.className='term';
+      group.id='term-'+term;
       const title=document.createElement('h2');
       title.textContent=term===1?'الفصل الدراسي الأول':'الفصل الدراسي الثاني';
-      const grid=document.createElement('div');
-      grid.className='catalog-grid';
-      for (const item of lessons.filter(item=>item.term===term)) {
-        const link=document.createElement('a');
-        link.className='lesson-link';
-        link.href='#درس-'+item.id;
-        link.innerHTML='<span class="lesson-number">'+ar(item.id)+'</span><div><strong>'+item.title+'</strong><small>'+item.goal+
-          (Object.hasOwn(scores,item.id)?' · '+fmt(scores[item.id]):'')+'</small></div>';
-        grid.append(link);
+      group.append(title);
+      for (const unit of units.filter(unit=>unit.term===term)) {
+        const block=document.createElement('section');
+        block.className='unit';
+        const heading=document.createElement('h3');
+        heading.textContent=unit.title;
+        const grid=document.createElement('div');
+        grid.className='catalog-grid';
+        for (const id of unit.ids) {
+          const item=byId.get(id);
+          const link=document.createElement('a');
+          const done=Object.hasOwn(scores,id);
+          const started=Object.hasOwn(progress.drafts,id);
+          link.className='lesson-link';
+          link.setAttribute('data-status',done?'done':started?'started':'new');
+          link.href='#درس-'+id;
+          link.innerHTML='<span class="lesson-number" aria-hidden="true">'+(done?'✓':ar(lessonOrder.indexOf(item)+1))+
+            '</span><div><strong>'+item.title+'</strong><small>'+item.goal+'</small><small class="lesson-status">'+
+            (done?'مكتمل · '+fmt(scores[id]):started?'قيد التقدّم':'لم يبدأ بعد')+'</small></div>';
+          grid.append(link);
+        }
+        block.append(heading,grid);
+        group.append(block);
       }
-      group.append(title,grid);
       el('terms').append(group);
     }
   }
@@ -148,17 +214,32 @@
     prediction=null;
     step=0;
     phase='predict';
+    checkpoint();
     render();
     el('prompt').focus();
   }
 
-  function start(item) {
+  function start(item, replay=false) {
     lesson=item;
-    index=0;
-    points=0;
     complete=false;
     el('catalog').hidden=true;
     el('lesson').hidden=false;
+    const draft = !replay && progress.drafts[item.id];
+    if (draft) {
+      ({index,prediction,step,phase,points}=draft);
+      checkpoint();
+      render();
+      (phase==='predict'?el('prompt'):el('advance')).focus();
+      return;
+    }
+    if (!replay && Object.hasOwn(scores,item.id)) {
+      complete=true;
+      points=scores[item.id];
+      render();
+      return;
+    }
+    index=0;
+    points=0;
     resetStage();
   }
 
@@ -170,7 +251,7 @@
     el('play').hidden=complete;
     el('result').hidden=!complete;
     if (complete) {
-      el('result-score').textContent='جمعت '+ar(points)+' من '+fmt(lesson.stages.length*10)+'.';
+      el('result-score').textContent='أفضل نتيجة: '+ar(scores[lesson.id])+' من '+fmt(lesson.stages.length*10)+'.';
       el('result-title').focus();
       return;
     }
@@ -197,6 +278,7 @@
         button.addEventListener('click',()=>{
           prediction=option;
           phase='try';
+          checkpoint();
           render();
           el('advance').focus();
         });
@@ -227,6 +309,7 @@
         phase='review';
         if (prediction===activity.answer) points+=10;
       }
+      checkpoint();
       render();
     } else if (phase==='review') {
       if (index+1<lesson.stages.length) {
@@ -237,22 +320,26 @@
       complete=true;
       scores[lesson.id]=Math.max(scores[lesson.id]||0,points);
       try { localStorage.setItem(storageKey,JSON.stringify(scores)); } catch {}
+      delete progress.drafts[lesson.id];
+      saveProgress();
       render();
     }
   });
-  el('repeat').addEventListener('click',()=>start(lesson));
+  el('repeat').addEventListener('click',()=>start(lesson,true));
   function route() {
     let hash='';
     try { hash=decodeURIComponent(location.hash); } catch {}
     const item=lessons.find(item=>hash==='#درس-'+item.id);
     if (item) {
       start(item);
+      window.scrollTo(0,0);
     } else {
       el('catalog').hidden=false;
       el('lesson').hidden=true;
       renderCatalog();
+      if (hash==='#term-1' || hash==='#term-2') el(hash.slice(1))?.scrollIntoView();
+      else window.scrollTo(0,0);
     }
-    window.scrollTo(0,0);
   }
   window.addEventListener('hashchange',route);
   route();
