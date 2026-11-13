@@ -1,5 +1,5 @@
 import { createHmac } from "node:crypto";
-import { getService, getQuestions, validAnswer, type AnswerMap, readChatTurns, chatRecordId, briefRecordId } from "@/lib/service-orders";
+import { getService, getServiceBrief, getQuestions, validAnswer, type AnswerMap, readChatTurns, chatRecordId, briefRecordId } from "@/lib/service-orders";
 import { supabaseRequest } from "@/lib/order-storage";
 
 const badRequest = () => Response.json({ error: "يرجى إكمال إجابات الطلب ومراجعتها." }, { status: 400 });
@@ -41,16 +41,7 @@ export async function POST(request: Request) {
     id: question.id, question: question.label, answer: answers[question.id],
   }));
   if (payload.conversation !== undefined) {
-    const requirements = records.filter(item => !["name", "email"].includes(item.id) && item.answer)
-      .map(item => item.question + "\n" + item.answer).join("\n\n");
-    const customerNotes = conversation.filter(turn => turn.role === "customer" &&
-      turn.text !== "تم التخطي" && !records.some(item => item.answer === turn.text))
-      .map(turn => "• " + turn.text).join("\n");
-    records.push({
-      id: briefRecordId, question: "ملخص متطلبات الطلب",
-      answer: service.name + "\n\n" + requirements +
-        (customerNotes ? "\n\nرسائل إضافية من العميل\n" + customerNotes : ""),
-    });
+    records.push({ id: briefRecordId, question: "ملخص متطلبات الطلب", answer: getServiceBrief(service, answers, conversation) });
     if (conversation.length) records.push({
       id: chatRecordId, question: "سجل المحادثة", answer: JSON.stringify(conversation),
     });

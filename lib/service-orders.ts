@@ -98,3 +98,31 @@ export function readChatTurns(value: unknown, transcript = false): ChatTurn[] | 
   }
   return turns;
 }
+
+export function mergeServiceAnswers(service: NonNullable<ReturnType<typeof getService>>, answers: AnswerMap, additions: AnswerMap): AnswerMap {
+  const updated = { ...answers };
+  // Apply controlling choices first so conditional fields are checked against the new branch.
+  for (const item of getQuestions(service, answers)) {
+    const value = additions[item.id];
+    if (item.options && !item.when && typeof value === "string" && validAnswer(item, value)) updated[item.id] = value;
+  }
+  const questions = getQuestions(service, updated);
+  for (const item of questions) {
+    const value = additions[item.id];
+    if (typeof value === "string" && validAnswer(item, value)) updated[item.id] = value;
+  }
+  return Object.fromEntries(questions.filter(item => item.id in updated).map(item => [item.id, updated[item.id]]));
+}
+
+export function getServiceBrief(service: NonNullable<ReturnType<typeof getService>>, answers: AnswerMap, conversation: ChatTurn[]) {
+  const requirements = getQuestions(service, answers)
+    .filter(item => item.id !== "name" && item.id !== "email" && answers[item.id])
+    .map(item => item.label + "\n" + answers[item.id]).join("\n\n");
+  const values = Object.values(answers).filter(Boolean);
+  const notes = conversation.filter(turn => turn.role === "customer" && turn.text !== "تم التخطي" &&
+    !values.some(value => value === turn.text) &&
+    // Keep extra context and questions, but do not duplicate a message captured verbatim.
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(turn.text))
+    .map(turn => "• " + turn.text).join("\n");
+  return [service.name, requirements, notes ? "رسائل إضافية من العميل\n" + notes : ""].filter(Boolean).join("\n\n");
+}

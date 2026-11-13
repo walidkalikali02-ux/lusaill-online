@@ -66,3 +66,7 @@
 @media (max-width: 760px) {
   .layout { grid-template-columns: minmax(0, 1fr); }
 }
+
+.brief { white-space: pre-wrap; overflow-wrap: anywhere; background: #eef2e7; border: 1px solid var(--border); padding: 14px; border-radius: 10px; margin-block: 12px; }
+.composer :is(h3, .choices) { margin-block: 8px; }
+.review summary { cursor: pointer; }

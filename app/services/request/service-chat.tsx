@@ -1,21 +1,14 @@
 "use client";
 
-import { Fragment, useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import Link from "next/link";
-import { getQuestions, getService, validAnswer, type AnswerMap, type ChatTurn, chatPrivateFields } from "@/lib/service-orders";
+import { chatPrivateFields, getQuestions, getService, getServiceBrief, mergeServiceAnswers, validAnswer, type AnswerMap, type ChatTurn } from "@/lib/service-orders";
 import studio from "../studio.module.css";
 import s from "./request.module.css";
 
-type VisibleTurn = ChatTurn & { id?: string };
-type Exchange = ChatTurn & { anchor: string; timing: "before" | "after" };
-const followupFields: Readonly<Record<string, readonly string[]>> = {
-  "website-design": ["business", "goal"],
-  "video-editing": ["purpose", "style"],
-  excel: ["goal", "output"],
-  "social-design": ["platforms", "campaign"],
-};
-const reviewAnchor = "review";
-const extraTurnLimit = 12;
+const skip = "تم التخطي";
+const extraMessageLimit = 28;
+const inquiryPattern = /[؟?]|^(هل|كم|كيف|متى|ما هو|ما هي|وش|ايش|إيش|ممكن)\s/u;
 
 function Bubble({ role, children }: { role: ChatTurn["role"]; children: ReactNode }) {
   return <div className={s.bubble} data-role={role}>
@@ -27,11 +20,10 @@ function Bubble({ role, children }: { role: ChatTurn["role"]; children: ReactNod
 export function ServiceChat({ slug }: { slug: string }) {
   const service = getService(slug)!;
   const [answers, setAnswers] = useState<AnswerMap>({});
-  const [exchanges, setExchanges] = useState<Exchange[]>([]);
+  const [conversation, setConversation] = useState<ChatTurn[]>(() => [
+    { role: "assistant", text: getQuestions(service, {})[0].label },
+  ]);
   const [draft, setDraft] = useState("");
-  const [inquiry, setInquiry] = useState("");
-  const [mode, setMode] = useState<"answer" | "inquiry">("answer");
-  const [followup, setFollowup] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [generating, setGenerating] = useState(false);
@@ -39,132 +31,122 @@ export function ServiceChat({ slug }: { slug: string }) {
   const inFlight = useRef(false);
   const requestId = useRef("");
   const thread = useRef<HTMLDivElement>(null);
-  const field = useRef<HTMLElement | null>(null);
+  const field = useRef<HTMLTextAreaElement>(null);
   const panel = useRef<HTMLElement>(null);
+  const review = useRef<HTMLHeadingElement>(null);
   const moveFocus = useRef(false);
 
   const questions = getQuestions(service, answers);
   const question = questions.find(item => !(item.id in answers));
   const completed = questions.filter(item => item.id in answers).length;
-  const activeAnchor = followup ?? question?.id ?? reviewAnchor;
-  const canAsk = exchanges.length <= extraTurnLimit - 2;
-
-  const visibleTurns = questions.flatMap<VisibleTurn>(item => {
-    const answered = item.id in answers;
-    if (question && questions.indexOf(item) > questions.indexOf(question)) return [];
-    if (!answered && item.id !== question?.id) return [];
-    if (followup && questions.indexOf(item) > questions.findIndex(entry => entry.id === followup)) return [];
-    return [
-      { role: "assistant" as const, text: item.label, id: item.id },
-      ...exchanges.filter(turn => turn.anchor === item.id && turn.timing === "before"),
-      ...(answered ? [{ role: "customer" as const, text: answers[item.id] || "تم التخطي", id: item.id }] : []),
-      ...exchanges.filter(turn => turn.anchor === item.id && turn.timing === "after"),
-    ];
-  }).concat(exchanges.filter(turn => turn.anchor === reviewAnchor));
+  const brief = question ? "" : getServiceBrief(service, answers, conversation);
 
   useEffect(() => {
-    if (!moveFocus.current) return;
     if (thread.current) thread.current.scrollTop = thread.current.scrollHeight;
-    if (generating || busy) return;
+    if (!moveFocus.current || generating || busy) return;
     moveFocus.current = false;
-    (field.current ?? panel.current)?.focus({ preventScroll: true });
-  }, [answers, exchanges, followup, mode, generating, busy, receipt]);
+    (receipt ? panel.current : question ? field.current : review.current)?.focus({ preventScroll: true });
+  }, [conversation, question, generating, busy, receipt]);
 
-  async function talk(value: string, kind: "inquiry" | "followup", anchor: string, updated: AnswerMap, timing: Exchange["timing"], showCustomer: boolean) {
-    if (inFlight.current || !canAsk) return;
-    inFlight.current = true;
-    setGenerating(true);
-    setError("");
-    moveFocus.current = true;
-    if (showCustomer) setExchanges(old => [...old, { role: "customer", text: value, anchor, timing }]);
-    let reply = "لم أتمكن من الرد الآن. يمكنك متابعة الطلب وسيطّلع الفريق على التفاصيل التي أرسلتها.";
-    let answered = false;
-    try {
-      const response = await fetch("/api/service-chat", {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        signal: AbortSignal.timeout(9500),
-        body: JSON.stringify({
-          service: slug, consent: true, mode: kind, message: value,
-          history: exchanges.slice(-6).map(({ role, text }) => ({ role, text })),
-          answers: Object.fromEntries(Object.entries(updated).map(([id, answer]) =>
-            [id, chatPrivateFields.has(id) ? "" : answer.slice(0, 300)])),
-        }),
-      });
-      if (response.ok) {
-        const data = await response.json();
-        if (typeof data.reply === "string") {
-          reply = data.reply;
-          answered = true;
-        }
-      }
-    } catch {
-      // The guided questions remain available.
-    } finally {
-      setExchanges(old => [...old, { role: "assistant", text: reply, anchor, timing }]);
-      if (answered && /[؟?]/.test(reply) && kind === "followup" && !showCustomer && exchanges.length <= extraTurnLimit - 2) {
-        setFollowup(anchor);
-      }
-      inFlight.current = false;
-      setGenerating(false);
-    }
-  }
-
-  function accept(value: string) {
-    if (inFlight.current || !question) return;
-    if (!validAnswer(question, value.trim())) {
-      setError("أكمل الإجابة قبل المتابعة.");
+  async function send(value: string, skipping = false) {
+    const text = value.trim();
+    if (inFlight.current || (!text && !skipping)) return;
+    if (conversation.length >= extraMessageLimit && !question) {
+      setError("راجع الملخص وأرسل الطلب. يمكنك تعديل أي إجابة من الملخص.");
       return;
     }
-    const answer = value.trim();
-    const updated = { ...answers, [question.id]: answer };
-    const activeIds = new Set(getQuestions(service, updated).map(item => item.id));
-    const activeAnswers = Object.fromEntries(Object.entries(updated).filter(([id]) => activeIds.has(id)));
-    setAnswers(activeAnswers);
-    setExchanges(old => old.filter(turn => turn.anchor === reviewAnchor || activeIds.has(turn.anchor)));
+
+    const privateField = question && chatPrivateFields.has(question.id);
+    const isInquiry = inquiryPattern.test(text);
+    const exactOption = question?.options?.find(option => option === text);
+    if (question?.email && !isInquiry && !validAnswer(question, text)) {
+      setError("أدخل بريدًا إلكترونيًا صحيحًا.");
+      return;
+    }
+    if (question?.id === "name" && !isInquiry && !validAnswer(question, text)) {
+      setError("أدخل اسمك في 120 حرفًا أو أقل.");
+      return;
+    }
+
+    const local = question && (skipping || exactOption || (privateField && !isInquiry))
+      ? { [question.id]: skipping ? "" : text } : null;
+    if (!local && conversation.length >= extraMessageLimit && (!question || isInquiry || !validAnswer(question, text))) {
+      setError("تابع بالسؤال الحالي أو اختر أحد الخيارات المعروضة.");
+      return;
+    }
+    if (conversation.length >= 49) {
+      setError("وصلت المحادثة إلى الحد الأقصى. يمكنك مراجعة الطلب أو البدء من جديد.");
+      return;
+    }
+    const turns: ChatTurn[] = [...conversation, { role: "customer", text: skipping ? skip : text }];
     setDraft("");
     setError("");
+    setConversation(turns);
     moveFocus.current = true;
-    if (answer && followupFields[slug]?.includes(question.id)) {
-      void talk(answer.slice(0, 600), "followup", question.id, activeAnswers, "after", false);
+    inFlight.current = true;
+
+    let additions: AnswerMap = local ?? {};
+    let reply = "";
+    if (!local) {
+      setGenerating(true);
+      try {
+        if (conversation.length >= extraMessageLimit) throw new Error("limit");
+        const response = await fetch("/api/service-chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          signal: AbortSignal.timeout(11000),
+          body: JSON.stringify({
+            service: slug, consent: true, mode: "auto",
+            // A contact field never enters the AI prompt. The server also scrubs free text.
+            message: text,
+            history: conversation.filter(turn => turn.role === "assistant").slice(-4),
+            answers: Object.fromEntries(Object.entries(answers).map(([id, answer]) =>
+              [id, chatPrivateFields.has(id) ? "" : answer.slice(0, 600)])),
+          }),
+        });
+        if (!response.ok) throw new Error("assistant unavailable");
+        const data = await response.json();
+        additions = data.answers ?? {};
+        reply = typeof data.reply === "string" ? data.reply : "";
+      } catch {
+        if (question && !isInquiry && validAnswer(question, text)) {
+          additions = { [question.id]: text };
+        } else {
+          reply = "تعذّر الرد على رسالتك الآن. يمكنك متابعة الطلب وسيطّلع الفريق عليها.";
+        }
+      }
     }
+
+    const updated = mergeServiceAnswers(service, answers, additions);
+    const next = getQuestions(service, updated).find(item => !(item.id in updated));
+    const assistantTurns: ChatTurn[] = [];
+    if (reply) assistantTurns.push({ role: "assistant", text: reply });
+    if (next && next.id !== question?.id) assistantTurns.push({ role: "assistant", text: next.label });
+    if (!reply && next?.id === question?.id && !Object.keys(additions).length) setError("لم أجد إجابة واضحة للسؤال الحالي. أضف التفاصيل أو اختر أحد الخيارات المعروضة.");
+    setAnswers(updated);
+    setConversation([...turns, ...assistantTurns]);
+    inFlight.current = false;
+    setGenerating(false);
   }
 
   function edit(id: string) {
     if (inFlight.current) return;
+    const item = questions.find(entry => entry.id === id);
+    if (!item || conversation.length >= 46) return;
     const updated = { ...answers };
     delete updated[id];
-    setExchanges(old => old.filter(turn => turn.anchor !== id || turn.timing === "before"));
     setAnswers(updated);
     setDraft(answers[id] ?? "");
     setError("");
-    setMode("answer");
-    setFollowup(null);
+    setConversation(turns => [...turns, { role: "assistant", text: item.label }]);
     moveFocus.current = true;
-  }
-
-  function sendInquiry(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const value = inquiry.trim();
-    if (!value || inFlight.current || !canAsk) return;
-    setInquiry("");
-    void talk(value, "inquiry", activeAnchor, answers, followup ? "after" : "before", true);
-  }
-
-  function answerFollowup(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (!followup || !draft.trim() || inFlight.current) return;
-    const text = draft.trim();
-    setDraft("");
-    setFollowup(null);
-    moveFocus.current = true;
-    setExchanges(old => [...old, { role: "customer", text, anchor: followup, timing: "after" }]);
   }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (inFlight.current || question || followup) return;
-    if (inquiry.trim() && canAsk) {
-      setError("أرسل استفسارك المكتوب أو امسحه قبل إرسال الطلب.");
+    if (inFlight.current || question) return;
+    if (draft.trim()) {
+      setError("أرسل رسالتك المكتوبة أو امسحها قبل إرسال الطلب.");
       return;
     }
     inFlight.current = true;
@@ -173,7 +155,6 @@ export function ServiceChat({ slug }: { slug: string }) {
     requestId.current ||= crypto.randomUUID();
     const form = new FormData(event.currentTarget);
     try {
-      const conversation = visibleTurns.map(({ role, text }) => ({ role, text }));
       const response = await fetch("/api/service-orders", {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ service: slug, answers, conversation, id: requestId.current, website: form.get("website"), consent: form.get("consent") === "on" }),
@@ -203,59 +184,46 @@ export function ServiceChat({ slug }: { slug: string }) {
     </div>
   </section>;
 
+
   return <section className={s.chat} tabIndex={-1} ref={panel} aria-label="محادثة طلب الخدمة">
     <header className={s.chatHeader}>
       <div className={s.identity}><span className={s.mark} aria-hidden="true">✳</span><div><h2>مساعد لوسيل</h2><p>محادثة طلب الخدمة</p></div></div>
-      <span className={s.phase}>{question || followup ? `${completed} من ${questions.length} إجابات` : "مراجعة وإرسال"}</span>
+      <span className={s.phase}>{question ? `${completed} من ${questions.length} إجابات` : "مراجعة وإرسال"}</span>
     </header>
     <progress className={s.progress} max={questions.length} value={completed} aria-label="تقدّم الطلب" />
     <div className={s.thread} role="log" aria-label="الرسائل" ref={thread} tabIndex={0}>
-      {visibleTurns.map((turn, index) => <Bubble key={index} role={turn.role}>
-        {question && turn.role === "assistant" && turn.id === question.id
-          ? <><h3 id="active-question">{turn.text}</h3>{question.hint && <p className={s.hint}>{question.hint}</p>}</>
-          : <p>{turn.text}</p>}
-      </Bubble>)}
+      {conversation.map((turn, index) => <Bubble key={index} role={turn.role}><p>{turn.text}</p></Bubble>)}
       {generating && <p className={s.wait} role="status">مساعد لوسيل يكتب…</p>}
     </div>
     <div className={s.composer}>
-      <p className={s.settings}>يمكنك الإجابة أو سؤال المساعد عن الخدمة. يستخدم المساعد OpenRouter للرد على الاستفسارات وطرح أسئلة متابعة بناءً على وصفك. تجنّب إرسال معلومات سرية. <Link href="/privacy">سياسة الخصوصية</Link></p>
-      {(canAsk || mode === "inquiry") && !followup && <div className={s.modes} aria-label="نوع الرسالة">
-        <button type="button" aria-pressed={mode === "answer"} disabled={generating || busy} onClick={() => { setMode("answer"); moveFocus.current = true; }}>{question ? "إجابة السؤال" : "مراجعة الطلب"}</button>
-        <button type="button" aria-pressed={mode === "inquiry"} disabled={generating || busy} onClick={() => { setMode("inquiry"); moveFocus.current = true; }}>اسأل عن الخدمة</button>
+      <p className={s.settings} id="chat-privacy">أجب أو اسأل عن الخدمة في نفس الخانة. يمكنك ذكر أكثر من تفصيل في رسالة واحدة. يستخدم المساعد OpenRouter؛ تجنّب المعلومات السرية. <Link href="/privacy">سياسة الخصوصية</Link></p>
+      {question && <div>
+        <h3 id="active-question">{question.label}</h3>
+        {question.hint && <p className={s.hint}>{question.hint}</p>}
+        {question.options && <div className={s.choices} role="group" aria-labelledby="active-question">
+          {question.options.map(option => <button key={option} type="button" disabled={generating || busy} onClick={() => void send(option)}>{option}</button>)}
+        </div>}
       </div>}
-      {mode === "inquiry" ? <form onSubmit={sendInquiry}>
-        <label htmlFor="service-inquiry">ما الذي تود أن تعرفه؟</label>
-        <textarea id="service-inquiry" ref={node => { field.current = node; }} rows={2} maxLength={600} value={inquiry} disabled={generating || busy || !canAsk} onChange={event => setInquiry(event.target.value)} placeholder="مثلاً: هل يمكن طلب أكثر من مقاس؟" />
-        <button className={studio.button} disabled={generating || busy || !canAsk || !inquiry.trim()}>إرسال الاستفسار <span aria-hidden="true">←</span></button>
-        {!canAsk && <p>يمكنك إضافة بقية التفاصيل في ملاحظات الطلب.</p>}
-      </form> : followup ? <form onSubmit={answerFollowup}>
-        <label htmlFor="followup-answer">أجب عن سؤال المتابعة أو تابع الطلب</label>
-        <textarea id="followup-answer" ref={node => { field.current = node; }} rows={2} maxLength={600} value={draft} onChange={event => setDraft(event.target.value)} />
+      <form onSubmit={event => { event.preventDefault(); void send(draft); }}>
+        <label className={s.srOnly} htmlFor="service-message">رسالتك للمساعد</label>
+        <textarea id="service-message" ref={field} rows={2} maxLength={600} value={draft} disabled={generating || busy}
+          aria-describedby="chat-privacy" placeholder="اكتب إجابتك أو استفسارك…" onChange={event => setDraft(event.target.value)} />
         <div className={s.actions}>
-          <button className={studio.button} disabled={!draft.trim()}>إرسال الإجابة <span aria-hidden="true">←</span></button>
-          <button type="button" className={s.textButton} onClick={() => { setFollowup(null); setDraft(""); moveFocus.current = true; }}>تخطّي سؤال المتابعة</button>
+          <button className={studio.button} disabled={generating || busy || !draft.trim()}>إرسال الرسالة <span aria-hidden="true">←</span></button>
+          {question?.optional && <button type="button" className={s.textButton} disabled={generating || busy} onClick={() => void send("", true)}>تخطّي</button>}
         </div>
-      </form> : question ? <Fragment key={question.id}>
-        {question.options ? <div className={s.choices} role="group" aria-labelledby="active-question">
-          {question.options.map((option, index) => <button key={option} type="button" disabled={generating || busy} ref={index === 0 ? node => { field.current = node; } : undefined} onClick={() => accept(option)}>{option}</button>)}
-        </div> : <form onSubmit={event => { event.preventDefault(); accept(draft); }}>
-          <label className={s.srOnly} htmlFor="guided-answer">{question.label}</label>
-          {question.email || question.id === "name"
-            ? <input id="guided-answer" ref={node => { field.current = node; }} type={question.email ? "email" : "text"} autoComplete={question.email ? "email" : "name"} dir={question.email ? "ltr" : "auto"} maxLength={question.email ? 254 : 120} required value={draft} disabled={generating || busy} onChange={event => setDraft(event.target.value)} />
-            : <textarea id="guided-answer" ref={node => { field.current = node; }} rows={2} maxLength={800} required={!question.optional} value={draft} disabled={generating || busy} onChange={event => setDraft(event.target.value)} placeholder="اكتب إجابتك هنا" />}
-          <button className={studio.button} disabled={generating || busy}>{question.optional && !draft.trim() ? "تخطّي" : "إرسال الإجابة"} <span aria-hidden="true">←</span></button>
-        </form>}
-        {completed > 0 && <button className={s.textButton} type="button" disabled={generating || busy} onClick={() => {
-          const previous = questions.slice(0, questions.indexOf(question)).reverse().find(item => item.id in answers);
-          if (previous) edit(previous.id);
-        }}>تعديل الإجابة السابقة</button>}
-      </Fragment> : <form onSubmit={submit}>
-        <h3>راجع تفاصيل طلبك</h3>
-        <p>ستُحفظ الإجابات والمحادثة مع ملخص المتطلبات عند إرسال الطلب.</p>
-        <dl className={s.review}>{questions.map(item => <div key={item.id}>
-          <dt>{item.label}</dt><dd>{answers[item.id] || "تم التخطي"}</dd>
-          <button type="button" className={s.textButton} disabled={busy} onClick={() => edit(item.id)} aria-label={`تعديل إجابة: ${item.label}`}>تعديل من هنا</button>
-        </div>)}</dl>
+      </form>
+      {!question && <form className={s.review} onSubmit={submit}>
+        <h3 ref={review} tabIndex={-1}>ملخص طلبك قبل الإرسال</h3>
+        <p>راجع هذا الملخص. سيُحفظ مع المحادثة عند إرسال الطلب.</p>
+        <p className={s.brief}>{brief}</p>
+        <details>
+          <summary>تعديل الإجابات وبيانات التواصل</summary>
+          <dl className={s.review}>{questions.map(item => <div key={item.id}>
+            <dt>{item.label}</dt><dd>{answers[item.id] || skip}</dd>
+            <button type="button" className={s.textButton} disabled={generating || busy} onClick={() => edit(item.id)} aria-label={`تعديل إجابة: ${item.label}`}>تعديل</button>
+          </div>)}</dl>
+        </details>
         <label className={s.trap} aria-hidden="true">اترك الحقل فارغًا<input name="website" tabIndex={-1} autoComplete="off" /></label>
         <label className={s.approval}><input type="checkbox" name="consent" required /> أوافق على استخدام بياناتي لمراجعة الطلب والتواصل معي وفق <Link href="/privacy">سياسة الخصوصية</Link>.</label>
         <button className={studio.button} disabled={busy || generating}>{busy ? "جارٍ إرسال الطلب…" : "إرسال الطلب"} <span aria-hidden="true">←</span></button>
