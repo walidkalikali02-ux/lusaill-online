@@ -87,5 +87,15 @@
   ];
   window.mathLessons = lessons.sort((left,right)=>left[0]-right[0])
     .map(([term,title,goal,stages],index)=>({id:index+1,term,title,goal,stages}));
+  window.mathUnits = [
+    {term:1,title:'الأعداد والعدّ والمقارنة',ids:[1,2,3,6]},
+    {term:1,title:'الجمع والطرح حتى ١٠',ids:[4,5]},
+    {term:2,title:'الجمع والطرح حتى ٢٠',ids:[7,8]},
+    {term:2,title:'الأعداد حتى ١٠٠ والقيمة المكانية',ids:[9,10]},
+    {term:2,title:'جمع العشرات وطرحها',ids:[11,12]},
+    {term:2,title:'القياس والوقت',ids:[13,14]},
+    {term:2,title:'الأشكال والمجسّمات والأجزاء المتساوية',ids:[15,16,17]},
+    {term:2,title:'الأنماط',ids:[18]}
+  ];
   window.arNumber = ar;
 })();
