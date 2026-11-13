@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { isOrderAdmin, supabaseRequest } from "@/lib/order-storage";
-import { statuses } from "@/lib/service-orders";
+import { getService, statuses } from "@/lib/service-orders";
 
 const cookieName = "lusail-orders-session";
 const columns = "id,service,name,email,answers,status,created_at";
@@ -14,15 +14,55 @@ export async function GET(request: NextRequest) {
   if (!token) return forbidden();
   const page = Number(request.nextUrl.searchParams.get("page") ?? "0");
   if (!Number.isSafeInteger(page) || page < 0 || page > 10000) return fail(400, "رقم الصفحة غير صالح.");
+  const filters = request.nextUrl.searchParams;
+  const service = filters.get("service") ?? "";
+  const status = filters.get("status") ?? "";
+  const query = (filters.get("q") ?? "").trim();
+  if ((service && !getService(service)) || (status && !Object.hasOwn(statuses, status)) ||
+      query.length > 100 || /[\x00-\x1f\x7f]/.test(query)) return fail(400, "خيارات البحث غير صالحة.");
+
+  const direction = filters.get("sort") === "oldest" ? "asc" : "desc";
+  const params = new URLSearchParams({ select: columns, order: `created_at.${direction},id.${direction}`, limit: "26", offset: String(page * 25) });
+  if (service) params.set("service", "eq." + service);
+  if (status) params.set("status", "eq." + status);
+  if (query) {
+    const pattern = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const quoted = JSON.stringify(pattern);
+    const matches = ["name.imatch." + quoted, "email.imatch." + quoted];
+    if (/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(query)) matches.push("id.eq." + query);
+    params.set("or", "(" + matches.join(",") + ")");
+  }
+
+  const orderPath = "/rest/v1/service_orders";
   try {
     if (!await isOrderAdmin(token)) return forbidden();
-    const result = await supabaseRequest(`/rest/v1/service_orders?select=${columns}&order=created_at.desc,id.desc&limit=26&offset=${page * 25}`, {}, token);
+    const [result, counts] = await Promise.all([
+      supabaseRequest(`${orderPath}?${params}`, { headers: { Prefer: "count=exact" } }, token),
+      Promise.all(Object.keys(statuses).map(async key => {
+        try {
+          const response = await supabaseRequest(`${orderPath}?select=id&status=eq.${key}`, {
+            method: "HEAD", headers: { Prefer: "count=exact" },
+          }, token);
+          return [key, response.ok ? readCount(response) : null] as const;
+        } catch {
+          return [key, null] as const;
+        }
+      })),
+    ]);
     if (!result.ok) return unavailable();
     const rows = await result.json();
-    return NextResponse.json({ orders: rows.slice(0, 25), hasNext: rows.length > 25 }, { headers: { "Cache-Control": "no-store" } });
+    return NextResponse.json({
+      orders: rows.slice(0, 25), hasNext: rows.length > 25,
+      total: readCount(result), counts: Object.fromEntries(counts),
+    }, { headers: { "Cache-Control": "no-store" } });
   } catch {
     return unavailable();
   }
+}
+
+function readCount(response: Response) {
+  const value = response.headers.get("content-range")?.match(/\/(\d+)$/)?.[1];
+  return value === undefined ? null : Number(value);
 }
 
 export async function POST(request: NextRequest) {

@@ -52,3 +52,17 @@
 .orders summary::before { content: "+"; }
 .orders details[open] summary::before { content: "−"; }
 .orders details > p { margin-block: 8px; }
+
+.orderNotice { min-height: 1.5em; margin-block: 8px; }
+.orderMetrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 16px; }
+.orderMetrics button { display: grid; text-align: start; gap: 6px; background: #fff; border: 1px solid #cbd9d2; border-radius: 12px; padding: 14px; color: #24473d; cursor: pointer; }
+.orderMetrics button strong { font-size: 25px; }
+.orderMetrics button[aria-pressed="true"] { background: #e2f2e9; border-color: #24624f; box-shadow: inset 0 0 0 1px #24624f; }
+.orderFilters { display: grid; grid-template-columns: minmax(230px, 2fr) repeat(3, minmax(135px, 1fr)); gap: 12px; }
+.orderFilters .actions { grid-column: 1 / -1; margin: 0; }
+.orderFilters label { min-width: 0; }
+.orderBadge { margin-inline-start: auto; border-radius: 20px; background: #eef1ec; padding: 2px 12px; color: #2b4d43; }
+.orderBadge[data-status="new"] { background: #fcebd4; color: #694720; }
+.orderBadge[data-status="in_progress"] { background: #e1eef7; color: #234e68; }
+.orderBadge[data-status="completed"] { background: #ddefe3; color: #23533b; }
+@media (max-width: 760px) { .orderFilters { grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); } }
