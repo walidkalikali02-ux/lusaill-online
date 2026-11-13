@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { pageAlternates } from "@/lib/page-alternates";
 import { services } from "@/lib/service-orders";
-import s from "./orders.module.css";
+import s from "./studio.module.css";
 
 export const metadata: Metadata = {
   title: "خدمات لوسيل الرقمية",
@@ -11,24 +11,56 @@ export const metadata: Metadata = {
   openGraph: { title: "خدمات لوسيل الرقمية", description: "اطلب خدمة رقمية وحدّد تفاصيل مشروعك خطوة بخطوة.", url: "/services", type: "website" },
 };
 
+const categories = {
+  "website-design": { label: "ويب", symbol: "↗", tone: "web" },
+  "video-editing": { label: "فيديو", symbol: "▶", tone: "video" },
+  excel: { label: "بيانات", symbol: "▦", tone: "data" },
+  "social-design": { label: "تصميم", symbol: "✳", tone: "social" },
+} as const;
+
 export default function ServicesPage() {
-  return <main id="main-content" className={s.page}>
-    <header className={s.hero}>
-      <div className={s.wrap}>
-        <h1>خدمات لوسيل الرقمية</h1>
-        <p>اختر الخدمة التي تحتاجها. سنسألك خطوة بخطوة عن التفاصيل التي يحتاجها فريقنا لتقدير العمل والبدء معك.</p>
+  return <main id="main-content" className={s.root}>
+    <header className={s.catalogHero}>
+      <div className={s.heroCopy}>
+        <p className={s.kicker}>خدمات لوسيل الرقمية</p>
+        <h1>ما الذي تريد<br />إنجازه اليوم؟</h1>
+        <p className={s.lead}>من إطلاق موقعك إلى تجهيز فيديو أو ملف عمل. اختر الخدمة وأخبرنا بما تحتاجه في محادثة قصيرة.</p>
+        <a className={s.button} href="#available-services">استكشف الخدمات <span aria-hidden="true">↓</span></a>
       </div>
+      <div className={s.heroPhoto} aria-hidden="true" />
     </header>
-    <section className={s.wrap} id="available-services" aria-label="الخدمات المتاحة">
-      <div className={s.grid}>{services.map(service => <article className={s.card} key={service.slug}>
-        <h2>{service.name}</h2>
-        <p>{service.description}</p>
-        <p className={s.price}>{service.price ?? "عرض سعر بحسب تفاصيل الطلب"}</p>
-        <div className={s.actions}>
-          <Link className={s.primary} href={`/services/request?service=${service.slug}`}>ابدأ الطلب <span aria-hidden="true">←</span></Link>
-          {service.slug === "website-design" && <Link className={s.back} href="/services/website-design">تفاصيل الاشتراك</Link>}
+
+    <section className={s.section} id="available-services" aria-labelledby="services-title">
+      <div className={s.wrap}>
+        <div className={s.sectionHeading}><h2 id="services-title">اختر الخدمة المناسبة</h2><p>حدّد التفاصيل في الطلب ليُراجع الفريق نطاق العمل والتكلفة.</p></div>
+        <div className={s.catalogGrid}>
+          {services.map(service => {
+            const category = categories[service.slug as keyof typeof categories];
+            return <article className={s.serviceCard} data-tone={category?.tone} key={service.slug}>
+              <div className={s.cardTop}><span className={s.icon} aria-hidden="true">{category?.symbol}</span><span>{category?.label}</span></div>
+              <h3>{service.name}</h3>
+              <p>{service.description}</p>
+              <div className={s.cardBottom}>
+                <strong>{service.price ?? "عرض سعر حسب الطلب"}</strong>
+                <div className={s.actions}>
+                  <Link className={s.button} href={`/services/request?service=${service.slug}`} aria-label={`ابدأ طلب ${service.name}`}>ابدأ الطلب <span aria-hidden="true">←</span></Link>
+                  {service.slug === "website-design" && <Link className={s.textLink} href="/services/website-design">تفاصيل الخدمة</Link>}
+                </div>
+              </div>
+            </article>;
+          })}
         </div>
-      </article>)}</div>
+      </div>
+    </section>
+    <section className={s.process} aria-labelledby="process-title">
+      <div className={s.wrap}>
+        <h2 id="process-title">كيف يبدأ العمل؟</h2>
+        <ol className={s.steps}>
+          <li><strong>اختر الخدمة</strong><p>ابدأ من الخدمة الأقرب لما تريد إنجازه.</p></li>
+          <li><strong>صف مشروعك</strong><p>أجب عن الأسئلة وأضف التفاصيل والمراجع المتاحة.</p></li>
+          <li><strong>أرسل طلبك</strong><p>احتفظ برقم الطلب ليتواصل معك الفريق بعد المراجعة.</p></li>
+        </ol>
+      </div>
     </section>
   </main>;
 }
