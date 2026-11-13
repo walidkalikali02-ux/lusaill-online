@@ -5,9 +5,10 @@
 <title>مناهج | رياضيات الصف الأول</title>
 <meta name="description" content="١٨ درسًا تفاعليًا في رياضيات الصف الأول ضمن المنهج القطري.">
 <link rel="canonical" href="https://www.lusaill.online/knowledge/manahej/qatar/grade-1/math">
-<link rel="stylesheet" href="/manahej/grade-one/style.css?v=2">
-<script src="/manahej/grade-one/lessons.js?v=2" defer></script>
-<script src="/manahej/grade-one/app.js?v=2" defer></script>
+<link rel="stylesheet" href="/manahej/grade-one/style.css?v=3">
+<script src="/manahej/grade-one/lessons.js?v=3" defer></script>
+<script src="/manahej/grade-one/lesson-guide.js?v=3" defer></script>
+<script src="/manahej/grade-one/app.js?v=3" defer></script>
 <main class="hub">
   <nav class="top"><a href="/knowledge/manahej">مناهج</a><a href="/knowledge/manahej/qatar/grade-1">الصف الأول</a></nav>
   <section id="catalog">
@@ -26,6 +27,7 @@
       <a href="#term-2">الفصل الدراسي الثاني</a>
     </nav>
     <div id="terms"></div>
+    <noscript><p>مثال من درس العدّ: عدّ الأقلام واحدًا واحدًا. إذا قلت ١، ٢، ٣ عند لمسها بالترتيب، فعدد الأقلام ثلاثة. فعّل JavaScript لفتح الرسوم والتمارين التفاعلية.</p></noscript>
     <details class="sources">
       <summary>مراجع الموضوعات</summary>
       <p>أنشطة تدريبية أصلية مبنية على موضوعات منشورة للصف الأول. جُمعت بحسب المهارة، وقد يختلف ترتيبها عن حصص المدرسة.</p>
@@ -42,6 +44,10 @@
       <span class="score" id="lesson-score"></span>
     </div>
     <h1 id="lesson-title"></h1>
+    <div class="lesson-intro">
+      <p id="lesson-hook"></p>
+      <p id="lesson-objective"></p>
+    </div>
     <progress id="progress" aria-label="المراحل المكتملة"></progress>
     <div id="play" class="lesson-grid">
       <section class="scene" id="scene" aria-label="الرسم التفاعلي"></section>
@@ -51,15 +57,38 @@
         <div id="choices" class="choices" aria-label="الاختيارات"></div>
         <p id="observation" aria-live="polite"></p>
         <div id="feedback" class="feedback" aria-live="polite" hidden></div>
+        <details id="hint" class="lesson-hint" hidden>
+          <summary>تلميح</summary>
+          <p id="hint-text"></p>
+        </details>
         <button type="button" class="primary" id="advance" hidden></button>
+        <button type="button" id="retry-experiment" hidden>أعد التجربة</button>
       </section>
     </div>
+    <section id="lesson-reading" class="lesson-reading" aria-labelledby="reading-title" hidden>
+      <h2 id="reading-title">الفكرة الأساسية</h2>
+      <p id="lesson-rule"></p>
+      <details><summary>مثال محلول</summary><p id="lesson-example"></p></details>
+      <details><summary>جرّبها في حياتك</summary><p id="lesson-lab"></p></details>
+    </section>
+    <section id="mastery" class="lesson-reading" aria-labelledby="mastery-title" hidden>
+      <h2 id="mastery-title">اختبر فهمك</h2>
+      <p id="mastery-question"></p>
+      <div id="mastery-choices" class="choices" role="group" aria-label="اختيارات اختبار الفهم"></div>
+      <p id="mastery-feedback" aria-live="polite"></p>
+    </section>
     <section id="result" class="result" hidden>
       <span class="medal" aria-hidden="true">🏆</span>
       <h2 tabindex="-1" id="result-title">أكملت الدرس!</h2>
       <p id="result-score"></p>
+      <p id="recap"></p>
       <div class="actions"><button id="repeat" type="button">أعد التجربة</button><a class="primary" href="#">اختر درسًا آخر</a></div>
     </section>
+    <details class="sources">
+      <summary>مصادر الدرس</summary>
+      <p>الأمثلة والرسوم أنشطة توضيحية أصلية مبنية على موضوعات الصف الأول.</p>
+      <a id="lesson-source" href="https://tadribaty.com/math-g1-t1-student-book/">كتاب الطالب · طبعة ٢٠٢٥–٢٠٢٦</a>
+    </details>
   </section>
 </main>
 </html>
