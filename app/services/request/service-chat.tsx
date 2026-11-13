@@ -12,6 +12,10 @@ export function ServiceChat({ slug }: { slug: string }) {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [receipt, setReceipt] = useState("");
+  const [useAi, setUseAi] = useState(false);
+  const [generated, setGenerated] = useState<{ id: string; question: string } | null>(null);
+  const [generating, setGenerating] = useState(false);
+  const generation = useRef<AbortController | null>(null);
   const requestId = useRef("");
   const inFlight = useRef(false);
   const field = useRef<HTMLElement | null>(null);
@@ -24,6 +28,42 @@ export function ServiceChat({ slug }: { slug: string }) {
     requestAnimationFrame(() => (field.current ?? panel.current)?.focus());
   }
 
+  function cancelGeneration() {
+    generation.current?.abort();
+    generation.current = null;
+    setGenerated(null);
+    setGenerating(false);
+  }
+
+  function generateQuestion(updated: AnswerMap) {
+    cancelGeneration();
+    const next = getQuestions(service, updated).find(item => !(item.id in updated));
+    if (!useAi || !next || next.options || ["name", "email", "references", "current", "footage-link"].includes(next.id)) return;
+
+    const controller = new AbortController();
+    generation.current = controller;
+    setGenerating(true);
+    void fetch("/api/service-chat", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      signal: controller.signal,
+      body: JSON.stringify({
+        service: slug, consent: true,
+        answers: Object.fromEntries(Object.entries(updated).map(([id, answer]) =>
+          [id, ["name", "email", "references", "current", "footage-link"].includes(id) ? "" : answer])),
+      }),
+    }).then(async response => {
+      if (!response.ok) return;
+      const data = await response.json();
+      if (!controller.signal.aborted && data.id === next.id && typeof data.question === "string") {
+        setGenerated({ id: next.id, question: data.question });
+      }
+    }).catch(() => {
+      // The standard question remains available when generation fails.
+    }).finally(() => {
+      if (!controller.signal.aborted) setGenerating(false);
+    });
+  }
+
   function reply(value: string) {
     if (!question || !validAnswer(question, value.trim())) {
       setError("تحقق من الإجابة وأكمل الحقل المطلوب.");
@@ -31,13 +71,16 @@ export function ServiceChat({ slug }: { slug: string }) {
     }
     const updated = { ...answers, [question.id]: value.trim() };
     const activeIds = new Set(getQuestions(service, updated).map(item => item.id));
-    setAnswers(Object.fromEntries(Object.entries(updated).filter(([id]) => activeIds.has(id))));
+    const activeAnswers = Object.fromEntries(Object.entries(updated).filter(([id]) => activeIds.has(id)));
+    setAnswers(activeAnswers);
+    generateQuestion(activeAnswers);
     setDraft("");
     setError("");
     focusNext();
   }
 
   function edit(at: number) {
+    cancelGeneration();
     setDraft(answers[questions[at].id] ?? "");
     const updated = { ...answers };
     delete updated[questions[at].id];
@@ -87,13 +130,22 @@ export function ServiceChat({ slug }: { slug: string }) {
       <span>{question ? `السؤال ${index + 1} من ${questions.length}` : "قبل الإرسال"}</span>
     </div>
     <progress max={questions.length} value={question ? index : questions.length} aria-label="تقدّم الطلب" />
+    {question && <label className={s.consent}>
+      <input type="checkbox" checked={useAi} onChange={event => {
+        setUseAi(event.target.checked);
+        cancelGeneration();
+      }} /> خصّص أسئلتي بالذكاء الاصطناعي
+      <p>عند التفعيل، نرسل مقتطفات من وصف المشروع إلى OpenRouter لصياغة الأسئلة. تجنّب إدخال معلومات سرية. <Link href="/privacy">سياسة الخصوصية</Link></p>
+    </label>}
     {question && index > 0 && <div className={s.previous}>
       <span>{questions[index - 1].label}</span>
       <p>{answers[questions[index - 1].id] || "تم التخطي"}</p>
     </div>}
     {question ? <div key={question.id}>
       <div className={s.bubble} aria-live="polite">
-        <h2 id="active-question">{question.label}</h2>
+        <h2 id="active-question">{generated?.id === question.id ? generated.question : question.label}</h2>
+        {generated?.id === question.id && <p>{question.label}</p>}
+        {generating && <p role="status">جارٍ تخصيص السؤال…</p>}
         {question.hint && <p>{question.hint}</p>}
       </div>
       {question.options ? <div className={s.choices} role="group" aria-labelledby="active-question">
