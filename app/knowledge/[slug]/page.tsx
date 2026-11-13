@@ -1,3 +1,5 @@
+import MathArticleLab from "@/components/math-article-lab";
+import { getMathArticleLab } from "@/lib/math-article-labs";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EditorialCover } from "@/components/editorial-cover";
@@ -30,6 +32,7 @@ const tableCell={padding:"12px 14px",borderBottom:"1px solid #e2e8f0",verticalAl
 export default async function KnowledgeTopicPage({params}:{params:Promise<{slug:string}>}){
 const {slug}=await params;const topic=getKnowledgeTopic(slug);
 if(!topic || !topic.directAnswer?.trim() || !topic.sections.length)notFound();
+const lab=getMathArticleLab(topic.slug);
 const path="/knowledge/"+topic.slug;const url=absoluteUrl(path);
 const cover=editorialImagePath("knowledge",topic.slug);
 const articleSchema={"@context":"https://schema.org","@type":"Article","@id":url+"#article",headline:topic.title,description:topic.description,url,inLanguage:"ar",articleSection:topic.category,datePublished:topic.publishedAt,dateModified:topic.publishedAt,
@@ -58,6 +61,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
   priority
   description="مفهوم واضح · شرح متعمق · تطبيق عملي"
 />
+{lab && <MathArticleLab lab={lab} />}
 <section aria-labelledby="direct-answer" style={{background:"#eff8f6",border:"1px solid #9fd5c9",borderRadius:14,padding:23}}>
 <h2 id="direct-answer" style={{fontSize:24,fontWeight:800,marginBottom:9}}>الإجابة المختصرة</h2><p style={{fontSize:17}}>{topic.directAnswer}</p>
 </section>
@@ -77,6 +81,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 <nav aria-label="محتويات الدليل" style={{marginBlock:23,padding:18,border:"1px solid #e2e8f0",borderRadius:14}}>
 <strong>محتويات الدليل</strong><ul style={{paddingInlineStart:22,columns:2,columnWidth:"270px",marginTop:8}}>
 {topic.sections.map(s=><li key={s.id}><a href={"#"+s.id} style={{color:"#0d7490",textDecoration:"underline"}}>{s.heading}</a></li>)}
+{lab && <li><a href="#math-experiment" style={{color:"#0d7490",textDecoration:"underline"}}>توقّع وجرّب على الرسم</a></li>}
 <li><a href="#interactive-tool" style={{color:"#0d7490",textDecoration:"underline"}}>الأداة التفاعلية</a></li>
 </ul></nav>
 {topic.sections.map(section=><section key={section.id} id={section.id} style={{marginBlock:30,scrollMarginTop:35}}>

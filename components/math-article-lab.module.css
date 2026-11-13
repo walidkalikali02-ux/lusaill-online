@@ -1,0 +1,31 @@
+.lab{margin-block:26px;padding:clamp(14px,3vw,28px);background:#f1f8f5;border:1px solid #aaccc0;border-radius:18px;scroll-margin-top:90px;color:#163833}
+.lab header p,.lab h2,.lab h3{margin:0 0 8px}
+.lab h2{font-size:clamp(1.35rem,3vw,1.85rem)}
+.lab h3{font-size:1.1rem}
+.phase{color:#225e52;font-weight:700}
+.layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:18px;align-items:start;margin-top:14px}
+.figure{margin:0;padding:12px;border:1px solid #bbd5ca;border-radius:14px;background:#fff;text-align:center}
+.figure figcaption{font-weight:700;color:#26594e}
+.marks,.bars{padding:0;list-style:none;margin:8px 0 0}
+.marks{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.marks li{padding:8px 12px;background:#e2f0e9;border-radius:8px;overflow-wrap:anywhere}
+.bars{display:flex;justify-content:center;gap:18px}
+.bars li{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;width:42px;height:115px}
+.bar{display:block;width:100%;background:#29755e;border-radius:6px 6px 0 0}
+.pie{width:92px;aspect-ratio:1;margin:10px auto;border:1px solid #29755e;border-radius:50%;background:linear-gradient(90deg,transparent 49%,#29755e 49% 51%,transparent 51%),linear-gradient(transparent 49%,#29755e 49% 51%,transparent 51%),#e2f0e9}
+.pie[data-quarter=true]{background:conic-gradient(#29755e 0 25%,#e2f0e9 25% 100%)}
+.blocks,.numberLine{display:flex;gap:2px;margin:16px 0}
+.blocks span{flex:1;height:20px;background:#29755e;border-radius:3px}
+.blocks span[data-part=true]{background:#c47a24}
+.numberLine{justify-content:space-between;border-bottom:2px solid #397b69;padding-block:5px}
+.numberLine span{width:10px;height:10px;border-radius:50%;background:#c2dcd0}
+.numberLine span[data-point=true]{background:#164b3e}
+.choices,.actions{display:flex;flex-wrap:wrap;gap:7px;margin-block:9px}
+.lab button{padding:7px 12px;min-height:44px;border:1px solid #8db7aa;border-radius:9px;background:#fff;color:#163833;font:inherit;cursor:pointer}
+.lab button:disabled{cursor:default}
+.lab button[aria-pressed=true],.lab button.primary{background:#215e50;color:#fff}
+.lab button:focus-visible,.lab summary:focus-visible{outline:3px solid #ad6e16;outline-offset:2px}
+.lab summary{cursor:pointer;font-weight:650}
+.feedback{margin-top:10px;border-inline-start:4px solid #397b69;background:#fff;padding:10px 12px;border-radius:8px}
+.feedback p{margin:4px 0}
+@media(max-width:680px){.layout{grid-template-columns:1fr}}
