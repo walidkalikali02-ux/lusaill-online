@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { pageAlternates } from "@/lib/page-alternates";
+import { siteSocialImage } from "@/lib/site-config";
 import TryMath from "./try-math";
 import styles from "./curriculum.module.css";
 
@@ -30,9 +31,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { path = [] } = await params;
   const { url, title, grade } = locationFor(path);
+  const description = "مناهج موسوعة لوسيل. أنشطة تفاعلية في رياضيات الصف الأول ضمن المنهج القطري.";
   return {
     title,
-    description: "مناهج موسوعة لوسيل. أنشطة تفاعلية في رياضيات الصف الأول ضمن المنهج القطري.",
+    description,
+    openGraph: { type: "website", title, description, url, images: [siteSocialImage] },
     alternates: pageAlternates(url),
     robots: { index: grade === undefined || grade === 0, follow: true },
   };
