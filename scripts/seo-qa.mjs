@@ -91,8 +91,8 @@ if (!layoutContent.includes("openGraph")) {
 if (!layoutContent.includes("twitter")) {
   check(layoutFile, "Missing Twitter metadata");
 }
-if (!existsSync("app/opengraph-image.tsx")) {
-  check("app/opengraph-image.tsx", "Missing default Open Graph image route");
+if (!existsSync("app/opengraph-image.tsx") && !existsSync("app/opengraph-image/route.tsx")) {
+  check("app/opengraph-image", "Missing default Open Graph image route");
 }
 if (layoutContent.includes("/og-default.png") && !existsSync("public/og-default.png")) {
   check(layoutFile, "References missing public/og-default.png");
