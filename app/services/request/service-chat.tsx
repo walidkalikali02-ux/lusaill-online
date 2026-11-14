@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import Link from "next/link";
-import { chatPrivateFields, getQuestions, getService, getServiceBrief, mergeServiceAnswers, validAnswer, type AnswerMap, type ChatTurn } from "@/lib/service-orders";
+import { chatPrivateFields, getQuestions, getService, getServiceBrief, mergeServiceAnswers, readPrivateServiceRevision, revisedBriefMessage, validAnswer, type AnswerMap, type ChatTurn } from "@/lib/service-orders";
 import studio from "../studio.module.css";
 import s from "./request.module.css";
 
@@ -51,8 +51,10 @@ export function ServiceChat({ slug }: { slug: string }) {
   async function send(value: string, skipping = false) {
     const text = value.trim();
     if (inFlight.current || (!text && !skipping)) return;
-    if (conversation.length >= extraMessageLimit && !question) {
-      setError("راجع الملخص وأرسل الطلب. يمكنك تعديل أي إجابة من الملخص.");
+    const reviewing = !question;
+    const privateRevision = reviewing ? readPrivateServiceRevision(service, answers, text) : null;
+    if (privateRevision && !Object.keys(privateRevision).length) {
+      setError("تحقّق من التفصيل والقيمة الجديدة قبل إرسال التعديل.");
       return;
     }
 
@@ -68,9 +70,9 @@ export function ServiceChat({ slug }: { slug: string }) {
       return;
     }
 
-    const local = question && (skipping || exactOption || (privateField && !isInquiry))
-      ? { [question.id]: skipping ? "" : text } : null;
-    if (!local && conversation.length >= extraMessageLimit && (!question || isInquiry || !validAnswer(question, text))) {
+    const local = privateRevision ?? (question && (skipping || exactOption || (privateField && !isInquiry))
+      ? { [question.id]: skipping ? "" : text } : null);
+    if (!reviewing && !local && conversation.length >= extraMessageLimit && (!question || isInquiry || !validAnswer(question, text))) {
       setError("تابع بالسؤال الحالي أو اختر أحد الخيارات المعروضة.");
       return;
     }
@@ -90,13 +92,13 @@ export function ServiceChat({ slug }: { slug: string }) {
     if (!local) {
       setGenerating(true);
       try {
-        if (conversation.length >= extraMessageLimit) throw new Error("limit");
+        if (!reviewing && conversation.length >= extraMessageLimit) throw new Error("limit");
         const response = await fetch("/api/service-chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           signal: AbortSignal.timeout(11000),
           body: JSON.stringify({
-            service: slug, consent: true, mode: "auto",
+            service: slug, consent: true, mode: reviewing ? "revise" : "auto",
             // A contact field never enters the AI prompt. The server also scrubs free text.
             message: text,
             history: conversation.filter(turn => turn.role === "assistant").slice(-4),
@@ -112,7 +114,8 @@ export function ServiceChat({ slug }: { slug: string }) {
         if (question && !isInquiry && validAnswer(question, text)) {
           additions = { [question.id]: text };
         } else {
-          reply = "تعذّر الرد على رسالتك الآن. يمكنك متابعة الطلب وسيطّلع الفريق عليها.";
+          reply = reviewing ? "تعذّر تطبيق التعديل الآن. أعد إرسال رسالتك أو استخدم «تعديل» بجانب الإجابة." :
+            "تعذّر الرد على رسالتك الآن. يمكنك متابعة الطلب وسيطّلع الفريق عليها.";
         }
       }
     }
@@ -120,6 +123,9 @@ export function ServiceChat({ slug }: { slug: string }) {
     const updated = mergeServiceAnswers(service, answers, additions);
     const next = getQuestions(service, updated).find(item => !(item.id in updated));
     const assistantTurns: ChatTurn[] = [];
+    const changed = Object.keys(additions).some(id => updated[id] !== answers[id]);
+    if (reviewing && changed) assistantTurns.push({ role: "assistant", text: revisedBriefMessage });
+    if (reviewing && !changed && !reply) reply = "لم يتغيّر الملخص. اذكر التفصيل المطلوب والقيمة الجديدة.";
     if (reply) assistantTurns.push({ role: "assistant", text: reply });
     if (next && next.id !== question?.id) assistantTurns.push({ role: "assistant", text: next.label });
     if (!reply && next?.id === question?.id && !Object.keys(additions).length) setError("لم أجد إجابة واضحة للسؤال الحالي. أضف التفاصيل أو اختر أحد الخيارات المعروضة.");
@@ -207,7 +213,7 @@ export function ServiceChat({ slug }: { slug: string }) {
       <form onSubmit={event => { event.preventDefault(); void send(draft); }}>
         <label className={s.srOnly} htmlFor="service-message">رسالتك للمساعد</label>
         <textarea id="service-message" ref={field} rows={2} maxLength={600} value={draft} disabled={generating || busy}
-          aria-describedby="chat-privacy" placeholder="اكتب إجابتك أو استفسارك…" onChange={event => setDraft(event.target.value)} />
+          aria-describedby="chat-privacy" placeholder={question ? "اكتب إجابتك أو استفسارك…" : "اكتب التفصيل الذي تريد تعديله…"} onChange={event => setDraft(event.target.value)} />
         <div className={s.actions}>
           <button className={studio.button} disabled={generating || busy || !draft.trim()}>إرسال الرسالة <span aria-hidden="true">←</span></button>
           {question?.optional && <button type="button" className={s.textButton} disabled={generating || busy} onClick={() => void send("", true)}>تخطّي</button>}
@@ -215,8 +221,8 @@ export function ServiceChat({ slug }: { slug: string }) {
       </form>
       {!question && <form className={s.review} onSubmit={submit}>
         <h3 ref={review} tabIndex={-1}>ملخص طلبك قبل الإرسال</h3>
-        <p>راجع هذا الملخص. سيُحفظ مع المحادثة عند إرسال الطلب.</p>
-        <p className={s.brief}>{brief}</p>
+        <p>لتعديل أي تفصيل، اكتب التعديل في خانة الشات. مثال «خلّي مدة الفيديو 45 ثانية».</p>
+        <p className={s.brief} aria-live="polite">{brief}</p>
         <details>
           <summary>تعديل الإجابات وبيانات التواصل</summary>
           <dl className={s.review}>{questions.map(item => <div key={item.id}>

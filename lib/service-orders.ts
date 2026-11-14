@@ -124,5 +124,18 @@ export function getServiceBrief(service: NonNullable<ReturnType<typeof getServic
     // Keep extra context and questions, but do not duplicate a message captured verbatim.
     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(turn.text))
     .map(turn => "• " + turn.text).join("\n");
-  return [service.name, requirements, notes ? "رسائل إضافية من العميل\n" + notes : ""].filter(Boolean).join("\n\n");
+  return [service.name, requirements, notes ? (conversation.some(turn => turn.role === "assistant" && turn.text === revisedBriefMessage) ? "رسائل العميل أثناء المحادثة (المتطلبات الحالية أعلاه)\n" : "رسائل إضافية من العميل\n") + notes : ""].filter(Boolean).join("\n\n");
+}
+
+export const revisedBriefMessage = "حدّثت ملخص الطلب. راجع التفاصيل الجديدة قبل الإرسال.";
+
+export function readPrivateServiceRevision(service: NonNullable<ReturnType<typeof getService>>, answers: AnswerMap, text: string): AnswerMap | null {
+  // Contact details and private links are handled in the browser.
+  const change = /^(?:(?:غيّر|غير|عدّل|عدل|حدّث|حدث|بدّل|بدل|خلّي|خلي)\s+)?(البريد(?: الإلكتروني)?|بريدي(?: الإلكتروني)?|الإيميل|الايميل|إيميلي|الاسم|اسمي|رابط المقاطع|رابط الموقع الحالي|المراجع|روابط المراجع|الملاحظات)\s*(?:(?:إلى|الى|هو)\s+|[:=]\s*)(.+)$/iu.exec(text);
+  if (!change) return null;
+  const [, label, value] = change;
+  const id = /بريد|يميل/u.test(label) ? "email" : /اسم/u.test(label) ? "name" :
+    label === "رابط المقاطع" ? "footage-link" : label === "رابط الموقع الحالي" ? "current" : "references";
+  const item = getQuestions(service, answers).find(question => question.id === id);
+  return item && validAnswer(item, value.trim()) ? { [id]: value.trim() } : {};
 }
