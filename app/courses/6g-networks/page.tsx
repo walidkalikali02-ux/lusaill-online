@@ -1,3 +1,4 @@
+import { siteSocialImage } from "@/lib/site-config";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { sixgLessons,sixgMeta,sixgPath,sixgMinutes,sixgLessonPath } from "@/lib/sixg-course";
@@ -5,7 +6,7 @@ import { absoluteUrl,siteConfig } from "@/lib/site-config";
 import { pageAlternates } from "@/lib/page-alternates";
 import { SixGDiagram } from "@/components/sixg-diagram";
 import { EvidenceExplorer } from "@/components/sixg-interactions";
-export const metadata:Metadata={title:sixgMeta.title,description:sixgMeta.description,alternates:pageAlternates(sixgPath),openGraph:{title:sixgMeta.title,description:sixgMeta.description,url:sixgPath,type:"website"}};
+export const metadata:Metadata={title:sixgMeta.title,description:sixgMeta.description,alternates:pageAlternates(sixgPath),openGraph:{images:[siteSocialImage],title:sixgMeta.title,description:sixgMeta.description,url:sixgPath,type:"website"}};
 export default function SixGCoursePage(){
  const schema={"@context":"https://schema.org","@type":"Course","@id":`${absoluteUrl(sixgPath)}#course`,name:sixgMeta.title,description:sixgMeta.description,url:absoluteUrl(sixgPath),inLanguage:"ar",isAccessibleForFree:true,educationalLevel:"تأسيسي",datePublished:sixgMeta.publishedAt,dateModified:sixgMeta.updatedAt,provider:{"@id":`${siteConfig.url}/#organization`},hasPart:sixgLessons.map(l=>({"@type":"LearningResource",position:l.order,name:l.title,url:absoluteUrl(sixgLessonPath(l.slug))})),hasCourseInstance:{"@type":"CourseInstance",courseMode:"online",courseWorkload:`PT${sixgMinutes}M`}};
  const breadcrumb={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{name:"الرئيسية",item:absoluteUrl("/")},{name:"الكورسات",item:absoluteUrl("/courses")},{name:"شبكات 6G",item:absoluteUrl(sixgPath)}].map((x,i)=>({"@type":"ListItem",position:i+1,...x}))};

@@ -16,7 +16,7 @@ const get = async (url) => { const r = await fetch(url, {signal: AbortSignal.tim
 const sitemapIndex = await get(`${origin}/sitemap.xml`);
 assert(sitemapIndex.includes('<sitemapindex'), 'Sitemap index missing');
 const sitemapNames = [...sitemapIndex.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
-for (const type of ['articles', 'categories', 'guides', 'entities']) assert(sitemapNames.includes(`${official}/sitemap-${type}.xml`), `Missing sitemap: ${type}`);
+for (const type of ['articles', 'categories', 'guides', 'entities', 'courses']) assert(sitemapNames.includes(`${official}/sitemap-${type}.xml`), `Missing sitemap: ${type}`);
 const sitemap = (await Promise.all(sitemapNames.map((url) => get(local(url))))).join('');
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
 assert(urls.length > 0);
@@ -25,6 +25,18 @@ assert(!sitemap.includes("/entities/metrash"), "Uncovered Qatar page must stay o
 for (const image of sitemap.matchAll(/<image:loc>(.*?)<\/image:loc>/g)) {
   assert(/^https:\/\//.test(image[1]), `Relative sitemap image URL: ${image[1]}`);
 }
+assert(urls.includes(official + "/knowledge/manahej"), "Curriculum hub missing from sitemap");
+assert(!sitemap.includes("res-academy.cache.wpscdn.com"), "Third-party WPS image in sitemap");
+const feeds = await get(origin + "/feed.xml");
+const feedItems = [...feeds.matchAll(/<guid isPermaLink="true">(.*?)<\/guid>/g)].map((match) => match[1]);
+assert(feedItems.length > 0 && feedItems.every((url) => urls.includes(url)), "RSS includes a URL outside the indexable sitemap");
+const courseSitemap = await get(origin + "/sitemap-courses.xml");
+assert(courseSitemap.includes("<loc>" + official + "/courses</loc>"), "Course hub missing from course sitemap");
+assert(!/\/courses(?:\/|<)/.test(await get(origin + "/sitemap-guides.xml")), "Course URLs in guide sitemap");
+const sitemapAlias = await fetch(origin + "/sitemap_index.xml", { redirect: "manual" });
+assert.equal(sitemapAlias.status, 301);
+assert.equal(new URL(sitemapAlias.headers.get("location"), origin).pathname, "/sitemap.xml");
+assert.match((await fetch(origin + "/favicon.ico")).headers.get("content-type") ?? "", /image\//);
 const robots = await get(`${origin}/robots.txt`);
 assert(robots.includes('Disallow: /api/') && robots.includes('Disallow: /admin/'), 'Crawler exclusions missing');
 assert(robots.includes(`Sitemap: ${official}/sitemap.xml`), 'Sitemap index not referenced');
@@ -46,6 +58,21 @@ assert(secondCategory.includes(`href="${categoryPath}"`), 'Pagination must link 
 for (const page of ['0', '-1', 'invalid', '999999']) {
   assert.equal((await fetch(`${origin}${categoryPath}?page=${page}`)).status, 404, `Invalid pagination must return 404: ${page}`);
 }
+const topicPath = "/topics/education";
+const topicFirst = await get(origin + topicPath);
+const topicSecond = await get(origin + topicPath + "?page=2");
+assert(crawlAllowed(topicPath + "?page=2"), "Topic pagination blocked");
+assert(!crawlAllowed(topicPath + "?page=2&section=test"), "Filtered topic pagination must remain blocked");
+assert(topicFirst.includes('href="' + topicPath + '?page=2"'), "Topic page 2 is not linked from page 1");
+assert(topicSecond.includes('<link rel="canonical" href="' + official + topicPath + '?page=2"'), "Topic pagination canonical is not self-referencing");
+assert(topicSecond.includes('href="' + topicPath + '"'), "Topic page 2 does not link to canonical page 1");
+assert.notEqual(topicFirst.match(/<title>(.*?)<\/title>/)?.[1], topicSecond.match(/<title>(.*?)<\/title>/)?.[1], "Topic pagination titles must differ");
+assert.equal((await fetch(origin + topicPath + "?page=999999")).status, 404);
+const missing = await fetch(origin + "/seo-check-missing-page");
+assert.equal(missing.status, 404);
+const missingHtml = await missing.text();
+assert(!/<link[^>]*rel="canonical"|<meta[^>]*property="og:/i.test(missingHtml), "404 inherits canonical or Open Graph metadata");
+assert.equal([...missingHtml.matchAll(/<meta name="robots" content="noindex"\s*\/?\s*>/g)].length, 1, "404 must have one noindex");
 const titles = new Set(); const descriptions = new Set(); const links = new Set(); const images = new Set();
 let articles = 0; let diagrams = 0; let howToCount = 0; let longTitleCount = 0;
 const homepage = await get(`${origin}/`);

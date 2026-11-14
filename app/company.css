@@ -47,6 +47,7 @@
 .principle-grid span{font-size:13px;color:#7b877c}
 .principle-grid h3{font-weight:400;font-size:24px;margin:25px 0 12px}
 .principle-grid p{color:#626d64}
+.principle-grid ul{padding:0;list-style:none;margin:22px 0 0;display:grid;gap:12px}
 .company-end{background:#23372a;color:#f3f5ed;padding:85px 0}
 .company-end h2{margin:20px 0 40px}
 .site-footer{background:#101713;color:#d2dbd3}

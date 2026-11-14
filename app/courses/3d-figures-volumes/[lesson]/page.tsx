@@ -1,3 +1,4 @@
+import { siteSocialImage } from "@/lib/site-config";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -10,7 +11,7 @@ import { pageAlternates } from "@/lib/page-alternates";
 type Props={params:Promise<{lesson:string}>};
 export const dynamicParams=false;
 export function generateStaticParams(){return geometryLessons.map(l=>({lesson:l.slug}));}
-export async function generateMetadata({params}:Props):Promise<Metadata>{const l=getGeometryLesson((await params).lesson);if(!l)return {robots:{index:false,follow:false}};return {title:l.title,description:l.description,alternates:pageAlternates(geometryLessonPath(l.slug)),openGraph:{title:l.title,description:l.description,url:geometryLessonPath(l.slug),type:"article",publishedTime:geometryMeta.publishedAt,modifiedTime:geometryMeta.updatedAt}};}
+export async function generateMetadata({params}:Props):Promise<Metadata>{const l=getGeometryLesson((await params).lesson);if(!l)return {robots:{index:false,follow:false}};return {title:l.title,description:l.description,alternates:pageAlternates(geometryLessonPath(l.slug)),openGraph:{images:[siteSocialImage],title:l.title,description:l.description,url:geometryLessonPath(l.slug),type:"article",publishedTime:geometryMeta.publishedAt,modifiedTime:geometryMeta.updatedAt}};}
 export default async function GeometryLessonPage({params}:Props){
  const l=getGeometryLesson((await params).lesson);if(!l)notFound();const index=geometryLessons.findIndex(item=>item.slug===l.slug);const previous=geometryLessons[index-1],next=geometryLessons[index+1];const path=geometryLessonPath(l.slug);
  const schema={"@context":"https://schema.org","@type":["Article","LearningResource"],headline:l.title,description:l.description,url:absoluteUrl(path),mainEntityOfPage:absoluteUrl(path),inLanguage:"ar",educationalLevel:"تأسيسي",learningResourceType:"درس رياضيات",isAccessibleForFree:true,datePublished:geometryMeta.publishedAt,dateModified:geometryMeta.updatedAt,author:{"@type":"Organization",name:"فريق لوسيل",url:absoluteUrl("/authors/editorial-team")},publisher:{"@id":`${siteConfig.url}/#organization`},isPartOf:{"@id":`${absoluteUrl(geometryPath)}#course`}};

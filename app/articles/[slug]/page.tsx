@@ -79,7 +79,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!cluster) notFound();
   const topicPersona = getTeamPersonaForArticle(article);
 
-  const related = getRelatedArticles(article);
+  const related = getRelatedArticles(article).filter(isArticleSearchReady);
   const latestCheck = article.sources?.length
     ? article.sources.reduce((latest, source) => (source.checkedAt > latest ? source.checkedAt : latest), article.sources[0].checkedAt)
     : null;

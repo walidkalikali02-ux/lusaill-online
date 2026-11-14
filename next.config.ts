@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: { globalNotFound: true },
   skipTrailingSlashRedirect: true,
   images: {
     formats: ["image/avif", "image/webp"],
@@ -21,6 +22,7 @@ const nextConfig: NextConfig = {
   // Keep weaker historical matches in the review inventory; never redirect everything to /.
   async redirects() {
     return [
+      { source: "/sitemap_index.xml", destination: "/sitemap.xml", statusCode: 301 },
       { source: "/articles/active-recall", destination: "/knowledge/active-recall-retrieval-practice-self-testing", permanent: true },
     ];
   },

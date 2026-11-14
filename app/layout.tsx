@@ -1,6 +1,5 @@
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import Script from "next/script";
-import { pageAlternates } from "@/lib/page-alternates";
 import type { Metadata } from "next";
 import "./globals.css";
 import "./editorial.css";
@@ -10,7 +9,7 @@ import { SiteAnalytics } from "@/components/site-analytics";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { SiteFrame } from "@/components/site-frame";
 import { SiteFooter } from "@/components/site-footer";
-import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 
 const bodyFont = IBM_Plex_Sans_Arabic({ weight: ["400", "500", "600", "700"], subsets: ["arabic", "latin"], variable: "--font-arabic-body", display: "swap" });
 
@@ -25,7 +24,6 @@ export const metadata: Metadata = {
   creator: siteConfig.publisher,
   publisher: siteConfig.name,
   authors: [{ name: siteConfig.publisher }],
-  alternates: pageAlternates("/"),
   category: "reference",
   referrer: "origin-when-cross-origin",
   formatDetection: { email: false, address: false, telephone: false },
@@ -41,7 +39,7 @@ export const metadata: Metadata = {
       ].filter(Boolean) as [string, string][]
     ),
   },
-  openGraph: {
+  openGraph: { images: [siteSocialImage],
     type: "website",
     locale: siteConfig.locale,
     siteName: siteConfig.name,

@@ -1,3 +1,4 @@
+import { siteSocialImage } from "@/lib/site-config";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,7 +9,7 @@ import { pageAlternates } from "@/lib/page-alternates";
 type Props={params:Promise<{lesson:string}>};
 export const dynamicParams=false;
 export function generateStaticParams(){return geometryLessons.map(l=>({lesson:l.slug}));}
-export async function generateMetadata({params}:Props):Promise<Metadata>{const l=getGeometryLesson((await params).lesson);if(!l)return {robots:{index:false,follow:false}};const description=`ستة تمارين أصلية في ${l.shortTitle}، مع إجابات مشروحة ونسخة قابلة للطباعة. حل الأسئلة أولًا ثم افتح الحلول للتحقق من فهمك.`;return {title:`ورقة عمل: ${l.shortTitle}`,description,alternates:pageAlternates(`${geometryLessonPath(l.slug)}/worksheet`),openGraph:{title:`ورقة عمل: ${l.shortTitle}`,description,url:`${geometryLessonPath(l.slug)}/worksheet`,type:"website"}};}
+export async function generateMetadata({params}:Props):Promise<Metadata>{const l=getGeometryLesson((await params).lesson);if(!l)return {robots:{index:false,follow:false}};const description=`ستة تمارين أصلية في ${l.shortTitle}، مع إجابات مشروحة ونسخة قابلة للطباعة. حل الأسئلة أولًا ثم افتح الحلول للتحقق من فهمك.`;return {title:`ورقة عمل: ${l.shortTitle}`,description,alternates:pageAlternates(`${geometryLessonPath(l.slug)}/worksheet`),openGraph:{images:[siteSocialImage],title:`ورقة عمل: ${l.shortTitle}`,description,url:`${geometryLessonPath(l.slug)}/worksheet`,type:"website"}};}
 export default async function GeometryWorksheetPage({params}:Props){
  const l=getGeometryLesson((await params).lesson);if(!l)notFound();const path=`${geometryLessonPath(l.slug)}/worksheet`;
  const schema={"@context":"https://schema.org","@type":"LearningResource",name:`ورقة عمل: ${l.shortTitle}`,description:`ستة تمارين مع الحلول في ${l.shortTitle}.`,url:absoluteUrl(path),inLanguage:"ar",learningResourceType:"ورقة عمل",isAccessibleForFree:true,isPartOf:{"@id":`${absoluteUrl(geometryPath)}#course`},datePublished:geometryMeta.publishedAt,dateModified:geometryMeta.updatedAt};

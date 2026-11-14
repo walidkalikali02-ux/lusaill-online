@@ -88,6 +88,8 @@ export function getEncyclopediaCategoryCounts(): Record<string, number> {
   return Object.fromEntries(encyclopediaCategories.map(category => [category.slug, getEncyclopediaCategoryItems(category).length]));
 }
 
+export const TOPIC_PAGE_SIZE = 24;
+
 export function getCategoryUrl(category: EncyclopediaCategory, subtopic?: string): string {
   return subtopic ? `/topics/${category.slug}?section=${encodeURIComponent(subtopic)}` : `/topics/${category.slug}`;
 }
