@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { pageAlternates } from "@/lib/page-alternates";
-import { siteSocialImage } from "@/lib/site-config";
+import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 import TryMath from "./try-math";
 import styles from "./curriculum.module.css";
 
@@ -46,6 +46,22 @@ export default async function CurriculumPage({ params }: Props) {
   const { url, title, grade } = locationFor(path);
   const showGrades = grade === undefined;
   const isHome = url === home;
+  const breadcrumbs = [
+    { name: "موسوعة لوسيل", href: "/knowledge" },
+    ...(!isHome ? [{ name: "مناهج", href: home }] : []),
+    ...(grade !== undefined ? [{ name: "المنهج القطري", href: qatar }] : []),
+    { name: title, href: url },
+  ];
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map(({ name, href }, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name,
+      item: absoluteUrl(href),
+    })),
+  };
 
   return (
     <main id="main-content" className={`shell ${styles.page}`}>
@@ -91,6 +107,7 @@ export default async function CurriculumPage({ params }: Props) {
           </ul>
         </section>
       )}
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
     </main>
   );
 }
