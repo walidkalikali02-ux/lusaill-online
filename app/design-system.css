@@ -511,3 +511,17 @@ a.article-card:hover, .article-card:hover, .cluster-card:hover,
 }
 .ds-tile-link span { transition: transform var(--ds-dur) var(--ds-ease); }
 .ds-tile:hover .ds-tile-link span { transform: translateX(-6px); }
+
+/* Homepage "browse by need" lists inside the principle grid */
+.principle-grid h3:first-child { margin-top: 0; }
+.principle-grid ul { gap: 0; margin-top: 24px; border-top: 1px solid var(--ds-line); }
+.principle-grid li { border-bottom: 1px solid var(--ds-line); }
+.principle-grid li .company-inline-link {
+  display: flex; justify-content: space-between; align-items: center;
+  margin: 0; padding: 12px 0; border: 0; font-weight: 400; font-size: 15px;
+  transition: padding var(--ds-dur) var(--ds-ease);
+}
+.principle-grid li .company-inline-link::after { content: "←"; color: var(--ds-slate); }
+.principle-grid li .company-inline-link:hover { padding-inline-start: 6px; }
+.principle-grid li .company-inline-link:hover::after { color: var(--ds-ink); }
+@media (prefers-reduced-motion: reduce) { .principle-grid li .company-inline-link { transition: none; } }
