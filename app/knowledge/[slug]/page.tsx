@@ -82,11 +82,18 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 <strong>محتويات الدليل</strong><ul style={{paddingInlineStart:22,columns:2,columnWidth:"270px",marginTop:8}}>
 {topic.sections.map(s=><li key={s.id}><a href={"#"+s.id} style={{color:"#0d7490",textDecoration:"underline"}}>{s.heading}</a></li>)}
 {lab && <li><a href="#math-experiment" style={{color:"#0d7490",textDecoration:"underline"}}>توقّع وجرّب على الرسم</a></li>}
-<li><a href="#interactive-tool" style={{color:"#0d7490",textDecoration:"underline"}}>الأداة التفاعلية</a></li>
+{topic.tool && <li><a href="#interactive-tool" style={{color:"#0d7490",textDecoration:"underline"}}>الأداة التفاعلية</a></li>}
 </ul></nav>
 {topic.sections.map(section=><section key={section.id} id={section.id} style={{marginBlock:30,scrollMarginTop:35}}>
 <h2 style={{fontSize:26,fontWeight:800,lineHeight:1.55,marginBottom:13}}>{section.heading}</h2>
-{section.paragraphs?.map((p,i)=><p key={i} style={{marginBlock:13,fontSize:17}}>{p}</p>)}
+{!section.blocks && section.paragraphs?.map((p,i)=><p key={i} style={{marginBlock:13,fontSize:17}}>{p}</p>)}
+{section.blocks?.map((block,i)=> {
+ if(block.kind === "heading") return <h3 key={i} style={{fontSize:21,fontWeight:700,marginBlock:18}}>{block.text}</h3>;
+ if(block.kind === "paragraph") return <p key={i} style={{marginBlock:13,fontSize:17}}>{block.text}</p>;
+ if(block.kind === "diagram") return <pre key={i} style={{whiteSpace:"pre-wrap",overflowWrap:"anywhere",padding:18,background:"#f1f5f9",borderRadius:12}}>{block.text}</pre>;
+ if(block.kind === "list") return <ul key={i} style={{paddingInlineStart:27}}>{block.items.map((item,j)=><li key={j}>{item}</li>)}</ul>;
+ if(block.kind === "table") return <div key={i} style={{overflowX:"auto",marginBlock:18}}><table style={{width:"100%",minWidth:600,borderCollapse:"collapse",textAlign:"start"}}><caption>{section.heading}</caption><thead><tr>{block.headers.map((h,j)=><th key={j} scope="col" style={tableCell}>{h}</th>)}</tr></thead><tbody>{block.rows.map((row,j)=><tr key={j}>{row.map((cell,k)=>k===0?<th scope="row" key={k} style={tableCell}>{cell}</th>:<td key={k} style={tableCell}>{cell}</td>)}</tr>)}</tbody></table></div>;
+})}
 {section.points?.length ? <ul style={{paddingInlineStart:27,marginBlock:12}}>{section.points.map((point,i)=><li key={i} style={{marginBottom:8}}>{point}</li>)}</ul> : null}
 {section.table && <div style={{overflowX:"auto",border:"1px solid #e2e8f0",borderRadius:12,marginBlock:17}}>
 <table style={{width:"100%",minWidth:600,borderCollapse:"collapse",textAlign:"start"}}>
@@ -96,7 +103,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 </table></div>}
 {section.note && <aside style={{borderRight:"4px solid #f59e0b",background:"#fffbeb",padding:18,borderRadius:7,marginTop:14}}><strong>تنبيه</strong><p>{section.note}</p></aside>}
 </section>)}
-<KnowledgeInteractiveTool kind={topic.tool} slug={topic.slug}/>
+{topic.tool && <KnowledgeInteractiveTool kind={topic.tool} slug={topic.slug}/>}
 <section id="frequently-asked-questions" style={{marginBlock:32}}>
 <h2 style={{fontSize:26,fontWeight:800,marginBottom:15}}>أسئلة شائعة</h2>
 {topic.faq.map((faq,i)=><details key={i} style={{marginBlock:10,border:"1px solid #e2e8f0",padding:16,borderRadius:10}}>

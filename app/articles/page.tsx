@@ -34,6 +34,7 @@ export default function ArticlesPage() {
 
   return (
     <main id="main-content" className="category-page">
+<section className="shell" aria-label="أدلة الذكاء الاصطناعي"><h2>أدلة الذكاء الاصطناعي</h2><ul><li><Link href="/knowledge/ai-vs-machine-learning-vs-deep-learning">الفرق بين الذكاء الاصطناعي وتعلم الآلة والتعلم العميق بمثال واحد</Link></li><li><Link href="/knowledge/types-of-artificial-intelligence">الذكاء الاصطناعي الضيق والعام والخارق: ما الفرق؟</Link></li></ul></section>
       <div className="shell">
         <div className="category-hero">
           <span className="article-card-tag">الأدلة</span>

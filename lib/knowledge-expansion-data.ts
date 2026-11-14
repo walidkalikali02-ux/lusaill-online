@@ -1,3 +1,4 @@
+import { aiPublishedTopics } from "./knowledge-ai-published";
 import { batch20A } from "./knowledge-batch-20a";
 import { batch20B } from "./knowledge-batch-20b";
 import { batch19A } from "./knowledge-batch-19a";
@@ -55,6 +56,7 @@ export type KnowledgeTopic = {
   sections: Array<{
     id: string;
     heading: string;
+    blocks?: Array<{kind: "paragraph" | "heading" | "diagram"; text: string} | {kind: "list"; items: string[]} | {kind: "table"; headers: string[]; rows: string[][]}>;
     paragraphs?: string[];
     points?: string[];
     table?: { headers: string[]; rows: string[][]; caption: string };
@@ -63,9 +65,10 @@ export type KnowledgeTopic = {
   faq: { question: string; answer: string }[];
   sources: { label: string; url: string }[];
   related: { label: string; href: string }[];
-  tool: "crystal-guide" | "environmental-paths" | "major-choice" | "food-safety-checklist" | "immunity-facts" | "focus-week-plan" | "school-discipline-plan" | "writing-outline" | "game-lesson-builder" | "open-learning-checker" | "report-outline-builder" | "mindmap-builder" | "polya-problem-trainer" | "sq3r-reading-workbook" | "research-evidence-matrix" | "creative-lesson-planner" | "pie-angle-calculator" | "job-application-tracker" | "expert-knowledge-check";
+  tool?: "crystal-guide" | "environmental-paths" | "major-choice" | "food-safety-checklist" | "immunity-facts" | "focus-week-plan" | "school-discipline-plan" | "writing-outline" | "game-lesson-builder" | "open-learning-checker" | "report-outline-builder" | "mindmap-builder" | "polya-problem-trainer" | "sq3r-reading-workbook" | "research-evidence-matrix" | "creative-lesson-planner" | "pie-angle-calculator" | "job-application-tracker" | "expert-knowledge-check";
 };
 export const knowledgeTopics: KnowledgeTopic[] = [
+  ...aiPublishedTopics,
   ...editorialTopics,
   ...nextBatchTopics,
   ...educationBatchTopics,
