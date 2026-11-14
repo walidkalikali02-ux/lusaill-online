@@ -86,7 +86,15 @@ for (const [path, html] of await Promise.all([
 ].map(async ([path, page]) => [path, page ? await page : await get(new URL(path, origin))]))) {
   const project = path.startsWith("/services") ? "/services" : path === "/caricatures" ? "/caricatures" : path === "/articles" ? "/articles" : "/knowledge";
   assert(html.includes(`data-project="${project}"`), `Incorrect project navigation: ${path}`);
-  const visibleHtml = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "");
+  let visibleHtml = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "");
+  // The two AI explainers are intentionally discoverable from the all-guides catalog.
+  if (path === "/articles") {
+    for (const slug of ["ai-vs-machine-learning-vs-deep-learning", "types-of-artificial-intelligence"]) {
+      const href = "/knowledge/" + slug;
+      assert(visibleHtml.includes(`href="${href}"`), `AI guide missing from catalog: ${slug}`);
+      visibleHtml = visibleHtml.replaceAll(`href="${href}"`, 'data-verified-ai-guide="true"');
+    }
+  }
   for (const sibling of ["/courses", "/caricatures", "/services", "/knowledge", "/guides", "/food-safety"]) {
     if ((project === "/knowledge" && sibling === "/food-safety") || (project === "/articles" && sibling === "/guides") || project === sibling) continue;
     assert(!new RegExp(`href="${sibling}(?:[/#?]|")`).test(visibleHtml), `Unrelated project link (${sibling}) on ${path}`);
