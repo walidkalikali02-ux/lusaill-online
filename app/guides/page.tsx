@@ -8,7 +8,7 @@ const description = "اختر مسارًا لمهمتك: السكن البديل
 export const metadata: Metadata = {
   title: "مسارات الخدمات وحل المشكلات اليومية", description,
   alternates: pageAlternates("/guides"),
-  openGraph: { title: "مسارات الخدمات وحل المشكلات اليومية", description, url: "/guides", images: [siteSocialImage] },
+  openGraph: { type: "website", title: "مسارات الخدمات وحل المشكلات اليومية", description, url: "/guides", images: [siteSocialImage] },
 };
 export default function GuidesPage() {
   const schemas = [

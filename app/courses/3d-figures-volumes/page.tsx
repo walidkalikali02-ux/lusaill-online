@@ -1,3 +1,4 @@
+import { siteSocialImage } from "@/lib/site-config";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { geometryLessons, geometryMeta, geometryPath, geometryMinutes, geometryLessonPath } from "@/lib/geometry-course";
@@ -5,7 +6,7 @@ import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { pageAlternates } from "@/lib/page-alternates";
 import { GeometryDiagram } from "@/components/geometry-diagram";
 import { GeometryCalculator } from "@/components/geometry-interactions";
-export const metadata: Metadata = { title: geometryMeta.title, description: geometryMeta.description, alternates: pageAlternates(geometryPath), openGraph:{title:geometryMeta.title,description:geometryMeta.description,type:"website",url:geometryPath} };
+export const metadata: Metadata = { title: geometryMeta.title, description: geometryMeta.description, alternates: pageAlternates(geometryPath), openGraph:{images:[siteSocialImage],title:geometryMeta.title,description:geometryMeta.description,type:"website",url:geometryPath} };
 export default function GeometryCoursePage() {
  const schema={"@context":"https://schema.org","@type":"Course","@id":`${absoluteUrl(geometryPath)}#course`,name:geometryMeta.title,description:geometryMeta.description,url:absoluteUrl(geometryPath),inLanguage:"ar",educationalLevel:"تأسيسي",isAccessibleForFree:true,datePublished:geometryMeta.publishedAt,dateModified:geometryMeta.updatedAt,provider:{"@id":`${siteConfig.url}/#organization`},hasPart:geometryLessons.map(l=>({"@type":"LearningResource",name:l.title,url:absoluteUrl(geometryLessonPath(l.slug)),position:l.order})),hasCourseInstance:{"@type":"CourseInstance",courseMode:"online",courseWorkload:`PT${geometryMinutes}M`}};
  const breadcrumb={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{name:"الرئيسية",item:absoluteUrl("/")},{name:"الكورسات",item:absoluteUrl("/courses")},{name:"المجسّمات والحجوم",item:absoluteUrl(geometryPath)}].map((i,index)=>({"@type":"ListItem",position:index+1,...i}))};

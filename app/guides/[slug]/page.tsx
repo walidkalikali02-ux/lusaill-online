@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const description = hub?.description ?? path.description;
   return { title, description, alternates: pageAlternates(`/guides/${slug}`),
     robots: { index: isGuidePathSearchReady(path), follow: true },
-    openGraph: { title, description, url: `/guides/${slug}`, images: [siteSocialImage] } };
+    openGraph: { type: "website", title, description, url: `/guides/${slug}`, images: [siteSocialImage] } };
 }
 export default async function GuidePathPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

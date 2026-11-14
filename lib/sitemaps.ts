@@ -49,7 +49,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
       images: topic.image ? [absoluteUrl(topic.image)] : [],
     }));
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: absoluteUrl("/"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article))), changeFrequency: "weekly", priority: 1.0 },
+    { url: absoluteUrl("/"), lastModified: new Date("2026-11-14"), changeFrequency: "weekly", priority: 1.0 },
     { url: absoluteUrl("/knowledge"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/topics"), changeFrequency: "monthly", priority: 0.9 },
     { url: absoluteUrl("/caricatures"), lastModified: new Date("2026-11-08"), changeFrequency: "weekly", priority: 0.8 },
@@ -60,6 +60,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     { url: absoluteUrl("/services/video-editing"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/services/excel"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/services/social-design"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/knowledge/manahej"), lastModified: new Date("2026-11-14"), changeFrequency: "monthly", priority: 0.8 },
     // Separately authored routes; not included in knowledgeTopics.
     { url: absoluteUrl("/knowledge/roman-numerals"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/roman-numerals-education.svg")] },
     { url: absoluteUrl("/knowledge/learning-objectives"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/bloom-learning-levels-original.svg")] },
@@ -115,7 +116,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
       lastModified: getArticleModifiedAt(article) ? new Date(getArticleModifiedAt(article)!) : undefined,
       changeFrequency: "monthly" as const,
       priority: 0.9,
-      images: [article.coverImage, guideIllustrations[article.slug]?.src].filter((src): src is string => Boolean(src)).map(absoluteUrl),
+      images: [article.coverImage, guideIllustrations[article.slug]?.src].filter((src): src is string => Boolean(src)).map(absoluteUrl).filter((url) => new URL(url).hostname !== "res-academy.cache.wpscdn.com"),
     }));
 
   const restoredScienceRoutes: MetadataRoute.Sitemap = Object.values(restoredScienceGuides).map(guide => ({
@@ -140,9 +141,10 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
   return {
     "sitemap-articles.xml": [...publishedArticleRoutes, ...restoredScienceRoutes, ...foodSafetyRoutes],
     "sitemap-categories.xml": [...clusterRoutes, ...categoryPaginationRoutes],
-    "sitemap-guides.xml": [...guideRoutes, ...courseRoutes, ...sixgLessons.map(lesson => ({url:absoluteUrl(sixgLessonPath(lesson.slug)),lastModified:new Date(sixgMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...fivegLessons.map(lesson => ({url:absoluteUrl(fivegLessonPath(lesson.slug)),lastModified:new Date(fivegMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...geometryLessons.flatMap(lesson => [geometryLessonPath(lesson.slug), `${geometryLessonPath(lesson.slug)}/worksheet`].map(path => ({url:absoluteUrl(path),lastModified:new Date(geometryMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7}))), ...staticRoutes.filter((route) => route.url.includes("/courses/"))],
+    "sitemap-guides.xml": guideRoutes,
+    "sitemap-courses.xml": [...staticRoutes.filter((route) => new URL(route.url).pathname === "/courses"), ...courseRoutes, ...sixgLessons.map(lesson => ({url:absoluteUrl(sixgLessonPath(lesson.slug)),lastModified:new Date(sixgMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...fivegLessons.map(lesson => ({url:absoluteUrl(fivegLessonPath(lesson.slug)),lastModified:new Date(fivegMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...geometryLessons.flatMap(lesson => [geometryLessonPath(lesson.slug), `${geometryLessonPath(lesson.slug)}/worksheet`].map(path => ({url:absoluteUrl(path),lastModified:new Date(geometryMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7}))), ...staticRoutes.filter((route) => route.url.includes("/courses/"))],
     "sitemap-entities.xml": entityRoutes,
-    "sitemap-pages.xml": [...staticRoutes.filter((route) => !route.url.includes("/courses/")), ...knowledgeRoutes, ...topicRoutes],
+    "sitemap-pages.xml": [...staticRoutes.filter((route) => !new URL(route.url).pathname.startsWith("/courses")), ...knowledgeRoutes, ...topicRoutes],
   };
 }
 

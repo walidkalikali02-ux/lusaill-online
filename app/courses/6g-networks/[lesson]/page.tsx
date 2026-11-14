@@ -1,3 +1,4 @@
+import { siteSocialImage } from "@/lib/site-config";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -11,7 +12,7 @@ import { GeometryQuizCard } from "@/components/geometry-interactions";
 type Props={params:Promise<{lesson:string}>};
 export const dynamicParams=false;
 export function generateStaticParams(){return sixgLessons.map(l=>({lesson:l.slug}));}
-export async function generateMetadata({params}:Props):Promise<Metadata>{const l=getSixGLesson((await params).lesson);if(!l)return {robots:{index:false,follow:false}};return {title:l.title,description:l.description,alternates:pageAlternates(sixgLessonPath(l.slug)),openGraph:{title:l.title,description:l.description,url:sixgLessonPath(l.slug),type:"article",publishedTime:sixgMeta.publishedAt,modifiedTime:sixgMeta.updatedAt}};}
+export async function generateMetadata({params}:Props):Promise<Metadata>{const l=getSixGLesson((await params).lesson);if(!l)return {robots:{index:false,follow:false}};return {title:l.title,description:l.description,alternates:pageAlternates(sixgLessonPath(l.slug)),openGraph:{images:[siteSocialImage],title:l.title,description:l.description,url:sixgLessonPath(l.slug),type:"article",publishedTime:sixgMeta.publishedAt,modifiedTime:sixgMeta.updatedAt}};}
 export default async function SixGLessonPage({params}:Props){const l=getSixGLesson((await params).lesson);if(!l)notFound();const path=sixgLessonPath(l.slug),previous=sixgLessons[l.order-2],next=sixgLessons[l.order];
  const schema={"@context":"https://schema.org","@type":["Article","LearningResource"],headline:l.title,description:l.description,url:absoluteUrl(path),mainEntityOfPage:absoluteUrl(path),inLanguage:"ar",learningResourceType:l.order===9?'مراجع تعليمية':l.order===10?'نشاط نقاش':'درس اتصالات',isAccessibleForFree:true,datePublished:sixgMeta.publishedAt,dateModified:sixgMeta.updatedAt,author:{"@type":"Organization",name:"فريق لوسيل",url:absoluteUrl('/authors/editorial-team')},publisher:{"@id":`${siteConfig.url}/#organization`},isPartOf:{"@id":`${absoluteUrl(sixgPath)}#course`}};
  const breadcrumb={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{name:'الرئيسية',item:absoluteUrl('/')},{name:'الكورسات',item:absoluteUrl('/courses')},{name:'شبكات 6G',item:absoluteUrl(sixgPath)},{name:l.shortTitle,item:absoluteUrl(path)}].map((x,i)=>({"@type":"ListItem",position:i+1,...x}))};

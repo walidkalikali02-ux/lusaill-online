@@ -7,7 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 function readRegistry(pathname, startMarker, endMarker) {
-  const source = fs.readFileSync(pathname, "utf8");
+  const source = fs.readFileSync(pathname, "utf8").replace(/\r\n/g, "\n");
   const from = source.indexOf(startMarker);
   const until = source.lastIndexOf(endMarker);
   if (from < 0 || until <= from) throw new Error("Editorial content registry could not be parsed: " + pathname);

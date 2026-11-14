@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { encyclopediaCategories, getEncyclopediaCategory } from "@/lib/encyclopedia-taxonomy";
-import { getCategoryUrl, getEncyclopediaCategoryItems, getEncyclopediaSubtopicItems } from "@/lib/encyclopedia-catalog";
+import { TOPIC_PAGE_SIZE, getCategoryUrl, getEncyclopediaCategoryItems, getEncyclopediaSubtopicItems } from "@/lib/encyclopedia-catalog";
 import { pageAlternates } from "@/lib/page-alternates";
-import { absoluteUrl } from "@/lib/site-config";
+import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 import { isSearchReadyHref } from "@/lib/editorial-indexing";
 import styles from "./topic.module.css";
 
@@ -13,19 +13,36 @@ export const dynamicParams = false;
 export const revalidate = 3600;
 export function generateStaticParams() { return encyclopediaCategories.map(category => ({ slug: category.slug })); }
 
+function topicPageNumber(value: string | string[] | undefined) {
+  if (value === undefined) return 1;
+  if (typeof value !== "string" || !/^[1-9]\d*$/.test(value)) return null;
+  const page = Number(value);
+  return Number.isSafeInteger(page) ? page : null;
+}
+
+function topicPageUrl(base: string, page: number) {
+  return page === 1 ? base : base + (base.includes("?") ? "&" : "?") + "page=" + page;
+}
+
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const [{ slug }, query] = await Promise.all([params, searchParams]);
   const category = getEncyclopediaCategory(slug);
   if (!category) return { robots: { index: false, follow: false } };
-  const count = getEncyclopediaCategoryItems(category).filter(item => isSearchReadyHref(item.href)).length;
-  const filtered = typeof query.section === "string" && category.subtopics.includes(query.section);
-  const page = typeof query.page === "string" ? Number(query.page) : 1;
+  const items = getEncyclopediaCategoryItems(category);
+  const count = items.filter(item => isSearchReadyHref(item.href)).length;
+  const filtered = query.section !== undefined;
+  const page = topicPageNumber(query.page);
+  const validPage = page !== null && page <= Math.max(1, Math.ceil(items.length / TOPIC_PAGE_SIZE));
+  const base = getCategoryUrl(category);
+  const canonical = !filtered && validPage ? topicPageUrl(base, page) : base;
+  const paginated = !filtered && validPage && page > 1;
+  const title = paginated ? category.title + " — صفحة " + page : category.title;
   return {
-    title: `${category.title} | فئات موسوعة لوسيل`,
-    description: `${category.summary} تصفح التخصصات الفرعية والمقالات المتاحة في قسم ${category.title} من موسوعة لوسيل.`,
-    alternates: pageAlternates(getCategoryUrl(category)),
-    robots: { index: count >= 2 && !filtered && !(page > 1), follow: true },
-    openGraph: { title: `${category.title} | موسوعة لوسيل`, description: category.summary, url: getCategoryUrl(category), type: "website" },
+    title,
+    description: paginated ? category.summary + " تصفح الصفحة " + page + " لمتابعة مقالات هذا القسم." : category.summary + " تصفح التخصصات الفرعية والمقالات المتاحة في هذا القسم من موسوعة لوسيل.",
+    alternates: pageAlternates(canonical),
+    robots: { index: count >= 2 && !filtered && validPage && page === 1, follow: true },
+    openGraph: { title, description: category.summary, url: canonical, type: "website", images: [siteSocialImage] },
   };
 }
 
@@ -36,19 +53,16 @@ export default async function TopicPage({ params, searchParams }: Props) {
   const section = typeof query.section === "string" && category.subtopics.includes(query.section) ? query.section : undefined;
   const fullList = getEncyclopediaCategoryItems(category);
   const results = section ? getEncyclopediaSubtopicItems(category, section) : fullList;
-  const requestedPage = typeof query.page === "string" ? Number.parseInt(query.page, 10) : 1;
-  const page = Number.isFinite(requestedPage) ? Math.max(1, Math.min(1000, requestedPage)) : 1;
-  const perPage = 24;
-  const totalPages = Math.max(1, Math.ceil(results.length / perPage));
-  const currentPage = Math.min(page, totalPages);
-  const visible = results.slice((currentPage - 1) * perPage, currentPage * perPage);
-  const pageUrl = (index: number) => {
-    const base = getCategoryUrl(category, section);
-    return `${base}${section ? "&" : "?"}page=${index}`;
-  };
+  const totalPages = Math.max(1, Math.ceil(results.length / TOPIC_PAGE_SIZE));
+  const currentPage = topicPageNumber(query.page);
+  if (currentPage === null || currentPage > totalPages) notFound();
+  const visible = results.slice((currentPage - 1) * TOPIC_PAGE_SIZE, currentPage * TOPIC_PAGE_SIZE);
+  const base = getCategoryUrl(category);
+  const canonical = section ? base : topicPageUrl(base, currentPage);
+  const pageUrl = (index: number) => topicPageUrl(getCategoryUrl(category, section), index);
   const schema = {
     "@context": "https://schema.org", "@type": "CollectionPage",
-    name: category.title, url: absoluteUrl(getCategoryUrl(category)),
+    name: category.title, url: absoluteUrl(canonical),
     description: category.summary, inLanguage: "ar",
     mainEntity: { "@type": "ItemList", numberOfItems: visible.length,
       itemListElement: visible.map((item, i) => ({ "@type": "ListItem", position: i + 1, name: item.title, url: absoluteUrl(item.href) })),

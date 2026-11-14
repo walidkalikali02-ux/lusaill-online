@@ -1,4 +1,6 @@
 import { articles, clusters, isArticleIndexable } from "@/lib/content";
+import { encyclopediaCategories } from "@/lib/encyclopedia-taxonomy";
+import { getEncyclopediaCategoryItems, TOPIC_PAGE_SIZE } from "@/lib/encyclopedia-catalog";
 import type { MetadataRoute } from "next";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 
@@ -16,11 +18,18 @@ const allowedCategoryPagination = clusters.flatMap((cluster) => {
   );
 });
 
+const allowedTopicPagination = encyclopediaCategories.flatMap((category) =>
+  Array.from(
+    { length: Math.max(0, Math.ceil(getEncyclopediaCategoryItems(category).length / TOPIC_PAGE_SIZE) - 1) },
+    (_, index) => "/topics/" + category.slug + "?page=" + (index + 2) + "$"
+  )
+);
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: ["*", "Googlebot", "Bingbot", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Anthropic-ai", "ClaudeBot"],
-      allow: ["/", "/_next/", "/images/", "/api/editorial-image/", ...allowedCategoryPagination],
+      userAgent: ["*", "Googlebot", "Bingbot", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "ClaudeBot", "Claude-User", "Claude-SearchBot"],
+      allow: ["/", "/_next/", "/images/", "/api/editorial-image/", ...allowedCategoryPagination, ...allowedTopicPagination],
       disallow: ["/api/", "/admin/", "/search", "/*?*"],
     },
     sitemap: absoluteUrl("/sitemap.xml"),

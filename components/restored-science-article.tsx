@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { RestoredScienceGuide } from "@/lib/restored-science-guides";
-import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 import { pageAlternates } from "@/lib/page-alternates";
 
 export function metadataForRestoredScienceGuide(guide: RestoredScienceGuide): Metadata {
@@ -12,7 +12,7 @@ export function metadataForRestoredScienceGuide(guide: RestoredScienceGuide): Me
     alternates: pageAlternates(path),
     robots: { index: true, follow: true },
     openGraph: {
-      type: "article", title: guide.title, description: guide.description,
+      type: "article", images: [siteSocialImage], title: guide.title, description: guide.description,
       url: path, publishedTime: guide.publishedAt, modifiedTime: guide.publishedAt,
     },
   };

@@ -1,3 +1,4 @@
+import { siteSocialImage } from "@/lib/site-config";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -11,7 +12,7 @@ import { GeometryQuizCard } from "@/components/geometry-interactions";
 type Props={params:Promise<{lesson:string}>};
 export const dynamicParams=false;
 export function generateStaticParams(){return fivegLessons.map(l=>({lesson:l.slug}));}
-export async function generateMetadata({params}:Props):Promise<Metadata>{const l=getFiveGLesson((await params).lesson);if(!l)return {robots:{index:false,follow:false}};return {title:l.title,description:l.description,alternates:pageAlternates(fivegLessonPath(l.slug)),openGraph:{title:l.title,description:l.description,url:fivegLessonPath(l.slug),type:"article",publishedTime:fivegMeta.publishedAt,modifiedTime:fivegMeta.updatedAt}};}
+export async function generateMetadata({params}:Props):Promise<Metadata>{const l=getFiveGLesson((await params).lesson);if(!l)return {robots:{index:false,follow:false}};return {title:l.title,description:l.description,alternates:pageAlternates(fivegLessonPath(l.slug)),openGraph:{images:[siteSocialImage],title:l.title,description:l.description,url:fivegLessonPath(l.slug),type:"article",publishedTime:fivegMeta.publishedAt,modifiedTime:fivegMeta.updatedAt}};}
 export default async function FiveGLessonPage({params}:Props){const l=getFiveGLesson((await params).lesson);if(!l)notFound();const path=fivegLessonPath(l.slug),previous=fivegLessons[l.order-2],next=fivegLessons[l.order];
  const schema={"@context":"https://schema.org","@type":["Article","LearningResource"],headline:l.title,description:l.description,url:absoluteUrl(path),mainEntityOfPage:absoluteUrl(path),inLanguage:"ar",learningResourceType:l.order===11?'دليل مراجعة':l.order===12?'مراجع تعليمية':'درس اتصالات',isAccessibleForFree:true,datePublished:fivegMeta.publishedAt,dateModified:fivegMeta.updatedAt,author:{"@type":"Organization",name:"فريق لوسيل",url:absoluteUrl('/authors/editorial-team')},publisher:{"@id":`${siteConfig.url}/#organization`},isPartOf:{"@id":`${absoluteUrl(fivegPath)}#course`}};
  const breadcrumb={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{name:'الرئيسية',item:absoluteUrl('/')},{name:'الكورسات',item:absoluteUrl('/courses')},{name:'أساسيات 5G',item:absoluteUrl(fivegPath)},{name:l.shortTitle,item:absoluteUrl(path)}].map((x,i)=>({"@type":"ListItem",position:i+1,...x}))};

@@ -4,7 +4,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "الصفحة غير موجودة",
   description: "الصفحة التي تبحث عنها غير موجودة أو تغيّر رابطها. تصفح مقالاتنا أو عد إلى الصفحة الرئيسية.",
-  robots: { index: false, follow: true },
+  alternates: null,
+  openGraph: null,
+  twitter: null,
+  // Next adds the noindex tag when it renders a 404.
+  robots: null,
 };
 
 export default function NotFound() {

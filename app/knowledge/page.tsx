@@ -3,8 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { editorialImagePath } from "@/lib/editorial-image-url";
 import { getKnowledgeTopic } from "@/lib/knowledge-expansion-data";
+import { siteSocialImage } from "@/lib/site-config";
 import { pageAlternates } from "@/lib/page-alternates";
-export const metadata:Metadata={title:"موسوعة لوسيل | الصفحة الرئيسية",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),openGraph:{url:"/knowledge",title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة."},robots:{index:true,follow:true}};
+export const metadata:Metadata={title:"موسوعة لوسيل | الصفحة الرئيسية",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),openGraph:{type:"website",images:[siteSocialImage],url:"/knowledge",title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة."},robots:{index:true,follow:true}};
 const guides=[
 {href:"/knowledge/read-food-nutrition-facts-label-serving-size",title:"قراءة الملصق الغذائي",description:"كيف تقرأ الملصق الغذائي وتقارن المنتجات باستخدام حجم الحصة والسعرات والسكريات المضافة والصوديوم وقائمة المكونات دون تضليل التسويق؟",kind:"التغذية والملصقات"},
 {href:"/knowledge/fridge-freezer-food-storage-temperature-guide",title:"حفظ الطعام في الثلاجة",description:"درجات حرارة الثلاجة والفريزر وحفظ الوجبات واللحوم والتبريد السريع ومنع تلوث الأطعمة، مع أمثلة على التخزين وإعادة التسخين.",kind:"سلامة الغذاء المنزلية"},

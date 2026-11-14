@@ -1,3 +1,4 @@
+import { siteSocialImage } from "@/lib/site-config";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { pageAlternates } from "@/lib/page-alternates";
@@ -14,7 +15,7 @@ import { CourseArt } from "@/components/course-art";
 const description = "كورسات عربية بخطة واضحة ودروس يمكنك قراءتها على مهلك. تعرّف على المستوى والمحتوى قبل أن تبدأ، واختر من القيادة والرياضيات وأساسيات 5G وأبحاث 6G.";
 export const metadata: Metadata = {
  title: "كورسات لوسيل | تعلّم خطوة بخطوة", description, alternates: pageAlternates("/courses"),
- openGraph: { title: "كورسات لوسيل | تعلّم خطوة بخطوة", description, url: "/courses", type: "website" },
+ openGraph: { images: [siteSocialImage], title: "كورسات لوسيل | تعلّم خطوة بخطوة", description, url: "/courses", type: "website" },
 };
 const shortcuts = [
  { index: 0, label: "من أين أبدأ؟", detail: "المقعد والمرايا وأدوات التحكم", icon: "car" as const },

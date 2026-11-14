@@ -1,3 +1,4 @@
+import { siteSocialImage } from "@/lib/site-config";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { fivegLessons,fivegMeta,fivegPath,fivegMinutes,fivegLessonPath } from "@/lib/fiveg-course";
@@ -5,7 +6,7 @@ import { absoluteUrl,siteConfig } from "@/lib/site-config";
 import { pageAlternates } from "@/lib/page-alternates";
 import { TelecomDiagram } from "@/components/telecom-diagram";
 import { ArchitectureExplorer } from "@/components/telecom-interactions";
-export const metadata:Metadata={title:fivegMeta.title,description:fivegMeta.description,alternates:pageAlternates(fivegPath),openGraph:{title:fivegMeta.title,description:fivegMeta.description,url:fivegPath,type:"website"}};
+export const metadata:Metadata={title:fivegMeta.title,description:fivegMeta.description,alternates:pageAlternates(fivegPath),openGraph:{images:[siteSocialImage],title:fivegMeta.title,description:fivegMeta.description,url:fivegPath,type:"website"}};
 export default function FiveGCoursePage(){
  const schema={"@context":"https://schema.org","@type":"Course","@id":`${absoluteUrl(fivegPath)}#course`,name:fivegMeta.title,description:fivegMeta.description,url:absoluteUrl(fivegPath),inLanguage:"ar",isAccessibleForFree:true,educationalLevel:"تأسيسي",datePublished:fivegMeta.publishedAt,dateModified:fivegMeta.updatedAt,provider:{"@id":`${siteConfig.url}/#organization`},hasPart:fivegLessons.map(l=>({"@type":"LearningResource",position:l.order,name:l.title,url:absoluteUrl(fivegLessonPath(l.slug))})),hasCourseInstance:{"@type":"CourseInstance",courseMode:"online",courseWorkload:`PT${fivegMinutes}M`}};
  const breadcrumb={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{name:"الرئيسية",item:absoluteUrl("/")},{name:"الكورسات",item:absoluteUrl("/courses")},{name:"أساسيات 5G",item:absoluteUrl(fivegPath)}].map((x,i)=>({"@type":"ListItem",position:i+1,...x}))};
