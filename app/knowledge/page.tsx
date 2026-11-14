@@ -162,11 +162,11 @@ return <main id="main-content" className="shell" style={{paddingBlock:52}}>
 {guides.map(guide => {
   const slug = guide.href.slice("/knowledge/".length);
   const topic = getKnowledgeTopic(slug);
-  return <Link href={guide.href} key={guide.href} style={{border:"1px solid #e2e8f0",borderRadius:16,background:"white",padding:24,display:"grid",gap:13}}>
+  return <Link href={guide.href} key={guide.href} className="ds-tile" style={{padding:24,display:"grid",gap:13,alignContent:"start"}}>
 {topic?.directAnswer && topic.sections.length ? (
   <Image src={editorialImagePath("knowledge", topic.slug)} alt={`غلاف لوسيل: ${topic.title}`} width={720} height={378} unoptimized loading="lazy" sizes="(max-width: 600px) 90vw, 360px" style={{width:"100%",height:"auto",borderRadius:12}}/>
 ) : null}
-<span style={{fontSize:13,color:"#475569"}}>{guide.kind}</span><strong style={{fontSize:24}}>{guide.title}</strong><span style={{color:"#64748b"}}>{guide.description}</span><span style={{color:"#0f766e",fontWeight:700}}>افتح الدليل ←</span>
+<span className="ds-label" style={{margin:0}}>{guide.kind}</span><strong style={{fontSize:22,fontWeight:500,lineHeight:1.5}}>{guide.title}</strong><span style={{color:"var(--ds-steel)"}}>{guide.description}</span><span className="ds-tile-link">افتح الدليل <span aria-hidden="true">←</span></span>
 </Link>;
 })}
 </div>

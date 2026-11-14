@@ -25,7 +25,7 @@ return <section id="interactive-tool" style={cardStyle} aria-labelledby="crystal
 {experiments.map((e,i)=><option key={i} value={i}>{e.label}</option>)}
 </select></label>
 <output aria-live="polite" style={{display:"grid",gap:7,background:"white",padding:15,borderRadius:10,marginTop:14}}>
-<strong style={{color:"#0f766e"}}>{experiments[index].kind}</strong><span>{experiments[index].why}</span>
+<strong style={{color:"var(--ds-ink)"}}>{experiments[index].kind}</strong><span>{experiments[index].why}</span>
 </output></section>;
 }
 const environmentTracks=[
@@ -74,7 +74,7 @@ return <section id="interactive-tool" style={cardStyle} aria-labelledby="major-t
 <input type="range" min={1} max={5} step={1} value={scores[option][i]} onChange={e=>{const next=scores.map(a=>[...a]) as [number[],number[]];next[option][i]=Number(e.target.value);setScores(next);}}/>
 <span style={{fontWeight:700}}>{scores[option][i]} / 5</span>
 </label>)}
-<output aria-live="polite" style={{fontSize:23,fontWeight:800,color:"#0f766e",textAlign:"center"}}>{totals[option]} / 100</output>
+<output aria-live="polite" style={{fontSize:23,fontWeight:800,color:"var(--ds-ink)",textAlign:"center"}}>{totals[option]} / 100</output>
 </div>)}
 </div>
 <p style={{fontSize:13,color:"#475569",marginTop:14}}>النتيجة الأعلى تعكس تقييماتك الشخصية فقط. إذا لم تملك دليلًا موثوقًا لأحد المعايير، اكتب ذلك في ملاحظاتك ولا تحول الدرجة إلى وعد بالوظيفة أو الراتب.</p>

@@ -46,7 +46,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 <nav aria-label="مسار التنقل" style={{color:"#64748b",marginBottom:18}}><Link href="/knowledge">رئيسية المشروع</Link> / <Link href="/knowledge">معارف وأدوات</Link> / {topic.category}</nav>
 <article style={{maxWidth:990,margin:"auto",lineHeight:1.95,color:"#14273b"}}>
 <header>
-<p style={{color:"#0f766e",fontWeight:700}}>{topic.category} · دليل أصلي بمصادر واضحة</p>
+<p style={{color:"var(--ds-ink)",fontWeight:700}}>{topic.category} · دليل أصلي بمصادر واضحة</p>
 <h1 style={{fontSize:"clamp(29px,4vw,43px)",fontWeight:800,lineHeight:1.5,marginBlock:14}}>{topic.title}</h1>
 <p style={{fontSize:18}}>{topic.intro}</p>
 <p style={{fontSize:13,color:"#64748b",marginBlock:13}}>إعداد: فريق لوسيل · تاريخ النشر: <time dateTime={topic.publishedAt}>{topic.publishedAt}</time></p>

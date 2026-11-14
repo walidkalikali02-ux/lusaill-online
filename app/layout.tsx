@@ -1,17 +1,19 @@
-import { IBM_Plex_Sans_Arabic } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans_Arabic } from "next/font/google";
 import Script from "next/script";
 import type { Metadata } from "next";
 import "./globals.css";
 import "./editorial.css";
 import "./identity.css";
 import "./company.css";
+import "./design-system.css";
 import { SiteAnalytics } from "@/components/site-analytics";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { SiteFrame } from "@/components/site-frame";
 import { SiteFooter } from "@/components/site-footer";
 import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
 
-const bodyFont = IBM_Plex_Sans_Arabic({ weight: ["400", "500", "600", "700"], subsets: ["arabic", "latin"], variable: "--font-arabic-body", display: "swap" });
+const bodyFont = IBM_Plex_Sans_Arabic({ weight: ["300", "400", "500", "600", "700"], subsets: ["arabic", "latin"], variable: "--font-arabic-body", display: "swap" });
+const monoFont = IBM_Plex_Mono({ weight: ["400", "500"], subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
     "geo.region": siteConfig.geo.region,
     "geo.placename": siteConfig.geo.placename,
     ICBM: siteConfig.geo.icbm,
-    "theme-color": "#182e49",
+    "theme-color": "#0f1012",
     ...Object.fromEntries(
       [
         siteConfig.verification.google ? ["google-site-verification", siteConfig.verification.google] : null,
@@ -77,10 +79,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   };
 
   return (
-    <html lang={siteConfig.language} dir="rtl" className={bodyFont.variable}>
+    <html lang={siteConfig.language} dir="rtl" className={`${bodyFont.variable} ${monoFont.variable}`}>
       <head>
         <link rel="alternate" type="application/rss+xml" href={absoluteUrl("/feed.xml")} />
-        <meta name="theme-color" content="#182e49" />
+        <meta name="theme-color" content="#0f1012" />
         <meta name="color-scheme" content="light" />
         <Script id="gtm-datalayer" strategy="beforeInteractive">{`
           window.dataLayer = window.dataLayer || [];
