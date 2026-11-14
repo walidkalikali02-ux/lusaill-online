@@ -16,7 +16,17 @@ import { ArticleEncyclopedicExpansion } from "./encyclopedic-sections";
 
 export function ArticleBrief({ article, cluster, related }: { article: Article; cluster: Cluster; related: Article[] }) {
   const media = (inlineMedia as Record<string, {src:string;alt:string;width:number;height:number;step:number;caption:string;sourceUrls:string[]}[]>)[article.slug] ?? [];
-  const renderMedia = (step: number) => media.filter((item) => item.step === step).map((item) => <figure className="guide-figure" key={item.src}>
+  const renderMedia = (step: number) => media.filter((item) => item.step === step).map((item) => {
+    if (article.slug === "wps-kingsoft-deleted-excel-recovery" && step === 11) {
+      return {
+        ...item,
+        src: "/images/wps-cloud-sync-check.svg",
+        alt: "تحقّق من حساب WPS، فعّل المزامنة، وافتح نسخة من السحابة",
+        caption: "رسم إرشادي من لوسيل للتحقق من مزامنة ملفات WPS. قد تختلف القوائم حسب الإصدار.",
+      };
+    }
+    return item;
+  }).map((item) => <figure className="guide-figure" key={item.src}>
     <Image unoptimized={item.src.startsWith("https://")} src={item.src} alt={item.alt} width={item.width} height={item.height} sizes="(max-width: 768px) calc(100vw - 32px), 760px" />
     <figcaption>{item.caption}{item.sourceUrls.map((url, index) => <span key={url}> · <a href={url} target="_blank" rel="noopener noreferrer">المصدر {index + 1}</a></span>)}</figcaption>
   </figure>);

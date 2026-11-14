@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+<title>التحقق من مزامنة ملفات WPS</title>
+<rect width="1200" height="680" fill="#f0f5f2" rx="32"/>
+<g font-family="Tahoma,Arial,sans-serif" text-anchor="middle">
+<text x="600" y="126" font-size="54" font-weight="bold" fill="#173a2d">التحقق من مزامنة ملفات WPS</text>
+<path d="M920 340H280" stroke="#508774" stroke-width="8"/>
+<path d="m749 326-18 14 18 14m-300-28-18 14 18 14" fill="none" stroke="#173a2d" stroke-width="6"/>
+<g fill="#24654f"><circle cx="900" cy="340" r="64"/><circle cx="600" cy="340" r="64"/><circle cx="300" cy="340" r="64"/></g>
+<g font-size="42" fill="#fff"><text x="900" y="355">١</text><text x="600" y="355">٢</text><text x="300" y="355">٣</text></g>
+<g font-size="34" fill="#173a2d"><text x="900" y="470">تحقّق من الحساب</text><text x="600" y="470">فعّل المزامنة</text><text x="300" y="470">افتح النسخة السحابية</text></g>
+</g></svg>
