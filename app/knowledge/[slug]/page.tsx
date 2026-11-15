@@ -70,6 +70,34 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Deep_Blue.jpg",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "slug": "what-is-an-algorithm",
+    "section": "inputs-and-steps",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/d/da/If_Flowchart-ar.svg",
+    "width": 855,
+    "height": 1682,
+    "maxWidth": 315,
+    "alt": "مخطط انسيابي بالعربية يوضح تفرع خطوات التنفيذ بحسب تحقق شرط",
+    "caption": "يوضح المخطط كيف يتغير مسار التنفيذ تبعًا لنتيجة الشرط. في مثال الطلبات، يحدد التطابق هل ينتهي البحث أم يستمر.",
+    "credit": "Michel Bakni",
+    "source": "https://commons.wikimedia.org/wiki/File:If_Flowchart-ar.svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "what-is-an-algorithm",
+    "section": "binary-search",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/6/64/Binary_search_into_array_-_example.svg",
+    "width": 382,
+    "height": 244,
+    "maxWidth": 490,
+    "alt": "رسم يوضح تقلص نطاق البحث الثنائي في مصفوفة مرتبة",
+    "caption": "مثال مستقل على البحث الثنائي. تضيق المقارنات المتتابعة نطاق البحث في القائمة المرتبة حتى الوصول إلى العنصر المطلوب.",
+    "credit": "LoStrangolatore",
+    "source": "https://commons.wikimedia.org/wiki/File:Binary_search_into_array_-_example.svg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 

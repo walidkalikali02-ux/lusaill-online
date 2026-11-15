@@ -87,9 +87,9 @@ for (const [path, html] of await Promise.all([
   const project = path.startsWith("/services") ? "/services" : path === "/caricatures" ? "/caricatures" : path === "/articles" ? "/articles" : "/knowledge";
   assert(html.includes(`data-project="${project}"`), `Incorrect project navigation: ${path}`);
   let visibleHtml = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "");
-  // The two AI explainers are intentionally discoverable from the all-guides catalog.
+  // The AI explainers are intentionally discoverable from the all-guides catalog.
   if (path === "/articles") {
-    for (const slug of ["ai-vs-machine-learning-vs-deep-learning", "types-of-artificial-intelligence"]) {
+    for (const slug of ["ai-vs-machine-learning-vs-deep-learning", "types-of-artificial-intelligence", "what-is-an-algorithm"]) {
       const href = "/knowledge/" + slug;
       assert(visibleHtml.includes(`href="${href}"`), `AI guide missing from catalog: ${slug}`);
       visibleHtml = visibleHtml.replaceAll(`href="${href}"`, 'data-verified-ai-guide="true"');
