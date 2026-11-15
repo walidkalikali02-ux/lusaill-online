@@ -28,6 +28,66 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
       images:[{url:cover,alt:"غلاف تحريري: "+topic.title,width:1200,height:630}]},
     twitter:{card:"summary_large_image",title:topic.title,description:topic.description,images:[cover]}};
 }
+const knowledgeIllustrations = [
+  {
+    "slug": "ai-vs-machine-learning-vs-deep-learning",
+    "section": "section-1",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/b/bb/AI-ML-DL.svg",
+    "width": 748,
+    "height": 826,
+    "maxWidth": 480,
+    "alt": "ثلاث مساحات متداخلة: الذكاء الاصطناعي يضم تعلم الآلة، وتعلم الآلة يضم التعلم العميق",
+    "caption": "يمثل الرسم العلاقة بين المجالات الثلاثة: التعلم العميق جزء من تعلم الآلة، وتعلم الآلة جزء من الذكاء الاصطناعي.",
+    "credit": "Avimanyu786 وTukijaaliwa",
+    "source": "https://commons.wikimedia.org/wiki/File:AI-ML-DL.svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-vs-machine-learning-vs-deep-learning",
+    "section": "section-2",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Multi-Layer_Neural_Network-Vector.svg",
+    "width": 957,
+    "height": 567,
+    "maxWidth": 620,
+    "alt": "عقد مترابطة مرتبة في طبقات تبدأ بالمدخلات وتنتهي بالمخرجات",
+    "caption": "رسم مبسّط لشبكة عصبية متعددة الطبقات. تمثل الدوائر عقدًا تُمرّر القيم من طبقة إلى التالية؛ ولا يوضح الرسم بنية نموذج فرز بعينه.",
+    "credit": "Offnfopt",
+    "source": "https://commons.wikimedia.org/wiki/File:Multi-Layer_Neural_Network-Vector.svg",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "types-of-artificial-intelligence",
+    "section": "section-1",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/b/be/Deep_Blue.jpg",
+    "width": 400,
+    "height": 601,
+    "maxWidth": 360,
+    "alt": "خزانة حاسوب Deep Blue من آي بي إم معروضة في متحف تاريخ الحاسوب",
+    "caption": "حاسوب Deep Blue من آي بي إم في متحف تاريخ الحاسوب. تفوّق حاسوب من هذا النوع على غاري كاسباروف في مباراة عام 1997، وهو مثال على الأداء المتخصص في الشطرنج.",
+    "credit": "James the photographer",
+    "source": "https://commons.wikimedia.org/wiki/File:Deep_Blue.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  }
+];
+
+function KnowledgeIllustrations({slug, section}: {slug: string; section: string}) {
+  return knowledgeIllustrations.filter(item => item.slug === slug && item.section === section).map(item => (
+    <figure className="guide-figure" data-sourced-illustration key={item.src} style={{marginBlock:24}}>
+      <Image src={item.src} width={item.width} height={item.height} alt={item.alt}
+        unoptimized loading="lazy" referrerPolicy="no-referrer"
+        style={{display:"block", width:"100%", maxWidth:item.maxWidth, height:"auto", marginInline:"auto"}} />
+      <figcaption style={{fontSize:15,lineHeight:1.7,textAlign:"center",marginTop:8}}>
+        {item.caption}{" "}
+        <a href={item.source} rel="noopener noreferrer" target="_blank">{item.credit} · ويكيميديا كومنز</a>
+        {" · "}<a href={item.licenseUrl} rel="noopener noreferrer" target="_blank"><bdi>{item.license}</bdi></a>.
+      </figcaption>
+    </figure>
+  ));
+}
+
 const tableCell={padding:"12px 14px",borderBottom:"1px solid #e2e8f0",verticalAlign:"top" as const};
 export default async function KnowledgeTopicPage({params}:{params:Promise<{slug:string}>}){
 const {slug}=await params;const topic=getKnowledgeTopic(slug);
@@ -102,6 +162,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 <tbody>{section.table.rows.map((row,i)=><tr key={i} style={{background:i%2?"#f8fafc":"#fff"}}>{row.map((v,j)=>j===0?<th scope="row" key={j} style={tableCell}>{v}</th>:<td key={j} style={tableCell}>{v}</td>)}</tr>)}</tbody>
 </table></div>}
 {section.note && <aside style={{borderRight:"4px solid #f59e0b",background:"#fffbeb",padding:18,borderRadius:7,marginTop:14}}><strong>تنبيه</strong><p>{section.note}</p></aside>}
+<KnowledgeIllustrations slug={topic.slug} section={section.id}/>
 </section>)}
 {topic.tool && <KnowledgeInteractiveTool kind={topic.tool} slug={topic.slug}/>}
 <section id="frequently-asked-questions" style={{marginBlock:32}}>
