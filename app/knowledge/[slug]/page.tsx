@@ -154,6 +154,34 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Image-segmentation-example-segmented.png",
     "license": "ملكية عامة (CC0)",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "supervised-learning-explained",
+    "section": "classification-and-regression",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/4/46/Linear-svm-scatterplot.svg",
+    "width": 720,
+    "height": 540,
+    "maxWidth": 540,
+    "alt": "نقاط بلونين تمثل فئتين وخط قرار يفصل بينهما",
+    "caption": "مثال على التصنيف الثنائي ببيانات اصطناعية. يفصل الخط بين منطقتين للتصنيف وفق خصائص النقاط.",
+    "credit": "Qwertyus وOjan",
+    "source": "https://commons.wikimedia.org/wiki/File:Linear-svm-scatterplot.svg",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "supervised-learning-explained",
+    "section": "classification-and-regression",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Linear_regression.svg",
+    "width": 438,
+    "height": 289,
+    "maxWidth": 500,
+    "alt": "نقاط زرقاء مرصودة وخط أحمر يمثل توقعات الانحدار الخطي",
+    "caption": "مثال على الانحدار الخطي. يقدّر الخط قيمة عددية، ويبيّن البعد الرأسي عن النقطة مقدار خطأ التقدير في ذلك المثال.",
+    "credit": "Sewaqu وRaphaelQS",
+    "source": "https://commons.wikimedia.org/wiki/File:Linear_regression.svg",
+    "license": "الملكية العامة",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Linear_regression.svg#Licensing"
   }
 ];
 
