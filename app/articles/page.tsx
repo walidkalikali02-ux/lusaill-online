@@ -34,7 +34,7 @@ export default function ArticlesPage() {
 
   return (
     <main id="main-content" className="category-page">
-<section className="shell" aria-label="أدلة الذكاء الاصطناعي"><h2>أدلة الذكاء الاصطناعي</h2><ul><li><Link href="/knowledge/ai-vs-machine-learning-vs-deep-learning">الفرق بين الذكاء الاصطناعي وتعلم الآلة والتعلم العميق بمثال واحد</Link></li><li><Link href="/knowledge/types-of-artificial-intelligence">الذكاء الاصطناعي الضيق والعام والخارق: ما الفرق؟</Link></li><li><Link href="/knowledge/what-is-an-algorithm">ما هي الخوارزمية؟ شرح لغير المبرمجين</Link></li><li><Link href="/knowledge/big-data-and-artificial-intelligence">البيانات الضخمة وعلاقتها بالذكاء الاصطناعي</Link></li></ul></section>
+<section className="shell" aria-label="أدلة الذكاء الاصطناعي"><h2>أدلة الذكاء الاصطناعي</h2><ul><li><Link href="/knowledge/ai-vs-machine-learning-vs-deep-learning">الفرق بين الذكاء الاصطناعي وتعلم الآلة والتعلم العميق بمثال واحد</Link></li><li><Link href="/knowledge/types-of-artificial-intelligence">الذكاء الاصطناعي الضيق والعام والخارق: ما الفرق؟</Link></li><li><Link href="/knowledge/what-is-an-algorithm">ما هي الخوارزمية؟ شرح لغير المبرمجين</Link></li><li><Link href="/knowledge/big-data-and-artificial-intelligence">البيانات الضخمة وعلاقتها بالذكاء الاصطناعي</Link></li><li><Link href="/knowledge/what-is-labeled-data">ما هي البيانات المعنونة ولماذا هي مكلفة؟</Link></li></ul></section>
       <div className="shell">
         <div className="category-hero">
           <span className="article-card-tag">الأدلة</span>

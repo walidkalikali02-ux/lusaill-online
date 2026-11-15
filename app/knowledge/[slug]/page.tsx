@@ -126,6 +126,34 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:ML_dataset_training_validation_test_sets.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "what-is-labeled-data",
+    "section": "meaning",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Image-segmentation-example.jpg",
+    "width": 1200,
+    "height": 900,
+    "maxWidth": 520,
+    "alt": "الصورة الأصلية لحاسوب محمول وكأس على طاولة خشبية",
+    "caption": "الصورة الأصلية. هي المدخل الذي تظهر فيه أجسام مختلفة قبل إسناد وسوم إلى مناطقها.",
+    "credit": "MartinThoma",
+    "source": "https://commons.wikimedia.org/wiki/File:Image-segmentation-example.jpg",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "what-is-labeled-data",
+    "section": "meaning",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/1/19/Image-segmentation-example-segmented.png",
+    "width": 1200,
+    "height": 900,
+    "maxWidth": 520,
+    "alt": "تمثيل ملون للمشهد نفسه يفصل مناطق الحاسوب والكأس والطاولة",
+    "caption": "نسخة مقسمة من المشهد نفسه. تمثل الألوان مناطق مختلفة، وتوضح كيف يمتد وسم الصورة إلى مناطق بداخلها.",
+    "credit": "MartinThoma",
+    "source": "https://commons.wikimedia.org/wiki/File:Image-segmentation-example-segmented.png",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
