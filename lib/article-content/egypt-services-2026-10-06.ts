@@ -296,13 +296,33 @@ const takafulWarning = {
   checkedAt: "2026-11-10",
 };
 
+const takafulNovemberPayment = {
+  label: "وزارة التضامن الاجتماعي: إعلان موعد صرف نوفمبر، 14 نوفمبر 2026",
+  url: "https://www.moss.gov.eg/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2-%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%85%D9%8A/%D8%A7%D9%84%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1/%D8%A7%D9%84%D8%AA%D8%B6%D8%A7%D9%85%D9%86-%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A-%D8%B5%D8%B1%D9%81-%D8%AA%D9%83%D8%A7%D9%81%D9%84-%D9%88%D9%83%D8%B1%D8%A7%D9%85%D8%A9-%D8%B9%D9%86-%D8%B4%D9%87%D8%B1-%D9%86%D9%88%D9%81%D9%85%D8%A8%D8%B1-%D8%A8%D9%82%D9%8A%D9%85%D8%A9-%D8%AA%D8%B2%D9%8A%D8%AF-%D8%B9%D9%84%D9%89-4-%D9%85%D9%84%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA-%D8%AC%D9%86%D9%8A%D9%87-%D8%BA%D8%AF%D8%A7/",
+  checkedAt: "2026-11-15",
+};
+
 export const egyptServiceGuides = specs.map((spec) => {
   const guide = makeGuide(spec);
   if (spec.slug !== "takaful-karama-inquiry-complaint") return guide;
 
   return {
     ...guide,
-    updatedAt: takafulWarning.checkedAt,
+    updatedAt: takafulNovemberPayment.checkedAt,
+    summaryTable: [
+      {
+        label: "صرف نوفمبر 2026",
+        value: "أعلنت وزارة التضامن في 14 نوفمبر أن الصرف يبدأ صباح الأحد 15 نوفمبر 2026 للمستفيدين، عبر ماكينات الصراف الآلي للبنوك.",
+      },
+      ...(guide.summaryTable ?? []),
+    ],
+    faqs: [
+      ...(guide.faqs ?? []),
+      {
+        question: "ماذا أفعل إذا لم أتمكن من صرف دفعة نوفمبر؟",
+        answer: "استعلم أولًا عن حالة البطاقة من بوابة الوزارة. إذا ظهر إيقاف أو طلب استكمال، دوّن السبب الظاهر واتبع الخطوة التي توضحها الجهة. إذا كانت الحالة سارية وتعذّر السحب، احتفظ بوقت المحاولة وأي إيصال ثم استفسر عبر خط البرنامج 19680.",
+      },
+    ],
     steps: [
       ...(guide.steps ?? []),
       {
@@ -311,6 +331,6 @@ export const egyptServiceGuides = specs.map((spec) => {
         sourceUrl: takafulWarning.url,
       },
     ],
-    sources: [...(guide.sources ?? []), takafulWarning],
+    sources: [...(guide.sources ?? []), takafulWarning, takafulNovemberPayment],
   };
 });
