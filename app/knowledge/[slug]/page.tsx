@@ -98,6 +98,34 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Binary_search_into_array_-_example.svg",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "big-data-and-artificial-intelligence",
+    "section": "volume-velocity-variety",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Big_Data.png",
+    "width": 612,
+    "height": 422,
+    "maxWidth": 612,
+    "alt": "رسم يوضح تراكم بيانات من مصادر مختلفة وزيادة حجمها وسرعة تدفقها وتنوعها",
+    "caption": "تتجمع البيانات من مصادر متعددة. يوضح الرسم الخصائص الثلاث التي تؤثر في طريقة جمع السجلات ومعالجتها.",
+    "credit": "Ender005",
+    "source": "https://commons.wikimedia.org/wiki/File:Big_Data.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "big-data-and-artificial-intelligence",
+    "section": "prepare-training-data",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/b/bb/ML_dataset_training_validation_test_sets.png",
+    "width": 1280,
+    "height": 558,
+    "maxWidth": 780,
+    "alt": "مخطط يقارن تقسيم البيانات إلى مجموعتي تدريب واختبار بتقسيمها إلى تدريب وتحقق واختبار",
+    "caption": "طريقتان لتقسيم البيانات. في مثال توقع المبيعات، يُطبَّق التقسيم حسب ترتيب الأسابيع، ويُحجز الاختبار لتقييم النموذج بعد اختيار إعداداته.",
+    "credit": "Km121220",
+    "source": "https://commons.wikimedia.org/wiki/File:ML_dataset_training_validation_test_sets.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 

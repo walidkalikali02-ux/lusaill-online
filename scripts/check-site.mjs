@@ -89,7 +89,7 @@ for (const [path, html] of await Promise.all([
   let visibleHtml = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "");
   // The AI explainers are intentionally discoverable from the all-guides catalog.
   if (path === "/articles") {
-    for (const slug of ["ai-vs-machine-learning-vs-deep-learning", "types-of-artificial-intelligence", "what-is-an-algorithm"]) {
+    for (const slug of ["ai-vs-machine-learning-vs-deep-learning", "types-of-artificial-intelligence", "what-is-an-algorithm", "big-data-and-artificial-intelligence"]) {
       const href = "/knowledge/" + slug;
       assert(visibleHtml.includes(`href="${href}"`), `AI guide missing from catalog: ${slug}`);
       visibleHtml = visibleHtml.replaceAll(`href="${href}"`, 'data-verified-ai-guide="true"');
