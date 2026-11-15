@@ -182,6 +182,34 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Linear_regression.svg",
     "license": "الملكية العامة",
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Linear_regression.svg#Licensing"
+  },
+  {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Good_clustering.png",
+    "width": 2238,
+    "height": 1572,
+    "alt": "أربع نقاط موزعة إلى مجموعتين متقاربتين لكل منهما مركز",
+    "caption": "تجميع توضيحي يعطي مجموعتين تقاربت النقاط داخل كل منهما.",
+    "source": "https://commons.wikimedia.org/wiki/File:Good_clustering.png",
+    "slug": "unsupervised-learning-customer-segmentation",
+    "section": "clusters",
+    "maxWidth": 570,
+    "credit": "MaoucheMounir",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Bad_K-Means_clustering.png",
+    "width": 2266,
+    "height": 1503,
+    "alt": "النقاط الأربع نفسها وقد جمعت في مجموعتين مختلفتين بسبب اختيار المراكز",
+    "caption": "مثال على تجميع مختلف بعد اختيار مراكز أولية أخرى. تساعد مقارنة أكثر من تشغيل على اكتشاف حساسية النتيجة للبداية.",
+    "source": "https://commons.wikimedia.org/wiki/File:Bad_K-Means_clustering.png",
+    "slug": "unsupervised-learning-customer-segmentation",
+    "section": "clusters",
+    "maxWidth": 570,
+    "credit": "MaoucheMounir",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
