@@ -644,6 +644,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Web_API_diagram.svg",
     "license": "ملكية عامة (CC0)",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "evaluating-ai-models",
+    "section": "set",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/b/bb/ML_dataset_training_validation_test_sets.png",
+    "width": 1280,
+    "height": 558,
+    "maxWidth": 730,
+    "alt": "رسم يبين فصل أمثلة التدريب والتحقق والاختبار إلى مجموعات",
+    "caption": "يوضح الرسم توزيع البيانات بين التدريب والتحقق والاختبار النهائي. ويمكن استخدام المبدأ نفسه عند تطوير تعليمات تطبيق جاهز.",
+    "credit": "Km121220",
+    "source": "https://commons.wikimedia.org/wiki/File:ML_dataset_training_validation_test_sets.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
