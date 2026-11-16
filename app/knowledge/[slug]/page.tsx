@@ -448,6 +448,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Artificial_neuron.svg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "temperature-in-ai-models",
+    "section": "example",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Destilacion_temperatura.png",
+    "width": 3360,
+    "height": 1320,
+    "maxWidth": 800,
+    "alt": "مخططات أعمدة تقارن احتمالات البدائل قبل تغيير الحرارة وبعده",
+    "caption": "يوضح الرسم تغير توزيع الاحتمالات مع الحرارة في حساب سوفت ماكس. القيم في الرسم منفصلة عن المثال العددي في المقال.",
+    "credit": "Juanciño",
+    "source": "https://commons.wikimedia.org/wiki/File:Destilacion_temperatura.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
