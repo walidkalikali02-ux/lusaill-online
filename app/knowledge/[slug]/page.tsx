@@ -630,6 +630,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Modelo_Cliente-Servidor.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "llm-function-calling",
+    "section": "example",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/3/37/Web_API_diagram.svg",
+    "width": 1062,
+    "height": 1004,
+    "maxWidth": 500,
+    "alt": "مخطط يبين تبادل طلب بيانات ورد منظم بين تطبيق وخادم",
+    "caption": "مثال عام لطلب بيانات من واجهة ويب. يوضح المخطط العربي في المقال موقع استدعاء الدالة قبل طلب البيانات.",
+    "credit": "I.hate.spam.mail.here",
+    "source": "https://commons.wikimedia.org/wiki/File:Web_API_diagram.svg",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
