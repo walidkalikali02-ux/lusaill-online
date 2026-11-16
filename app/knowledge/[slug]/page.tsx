@@ -658,6 +658,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:ML_dataset_training_validation_test_sets.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "does-ai-understand-language",
+    "section": "context",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Old_man_garden-path_%28right%29.svg",
+    "width": 372,
+    "height": 407,
+    "maxWidth": 450,
+    "alt": "شجرة نحوية تبيّن أدوار كلمات جملة إنجليزية يمكن إساءة تحليلها في القراءة الأولى",
+    "caption": "مثال لتحليل جملة إنجليزية بعد زوال اللبس في وظيفة إحدى كلماتها.",
+    "credit": "Jochen Burghardt",
+    "source": "https://commons.wikimedia.org/wiki/File:Old_man_garden-path_(right).svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
