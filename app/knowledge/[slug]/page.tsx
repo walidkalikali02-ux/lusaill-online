@@ -518,6 +518,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:MCTS-diagram.svg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "vector-databases",
+    "section": "distance",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/e/e7/KnnClassification.svg",
+    "width": 279,
+    "height": 252,
+    "maxWidth": 460,
+    "alt": "نقطة وسط مجموعتين من النقاط توضح كيف يعثر البحث على النقاط الأقرب",
+    "caption": "يوضح الرسم فكرة العثور على الجيران في بعدين. وقد تُستخدم هذه الجيرة للتصنيف في مثال الرسم، أو لترتيب نتائج البحث في قاعدة متجهية.",
+    "credit": "Natana Jadri (AnAj)",
+    "source": "https://commons.wikimedia.org/wiki/File:KnnClassification.svg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
