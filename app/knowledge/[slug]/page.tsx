@@ -350,6 +350,34 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:DBSCAN-density-data.svg",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "anomaly-detection-and-fraud",
+    "section": "definition",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/5a/BivariateOutlier.svg",
+    "width": 756,
+    "height": 541,
+    "maxWidth": 610,
+    "alt": "نقاط تنتظم في اتجاه واضح ونقطة بعيدة عن اتجاهها على محورين",
+    "caption": "قد يظهر الشذوذ في العلاقة بين متغيرين حتى إذا بدا كل منهما مقبولًا منفردًا.",
+    "credit": "Sigbert وAndel",
+    "source": "https://commons.wikimedia.org/wiki/File:BivariateOutlier.svg",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "anomaly-detection-and-fraud",
+    "section": "false-alerts",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Precision_recall.svg",
+    "width": 1007,
+    "height": 670,
+    "maxWidth": 660,
+    "alt": "رسم يوضح العلاقة بين النتائج ذات الصلة والنتائج المختارة لحساب الدقة والاسترجاع",
+    "caption": "تختلف مقامات الدقة والاسترجاع. في مثال المدفوعات يُقاس الأول بالنسبة إلى التنبيهات والثاني بالنسبة إلى الحالات المرجعية.",
+    "credit": "kindlychung",
+    "source": "https://commons.wikimedia.org/wiki/File:Precision_recall.svg",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
