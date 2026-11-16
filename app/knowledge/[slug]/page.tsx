@@ -532,6 +532,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:KnnClassification.svg",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "synthetic-data",
+    "section": "methods",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/4/46/Linear-svm-scatterplot.svg",
+    "width": 720,
+    "height": 540,
+    "maxWidth": 660,
+    "alt": "نقاط اصطناعية لفئتين مع خط يرسم حد فصلهما في نموذج تصنيف",
+    "caption": "بيانات مولّدة لفئتين، مع حد فصل محسوب لمثال تعليمي. الرسم لا يمثل بيانات أشخاص أو طلبات حقيقية.",
+    "credit": "Qwertyus؛ تعديل الألوان Ojan",
+    "source": "https://commons.wikimedia.org/wiki/File:Linear-svm-scatterplot.svg",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
