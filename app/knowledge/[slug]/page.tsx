@@ -546,6 +546,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Linear-svm-scatterplot.svg",
     "license": "ملكية عامة (CC0)",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "explainable-ai",
+    "section": "methods",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Randomforest.png",
+    "width": 2379,
+    "height": 1380,
+    "maxWidth": 740,
+    "alt": "رسم يظهر ترتيب أهمية عشرة متغيرات محاكاة في نموذج غابة عشوائية",
+    "caption": "مثال لأهمية المتغيرات في نموذج انحدار مبني على بيانات محاكاة. يصف الترتيب النموذج في التجربة عمومًا.",
+    "credit": "Chamaemelum",
+    "source": "https://commons.wikimedia.org/wiki/File:Randomforest.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
