@@ -686,6 +686,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Rag-scheme.png",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "common-ai-myths",
+    "section": "models",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/4/49/Machine_learning_nutshell_--_Test_the_machine_learning_model.svg",
+    "width": 512,
+    "height": 102,
+    "maxWidth": 740,
+    "alt": "رسم يوضح تمرير بيانات الاختبار إلى نموذج مدرّب ومراجعة مخرجاته",
+    "caption": "يعرض الرسم خطوة اختبار نموذج مدرّب على بيانات مخصصة للفحص.",
+    "credit": "EpochFail",
+    "source": "https://commons.wikimedia.org/wiki/File:Machine_learning_nutshell_--_Test_the_machine_learning_model.svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
