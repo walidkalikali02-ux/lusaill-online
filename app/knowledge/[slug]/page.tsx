@@ -504,6 +504,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Edge_computing_paradigm,_2019-07-03.svg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-reasoning-models",
+    "section": "compute",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/c/cb/MCTS-diagram.svg",
+    "width": 860,
+    "height": 244,
+    "maxWidth": 790,
+    "alt": "أربع مراحل من البحث الشجري تعرض اختيار فرع وتوسيعه وتجربة نتيجة ثم تحديث المعلومات",
+    "caption": "مثال لخوارزمية بحث تفحص بدائل متفرعة. لا يمثل الرسم البنية الداخلية لكل نموذج استدلال.",
+    "credit": "Rmoss92",
+    "source": "https://commons.wikimedia.org/wiki/File:MCTS-diagram.svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
