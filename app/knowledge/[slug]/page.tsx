@@ -462,6 +462,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Destilacion_temperatura.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "open-source-vs-closed-ai-models",
+    "section": "components",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/1/16/Openmod_workflow_diagram_raster_version.png",
+    "width": 6330,
+    "height": 1238,
+    "maxWidth": 790,
+    "alt": "مخطط يربط البيانات المفتوحة بنموذج مفتوح المصدر ثم بنتائج متاحة بترخيص مفتوح",
+    "caption": "مثال من مشروع نمذجة مفتوحة يبين كيف يمكن نشر البيانات والنموذج والنتائج كل على حدة.",
+    "credit": "Stefen Pfenninger",
+    "source": "https://commons.wikimedia.org/wiki/File:Openmod_workflow_diagram_raster_version.png",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
   }
 ];
 
