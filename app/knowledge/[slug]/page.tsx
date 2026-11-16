@@ -238,6 +238,34 @@ const knowledgeIllustrations = [
     "maxWidth": 390,
     "license": "ملكية عامة (CC0)",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "predictive-models-explained",
+    "section": "target-and-horizon",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/8/81/TimeSerie-4.png",
+    "width": 1223,
+    "height": 682,
+    "maxWidth": 680,
+    "alt": "رسم لسلسلة زمنية يوضح نمطًا موسميًا يتكرر عبر الزمن",
+    "caption": "مثال على النمط الموسمي في سلسلة زمنية. يفيد توقع اليوم المناظر في فترة سابقة عندما يستمر النمط ويمكن التحقق منه.",
+    "credit": "Cike",
+    "source": "https://commons.wikimedia.org/wiki/File:TimeSerie-4.png",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "predictive-models-explained",
+    "section": "decision",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/c/c7/CurveWeightHeight.png",
+    "width": 1199,
+    "height": 737,
+    "maxWidth": 680,
+    "alt": "نقاط مرصودة وخط تقدير ومنحنيات خارجية لنطاق توقع قياس جديد",
+    "caption": "مثال مستقل من الانحدار يوضح الفرق بين إعطاء تقدير واحد وتمثيل نطاق لقيمة جديدة. تمثل المنحنيات الخارجية نطاق التنبؤ لقياس جديد.",
+    "credit": "Mathieu ROUAUD",
+    "source": "https://commons.wikimedia.org/wiki/File:CurveWeightHeight.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
