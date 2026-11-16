@@ -476,6 +476,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Openmod_workflow_diagram_raster_version.png",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "small-language-models-for-business",
+    "section": "measurement",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/2/25/Multi_Category_Confusion_Matrix.png",
+    "width": 331,
+    "height": 341,
+    "maxWidth": 490,
+    "alt": "مصفوفة التباس لفئات متعددة تقارن التصنيفات المتوقعة بالفئات الفعلية",
+    "caption": "تظهر المطابقات والأخطاء لكل فئة في مواضع منفصلة. الرسم مثال عام، والأعداد في نص لوسيل افتراضية.",
+    "credit": "Hssiqueira",
+    "source": "https://commons.wikimedia.org/wiki/File:Multi_Category_Confusion_Matrix.png",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
