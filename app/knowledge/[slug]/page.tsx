@@ -420,6 +420,34 @@ const knowledgeIllustrations = [
     "caption": "مثال لمراحل إعداد السياق: يمكن جمع تعليمات وسجل ومقتطفات، ثم اختيار ما يتسع له الطلب.",
     "credit": "Rodrigo Padula، استنادًا إلى عمل BelgianWeditor",
     "source": "https://commons.wikimedia.org/wiki/File:Engenharia_de_contexto_fluxo.svg"
+  },
+  {
+    "slug": "ai-model-parameters",
+    "section": "weights",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Linear_regression.svg",
+    "width": 438,
+    "height": 289,
+    "maxWidth": 590,
+    "alt": "نقاط زرقاء وخط انحدار أحمر يمر بين النقاط",
+    "caption": "ميل الخط وقيمته عند تقاطع المحور يبرزان دور معاملين يمكن تعلمهما من البيانات.",
+    "credit": "Sewaqu",
+    "source": "https://commons.wikimedia.org/wiki/File:Linear_regression.svg",
+    "license": "ملكية عامة",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Linear_regression.svg#Licensing"
+  },
+  {
+    "slug": "ai-model-parameters",
+    "section": "training",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/3/37/Artificial_neuron.svg",
+    "width": 401,
+    "height": 251,
+    "maxWidth": 620,
+    "alt": "مخطط لوحدة عصبية اصطناعية تربط المدخلات بالأوزان وتجمعها لتوليد المخرج",
+    "caption": "تدخل الأوزان في حساب الوحدة. والرسم يوضح وحدة واحدة من شبكة يمكن أن تضم وحدات عديدة.",
+    "credit": "Branislav Gerazov",
+    "source": "https://commons.wikimedia.org/wiki/File:Artificial_neuron.svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
