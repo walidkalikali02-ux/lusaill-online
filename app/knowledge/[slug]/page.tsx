@@ -574,6 +574,34 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Image_diffusion_process.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "speech-recognition-vs-text-to-speech",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "section": "recognition",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Scheme_of_speech_recognition_system.png",
+    "width": 1120,
+    "height": 912,
+    "maxWidth": 640,
+    "alt": "مخطط نظام يبدأ بإشارة الكلام ويمر بمراحل استخراج خصائص الإشارة والتعرف",
+    "caption": "مثال لبنية نظام للتعرف على الكلام. قد تختلف المراحل وطريقة دمجها حسب النموذج.",
+    "credit": "IHEARu",
+    "source": "https://commons.wikimedia.org/wiki/File:Scheme_of_speech_recognition_system.png"
+  },
+  {
+    "slug": "speech-recognition-vs-text-to-speech",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "section": "synthesis",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/59/Component_interaction_for_TTS.svg",
+    "width": 512,
+    "height": 543,
+    "maxWidth": 480,
+    "alt": "رسم يوضح تبادل المعلومات بين مكونات نظام لتحويل النص إلى صوت",
+    "caption": "يوضح مثال Wikispeech كيف تتعاون المكونات الخاصة بالنص والنطق لتكوين مخرج صوتي.",
+    "credit": "Sebastian Berlin (WMSE)",
+    "source": "https://commons.wikimedia.org/wiki/File:Component_interaction_for_TTS.svg"
   }
 ];
 
