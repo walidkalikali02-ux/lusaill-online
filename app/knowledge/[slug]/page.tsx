@@ -378,6 +378,34 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Precision_recall.svg",
     "license": "ملكية عامة (CC0)",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "recommendation-systems",
+    "credit": "Metalicat",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "section": "ranking",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/3/36/Feed_comparison-2.svg",
+    "width": 512,
+    "height": 320,
+    "maxWidth": 600,
+    "alt": "رسم يبين مرور مجموعة محتوى بمرحلة انتقاء المرشحين ثم احتساب الدرجة لتكوين قائمة مرتبة",
+    "caption": "يبسّط الرسم مرحلتي الانتقاء والتقييم، ويمكن أن تلحق بهما إعادة ترتيب قبل العرض.",
+    "source": "https://commons.wikimedia.org/wiki/File:Feed_comparison-2.svg"
+  },
+  {
+    "slug": "recommendation-systems",
+    "credit": "Metalicat",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "section": "feedback",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Recommender_feedback_loop.svg",
+    "width": 800,
+    "height": 319,
+    "maxWidth": 720,
+    "alt": "أسهم تصل التوصية المعروضة بتفاعل المستخدم ثم استخدام ذلك التفاعل في تحديث نموذج الترتيب",
+    "caption": "التوصيات التي تظهر أمام المستخدم تحدد ما يستطيع التفاعل معه، ولذلك تؤثر في بعض بيانات التدريب اللاحقة.",
+    "source": "https://commons.wikimedia.org/wiki/File:Recommender_feedback_loop.svg"
   }
 ];
 
