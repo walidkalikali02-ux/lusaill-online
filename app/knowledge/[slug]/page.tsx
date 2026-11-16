@@ -490,6 +490,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Multi_Category_Confusion_Matrix.png",
     "license": "ملكية عامة (CC0)",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "on-device-ai",
+    "section": "locations",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/3/34/Edge_computing_paradigm%2C_2019-07-03.svg",
+    "width": 675,
+    "height": 540,
+    "maxWidth": 630,
+    "alt": "مخطط تظهر فيه الأجهزة أسفل شبكة من العقد الطرفية والسحابة",
+    "caption": "توضح الطبقة الوسطى مكان المعالجة على عقدة طرفية منفصلة عن الجهاز والسحابة.",
+    "credit": "NoMore201",
+    "source": "https://commons.wikimedia.org/wiki/File:Edge_computing_paradigm,_2019-07-03.svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
