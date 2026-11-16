@@ -616,6 +616,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Example_of_Arabic_text_Wellcome_L0040181.jpg",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "model-context-protocol",
+    "section": "parts",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Modelo_Cliente-Servidor.png",
+    "width": 542,
+    "height": 262,
+    "maxWidth": 580,
+    "alt": "رسم يوضح اتصال عملاء بخادم يتلقى الطلبات ويرسل الردود",
+    "caption": "نموذج عام لعلاقة العميل بالخادم. يوضح المخطط العربي المجاور موقع تطبيق المضيف في مثال MCP.",
+    "credit": "YurikaH",
+    "source": "https://commons.wikimedia.org/wiki/File:Modelo_Cliente-Servidor.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
