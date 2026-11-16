@@ -210,6 +210,34 @@ const knowledgeIllustrations = [
     "credit": "MaoucheMounir",
     "license": "ملكية عامة (CC0)",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Reinforcement_learning_diagram.svg",
+    "width": 300,
+    "height": 290,
+    "alt": "رسم يوضح إرسال الوكيل فعلًا إلى البيئة وعودة الحالة والمكافأة إليه",
+    "caption": "حلقة التعلم المعزز. يرسل الوكيل فعلًا إلى البيئة، وتعيد إليه حالة جديدة وإشارة مكافأة.",
+    "source": "https://commons.wikimedia.org/wiki/File:Reinforcement_learning_diagram.svg",
+    "credit": "Megajuice",
+    "section": "agent-environment-reward",
+    "slug": "reinforcement-learning-explained",
+    "maxWidth": 390,
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Simple_maze_on_grid.svg",
+    "width": 244,
+    "height": 244,
+    "alt": "متاهة من ممرات وجدران مرسومة على شبكة مربعات",
+    "caption": "مثال مرئي على متاهة شبكية. يمكن تمثيل موقع الوكيل بإحداثيات خانة، وتمثيل الأفعال بالانتقال إلى الخانات المجاورة.",
+    "source": "https://commons.wikimedia.org/wiki/File:Simple_maze_on_grid.svg",
+    "credit": "Hunsvotti",
+    "section": "exploration",
+    "slug": "reinforcement-learning-explained",
+    "maxWidth": 390,
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
