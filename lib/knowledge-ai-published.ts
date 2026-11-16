@@ -3715,6 +3715,10 @@ export const aiPublishedTopics: KnowledgeTopic[] = [
       {
         "label": "Google AI for Developers | إعدادات توليد المحتوى",
         "url": "https://ai.google.dev/api/generate-content"
+      },
+      {
+        "label": "PyTorch | طريقة تحويل الدرجات إلى احتمالات",
+        "url": "https://docs.pytorch.org/docs/2.15/generated/torch.nn.functional.softmax.html"
       }
     ],
     "related": [
