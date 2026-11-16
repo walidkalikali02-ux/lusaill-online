@@ -294,6 +294,34 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Logistic-curve.svg",
     "license": "الملكية العامة",
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Logistic-curve.svg#Licensing"
+  },
+  {
+    "slug": "decision-trees-vs-random-forests",
+    "section": "tree-splits",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/50/ID3_algorithm_decision_tree.svg",
+    "width": 621,
+    "height": 332,
+    "maxWidth": 600,
+    "alt": "مثال لشجرة قرار يتفرع فيها كل شرط إلى مسار ينتهي بفئة",
+    "caption": "مثال مستقل على شجرة قرار. تحدد نتيجة كل شرط الفرع التالي حتى الوصول إلى إحدى الأوراق.",
+    "credit": "Acoggins38 وIxfd64",
+    "source": "https://commons.wikimedia.org/wiki/File:ID3_algorithm_decision_tree.svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "decision-trees-vs-random-forests",
+    "section": "forest-aggregation",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Decision_Tree_vs._Random_Forest.png",
+    "width": 1577,
+    "height": 940,
+    "maxWidth": 680,
+    "alt": "مقارنة بصرية بين شجرة قرار واحدة ومجموعة أشجار داخل غابة عشوائية",
+    "caption": "مقارنة توضح شجرة منفردة وغابة تضم عدة أشجار. يُجمع ناتج الأشجار عند إصدار التوقع.",
+    "credit": "Jeremybeauchamp",
+    "source": "https://commons.wikimedia.org/wiki/File:Decision_Tree_vs._Random_Forest.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
