@@ -672,6 +672,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Old_man_garden-path_(right).svg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-information-sources",
+    "section": "tools",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Rag-scheme.png",
+    "width": 766,
+    "height": 328,
+    "maxWidth": 720,
+    "alt": "مخطط يوضح استرجاع معلومات من مستندات ثم إدراجها في مدخلات نموذج اللغة",
+    "caption": "يوضح الرسم كيف يضيف التطبيق مقاطع مسترجعة إلى المدخلات المتاحة للنموذج عند توليد الرد.",
+    "credit": "Numiri",
+    "source": "https://commons.wikimedia.org/wiki/File:Rag-scheme.png",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
   }
 ];
 
