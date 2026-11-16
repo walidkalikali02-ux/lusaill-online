@@ -560,6 +560,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Randomforest.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "diffusion-models-for-image-generation",
+    "section": "training",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/7/76/Image_diffusion_process.png",
+    "width": 2374,
+    "height": 855,
+    "maxWidth": 800,
+    "alt": "مخطط تدريبي يقارن صورة واضحة بمراحل يزداد فيها التشويش وبتقدير النموذج له",
+    "caption": "يوضح الرسم صلة إضافة الضوضاء أثناء التدريب بتعلّم النموذج تقديرها أو إزالة أثرها.",
+    "credit": "Dragweb",
+    "source": "https://commons.wikimedia.org/wiki/File:Image_diffusion_process.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
