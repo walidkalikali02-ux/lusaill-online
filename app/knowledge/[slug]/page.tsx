@@ -266,6 +266,34 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:CurveWeightHeight.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "regression-vs-classification",
+    "section": "metrics",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Linear_regression_residuals.svg",
+    "width": 384,
+    "height": 384,
+    "maxWidth": 490,
+    "alt": "رسم علوي لنقاط وخط انحدار ورسم سفلي للفروق بين النقاط والخط",
+    "caption": "يعرض الرسم العلوي الملاءمة الخطية للنقاط، ويعرض السفلي البواقي حول الصفر.",
+    "credit": "Justinkunimune",
+    "source": "https://commons.wikimedia.org/wiki/File:Linear_regression_residuals.svg",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "regression-vs-classification",
+    "section": "threshold",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/8/88/Logistic-curve.svg",
+    "width": 600,
+    "height": 400,
+    "maxWidth": 560,
+    "alt": "منحنى لوجستي على شكل حرف S يرتفع من قرب الصفر نحو الواحد",
+    "caption": "تنتقل قيمة الدالة اللوجستية تدريجيًا بين الصفر والواحد. يختار فريق العمل عتبة تحويل التقدير إلى فئة.",
+    "credit": "Qef وAflafla1",
+    "source": "https://commons.wikimedia.org/wiki/File:Logistic-curve.svg",
+    "license": "الملكية العامة",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Logistic-curve.svg#Licensing"
   }
 ];
 
