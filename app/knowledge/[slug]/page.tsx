@@ -602,6 +602,20 @@ const knowledgeIllustrations = [
     "caption": "يوضح مثال Wikispeech كيف تتعاون المكونات الخاصة بالنص والنطق لتكوين مخرج صوتي.",
     "credit": "Sebastian Berlin (WMSE)",
     "source": "https://commons.wikimedia.org/wiki/File:Component_interaction_for_TTS.svg"
+  },
+  {
+    "slug": "arabic-ocr",
+    "section": "arabic",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Example_of_Arabic_text_Wellcome_L0040181.jpg",
+    "width": 2526,
+    "height": 4013,
+    "maxWidth": 450,
+    "alt": "صفحة من الخط العربي التاريخي يظهر فيها نص مع زخارف",
+    "caption": "صفحة من مجموعة ويلكوم توضح نوعًا من الخط يختلف عن الفاتورة المطبوعة. لم يُستخدم الرسم لقياس دقة أي نظام.",
+    "credit": "Wellcome Library, London",
+    "source": "https://commons.wikimedia.org/wiki/File:Example_of_Arabic_text_Wellcome_L0040181.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
   }
 ];
 
