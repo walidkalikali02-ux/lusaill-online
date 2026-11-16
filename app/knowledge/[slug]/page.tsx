@@ -406,6 +406,20 @@ const knowledgeIllustrations = [
     "alt": "أسهم تصل التوصية المعروضة بتفاعل المستخدم ثم استخدام ذلك التفاعل في تحديث نموذج الترتيب",
     "caption": "التوصيات التي تظهر أمام المستخدم تحدد ما يستطيع التفاعل معه، ولذلك تؤثر في بعض بيانات التدريب اللاحقة.",
     "source": "https://commons.wikimedia.org/wiki/File:Recommender_feedback_loop.svg"
+  },
+  {
+    "slug": "context-window-and-tokens",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "section": "window",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Engenharia_de_contexto_fluxo.svg",
+    "width": 1600,
+    "height": 820,
+    "maxWidth": 760,
+    "alt": "مخطط برتغالي يبين اختيار مصادر السياق واختصارها قبل إرسال الطلب إلى نموذج اللغة",
+    "caption": "مثال لمراحل إعداد السياق: يمكن جمع تعليمات وسجل ومقتطفات، ثم اختيار ما يتسع له الطلب.",
+    "credit": "Rodrigo Padula، استنادًا إلى عمل BelgianWeditor",
+    "source": "https://commons.wikimedia.org/wiki/File:Engenharia_de_contexto_fluxo.svg"
   }
 ];
 
