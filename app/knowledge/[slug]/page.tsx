@@ -322,6 +322,34 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Decision_Tree_vs._Random_Forest.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "clustering-in-machine-learning-marketing",
+    "section": "methods",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Hierarchical_clustering_simple_diagram.svg",
+    "width": 418,
+    "height": 333,
+    "maxWidth": 510,
+    "alt": "رسم يوضح بناء مجموعات هرمية من خلال ربط العناصر والمجموعات",
+    "caption": "يعرض الرسم التجميع الهرمي. تحدد درجة التفصيل التي نختارها أين نقطع الشجرة للحصول على مجموعات.",
+    "credit": "Stathis Sideris وMhbrugman",
+    "source": "https://commons.wikimedia.org/wiki/File:Hierarchical_clustering_simple_diagram.svg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "clustering-in-machine-learning-marketing",
+    "section": "methods",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/0/05/DBSCAN-density-data.svg",
+    "width": 320,
+    "height": 322,
+    "maxWidth": 470,
+    "alt": "مخطط نقاط يوضح مجموعات اكتشفتها DBSCAN وأخرى بعيدة عنها",
+    "caption": "تربط DBSCAN النقاط بحسب كثافة الجوار. يبيّن المثال أشكالًا غير دائرية ونقاطًا خارج المجموعات وفق الإعداد المستخدم.",
+    "credit": "Chire",
+    "source": "https://commons.wikimedia.org/wiki/File:DBSCAN-density-data.svg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
