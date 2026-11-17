@@ -714,6 +714,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Turing_test_diagram.png",
     "license": "CC BY 2.5",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
+  },
+  {
+    "slug": "history-of-artificial-intelligence",
+    "section": "learning",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/e/ee/IBM_Deep_Blue_at_Computer_History_Museum_%289361685537%29.jpg",
+    "width": 1067,
+    "height": 1600,
+    "maxWidth": 480,
+    "alt": "حاسوب ديب بلو المعروض في متحف تاريخ الحاسوب",
+    "caption": "حاسوب ديب بلو في متحف تاريخ الحاسوب. توثق الصورة الجهاز المعروض، ويسجل أرشيف IBM نتيجة المباراة.",
+    "credit": "Anton Chiang",
+    "source": "https://commons.wikimedia.org/wiki/File:IBM_Deep_Blue_at_Computer_History_Museum_(9361685537).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   }
 ];
 
