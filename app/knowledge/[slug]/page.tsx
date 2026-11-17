@@ -700,6 +700,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Machine_learning_nutshell_--_Test_the_machine_learning_model.svg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "turing-test",
+    "section": "setup",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/55/Turing_test_diagram.png",
+    "width": 661,
+    "height": 504,
+    "maxWidth": 650,
+    "alt": "رسم لمحكّم يتواصل مع إنسان وحاسوب في اختبار تورينج",
+    "caption": "يوضح الرسم صيغة تقارن بين إنسان وآلة عبر تواصل لا يكشف هوية الطرفين للمحكّم.",
+    "credit": "Juan Alberto Sánchez Margallo",
+    "source": "https://commons.wikimedia.org/wiki/File:Turing_test_diagram.png",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
   }
 ];
 
