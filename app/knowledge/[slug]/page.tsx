@@ -728,6 +728,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:IBM_Deep_Blue_at_Computer_History_Museum_(9361685537).jpg",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "slug": "how-to-write-an-ai-prompt",
+    "section": "context",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/58/Engenharia_de_contexto.svg",
+    "width": 1280,
+    "height": 920,
+    "maxWidth": 660,
+    "alt": "مخطط برتغالي يبين عناصر السياق ومنها التعليمات والمخرجات المنظمة",
+    "caption": "يعرض الرسم عناصر تُستخدم عند تجهيز سياق النماذج اللغوية، ومنها التعليمات وصيغة المخرج.",
+    "credit": "Rodrigo Padula، استنادًا إلى عمل BelgianWeditor",
+    "source": "https://commons.wikimedia.org/wiki/File:Engenharia_de_contexto.svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
