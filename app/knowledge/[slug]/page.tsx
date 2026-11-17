@@ -854,6 +854,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:An%C3%A1lisis_Documental.svg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "meeting-minutes-prompt",
+    "section": "check",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Business_professional_engages_in_note-taking_during_a_meeting_at_a_modern_office_desk.jpg/1280px-Business_professional_engages_in_note-taking_during_a_meeting_at_a_modern_office_desk.jpg",
+    "width": 1280,
+    "height": 854,
+    "maxWidth": 720,
+    "alt": "شخص يدوّن ملاحظات بالقلم قرب حاسوب مفتوح",
+    "caption": "ملاحظات الاجتماع مادة تُراجع عند تحويل النقاش إلى قرارات وتكليفات.",
+    "credit": "Shixart1985",
+    "source": "https://commons.wikimedia.org/wiki/File:Business_professional_engages_in_note-taking_during_a_meeting_at_a_modern_office_desk.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   }
 ];
 
