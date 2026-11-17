@@ -36,7 +36,8 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const base = getCategoryUrl(category);
   const canonical = !filtered && validPage ? topicPageUrl(base, page) : base;
   const paginated = !filtered && validPage && page > 1;
-  const title = paginated ? category.title + " — صفحة " + page : category.title;
+  const topicTitle = `مقالات ${category.title} وأدلة مبسطة بالعربية`;
+  const title = paginated ? topicTitle + " — صفحة " + page : topicTitle;
   return {
     title,
     description: paginated ? category.summary + " تصفح الصفحة " + page + " لمتابعة مقالات هذا القسم." : category.summary + " تصفح التخصصات الفرعية والمقالات المتاحة في هذا القسم من موسوعة لوسيل.",
