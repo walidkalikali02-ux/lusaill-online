@@ -798,6 +798,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Prompt_injection.svg",
     "license": "ملكية عامة (CC0)",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "prompt-engineering-mistakes",
+    "section": "verify",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/0/0b/PDCA-Loop.png",
+    "width": 450,
+    "height": 450,
+    "maxWidth": 470,
+    "alt": "رسم دائري يربط التخطيط والتنفيذ والفحص وتعديل الخطة",
+    "caption": "توضح الدورة كيف يقود فحص نتيجة التجربة إلى تعديل جديد.",
+    "credit": "Christoph Roser at AllAboutLean.com",
+    "source": "https://commons.wikimedia.org/wiki/File:PDCA-Loop.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
