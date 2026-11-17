@@ -18,11 +18,11 @@ export function generateStaticParams() {
   return knowledgeTopics.filter(t=>Boolean(t.directAnswer?.trim()) && t.sections.length>0).map(t=>({slug:t.slug}));
 }
 function seoKnowledgeTitle(value: string): string {
-  if (value.length <= 54) return value;
+  if (value.length <= 51) return value;
   // Keep the leading query meaningful; the full editorial title remains the H1.
   const lead = value.split(/[：:؛—]/u)[0].trim();
-  if (lead.length >= 24 && lead.length <= 54) return lead;
-  return value.slice(0, 54).replace(/\s+\S*$/u, "").trim();
+  if (lead.length >= 24 && lead.length <= 51) return lead;
+  return value.slice(0, 51).replace(/\s+\S*$/u, "").trim();
 }
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{
   const {slug}=await params;const topic=getKnowledgeTopic(slug);
