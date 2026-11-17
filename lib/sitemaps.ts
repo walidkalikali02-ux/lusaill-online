@@ -1,4 +1,5 @@
 import { sixgLessons, sixgMeta, sixgPath, sixgLessonPath } from "@/lib/sixg-course";
+import { qatarGradeOneMathLessons, qatarMathLessonPath } from "@/lib/qatar-grade-one-math-lessons";
 import type { MetadataRoute } from "next";
 import { getArticleModifiedAt } from "./content-modified";
 import { restoredScienceGuides } from "./restored-science-guides";
@@ -61,6 +62,10 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     { url: absoluteUrl("/services/excel"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/services/social-design"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/knowledge/manahej"), lastModified: new Date("2026-11-14"), changeFrequency: "monthly", priority: 0.8 },
+    // Previously discoverable only via HTML links; include canonical Qatar programme paths.
+    { url: absoluteUrl("/knowledge/manahej/qatar"), changeFrequency: "monthly", priority: 0.7 },
+    { url: absoluteUrl("/knowledge/manahej/qatar/grade-1"), changeFrequency: "monthly", priority: 0.7 },
+    { url: absoluteUrl("/knowledge/manahej/qatar/grade-1/math"), lastModified: new Date("2026-11-17"), changeFrequency: "monthly", priority: 0.8 },
     // Separately authored routes; not included in knowledgeTopics.
     { url: absoluteUrl("/knowledge/roman-numerals"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/roman-numerals-education.svg")] },
     { url: absoluteUrl("/knowledge/learning-objectives"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/bloom-learning-levels-original.svg")] },
@@ -144,7 +149,11 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     "sitemap-guides.xml": guideRoutes,
     "sitemap-courses.xml": [...staticRoutes.filter((route) => new URL(route.url).pathname === "/courses"), ...courseRoutes, ...sixgLessons.map(lesson => ({url:absoluteUrl(sixgLessonPath(lesson.slug)),lastModified:new Date(sixgMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...fivegLessons.map(lesson => ({url:absoluteUrl(fivegLessonPath(lesson.slug)),lastModified:new Date(fivegMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7})), ...geometryLessons.flatMap(lesson => [geometryLessonPath(lesson.slug), `${geometryLessonPath(lesson.slug)}/worksheet`].map(path => ({url:absoluteUrl(path),lastModified:new Date(geometryMeta.updatedAt),changeFrequency:"monthly" as const,priority:0.7}))), ...staticRoutes.filter((route) => route.url.includes("/courses/"))],
     "sitemap-entities.xml": entityRoutes,
-    "sitemap-pages.xml": [...staticRoutes.filter((route) => !new URL(route.url).pathname.startsWith("/courses")), ...knowledgeRoutes, ...topicRoutes],
+    "sitemap-pages.xml": [...staticRoutes.filter((route) => !new URL(route.url).pathname.startsWith("/courses")), ...knowledgeRoutes, ...topicRoutes,
+      ...qatarGradeOneMathLessons.map(lesson => ({
+        url: absoluteUrl(qatarMathLessonPath(lesson.slug)), lastModified: new Date("2026-11-17"),
+        changeFrequency: "monthly" as const, priority: 0.7,
+      }))],
   };
 }
 
