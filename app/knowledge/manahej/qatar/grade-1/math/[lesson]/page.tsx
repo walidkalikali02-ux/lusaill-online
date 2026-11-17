@@ -24,7 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const path = qatarMathLessonPath(lesson.slug);
   return {
     title, description, alternates: pageAlternates(path),
-    robots: { index: true, follow: true },
+    // Keep new educational notes discoverable to readers but out of the index until individually QA-reviewed.
+    robots: { index: false, follow: true },
     openGraph: { title, description, url: path, type: "article", images: [siteSocialImage] },
     twitter: { card: "summary_large_image", title, description, images: [siteSocialImage.url] },
   };
