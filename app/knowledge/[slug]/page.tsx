@@ -770,6 +770,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Problem-Solving.svg",
     "license": "ملكية عامة",
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Problem-Solving.svg#Licensing"
+  },
+  {
+    "slug": "prompt-table-or-json",
+    "section": "json",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Example_json_code.png",
+    "width": 1822,
+    "height": 1045,
+    "maxWidth": 750,
+    "alt": "صورة لمثال تعرض مفاتيح وقيمًا في بنية JSON",
+    "caption": "يوضح الشكل كيف تظهر المفاتيح والقيم في بنية JSON. الصورة مقتطعة من عمل يقارن بين JSON وXML.",
+    "credit": "Dcbmariano؛ اقتصاص Very Polite Person",
+    "source": "https://commons.wikimedia.org/wiki/File:Example_json_code.png",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
   }
 ];
 
