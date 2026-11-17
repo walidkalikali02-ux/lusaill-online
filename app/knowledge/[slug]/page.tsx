@@ -840,6 +840,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Anatomy_of_an_Email_message.JPG",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "long-report-summary-prompt",
+    "section": "long",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/d/d3/An%C3%A1lisis_Documental.svg",
+    "width": 1031,
+    "height": 662,
+    "maxWidth": 760,
+    "alt": "مخطط باللغة الإسبانية لتحليل المستندات واستخلاص مواد منها",
+    "caption": "يوضح الرسم مراحل تحليل الوثائق في سياق عام. يستخدم المثال هنا معالجة كل قسم ثم دمج نتائجه.",
+    "credit": "JescuderoBUS",
+    "source": "https://commons.wikimedia.org/wiki/File:An%C3%A1lisis_Documental.svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
