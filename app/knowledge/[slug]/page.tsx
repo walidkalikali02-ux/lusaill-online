@@ -17,12 +17,19 @@ export const revalidate = 86400;
 export function generateStaticParams() {
   return knowledgeTopics.filter(t=>Boolean(t.directAnswer?.trim()) && t.sections.length>0).map(t=>({slug:t.slug}));
 }
+function seoKnowledgeTitle(value: string): string {
+  if (value.length <= 54) return value;
+  // Keep the leading query meaningful; the full editorial title remains the H1.
+  const lead = value.split(/[：:؛—]/u)[0].trim();
+  if (lead.length >= 24 && lead.length <= 54) return lead;
+  return value.slice(0, 54).replace(/\s+\S*$/u, "").trim();
+}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{
   const {slug}=await params;const topic=getKnowledgeTopic(slug);
   if(!topic || !topic.directAnswer?.trim() || !topic.sections.length)return {robots:{index:false,follow:false}};
   const path="/knowledge/"+topic.slug;
   const cover = editorialImagePath("knowledge", topic.slug);
-  return {title:topic.title,description:topic.description,alternates:pageAlternates(path),
+  return {title:seoKnowledgeTitle(topic.title),description:topic.description,alternates:pageAlternates(path),
     robots:{index:isKnowledgeSearchReady(topic),follow:true},
     openGraph:{title:topic.title,description:topic.description,url:path,type:"article",publishedTime:topic.publishedAt,
       images:[{url:cover,alt:"غلاف تحريري: "+topic.title,width:1200,height:630}]},
