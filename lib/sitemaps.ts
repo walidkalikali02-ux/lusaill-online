@@ -50,7 +50,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     }));
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: absoluteUrl("/"), lastModified: new Date("2026-11-14"), changeFrequency: "weekly", priority: 1.0 },
-    { url: absoluteUrl("/knowledge"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/knowledge"), lastModified: new Date("2026-11-17"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/topics"), changeFrequency: "monthly", priority: 0.9 },
     { url: absoluteUrl("/caricatures"), lastModified: new Date("2026-11-08"), changeFrequency: "weekly", priority: 0.8 },
     { url: absoluteUrl("/caricatures/gaza-flooded-tents"), lastModified: new Date("2026-11-08"), changeFrequency: "monthly", priority: 0.85, images: [absoluteUrl("/images/caricatures/gaza-flooded-tents.jpg")] },
@@ -71,8 +71,8 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     { url: absoluteUrl("/articles"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article))), changeFrequency: "weekly", priority: 0.9 },
     { url: absoluteUrl("/categories"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article))), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/entities"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article))), changeFrequency: "monthly", priority: 0.8 },
-    { url: absoluteUrl("/about"),  changeFrequency: "monthly", priority: 0.6 },
-    { url: absoluteUrl("/team"), changeFrequency: "monthly", priority: 0.6 },
+    { url: absoluteUrl("/about"), lastModified: new Date("2026-11-17"), changeFrequency: "monthly", priority: 0.6 },
+    { url: absoluteUrl("/team"), lastModified: new Date("2026-11-17"), changeFrequency: "monthly", priority: 0.6 },
     { url: absoluteUrl("/privacy"), lastModified: new Date("2026-11-13"), changeFrequency: "yearly", priority: 0.3 },
     { url: absoluteUrl("/terms"), lastModified: new Date("2026-09-24"), changeFrequency: "yearly", priority: 0.3 },
     { url: absoluteUrl("/contact"), lastModified: new Date("2026-09-30"), changeFrequency: "yearly", priority: 0.5 },
