@@ -756,6 +756,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Prompting_LLMs_to_respond_with_quotes_directly_from_pre-training_data_(Figure_1_from_Weller_et_al._2023).png",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "chain-of-thought-prompting",
+    "section": "limits",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Problem-Solving.svg",
+    "width": 809,
+    "height": 559,
+    "maxWidth": 700,
+    "alt": "مخطط يتتبع مراحل حل مشكلة وتقييم الحل",
+    "caption": "رسم لخطوات حل المشكلة يوضح موضع المراجعة بعد اقتراح حل.",
+    "credit": "KEBman",
+    "source": "https://commons.wikimedia.org/wiki/File:Problem-Solving.svg",
+    "license": "ملكية عامة",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Problem-Solving.svg#Licensing"
   }
 ];
 
