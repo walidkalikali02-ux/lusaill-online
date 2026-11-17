@@ -14,8 +14,6 @@ const nextConfig: NextConfig = {
         hostname: "upload.wikimedia.org",
         pathname: "/wikipedia/commons/**",
       },
-      // Attributed instructional screenshots used in the WPS recovery guide.
-      ...["res-academy.cache.wpscdn.com", "www.cisdem.com", "www.aiseesoft.de", "www.donemax.com", "support.microsoft.com", "www.stellarinfo.com", "www.easeus.de"].map((hostname) => ({ protocol: "https" as const, hostname, pathname: "/**" })),
     ],
   },
   // Redirect only where a genuine content-equivalent destination is verified.
