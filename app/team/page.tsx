@@ -4,11 +4,11 @@ import { TeamAvatar } from "@/components/team-avatar";
 import { getTeamPersonas, getTeamArticles } from "@/lib/team-domains";
 import { teamRoles, teamPersonaAnchor, type TeamRole } from "@/lib/team-personas";
 import { pageAlternates } from "@/lib/page-alternates";
-import { absoluteUrl } from "@/lib/site-config";
+import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 import styles from "./team.module.css";
 
 const description = "تعرّف إلى المجالات المعرفية في موسوعة لوسيل عبر شخصيات توضيحية من العلوم والتعليم والتقنية والكتابة والبحث، مع روابط لمقالات كل تخصص. الأسماء والرسوم خيالية.";
-export const metadata: Metadata = { title: "فريق لوسيل | وجوه المعرفة", description, alternates: pageAlternates("/team"), openGraph: { title: "فريق لوسيل", description, url: "/team", type: "website" } };
+export const metadata: Metadata = { title: "فريق لوسيل | وجوه المعرفة", description, alternates: pageAlternates("/team"), openGraph: { title: "فريق لوسيل", description, url: "/team", type: "website", images: [siteSocialImage] } };
 type Query = { q?: string | string[]; role?: string | string[] };
 const normalize = (value: string) => value.normalize("NFKC").replace(/[ً-ْ]/g, "").replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").toLowerCase();
 export default async function TeamPage({ searchParams }: { searchParams: Promise<Query> }) {
