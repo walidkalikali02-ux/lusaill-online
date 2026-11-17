@@ -742,6 +742,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Engenharia_de_contexto.svg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "few-shot-prompting-in-arabic",
+    "section": "limits",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/0/04/Prompting_LLMs_to_respond_with_quotes_directly_from_pre-training_data_%28Figure_1_from_Weller_et_al._2023%29.png",
+    "width": 2048,
+    "height": 2470,
+    "maxWidth": 580,
+    "alt": "شكل من دراسة ويلر يعرض أثر صياغة الطلب في إجابات تحاول الاقتباس من مصادر",
+    "caption": "يعرض الشكل تجربة منفصلة عن تصنيف الرسائل، ويبين إحدى طرق دراسة أثر التعليمات على مخرجات نموذج اللغة.",
+    "credit": "Orion Weller, Marc Marone, Nathaniel Weir, Dawn Lawrie, Daniel Khashabi وBenjamin Van Durme",
+    "source": "https://commons.wikimedia.org/wiki/File:Prompting_LLMs_to_respond_with_quotes_directly_from_pre-training_data_(Figure_1_from_Weller_et_al._2023).png",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
   }
 ];
 
