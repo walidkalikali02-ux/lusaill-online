@@ -45,7 +45,7 @@ export function ProjectFrame({ pathname, project, children }: { pathname: string
       <Link className="project-brand" href={project.home}><strong>{project.name}</strong><small>أحد مشاريع شركة لوسيل</small></Link>
       <nav aria-label={`روابط ${project.name}`}>
         {project.links.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
-        <Link href="/privacy">الخصوصية</Link>
+        <Link href="/about">عن لوسيل</Link><Link href="/editorial-policy">منهج التحرير</Link><Link href="/contact">تواصل معنا</Link><Link href="/privacy">الخصوصية</Link>
       </nav>
       <Link className="project-company-link" href="/">شركة لوسيل <span aria-hidden="true">↗</span></Link>
     </div></footer>
