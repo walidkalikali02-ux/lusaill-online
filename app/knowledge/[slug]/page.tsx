@@ -784,6 +784,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Example_json_code.png",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "ai-system-prompts-for-business",
+    "section": "security",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Prompt_injection.svg",
+    "width": 2068,
+    "height": 864,
+    "maxWidth": 770,
+    "alt": "مخطط يوضح اختلاط تعليمات التطبيق مع تعليمات داخل مدخل يعالجه نموذج اللغة",
+    "caption": "يوضح الرسم مشكلة حقن الأوامر عندما يتضمن المدخل تعليمات تؤثر في التنفيذ.",
+    "credit": "Gknor",
+    "source": "https://commons.wikimedia.org/wiki/File:Prompt_injection.svg",
+    "license": "ملكية عامة (CC0)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
