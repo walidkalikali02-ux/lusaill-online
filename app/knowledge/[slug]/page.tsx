@@ -812,6 +812,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:PDCA-Loop.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "arabic-vs-english-ai-prompts",
+    "section": "question",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/7/78/Grand_Circus_Park_English_and_Arabic_sign.jpg",
+    "width": 2048,
+    "height": 1356,
+    "maxWidth": 690,
+    "alt": "لافتة تعرض معلومات بالعربية والإنجليزية",
+    "caption": "تعرض اللافتة نصًا بلغتين. وفي اختبار لغة الأمر نحرص على نقل المطلوب نفسه عند تغيير لغة التعليمات.",
+    "credit": "Boots in the Oven",
+    "source": "https://commons.wikimedia.org/wiki/File:Grand_Circus_Park_English_and_Arabic_sign.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
   }
 ];
 
