@@ -6,7 +6,7 @@ import { articles, clusters, isArticleIndexable } from "@/lib/content";
 import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "كل الأدلة",
+  title: "أدلة الخدمات والإجراءات في مصر والحياة الرقمية",
   description: "تصفّح أدلة لوسيل العملية في الخدمات والإجراءات والحياة الرقمية، مع روابط للمصادر وخطوات واضحة لإكمال المهمة.",
   alternates: pageAlternates("/articles"),
   openGraph: {
