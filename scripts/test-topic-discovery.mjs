@@ -368,3 +368,24 @@ pairs.sort((a,b)=>b.score-a.score);
 console.log("DISCOVERY_SUMMARY "+JSON.stringify({published:published.length,food:foodSafetyArticles.length,articleSitemap:map.size,allSitemapUrls:urls.length,unwrittenExcluded:articles.length-published.length,exactDuplicates:0,companySlugs,contextTargets:targets,nearCandidates:pairs.slice(0,10),result:"PASS"}));
 for(const a of published){console.log("DISCOVERY_ARTICLE "+JSON.stringify({slug:a.slug,title:a.title,reviewedAt:a.updatedAt,publishedAt:a.publishedAt,modifiedAt:getArticleModifiedAt(a),imageModifiedAt:guideIllustrations[a.slug]?.updatedAt??null,category:a.clusterCode,hub:getGuidePath(a.slug)?"/guides/"+getGuidePath(a.slug).slug:null}));await new Promise(resolve=>setTimeout(resolve,30));}
 console.log("PASS: sitemap completeness, excluded unwritten placeholders/retirements, authentic dates, hub membership and relevant contextual targets");
+
+
+// 17 Nov SEO recovery regression guards: do not index unfinished lessons.
+const alexandriaGuide = articles.find(article => article.slug === "alexandria-electricity");
+assert(alexandriaGuide && isArticleSearchReady(alexandriaGuide),
+  "Reviewed Alexandria electricity guide must satisfy the conservative editorial index gate");
+const sitemapUrls = Object.values(sitemapGroups()).flat().map(entry => entry.url);
+assert(sitemapUrls.includes("https://www.lusaill.online/articles/alexandria-electricity"),
+  "Verified Alexandria electricity guide must appear in the XML sitemap");
+const qatarMath = load("lib/qatar-grade-one-math-lessons.ts");
+assert.equal(qatarMath.qatarGradeOneMathLessons.length, 18, "Keep 18 unique Qatar grade-one lessons");
+assert.equal(new Set(qatarMath.qatarGradeOneMathLessons.map(item => item.slug)).size, 18,
+  "Each Qatar lesson needs a distinct stable URL");
+assert(sitemapUrls.includes("https://www.lusaill.online/knowledge/manahej/qatar/grade-1/math"),
+  "Qatar maths hub must be discoverable through XML sitemap");
+assert(!sitemapUrls.some(url => /\/knowledge\/manahej\/qatar\/grade-1\/math\/[^/]+$/.test(url)),
+  "Thin lesson notes stay outside sitemap pending individual editorial review");
+const inlineMedia = JSON.parse(readFileSync("lib/article-inline-media.json", "utf8"));
+assert(!Object.hasOwn(inlineMedia, "wps-kingsoft-deleted-excel-recovery"),
+  "No remote third-party screenshots in WPS recovery article");
+console.log("17 Nov SEO editorial and sitemap regression checks passed.");
