@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { pageAlternates } from "@/lib/page-alternates";
 import { services } from "@/lib/service-orders";
+import { siteSocialImage } from "@/lib/site-config";
 import s from "./studio.module.css";
 
 export const metadata: Metadata = {
   title: "خدمات لوسيل الرقمية",
   description: "اطلب إنشاء موقع، مونتاج فيديو، إنشاء أو تعديل ملف إكسل، أو تصميم منشورات التواصل. حدّد متطلباتك في محادثة قصيرة.",
   alternates: pageAlternates("/services"),
-  openGraph: { title: "خدمات لوسيل الرقمية", description: "اطلب خدمة رقمية وحدّد تفاصيل مشروعك خطوة بخطوة.", url: "/services", type: "website" },
+  openGraph: { title: "خدمات لوسيل الرقمية", description: "اطلب خدمة رقمية وحدّد تفاصيل مشروعك خطوة بخطوة.", url: "/services", type: "website", images: [siteSocialImage] },
 };
 
 const categories = {
