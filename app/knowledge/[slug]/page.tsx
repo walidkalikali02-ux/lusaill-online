@@ -826,6 +826,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Grand_Circus_Park_English_and_Arabic_sign.jpg",
     "license": "CC BY-SA 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+  },
+  {
+    "slug": "formal-email-prompt",
+    "section": "verify",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/56/Anatomy_of_an_Email_message.JPG",
+    "width": 731,
+    "height": 544,
+    "maxWidth": 700,
+    "alt": "مخطط لأجزاء رسالة بريد إلكتروني يتضمن الترويسة والمتن",
+    "caption": "صورة لعناصر رسالة البريد الإلكتروني تساعد على التمييز بين العنوان ومحتوى الرسالة.",
+    "credit": "Chedni",
+    "source": "https://commons.wikimedia.org/wiki/File:Anatomy_of_an_Email_message.JPG",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
