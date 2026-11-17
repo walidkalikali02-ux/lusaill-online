@@ -868,6 +868,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Business_professional_engages_in_note-taking_during_a_meeting_at_a_modern_office_desk.jpg",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "slug": "competitor-analysis-prompt",
+    "section": "review",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Comparison_table_different_services.png",
+    "width": 1280,
+    "height": 720,
+    "maxWidth": 740,
+    "alt": "جدول بصري يقارن خيارات مختلفة وفق أعمدة مشتركة",
+    "caption": "مصفوفة مقارنة لخيار تجاري مختلف توضح وضع المعايير نفسها أمام كل خيار.",
+    "credit": "Everscale",
+    "source": "https://commons.wikimedia.org/wiki/File:Comparison_table_different_services.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
