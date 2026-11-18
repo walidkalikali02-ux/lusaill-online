@@ -41,7 +41,9 @@ export function TopicHub({ slug, currentPage, section }: { slug: string; current
   if (!category) notFound();
   if (section && !category.subtopics.includes(section)) notFound();
   const fullList = getEncyclopediaCategoryItems(category);
-  const results = section ? getEncyclopediaSubtopicItems(category, section) : fullList;
+  const results = (section ? getEncyclopediaSubtopicItems(category, section) : fullList)
+    .slice()
+    .sort((a, b) => Number(isSearchReadyHref(b.href)) - Number(isSearchReadyHref(a.href)));
   const totalPages = Math.max(1, Math.ceil(results.length / TOPIC_PAGE_SIZE));
   if (!Number.isSafeInteger(currentPage) || currentPage < 1 || currentPage > totalPages) notFound();
   const visible = results.slice((currentPage - 1) * TOPIC_PAGE_SIZE, currentPage * TOPIC_PAGE_SIZE);
