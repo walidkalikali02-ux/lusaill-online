@@ -118,3 +118,30 @@
 .project-brand-wordmark { display:block;min-width:0; }
 .site-footer .project-brand { color:#f3f5ed; }
 @media(max-width:760px){.project-brand-icon { width:30px;height:30px; }.company-header.identity-header .brand-mark { width:40px;height:40px; }.company-header.identity-header .brand-mark svg { width:38px;height:38px; }}
+
+
+/* The Impossible Museum — company hero cinematic background */
+.company-hero-media{
+ position:absolute;inset:0;z-index:0;pointer-events:none;
+ background:#0b1110 url("/museum/poster.jpg") 55% 50% / cover no-repeat;
+}
+.company-hero-media video{
+ display:block;width:100%;height:100%;object-fit:cover;object-position:55% 50%;
+ opacity:0;filter:saturate(.7) contrast(1.08);
+ transition:opacity .7s ease;
+}
+.company-hero-media video.is-ready{opacity:.78}
+.company-hero-shade{
+ position:absolute;inset:0;
+ background:
+  linear-gradient(270deg,rgba(5,13,9,.91) 0%,rgba(8,16,12,.76) 42%,rgba(8,15,12,.50) 100%),
+  linear-gradient(0deg,rgba(5,11,7,.76),transparent 35%,rgba(5,11,7,.30));
+}
+.company-hero .company-hero-content{position:relative;z-index:1}
+@media(max-width:760px){
+ .company-hero-media{background-position:55% 50%}
+ .company-hero-media video{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .company-hero-media video{display:none}
+}
