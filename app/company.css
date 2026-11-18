@@ -108,3 +108,13 @@
 .encyclopedia-welcome nav{display:flex;gap:12px 22px;flex-wrap:wrap}
 .encyclopedia-welcome nav a{text-decoration:underline;text-underline-offset:5px}
 @media(max-width:720px){.project-masthead-inner{flex-wrap:wrap;gap:14px}.project-masthead-inner nav{order:2;flex-basis:100%}}
+
+/* Global Lusail monogram: no decorative box or generated pseudo-element. */
+.company-header.identity-header .brand-mark { display:grid;place-items:center;width:48px;height:48px;padding:0;background:transparent;border:0;border-radius:0;line-height:1; }
+.company-header.identity-header .brand-mark::after { content:none; }
+.company-header.identity-header .brand-mark svg { display:block;width:44px;height:44px; }
+.project-brand { display:inline-flex;align-items:center;gap:10px;min-width:0; }
+.project-brand-icon { display:block;flex:none; }
+.project-brand-wordmark { display:block;min-width:0; }
+.site-footer .project-brand { color:#f3f5ed; }
+@media(max-width:760px){.project-brand-icon { width:30px;height:30px; }.company-header.identity-header .brand-mark { width:40px;height:40px; }.company-header.identity-header .brand-mark svg { width:38px;height:38px; }}
