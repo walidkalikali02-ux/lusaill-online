@@ -36,6 +36,8 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     .filter(category => getEncyclopediaCategoryItems(category).filter(item => isSearchReadyHref(item.href)).length >= 2)
     .map(category => ({
       url: absoluteUrl(`/topics/${category.slug}`),
+      // Main topic markup and navigation changed as part of the 18 Nov hub migration.
+      lastModified: new Date("2026-11-18"),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     }));
@@ -95,7 +97,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
 
   const clusterRoutes: MetadataRoute.Sitemap = clusters.filter((cluster) => articles.some((article) => isArticleSearchReady(article) && article.clusterCode === cluster.code)).map((cluster) => ({
     url: absoluteUrl(`/categories/${cluster.slug}`),
-    lastModified: new Date(Math.max(latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article) && article.clusterCode === cluster.code))?.getTime() ?? 0, new Date(categoryIntroductions[cluster.slug]?.updatedAt ?? 0).getTime())),
+    lastModified: new Date(Math.max(new Date("2026-11-18").getTime(), latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article) && article.clusterCode === cluster.code))?.getTime() ?? 0, new Date(categoryIntroductions[cluster.slug]?.updatedAt ?? 0).getTime())),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
