@@ -91,5 +91,5 @@ export function getEncyclopediaCategoryCounts(): Record<string, number> {
 export const TOPIC_PAGE_SIZE = 24;
 
 export function getCategoryUrl(category: EncyclopediaCategory, subtopic?: string): string {
-  return subtopic ? `/topics/${category.slug}?section=${encodeURIComponent(subtopic)}` : `/topics/${category.slug}`;
+  return subtopic ? `/topics/${category.slug}/section/${encodeURIComponent(subtopic)}` : `/topics/${category.slug}`;
 }
