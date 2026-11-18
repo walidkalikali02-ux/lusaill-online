@@ -41,7 +41,11 @@ export function CategoryHub({ slug, currentPage }: { slug: string; currentPage: 
   const cluster = getCluster(slug);
   if (!cluster) notFound();
 
-  const items = getClusterArticles(cluster.slug).filter((item) => isArticleIndexable(item));
+  // Let people find every readable guide, but show editorially search-ready
+  // content first to reduce indexable hub links to unreviewed material.
+  const items = getClusterArticles(cluster.slug)
+    .filter((item) => isArticleIndexable(item))
+    .sort((a, b) => Number(isArticleSearchReady(b)) - Number(isArticleSearchReady(a)));
   const progress = clusterProgress(cluster.slug);
   const introduction = categoryIntroductions[cluster.slug];
   const paths = guidePaths.filter((path) => path.articleSlugs.some((slug) => items.some((article) => article.slug === slug)));
