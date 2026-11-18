@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="12" fill="#145da0"/>
-  <text x="32" y="43" font-family="Segoe UI, Tahoma, Arial, sans-serif" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">ل</text>
+  <title>لوسيل</title>
+  <rect width="64" height="64" rx="14" fill="#082E50"/>
+  <g transform="translate(6 6) scale(.81)">
+    <path d="M41 7L53 2V35.5C53 49.8 45 57 30.5 57H9C12.8 48.3 20 43.5 29 43.5H34C38.5 43.5 41 41.3 41 36.1V7Z" fill="#F5F7F2"/>
+    <path d="M17 40.8C25.6 37.1 33.3 28.4 36 18.2V34.6C36 40.4 32.7 43 27.2 43H13.5L17 40.8Z" fill="#D7A755"/>
+  </g>
 </svg>
