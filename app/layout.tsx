@@ -16,6 +16,7 @@ const bodyFont = IBM_Plex_Sans_Arabic({ weight: ["400", "500", "600", "700"], su
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
+  icons: { icon: [{ url: "/icon.svg", type: "image/svg+xml", sizes: "any" }], shortcut: "/icon.svg" },
   title: {
     default: "شركة لوسيل | المعرفة والخدمات والمشاريع",
     template: "%s | لوسيل",
