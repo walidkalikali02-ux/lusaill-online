@@ -53,7 +53,7 @@ The 404/410 pages with historical impressions should not be redirected without c
 |---|---:|---|
 | GSC sample indexed | 7/30 | Same sample after 2–4 weeks |
 | URLs unknown to Google | 15/30 | Trend down, verify cause |
-| `/knowledge` raw HTML | 473 KB | Measure reduced payload; avoid invented target result |
+| `/knowledge` raw HTML | 473 KB (17 Nov crawl) | 148,704 bytes (145.2 KiB) in Nov 18 protected preview; remeasure on production |
 | Team `Cache-Control` | no-store | Verify actual shared cache behaviour |
 | Homepage PSI mobile | 99 | Keep performance/regression score |
 | Bing sitemap verification | Not confirmed | Verify actual action and date |
