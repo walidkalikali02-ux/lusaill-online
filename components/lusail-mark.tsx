@@ -1,0 +1,23 @@
+type LusailMarkProps = {
+  size?: number;
+  light?: boolean;
+  className?: string;
+};
+
+/** Minimal Lusail monogram. The matching browser icon is app/icon.svg. */
+export function LusailMark({ size = 44, light = false, className }: LusailMarkProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      width={size}
+      height={size}
+      className={className}
+      focusable="false"
+      aria-hidden="true"
+    >
+      <path d="M41 7L53 2V35.5C53 49.8 45 57 30.5 57H9C12.8 48.3 20 43.5 29 43.5H34C38.5 43.5 41 41.3 41 36.1V7Z" fill={light ? "#F5F7F2" : "#082E50"} />
+      <path d="M17 40.8C25.6 37.1 33.3 28.4 36 18.2V34.6C36 40.4 32.7 43 27.2 43H13.5L17 40.8Z" fill="#D7A755" />
+    </svg>
+  );
+}
