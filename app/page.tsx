@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CompanyHeroVideo from "@/components/company-hero-video";
 import { pageAlternates } from "@/lib/page-alternates";
 import { siteConfig, siteSocialImage } from "@/lib/site-config";
 export const metadata: Metadata = {
@@ -55,7 +56,7 @@ export default function Home() {
  const websiteSchema = { "@context":"https://schema.org", "@type":"WebSite", "@id":siteConfig.url+"/#website", url:siteConfig.url, name:"شركة لوسيل", description:siteConfig.description, inLanguage:"ar", publisher:{"@id":siteConfig.url+"/#organization"} };
  return <main id="main-content" className="company-home">
   <section className="company-hero">
-   <div className="company-orbit" aria-hidden="true"><i/><i/><i/><span/></div>
+   <CompanyHeroVideo />
    <div className="shell company-hero-content">
     <div className="company-kicker"><span>شركة لوسيل</span><span dir="ltr">LUSAILL / KNOWLEDGE & DIGITAL</span></div>
     <h1>أدلة الخدمات الحكومية <br/>والمعرفة العربية</h1>
