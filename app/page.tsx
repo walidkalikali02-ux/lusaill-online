@@ -58,10 +58,10 @@ export default function Home() {
   <section className="company-hero">
    <CompanyHeroVideo />
    <div className="shell company-hero-content">
-    <div className="company-kicker"><span>شركة لوسيل</span><span dir="ltr">LUSAILL / KNOWLEDGE & DIGITAL</span></div>
-    <h1>أدلة الخدمات الحكومية <br/>والمعرفة العربية</h1>
-    <div className="company-hero-bottom"><p>المعرفة بداية، والأثر ما نبنيه. <br/>مشاريع متعددة، تجمعها شركة لوسيل.</p><Link href="#projects" className="company-button">اكتشف مشاريعنا <span aria-hidden="true">↙</span></Link></div>
-    <div className="company-caption"><span>رؤية واحدة. مشاريع متعددة.</span><span aria-hidden="true">↓</span><span dir="ltr">01 — LUSAILL</span></div>
+    <div className="company-kicker"><span>شركة لوسيل</span><span dir="ltr">LUSAILL / IDEAS INTO IMPACT</span></div>
+    <h1>نحوّل الأفكار إلى أثر.<br/>ونصنع قيمة تدوم.</h1>
+    <div className="company-hero-bottom"><p>رؤيتنا أن نربط المعرفة بالتقنية والتعليم والإبداع.<br/>وهدفنا تحويل الأفكار إلى حلول وتجارب نافعة للأفراد والأعمال.</p><Link href="#projects" className="company-button">اكتشف مشاريعنا <span aria-hidden="true">↙</span></Link></div>
+    <div className="company-caption"><span>معرفة. تعليم. ابتكار. أثر.</span><span aria-hidden="true">↓</span><span dir="ltr">01 — LUSAILL</span></div>
    </div>
   </section>
   <section className="shell company-intro" id="company"><span className="company-label">01 / عن الشركة</span><div><h2>لوسيل.<br/>مساحة تتسع للأفكار<br/><span>وما تصنعه من أثر.</span></h2><p>شركة لوسيل تجمع الموسوعة والخدمات الرقمية والتعلّم والمحتوى البصري تحت مظلة واحدة. لكل مشروع مجاله وتجربته، وتجمعها غاية واحدة: تحويل المعرفة والأفكار إلى قيمة عملية.</p><Link className="company-inline-link" href="/contact">تواصل مع شركة لوسيل ←</Link></div></section>
