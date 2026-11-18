@@ -5,7 +5,7 @@ import { CategoryHub, categoryMetadata, ARTICLES_PER_PAGE } from "@/components/c
 
 export const dynamicParams = false;
 export const revalidate = 3600;
-const parsed = (value: string) => /^[1-9]\\d*$/.test(value) && Number.isSafeInteger(Number(value)) && Number(value) >= 2 ? Number(value) : null;
+const parsed = (value: string) => /^[1-9][0-9]*$/.test(value) && Number.isSafeInteger(Number(value)) && Number(value) >= 2 ? Number(value) : null;
 export function generateStaticParams() {
   return clusters.flatMap(cluster => {
     const count = articles.filter(article => article.clusterCode === cluster.code && isArticleIndexable(article)).length;
