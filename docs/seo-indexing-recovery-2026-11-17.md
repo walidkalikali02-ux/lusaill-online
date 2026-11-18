@@ -41,7 +41,7 @@ The 404/410 pages with historical impressions should not be redirected without c
 
 ## Crawl architecture backlog
 
-- Path-based pagination / caching for `/topics/[slug]` and `/categories/[slug]`: preserve all existing links and query-based filters until dedicated server routes, redirects and tests work; do not silently ignore legacy `?page=` URLs.
+- **Implemented in PR #105:** `categories/[slug]` and `topics/[slug]` first pages are prerendered with ISR (`revalidate=3600`); page 2+ uses `/page/N`. Subtopic filters use collision-checked stable ASCII `/section/s-...` URLs because Unicode static segments returned 404 in the first preview test. Old `?page=N` URLs redirect to the corresponding path; old `?section=العنوان` links are normalized through `proxy.ts` to the correct topic section. Paginated and filtered pages remain `noindex,follow`, excluded from XML sitemaps until content review. The authorized protected preview returned HTTP 200 for `/topics/education/section/s-r85vfv` and for the old section query after same-origin redirect, as well as for category and topic page 2, and HTTP 404 for out-of-range category pages. **Repeat all checks after production merge.**
 - Vercel domain settings: apex `lusaill.online` should redirect directly to `www.lusaill.online`; project domain records were read but not modified by this PR.
 - A stronger nonce-based CSP should be staged and tested with analytics, embeds and interactive pages; current baseline policy is not a complete XSS defence.
 - HSTS `includeSubDomains; preload` must not be enabled without verifying HTTPS and long-term control of **all** subdomains.
