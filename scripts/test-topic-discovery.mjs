@@ -328,9 +328,9 @@ for(const url of urls){
  assert.equal(u.origin,"https://www.lusaill.online");
  assert(!u.hash,"Sitemap URLs must not have fragments");
  assert(!u.search,"All sitemap URLs must be clean, path-based canonical URLs: "+url);
- assert(!/\\/topics\\/[^/]+\\/(?:page|section)\\//.test(u.pathname),
+ assert(!new RegExp("^/topics/[^/]+/(?:page|section)/").test(u.pathname),
    "Unreviewed topic pagination or filter leaked into sitemap: "+url);
- assert(!/\\/categories\\/[^/]+\\/page\\//.test(u.pathname),
+ assert(!new RegExp("^/categories/[^/]+/page/").test(u.pathname),
    "Unreviewed category page 2+ leaked into sitemap: "+url);
 }
 for(const cluster of clusters){
