@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { LusailMark } from "./lusail-mark";
 
 const encyclopedia = {
   name: "موسوعة لوسيل", home: "/knowledge", label: "المعرفة العربية",
@@ -33,7 +34,7 @@ export function ProjectFrame({ pathname, project, children }: { pathname: string
   return <>
     <header className="project-masthead" data-project={project.home}>
       <div className="shell project-masthead-inner">
-        <Link className="project-brand" href={project.home}><strong>{project.name}</strong><small>{project.label}</small></Link>
+        <Link className="project-brand" href={project.home}><LusailMark size={35} className="project-brand-icon" /><span className="project-brand-wordmark"><strong>{project.name}</strong><small>{project.label}</small></span></Link>
         <nav aria-label={`تنقل ${project.name}`}>
           {project.links.map(([href, label]) => <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined}>{label}</Link>)}
         </nav>
@@ -42,7 +43,7 @@ export function ProjectFrame({ pathname, project, children }: { pathname: string
     </header>
     {children}
     <footer className="project-footer"><div className="shell project-masthead-inner">
-      <Link className="project-brand" href={project.home}><strong>{project.name}</strong><small>أحد مشاريع شركة لوسيل</small></Link>
+      <Link className="project-brand" href={project.home}><LusailMark size={35} className="project-brand-icon" /><span className="project-brand-wordmark"><strong>{project.name}</strong><small>أحد مشاريع شركة لوسيل</small></span></Link>
       <nav aria-label={`روابط ${project.name}`}>
         {project.links.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
         <Link href="/privacy">الخصوصية</Link>
