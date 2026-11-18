@@ -78,6 +78,20 @@ const legacyTopic = await fetch(origin + topicPath + '?page=2', { redirect: 'man
 assert.equal(legacyTopic.status, 308);
 assert.equal(new URL(legacyTopic.headers.get('location'), origin).pathname, topicPage2);
 assert.equal((await fetch(origin + topicPath + '/page/999999')).status, 404);
+// Section filters have stable ASCII paths; this previously returned 404 when
+// pages were generated from Unicode path segments.
+const mathSectionHref = topicFirst.match(new RegExp('href="(/topics/education/section/s-[a-z0-9]+)"[^>]*>الرياضيات</a>'))?.[1];
+assert(mathSectionHref, 'Math subtopic must have a crawlable stable section link');
+const mathSection = await get(origin + mathSectionHref);
+assert(mathSection.includes('href="' + mathSectionHref + '"'), 'Active section link missing');
+assert(mathSection.includes('<link rel="canonical" href="' + official + topicPath + '"'), 'Filtered section canonical must point to topic root');
+assert(/<meta name="robots" content="[^"]*noindex/.test(mathSection), 'Filtered topic sections stay noindex');
+const oldMathSection = await fetch(origin + topicPath + '?section=' + encodeURIComponent('الرياضيات'), { redirect: 'manual' });
+assert.equal(oldMathSection.status, 308, 'Legacy Arabic section query must redirect permanently');
+assert.equal(new URL(oldMathSection.headers.get('location'), origin).pathname, mathSectionHref,
+  'Legacy Arabic section filter must preserve selected topic');
+assert.equal((await fetch(origin + topicPath + '/section/s-invalid-section')).status, 404);
+
 const missing = await fetch(origin + "/seo-check-missing-page");
 assert.equal(missing.status, 404);
 const missingHtml = await missing.text();
