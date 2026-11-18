@@ -203,9 +203,10 @@ return <main id="main-content" className="shell" style={{paddingBlock:52}}>
 <form action="/search" method="get" role="search"><input type="search" name="q" aria-label="ابحث في موسوعة لوسيل" placeholder="عن أي موضوع تبحث؟" maxLength={200} required /><button type="submit">بحث</button></form>
 <nav aria-label="استكشف الموسوعة"><Link href="/topics">تصفّح الفئات</Link><Link href="#encyclopedia-articles">المقالات والأدوات</Link><Link href="/food-safety">سلامة الغذاء</Link><Link href="/knowledge/manahej">مناهج</Link></nav>
 </section>
-<h2 id="encyclopedia-articles">المقالات والأدوات</h2>
+<h2 id="encyclopedia-articles">ابدأ بأدلة مختارة من الموسوعة</h2>
+<p>هذه مجموعة بداية. تجد فهرسًا نصيًا لبقية المقالات أدناه، ويمكنك أيضًا تصفح المجالات لتصل إلى موضوعك.</p>
 <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(270px,1fr))",gap:18}}>
-{guides.map(guide => {
+{guides.slice(0, 4).map(guide => {
   const slug = guide.href.slice("/knowledge/".length);
   const topic = getKnowledgeTopic(slug);
   return <Link href={guide.href} key={guide.href} style={{border:"1px solid #e2e8f0",borderRadius:16,background:"white",padding:24,display:"grid",gap:13}}>
@@ -216,6 +217,15 @@ return <main id="main-content" className="shell" style={{paddingBlock:52}}>
 </Link>;
 })}
 </div>
+<section aria-labelledby="knowledge-index-heading" style={{marginTop:36}}>
+  <h2 id="knowledge-index-heading">فهرس بقية مقالات الموسوعة</h2>
+  <p>كل عنوان يفتح صفحة مستقلة. اختر الموضوع الذي تحتاجه، ويمكنك البحث في فئات الموسوعة إن لم تجد عنوانك هنا.</p>
+  <ul style={{columnWidth:290,columnGap:30,listStyle:"disc",paddingInlineStart:22}}>
+    {guides.slice(4).map(guide => <li key={guide.href} style={{marginBlockEnd:10,breakInside:"avoid"}}>
+      <Link href={guide.href} style={{textDecoration:"underline",textUnderlineOffset:3}}>{guide.title}</Link>
+    </li>)}
+  </ul>
+</section>
 <section aria-labelledby="restored-science-heading" style={{marginTop:30,padding:20,border:"1px solid #e2e8f0",borderRadius:14}}>
   <h2 id="restored-science-heading">مراجع علمية أعيد تحريرها</h2>
   <p>أُعيد إعداد هذه الأدلة على روابطها القديمة بمراجع علمية، مع الفصل بين الرصد والتفسير وحدود البيانات.</p>

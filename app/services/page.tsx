@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { pageAlternates } from "@/lib/page-alternates";
 import { services } from "@/lib/service-orders";
+import { siteSocialImage } from "@/lib/site-config";
 import s from "./studio.module.css";
 
 export const metadata: Metadata = {
-  title: "خدمات لوسيل الرقمية",
+  title: "خدمات رقمية: تصميم مواقع ومونتاج وإكسل",
   description: "اطلب إنشاء موقع، مونتاج فيديو، إنشاء أو تعديل ملف إكسل، أو تصميم منشورات التواصل. حدّد متطلباتك في محادثة قصيرة.",
   alternates: pageAlternates("/services"),
-  openGraph: { title: "خدمات لوسيل الرقمية", description: "اطلب خدمة رقمية وحدّد تفاصيل مشروعك خطوة بخطوة.", url: "/services", type: "website" },
+  openGraph: { title: "خدمات لوسيل الرقمية", description: "اطلب خدمة رقمية وحدّد تفاصيل مشروعك خطوة بخطوة.", url: "/services", type: "website", images: [siteSocialImage] },
 };
 
 const categories = {
@@ -50,6 +51,20 @@ export default function ServicesPage() {
             </article>;
           })}
         </div>
+      </div>
+    </section>
+    <section className={s.section} aria-labelledby="choose-service">
+      <div className={s.wrap}>
+        <h2 id="choose-service">أي خدمة تناسب احتياجك؟</h2>
+        <p>قبل إرسال الطلب، حدّد النتيجة التي تريدها بدل اختيار اسم الخدمة فقط. يساعدك ذلك على وصف المطلوب ومراجعة نطاق العمل والتكلفة.</p>
+        <ul>
+          <li><strong>موقع إلكتروني:</strong> إذا كنت تحتاج صفحات تعرّف بالنشاط وتوضح الخدمات وتُسهّل تواصل العملاء، ابدأ بتحديد الصفحات والمحتوى والوظائف المهمة.</li>
+          <li><strong>مونتاج فيديو:</strong> إذا كانت لديك لقطات خام تريد اختصارها أو ترتيبها ونشرها، وضّح مدة الفيديو والمنصة واللغة وما إذا كنت تحتاج ترجمة.</li>
+          <li><strong>ملفات Excel:</strong> إذا كان لديك ملف يكثر فيه العمل اليدوي أو معادلات تحتاج إصلاحًا، صف البيانات والنتائج المطلوبة دون إرسال بيانات حساسة.</li>
+          <li><strong>تصميم شبكات التواصل:</strong> إذا أردت منشورات أو قصصًا لهوية واحدة، جهّز الرسالة والشعار والمقاسات وعدد التصاميم المطلوبة.</li>
+        </ul>
+        <h2>ما الذي يحدث بعد تقديم الطلب؟</h2>
+        <p>تُراجع تفاصيل المشروع أولًا حتى يتضح ما يدخل ضمن الخدمة وما يحتاج إلى تسعير إضافي. إذا كانت المواد أو المتطلبات ناقصة، تُستكمل قبل الاتفاق على التسليم. لا ننشر أعمال عملاء أو صورًا من مشاريعهم باعتبارها نماذج منجزة دون إذن موثّق.</p>
       </div>
     </section>
     <section className={s.process} aria-labelledby="process-title">

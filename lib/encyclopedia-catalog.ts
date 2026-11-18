@@ -1,5 +1,6 @@
 import { getEncyclopediaSearchItems } from "./site-search";
 import { normalizeSearch, type SearchItem } from "./guide-search";
+import { topicSectionSlug } from "./topic-section-slugs";
 import { encyclopediaCategories, type EncyclopediaCategory } from "./encyclopedia-taxonomy";
 
 type CategoryRule = {
@@ -91,5 +92,5 @@ export function getEncyclopediaCategoryCounts(): Record<string, number> {
 export const TOPIC_PAGE_SIZE = 24;
 
 export function getCategoryUrl(category: EncyclopediaCategory, subtopic?: string): string {
-  return subtopic ? `/topics/${category.slug}?section=${encodeURIComponent(subtopic)}` : `/topics/${category.slug}`;
+  return subtopic ? `/topics/${category.slug}/section/${topicSectionSlug(subtopic)}` : `/topics/${category.slug}`;
 }

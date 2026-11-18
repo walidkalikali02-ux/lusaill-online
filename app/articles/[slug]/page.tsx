@@ -212,6 +212,33 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </nav>
         </details>
 
+        {/* Intent-specific paths make official-entity and task hubs discoverable from indexed articles. */}
+        {(article.clusterCode === "A" || article.clusterCode === "B" || article.clusterCode === "C" ||
+          article.slug === "wps-kingsoft-deleted-excel-recovery" || article.slug === "solar-system") && (
+          <aside className="brief-box" aria-label="استكشف مصادر ومسارات مرتبطة">
+            <h2>مصادر ومسارات مرتبطة بالموضوع</h2>
+            <ul>
+              {article.clusterCode === "A" && <>
+                <li><Link href="/entities/sherkat-kahraba">دليل شركات توزيع الكهرباء والروابط الرسمية</Link></li>
+                <li><Link href="/guides">مسارات الخدمات الحكومية خطوة بخطوة</Link></li>
+              </>}
+              {article.clusterCode === "B" && <>
+                <li><Link href="/entities/bawabat-misr-alraqmeya">بوابة مصر الرقمية والخدمات المتاحة</Link></li>
+                <li><Link href="/guides/personal-records">مسار استخراج الوثائق والأحوال المدنية</Link></li>
+              </>}
+              {article.clusterCode === "C" && <>
+                <li><Link href="/entities/egypt-traffic">بوابة المرور المصرية ودليل خدماتها</Link></li>
+                <li><Link href="/guides/driving-licences">مسار خدمات رخص القيادة</Link></li>
+              </>}
+              {article.slug === "wps-kingsoft-deleted-excel-recovery" &&
+                <li><Link href="/services/excel">خدمة إعداد وإصلاح ملفات Excel</Link></li>}
+              {article.slug === "solar-system" && <>
+                <li><Link href="/knowledge">فهرس موسوعة لوسيل</Link></li>
+                <li><Link href="/topics/astronomy">مقالات الفضاء والفلك</Link></li>
+              </>}
+            </ul>
+          </aside>
+        )}
         <ArticleBrief article={article} cluster={cluster} related={related} />
         </div>
         <ArticleSidebar article={article} cluster={cluster} related={related} />

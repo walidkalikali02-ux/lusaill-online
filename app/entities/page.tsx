@@ -6,7 +6,7 @@ import { articles } from "@/lib/content";
 import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "الجهات والخدمات",
+  title: "الجهات الرسمية للخدمات المصرية وروابطها",
   description: "روابط الجهات الرسمية المرتبطة بأدلة لوسيل للخدمات المصرية والمرور والكهرباء، مع توضيح الخدمات ذات الصلة.",
   alternates: pageAlternates("/entities"),
   openGraph: {

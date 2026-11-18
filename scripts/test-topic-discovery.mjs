@@ -322,27 +322,33 @@ for(const topic of knowledgeTopics){
  assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+topic.slug),isKnowledgeSearchReady(topic),"Knowledge sitemap must match temporary quality gate: "+topic.slug);
 }
 
+// Stable ASCII section paths must never collide within a topic.
+const { encyclopediaCategories: seoTopics } = load("lib/encyclopedia-taxonomy.ts");
+const { topicSectionSlug } = load("lib/topic-section-slugs.ts");
+for (const topic of seoTopics) {
+  const slugs = topic.subtopics.map(topicSectionSlug);
+  assert.equal(new Set(slugs).size, slugs.length,
+    "Duplicate stable section path in topic " + topic.slug);
+  assert(slugs.every(slug => /^s-[a-z0-9]+$/.test(slug)),
+    "Arabic section paths must use safe ASCII identifiers");
+}
+
+// Editorial policy: page 2+ and subtopic filters must not enter the indexable XML sitemap.
 for(const url of urls){
  const u=new URL(url);
  assert.equal(u.origin,"https://www.lusaill.online");
  assert(!u.hash,"Sitemap URLs must not have fragments");
- if(!u.search)continue;
- // Only real category pages beyond page one may use a query string in the sitemap.
- assert.equal(u.searchParams.size,1,"Only canonical pagination parameters allowed");
- const page=Number(u.searchParams.get("page"));
- assert(Number.isSafeInteger(page)&&page>=2,"Invalid category pagination page");
- const match=u.pathname.match(new RegExp("^/categories/([a-z0-9-]+)$"));
- assert(match,"Non-category query URL in sitemap");
- const cluster=clusters.find(c=>c.slug===match[1]);
- assert(cluster,"Unknown category in sitemap");
- const publishedCount=articles.filter(a=>isArticleSearchReady(a)&&a.clusterCode===cluster.code).length;
- assert(page<=Math.ceil(publishedCount/30),"Nonexistent category page in sitemap");
- assert.equal(u.search,`?page=${page}`,"Noncanonical query string in sitemap");
+ assert(!u.search,"All sitemap URLs must be clean, path-based canonical URLs: "+url);
+ assert(!new RegExp("^/topics/[^/]+/(?:page|section)/").test(u.pathname),
+   "Unreviewed topic pagination or filter leaked into sitemap: "+url);
+ assert(!new RegExp("^/categories/[^/]+/page/").test(u.pathname),
+   "Unreviewed category page 2+ leaked into sitemap: "+url);
 }
 for(const cluster of clusters){
- const publishedCount=articles.filter(a=>isArticleSearchReady(a)&&a.clusterCode===cluster.code).length;
+ const publishedCount=articles.filter(a=>isArticleIndexable(a)&&a.clusterCode===cluster.code).length;
  for(let page=2;page<=Math.ceil(publishedCount/30);page++)
-  assert(urls.includes(`https://www.lusaill.online/categories/${cluster.slug}?page=${page}`),"Missing canonical category pagination from sitemap");
+  assert(!urls.includes(`https://www.lusaill.online/categories/${cluster.slug}/page/${page}`),
+    "Unreviewed category pagination must stay out of sitemap");
 }
 const published=articles.filter(a=>isArticleIndexable(a));
 const searchReady=articles.filter(isArticleSearchReady);
@@ -368,3 +374,24 @@ pairs.sort((a,b)=>b.score-a.score);
 console.log("DISCOVERY_SUMMARY "+JSON.stringify({published:published.length,food:foodSafetyArticles.length,articleSitemap:map.size,allSitemapUrls:urls.length,unwrittenExcluded:articles.length-published.length,exactDuplicates:0,companySlugs,contextTargets:targets,nearCandidates:pairs.slice(0,10),result:"PASS"}));
 for(const a of published){console.log("DISCOVERY_ARTICLE "+JSON.stringify({slug:a.slug,title:a.title,reviewedAt:a.updatedAt,publishedAt:a.publishedAt,modifiedAt:getArticleModifiedAt(a),imageModifiedAt:guideIllustrations[a.slug]?.updatedAt??null,category:a.clusterCode,hub:getGuidePath(a.slug)?"/guides/"+getGuidePath(a.slug).slug:null}));await new Promise(resolve=>setTimeout(resolve,30));}
 console.log("PASS: sitemap completeness, excluded unwritten placeholders/retirements, authentic dates, hub membership and relevant contextual targets");
+
+
+// 17 Nov SEO recovery regression guards: do not index unfinished lessons.
+const alexandriaGuide = articles.find(article => article.slug === "alexandria-electricity");
+assert(alexandriaGuide && isArticleSearchReady(alexandriaGuide),
+  "Reviewed Alexandria electricity guide must satisfy the conservative editorial index gate");
+const sitemapUrls = Object.values(sitemapGroups()).flat().map(entry => entry.url);
+assert(sitemapUrls.includes("https://www.lusaill.online/articles/alexandria-electricity"),
+  "Verified Alexandria electricity guide must appear in the XML sitemap");
+const qatarMath = load("lib/qatar-grade-one-math-lessons.ts");
+assert.equal(qatarMath.qatarGradeOneMathLessons.length, 18, "Keep 18 unique Qatar grade-one lessons");
+assert.equal(new Set(qatarMath.qatarGradeOneMathLessons.map(item => item.slug)).size, 18,
+  "Each Qatar lesson needs a distinct stable URL");
+assert(sitemapUrls.includes("https://www.lusaill.online/knowledge/manahej/qatar/grade-1/math"),
+  "Qatar maths hub must be discoverable through XML sitemap");
+assert(!sitemapUrls.some(url => /\/knowledge\/manahej\/qatar\/grade-1\/math\/[^/]+$/.test(url)),
+  "Thin lesson notes stay outside sitemap pending individual editorial review");
+const inlineMedia = JSON.parse(readFileSync("lib/article-inline-media.json", "utf8"));
+assert(!Object.hasOwn(inlineMedia, "wps-kingsoft-deleted-excel-recovery"),
+  "No remote third-party screenshots in WPS recovery article");
+console.log("17 Nov SEO editorial and sitemap regression checks passed.");

@@ -6,7 +6,7 @@ import { clusters, overallProgress, clusterProgress } from "@/lib/content";
 import { absoluteUrl, siteSocialImage } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "التصنيفات",
+  title: "تصنيفات أدلة الخدمات الحكومية في مصر",
   description: "تصفّح تصنيفات الأدلة العملية المنشورة في لوسيل. للمقالات في العلوم والصحة والتعليم وغيرها، زر قسم المعارف والأدوات.",
   alternates: pageAlternates("/categories"),
   openGraph: {

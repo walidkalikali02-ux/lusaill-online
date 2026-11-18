@@ -36,6 +36,8 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     .filter(category => getEncyclopediaCategoryItems(category).filter(item => isSearchReadyHref(item.href)).length >= 2)
     .map(category => ({
       url: absoluteUrl(`/topics/${category.slug}`),
+      // Main topic markup and navigation changed as part of the 18 Nov hub migration.
+      lastModified: new Date("2026-11-18"),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     }));
@@ -50,28 +52,32 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
     }));
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: absoluteUrl("/"), lastModified: new Date("2026-11-14"), changeFrequency: "weekly", priority: 1.0 },
-    { url: absoluteUrl("/knowledge"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/knowledge"), lastModified: new Date("2026-11-18"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/topics"), changeFrequency: "monthly", priority: 0.9 },
     { url: absoluteUrl("/caricatures"), lastModified: new Date("2026-11-08"), changeFrequency: "weekly", priority: 0.8 },
     { url: absoluteUrl("/caricatures/gaza-flooded-tents"), lastModified: new Date("2026-11-08"), changeFrequency: "monthly", priority: 0.85, images: [absoluteUrl("/images/caricatures/gaza-flooded-tents.jpg")] },
     { url: absoluteUrl("/caricatures/ai-ram-crisis"), lastModified: new Date("2026-11-08"), changeFrequency: "monthly", priority: 0.85, images: [absoluteUrl("/images/caricatures/ai-ram-crisis.jpg")] },
-    { url: absoluteUrl("/services"), changeFrequency: "monthly", priority: 0.8 },
-    { url: absoluteUrl("/services/website-design"), changeFrequency: "monthly", priority: 0.8 },
-    { url: absoluteUrl("/services/video-editing"), changeFrequency: "monthly", priority: 0.8 },
-    { url: absoluteUrl("/services/excel"), changeFrequency: "monthly", priority: 0.8 },
-    { url: absoluteUrl("/services/social-design"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/services"), lastModified: new Date("2026-11-17"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/services/website-design"), lastModified: new Date("2026-11-17"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/services/video-editing"), lastModified: new Date("2026-11-17"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/services/excel"), lastModified: new Date("2026-11-17"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/services/social-design"), lastModified: new Date("2026-11-17"), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/knowledge/manahej"), lastModified: new Date("2026-11-14"), changeFrequency: "monthly", priority: 0.8 },
+    // Previously discoverable only via HTML links; include canonical Qatar programme paths.
+    { url: absoluteUrl("/knowledge/manahej/qatar"), changeFrequency: "monthly", priority: 0.7 },
+    { url: absoluteUrl("/knowledge/manahej/qatar/grade-1"), changeFrequency: "monthly", priority: 0.7 },
+    { url: absoluteUrl("/knowledge/manahej/qatar/grade-1/math"), lastModified: new Date("2026-11-17"), changeFrequency: "monthly", priority: 0.8 },
     // Separately authored routes; not included in knowledgeTopics.
     { url: absoluteUrl("/knowledge/roman-numerals"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/roman-numerals-education.svg")] },
     { url: absoluteUrl("/knowledge/learning-objectives"), lastModified: new Date("2026-11-06"), changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/images/bloom-learning-levels-original.svg")] },
     { url: absoluteUrl("/articles"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article))), changeFrequency: "weekly", priority: 0.9 },
     { url: absoluteUrl("/categories"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article))), changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/entities"), lastModified: latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article))), changeFrequency: "monthly", priority: 0.8 },
-    { url: absoluteUrl("/about"),  changeFrequency: "monthly", priority: 0.6 },
-    { url: absoluteUrl("/team"), changeFrequency: "monthly", priority: 0.6 },
-    { url: absoluteUrl("/privacy"),  changeFrequency: "yearly", priority: 0.3 },
+    { url: absoluteUrl("/about"), lastModified: new Date("2026-11-17"), changeFrequency: "monthly", priority: 0.6 },
+    { url: absoluteUrl("/team"), lastModified: new Date("2026-11-17"), changeFrequency: "monthly", priority: 0.6 },
+    { url: absoluteUrl("/privacy"), lastModified: new Date("2026-11-13"), changeFrequency: "yearly", priority: 0.3 },
     { url: absoluteUrl("/terms"), lastModified: new Date("2026-09-24"), changeFrequency: "yearly", priority: 0.3 },
-    { url: absoluteUrl("/contact"),  changeFrequency: "yearly", priority: 0.5 },
+    { url: absoluteUrl("/contact"), lastModified: new Date("2026-09-30"), changeFrequency: "yearly", priority: 0.5 },
     { url: absoluteUrl("/editorial-policy"), lastModified: new Date("2026-10-01"), changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/authors/editorial-team"), lastModified: new Date("2026-10-01"), changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/courses"), changeFrequency: "monthly", priority: 0.9 },
@@ -91,7 +97,7 @@ export function sitemapGroups(): Record<string, MetadataRoute.Sitemap> {
 
   const clusterRoutes: MetadataRoute.Sitemap = clusters.filter((cluster) => articles.some((article) => isArticleSearchReady(article) && article.clusterCode === cluster.code)).map((cluster) => ({
     url: absoluteUrl(`/categories/${cluster.slug}`),
-    lastModified: new Date(Math.max(latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article) && article.clusterCode === cluster.code))?.getTime() ?? 0, new Date(categoryIntroductions[cluster.slug]?.updatedAt ?? 0).getTime())),
+    lastModified: new Date(Math.max(new Date("2026-11-18").getTime(), latestPublishedUpdate(articles.filter((article) => isArticleSearchReady(article) && article.clusterCode === cluster.code))?.getTime() ?? 0, new Date(categoryIntroductions[cluster.slug]?.updatedAt ?? 0).getTime())),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
