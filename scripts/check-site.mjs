@@ -53,7 +53,7 @@ const categoryPath = '/categories/digital-life';
 const firstCategory = await get(origin + categoryPath);
 const categoryPage2 = categoryPath + '/page/2';
 const secondCategory = await get(origin + categoryPage2);
-assert.notEqual(firstCategory.match(/<title>(.*?)<\\/title>/)?.[1], secondCategory.match(/<title>(.*?)<\\/title>/)?.[1], 'Category pagination titles must differ');
+assert.notEqual(firstCategory.match(new RegExp("<title>(.*?)</title>"))?.[1], secondCategory.match(new RegExp("<title>(.*?)</title>"))?.[1], 'Category pagination titles must differ');
 assert(secondCategory.includes(`"url":"${official}${categoryPage2}"`), 'Category pagination schema must have the path canonical');
 assert(secondCategory.includes(`href="${categoryPath}"`), 'Category page 2 must link back to page 1');
 assert(/<meta name="robots" content="[^"]*noindex/.test(secondCategory), 'Unreviewed category page 2 remains noindex');
@@ -72,7 +72,7 @@ assert(!crawlAllowed(topicPath + "?page=2&section=test"), "Legacy filtered topic
 assert(topicFirst.includes('href="' + topicPage2 + '"'), "Topic page 2 must link from the main topic hub");
 assert(topicSecond.includes('<link rel="canonical" href="' + official + topicPage2 + '"'), "Topic page 2 canonical must be a direct self URL");
 assert(topicSecond.includes('href="' + topicPath + '"'), "Topic page 2 must link to its base topic");
-assert.notEqual(topicFirst.match(/<title>(.*?)<\\/title>/)?.[1], topicSecond.match(/<title>(.*?)<\\/title>/)?.[1], "Topic pagination titles must differ");
+assert.notEqual(topicFirst.match(new RegExp("<title>(.*?)</title>"))?.[1], topicSecond.match(new RegExp("<title>(.*?)</title>"))?.[1], "Topic pagination titles must differ");
 assert(/<meta name="robots" content="[^"]*noindex/.test(topicSecond), 'Unreviewed topic page 2 remains noindex');
 const legacyTopic = await fetch(origin + topicPath + '?page=2', { redirect: 'manual' });
 assert.equal(legacyTopic.status, 308);
