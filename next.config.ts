@@ -20,27 +20,13 @@ const nextConfig: NextConfig = {
   // Keep weaker historical matches in the review inventory; never redirect everything to /.
   async redirects() {
     return [
-      // Legacy ?page/section links resolve to the exact same content on cacheable path routes.
-      // Keep these rules before generic redirects; path names and query captures are distinct.
-      {
-        source: "/topics/:slug",
-        has: [
-          { type: "query" as const, key: "section", value: "(?<section>.+)" },
-          { type: "query" as const, key: "page", value: "(?<page>(?:[2-9]|[1-9][0-9]+))" },
-        ],
-        destination: "/topics/:slug/section/:section/page/:page",
-        permanent: true,
-      },
+      // Historical unfiltered ?page links redirect permanently; filtered queries
+      // are normalized in proxy.ts to stable ASCII section IDs instead.
       {
         source: "/topics/:slug",
         has: [{ type: "query" as const, key: "page", value: "(?<page>(?:[2-9]|[1-9][0-9]+))" }],
+        missing: [{ type: "query" as const, key: "section" }],
         destination: "/topics/:slug/page/:page",
-        permanent: true,
-      },
-      {
-        source: "/topics/:slug",
-        has: [{ type: "query" as const, key: "section", value: "(?<section>.+)" }],
-        destination: "/topics/:slug/section/:section",
         permanent: true,
       },
       {
