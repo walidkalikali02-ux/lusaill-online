@@ -1,0 +1,144 @@
+import { ArticleCard } from "@/components/article-card";
+import { pageAlternates } from "@/lib/page-alternates";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getCluster, getClusterArticles, clusterProgress, isArticleIndexable } from "@/lib/content";
+import { guidePaths } from "@/lib/guide-paths";
+import { absoluteUrl, siteConfig, siteSocialImage } from "@/lib/site-config";
+
+import { categoryIntroductions } from "@/lib/category-introductions";
+import { isArticleSearchReady } from "@/lib/editorial-indexing";
+
+export const ARTICLES_PER_PAGE = 30;
+
+export function categoryMetadata(slug: string, currentPage: number): Metadata {
+  const cluster = getCluster(slug);
+  if (!cluster) return {};
+  const publishedCount = getClusterArticles(cluster.slug).filter((article) => isArticleIndexable(article)).length;
+  const hasPublished = getClusterArticles(cluster.slug).some(isArticleSearchReady);
+  const totalPages = Math.max(1, Math.ceil(publishedCount / ARTICLES_PER_PAGE));
+  const validPage = Number.isSafeInteger(currentPage) && currentPage >= 1 && currentPage <= totalPages;
+  const canonicalPath = currentPage > 1 ? `/categories/${cluster.slug}/page/${currentPage}` : `/categories/${cluster.slug}`;
+  const title = currentPage > 1 ? `${cluster.name} — صفحة ${currentPage}` : cluster.name;
+  const description = currentPage > 1 ? `صفحة ${currentPage} من أدلة ${cluster.name}. تصفح المزيد من الأدلة والخطوات العملية والمصادر الرسمية.` : cluster.description;
+  return {
+    title,
+    description,
+    alternates: pageAlternates(canonicalPath),
+    robots: { index: hasPublished && validPage && currentPage === 1, follow: true },
+    openGraph: {
+      title,
+      description,
+      url: canonicalPath,
+      type: "website",
+      images: [siteSocialImage],
+    },
+  };
+}
+
+export function CategoryHub({ slug, currentPage }: { slug: string; currentPage: number }) {
+  const cluster = getCluster(slug);
+  if (!cluster) notFound();
+
+  const items = getClusterArticles(cluster.slug).filter((item) => isArticleIndexable(item));
+  const progress = clusterProgress(cluster.slug);
+  const introduction = categoryIntroductions[cluster.slug];
+  const paths = guidePaths.filter((path) => path.articleSlugs.some((slug) => items.some((article) => article.slug === slug)));
+  const totalPages = Math.ceil(items.length / ARTICLES_PER_PAGE);
+  if (!Number.isSafeInteger(currentPage) || currentPage < 1 || currentPage > Math.max(1, totalPages)) notFound();
+  const canonicalPath = currentPage > 1 ? `/categories/${cluster.slug}/page/${currentPage}` : `/categories/${cluster.slug}`;
+  const startIdx = (currentPage - 1) * ARTICLES_PER_PAGE;
+  const paginatedItems = items.slice(startIdx, startIdx + ARTICLES_PER_PAGE);
+  const publishedItems = paginatedItems;
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
+      { "@type": "ListItem", position: 2, name: "التصنيفات", item: absoluteUrl("/categories") },
+      { "@type": "ListItem", position: 3, name: cluster.name, item: absoluteUrl(`/categories/${cluster.slug}`) },
+    ],
+  };
+
+  const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${absoluteUrl(canonicalPath)}#webpage`,
+    url: absoluteUrl(canonicalPath),
+    name: cluster.name,
+    description: cluster.description,
+    inLanguage: siteConfig.language,
+    isPartOf: { "@id": `${siteConfig.url}/#website` },
+    about: { "@id": `${siteConfig.url}/#organization` },
+  };
+
+  return (
+    <main id="main-content" className="category-page">
+      <div className="shell">
+        <div className="breadcrumbs">
+          <Link href="/articles">رئيسية المشروع</Link><span>/</span>
+          <Link href="/categories">التصنيفات</Link><span>/</span>
+          <span>{cluster.name}</span>
+        </div>
+
+        <div className="category-hero">
+          <span className="article-card-tag">{cluster.name}</span>
+          <h1>{cluster.name}</h1>
+          <p>{cluster.description}</p>
+          <div className="article-meta" style={{ marginTop: 16 }}>
+            <span className="article-meta-item">{progress.published} دليلًا متاحًا</span>
+            <span className="article-meta-item">{progress.published} منشور</span>
+          </div>
+        </div>
+
+        {introduction && currentPage === 1 && <section className="brief-box"><h2>{introduction.title}</h2>{introduction.paragraphs.map((paragraph) => <section key={paragraph.heading}><h3>{paragraph.heading}</h3><p>{paragraph.text}</p></section>)}<p>آخر تحديث: <time dateTime={introduction.updatedAt}>{introduction.updatedAt}</time></p></section>}
+
+        {paths.length > 0 && currentPage === 1 && <section className="brief-box"><h2>اختر المهمة التي تحتاجها</h2><div className="trust-grid">{paths.map((path) => <section className="trust-card" key={path.slug}><h3><Link href={`/guides/${path.slug}`}>{path.title}</Link></h3><p>{path.description}</p></section>)}</div></section>}
+
+        {/* Published guides as clean cards */}
+        {publishedItems.length > 0 && (
+          <section aria-labelledby="category-articles-title">
+            <h2 id="category-articles-title">الأدلة المنشورة في هذا التصنيف</h2>
+          <div className="articles-grid" style={{ marginBottom: 40 }}>
+            {publishedItems.map(article => <ArticleCard key={article.slug} article={article} />)}
+          </div>
+          </section>
+        )}
+
+        {publishedItems.length === 0 && (
+          <div className="empty-state">
+            <h2>لا توجد أدلة بعد</h2>
+            <p>نعمل على تجهيز الأدلة في هذا التصنيف.</p>
+            <Link className="button button-secondary" href="/categories" style={{ marginTop: 16 }}>تصفح التصنيفات الأخرى</Link>
+          </div>
+        )}
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="pagination">
+            {currentPage > 1 && (
+              <Link href={currentPage === 2 ? `/categories/${cluster.slug}` : `/categories/${cluster.slug}/page/${currentPage - 1}`} className="pagination-btn">السابق</Link>
+            )}
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+              <Link
+                key={p}
+                href={p === 1 ? `/categories/${cluster.slug}` : `/categories/${cluster.slug}/page/${p}`}
+                aria-current={p === currentPage ? "page" : undefined}
+                className={`pagination-btn ${p === currentPage ? "active" : ""}`}
+              >
+                {p}
+              </Link>
+            ))}
+            {currentPage < totalPages && (
+              <Link href={`/categories/${cluster.slug}/page/${currentPage + 1}`} className="pagination-btn">التالي</Link>
+            )}
+          </div>
+        )}
+      </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }} />
+    </main>
+  );
+}
