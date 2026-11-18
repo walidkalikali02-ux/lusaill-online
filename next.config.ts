@@ -20,6 +20,35 @@ const nextConfig: NextConfig = {
   // Keep weaker historical matches in the review inventory; never redirect everything to /.
   async redirects() {
     return [
+      // Legacy ?page/section links resolve to the exact same content on cacheable path routes.
+      // Keep these rules before generic redirects; path names and query captures are distinct.
+      {
+        source: "/topics/:slug",
+        has: [
+          { type: "query" as const, key: "section", value: "(?<section>.+)" },
+          { type: "query" as const, key: "page", value: "(?<page>(?:[2-9]|[1-9][0-9]+))" },
+        ],
+        destination: "/topics/:slug/section/:section/page/:page",
+        permanent: true,
+      },
+      {
+        source: "/topics/:slug",
+        has: [{ type: "query" as const, key: "page", value: "(?<page>(?:[2-9]|[1-9][0-9]+))" }],
+        destination: "/topics/:slug/page/:page",
+        permanent: true,
+      },
+      {
+        source: "/topics/:slug",
+        has: [{ type: "query" as const, key: "section", value: "(?<section>.+)" }],
+        destination: "/topics/:slug/section/:section",
+        permanent: true,
+      },
+      {
+        source: "/categories/:slug",
+        has: [{ type: "query" as const, key: "page", value: "(?<page>(?:[2-9]|[1-9][0-9]+))" }],
+        destination: "/categories/:slug/page/:page",
+        permanent: true,
+      },
       { source: "/sitemap_index.xml", destination: "/sitemap.xml", statusCode: 301 },
       { source: "/articles/active-recall", destination: "/knowledge/active-recall-retrieval-practice-self-testing", permanent: true },
     ];
