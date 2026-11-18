@@ -322,6 +322,17 @@ for(const topic of knowledgeTopics){
  assert.equal(urls.includes("https://www.lusaill.online/knowledge/"+topic.slug),isKnowledgeSearchReady(topic),"Knowledge sitemap must match temporary quality gate: "+topic.slug);
 }
 
+// Stable ASCII section paths must never collide within a topic.
+const { encyclopediaCategories: seoTopics } = load("lib/encyclopedia-taxonomy.ts");
+const { topicSectionSlug } = load("lib/topic-section-slugs.ts");
+for (const topic of seoTopics) {
+  const slugs = topic.subtopics.map(topicSectionSlug);
+  assert.equal(new Set(slugs).size, slugs.length,
+    "Duplicate stable section path in topic " + topic.slug);
+  assert(slugs.every(slug => /^s-[a-z0-9]+$/.test(slug)),
+    "Arabic section paths must use safe ASCII identifiers");
+}
+
 // Editorial policy: page 2+ and subtopic filters must not enter the indexable XML sitemap.
 for(const url of urls){
  const u=new URL(url);
