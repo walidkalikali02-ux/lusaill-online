@@ -206,7 +206,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:52}}>
 <h2 id="encyclopedia-articles">ابدأ بأدلة مختارة من الموسوعة</h2>
 <p>هذه مجموعة بداية. تجد فهرسًا نصيًا لبقية المقالات أدناه، ويمكنك أيضًا تصفح المجالات لتصل إلى موضوعك.</p>
 <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(270px,1fr))",gap:18}}>
-{guides.slice(0, 8).map(guide => {
+{guides.slice(0, 4).map(guide => {
   const slug = guide.href.slice("/knowledge/".length);
   const topic = getKnowledgeTopic(slug);
   return <Link href={guide.href} key={guide.href} style={{border:"1px solid #e2e8f0",borderRadius:16,background:"white",padding:24,display:"grid",gap:13}}>
@@ -221,7 +221,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:52}}>
   <h2 id="knowledge-index-heading">فهرس بقية مقالات الموسوعة</h2>
   <p>كل عنوان يفتح صفحة مستقلة. اختر الموضوع الذي تحتاجه، ويمكنك البحث في فئات الموسوعة إن لم تجد عنوانك هنا.</p>
   <ul style={{columnWidth:290,columnGap:30,listStyle:"disc",paddingInlineStart:22}}>
-    {guides.slice(8).map(guide => <li key={guide.href} style={{marginBlockEnd:10,breakInside:"avoid"}}>
+    {guides.slice(4).map(guide => <li key={guide.href} style={{marginBlockEnd:10,breakInside:"avoid"}}>
       <Link href={guide.href} style={{textDecoration:"underline",textUnderlineOffset:3}}>{guide.title}</Link>
     </li>)}
   </ul>
