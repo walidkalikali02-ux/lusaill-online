@@ -980,6 +980,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:PieChartFractionBreakFourths.svg",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "project-management-prompts",
+    "section": "plan",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/8/87/Gantt_Graph.png",
+    "width": 1024,
+    "height": 768,
+    "maxWidth": 760,
+    "alt": "مخطط جانت يعرض أنشطة مشروع على محور زمني",
+    "caption": "يساعد عرض الأنشطة على محور زمني في مراجعة ترتيبها ومددها. يُفحص الرسم بجانب تفاصيل الخطة والاعتماديات.",
+    "credit": "Bare Knuckles HC",
+    "source": "https://commons.wikimedia.org/wiki/File:Gantt_Graph.png",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
