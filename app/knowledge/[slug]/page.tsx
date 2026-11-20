@@ -938,6 +938,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Collection_of_colorful_binders_on_a_shelf_for_storing_documents_in_an_office_setting.jpg",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "slug": "customer-feedback-analysis-prompt",
+    "section": "group",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/6/66/WMFUI-Affinity_horiz.jpg",
+    "width": 2304,
+    "height": 1116,
+    "maxWidth": 760,
+    "alt": "ملاحظات ورقية ملونة مرتبة في مجموعات على جدار",
+    "caption": "تجميع ورقي من مبادرة قابلية الاستخدام في ويكيميديا. يساعد وضع الملاحظات المتشابهة معًا على اقتراح موضوعات للمراجعة.",
+    "credit": "Parul Vora",
+    "source": "https://commons.wikimedia.org/wiki/File:WMFUI-Affinity_horiz.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
