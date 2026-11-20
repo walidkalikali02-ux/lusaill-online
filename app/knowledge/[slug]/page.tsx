@@ -952,6 +952,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:WMFUI-Affinity_horiz.jpg",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "initial-contract-review-prompt",
+    "section": "check",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Legal_Contract_%26_Signature_-_Warm_Tones.jpg/960px-Legal_Contract_%26_Signature_-_Warm_Tones.jpg",
+    "width": 960,
+    "height": 720,
+    "maxWidth": 720,
+    "alt": "قلم موضوع فوق أوراق اتفاق مطبوعة",
+    "caption": "مراجعة النص تشمل التحقق من الإحالات والملاحق قبل اتخاذ القرار.",
+    "credit": "Blogtrepreneur",
+    "source": "https://howtostartablogonline.net/legal/",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   }
 ];
 
