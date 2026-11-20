@@ -994,6 +994,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Gantt_Graph.png",
     "license": "CC0 1.0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "recruitment-and-interview-prompts",
+    "section": "questions",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Job_interview.jpg",
+    "width": 1500,
+    "height": 1000,
+    "maxWidth": 760,
+    "alt": "ثلاثة أشخاص يجلسون حول طاولة ويُراجع أحدهم أوراقًا مطبوعة",
+    "caption": "تساعد الأسئلة المرتبطة بمهام الدور في توجيه الحديث إلى أمثلة يمكن للفريق مراجعتها.",
+    "credit": "Alan Cleaver",
+    "source": "https://commons.wikimedia.org/wiki/File:Job_interview.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   }
 ];
 
