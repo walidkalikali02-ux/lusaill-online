@@ -1036,6 +1036,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:CV_example_with_centered_title.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "learn-a-new-skill-prompt",
+    "section": "example",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Working_on_a_planning_session_with_stationery_items%2C_notebook%2C_and_colorful_pencils_on_a_wooden_desk.jpg/960px-Working_on_a_planning_session_with_stationery_items%2C_notebook%2C_and_colorful_pencils_on_a_wooden_desk.jpg",
+    "width": 960,
+    "height": 641,
+    "maxWidth": 760,
+    "alt": "دفتر تخطيط مفتوح على مكتب بجانب أقلام ملونة ونظارة",
+    "caption": "يمكن استخدام سجل للجلسات لتدوين المحاولات والأخطاء وما يحتاج إلى مراجعة.",
+    "credit": "Nenad Stojković (Shixart1985)",
+    "source": "https://commons.wikimedia.org/wiki/File:Working_on_a_planning_session_with_stationery_items%2C_notebook%2C_and_colorful_pencils_on_a_wooden_desk.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   }
 ];
 
