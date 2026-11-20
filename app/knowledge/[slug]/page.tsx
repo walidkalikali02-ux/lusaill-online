@@ -966,6 +966,20 @@ const knowledgeIllustrations = [
     "source": "https://howtostartablogonline.net/legal/",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "slug": "teacher-lesson-and-assessment-prompt",
+    "section": "example",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/PieChartFractionBreakFourths.svg/960px-PieChartFractionBreakFourths.svg.png",
+    "width": 960,
+    "height": 480,
+    "maxWidth": 760,
+    "alt": "رسم يوضح تقسيم دائرة إلى أربعة أرباع منفصلة",
+    "caption": "يمكن توظيف تقسيم الدائرة في سؤال يطلب تفسير معنى الربع وتساوي الأجزاء.",
+    "credit": "Ezra Katz",
+    "source": "https://commons.wikimedia.org/wiki/File:PieChartFractionBreakFourths.svg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
