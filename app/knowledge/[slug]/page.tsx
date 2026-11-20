@@ -1022,6 +1022,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Storyboard_example.jpg",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "cv-improvement-prompt",
+    "section": "format",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/53/CV_example_with_centered_title.png",
+    "width": 1231,
+    "height": 633,
+    "maxWidth": 800,
+    "alt": "مثال لتنسيق سيرة ذاتية بعنوان في منتصف الصفحة",
+    "caption": "مثال بصري لترتيب عنوان السيرة وأقسامها. يُراجع التنسيق وفق البيانات الفعلية وتعليمات جهة التقديم.",
+    "credit": "Johannes Bo",
+    "source": "https://commons.wikimedia.org/wiki/File:CV_example_with_centered_title.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 

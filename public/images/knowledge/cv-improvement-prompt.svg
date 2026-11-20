@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title">
+  <title id="title">كيف تصوغ خبرتك بوضوح؟</title>
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <g fill="#0f766e">
+    <rect x="842" y="223" width="278" height="184" rx="25"/>
+    <rect x="461" y="223" width="278" height="184" rx="25"/>
+    <rect x="80" y="223" width="278" height="184" rx="25"/>
+  </g>
+  <g fill="none" stroke="#5eead4" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M813 315h-52m0 0 16-16m-16 16 16 16"/>
+    <path d="M432 315h-52m0 0 16-16m-16 16 16 16"/>
+  </g>
+  <g fill="#fff" font-family="Arial,sans-serif" font-size="37" text-anchor="middle">
+    <text x="981" y="329">الخبرات المؤكدة</text>
+    <text x="600" y="329">متطلبات الوظيفة</text>
+    <text x="219" y="329">صياغة ومراجعة</text>
+  </g>
+</svg>
