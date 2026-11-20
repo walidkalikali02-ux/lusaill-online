@@ -882,6 +882,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Comparison_table_different_services.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "facebook-ad-copy-prompt",
+    "section": "review",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Newcomer_experience_marketing_pilot_-_Facebook_ad_example.jpg",
+    "width": 426,
+    "height": 441,
+    "maxWidth": 465,
+    "alt": "لقطة لإعلان في فيسبوك يجمع كتابة وصورة ضمن تجربة ويكيميديا عام 2022",
+    "caption": "إعلان تجريبي لويكيميديا من عام 2022 يوضح اجتماع نص الإعلان والصورة في موضع عرض واحد.",
+    "credit": "Wikimedia Foundation، والصورة الداخلية anibal amaro",
+    "source": "https://commons.wikimedia.org/wiki/File:Newcomer_experience_marketing_pilot_-_Facebook_ad_example.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
   }
 ];
 
