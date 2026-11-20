@@ -896,6 +896,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Newcomer_experience_marketing_pilot_-_Facebook_ad_example.jpg",
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+  },
+  {
+    "slug": "linkedin-post-prompt",
+    "section": "example",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Writing_notes_while_using_a_laptop_at_a_desk.jpg/960px-Writing_notes_while_using_a_laptop_at_a_desk.jpg",
+    "width": 960,
+    "height": 640,
+    "maxWidth": 720,
+    "alt": "يد تكتب ملاحظات في دفتر بجانب حاسوب محمول على مكتب خشبي",
+    "caption": "يمكن البدء بملاحظات من العمل قبل ترتيبها في منشور.",
+    "credit": "Nenad Stojković (Shixart1985)",
+    "source": "https://commons.wikimedia.org/wiki/File:Writing_notes_while_using_a_laptop_at_a_desk.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   }
 ];
 
