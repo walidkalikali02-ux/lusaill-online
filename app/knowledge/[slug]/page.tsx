@@ -910,6 +910,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Writing_notes_while_using_a_laptop_at_a_desk.jpg",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "slug": "monthly-marketing-plan-prompt",
+    "section": "example",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Monthly-planners-printable-planners.jpg",
+    "width": 1117,
+    "height": 709,
+    "maxWidth": 720,
+    "alt": "تقويم شهري فيه خانات للأيام ومساحة للملاحظات",
+    "caption": "تقويم شهري يساعد في توزيع تواريخ الإطلاق والمتابعة؛ وتُسجّل التفاصيل في خطة العمل.",
+    "credit": "Mervin Simpao",
+    "source": "https://commons.wikimedia.org/wiki/File:Monthly-planners-printable-planners.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
