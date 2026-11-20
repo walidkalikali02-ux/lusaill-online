@@ -924,6 +924,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Monthly-planners-printable-planners.jpg",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "company-policy-prompt",
+    "section": "example",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Collection_of_colorful_binders_on_a_shelf_for_storing_documents_in_an_office_setting.jpg/960px-Collection_of_colorful_binders_on_a_shelf_for_storing_documents_in_an_office_setting.jpg",
+    "width": 960,
+    "height": 641,
+    "maxWidth": 720,
+    "alt": "حافظات برتقالية وخضراء تحمل ملصقات تعريف على رف مكتبي",
+    "caption": "تمييز الملفات بملصقات يساعد على العثور عليها. وفي المجلد المشترك تؤدي التسمية المتسقة وظيفة مشابهة.",
+    "credit": "Nenad Stojković (Shixart1985)",
+    "source": "https://commons.wikimedia.org/wiki/File:Collection_of_colorful_binders_on_a_shelf_for_storing_documents_in_an_office_setting.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   }
 ];
 
