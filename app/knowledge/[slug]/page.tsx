@@ -1008,6 +1008,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Job_interview.jpg",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "slug": "short-video-script-prompt",
+    "section": "template",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Storyboard_example.jpg",
+    "width": 600,
+    "height": 497,
+    "maxWidth": 650,
+    "alt": "لوحة قصة أحادية اللون تضم ست عشرة لقطة مرتبة في شبكة",
+    "caption": "تساعد لوحة القصة على تحويل التسلسل المكتوب إلى تصور يمكن مناقشته قبل التصوير.",
+    "credit": "Rodrigo Ferrusca",
+    "source": "https://commons.wikimedia.org/wiki/File:Storyboard_example.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
