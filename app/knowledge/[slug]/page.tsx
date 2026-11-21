@@ -1162,6 +1162,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Audio_Waveform_and_Close-up.jpg",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "ai-translation-to-arabic",
+    "section": "terms",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Sign_of_Tunis%2C_Tunisia.jpg/960px-Sign_of_Tunis%2C_Tunisia.jpg",
+    "width": 960,
+    "height": 720,
+    "maxWidth": 760,
+    "alt": "لافتة طريق تحمل اسم تونس بالعربية وبالحروف اللاتينية",
+    "caption": "كتابة اسم المكان بالعربية وبالحروف اللاتينية تذكر بأهمية تثبيت الأسماء في الترجمة. صورة توضيحية، وليست نتيجة من أداة ترجمة.",
+    "credit": "Rusty Clark",
+    "source": "https://commons.wikimedia.org/wiki/File:Sign_of_Tunis,_Tunisia.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   }
 ];
 
