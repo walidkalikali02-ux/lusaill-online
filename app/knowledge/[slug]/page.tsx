@@ -1260,6 +1260,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Unplugged_real-time_animated_short.png",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "ai-youtube-video-summary-tools",
+    "section": "captions",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Subtitle-Example.png",
+    "width": 800,
+    "height": 600,
+    "maxWidth": 800,
+    "alt": "رسم شخصين رماديين مع حوار إنجليزي أصفر: دعني أساعدك، وشكرًا لك",
+    "caption": "مثال مرسوم للنص المصاحب للحوار؛ يساعد على تمييز الكلمات المكتوبة عن تفاصيل المشهد. ليس واجهة يوتيوب أو نتيجة تلخيص أداة، والنص في الأصل إنجليزي. دون تعديل.",
+    "credit": "Henrique (Ikescs)",
+    "source": "https://commons.wikimedia.org/wiki/File:Subtitle-Example.png",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
