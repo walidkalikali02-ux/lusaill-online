@@ -1456,6 +1456,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Pivottable-Flatdata.png",
     "license": "ملكية عامة",
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Pivottable-Flatdata.png#Summary"
+  },
+  {
+    "slug": "ai-in-powerpoint",
+    "section": "brief",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Storyboard_template_example.svg/960px-Storyboard_template_example.svg.png",
+    "width": 960,
+    "height": 742,
+    "maxWidth": 760,
+    "alt": "قالب تخطيط بصري فارغ بلوحتين متجاورتين، وفي كل منهما مساحات للصورة والفعل والحوار والتوقيت",
+    "caption": "يساعد التخطيط قبل التوليد على فصل ما يظهر في الشريحة عما يقوله المتحدث ومدة عرضه. القالب لوحة قصة عامة، وليس لقطة PowerPoint أو مخرج Copilot.",
+    "credit": "Whisternefet، CC BY-SA 3.0، دون تعديل.",
+    "source": "https://commons.wikimedia.org/wiki/File:Storyboard_template_example.svg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
