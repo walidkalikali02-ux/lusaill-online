@@ -1316,6 +1316,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Julia-anscombe-plot-1.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-smart-note-taking-tools",
+    "section": "structure",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Cornell_note_system.jpg",
+    "width": 1668,
+    "height": 2157,
+    "maxWidth": 520,
+    "alt": "قالب كورنيل بعمود ضيق للتلميحات والأسئلة وعمود أوسع للملاحظات ومساحة ملخص في الأسفل، بعناوين إنجليزية",
+    "caption": "تقسيم الصفحة إلى ملاحظات وأسئلة وملخص يساعد على فصل أنواع المحتوى عند المراجعة. قالب توضيحي، وليس واجهة Notion أو OneNote أو نتيجة اختبار لهما. النص في الأصل إنجليزي والصورة دون تعديل.",
+    "credit": "WikiLinuz",
+    "source": "https://commons.wikimedia.org/wiki/File:Cornell_note_system.jpg",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
