@@ -1288,6 +1288,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:File_diff.svg",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "ai-website-builder-tools",
+    "section": "arabic",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Responsive-web-design-devices.jpg",
+    "width": 1200,
+    "height": 630,
+    "maxWidth": 1000,
+    "alt": "رسم شاشات حاسوب مكتبي وحاسوب صغير وجهاز لوحي وهاتف بأحجام مختلفة",
+    "caption": "أحجام شاشات مختلفة لتوضيح الحاجة إلى فحص تصميم الموقع عبر الأجهزة. رسم توضيحي، وليس نتيجة اختبار موقع أنشأته الأدوات المقارنة. دون تعديل.",
+    "credit": "Muhammad Rafizeldi (MRafizeldi)",
+    "source": "https://commons.wikimedia.org/wiki/File:Responsive-web-design-devices.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
