@@ -1134,6 +1134,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:LampFlowchart.svg",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "google-ai-studio-beginners",
+    "section": "prompt",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Keyboard_close-up.jpg/960px-Keyboard_close-up.jpg",
+    "width": 960,
+    "height": 720,
+    "maxWidth": 720,
+    "alt": "لقطة قريبة لمفاتيح لوحة حاسوب",
+    "caption": "كتابة طلب واضح وحالات اختبار قصيرة هي بداية التجربة. صورة توضيحية للوحة مفاتيح، وليست لقطة لواجهة Google AI Studio.",
+    "credit": "Jiafei Slay Queen",
+    "source": "https://commons.wikimedia.org/wiki/File:Keyboard_close-up.jpg",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
