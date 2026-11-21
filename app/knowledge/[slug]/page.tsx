@@ -1190,6 +1190,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:English_proofreading_marks_example_(ISO_5776).svg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-presentation-tools",
+    "section": "brief",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Mastering_Tool_Documentation_Building_User-Friendly_Guides_for_Wikimedia_Tools.pdf/page1-960px-Mastering_Tool_Documentation_Building_User-Friendly_Guides_for_Wikimedia_Tools.pdf.jpg",
+    "width": 960,
+    "height": 540,
+    "maxWidth": 900,
+    "alt": "شريحة افتتاحية بعنوان بناء أدلة سهلة الاستخدام لأدوات ويكيميديا، مع زخرفة هندسية وشعارات ويكي إندابا",
+    "caption": "مثال حقيقي لشريحة افتتاحية تبرز عنوان العرض وأسماء مقدميه. من عرض توثيق أدوات ويكيميديا في ويكي إندابا 2023؛ لا تمثل مخرجات أداة ذكاء اصطناعي. يتضمن الأصل شعارات أصحابها.",
+    "credit": "Joris Darlington Quarshie؛ تظهر في الشريحة أيضًا AfiMaame ضمن مقدمي العرض",
+    "source": "https://commons.wikimedia.org/wiki/File:Mastering_Tool_Documentation_Building_User-Friendly_Guides_for_Wikimedia_Tools.pdf",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
