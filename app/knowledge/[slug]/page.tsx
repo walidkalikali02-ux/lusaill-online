@@ -1414,6 +1414,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Data_lifecycle.svg",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "ai-team-enterprise-plans",
+    "section": "sample",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Role-based_access_control.svg/960px-Role-based_access_control.svg.png",
+    "width": 960,
+    "height": 452,
+    "maxWidth": 960,
+    "alt": "مخطط صلاحيات يربط المؤسسة والأدوار بالمستخدمين والأذونات والعمليات والجلسات",
+    "caption": "يوضح الرسم ارتباط المستخدم بدور، وارتباط الدور بأذونات وعمليات وقيود. يستخدم لشرح فصل المسؤوليات؛ ليس خريطة أدوار ChatGPT أو Claude ولا إثباتًا لتوفر كل عنصر فيهما. دون تعديل.",
+    "credit": "Babbage، استنادًا إلى رسم fuzzyBSc",
+    "source": "https://commons.wikimedia.org/wiki/File:Role-based_access_control.svg",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
