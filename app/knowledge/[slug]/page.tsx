@@ -1246,6 +1246,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Audio_Waveform_and_Close-up.jpg",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "ai-avatar-virtual-presenter-tools",
+    "section": "image",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Unplugged_real-time_animated_short.png/960px-Unplugged_real-time_animated_short.png",
+    "width": 960,
+    "height": 581,
+    "maxWidth": 900,
+    "alt": "شخصية فضائية مرسومة ثلاثية الأبعاد بوجه معبّر وعينين زرقاوين ودرع أحمر في لقطة مقربة",
+    "caption": "لقطة من «Unplugged» لتحريك وجه شخصية رقمية باستخدام التقاط الحركة. مثال توضيحي من 2013، وليس مخرجًا من الأدوات المقارنة أو اختبارًا لها. الصورة دون تعديل.",
+    "credit": "Mixamo",
+    "source": "https://commons.wikimedia.org/wiki/File:Unplugged_real-time_animated_short.png",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
