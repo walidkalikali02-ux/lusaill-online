@@ -1092,6 +1092,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Writing_notes_while_using_a_laptop_at_a_desk.jpg",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "slug": "notebooklm-source-research-summary",
+    "section": "sources",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Stack_of_papers.svg/960px-Stack_of_papers.svg.png",
+    "width": 960,
+    "height": 564,
+    "maxWidth": 640,
+    "alt": "رسم لحزمة أوراق متراكبة بحواف غير متساوية",
+    "caption": "رسم توضيحي لمجموعة أوراق. تنظيم المراجع وتسميتها يسهّل تتبع المعلومة عند مقارنة الملخص بالأصل.",
+    "credit": "Glitch (video game)",
+    "source": "https://commons.wikimedia.org/wiki/File:Stack_of_papers.svg",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
