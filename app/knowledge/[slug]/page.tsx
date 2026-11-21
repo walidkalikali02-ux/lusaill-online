@@ -1442,6 +1442,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Client-server_model.svg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-in-google-sheets",
+    "section": "prepare",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Pivottable-Flatdata.png",
+    "width": 475,
+    "height": 222,
+    "maxWidth": 700,
+    "alt": "جدول بيانات بأعمدة للمنطقة والنوع والصنف وتاريخ الشحن والوحدات والسعر والتكلفة",
+    "caption": "أسماء الأعمدة ونطاق الصفوف يجعلان الطلب قابلًا للتحديد والمراجعة. هذه لقطة جدول قديم من Excel للتوضيح، وليست واجهة Gemini أو نتيجة تجربتنا.",
+    "credit": "Wikidan829، مع نسخة لاحقة رفعها I Love Pi؛ ملكية عامة وفق صفحة الملف. دون تعديل.",
+    "source": "https://commons.wikimedia.org/wiki/File:Pivottable-Flatdata.png",
+    "license": "ملكية عامة",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Pivottable-Flatdata.png#Summary"
   }
 ];
 
