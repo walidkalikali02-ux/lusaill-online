@@ -1176,6 +1176,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Sign_of_Tunis,_Tunisia.jpg",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "slug": "arabic-ai-content-writing-tools",
+    "section": "review",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/English_proofreading_marks_example_%28ISO_5776%29.svg/960px-English_proofreading_marks_example_%28ISO_5776%29.svg.png",
+    "width": 960,
+    "height": 443,
+    "maxWidth": 900,
+    "alt": "أمثلة إنجليزية لعلامات تصحيح وإضافة وحذف في نص",
+    "caption": "تحديد موضع التعديل ونوعه يجعل المراجعة قابلة للمتابعة. أمثلة لعلامات تدقيق نص إنجليزي، وليست واجهة لأداة ذكاء اصطناعي أو قواعد خاصة بالعربية.",
+    "credit": "Isochrone",
+    "source": "https://commons.wikimedia.org/wiki/File:English_proofreading_marks_example_(ISO_5776).svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
