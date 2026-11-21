@@ -1274,6 +1274,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Subtitle-Example.png",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "ai-coding-tools-copilot-cursor-claude-code",
+    "section": "review",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/File_diff.svg/960px-File_diff.svg.png",
+    "width": 960,
+    "height": 483,
+    "maxWidth": 900,
+    "alt": "مقارنة نصية بين نسخة قديمة وأخرى جديدة، مع كلمات محذوفة بالأحمر ومضافة بالأخضر",
+    "caption": "مقارنة نصية توضح مراجعة المحذوف والمضاف بين نسختين. ليست واجهة Copilot أو Cursor أو Claude Code ولا نتيجة تجربة لها. الصورة دون تعديل.",
+    "credit": "Retraza، مشتق من عمل User:X! ‏(Nubio Diff Screenshot3)",
+    "source": "https://commons.wikimedia.org/wiki/File:File_diff.svg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
