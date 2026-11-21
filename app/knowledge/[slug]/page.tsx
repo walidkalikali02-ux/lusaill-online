@@ -1050,6 +1050,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Working_on_a_planning_session_with_stationery_items%2C_notebook%2C_and_colorful_pencils_on_a_wooden_desk.jpg",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "slug": "product-image-generation-prompt",
+    "section": "example",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/White_cup_filled_with_coffee.jpg/960px-White_cup_filled_with_coffee.jpg",
+    "width": 960,
+    "height": 720,
+    "maxWidth": 720,
+    "alt": "فنجان أبيض مملوء بالقهوة فوق طبق أبيض على سطح رمادي",
+    "caption": "صورة فوتوغرافية توضح تفاصيل يمكن مراجعتها في فنجان وطبق، مثل الحافة والمقبض ونسبة الحجم بين القطعتين.",
+    "credit": "Douglas P Perkins",
+    "source": "https://commons.wikimedia.org/wiki/File:White_cup_filled_with_coffee.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
   }
 ];
 
