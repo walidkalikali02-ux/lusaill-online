@@ -1302,6 +1302,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Responsive-web-design-devices.jpg",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "ai-data-analysis-tools",
+    "section": "charts",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Julia-anscombe-plot-1.png",
+    "width": 600,
+    "height": 400,
+    "maxWidth": 800,
+    "alt": "أربعة رسوم تشتت بنقاط زرقاء وخطوط حمراء، تختلف أنماطها رغم تقارب ملخصاتها الإحصائية",
+    "caption": "رباعية أنسكومب: مراجعة شكل البيانات تكشف ما لا يكفي الملخص الرقمي لإظهاره. رسم لمجموعات بيانات معروفة، وليس ناتج اختبار للأدوات المقارنة أو بيانات طلبات الدعم التعليمية. دون تعديل.",
+    "credit": "Cormullion",
+    "source": "https://commons.wikimedia.org/wiki/File:Julia-anscombe-plot-1.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
