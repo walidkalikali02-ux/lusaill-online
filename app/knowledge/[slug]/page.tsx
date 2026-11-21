@@ -1218,6 +1218,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:CMYK-color_model.png",
     "license": "CC0 1.0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "ai-photo-editing-background-removal",
+    "section": "alpha",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
+    "width": 800,
+    "height": 600,
+    "maxWidth": 800,
+    "alt": "أربعة أحجار نرد ملونة ذات أسطح شبه شفافة توضح شفافية صورة PNG",
+    "caption": "صورة مولدة بتقنية تتبع الأشعة لتوضيح شفافية PNG؛ ليست مثالًا لنتيجة إزالة خلفية بأداة من المقارنة. تعرض كما في الأصل دون تعديل.",
+    "credit": "Daniel G. وEd g2s وCyberShadow، مع تحسين ضغط لاحق من مساهمي كومنز",
+    "source": "https://commons.wikimedia.org/wiki/File:PNG_transparency_demonstration_1.png",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
