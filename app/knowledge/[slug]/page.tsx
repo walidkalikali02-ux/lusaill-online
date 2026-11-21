@@ -1064,6 +1064,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:White_cup_filled_with_coffee.jpg",
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+  },
+  {
+    "slug": "shared-team-prompt-library",
+    "section": "card",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Card_catalog.jpg/960px-Card_catalog.jpg",
+    "width": 960,
+    "height": 720,
+    "maxWidth": 760,
+    "alt": "أدراج فهرسة مفتوحة تضم صناديق وبطاقات معنونة على سطح خشبي",
+    "caption": "فهرس بطاقات معروض في Stony Island Arts Bank. توضح الصورة فكرة تنظيم مدخلات يمكن العثور عليها؛ وليست واجهة لمكتبة أوامر رقمية.",
+    "credit": "Grings1",
+    "source": "https://commons.wikimedia.org/wiki/File:Card_catalog.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
