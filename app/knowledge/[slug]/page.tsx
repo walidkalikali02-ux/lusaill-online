@@ -1428,6 +1428,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Role-based_access_control.svg",
     "license": "CC0 1.0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "ai-on-whatsapp",
+    "section": "sample",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Client-server_model.svg/960px-Client-server_model.svg.png",
+    "width": 960,
+    "height": 379,
+    "maxWidth": 850,
+    "alt": "مخطط بسيط بجهاز عميل وجهاز خادم وسهم للطلب وآخر للرد بينهما",
+    "caption": "يوضح الرسم فكرة إرسال طلب واستقبال رد. يشرح بصورة عامة ما يدخل في المهمة التي يعالجها المساعد؛ ليس رسمًا لبنية WhatsApp أو حماية وضع معين أو لقطة محادثة منفذة. دون تعديل.",
+    "credit": "Lubaochuan",
+    "source": "https://commons.wikimedia.org/wiki/File:Client-server_model.svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
