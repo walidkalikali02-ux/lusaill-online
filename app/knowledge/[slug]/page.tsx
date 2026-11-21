@@ -1106,6 +1106,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Stack_of_papers.svg",
     "license": "CC0 1.0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "perplexity-professional-research",
+    "section": "review",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Magnifying_glass_on_the_page_of_a_book.jpg",
+    "width": 640,
+    "height": 480,
+    "maxWidth": 640,
+    "alt": "عدسة مكبرة فوق نص في صفحة كتاب ومقبضها يمتد إلى اليمين",
+    "caption": "مراجعة العبارة الأصلية وسياقها جزء من التحقق من الخلاصة. صورة توضيحية وليست لقطة لواجهة Perplexity.",
+    "credit": "Karbyn",
+    "source": "https://commons.wikimedia.org/wiki/File:Magnifying_glass_on_the_page_of_a_book.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
