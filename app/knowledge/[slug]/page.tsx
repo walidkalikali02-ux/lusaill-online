@@ -1386,6 +1386,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Basic-kanban-board.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "chatgpt-free-vs-plus",
+    "section": "value",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Break-even-point_vector.svg/960px-Break-even-point_vector.svg.png",
+    "width": 960,
+    "height": 514,
+    "maxWidth": 850,
+    "alt": "رسم تعادل بمحور للوحدات وخط أخضر للإيرادات وخط أحمر للتكاليف يتقاطعان عند نقطة واحدة",
+    "caption": "رسم عام للإيرادات والتكاليف بعناوين هولندية. نستخدم فكرة التعادل لتفسير مقارنة قيمة الوقت بالاشتراك؛ لا يعرض أسعار ChatGPT أو بيانات أداء ولا يطابق أرقام المثال. دون تعديل.",
+    "credit": "Empro2، مع مساهمات Ahellwig وJurgenNL",
+    "source": "https://commons.wikimedia.org/wiki/File:Break-even-point_vector.svg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
