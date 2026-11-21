@@ -1204,6 +1204,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Mastering_Tool_Documentation_Building_User-Friendly_Guides_for_Wikimedia_Tools.pdf",
     "license": "CC0 1.0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "ai-logo-brand-identity-tools",
+    "section": "consistency",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/d/db/CMYK-color_model.png",
+    "width": 800,
+    "height": 726,
+    "maxWidth": 600,
+    "alt": "ثلاث دوائر سماوية وأرجوانية وصفراء متداخلة تنتج مناطق زرقاء وخضراء وحمراء ومركزًا أسود",
+    "caption": "رسم تعليمي لتداخل الألوان الطرحية يساعد على مناقشة تجهيز الهوية للطباعة. لا يمثل عينة مطبوعة أو مواصفة لمطابقة لون علامة معينة.",
+    "credit": "Jipre، مع نسخة لاحقة رفعها Pandakekok9",
+    "source": "https://commons.wikimedia.org/wiki/File:CMYK-color_model.png",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
