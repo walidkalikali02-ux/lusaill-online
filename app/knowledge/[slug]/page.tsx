@@ -1344,6 +1344,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Schedule_gantt.png",
     "license": "CC0 1.0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "ai-academic-research-tools",
+    "section": "flow",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/PRISMA_2020_flow_diagram_for_new_systematic_reviews_with_databases%2C_registers_and_other_sources.svg/1280px-PRISMA_2020_flow_diagram_for_new_systematic_reviews_with_databases%2C_registers_and_other_sources.svg.png",
+    "width": 1280,
+    "height": 929,
+    "maxWidth": 1000,
+    "alt": "مخطط PRISMA 2020 فارغ بمسارين للمصادر ومربعات للفرز واسترجاع النصوص والاستبعاد والإدراج",
+    "caption": "قالب فارغ يوضح انتقال السجلات والنصوص وأسباب خروجها. الحقول غير معبأة؛ ليست أرقام التمرين ولا نتيجة أداة. إعادة رسم للقالب، تُعرض هنا دون تعديل للمحتوى.",
+    "credit": "Derek Jansen، Grad Coach، عن قالب Page MJ وMcKenzie JE وBossuyt PM وآخرين",
+    "source": "https://commons.wikimedia.org/wiki/File:PRISMA_2020_flow_diagram_for_new_systematic_reviews_with_databases,_registers_and_other_sources.svg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
   }
 ];
 
