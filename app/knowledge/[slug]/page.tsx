@@ -1372,6 +1372,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:ConfusionMatrix.png",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "free-ai-tools-for-business",
+    "section": "sample",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Basic-kanban-board.png",
+    "width": 900,
+    "height": 271,
+    "maxWidth": 900,
+    "alt": "لوحة كانبان بثلاثة أعمدة للمهام المطلوبة والجارية والمنجزة وبطاقات ملونة",
+    "caption": "توضح اللوحة فصل حالات العمل. في المثال تبقى المسودة قيد المراجعة إلى أن تطابق بطاقة الوقائع ثم تنتقل إلى التسليم؛ الصورة لا تعرض حسابات الأدوات المقارنة أو نتيجة تجربتها. دون تعديل.",
+    "credit": "Bossarro",
+    "source": "https://commons.wikimedia.org/wiki/File:Basic-kanban-board.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
