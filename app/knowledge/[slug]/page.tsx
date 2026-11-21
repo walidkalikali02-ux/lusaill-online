@@ -1078,6 +1078,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Card_catalog.jpg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "create-custom-ai-assistant",
+    "section": "instructions",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Writing_notes_while_using_a_laptop_at_a_desk.jpg/960px-Writing_notes_while_using_a_laptop_at_a_desk.jpg",
+    "width": 960,
+    "height": 640,
+    "maxWidth": 760,
+    "alt": "شخص يكتب ملاحظات في دفتر بجانب حاسوب محمول على مكتب",
+    "caption": "تدوين المهمة ومعايير المراجعة يساعد على تجهيز التعليمات قبل إدخالها في الأداة. صورة توضيحية وليست لقطة لواجهة أي منتج.",
+    "credit": "Nenad Stojković (Shixart1985)",
+    "source": "https://commons.wikimedia.org/wiki/File:Writing_notes_while_using_a_laptop_at_a_desk.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   }
 ];
 
