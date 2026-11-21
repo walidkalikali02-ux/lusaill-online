@@ -1232,6 +1232,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:PNG_transparency_demonstration_1.png",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "arabic-ai-dubbing-voice-cloning",
+    "section": "arabic",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Audio_Waveform_and_Close-up.jpg",
+    "width": 911,
+    "height": 667,
+    "maxWidth": 760,
+    "alt": "شكل موجة صوتية كاملة في الأعلى وتكبير لجزء منها في الأسفل",
+    "caption": "موجة صوتية مع تكبير جزء منها لتوضيح الرجوع إلى مقطع أثناء مراجعة التوقيت. لا تكشف الصورة جودة العربية أو هوية الصوت، وليست نتيجة دبلجة لأي أداة. دون تعديل.",
+    "credit": "Ktmartin",
+    "source": "https://commons.wikimedia.org/wiki/File:Audio_Waveform_and_Close-up.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
   }
 ];
 
