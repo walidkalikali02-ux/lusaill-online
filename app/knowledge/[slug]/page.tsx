@@ -1330,6 +1330,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Cornell_note_system.jpg",
     "license": "CC0 1.0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "ai-scheduling-personal-assistants",
+    "section": "example",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Schedule_gantt.png/1280px-Schedule_gantt.png",
+    "width": 1280,
+    "height": 640,
+    "maxWidth": 900,
+    "alt": "مخطط جانت لآلات من M1 إلى M4 بأشرطة زرقاء وبرتقالية وخضراء على محور الزمن",
+    "caption": "توضح الأشرطة امتداد الأعمال والفجوات بينها. الصورة لجدولة صناعية؛ ليست واجهة Reclaim أو Motion ولا نتيجة المثال الافتراضي. دون تعديل للمحتوى، مع عرضها بحجم أصغر.",
+    "credit": "Larissa255",
+    "source": "https://commons.wikimedia.org/wiki/File:Schedule_gantt.png",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
