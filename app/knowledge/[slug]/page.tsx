@@ -1358,6 +1358,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:PRISMA_2020_flow_diagram_for_new_systematic_reviews_with_databases,_registers_and_other_sources.svg",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "ai-text-detection-tools-reliability",
+    "section": "metrics",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/6/6f/ConfusionMatrix.png",
+    "width": 623,
+    "height": 382,
+    "maxWidth": 623,
+    "alt": "مصفوفة التباس من أربع خلايا تقارن التوقع في الصفوف بالحقيقة في الأعمدة برموز TP وFP وFN وTN",
+    "caption": "مخطط عام بلا أعداد يميز الإصابة الصحيحة والإنذار الخاطئ والفوات والاستبعاد الصحيح. نعرّف الإيجابي في مثال المقال بأنه نص مولد؛ ليست الصورة نتيجة Turnitin أو Copyleaks. دون تعديل.",
+    "credit": "Jackverr",
+    "source": "https://commons.wikimedia.org/wiki/File:ConfusionMatrix.png",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
