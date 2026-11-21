@@ -1400,6 +1400,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Break-even-point_vector.svg",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "chatgpt-claude-gemini-privacy-settings",
+    "section": "example",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Data_lifecycle.svg/960px-Data_lifecycle.svg.png",
+    "width": 960,
+    "height": 371,
+    "maxWidth": 960,
+    "alt": "مخطط دورة بيانات يبدأ بالجمع ثم التحليل والتصور وينتهي بمسارات للمشاركة والأرشفة والإتلاف",
+    "caption": "يفصل الرسم التخزين والعمل والمشاركة والأرشفة والإتلاف؛ تغيير استخدام البيانات لا يساوي حذفها. الرسم لدورة بيانات بحثية، وليس لخوادم الأدوات الثلاث أو لقطة إعدادات. دون تعديل.",
+    "credit": "Thomas Shafee؛ أيقونات Clément Payot وBen Davis وAdrien Coquet وProSymbols وDeemak Daksina وSumit Saengthong عبر Noun Project",
+    "source": "https://commons.wikimedia.org/wiki/File:Data_lifecycle.svg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
   }
 ];
 
