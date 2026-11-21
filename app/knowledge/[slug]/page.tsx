@@ -1470,6 +1470,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Storyboard_template_example.svg",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "ai-in-canva",
+    "section": "brief",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Gestalt_proximity.svg/960px-Gestalt_proximity.svg.png",
+    "width": 960,
+    "height": 402,
+    "maxWidth": 850,
+    "alt": "مجموعتان من الدوائر الرمادية المتكررة تفصل بينهما مسافة أوسع من المسافات داخل كل مجموعة",
+    "caption": "تجميع العناصر المتصلة وترك مسافة بينها وبين المجموعة التالية يساعد على تنظيم القراءة. المخطط عام، وليس لقطة Canva أو نتيجة لتوليد تصميم.",
+    "credit": "Kasufcgslfguhvsne؛ تبسيط SVG: Cmglee. ملكية عامة وفق صفحة الملف، دون تعديل.",
+    "source": "https://commons.wikimedia.org/wiki/File:Gestalt_proximity.svg",
+    "license": "ملكية عامة",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Gestalt_proximity.svg#Licensing"
   }
 ];
 
