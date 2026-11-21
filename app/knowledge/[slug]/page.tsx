@@ -1120,6 +1120,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Magnifying_glass_on_the_page_of_a_book.jpg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "create-agent-with-copilot-studio",
+    "section": "test",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/LampFlowchart.svg/500px-LampFlowchart.svg.png",
+    "width": 500,
+    "height": 682,
+    "maxWidth": 500,
+    "alt": "مخطط انسيابي بالإنجليزية يربط أسئلة عن مصباح بفروع نعم ولا ونتائج مختلفة",
+    "caption": "مثال لمخطط قرار يوضح تفرع الخطوات وفق الإجابة. يفيد هذا المبدأ عند فحص مسارات الحوار، والصورة لا تمثل واجهة Copilot Studio.",
+    "credit": "Booyabazooka، عن الأصل من Wapcaplet",
+    "source": "https://commons.wikimedia.org/wiki/File:LampFlowchart.svg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
