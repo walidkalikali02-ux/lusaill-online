@@ -21683,7 +21683,7 @@ export const aiPublishedTopics: KnowledgeTopic[] = [
                 "10",
                 "2",
                 "20",
-                "2 / 1"
+                "الملف 2؛ المطبوعة 1"
               ],
               [
                 "A2",
@@ -21691,7 +21691,7 @@ export const aiPublishedTopics: KnowledgeTopic[] = [
                 "5",
                 "8",
                 "40",
-                "2 / 1"
+                "الملف 2؛ المطبوعة 1"
               ],
               [
                 "A3",
@@ -21699,7 +21699,7 @@ export const aiPublishedTopics: KnowledgeTopic[] = [
                 "4",
                 "5",
                 "20",
-                "2 / 1"
+                "الملف 2؛ المطبوعة 1"
               ]
             ]
           },
