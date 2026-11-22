@@ -111,6 +111,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     inLanguage: siteConfig.language,
     articleSection: cluster.name,
     keywords: [article.keyword, cluster.name, ...(deepContent?.keywords ?? [])],
+    citation: [...new Set([
+      ...(article.sources ?? []).map((source) => source.url),
+      ...(deepContent?.sources ?? []).map((source) => source.url),
+    ])],
     wordCount: wordCount(article),
     timeRequired: `PT${mins}M`,
     author: {

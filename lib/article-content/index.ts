@@ -30,6 +30,7 @@ import { windowsGuides } from "./windows-guides-2026-10-02";
 import { chromeGuides } from "./chrome-guides-2026-10-01";
 import { androidGuidesA } from "./android-guides-2026-09-30-a";
 import { androidGuidesB } from "./android-guides-2026-09-30-b";
+import { editorialRefreshNov22 } from "./editorial-refresh-2026-11-22";
 
 // Add substantive articles here. Indexability is automatic, independent of editorial status; retain real source review dates.
 const overrides: ArticleContentOverride[] = [...kingsoftExcelRecovery, ...taxRegistrationGuidesOct22, ...consumerProtectionGuidesOct21, ...passportGuidesOct20, ...workPermitMilitaryGuidesOct19, ...civilStatusGuidesOct18, ...civilStatusGuidesOct17, ...civilStatusGuidesOct16, ...drivingLicenseGuidesOct15, ...telecomGuidesOct14, ...telecomGuidesOct13, ...telecomGuidesOct12, ...electricityConsumerGuidesOct11, ...electricityProcedureGuidesOct10, ...electricityCompanyGuidesOct9, ...consularGuidesOct8, ...consularGuides, ...electricityKeywordGuides, ...digitalGuides, ...dailyGuides, ...housingGuides, ...rationGuides, ...civilGuides, ...trafficGuides, ...androidGuidesA, ...androidGuidesB, ...chromeGuides, ...windowsGuides, ...googleEditorGuides, ...googleFormsSlidesGuides, ...egyptServiceGuides];
@@ -37,3 +38,8 @@ const overrides: ArticleContentOverride[] = [...kingsoftExcelRecovery, ...taxReg
 export const publishedContent: Map<number, ArticleContentOverride> = new Map(
   overrides.map((override) => [override.id, override]),
 );
+for (const refresh of editorialRefreshNov22) {
+  const previous = publishedContent.get(refresh.id);
+  if (!previous) throw new Error(`Editorial refresh requires an existing article: ${refresh.id}`);
+  publishedContent.set(refresh.id, { ...previous, ...refresh });
+}

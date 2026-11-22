@@ -48,3 +48,13 @@ export const articleJourneysBySlug: Record<string, string[]> = {
 };
 
 export const articleJourneys: string[][] = Object.values(articleJourneysBySlug);
+
+// Explicit, relevant incoming recommendations for refreshed existing guides.
+export const contextualArticleRecommendations: Record<string, string[]> = {
+  "south-cairo-electricity": ["alexandria-electricity"],
+  "south-delta-electricity": ["alexandria-electricity"],
+  "beheira-electricity": ["alexandria-electricity"],
+  "north-cairo-electricity": ["alexandria-electricity"],
+  "private-driving-license-first-time": ["private-driving-license-renewal"],
+  "driving-license-medical-exam": ["private-driving-license-renewal"],
+};
