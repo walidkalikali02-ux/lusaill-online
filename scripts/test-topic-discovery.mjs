@@ -129,7 +129,7 @@ for(const path of guidePaths){
 
 // Content completeness regression: empty articles are never published or inserted in XML.
 const {knowledgeTopics}=load("lib/knowledge-expansion-data.ts");
-assert.equal(knowledgeTopics.length,227,"Expected 227 authored knowledge topics including eighty-nine AI guides");
+assert.equal(knowledgeTopics.length,228,"Expected 228 authored knowledge topics including ninety AI guides");
 const expertBatch = [...load("lib/knowledge-expert-batch-09a.ts").expertBatchA,...load("lib/knowledge-expert-batch-09b.ts").expertBatchB];
 assert.equal(expertBatch.length,10,"Ten expert guides required");
 assert.equal(new Set(expertBatch.map(t=>t.slug)).size,10,"Expert article slugs must be unique");

@@ -1484,6 +1484,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Gestalt_proximity.svg",
     "license": "ملكية عامة",
     "licenseUrl": "https://commons.wikimedia.org/wiki/File:Gestalt_proximity.svg#Licensing"
+  },
+  {
+    "slug": "ai-voice-mode-for-work",
+    "section": "start",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Microphone.JPG/960px-Microphone.JPG",
+    "width": 960,
+    "height": 720,
+    "maxWidth": 850,
+    "alt": "ميكروفون على حامل أمام خلفية داكنة بإضاءة زرقاء وانعكاسات حمراء وأرجوانية",
+    "caption": "الميكروفون مدخل الصوت؛ يحتاج المستخدم إلى التحقق مما فُهم وإلى إنهاء الجلسة عندما تنتهي المهمة. الصورة عامة ولا تعرض واجهة مساعد أو تسجيلًا للمثال.",
+    "credit": "Jan Mehlich (Lestat)، CC BY-SA 2.5، دون تعديل.",
+    "source": "https://commons.wikimedia.org/wiki/File:Microphone.JPG",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
   }
 ];
 
