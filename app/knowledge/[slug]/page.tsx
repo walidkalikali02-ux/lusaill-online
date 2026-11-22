@@ -1498,6 +1498,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Microphone.JPG",
     "license": "CC BY-SA 2.5",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+  },
+  {
+    "slug": "ai-deep-research",
+    "section": "sample",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Creative_commons_license_spectrum.svg/960px-Creative_commons_license_spectrum.svg.png",
+    "width": 960,
+    "height": 1553,
+    "maxWidth": 450,
+    "alt": "مخطط رأسي ملون يرتب صيغ المشاع الإبداعي من الملكية العامة في الأعلى إلى جميع الحقوق محفوظة في الأسفل",
+    "caption": "تختلف شروط إعادة الاستخدام بين صيغ الترخيص. يستعمل المثال هذه الفروق لتوضيح ضرورة ربط كل استنتاج بنص مصدره، مع مراجعة شروط الملف نفسه.",
+    "credit": "Shaddim؛ الرموز الأصلية من Creative Commons، CC BY 4.0، دون تعديل.",
+    "source": "https://commons.wikimedia.org/wiki/File:Creative_commons_license_spectrum.svg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
   }
 ];
 
