@@ -1526,6 +1526,20 @@ const knowledgeIllustrations = [
     "source": "https://www.flickr.com/photos/deb-richardson/2571842204/",
     "license": "CC BY-SA 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+  },
+  {
+    "slug": "ai-pdf-analysis",
+    "section": "file-type",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/58/Ocr_conversion.png",
+    "width": 494,
+    "height": 501,
+    "maxWidth": 494,
+    "alt": "رسم يكبّر حروف كلمة Original المصوّرة ثم يصلها بسهم إلى حروف وقيم رقمية",
+    "caption": "يوضح الرسم الانتقال من شكل الحروف في الصورة إلى تمثيل نصي؛ وهو شرح للمفهوم، وليس لقطة لتجربتنا أو قياسًا لدقة العربية. الصورة دون تعديل.",
+    "credit": "AerodyneSr",
+    "source": "https://commons.wikimedia.org/wiki/File:Ocr_conversion.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
