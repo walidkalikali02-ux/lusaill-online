@@ -1555,6 +1555,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Truncated_Bar_Graph.svg",
     "license": "CC0 1.0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "slug": "ai-chrome-extensions",
+    "section": "permissions",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Font_Awesome_5_solid_puzzle-piece.svg/330px-Font_Awesome_5_solid_puzzle-piece.svg.png",
+    "width": 330,
+    "height": 293,
+    "maxWidth": 220,
+    "alt": "أيقونة سوداء لقطعة أحجية ذات بروزين وتجويفين متقابلين",
+    "caption": "تستخدم قطعة الأحجية رمزًا لوظيفة تضاف إلى المتصفح؛ ليست شعارًا لأحد الخيارات أو لقطة لأذوناته أو دليلًا على قدراته. الصورة دون تعديل للمحتوى.",
+    "credit": "Font Awesome Free 5.2.0 by @fontawesome",
+    "source": "https://commons.wikimedia.org/wiki/File:Font_Awesome_5_solid_puzzle-piece.svg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
   }
 ];
 
