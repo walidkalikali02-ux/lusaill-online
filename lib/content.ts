@@ -2,7 +2,7 @@ import { applyArticleAuditUpdates, type PracticalSection } from "./article-audit
 import { housingDeadlineLabel, housingDeadlinePassed } from "./deadlines";
 import { articleSeeds, type ArticleSeed } from "./articles-data";
 import { clusters, getCluster } from "./clusters";
-import { articleJourneys } from "./article-journeys";
+import { articleJourneys, contextualArticleRecommendations } from "./article-journeys";
 import { publishedContent } from "./article-content";
 
 export type ArticleStatus = "not_started" | "drafting" | "needs_verification" | "published";
@@ -95,7 +95,7 @@ export function getClusterArticles(clusterSlug: string) {
 export function getRelatedArticles(article: Article, count = 4) {
   const group = articleJourneys.find((slugs) => slugs.includes(article.slug)) ?? [];
   const explicit = (article.steps ?? []).flatMap((step) => step.relatedLink?.href.startsWith("/articles/") ? [step.relatedLink.href.slice(10)] : []);
-  const preferred = [...new Set([...explicit, ...group])];
+  const preferred = [...new Set([...(contextualArticleRecommendations[article.slug] ?? []), ...explicit, ...group])];
   const published = articles.filter((candidate) => isArticleIndexable(candidate) && candidate.id !== article.id);
   const relevant = preferred.flatMap((slug) => published.filter((candidate) => candidate.slug === slug));
   // Avoid padding a task group with unrelated guides merely to fill four cards.
