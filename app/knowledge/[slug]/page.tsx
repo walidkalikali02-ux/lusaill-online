@@ -1647,7 +1647,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 {section.table && <div style={{overflowX:"auto",border:"1px solid #e2e8f0",borderRadius:12,marginBlock:17}}>
 <table style={{width:"100%",minWidth:600,borderCollapse:"collapse",textAlign:"start"}}>
 <caption style={{padding:10,color:"#475569",fontSize:13}}>{section.table.caption}</caption>
-<thead><tr style={{background:"#e6f0f4"}}>{section.table.headers.map(h=><th scope="col" key={<InlineText text={h}/>} style={tableCell}>{<InlineText text={h}/>}</th>)}</tr></thead>
+<thead><tr style={{background:"#e6f0f4"}}>{section.table.headers.map(h=><th scope="col" key={h} style={tableCell}>{<InlineText text={h}/>}</th>)}</tr></thead>
 <tbody>{section.table.rows.map((row,i)=><tr key={i} style={{background:i%2?"#f8fafc":"#fff"}}>{row.map((v,j)=>j===0?<th scope="row" key={j} style={tableCell}>{<InlineText text={v}/>}</th>:<td key={j} style={tableCell}>{<InlineText text={v}/>}</td>)}</tr>)}</tbody>
 </table></div>}
 {section.note && <aside style={{borderRight:"4px solid #f59e0b",background:"#fffbeb",padding:18,borderRadius:7,marginTop:14}}><strong>تنبيه</strong><p>{<InlineText text={section.note}/>}</p></aside>}
