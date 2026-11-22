@@ -1512,6 +1512,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Creative_commons_license_spectrum.svg",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "ai-browsers-comparison",
+    "section": "sample",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/7/72/Firefox_3_tabs.jpg",
+    "width": 298,
+    "height": 61,
+    "maxWidth": 420,
+    "alt": "تفصيل قديم لواجهة Firefox يظهر شريط العنوان وعدة تبويبات بأسماء مقتطعة",
+    "caption": "تساعد معرفة التبويبات الداخلة في الطلب على مراجعة سياق المساعد. هذه لقطة تاريخية من 2008 لتوضيح الفكرة، وليست واجهة Comet أو Edge الحالية أو نتيجة اختبارهما.",
+    "credit": "Deb Richardson، CC BY-SA 2.0؛ نسخة ويكيميديا دون تعديل إضافي.",
+    "source": "https://www.flickr.com/photos/deb-richardson/2571842204/",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
   }
 ];
 
