@@ -2,6 +2,7 @@ import MathArticleLab from "@/components/math-article-lab";
 import { getMathArticleLab } from "@/lib/math-article-labs";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { parseInlineLinks } from "@/lib/inline-markdown-links";
 import { EditorialCover } from "@/components/editorial-cover";
 import Image from "next/image";
 import { editorialImagePath } from "@/lib/editorial-image-url";
@@ -1540,6 +1541,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Ocr_conversion.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-chart-creation",
+    "section": "chart-choice",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Truncated_Bar_Graph.svg/960px-Truncated_Bar_Graph.svg.png",
+    "width": 960,
+    "height": 487,
+    "maxWidth": 864,
+    "alt": "رسم أعمدة للفئات A إلى E ومحور رأسي يبدأ عند 9100 بدل الصفر",
+    "caption": "مثال تعليمي على محور أعمدة مبتور يبدأ عند 9100؛ قد يوحي فرق الأطوال بفروق نسبية أكبر مما تدل عليه القيم. صورة مستقلة عن عينة الأشهر وعن أي أداة AI، معروضة دون تعديل للمحتوى.",
+    "credit": "Smallman12q",
+    "source": "https://commons.wikimedia.org/wiki/File:Truncated_Bar_Graph.svg",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
@@ -1556,6 +1571,10 @@ function KnowledgeIllustrations({slug, section}: {slug: string; section: string}
       </figcaption>
     </figure>
   ));
+}
+
+function InlineText({text}: {text: string}) {
+  return parseInlineLinks(text).map((part,index) => part.kind === "text" ? part.text : <a key={index} href={part.href} style={{color:"#0d7490",textDecoration:"underline",overflowWrap:"anywhere"}}>{part.label}</a>);
 }
 
 const tableCell={padding:"12px 14px",borderBottom:"1px solid #e2e8f0",verticalAlign:"top" as const};
@@ -1578,7 +1597,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 <header>
 <p style={{color:"#0f766e",fontWeight:700}}>{topic.category} · دليل أصلي بمصادر واضحة</p>
 <h1 style={{fontSize:"clamp(29px,4vw,43px)",fontWeight:800,lineHeight:1.5,marginBlock:14}}>{topic.title}</h1>
-<p style={{fontSize:18}}>{topic.intro}</p>
+<p style={{fontSize:18}}>{<InlineText text={topic.intro}/>}</p>
 <p style={{fontSize:13,color:"#64748b",marginBlock:13}}>إعداد: فريق لوسيل · تاريخ النشر: <time dateTime={topic.publishedAt}>{topic.publishedAt}</time></p>
 {isMedicalKnowledgeTopic(topic) && <p role="note" style={{background:"#fff7ed",padding:12,borderRadius:8,fontSize:14}}>هذه معلومات عامة، ولم تُوثَّق لهذا المقال مراجعة تخصصية مستقلة حتى الآن. لا تستخدمه بدل التقييم الطبي أو تعليمات الجهات الصحية الرسمية.</p>}
 </header>
@@ -1593,7 +1612,7 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 />
 {lab && <MathArticleLab lab={lab} />}
 <section aria-labelledby="direct-answer" style={{background:"#eff8f6",border:"1px solid #9fd5c9",borderRadius:14,padding:23}}>
-<h2 id="direct-answer" style={{fontSize:24,fontWeight:800,marginBottom:9}}>الإجابة المختصرة</h2><p style={{fontSize:17}}>{topic.directAnswer}</p>
+<h2 id="direct-answer" style={{fontSize:24,fontWeight:800,marginBottom:9}}>الإجابة المختصرة</h2><p style={{fontSize:17}}>{<InlineText text={topic.directAnswer}/>}</p>
 </section>
 {topic.sections.length >= 2 ? <figure className="guide-figure" style={{marginBlock:27}}>
   <Image
@@ -1616,30 +1635,30 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 </ul></nav>
 {topic.sections.map(section=><section key={section.id} id={section.id} style={{marginBlock:30,scrollMarginTop:35}}>
 <h2 style={{fontSize:26,fontWeight:800,lineHeight:1.55,marginBottom:13}}>{section.heading}</h2>
-{!section.blocks && section.paragraphs?.map((p,i)=><p key={i} style={{marginBlock:13,fontSize:17}}>{p}</p>)}
+{!section.blocks && section.paragraphs?.map((p,i)=><p key={i} style={{marginBlock:13,fontSize:17}}>{<InlineText text={p}/>}</p>)}
 {section.blocks?.map((block,i)=> {
  if(block.kind === "heading") return <h3 key={i} style={{fontSize:21,fontWeight:700,marginBlock:18}}>{block.text}</h3>;
- if(block.kind === "paragraph") return <p key={i} style={{marginBlock:13,fontSize:17}}>{block.text}</p>;
+ if(block.kind === "paragraph") return <p key={i} style={{marginBlock:13,fontSize:17}}><InlineText text={block.text}/></p>;
  if(block.kind === "diagram") return <pre key={i} style={{whiteSpace:"pre-wrap",overflowWrap:"anywhere",padding:18,background:"#f1f5f9",borderRadius:12}}>{block.text}</pre>;
- if(block.kind === "list") return <ul key={i} style={{paddingInlineStart:27}}>{block.items.map((item,j)=><li key={j}>{item}</li>)}</ul>;
- if(block.kind === "table") return <div key={i} style={{overflowX:"auto",marginBlock:18}}><table style={{width:"100%",minWidth:600,borderCollapse:"collapse",textAlign:"start"}}><caption>{section.heading}</caption><thead><tr>{block.headers.map((h,j)=><th key={j} scope="col" style={tableCell}>{h}</th>)}</tr></thead><tbody>{block.rows.map((row,j)=><tr key={j}>{row.map((cell,k)=>k===0?<th scope="row" key={k} style={tableCell}>{cell}</th>:<td key={k} style={tableCell}>{cell}</td>)}</tr>)}</tbody></table></div>;
+ if(block.kind === "list") return <ul key={i} style={{paddingInlineStart:27}}>{block.items.map((item,j)=><li key={j}>{<InlineText text={item}/>}</li>)}</ul>;
+ if(block.kind === "table") return <div key={i} style={{overflowX:"auto",marginBlock:18}}><table style={{width:"100%",minWidth:600,borderCollapse:"collapse",textAlign:"start"}}><caption>{section.heading}</caption><thead><tr>{block.headers.map((h,j)=><th key={j} scope="col" style={tableCell}>{<InlineText text={h}/>}</th>)}</tr></thead><tbody>{block.rows.map((row,j)=><tr key={j}>{row.map((cell,k)=>k===0?<th scope="row" key={k} style={tableCell}>{<InlineText text={cell}/>}</th>:<td key={k} style={tableCell}>{<InlineText text={cell}/>}</td>)}</tr>)}</tbody></table></div>;
 })}
-{section.points?.length ? <ul style={{paddingInlineStart:27,marginBlock:12}}>{section.points.map((point,i)=><li key={i} style={{marginBottom:8}}>{point}</li>)}</ul> : null}
+{section.points?.length ? <ul style={{paddingInlineStart:27,marginBlock:12}}>{section.points.map((point,i)=><li key={i} style={{marginBottom:8}}>{<InlineText text={point}/>}</li>)}</ul> : null}
 {section.table && <div style={{overflowX:"auto",border:"1px solid #e2e8f0",borderRadius:12,marginBlock:17}}>
 <table style={{width:"100%",minWidth:600,borderCollapse:"collapse",textAlign:"start"}}>
 <caption style={{padding:10,color:"#475569",fontSize:13}}>{section.table.caption}</caption>
-<thead><tr style={{background:"#e6f0f4"}}>{section.table.headers.map(h=><th scope="col" key={h} style={tableCell}>{h}</th>)}</tr></thead>
-<tbody>{section.table.rows.map((row,i)=><tr key={i} style={{background:i%2?"#f8fafc":"#fff"}}>{row.map((v,j)=>j===0?<th scope="row" key={j} style={tableCell}>{v}</th>:<td key={j} style={tableCell}>{v}</td>)}</tr>)}</tbody>
+<thead><tr style={{background:"#e6f0f4"}}>{section.table.headers.map(h=><th scope="col" key={<InlineText text={h}/>} style={tableCell}>{<InlineText text={h}/>}</th>)}</tr></thead>
+<tbody>{section.table.rows.map((row,i)=><tr key={i} style={{background:i%2?"#f8fafc":"#fff"}}>{row.map((v,j)=>j===0?<th scope="row" key={j} style={tableCell}>{<InlineText text={v}/>}</th>:<td key={j} style={tableCell}>{<InlineText text={v}/>}</td>)}</tr>)}</tbody>
 </table></div>}
-{section.note && <aside style={{borderRight:"4px solid #f59e0b",background:"#fffbeb",padding:18,borderRadius:7,marginTop:14}}><strong>تنبيه</strong><p>{section.note}</p></aside>}
+{section.note && <aside style={{borderRight:"4px solid #f59e0b",background:"#fffbeb",padding:18,borderRadius:7,marginTop:14}}><strong>تنبيه</strong><p>{<InlineText text={section.note}/>}</p></aside>}
 <KnowledgeIllustrations slug={topic.slug} section={section.id}/>
 </section>)}
 {topic.tool && <KnowledgeInteractiveTool kind={topic.tool} slug={topic.slug}/>}
-<section id="frequently-asked-questions" style={{marginBlock:32}}>
+{topic.faq.length > 0 && <section id="frequently-asked-questions" style={{marginBlock:32}}>
 <h2 style={{fontSize:26,fontWeight:800,marginBottom:15}}>أسئلة شائعة</h2>
 {topic.faq.map((faq,i)=><details key={i} style={{marginBlock:10,border:"1px solid #e2e8f0",padding:16,borderRadius:10}}>
-<summary style={{fontWeight:700,cursor:"pointer"}}>{faq.question}</summary><p style={{marginTop:10}}>{faq.answer}</p></details>)}
-</section>
+<summary style={{fontWeight:700,cursor:"pointer"}}>{faq.question}</summary><p style={{marginTop:10}}>{<InlineText text={faq.answer}/>}</p></details>)}
+</section>}
 <section id="sources" style={{borderTop:"1px solid #e2e8f0",paddingTop:20,marginTop:24}}>
 <h2 style={{fontSize:25,fontWeight:800,marginBottom:12}}>المراجع والمصادر</h2>
 <p>هذه مراجع للاطلاع، لكن لم تُفحص صلاحية جميع روابطها في جولة التدقيق الحالية. تحقق من أحدث نسخة للمصدر قبل الاعتماد على معلومة متغيرة؛ والأمثلة والأدوات التعليمية لا تُعد نتائج تجارب ميدانية فعلية.</p>
