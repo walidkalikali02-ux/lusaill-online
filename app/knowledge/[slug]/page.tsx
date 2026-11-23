@@ -1569,6 +1569,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Font_Awesome_5_solid_puzzle-piece.svg",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "ai-product-descriptions",
+    "section": "inputs",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Spiral_notebook_%282565673891%29.jpg/960px-Spiral_notebook_%282565673891%29.jpg",
+    "width": 960,
+    "height": 720,
+    "maxWidth": 720,
+    "alt": "لقطة قريبة لدفتر سلك تظهر حلقاته المعدنية وصفحات بيضاء مسطرة بالأزرق",
+    "caption": "توضح الصورة شكل التجليد والسطور، لكنها لا تثبت مقاس A5 أو وزن الورق في مثالنا. صورة مستقلة، وليست صورة المنتج الافتراضي أو إثباتًا لمواصفاته، دون تعديل للمحتوى.",
+    "credit": "frankieleon",
+    "source": "https://commons.wikimedia.org/wiki/File:Spiral_notebook_(2565673891).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   }
 ];
 
