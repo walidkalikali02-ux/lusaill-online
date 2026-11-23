@@ -7,6 +7,7 @@ import { siteSocialImage } from "@/lib/site-config";
 import { pageAlternates } from "@/lib/page-alternates";
 export const metadata:Metadata={title:"موسوعة لوسيل | الصفحة الرئيسية",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),openGraph:{type:"website",images:[siteSocialImage],url:"/knowledge",title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة."},robots:{index:true,follow:true}};
 const guides=[
+{"href":"/knowledge/ai-search-engine-optimization","title":"تحسين محركات البحث بالذكاء الاصطناعي: مراجعة صفحة وقياس أثرها","description":"ابدأ تحسين محركات البحث بالذكاء الاصطناعي بصفحة واحدة: راجع نية البحث والعنوان والوصف والروابط، ثم افحص التنفيذ وقس الأداء دون افتراض تحسن الترتيب.","kind":"الذكاء الاصطناعي والتقنية"},
 {"href":"/knowledge/ai-market-research","title":"بحوث السوق بالذكاء الاصطناعي: من سؤال محدد إلى دليل قابل للمراجعة","description":"ابدأ بحوث السوق بالذكاء الاصطناعي بسؤال محدد وسجل للمصادر، ثم راجع الترميز والاستنتاج بمثال عربي يوضح حدود العينة وبيانات البحث والإجابات الافتراضية.","kind":"الذكاء الاصطناعي والتقنية"},
 {"href":"/knowledge/ai-social-media-management","title":"إدارة السوشيال ميديا بالذكاء الاصطناعي: من الخطة إلى التحقق من النشر","description":"نظم إدارة السوشيال ميديا بالذكاء الاصطناعي بخطة من ثلاثة منشورات، ومراجعة للحقائق والصور والروابط، مع فصل الجدولة عن النشر وقياس الوقت والنتيجة.","kind":"الذكاء الاصطناعي والتقنية"},
 {"href":"/knowledge/ai-product-descriptions","title":"كتابة وصف المنتجات للمتاجر بالذكاء الاصطناعي: مثال عملي","description":"ابدأ كتابة وصف المنتجات للمتاجر بالذكاء الاصطناعي من بطاقة المواصفات، ثم راجع النص بمثال واضح وقياس للوقت والجودة وحقول Google Merchant Center.","kind":"الذكاء الاصطناعي والتقنية"},
@@ -280,3 +281,4 @@ return <main id="main-content" className="shell" style={{paddingBlock:52}}>
 <p style={{marginTop:28,color:"#64748b"}}>نوضح مصادرنا ونراجع المقالات عالية المخاطر قبل النشر. <Link href="/editorial-policy" style={{textDecoration:"underline"}}>منهج التحرير والتصحيح</Link>.</p>
 </main>;
 }
+

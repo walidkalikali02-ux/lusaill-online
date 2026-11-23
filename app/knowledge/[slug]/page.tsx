@@ -1611,6 +1611,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:The_Research_Cycle.jpg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-search-engine-optimization",
+    "section": "rewrite",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Search_Engine_Results_Page_%28SERP%29_Graphic_Illustration.png",
+    "width": 1920,
+    "height": 1080,
+    "maxWidth": 900,
+    "alt": "رسم لصفحة نتائج بحث فيه شريط بحث وعدسة وثلاث نتائج تمثلها شرائط عناوين زرقاء وأوصاف رمادية",
+    "caption": "يوضح الرسم موضع العنوان والوصف في نتيجة بحث مبسطة. هو عمل توضيحي من 2021، وليس لقطة Google الحالية أو إثباتًا لظهور صفحة لوسيل؛ معروض دون تعديل.",
+    "credit": "Muhammad Rafizeldi",
+    "source": "https://commons.wikimedia.org/wiki/File:Search_Engine_Results_Page_(SERP)_Graphic_Illustration.png",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
   }
 ];
 
@@ -1730,3 +1744,4 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumbSchema).replace(/</g,"\\u003c")}}/>
 </main>;
 }
+
