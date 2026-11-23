@@ -1597,6 +1597,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Kanban_board.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-market-research",
+    "section": "workflow",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/7/70/The_Research_Cycle.jpg",
+    "width": 612,
+    "height": 792,
+    "maxWidth": 500,
+    "alt": "مخطط دائري بست مراحل للبحث، يبدأ بسؤال وتحديد ما نعرفه، ثم إيجاد المصادر وتحليلها وصياغة الاستنتاج وأسئلة جديدة",
+    "caption": "توضح دورة البحث كيف يقود السؤال إلى مصادر واستنتاج يحتاج بدوره إلى فحص. المخطط عام، وليس نتيجة بحث سوق أو وصفًا لواجهة أداة ذكاء اصطناعي؛ معروض دون تعديل.",
+    "credit": "Shonnmharen",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Research_Cycle.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
