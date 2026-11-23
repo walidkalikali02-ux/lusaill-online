@@ -1583,6 +1583,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Spiral_notebook_(2565673891).jpg",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "slug": "ai-social-media-management",
+    "section": "calendar",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/3/36/Kanban_board.png",
+    "width": 930,
+    "height": 300,
+    "maxWidth": 930,
+    "alt": "لوحة مهام تعرض بطاقات ملونة موزعة بين الإدخال والعمل الجاري والاختبار والقبول والمخرجات",
+    "caption": "توضح هذه الصورة التاريخية من 2014 فكرة انتقال بطاقات العمل بين حالات. هي لوحة لمشروع برمجي، وليست واجهة Buffer الحالية أو سجل نشر حسابات لوسيل، ومعروضة دون تعديل.",
+    "credit": "Garbanea",
+    "source": "https://commons.wikimedia.org/wiki/File:Kanban_board.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
