@@ -1625,6 +1625,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Search_Engine_Results_Page_(SERP)_Graphic_Illustration.png",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "generative-engine-optimization",
+    "section": "evidence",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Hyperlinks_scheme.svg/500px-Hyperlinks_scheme.svg.png",
+    "width": 500,
+    "height": 350,
+    "maxWidth": 500,
+    "alt": "مخطط لست وثائق مترابطة بأسهم حمراء، مع وثيقة رئيسية داخل شكل برتقالي يحمل كلمة Home",
+    "caption": "يوضح المخطط فكرة الانتقال بين وثائق عبر روابط. يساعد الرابط القارئ على الوصول إلى المصدر، لكنه لا يثبت أن نص المصدر يدعم كل ادعاء؛ الرسم عام وليس شبكة استشهادات فعلية للوسيل، وعُرض دون تعديل.",
+    "credit": "MarsJson",
+    "source": "https://commons.wikimedia.org/wiki/File:Hyperlinks_scheme.svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
