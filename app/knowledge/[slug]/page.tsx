@@ -1765,6 +1765,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:IVR-Systemarchitektur.png",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "ai-customer-service-knowledge-base",
+    "section": "maintain",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Documentation_review_life_cycle.png",
+    "width": 2236,
+    "height": 1564,
+    "maxWidth": 900,
+    "alt": "مخطط دائري لمراجعة وثيقة ينتقل من الإنشاء أو التحديث إلى طلب مراجعة فنية ومراجعة غير فنية ثم حالة تمت مراجعتها",
+    "caption": "يعرض الرسم دورة مراجعة توثيق في سياق ويكيميديا، مع مهامPhabricator ومراجعتين فنية وغير فنية. يوضح فصل كتابة المادة عن تدقيقها، ولا يمثل واجهةCopilot أو دورة نشرDynamics365 أو إثبات اختبار أذونات أو مزامنة. عُرض دون تعديل.",
+    "credit": "Gbadebo (Gbahdeyboh)",
+    "source": "https://commons.wikimedia.org/wiki/File:Documentation_review_life_cycle.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
