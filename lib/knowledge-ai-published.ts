@@ -27016,7 +27016,7 @@ export const aiPublishedTopics: KnowledgeTopic[] = [
         ]
       },
       {
-        "id": "sources",
+        "id": "source-options",
         "heading": "اختر طريقة الإضافة بحسب التحديث والوصول",
         "paragraphs": [
           "تختلف نسخة ملف ترفعها يدويًا عن اتصال بمصدر متزامن. توضح وثيقة Copilot Studio أن الملف المرفوع محليًا ثابت؛ تغيير الأصل لا يحدث النسخة المرفوعة دون تحديثها. وتقارن ذلك بإضافة ملفات أو مجلدات SharePoint المتزامنة، حيث تنعكس التغييرات عبر المزامنة. لا تفترض زمن تحديث فوريًا ما لم يثبته المسار الذي تستخدمه. [المصدر: إضافة البيانات غير المنظمة](https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-unstructured-data).",
