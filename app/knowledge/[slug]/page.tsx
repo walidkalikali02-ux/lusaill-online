@@ -1709,6 +1709,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Documentation_review_life_cycle.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-sales-call-analysis",
+    "section": "followup",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Scheme_of_speech_recognition_system.png",
+    "width": 1120,
+    "height": 912,
+    "maxWidth": 850,
+    "alt": "مخطط لمعالجة الصوت يربط كشف الكلام وفصل الأصوات واستخراج السمات والتصنيف بقاعدة بيانات ومسارات تغذية راجعة من الخبراء",
+    "caption": "يعرض الرسم مراحل لمعالجة الصوت وبناء نماذج وتحسينها بالبيانات والمراجعة. يوضح أن معالجة الإشارة والتصنيف جزءان تقنيان، بينما يحتاج إسناد التزام تجاري إلى نص ودليل ومراجعة سياقه. ليس مخططًا لمنصة مبيعات محددة أو إثباتًا لفهم مشاعر العميل، ولم تنفذ لوسيل مكوناته في هذا المثال. عُرض دون تعديل.",
+    "credit": "IHEARu",
+    "source": "https://commons.wikimedia.org/wiki/File:Scheme_of_speech_recognition_system.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
