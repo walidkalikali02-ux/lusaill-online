@@ -1807,6 +1807,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Abstract_Kanban_Board.svg",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "ai-performance-review-writing",
+    "section": "review",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/a/a8/PDCA_Process.png",
+    "width": 1819,
+    "height": 1076,
+    "maxWidth": 1000,
+    "alt": "رسم لدورتي التخطيط والتنفيذ والفحص والتصرف على منحدر أخضر، مع الزمن أفقيًا وتحسين الجودة رأسيًا",
+    "caption": "يوضح الرسم دورة التخطيط والتنفيذ والفحص ثم تحديث العمل، مع الإشارة إلى تثبيت المعيار. نستخدمه لتفسير تكرار المراجعة والمتابعة؛ ليس بيانات عن تحسن موظف أو نتيجة تجربة أداة. عُرض دون تعديل.",
+    "credit": "Johannes Vietze (Warijo)",
+    "source": "https://commons.wikimedia.org/wiki/File:PDCA_Process.png",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
