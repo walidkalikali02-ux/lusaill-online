@@ -1667,6 +1667,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:K-means_convergence.gif",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-dynamic-pricing",
+    "section": "review",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Electronic_Shelf_Labels_2.jpg",
+    "width": 1000,
+    "height": 1068,
+    "maxWidth": 650,
+    "alt": "مخطط متجر برفوف زرقاء ومحطة اتصال ترسل إشارات حمراء إلى ملصقات إلكترونية بمقاسات مختلفة",
+    "caption": "يوضح المخطط اتصال ملصقات الرفوف الإلكترونية بمحطة مركزية لعرض معلومات المنتجات. القدرة على تحديث الملصق تختلف عن اتخاذ قرار السعر؛ الصورة لا تثبت استخدام ذكاء اصطناعي أو تسعير ديناميكي في متجر بعينه، وليست نتيجة تطبيق لوسيل. عُرضت دون تعديل.",
+    "credit": "Thienhuy17",
+    "source": "https://commons.wikimedia.org/wiki/File:Electronic_Shelf_Labels_2.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
