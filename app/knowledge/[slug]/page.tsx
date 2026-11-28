@@ -1723,6 +1723,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Scheme_of_speech_recognition_system.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-google-review-replies",
+    "section": "measure",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/d/d1/General_Feedback_Loop-ar.svg",
+    "width": 182,
+    "height": 108,
+    "maxWidth": 550,
+    "alt": "مخطط عربي يبين دخلًا يصل إلى نظام وخرجًا يعود جزء منه عبر مسار ارتجاع إلى الدخل",
+    "caption": "يعرض الرسم نظامًا ودخله وخرجه ومسار ارتجاع. نستعين بالفكرة لتوضيح مراجعة المسودة وتصحيح ما أضافته قبل اعتمادها؛ هذا ربط تعليمي من لوسيل، وليس مخططًا لواجهة جوجل أو دليلًا على وجود نشر آلي أو نتائج خدمة عملاء. عُرض دون تعديل.",
+    "credit": "ميشيل بكني، مشتقة من أصلGliderMaven",
+    "source": "https://commons.wikimedia.org/wiki/File:General_Feedback_Loop-ar.svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
