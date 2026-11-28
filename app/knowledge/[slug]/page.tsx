@@ -1793,6 +1793,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:AI_governance_responsibility_and_evidence_map.svg",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "slug": "ai-new-employee-onboarding",
+    "section": "progress",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Abstract_Kanban_Board.svg",
+    "width": 1920,
+    "height": 1006,
+    "maxWidth": 1000,
+    "alt": "لوحة كانبان تصورية بأربعة أعمدة ملونة تحمل عناوين قائمة العمل وقيد التنفيذ والمراجعة والمنجز، وبطاقات رمادية موزعة بينها",
+    "caption": "توضح اللوحة الفرق بين وجود مهمة في القائمة وانتقالها إلى التنفيذ والمراجعة ثم الإنجاز. عناوينها الأصليةBacklog وDoing وReview وDone؛ نستخدمها لشرح حالات المتابعة، وليست سجل التهيئة التعليمي أو لقطة من نظام موظفين. عُرضت دون تعديل.",
+    "credit": "Jennifer Falco (JenniPandi)",
+    "source": "https://commons.wikimedia.org/wiki/File:Abstract_Kanban_Board.svg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
   }
 ];
 
