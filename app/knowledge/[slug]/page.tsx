@@ -1653,6 +1653,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Schema_of_e-mail_delivery.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-customer-segmentation",
+    "section": "profiles",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/e/ea/K-means_convergence.gif",
+    "width": 637,
+    "height": 619,
+    "maxWidth": 637,
+    "alt": "رسم متحرك لنقاط ملونة وثلاثة مراكز وحدود سوداء تتغير عبر تكرارات خوارزمية K-means",
+    "caption": "يعرض الرسم تغير التجميع عبر التكرارات لبيانات توضيحية مختلفة عن عملاء المثال. يذكر مؤلفه أن الحدود السوداء تُرسم بعد تحديث المراكز بينما تظل ألوان النقاط من التعيين السابق خلال الحركة؛ تتوافق عند التقارب. الألوان ليست شرائح حقيقية للوسيل. عُرض دون تعديل.",
+    "credit": "Chire",
+    "source": "https://commons.wikimedia.org/wiki/File:K-means_convergence.gif",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
