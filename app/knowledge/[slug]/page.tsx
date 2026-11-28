@@ -1821,6 +1821,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:PDCA_Process.png",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "ai-employee-satisfaction-survey-analysis",
+    "section": "counts",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/a/af/Likert_scale_5_point_answer.svg",
+    "width": 512,
+    "height": 102,
+    "maxWidth": 1000,
+    "alt": "خمسة مواضع دائرية على خط أفقي، تتدرج عناوينها الإنجليزية من عدم الموافقة الشديدة إلى الموافقة الشديدة، وبينهما حياد",
+    "caption": "يبين الرسم خمس درجات إجابة؛ تحمل الدرجتان المجاورتان للحياد عبارتي عدم الموافقة قليلًا والموافقة قليلًا. نعرضه لتوضيح تدرج الخيارات، بينما تعتمد حساباتنا الألفاظ المحددة في جدول المثال. ليس نتائج استبيان أو نموذجًا جرى توزيعه، ولا يثبت الرسم وحده تساوي الفروق بين الدرجات. عُرض دون تعديل.",
+    "credit": "Amousey",
+    "source": "https://commons.wikimedia.org/wiki/File:Likert_scale_5_point_answer.svg",
+    "license": "CC0 1.0 Universal",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];
 
