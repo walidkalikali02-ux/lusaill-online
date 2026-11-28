@@ -1695,6 +1695,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:ConfusionMatrix.png",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "ai-price-quotes-proposals",
+    "section": "review",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Documentation_review_life_cycle.png",
+    "width": 2236,
+    "height": 1564,
+    "maxWidth": 900,
+    "alt": "مخطط دائري بأسهم يمر من إنشاء وثيقة أو تحديثها إلى طلب مراجعة فنية ثم مراجعة غير فنية وحالة تمت مراجعتها",
+    "caption": "يعرض الرسم دورة مراجعة توثيق في سياق ويكيميديا، ويستخدم مهامPhabricator ومراجعتين فنية وغير فنية. نستعين به لتوضيح فصل إعداد المستند عن تدقيقه؛ ليس مخططًا خاصًا بعرض السعر ولا لقطة منHubSpot أوDynamics365 أو تجربة نفذتها لوسيل. عُرض دون تعديل.",
+    "credit": "Gbadebo (Gbahdeyboh)",
+    "source": "https://commons.wikimedia.org/wiki/File:Documentation_review_life_cycle.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
