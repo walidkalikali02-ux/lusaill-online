@@ -1737,6 +1737,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:General_Feedback_Loop-ar.svg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "arabic-customer-sentiment-analysis",
+    "section": "metrics",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Binary_confusion_matrix.png",
+    "width": 200,
+    "height": 155,
+    "maxWidth": 320,
+    "alt": "مصفوفة التباس ثنائية بصفوف للفئة الفعلية وأعمدة للفئة المتوقعة وخلايا TP وFN وFP وTN",
+    "caption": "يعرض الرسم مصفوفة ثنائية، ويمكن الاستعانة بها لفهم حساب فئة واحدة مقابل بقية الفئات عند استخراجF1. مصفوفة مثالنا أعلاه ثلاثية؛ هذا الرسم لا يحمل أعدادها ولا نتائج تحليل تعليقات عربية أو أداء نموذج. عُرض دون تعديل.",
+    "credit": "Oritnk",
+    "source": "https://commons.wikimedia.org/wiki/File:Binary_confusion_matrix.png",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
