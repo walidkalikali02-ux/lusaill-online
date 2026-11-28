@@ -1751,6 +1751,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Binary_confusion_matrix.png",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "slug": "ai-voice-contact-center",
+    "section": "architecture",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/6/6b/IVR-Systemarchitektur.png",
+    "width": 618,
+    "height": 385,
+    "maxWidth": 720,
+    "alt": "مخطط معماري ألماني يربط تطبيق الأعمال وقواعد البيانات بمنصة IVR والتعرف الآلي على الكلام وتوليد الصوت وبوابات الهاتف وأجهزة المتصل",
+    "caption": "يعرض الرسم بنية للرد الصوتي التفاعلي تضم تطبيق أعمال وقواعد بيانات ومكونات ASR وTTS واتصالات هاتفية وشبكية. نستخدمه لشرح فصل المكونات، لا بوصفه مخططًا لنموذج توليدي حديث أو منتج بعينه أو نظام نفذته لوسيل. تسمياته بالألمانية، وأصل العمل يعود إلى2008؛ عُرض دون تعديل.",
+    "credit": "Daniel Wimpff",
+    "source": "https://commons.wikimedia.org/wiki/File:IVR-Systemarchitektur.png",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
