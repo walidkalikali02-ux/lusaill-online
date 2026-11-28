@@ -1639,6 +1639,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Hyperlinks_scheme.svg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-email-marketing",
+    "section": "review",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/a/af/Schema_of_e-mail_delivery.png",
+    "width": 720,
+    "height": 480,
+    "maxWidth": 720,
+    "alt": "مخطط يربط برنامج بريد المرسل وخادمه بخادم المستلم وبرنامج بريده، مع أسهم SMTP وIMAP أو POP",
+    "caption": "يوضح الرسم انتقال البريد بين برنامج المرسل وخدمات الإرسال والتسليم والاسترجاع. يشرح مسارًا تقنيًا عامًا، ولا يمثل حملة المتجر أو يثبت وصول رسالة إلى البريد الوارد. عُرض دون تعديل.",
+    "credit": "144p",
+    "source": "https://commons.wikimedia.org/wiki/File:Schema_of_e-mail_delivery.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
 ];
 
@@ -1758,4 +1772,5 @@ return <main id="main-content" className="shell" style={{paddingBlock:45}}>
 <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumbSchema).replace(/</g,"\\u003c")}}/>
 </main>;
 }
+
 

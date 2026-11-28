@@ -7,6 +7,7 @@ import { siteSocialImage } from "@/lib/site-config";
 import { pageAlternates } from "@/lib/page-alternates";
 export const metadata:Metadata={title:"موسوعة لوسيل | الصفحة الرئيسية",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة.",alternates:pageAlternates("/knowledge"),openGraph:{type:"website",images:[siteSocialImage],url:"/knowledge",title:"مقالات موسوعة لوسيل والمعارف والأدوات",description:"مقالات عربية في العلوم والصحة والتعليم والتقنية والحياة اليومية، مع أدوات تفاعلية ومراجع ومصادر واضحة."},robots:{index:true,follow:true}};
 const guides=[
+{"href":"/knowledge/ai-email-marketing","title":"التسويق عبر البريد الإلكتروني بالذكاء الاصطناعي: من المسودة إلى القياس","description":"طبّق التسويق عبر البريد الإلكتروني بالذكاء الاصطناعي برسالة عربية واضحة، ومراجعة للتخصيص والروابط، ومثال لحساب النقرات دون الخلط بينها وبين المبيعات.","kind":"الذكاء الاصطناعي والتقنية"},
 {"href":"/knowledge/generative-engine-optimization","title":"تحسين الظهور في إجابات الذكاء الاصطناعي GEO: الأدلة والقياس","description":"افهم تحسين الظهور في إجابات الذكاء الاصطناعي GEO، وجهز صفحة قابلة للإحالة، ثم قس الذكر والاستشهاد ودقة الإسناد بعينة ثابتة دون وعود بالظهور.","kind":"الذكاء الاصطناعي والتقنية"},
 {"href":"/knowledge/ai-search-engine-optimization","title":"تحسين محركات البحث بالذكاء الاصطناعي: مراجعة صفحة وقياس أثرها","description":"ابدأ تحسين محركات البحث بالذكاء الاصطناعي بصفحة واحدة: راجع نية البحث والعنوان والوصف والروابط، ثم افحص التنفيذ وقس الأداء دون افتراض تحسن الترتيب.","kind":"الذكاء الاصطناعي والتقنية"},
 {"href":"/knowledge/ai-market-research","title":"بحوث السوق بالذكاء الاصطناعي: من سؤال محدد إلى دليل قابل للمراجعة","description":"ابدأ بحوث السوق بالذكاء الاصطناعي بسؤال محدد وسجل للمصادر، ثم راجع الترميز والاستنتاج بمثال عربي يوضح حدود العينة وبيانات البحث والإجابات الافتراضية.","kind":"الذكاء الاصطناعي والتقنية"},
@@ -282,4 +283,5 @@ return <main id="main-content" className="shell" style={{paddingBlock:52}}>
 <p style={{marginTop:28,color:"#64748b"}}>نوضح مصادرنا ونراجع المقالات عالية المخاطر قبل النشر. <Link href="/editorial-policy" style={{textDecoration:"underline"}}>منهج التحرير والتصحيح</Link>.</p>
 </main>;
 }
+
 

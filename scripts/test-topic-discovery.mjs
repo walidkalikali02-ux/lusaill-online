@@ -129,7 +129,7 @@ for(const path of guidePaths){
 
 // Content completeness regression: empty articles are never published or inserted in XML.
 const {knowledgeTopics}=load("lib/knowledge-expansion-data.ts");
-assert.equal(knowledgeTopics.length,238,"Expected 238 authored knowledge topics including one hundred AI guides");
+assert.equal(knowledgeTopics.length,239,"Expected 239 authored knowledge topics including one hundred one AI guides");
 const expertBatch = [...load("lib/knowledge-expert-batch-09a.ts").expertBatchA,...load("lib/knowledge-expert-batch-09b.ts").expertBatchB];
 assert.equal(expertBatch.length,10,"Ten expert guides required");
 assert.equal(new Set(expertBatch.map(t=>t.slug)).size,10,"Expert article slugs must be unique");
@@ -368,4 +368,5 @@ pairs.sort((a,b)=>b.score-a.score);
 console.log("DISCOVERY_SUMMARY "+JSON.stringify({published:published.length,food:foodSafetyArticles.length,articleSitemap:map.size,allSitemapUrls:urls.length,unwrittenExcluded:articles.length-published.length,exactDuplicates:0,companySlugs,contextTargets:targets,nearCandidates:pairs.slice(0,10),result:"PASS"}));
 for(const a of published){console.log("DISCOVERY_ARTICLE "+JSON.stringify({slug:a.slug,title:a.title,reviewedAt:a.updatedAt,publishedAt:a.publishedAt,modifiedAt:getArticleModifiedAt(a),imageModifiedAt:guideIllustrations[a.slug]?.updatedAt??null,category:a.clusterCode,hub:getGuidePath(a.slug)?"/guides/"+getGuidePath(a.slug).slug:null}));await new Promise(resolve=>setTimeout(resolve,30));}
 console.log("PASS: sitemap completeness, excluded unwritten placeholders/retirements, authentic dates, hub membership and relevant contextual targets");
+
 
