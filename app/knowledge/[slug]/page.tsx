@@ -1779,6 +1779,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Documentation_review_life_cycle.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-resume-review-bias",
+    "section": "review",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/1/19/AI_governance_responsibility_and_evidence_map.svg",
+    "width": 1600,
+    "height": 1000,
+    "maxWidth": 1100,
+    "alt": "خريطة إنجليزية بثلاثة مسارات لسلطة الحوكمة وملكية التشغيل والمراجعة المستقلة مع أسهم للمعايير والأدلة ونتائج الفحص",
+    "caption": "تربط الخريطة التعليمية بين صاحب القرار وفريق التشغيل والمراجعة المستقلة وسجلات الأدلة. أعدها فريقISO Checklist بمساعدةOpenAI Codex، وفق صفحة الملف؛ وهي مادة مستقلة وليست منشورISO أو شهادة عدالة لأداة توظيف. عُرضت دون تعديل.",
+    "credit": "ISO Checklist editorial team، معOpenAI Codex(GPT-5)",
+    "source": "https://commons.wikimedia.org/wiki/File:AI_governance_responsibility_and_evidence_map.svg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
   }
 ];
 
