@@ -1681,6 +1681,20 @@ const knowledgeIllustrations = [
     "source": "https://commons.wikimedia.org/wiki/File:Electronic_Shelf_Labels_2.jpg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "slug": "ai-lead-scoring",
+    "section": "metrics",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/6/6f/ConfusionMatrix.png",
+    "width": 623,
+    "height": 382,
+    "maxWidth": 623,
+    "alt": "مصفوفة زرقاء من أربع خانات تقارن التوقع في الصفوف بالنتيجة الفعلية في الأعمدة، وتحمل رموزTP وFP وFN وTN",
+    "caption": "يوضح الرسم مواضع التوقع الصحيح والخطأ في تصنيف ثنائي؛ الصفوف للقيم المتوقعة والأعمدة للفعلية. يمكنك مطابقة الحالات الأربع مع جدول المثال، لكن الصورة لا تعرض بيانات عملاء أو نتائج نموذج لوسيل. عُرضت دون تعديل.",
+    "credit": "Jackverr",
+    "source": "https://commons.wikimedia.org/wiki/File:ConfusionMatrix.png",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ];
 
